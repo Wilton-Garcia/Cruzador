@@ -1,0 +1,2571 @@
+{
+  "version": 1,
+  "capabilities": [
+    {
+      "id": "library",
+      "title": "Biblioteca e atalhos",
+      "feature_ids": [
+        "ui:home:0",
+        "ui:home:1",
+        "ui:bottle-detail:2"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/NativeSmokeTests.swift",
+          "name": "testInstalledCrossOverCreatesBottleAndRunsWindowsCommand",
+          "scope": "Motor real; execução de cmd.exe, sem descoberta automática de apps"
+        }
+      ],
+      "remaining_gap": "Biblioteca própria existe; descoberta automática e equivalência com launchers do original não implementadas.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "catalog",
+      "title": "Catálogo e busca de instaladores",
+      "feature_ids": [
+        "ui:install-catalog:1",
+        "ui:install-catalog:2"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Sem catálogo de receitas próprio.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "ratings",
+      "title": "Compatibilidade e avaliações",
+      "feature_ids": [
+        "ui:install-catalog:3",
+        "ui:online-preferences:1"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Sem matriz de compatibilidade publicada e sem envio de avaliações.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "unlisted-install",
+      "title": "Instalação EXE/MSI e programas não listados",
+      "feature_ids": [
+        "ui:install-catalog:0",
+        "ui:install-catalog:1",
+        "ui:install-catalog:2",
+        "ui:install-catalog:3",
+        "ui:unlisted-install:0",
+        "ui:unlisted-install:1",
+        "ui:unlisted-install:2",
+        "ui:unlisted-install:3"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/CruzadorCore/EngineCommands.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testMSIUsesMsiexec",
+          "scope": "Montagem de argv com motor simulado"
+        }
+      ],
+      "remaining_gap": "Instalador genérico encaminhado ao motor externo; instalação real e recuperação ainda não validadas.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "install-progress",
+      "title": "Progresso e cancelamento da instalação",
+      "feature_ids": [
+        "ui:install-progress:0",
+        "ui:install-progress:1"
+      ],
+      "reverse_knowledge": "runtime-observed-cancellation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Cancelamento foi observado no original; o Cruzador ainda não cancela subprocessos.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "installer-source",
+      "title": "Origem local e download de instaladores",
+      "feature_ids": [
+        "ui:install-progress:2"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [],
+      "remaining_gap": "Seleção local existe no protótipo; downloads geridos e verificação não reconstruídos.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "dependencies",
+      "title": "Receitas e dependências",
+      "feature_ids": [
+        "ui:install-progress:4"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Metadados InstallTask examinados; instruções e semântica de resolução pendentes.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-create",
+      "title": "Criação de bottles",
+      "feature_ids": [
+        "ui:new-bottle:0",
+        "ui:new-bottle:1",
+        "ui:new-bottle:2",
+        "ui:new-bottle:3",
+        "ib:2d93fcff42e72a38c427",
+        "ib:384154ce1498a44e27be"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/CruzadorCore/EngineCommands.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/NativeSmokeTests.swift",
+          "name": "testInstalledCrossOverCreatesBottleAndRunsWindowsCommand",
+          "scope": "Criação real via CrossOver instalado"
+        }
+      ],
+      "remaining_gap": "Criação encaminhada ao CrossOver/Wine externo; não há motor distribuído próprio.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "templates",
+      "title": "Templates e versões Windows",
+      "feature_ids": [
+        "ui:installer-preferences:1",
+        "ui:templates:0",
+        "ui:templates:1",
+        "ui:templates:2",
+        "ui:templates:3",
+        "ui:templates:4",
+        "ui:templates:5"
+      ],
+      "reverse_knowledge": "native-and-python-metadata",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/EngineCommands.swift"
+      ],
+      "tests": [],
+      "remaining_gap": "Protótipo CrossOver fixa win10_64; seleção de outros templates e arquiteturas ausente.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-copy",
+      "title": "Duplicação de bottles",
+      "feature_ids": [
+        "ui:bottle-menu:1"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-rename",
+      "title": "Renomeação de bottles",
+      "feature_ids": [
+        "ui:bottle-menu:2"
+      ],
+      "reverse_knowledge": "native-and-python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-delete",
+      "title": "Remoção de bottles",
+      "feature_ids": [
+        "ui:bottle-detail:7",
+        "ui:bottle-menu:3"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Sem remoção de bottles no Cruzador; preservar estado ativo e recuperação.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-export",
+      "title": "Exportação de bottles",
+      "feature_ids": [
+        "ui:bottle-menu:5"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-import",
+      "title": "Importação de bottles",
+      "feature_ids": [
+        "ui:bottle-menu:6"
+      ],
+      "reverse_knowledge": "native-and-python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-publish",
+      "title": "Publicação e bottles gerenciadas",
+      "feature_ids": [
+        "ui:bottle-menu:7",
+        "ui:bottle-menu:8"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Controles vistos; atualização estava desabilitada. Sem implementação própria.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-default",
+      "title": "Bottle padrão",
+      "feature_ids": [
+        "ui:bottle-menu:9"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-storage",
+      "title": "Local de armazenamento e integração de launchers",
+      "feature_ids": [
+        "ui:system-preferences:0",
+        "ui:system-preferences:1",
+        "ui:system-preferences:2",
+        "ui:system-preferences:3"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/LibraryStore.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testMetadataRoundTripAndBackupPreserveNames",
+          "scope": "Armazenamento próprio e backup de metadados"
+        }
+      ],
+      "remaining_gap": "Armazenamento próprio fixo; mudança de local, migração e exportação de launchers não implementadas.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "open-drive",
+      "title": "Abrir unidade C:",
+      "feature_ids": [
+        "ui:bottle-detail:4",
+        "ui:bottle-menu:4"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [],
+      "remaining_gap": "Abre a pasta do prefixo inteiro; abertura direta de drive_c e integração completa pendentes.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "run-command",
+      "title": "Execução de comandos e atalhos",
+      "feature_ids": [
+        "ui:bottle-detail:3",
+        "ui:bottle-menu:19",
+        "ui:run-command:0",
+        "ui:run-command:1",
+        "ui:run-command:3",
+        "ui:run-command:8",
+        "ui:run-command:10",
+        "ib:c022714b9f9eeb2aa4ac"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/NativeSmokeTests.swift",
+          "name": "testInstalledCrossOverCreatesBottleAndRunsWindowsCommand",
+          "scope": "cmd.exe no motor CrossOver real"
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testCrossOverRoutesOnlyToOwnedUUIDAndKeepsArguments",
+          "scope": "Isolamento de prefixo e argumentos"
+        }
+      ],
+      "remaining_gap": "Executa EXE/MSI com argumentos por linha; não reproduz o parser livre e todos os modos de launcher.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "run-environment",
+      "title": "Ambiente e presets de execução",
+      "feature_ids": [
+        "ui:run-command:2",
+        "ui:environment-presets:0",
+        "ui:environment-presets:1"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "logging",
+      "title": "Logs, canais e erros de execução",
+      "feature_ids": [
+        "ui:run-command:4",
+        "ui:run-command:5",
+        "ui:run-command:6",
+        "ui:run-command:7"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/CruzadorCore/EngineCommands.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testRunnerKeepsExitAndDoesNotInterpretShellArguments",
+          "scope": "Saída em arquivo e status não zero"
+        }
+      ],
+      "remaining_gap": "Logs simples existem; seleção de canais, ambiente e relatório detalhado faltam.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "shell",
+      "title": "Shell da bottle",
+      "feature_ids": [
+        "ui:bottle-menu:20"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "quit",
+      "title": "Encerramento e saída forçada",
+      "feature_ids": [
+        "ui:bottle-detail:6",
+        "ui:bottle-menu:21",
+        "ui:bottle-menu:22"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Sem supervisão/cancelamento completo no produto; smoke test apenas aguarda wineserver próprio.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "reboot",
+      "title": "Reinicialização simulada",
+      "feature_ids": [
+        "ui:bottle-detail:14"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "repair",
+      "title": "Reparo de bottles e menus",
+      "feature_ids": [
+        "ui:configure-menu:0",
+        "ui:configure-menu:1",
+        "ui:configure-menu:2"
+      ],
+      "reverse_knowledge": "archive-and-ui-declaration",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "graphics",
+      "title": "Backends gráficos",
+      "feature_ids": [
+        "ui:graphics:0",
+        "ui:graphics:1",
+        "ui:graphics:2",
+        "ui:graphics:3",
+        "ui:graphics:4",
+        "ib:2f3138d8adfa95c9e7cc"
+      ],
+      "reverse_knowledge": "native-and-python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Seletores e chaves identificados; renderizadores e disponibilidade não reconstruídos.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "dlss",
+      "title": "DLSS",
+      "feature_ids": [
+        "ui:bottle-detail:9",
+        "ui:bottle-menu:16"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "msync",
+      "title": "MSync e reinício necessário",
+      "feature_ids": [
+        "ui:bottle-detail:10",
+        "ui:bottle-menu:17",
+        "ib:f6c87051fb1cb1228e87"
+      ],
+      "reverse_knowledge": "native-and-python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Confirmação e metadados conhecidos; implementação e ciclo de reinício não reconstruídos.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "hires",
+      "title": "Alta resolução",
+      "feature_ids": [
+        "ui:bottle-detail:11",
+        "ui:bottle-menu:10"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "winecfg",
+      "title": "Configuração Wine e registro",
+      "feature_ids": [
+        "ui:bottle-detail:12"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/CruzadorCore/EngineCommands.swift"
+      ],
+      "tests": [],
+      "remaining_gap": "Botões encaminham ferramentas externas; ferramentas reais não foram exercitadas.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "gamepads",
+      "title": "Controles de jogos",
+      "feature_ids": [
+        "ui:bottle-detail:13"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "task-manager",
+      "title": "Gerenciador de tarefas Windows",
+      "feature_ids": [
+        "ui:bottle-detail:15"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "internet-options",
+      "title": "Configurações de Internet",
+      "feature_ids": [
+        "ui:bottle-detail:16"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-details",
+      "title": "Detalhes da bottle",
+      "feature_ids": [
+        "ui:bottle-detail:0",
+        "ui:bottle-detail:1",
+        "ui:bottle-detail:17"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/CruzadorCore/LibraryStore.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testMalformedLibraryIsNeverOverwritten",
+          "scope": "Preserva metadados inválidos"
+        }
+      ],
+      "remaining_gap": "Três estados próprios; estados e capacidades detalhadas do original não reproduzidos.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "file-associations",
+      "title": "Abrir arquivos e recentes",
+      "feature_ids": [
+        "ui:file-menu:0",
+        "ui:file-menu:1",
+        "ui:file-menu:2"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Sem associação de arquivos e documentos recentes do Cruzador.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "installer-preferences",
+      "title": "Preferências de instalação e cache",
+      "feature_ids": [
+        "ui:installer-preferences:0",
+        "ui:installer-preferences:2",
+        "ui:installer-preferences:3",
+        "ui:installer-preferences:4",
+        "ui:installer-preferences:5",
+        "ui:installer-preferences:6"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "app-update",
+      "title": "Atualização do aplicativo",
+      "feature_ids": [
+        "ui:application-menu:2",
+        "ui:online-preferences:0"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "application-lifecycle",
+      "title": "Preferências e ciclo do aplicativo",
+      "feature_ids": [
+        "ui:application-menu:3",
+        "ui:application-menu:8",
+        "ui:application-menu:9"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/Cruzador/CruzadorApp.swift"
+      ],
+      "tests": [],
+      "remaining_gap": "Configuração básica de motor e bloqueio de saída durante operação; restauração de janelas e demais preferências ausentes.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "about-and-services",
+      "title": "Sobre e serviços macOS",
+      "feature_ids": [
+        "ui:application-menu:0",
+        "ui:application-menu:4",
+        "ui:application-menu:5",
+        "ui:application-menu:6",
+        "ui:application-menu:7"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Itens padrão de macOS não estabelecem paridade de produto.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "licensing",
+      "title": "Ativação da edição original",
+      "feature_ids": [
+        "ui:application-menu:1"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Observado apenas como controle; nenhuma ativação ou alteração de licença foi executada. Modelo de distribuição próprio ainda não definido.",
+      "independent_equivalence_established": false
+    }
+  ],
+  "feature_coverage": [
+    {
+      "feature_id": "ui:home:0",
+      "capability_ids": [
+        "library"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:home:1",
+      "capability_ids": [
+        "library"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:home:2",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:install-catalog:0",
+      "capability_ids": [
+        "unlisted-install"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:install-catalog:1",
+      "capability_ids": [
+        "catalog",
+        "unlisted-install"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:install-catalog:2",
+      "capability_ids": [
+        "catalog",
+        "unlisted-install"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:install-catalog:3",
+      "capability_ids": [
+        "ratings",
+        "unlisted-install"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:install-progress:0",
+      "capability_ids": [
+        "install-progress"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:install-progress:1",
+      "capability_ids": [
+        "install-progress"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:install-progress:2",
+      "capability_ids": [
+        "installer-source"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:install-progress:3",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:install-progress:4",
+      "capability_ids": [
+        "dependencies"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:unlisted-install:0",
+      "capability_ids": [
+        "unlisted-install"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:unlisted-install:1",
+      "capability_ids": [
+        "unlisted-install"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:unlisted-install:2",
+      "capability_ids": [
+        "unlisted-install"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:unlisted-install:3",
+      "capability_ids": [
+        "unlisted-install"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:0",
+      "capability_ids": [
+        "bottle-details"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:1",
+      "capability_ids": [
+        "bottle-details"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:2",
+      "capability_ids": [
+        "library"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:3",
+      "capability_ids": [
+        "run-command"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:4",
+      "capability_ids": [
+        "open-drive"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:5",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:bottle-detail:6",
+      "capability_ids": [
+        "quit"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:7",
+      "capability_ids": [
+        "bottle-delete"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:8",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:bottle-detail:9",
+      "capability_ids": [
+        "dlss"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:10",
+      "capability_ids": [
+        "msync"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:11",
+      "capability_ids": [
+        "hires"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:12",
+      "capability_ids": [
+        "winecfg"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:13",
+      "capability_ids": [
+        "gamepads"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:14",
+      "capability_ids": [
+        "reboot"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:15",
+      "capability_ids": [
+        "task-manager"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:16",
+      "capability_ids": [
+        "internet-options"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-detail:17",
+      "capability_ids": [
+        "bottle-details"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:graphics:0",
+      "capability_ids": [
+        "graphics"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:graphics:1",
+      "capability_ids": [
+        "graphics"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:graphics:2",
+      "capability_ids": [
+        "graphics"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:graphics:3",
+      "capability_ids": [
+        "graphics"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:graphics:4",
+      "capability_ids": [
+        "graphics"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:file-menu:0",
+      "capability_ids": [
+        "file-associations"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:file-menu:1",
+      "capability_ids": [
+        "file-associations"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:file-menu:2",
+      "capability_ids": [
+        "file-associations"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:0",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:bottle-menu:1",
+      "capability_ids": [
+        "bottle-copy"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:2",
+      "capability_ids": [
+        "bottle-rename"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:3",
+      "capability_ids": [
+        "bottle-delete"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:4",
+      "capability_ids": [
+        "open-drive"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:5",
+      "capability_ids": [
+        "bottle-export"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:6",
+      "capability_ids": [
+        "bottle-import"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:7",
+      "capability_ids": [
+        "bottle-publish"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:8",
+      "capability_ids": [
+        "bottle-publish"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:9",
+      "capability_ids": [
+        "bottle-default"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:10",
+      "capability_ids": [
+        "hires"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:11",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:bottle-menu:12",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:bottle-menu:13",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:bottle-menu:14",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:bottle-menu:15",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:bottle-menu:16",
+      "capability_ids": [
+        "dlss"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:17",
+      "capability_ids": [
+        "msync"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:18",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:bottle-menu:19",
+      "capability_ids": [
+        "run-command"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:20",
+      "capability_ids": [
+        "shell"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:21",
+      "capability_ids": [
+        "quit"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:bottle-menu:22",
+      "capability_ids": [
+        "quit"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:configure-menu:0",
+      "capability_ids": [
+        "repair"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:configure-menu:1",
+      "capability_ids": [
+        "repair"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:configure-menu:2",
+      "capability_ids": [
+        "repair"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:application-menu:0",
+      "capability_ids": [
+        "about-and-services"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:application-menu:1",
+      "capability_ids": [
+        "licensing"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:application-menu:2",
+      "capability_ids": [
+        "app-update"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:application-menu:3",
+      "capability_ids": [
+        "application-lifecycle"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:application-menu:4",
+      "capability_ids": [
+        "about-and-services"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:application-menu:5",
+      "capability_ids": [
+        "about-and-services"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:application-menu:6",
+      "capability_ids": [
+        "about-and-services"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:application-menu:7",
+      "capability_ids": [
+        "about-and-services"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:application-menu:8",
+      "capability_ids": [
+        "application-lifecycle"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:application-menu:9",
+      "capability_ids": [
+        "application-lifecycle"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:installer-preferences:0",
+      "capability_ids": [
+        "installer-preferences"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:installer-preferences:1",
+      "capability_ids": [
+        "templates"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:installer-preferences:2",
+      "capability_ids": [
+        "installer-preferences"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:installer-preferences:3",
+      "capability_ids": [
+        "installer-preferences"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:installer-preferences:4",
+      "capability_ids": [
+        "installer-preferences"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:installer-preferences:5",
+      "capability_ids": [
+        "installer-preferences"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:installer-preferences:6",
+      "capability_ids": [
+        "installer-preferences"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:online-preferences:0",
+      "capability_ids": [
+        "app-update"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:online-preferences:1",
+      "capability_ids": [
+        "ratings"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:system-preferences:0",
+      "capability_ids": [
+        "bottle-storage"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:system-preferences:1",
+      "capability_ids": [
+        "bottle-storage"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:system-preferences:2",
+      "capability_ids": [
+        "bottle-storage"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:system-preferences:3",
+      "capability_ids": [
+        "bottle-storage"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:run-command:0",
+      "capability_ids": [
+        "run-command"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:run-command:1",
+      "capability_ids": [
+        "run-command"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:run-command:2",
+      "capability_ids": [
+        "run-environment"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:run-command:3",
+      "capability_ids": [
+        "run-command"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:run-command:4",
+      "capability_ids": [
+        "logging"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:run-command:5",
+      "capability_ids": [
+        "logging"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:run-command:6",
+      "capability_ids": [
+        "logging"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:run-command:7",
+      "capability_ids": [
+        "logging"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:run-command:8",
+      "capability_ids": [
+        "run-command"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:run-command:9",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ui:run-command:10",
+      "capability_ids": [
+        "run-command"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:environment-presets:0",
+      "capability_ids": [
+        "run-environment"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:environment-presets:1",
+      "capability_ids": [
+        "run-environment"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:new-bottle:0",
+      "capability_ids": [
+        "bottle-create"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:new-bottle:1",
+      "capability_ids": [
+        "bottle-create"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:new-bottle:2",
+      "capability_ids": [
+        "bottle-create"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:new-bottle:3",
+      "capability_ids": [
+        "bottle-create"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:templates:0",
+      "capability_ids": [
+        "templates"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:templates:1",
+      "capability_ids": [
+        "templates"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:templates:2",
+      "capability_ids": [
+        "templates"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:templates:3",
+      "capability_ids": [
+        "templates"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:templates:4",
+      "capability_ids": [
+        "templates"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ui:templates:5",
+      "capability_ids": [
+        "templates"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ib:38ee7f42fc1f1e5e30b3",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:bfbecea5e6a018a64faa",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:aa5811493cbbc0db3985",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:510155f5663bdeb1a0bf",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:196a498517b02183a787",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ad3f5dd47972bcd81dd8",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ca5c1d559e577c20c303",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:4b99f0f3db8a516c35dd",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:659e591a33dd02d9a3cb",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:98ee32c4a19df2e56603",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:9a27568568fdb1e492b8",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:012eb61dbbc416b8bc67",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:fc69db0ab6b2dd90d99c",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:91efd996e64cd9eb8d37",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:f05ff6c6a4486b7d05ec",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:8a4fd19bb90b7bf537df",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:4cfe71f3851b3bd11137",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:2f3138d8adfa95c9e7cc",
+      "capability_ids": [
+        "graphics"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ib:4a0da8ec88918861c1b0",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:28b1de950c6ef9e2a7cf",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:f6c87051fb1cb1228e87",
+      "capability_ids": [
+        "msync"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ib:0a663b8ff36cac5528ef",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:6df6a5f935bdb6ccc652",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:6d0b8373d4cebef856f1",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:dfdb97ec201132ee287b",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:8b5fd7746a2f00b3ee0f",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:d50acec4ed589eb525be",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:50d48526774ec2d56b02",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:f51c6ee4e9d04df4588e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:e81754993e2574980342",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:31593883049a0376fa11",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:676d28b158114038580d",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ff04c1a8cdebd45ccd75",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:49d8007740512b8d98a8",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:6c47b6673627adffeee1",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:42a507f4f0ed281c2afe",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:557e80651c9262b091e0",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:59765b6628a0a265b460",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:0b1f3626e59ff2d829d3",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:7a2ee5bdad4f1cf492af",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:09a6e43400e31db894ba",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:8db73ca697876fd93a2c",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:423eb5539ecea2aea842",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:5c6fdf27bc0c844e8b65",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:28ce2dcabf63cbc673c7",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:4586f5ef34513848b986",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:f3012045b4ce7c67d926",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:628c62d809a5ad8b83a4",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:e91926fc594f7c9912b1",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:8bec358f765de51bf86b",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:5747aa6a73afe1ad076b",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:4c98d074e8fa89831f3d",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:b8a685d1cb9c8ffb3290",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:b8d98790a12e798e5321",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:114fc1976560b410e9e5",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:deb71b6b93e20c73723e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:63fa290132ccfc3183bd",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:858bdf3b8bc85ecbe132",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:01c28e28d44061b72876",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:8b03b453cdb1e178377e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:d68be50d65b154f80422",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ef8e72ba218dd02c4145",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:db8d55a6482de5324a04",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:2f1ed8ecddde8dec1ca9",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:e981f274b6889fcfb023",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:5bd3629fdc7d97fdbfa5",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ce12d3da302c08ce4410",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:31aeb99b339a8c988c07",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:2052eef6098b4bfe0ef8",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:552d9bc942f5f6043d60",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:d6b0289de3230918c03f",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:d438a5c9f648cc2bc265",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:71d16c8d1664b8bd26a0",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:22c4b4790ccd96ba262c",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:4da40acd25777e7e0208",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:1b1013024a143f00c46e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:9db7aa82df8695c6fbfe",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:558aa183ebe7a1ac41be",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:9adbb83579e9ca69d8d6",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:f652b2b8cb5595c7c89d",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c6ecc96d03e8745ce7ec",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:96d557a412bbcc15ae3b",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ec9e0afe6cd16df29f70",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:7ef5fe387f336be31d76",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:eead5f1f99b55c5c9986",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ad7630821679c98de83a",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ace3e13a1a5595c86209",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:b92e22c317f0daa90e78",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:2deb3d842b0fe284c5b5",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:4ffe10c8c602f5fef247",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:70e52345934668992e79",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:a0967a0a6f37899a15d1",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c4498267539e908daa0e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:80af536f21f29cb15b23",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:6695a92d238226a3ca44",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:54f0c0cc7f3f362a47db",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:115131256d57132e4754",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:5bc9811f08d25d71ed1b",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:8f7512878e899d18c329",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c9cd29208ba6a62c9690",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c05c66e6057cf6c14add",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ad29d242a4ca935a5238",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c45cd4112045b0fbc5e8",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:62a3ba635c74590a0bdf",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:7c2bf95a7725c925ebdc",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:567adda2ec14537b210a",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ac8dca675a7ed6365037",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:66425a1bcb6c78191f1e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:839627d50401acb4da0f",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ab89a333dd6c48a48734",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c7b75b8b4f5d6c84c8bf",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:17639e750454edac0e70",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:1121597c28c3ad3b4c38",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:dc612e44ef804c209153",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:e53091a492f0986e2d45",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:4506c8e89e2347a5bfea",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:0d5d3b5839a7804de989",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:8f0697383446a09edd19",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:292358e8618f0bc0240c",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:510a2c08b9e05b3f498c",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:369c7e75014def7c5c51",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:61cc71c8a61e8333c37d",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:f4f68cc4d68d6e48b453",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:0cec547f0a1e25ea9ef5",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:90c35191b1268ac27ef0",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:594a805528cfddac9031",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:875c0af679c80ebf939b",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:15f51ed75ad4e9d7b5b4",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:edf3d0407b87b4f3a044",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:1a019d4c4d172dad88d7",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:474921ac90eb7f0de0e0",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:45110695ae8c31252b5a",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:2435f65a27669074b38e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:0bdc71a2c3199435f338",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:e14122e1f3f80b61d502",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c929565805d0f63da255",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ef376d3ca33a0fa42cb7",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:3dd93cd92d9282439306",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:547eecd9e25f6c4f6e9a",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:9f300728ce44d284e777",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ba9fd87fa04600e19428",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:2a9cca6110093a45d415",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:d2ed6dcb2ab551773710",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:1429d5d821cd5136a68b",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:88c22c6e554768c5943d",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:933a3d620ed8b021ade1",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:bc3269dda3cdc43ce6b7",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c1f0cea8094134555a3b",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:adcb43cbae1b684c5299",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:2059edfb2a1e322e3cfd",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:7c27d97b9bcb7fc7b94f",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:4021884f620116f2be4d",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:1bd48866029d617f4131",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:5ef01b178189861e13a6",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:856467b69b97d635486d",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:8da7654f1a6d5da3cfd0",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:3458bc177dafd621dfb9",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:7cbdfce1e82b7a7761bd",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:a9751aeb1b7bd0de0214",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:2d93fcff42e72a38c427",
+      "capability_ids": [
+        "bottle-create"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ib:36c6d9bcbe48a8a6f1b7",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:384154ce1498a44e27be",
+      "capability_ids": [
+        "bottle-create"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ib:cfa91c7f8ef8453c1c25",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:69ff129e8ae77625c8b2",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:8fbdc57d1140b344313e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:f11017c1762acbd1df2d",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:1b52a2d24b74893ae293",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:671f551a4a40fd4db209",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:fef0573eda86b464a906",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:7e5bdaf9c04f3ac33786",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:27e0bbcd5fc0f61ce6b3",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:0055e51682ee4e901b12",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:2bb524e1f41aa7bbb138",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c9793598b7d1275972b5",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:8babe1541cb7963c92db",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:1eaecc822e388c11d51b",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:7448f347bf295d11ac49",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:b04b609090567ba4533a",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:72fd5b68343bcf7c6799",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:cb136d018ed2da207257",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:03b3bbe09c09864e0050",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:794fcaa48b77196f86c4",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:15e3eb116bb39a7834fa",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:5aa052ef5e2160ff416a",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:1225661c38ea4d7129e0",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:d0cd58343f0949358cbe",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:e566bfb6b1c753cbddbc",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:a8a5d36e3c51c4e63423",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:e12787c4f91ebfc7b2fd",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:0278ad2e2451da8c4586",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:739630627338444553ca",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:080decf05ff8c74883fc",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:cdb0895c3de164c3d7ab",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c022714b9f9eeb2aa4ac",
+      "capability_ids": [
+        "run-command"
+      ],
+      "assessment": "mapped"
+    },
+    {
+      "feature_id": "ib:dcb6b57852234b1d6a3e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:e4f731646afb28f77c66",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:5d161436ab09ea2a8e61",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:378fd2549eb66e16c990",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:b16b285466899e04d92e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:0863bda12f692b296d2b",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:b7ee4f91a826a97c878d",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:1546fb22a966bfc93fab",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c83f3644b16eaff00c6c",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:5e8d0e0f93e0a694a28d",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:aab344279f9a34df275e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:6eec7cf5145b32e418a6",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:43f7f6ae8982a1118c2e",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:0d911ee87a52823b0b60",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ec2b1aeb0cff446274a3",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c9a6ee4f7f5204142cc8",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:a2d4adcc34da404700a4",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:01ec055739a52d245973",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:307dc090dbc10b688b63",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:ea079b83248ac4177344",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:125071acc91478edda31",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    },
+    {
+      "feature_id": "ib:c14ad6a48c519dbba896",
+      "capability_ids": [],
+      "assessment": "not-assessed"
+    }
+  ],
+  "source_sha256": {
+    "Sources/Cruzador/AppModel.swift": "ad18d435820c4209524ba4abc19b639a87020a376f68bcde8385132a4a89beac",
+    "Sources/Cruzador/ContentView.swift": "24710fec88cc5023dd31c7562a3353e3461c5922e9d1432046d3fd92c99059b0",
+    "Sources/Cruzador/CruzadorApp.swift": "8491e480c40115839f1eb76eb79fda94bcc01df79eb9f50daa7152f1fccc4943",
+    "Sources/CruzadorCore/EngineCommands.swift": "adc6c093342112b146a2851fadbf34d635ef7aed35c862ed6c5c6e2172911dc2",
+    "Sources/CruzadorCore/LibraryStore.swift": "5a6e1f95c9fd0489cd9198e91b9a17ca9621fa2d9135570628fb620b0f81be3c",
+    "Tests/CruzadorCoreTests/CoreTests.swift": "2514ed816e6fe47fc45f8261a5c475ef4313a2e01be530958d85751512f84bb9",
+    "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "3ae735d842c65d11522799f0862f67c85fac5fc0bf752bd74c919371f9042063"
+  },
+  "counts": {
+    "capabilities": 40,
+    "catalog_items": 330,
+    "mapped_items": 107,
+    "unassessed_items": 223,
+    "prototype_status": {
+      "partial": 12,
+      "missing": 28
+    }
+  },
+  "limitations": [
+    "Statuses describe the existing prototype, not equivalence to the original.",
+    "Test references identify scope, not proof of arbitrary Windows compatibility.",
+    "Unmapped declarations remain explicitly unassessed.",
+    "The complete product is not independent of external engines.",
+    "References and hashes establish provenance, not semantic correctness.",
+    "No behavioral-equivalence percentage is computed from control counts."
+  ]
+}

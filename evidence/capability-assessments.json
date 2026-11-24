@@ -1,0 +1,682 @@
+{
+  "version": 1,
+  "assessment_kind": "source-and-evidence-review",
+  "capabilities": [
+    {
+      "id": "library",
+      "title": "Biblioteca e atalhos",
+      "feature_ids": [
+        "ui:home:0",
+        "ui:home:1",
+        "ui:bottle-detail:2"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/NativeSmokeTests.swift",
+          "name": "testInstalledCrossOverCreatesBottleAndRunsWindowsCommand",
+          "scope": "Motor real; execução de cmd.exe, sem descoberta automática de apps"
+        }
+      ],
+      "remaining_gap": "Biblioteca própria existe; descoberta automática e equivalência com launchers do original não implementadas.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "catalog",
+      "title": "Catálogo e busca de instaladores",
+      "feature_ids": [
+        "ui:install-catalog:1",
+        "ui:install-catalog:2"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Sem catálogo de receitas próprio.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "ratings",
+      "title": "Compatibilidade e avaliações",
+      "feature_ids": [
+        "ui:install-catalog:3",
+        "ui:online-preferences:1"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Sem matriz de compatibilidade publicada e sem envio de avaliações.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "unlisted-install",
+      "title": "Instalação EXE/MSI e programas não listados",
+      "feature_ids": [
+        "ui:install-catalog:0",
+        "ui:install-catalog:1",
+        "ui:install-catalog:2",
+        "ui:install-catalog:3",
+        "ui:unlisted-install:0",
+        "ui:unlisted-install:1",
+        "ui:unlisted-install:2",
+        "ui:unlisted-install:3"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/CruzadorCore/EngineCommands.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testMSIUsesMsiexec",
+          "scope": "Montagem de argv com motor simulado"
+        }
+      ],
+      "remaining_gap": "Instalador genérico encaminhado ao motor externo; instalação real e recuperação ainda não validadas.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "install-progress",
+      "title": "Progresso e cancelamento da instalação",
+      "feature_ids": [
+        "ui:install-progress:0",
+        "ui:install-progress:1"
+      ],
+      "reverse_knowledge": "runtime-observed-cancellation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Cancelamento foi observado no original; o Cruzador ainda não cancela subprocessos.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "installer-source",
+      "title": "Origem local e download de instaladores",
+      "feature_ids": [
+        "ui:install-progress:2"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [],
+      "remaining_gap": "Seleção local existe no protótipo; downloads geridos e verificação não reconstruídos.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "dependencies",
+      "title": "Receitas e dependências",
+      "feature_ids": [
+        "ui:install-progress:4"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Metadados InstallTask examinados; instruções e semântica de resolução pendentes.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-create",
+      "title": "Criação de bottles",
+      "feature_ids": [
+        "ui:new-bottle:0",
+        "ui:new-bottle:1",
+        "ui:new-bottle:2",
+        "ui:new-bottle:3",
+        "ib:2d93fcff42e72a38c427",
+        "ib:384154ce1498a44e27be"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/CruzadorCore/EngineCommands.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/NativeSmokeTests.swift",
+          "name": "testInstalledCrossOverCreatesBottleAndRunsWindowsCommand",
+          "scope": "Criação real via CrossOver instalado"
+        }
+      ],
+      "remaining_gap": "Criação encaminhada ao CrossOver/Wine externo; não há motor distribuído próprio.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "templates",
+      "title": "Templates e versões Windows",
+      "feature_ids": [
+        "ui:installer-preferences:1",
+        "ui:templates:0",
+        "ui:templates:1",
+        "ui:templates:2",
+        "ui:templates:3",
+        "ui:templates:4",
+        "ui:templates:5"
+      ],
+      "reverse_knowledge": "native-and-python-metadata",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/EngineCommands.swift"
+      ],
+      "tests": [],
+      "remaining_gap": "Protótipo CrossOver fixa win10_64; seleção de outros templates e arquiteturas ausente.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-copy",
+      "title": "Duplicação de bottles",
+      "feature_ids": [
+        "ui:bottle-menu:1"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-rename",
+      "title": "Renomeação de bottles",
+      "feature_ids": [
+        "ui:bottle-menu:2"
+      ],
+      "reverse_knowledge": "native-and-python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-delete",
+      "title": "Remoção de bottles",
+      "feature_ids": [
+        "ui:bottle-detail:7",
+        "ui:bottle-menu:3"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Sem remoção de bottles no Cruzador; preservar estado ativo e recuperação.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-export",
+      "title": "Exportação de bottles",
+      "feature_ids": [
+        "ui:bottle-menu:5"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-import",
+      "title": "Importação de bottles",
+      "feature_ids": [
+        "ui:bottle-menu:6"
+      ],
+      "reverse_knowledge": "native-and-python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-publish",
+      "title": "Publicação e bottles gerenciadas",
+      "feature_ids": [
+        "ui:bottle-menu:7",
+        "ui:bottle-menu:8"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Controles vistos; atualização estava desabilitada. Sem implementação própria.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-default",
+      "title": "Bottle padrão",
+      "feature_ids": [
+        "ui:bottle-menu:9"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-storage",
+      "title": "Local de armazenamento e integração de launchers",
+      "feature_ids": [
+        "ui:system-preferences:0",
+        "ui:system-preferences:1",
+        "ui:system-preferences:2",
+        "ui:system-preferences:3"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/LibraryStore.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testMetadataRoundTripAndBackupPreserveNames",
+          "scope": "Armazenamento próprio e backup de metadados"
+        }
+      ],
+      "remaining_gap": "Armazenamento próprio fixo; mudança de local, migração e exportação de launchers não implementadas.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "open-drive",
+      "title": "Abrir unidade C:",
+      "feature_ids": [
+        "ui:bottle-detail:4",
+        "ui:bottle-menu:4"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [],
+      "remaining_gap": "Abre a pasta do prefixo inteiro; abertura direta de drive_c e integração completa pendentes.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "run-command",
+      "title": "Execução de comandos e atalhos",
+      "feature_ids": [
+        "ui:bottle-detail:3",
+        "ui:bottle-menu:19",
+        "ui:run-command:0",
+        "ui:run-command:1",
+        "ui:run-command:3",
+        "ui:run-command:8",
+        "ui:run-command:10",
+        "ib:c022714b9f9eeb2aa4ac"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/NativeSmokeTests.swift",
+          "name": "testInstalledCrossOverCreatesBottleAndRunsWindowsCommand",
+          "scope": "cmd.exe no motor CrossOver real"
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testCrossOverRoutesOnlyToOwnedUUIDAndKeepsArguments",
+          "scope": "Isolamento de prefixo e argumentos"
+        }
+      ],
+      "remaining_gap": "Executa EXE/MSI com argumentos por linha; não reproduz o parser livre e todos os modos de launcher.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "run-environment",
+      "title": "Ambiente e presets de execução",
+      "feature_ids": [
+        "ui:run-command:2",
+        "ui:environment-presets:0",
+        "ui:environment-presets:1"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "logging",
+      "title": "Logs, canais e erros de execução",
+      "feature_ids": [
+        "ui:run-command:4",
+        "ui:run-command:5",
+        "ui:run-command:6",
+        "ui:run-command:7"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/CruzadorCore/EngineCommands.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testRunnerKeepsExitAndDoesNotInterpretShellArguments",
+          "scope": "Saída em arquivo e status não zero"
+        }
+      ],
+      "remaining_gap": "Logs simples existem; seleção de canais, ambiente e relatório detalhado faltam.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "shell",
+      "title": "Shell da bottle",
+      "feature_ids": [
+        "ui:bottle-menu:20"
+      ],
+      "reverse_knowledge": "native-decompilation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "quit",
+      "title": "Encerramento e saída forçada",
+      "feature_ids": [
+        "ui:bottle-detail:6",
+        "ui:bottle-menu:21",
+        "ui:bottle-menu:22"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Sem supervisão/cancelamento completo no produto; smoke test apenas aguarda wineserver próprio.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "reboot",
+      "title": "Reinicialização simulada",
+      "feature_ids": [
+        "ui:bottle-detail:14"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "repair",
+      "title": "Reparo de bottles e menus",
+      "feature_ids": [
+        "ui:configure-menu:0",
+        "ui:configure-menu:1",
+        "ui:configure-menu:2"
+      ],
+      "reverse_knowledge": "archive-and-ui-declaration",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "graphics",
+      "title": "Backends gráficos",
+      "feature_ids": [
+        "ui:graphics:0",
+        "ui:graphics:1",
+        "ui:graphics:2",
+        "ui:graphics:3",
+        "ui:graphics:4",
+        "ib:2f3138d8adfa95c9e7cc"
+      ],
+      "reverse_knowledge": "native-and-python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Seletores e chaves identificados; renderizadores e disponibilidade não reconstruídos.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "dlss",
+      "title": "DLSS",
+      "feature_ids": [
+        "ui:bottle-detail:9",
+        "ui:bottle-menu:16"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "msync",
+      "title": "MSync e reinício necessário",
+      "feature_ids": [
+        "ui:bottle-detail:10",
+        "ui:bottle-menu:17",
+        "ib:f6c87051fb1cb1228e87"
+      ],
+      "reverse_knowledge": "native-and-python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Confirmação e metadados conhecidos; implementação e ciclo de reinício não reconstruídos.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "hires",
+      "title": "Alta resolução",
+      "feature_ids": [
+        "ui:bottle-detail:11",
+        "ui:bottle-menu:10"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "winecfg",
+      "title": "Configuração Wine e registro",
+      "feature_ids": [
+        "ui:bottle-detail:12"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/CruzadorCore/EngineCommands.swift"
+      ],
+      "tests": [],
+      "remaining_gap": "Botões encaminham ferramentas externas; ferramentas reais não foram exercitadas.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "gamepads",
+      "title": "Controles de jogos",
+      "feature_ids": [
+        "ui:bottle-detail:13"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "task-manager",
+      "title": "Gerenciador de tarefas Windows",
+      "feature_ids": [
+        "ui:bottle-detail:15"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "internet-options",
+      "title": "Configurações de Internet",
+      "feature_ids": [
+        "ui:bottle-detail:16"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "bottle-details",
+      "title": "Detalhes da bottle",
+      "feature_ids": [
+        "ui:bottle-detail:0",
+        "ui:bottle-detail:1",
+        "ui:bottle-detail:17"
+      ],
+      "reverse_knowledge": "python-metadata",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/CruzadorCore/LibraryStore.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testMalformedLibraryIsNeverOverwritten",
+          "scope": "Preserva metadados inválidos"
+        }
+      ],
+      "remaining_gap": "Três estados próprios; estados e capacidades detalhadas do original não reproduzidos.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "file-associations",
+      "title": "Abrir arquivos e recentes",
+      "feature_ids": [
+        "ui:file-menu:0",
+        "ui:file-menu:1",
+        "ui:file-menu:2"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Sem associação de arquivos e documentos recentes do Cruzador.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "installer-preferences",
+      "title": "Preferências de instalação e cache",
+      "feature_ids": [
+        "ui:installer-preferences:0",
+        "ui:installer-preferences:2",
+        "ui:installer-preferences:3",
+        "ui:installer-preferences:4",
+        "ui:installer-preferences:5",
+        "ui:installer-preferences:6"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "app-update",
+      "title": "Atualização do aplicativo",
+      "feature_ids": [
+        "ui:application-menu:2",
+        "ui:online-preferences:0"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "application-lifecycle",
+      "title": "Preferências e ciclo do aplicativo",
+      "feature_ids": [
+        "ui:application-menu:3",
+        "ui:application-menu:8",
+        "ui:application-menu:9"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/Cruzador/CruzadorApp.swift"
+      ],
+      "tests": [],
+      "remaining_gap": "Configuração básica de motor e bloqueio de saída durante operação; restauração de janelas e demais preferências ausentes.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "about-and-services",
+      "title": "Sobre e serviços macOS",
+      "feature_ids": [
+        "ui:application-menu:0",
+        "ui:application-menu:4",
+        "ui:application-menu:5",
+        "ui:application-menu:6",
+        "ui:application-menu:7"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Itens padrão de macOS não estabelecem paridade de produto.",
+      "independent_equivalence_established": false
+    },
+    {
+      "id": "licensing",
+      "title": "Ativação da edição original",
+      "feature_ids": [
+        "ui:application-menu:1"
+      ],
+      "reverse_knowledge": "ui-observation",
+      "prototype_status": "missing",
+      "source_files": [],
+      "tests": [],
+      "remaining_gap": "Observado apenas como controle; nenhuma ativação ou alteração de licença foi executada. Modelo de distribuição próprio ainda não definido.",
+      "independent_equivalence_established": false
+    }
+  ],
+  "limitations": [
+    "Statuses describe the existing prototype, not equivalence to the original.",
+    "Test references identify scope, not proof of arbitrary Windows compatibility.",
+    "Unmapped declarations remain explicitly unassessed.",
+    "The complete product is not independent of external engines."
+  ]
+}
