@@ -2,14 +2,49 @@
   "target_path": "/Applications/CrossOver.app/Contents/MacOS/CrossOver",
   "target_sha256": "1d245f2f9f52bd56a120616fede8b1eb9cca9fa228319de04a2cbeabd8de7174",
   "architecture": "arm64",
-  "total_records": 644,
+  "total_records": 1360,
   "groups": [
+    {
+      "group": "add-dependencies-view-controller",
+      "records": 13,
+      "path": "evidence/decompilation/add-dependencies-view-controller.json",
+      "sha256": "97754e6e9bf19f3618d5a19102d6424725b53d9df57b53278c5434c17e0d9151",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/add-dependencies-view-controller"
+    },
+    {
+      "group": "bottle-menu-handler",
+      "records": 38,
+      "path": "evidence/decompilation/bottle-menu-handler.json",
+      "sha256": "922e681784d6a354a48464f30e5a01598aa00e06f78a45fda0ea99d1ad1f44f0",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/bottle-menu-handler"
+    },
+    {
+      "group": "bottle-node",
+      "records": 26,
+      "path": "evidence/decompilation/bottle-node.json",
+      "sha256": "2e4ad6ef1fe6fc1ebdb80c11be45a8232717a4778f444f3152d08f9921d316cb",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/bottle-node"
+    },
     {
       "group": "bottle-view-controller",
       "records": 143,
       "path": "evidence/decompilation/bottle-view-controller.json",
       "sha256": "e14770563b5f72299b80abe360af3211c2a36ac93f1c6b82ea7ca88cf4bef574",
       "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/bottle-view-controller"
+    },
+    {
+      "group": "c-x-application",
+      "records": 23,
+      "path": "evidence/decompilation/c-x-application.json",
+      "sha256": "3864ef0514c11d1e8d93b1247d70646f3c5ac333e5b11b735907e60f6ca58514",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/c-x-application"
+    },
+    {
+      "group": "c-x-server",
+      "records": 72,
+      "path": "evidence/decompilation/c-x-server.json",
+      "sha256": "0b0bc496d5b8d4fbd2230635f5f4822c5544edd1e19caf9f698fac5b25074fa5",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/c-x-server"
     },
     {
       "group": "c-x-server-cross-over",
@@ -33,11 +68,88 @@
       "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/c-x-task"
     },
     {
+      "group": "c-x-task-special-string",
+      "records": 8,
+      "path": "evidence/decompilation/c-x-task-special-string.json",
+      "sha256": "28acd4046489d3ab7de8b0afeaaaa9dc7687432a3e753d14135aa7f3b64cee84",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/c-x-task-special-string"
+    },
+    {
+      "group": "cross-tie-u-r-l-handler",
+      "records": 9,
+      "path": "evidence/decompilation/cross-tie-u-r-l-handler.json",
+      "sha256": "774d4de18dd1305570c71bde232f48f3c9531ff919ffd155578cc28742e1c767",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/cross-tie-u-r-l-handler"
+    },
+    {
+      "group": "download-progress-controller",
+      "records": 26,
+      "path": "evidence/decompilation/download-progress-controller.json",
+      "sha256": "836dc5f52219c95f6cfc68a2d9b4d8536473e35445106af02462030555b3ddc3",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/download-progress-controller"
+    },
+    {
       "group": "install-configuration",
       "records": 78,
       "path": "evidence/decompilation/install-configuration.json",
       "sha256": "6aa7f2131d0f8212cfeb9677c9e1ac8214dda1f43a57582edae4331563b253d8",
       "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/install-configuration"
+    },
+    {
+      "group": "install-dependency",
+      "records": 30,
+      "path": "evidence/decompilation/install-dependency.json",
+      "sha256": "fba75b60c1f520cf9654cb156734040791b0fd1004879f7d95dfc2dd4eb13c21",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/install-dependency"
+    },
+    {
+      "group": "install-options-sheet-controller",
+      "records": 42,
+      "path": "evidence/decompilation/install-options-sheet-controller.json",
+      "sha256": "38369e78fc5f49e7f50ecc258d62ac344032168ce734f23841518e272a0eef26",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/install-options-sheet-controller"
+    },
+    {
+      "group": "install-summary-detail-view-controller",
+      "records": 20,
+      "path": "evidence/decompilation/install-summary-detail-view-controller.json",
+      "sha256": "b1f19083e5fb8c30cb0ae7610a3fad70cb7d0b9e98965c39121c714a9af019b1",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/install-summary-detail-view-controller"
+    },
+    {
+      "group": "installation-operation",
+      "records": 3,
+      "path": "evidence/decompilation/installation-operation.json",
+      "sha256": "94e888f8181617b5c95474a684770e312a7ef0a429c949142f0dc86dbb3aff8b",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/installation-operation"
+    },
+    {
+      "group": "launcher-app",
+      "records": 12,
+      "path": "evidence/decompilation/launcher-app.json",
+      "sha256": "b994e65a9afd3aaaf72ba4db09248eadd5e49d05f750e2cd59030298f385e9cb",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/launcher-app"
+    },
+    {
+      "group": "launcher-item",
+      "records": 11,
+      "path": "evidence/decompilation/launcher-item.json",
+      "sha256": "0992f3c34c3ab7058eae2b390771fc1ae180b9a970828b3186da49169b444879",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/launcher-item"
+    },
+    {
+      "group": "loading-cross-tie-sheet-controller",
+      "records": 10,
+      "path": "evidence/decompilation/loading-cross-tie-sheet-controller.json",
+      "sha256": "03bd8a6d85bed523e73e987500e24932bbd77d997bd094e499eb3e3879437026",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/loading-cross-tie-sheet-controller"
+    },
+    {
+      "group": "logging-options-view-controller",
+      "records": 40,
+      "path": "evidence/decompilation/logging-options-view-controller.json",
+      "sha256": "0653d49f79a70fd74457cf5a3da3c064423647d3bed2cff26237909c99d65b6b",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/logging-options-view-controller"
     },
     {
       "group": "main-window-controller",
@@ -54,6 +166,13 @@
       "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/new-bottle"
     },
     {
+      "group": "no-bottle-controller",
+      "records": 26,
+      "path": "evidence/decompilation/no-bottle-controller.json",
+      "sha256": "2910776781ec3185cbee731c263cb943a641effc9f9f7e87b53b5eb978e507d5",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/no-bottle-controller"
+    },
+    {
       "group": "package-installer",
       "records": 96,
       "path": "evidence/decompilation/package-installer.json",
@@ -61,11 +180,60 @@
       "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/package-installer"
     },
     {
+      "group": "package-view-controller",
+      "records": 131,
+      "path": "evidence/decompilation/package-view-controller.json",
+      "sha256": "3b4142eed5af1686e1bf11f15a43ccc1569a61fdce1e1db05e80d3ee77cb106c",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/package-view-controller"
+    },
+    {
+      "group": "preferences-controller",
+      "records": 36,
+      "path": "evidence/decompilation/preferences-controller.json",
+      "sha256": "ddd549aa18f032f51693beeb6e1e1e4433890367f20b40b95f8e5da1c83d372e",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/preferences-controller"
+    },
+    {
+      "group": "publish-controller",
+      "records": 24,
+      "path": "evidence/decompilation/publish-controller.json",
+      "sha256": "8702f21cd914f3f32e08f6943c3777828355693452d0798b3265bc9ca0effa8d",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/publish-controller"
+    },
+    {
       "group": "run-command-controller",
       "records": 59,
       "path": "evidence/decompilation/run-command-controller.json",
       "sha256": "eeff9d6c7f84548c08fb65a44bf8adf1e9a902172ea7f56cb678206eb2fc5874",
       "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/run-command-controller"
+    },
+    {
+      "group": "select-bottle-sheet-controller",
+      "records": 57,
+      "path": "evidence/decompilation/select-bottle-sheet-controller.json",
+      "sha256": "1757172702782c9c12fc0344555779c86c5f8fb4d4899f2d8e26343fdcc88695",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/select-bottle-sheet-controller"
+    },
+    {
+      "group": "shutdown-controller",
+      "records": 25,
+      "path": "evidence/decompilation/shutdown-controller.json",
+      "sha256": "00970e235ca7f65011b6acd87678dd51569ab50b3e0edae13564ca97310cc378",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/shutdown-controller"
+    },
+    {
+      "group": "task-status",
+      "records": 14,
+      "path": "evidence/decompilation/task-status.json",
+      "sha256": "3974077fe600c46e3603e8ebd31d0b4323bc011d0c7301f29df2f0c04b465a93",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/task-status"
+    },
+    {
+      "group": "update-controller",
+      "records": 20,
+      "path": "evidence/decompilation/update-controller.json",
+      "sha256": "2f88c0a0e49778c72ccf101ce9783e079a18b4b4cd5647795eed4aeb2f8a6e1d",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/update-controller"
     }
   ],
   "limitations": [

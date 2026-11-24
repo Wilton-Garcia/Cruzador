@@ -2,7 +2,7 @@
 
 Projeto de implementação própria do funcionamento do CrossOver para macOS, com o objetivo de não depender da instalação do CrossOver. A versão atual é um protótipo de gerenciamento e execução que ainda utiliza um motor externo.
 
-A [engenharia reversa do binário](docs/binary-reverse-engineering.md) preserva 644 exports de pseudocódigo nativo, metadados de cinco módulos Python empacotados e vínculos com recursos de interface. Esses achados orientam a reconstrução; não estabelecem equivalência integral.
+A [engenharia reversa do binário](docs/binary-reverse-engineering.md) preserva 1.360 exports de pseudocódigo nativo, metadados de cinco módulos Python empacotados e vínculos com recursos de interface. Esses achados orientam a reconstrução; não estabelecem equivalência integral.
 
 ## Usar
 

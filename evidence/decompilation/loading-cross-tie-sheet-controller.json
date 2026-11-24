@@ -1,0 +1,448 @@
+{
+  "original_export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/loading-cross-tie-sheet-controller",
+  "manifest": {
+    "version": 1,
+    "target_sha256": "1d245f2f9f52bd56a120616fede8b1eb9cca9fa228319de04a2cbeabd8de7174",
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956"
+    },
+    "analysis_profile_digest": "3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a",
+    "layout": "address",
+    "layout_status": "address",
+    "latest_run": {
+      "resume": false,
+      "selected": 10,
+      "excluded": 10617,
+      "selection": {
+        "name": "[LoadingCrossTieSheetController ",
+        "namespace": null,
+        "address_start": null,
+        "address_end": null,
+        "limit": 256
+      },
+      "inventory_limitations": [
+        "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+        "Results depend on Hopper's completed static analysis."
+      ]
+    },
+    "limitations": [
+      "10 exported function record(s) report an unavailable body: Hopper's public Python API does not expose complete function body ranges"
+    ],
+    "functions": [
+      {
+        "address": "0x100041860",
+        "name": "-[LoadingCrossTieSheetController init]",
+        "status": "written",
+        "relative_path": "functions/0x100041860.c",
+        "sha256": "1b021df66d9af0a64c9b02e563065e4b553260c0e9d473eaf94bb86c17abb1cf",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10004189c",
+        "name": "-[LoadingCrossTieSheetController setCrossTieDisplayName:]",
+        "status": "written",
+        "relative_path": "functions/0x10004189c.c",
+        "sha256": "6b2d2730d308fd25633d66055c0602ba66e6e00677670c48d2e5e534ca59b8bd",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000418f4",
+        "name": "-[LoadingCrossTieSheetController windowDidLoad]",
+        "status": "written",
+        "relative_path": "functions/0x1000418f4.c",
+        "sha256": "ba305c58b0da4c6eaa1841e8443b721f57191e448f5eddf09d4c3025e7713ad2",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100041960",
+        "name": "-[LoadingCrossTieSheetController updateLoadingLabel]",
+        "status": "written",
+        "relative_path": "functions/0x100041960.c",
+        "sha256": "9d973496a93707d13bdc8ede6dd0f046732f5359a5a266567948dc085a76fe6a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100041aa8",
+        "name": "-[LoadingCrossTieSheetController crossTieDisplayName]",
+        "status": "written",
+        "relative_path": "functions/0x100041aa8.c",
+        "sha256": "e70f14a8d81ecfbee688b61007cadd45d2b55cdb7eb69cfb37780aa1c49a226d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100041ab8",
+        "name": "-[LoadingCrossTieSheetController loadingLabel]",
+        "status": "written",
+        "relative_path": "functions/0x100041ab8.c",
+        "sha256": "9c7c0c6381a922fba3d63028de948569d8950f851d0da11abfb15e6158059fb3",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100041ad8",
+        "name": "-[LoadingCrossTieSheetController setLoadingLabel:]",
+        "status": "written",
+        "relative_path": "functions/0x100041ad8.c",
+        "sha256": "bc6a53131ef1994248d6167c820e71a92436ba4d114e7a462d08069244038b3e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100041aec",
+        "name": "-[LoadingCrossTieSheetController progressIndicator]",
+        "status": "written",
+        "relative_path": "functions/0x100041aec.c",
+        "sha256": "8e1a072b5a27930007034b3f31f35f7246102cae95b7d967780c533c5c55ffa8",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100041b0c",
+        "name": "-[LoadingCrossTieSheetController setProgressIndicator:]",
+        "status": "written",
+        "relative_path": "functions/0x100041b0c.c",
+        "sha256": "51490bf379bfebe13e5813f4a9373c6b250df0c77849e27ba1160e865d0471e9",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100041b20",
+        "name": "-[LoadingCrossTieSheetController .cxx_destruct]",
+        "status": "written",
+        "relative_path": "functions/0x100041b20.c",
+        "sha256": "23db4671536013cc92f2b179e4bbdfb5feedc975437e74cb1638f4c09654a6c0",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      }
+    ]
+  },
+  "records": [
+    {
+      "record": {
+        "address": "0x100041860",
+        "name": "-[LoadingCrossTieSheetController init]",
+        "status": "written",
+        "relative_path": "functions/0x100041860.c",
+        "sha256": "1b021df66d9af0a64c9b02e563065e4b553260c0e9d473eaf94bb86c17abb1cf",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoadingCrossTieSheetController init]\n// address: 0x100041860\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_10 = self;\n    r0 = [[&var_10 super] initWithWindowNibName:@\"LoadingCrossTieSheet\"];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10004189c",
+        "name": "-[LoadingCrossTieSheetController setCrossTieDisplayName:]",
+        "status": "written",
+        "relative_path": "functions/0x10004189c.c",
+        "sha256": "6b2d2730d308fd25633d66055c0602ba66e6e00677670c48d2e5e534ca59b8bd",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoadingCrossTieSheetController setCrossTieDisplayName:]\n// address: 0x10004189c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r2 = arg2;\n    r0 = self;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    r31 = r31 + 0xffffffffffffffe0;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r20 = sign_extend_64(*(int32_t *)ivar_offset(_crossTieDisplayName));\n    if (*(r0 + r20) != r2) {\n            r19 = r0;\n            r0 = [r2 copy];\n            r8 = *(r19 + r20);\n            *(r19 + r20) = r0;\n            [r8 release];\n            [r19 updateLoadingLabel];\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000418f4",
+        "name": "-[LoadingCrossTieSheetController windowDidLoad]",
+        "status": "written",
+        "relative_path": "functions/0x1000418f4.c",
+        "sha256": "ba305c58b0da4c6eaa1841e8443b721f57191e448f5eddf09d4c3025e7713ad2",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoadingCrossTieSheetController windowDidLoad]\n// address: 0x1000418f4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_20 = self;\n    [[&var_20 super] windowDidLoad];\n    [self updateLoadingLabel];\n    r0 = [self progressIndicator];\n    r0 = [r0 retain];\n    r19 = r0;\n    [r0 startAnimation:0x0];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100041960",
+        "name": "-[LoadingCrossTieSheetController updateLoadingLabel]",
+        "status": "written",
+        "relative_path": "functions/0x100041960.c",
+        "sha256": "9d973496a93707d13bdc8ede6dd0f046732f5359a5a266567948dc085a76fe6a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoadingCrossTieSheetController updateLoadingLabel]\n// address: 0x100041960\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r1 = _cmd;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    r31 = r31 + 0xffffffffffffffc0;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = self;\n    r0 = [self loadingLabel];\n    r0 = [r0 retain];\n    if (r0 != 0x0) {\n            r20 = r0;\n            r0 = [r19 crossTieDisplayName];\n            r0 = [r0 retain];\n            r21 = r0;\n            r22 = [r0 length];\n            [r21 release];\n            [r20 release];\n            if (r22 != 0x0) {\n                    r0 = [r19 loadingLabel];\n                    r0 = [r0 retain];\n                    r20 = r0;\n                    r0 = [r0 attributedStringValue];\n                    r0 = [r0 retain];\n                    r21 = r0;\n                    r22 = [r0 mutableCopy];\n                    [r21 release];\n                    [r20 release];\n                    r0 = [r22 string];\n                    r0 = [r0 retain];\n                    r20 = r0;\n                    r21 = [r0 rangeOfString:@\"%@\"];\n                    [r20 release];\n                    r20 = [[r19 crossTieDisplayName] retain];\n                    [r22 replaceCharactersInRange:r21 withString:r1];\n                    [r20 release];\n                    r0 = [r19 loadingLabel];\n                    r0 = [r0 retain];\n                    r19 = r0;\n                    [r0 setAttributedStringValue:r22];\n                    [r19 release];\n                    [r22 release];\n            }\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100041aa8",
+        "name": "-[LoadingCrossTieSheetController crossTieDisplayName]",
+        "status": "written",
+        "relative_path": "functions/0x100041aa8.c",
+        "sha256": "e70f14a8d81ecfbee688b61007cadd45d2b55cdb7eb69cfb37780aa1c49a226d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoadingCrossTieSheetController crossTieDisplayName]\n// address: 0x100041aa8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = self->_crossTieDisplayName;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100041ab8",
+        "name": "-[LoadingCrossTieSheetController loadingLabel]",
+        "status": "written",
+        "relative_path": "functions/0x100041ab8.c",
+        "sha256": "9c7c0c6381a922fba3d63028de948569d8950f851d0da11abfb15e6158059fb3",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoadingCrossTieSheetController loadingLabel]\n// address: 0x100041ab8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = objc_loadWeakRetained((int64_t *)&self->_loadingLabel);\n    r0 = [r0 autorelease];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100041ad8",
+        "name": "-[LoadingCrossTieSheetController setLoadingLabel:]",
+        "status": "written",
+        "relative_path": "functions/0x100041ad8.c",
+        "sha256": "bc6a53131ef1994248d6167c820e71a92436ba4d114e7a462d08069244038b3e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoadingCrossTieSheetController setLoadingLabel:]\n// address: 0x100041ad8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_storeWeak((int64_t *)&self->_loadingLabel, arg2);\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100041aec",
+        "name": "-[LoadingCrossTieSheetController progressIndicator]",
+        "status": "written",
+        "relative_path": "functions/0x100041aec.c",
+        "sha256": "8e1a072b5a27930007034b3f31f35f7246102cae95b7d967780c533c5c55ffa8",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoadingCrossTieSheetController progressIndicator]\n// address: 0x100041aec\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = objc_loadWeakRetained((int64_t *)&self->_progressIndicator);\n    r0 = [r0 autorelease];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100041b0c",
+        "name": "-[LoadingCrossTieSheetController setProgressIndicator:]",
+        "status": "written",
+        "relative_path": "functions/0x100041b0c.c",
+        "sha256": "51490bf379bfebe13e5813f4a9373c6b250df0c77849e27ba1160e865d0471e9",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoadingCrossTieSheetController setProgressIndicator:]\n// address: 0x100041b0c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_storeWeak((int64_t *)&self->_progressIndicator, arg2);\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100041b20",
+        "name": "-[LoadingCrossTieSheetController .cxx_destruct]",
+        "status": "written",
+        "relative_path": "functions/0x100041b20.c",
+        "sha256": "23db4671536013cc92f2b179e4bbdfb5feedc975437e74cb1638f4c09654a6c0",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoadingCrossTieSheetController .cxx_destruct]\n// address: 0x100041b20\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_destroyWeak((int64_t *)&self->_progressIndicator);\n    objc_destroyWeak((int64_t *)&self->_loadingLabel);\n    objc_storeStrong((int64_t *)&self->_crossTieDisplayName, 0x0);\n    return;\n"
+    }
+  ]
+}

@@ -1,0 +1,1678 @@
+{
+  "original_export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/logging-options-view-controller",
+  "manifest": {
+    "version": 1,
+    "target_sha256": "1d245f2f9f52bd56a120616fede8b1eb9cca9fa228319de04a2cbeabd8de7174",
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956"
+    },
+    "analysis_profile_digest": "3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a",
+    "layout": "address",
+    "layout_status": "address",
+    "latest_run": {
+      "resume": false,
+      "selected": 40,
+      "excluded": 10587,
+      "selection": {
+        "name": "[LoggingOptionsViewController ",
+        "namespace": null,
+        "address_start": null,
+        "address_end": null,
+        "limit": 256
+      },
+      "inventory_limitations": [
+        "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+        "Results depend on Hopper's completed static analysis."
+      ]
+    },
+    "limitations": [
+      "40 exported function record(s) report an unavailable body: Hopper's public Python API does not expose complete function body ranges"
+    ],
+    "functions": [
+      {
+        "address": "0x1000345cc",
+        "name": "-[LoggingOptionsViewController initWithLogFileName:]",
+        "status": "written",
+        "relative_path": "functions/0x1000345cc.c",
+        "sha256": "26eeda2201e05b29a9f0890ff3a24b056a70193b1de58e740e69116c770dd335",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000346b8",
+        "name": "-[LoggingOptionsViewController viewDidLoad]",
+        "status": "written",
+        "relative_path": "functions/0x1000346b8.c",
+        "sha256": "c968d43df20b13c0604b308efd28a6f949ab9719815438f986315708b80cbe5c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100034bf0",
+        "name": "-[LoggingOptionsViewController updateLogFileURL]",
+        "status": "written",
+        "relative_path": "functions/0x100034bf0.c",
+        "sha256": "67d531d29a62bfe2542413f5623f3eaf5421dbc5e08732f62407c1dbbe86612e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100034d64",
+        "name": "-[LoggingOptionsViewController setLogFileName:]",
+        "status": "written",
+        "relative_path": "functions/0x100034d64.c",
+        "sha256": "3a40ed291475117f391132b444db8a33f33632817811e67b73abcff82c5f1295",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100034dbc",
+        "name": "-[LoggingOptionsViewController selectLogFile:]",
+        "status": "written",
+        "relative_path": "functions/0x100034dbc.c",
+        "sha256": "cdb2f4efb85106682dccab78644874ac4f88c50350285628c82a599407036af7",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100034fe8",
+        "name": "___46-[LoggingOptionsViewController selectLogFile:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x100034fe8.c",
+        "sha256": "43fd3b8d5ee18f16520e4c3056154152967265f854c45f94aa475eb7fe61b39e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035088",
+        "name": "-[LoggingOptionsViewController clearLoggingChannels:]",
+        "status": "written",
+        "relative_path": "functions/0x100035088.c",
+        "sha256": "7b4f6c9152ab50ac69479cf510f2e743149a53b71242e599bd7b5fc927d2680a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000350b4",
+        "name": "-[LoggingOptionsViewController combineChannels:with:andDelimiter:]",
+        "status": "written",
+        "relative_path": "functions/0x1000350b4.c",
+        "sha256": "a6b3b653ca2dd4977556b4ef7e3d4e589aefe30306dee391501c19fd459ddd5c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035354",
+        "name": "-[LoggingOptionsViewController addLoggingChannels:]",
+        "status": "written",
+        "relative_path": "functions/0x100035354.c",
+        "sha256": "c0189df40adfe7b0818e32377138c0d4c90ede3b2149c78aef163e93c5152bf6",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035464",
+        "name": "-[LoggingOptionsViewController addExtraEnvVariables:]",
+        "status": "written",
+        "relative_path": "functions/0x100035464.c",
+        "sha256": "994ed39e0b609e232fdf658c2ef4688ea370cb7be703f549279d8550daf714b7",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035518",
+        "name": "+[LoggingOptionsViewController keyPathsForValuesAffectingEnableControls]",
+        "status": "written",
+        "relative_path": "functions/0x100035518.c",
+        "sha256": "be93dc0cd4a9895ee9136006c4ff364ddb28f2e2da91520d6806b69eca04ba8d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000355c4",
+        "name": "-[LoggingOptionsViewController enableControls]",
+        "status": "written",
+        "relative_path": "functions/0x1000355c4.c",
+        "sha256": "41b21db81731de4099c0e8a28b568eb49cd4faba2b12cd9392de42cc4ce257d2",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000355f8",
+        "name": "-[LoggingOptionsViewController sanitizeLogChannels]",
+        "status": "written",
+        "relative_path": "functions/0x1000355f8.c",
+        "sha256": "eee9d34240e1b5e4fbf36626267a0aa7cc2fe0ddaffbb5c60a3927a7fd3e66cb",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035664",
+        "name": "-[LoggingOptionsViewController saveSettingsToRecent]",
+        "status": "written",
+        "relative_path": "functions/0x100035664.c",
+        "sha256": "e3364d1cb1c6c4d2d3712682f80563597891ea92acd6b7afb084ab46ac2d94dc",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000358e8",
+        "name": "-[LoggingOptionsViewController updateRecentMenuItems]",
+        "status": "written",
+        "relative_path": "functions/0x1000358e8.c",
+        "sha256": "1dc3d6b30fe9d006efd9a19e42138a9679652bbe62c934251c0345909d484e41",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035df8",
+        "name": "-[LoggingOptionsViewController restoreRecent:]",
+        "status": "written",
+        "relative_path": "functions/0x100035df8.c",
+        "sha256": "a503454c8f1331b4317fb30767e86db9793181a86e8864aee38413a3550e5711",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035e88",
+        "name": "-[LoggingOptionsViewController createLogFile]",
+        "status": "written",
+        "relative_path": "functions/0x100035e88.c",
+        "sha256": "6d9699b2f6a37d29f8d306b77d24568473b16f161927fc5a4634115b6f40e526",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035e9c",
+        "name": "-[LoggingOptionsViewController setCreateLogFile:]",
+        "status": "written",
+        "relative_path": "functions/0x100035e9c.c",
+        "sha256": "1a74d20a73f9e6925d217c26cf7fab3c0dc627025ca6899c743a9c4da257a85f",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035eac",
+        "name": "-[LoggingOptionsViewController enabled]",
+        "status": "written",
+        "relative_path": "functions/0x100035eac.c",
+        "sha256": "ec94f29a710e7ed11bca10e6dfb196ccbd050ded4f5dcc27b3f8255b3b448605",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035ec0",
+        "name": "-[LoggingOptionsViewController setEnabled:]",
+        "status": "written",
+        "relative_path": "functions/0x100035ec0.c",
+        "sha256": "2f6c829cabe291b5c770b001bae430920e18e14997db02bc6f5b3216b7b7c433",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035ed0",
+        "name": "-[LoggingOptionsViewController channelCombos]",
+        "status": "written",
+        "relative_path": "functions/0x100035ed0.c",
+        "sha256": "2647b2467dadeec20589ff241479059c0cee035b0b810bcc4befb14e0effc3b0",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035ee0",
+        "name": "-[LoggingOptionsViewController setChannelCombos:]",
+        "status": "written",
+        "relative_path": "functions/0x100035ee0.c",
+        "sha256": "ac38eb4fdfc4f458f972c0e79de40ec560e8de66efdcedb581451803eced300f",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035eec",
+        "name": "-[LoggingOptionsViewController logChannels]",
+        "status": "written",
+        "relative_path": "functions/0x100035eec.c",
+        "sha256": "f58b764b9e82defc12a5be477679320e3d44c6a0ecc6869ae86dcfe79b425260",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035efc",
+        "name": "-[LoggingOptionsViewController setLogChannels:]",
+        "status": "written",
+        "relative_path": "functions/0x100035efc.c",
+        "sha256": "b0e312d804849c8bce9401696022b461b2e8674bd755573879bfb9e2f9b79b4c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035f08",
+        "name": "-[LoggingOptionsViewController logEnvironment]",
+        "status": "written",
+        "relative_path": "functions/0x100035f08.c",
+        "sha256": "43588ed6f4ef5137e4a658bb06ac43b5057da455433be4e48e618f5e960eba5e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035f18",
+        "name": "-[LoggingOptionsViewController setLogEnvironment:]",
+        "status": "written",
+        "relative_path": "functions/0x100035f18.c",
+        "sha256": "f92f572ba106ebbf0fbbbe30e55f2d0165206f43f08dbc889fd221a2a091ce4d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035f24",
+        "name": "-[LoggingOptionsViewController logFileName]",
+        "status": "written",
+        "relative_path": "functions/0x100035f24.c",
+        "sha256": "d12abc4399d3e07888a4c17a31087f34b0d93ac9b673afeacac08de2eb37db40",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035f34",
+        "name": "-[LoggingOptionsViewController logFileURL]",
+        "status": "written",
+        "relative_path": "functions/0x100035f34.c",
+        "sha256": "c9a5892705c4c667f2fa7412e84756da18ad2d26fddb9006f2e9af707f318405",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035f44",
+        "name": "-[LoggingOptionsViewController setLogFileURL:]",
+        "status": "written",
+        "relative_path": "functions/0x100035f44.c",
+        "sha256": "6488df055d685b9993a84f7c4b17f3b1113578f66ce4571adfa4b4b947009ac5",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035f50",
+        "name": "-[LoggingOptionsViewController logDirectoryURL]",
+        "status": "written",
+        "relative_path": "functions/0x100035f50.c",
+        "sha256": "a28612964e85a9ee18e615a17cfaaeebec7f2d69dae64028deed80eb8f553471",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035f60",
+        "name": "-[LoggingOptionsViewController setLogDirectoryURL:]",
+        "status": "written",
+        "relative_path": "functions/0x100035f60.c",
+        "sha256": "f5c5f399c201c66673de6f3b5949e19c54e885d70248c9490d7d6daff729092f",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035f6c",
+        "name": "-[LoggingOptionsViewController logFileNameFromUser]",
+        "status": "written",
+        "relative_path": "functions/0x100035f6c.c",
+        "sha256": "322ca326996a7a2c8eeeb26f9e268ada53237b2f3f8f113d0b58e32ed78d24ba",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035f80",
+        "name": "-[LoggingOptionsViewController setLogFileNameFromUser:]",
+        "status": "written",
+        "relative_path": "functions/0x100035f80.c",
+        "sha256": "631854743cdf28e12116a95ff6d398b856803a70991713c1ccbadc6a53e22854",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035f90",
+        "name": "-[LoggingOptionsViewController channelPresets]",
+        "status": "written",
+        "relative_path": "functions/0x100035f90.c",
+        "sha256": "f740aad735776c7619573a5dd6146c4c3b359586015a839705d219ac54b75449",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035fb0",
+        "name": "-[LoggingOptionsViewController setChannelPresets:]",
+        "status": "written",
+        "relative_path": "functions/0x100035fb0.c",
+        "sha256": "07a23d19e3b8518c31096380b0c0b2e400ce52e3ddd660b86e360c66dfd4cdc6",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035fc4",
+        "name": "-[LoggingOptionsViewController recentChannelsDivider]",
+        "status": "written",
+        "relative_path": "functions/0x100035fc4.c",
+        "sha256": "682989d0f7bdba65832454e2df255678ce63254fa04db91417abde20e62e2584",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035fe4",
+        "name": "-[LoggingOptionsViewController setRecentChannelsDivider:]",
+        "status": "written",
+        "relative_path": "functions/0x100035fe4.c",
+        "sha256": "1fbff4470837f6d55dae8c24c6045b837d2d065185e85918074110a0eb98f44a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100035ff8",
+        "name": "-[LoggingOptionsViewController recentChannelsMenuItem]",
+        "status": "written",
+        "relative_path": "functions/0x100035ff8.c",
+        "sha256": "e9e5261cc2d0fee2f8d488578e09927928229e1a31f94883c7ac918d2f700c61",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100036018",
+        "name": "-[LoggingOptionsViewController setRecentChannelsMenuItem:]",
+        "status": "written",
+        "relative_path": "functions/0x100036018.c",
+        "sha256": "b8b822a10f2a1b0721e74eb57346b161ecc5d006500e13ba74c68fc12827d78d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003602c",
+        "name": "-[LoggingOptionsViewController .cxx_destruct]",
+        "status": "written",
+        "relative_path": "functions/0x10003602c.c",
+        "sha256": "408feccbe99421f91c58ce074a473fa2d5d4a9f600e0ee17b17b6472da2d6e1a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      }
+    ]
+  },
+  "records": [
+    {
+      "record": {
+        "address": "0x1000345cc",
+        "name": "-[LoggingOptionsViewController initWithLogFileName:]",
+        "status": "written",
+        "relative_path": "functions/0x1000345cc.c",
+        "sha256": "26eeda2201e05b29a9f0890ff3a24b056a70193b1de58e740e69116c770dd335",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController initWithLogFileName:]\n// address: 0x1000345cc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x40;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = [arg2 retain];\n    var_30 = self;\n    r0 = [[&var_30 super] initWithNibName:@\"LoggingOptionsView\" bundle:0x0];\n    r20 = r0;\n    if (r0 != 0x0) {\n            [r20 setEnabled:0x1];\n            [r20 setLogFileName:r19];\n            [r20 setLogFileNameFromUser:0x0];\n            r22 = [[LoggingOption commonPresets] retain];\n            r21 = [[NSMutableArray arrayWithArray:r22] retain];\n            [r20 setChannelCombos:r21];\n            [r21 release];\n            [r22 release];\n    }\n    [r19 release];\n    r0 = r20;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000346b8",
+        "name": "-[LoggingOptionsViewController viewDidLoad]",
+        "status": "written",
+        "relative_path": "functions/0x1000346b8.c",
+        "sha256": "c968d43df20b13c0604b308efd28a6f949ab9719815438f986315708b80cbe5c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController viewDidLoad]\n// address: 0x1000346b8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x170;\n    var_50 = r28;\n    decomp_var_48 = r27;\n    var_40 = r26;\n    decomp_var_38 = r25;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r23 = self;\n    var_60 = **___stack_chk_guard;\n    var_F0 = self;\n    [[&var_F0 super] viewDidLoad];\n    r0 = [r23 logFileURL];\n    r0 = [r0 retain];\n    r20 = r0;\n    [r0 release];\n    r0 = r23;\n    if (r20 != 0x0) {\n            [r0 setCreateLogFile:0x1];\n            r0 = [r23 logFileURL];\n            r0 = [r0 retain];\n            r20 = r0;\n            r21 = [[r0 URLByDeletingLastPathComponent] retain];\n            [r23 setLogDirectoryURL:r21];\n            [r21 release];\n            [r20 release];\n            [r23 setLogFileNameFromUser:0x1];\n    }\n    else {\n            [r0 setCreateLogFile:0x0];\n            r0 = [NSFileManager defaultManager];\n            r0 = [r0 retain];\n            r20 = r0;\n            r21 = [[r0 URLForDirectory:0x5 inDomain:0x1 appropriateForURL:0x0 create:0x1 error:0x0] retain];\n            [r23 setLogDirectoryURL:r21];\n            [r21 release];\n            r0 = [r23 logDirectoryURL];\n            r0 = [r0 retain];\n            r21 = r0;\n            [r0 release];\n            if (r21 == 0x0) {\n                    r22 = [[@\"~/Library\" stringByExpandingTildeInPath] retain];\n                    r21 = [[NSURL fileURLWithPath:r22 isDirectory:0x1] retain];\n                    [r23 setLogDirectoryURL:r21];\n                    [r21 release];\n                    [r22 release];\n            }\n            r0 = [r23 logDirectoryURL];\n            r0 = [r0 retain];\n            r21 = r0;\n            r22 = [[r0 URLByAppendingPathComponent:@\"Logs\" isDirectory:0x1] retain];\n            [r23 setLogDirectoryURL:r22];\n            [r22 release];\n            [r21 release];\n            r0 = [r23 logDirectoryURL];\n            r0 = [r0 retain];\n            r21 = r0;\n            r22 = [[r0 URLByAppendingPathComponent:@\"CrossOver\" isDirectory:0x1] retain];\n            [r23 setLogDirectoryURL:r22];\n            [r22 release];\n            [r21 release];\n            [r23 updateLogFileURL];\n            [r20 release];\n    }\n    r19 = [[NSFileManager defaultManager] retain];\n    r20 = [[r23 logDirectoryURL] retain];\n    var_150 = r19;\n    [r19 createDirectoryAtURL:r20 withIntermediateDirectories:0x1 attributes:0x0 error:0x0];\n    [r20 release];\n    [r23 updateRecentMenuItems];\n    var_130 = q0;\n    var_120 = q0;\n    var_138 = r23;\n    r0 = [r23 channelCombos];\n    r0 = [r0 retain];\n    r3 = &decomp_var_e0;\n    var_148 = r0;\n    r4 = 0x10;\n    r0 = [r0 countByEnumeratingWithState:&var_130 objects:r3 count:0x10];\n    if (r0 != 0x0) {\n            r22 = r0;\n            var_140 = *var_120;\n            do {\n                    r19 = 0x0;\n                    do {\n                            if (*var_120 != var_140) {\n                                    objc_enumerationMutation(var_148);\n                            }\n                            r26 = *(var_128 + r19 * 0x8);\n                            r0 = [r26 logChannels];\n                            r0 = [r0 retain];\n                            r25 = r0;\n                            r20 = [[r0 sortedArrayUsingSelector:@selector(localizedStandardCompare:)] retain];\n                            [r25 release];\n                            r25 = [[r20 componentsJoinedByString:@\",\"] retain];\n                            r0 = [r26 logEnvironment];\n                            r0 = [r0 retain];\n                            r21 = r0;\n                            r23 = [r0 count];\n                            [r21 release];\n                            if (r23 != 0x0) {\n                                    r0 = [r26 logEnvironment];\n                                    r0 = [r0 retain];\n                                    r23 = r0;\n                                    r24 = [[r0 componentsJoinedByString:@\"\\n\"] retain];\n                                    r21 = [[NSString stringWithFormat:@\"%@\\n%@\", r3, r4] retain];\n                                    [r25 release];\n                                    [r24 release];\n                                    [r23 release];\n                                    r25 = r21;\n                            }\n                            r21 = [NSMenuItem alloc];\n                            r23 = [[r26 name] retain];\n                            r3 = @selector(addLoggingChannels:);\n                            r4 = @\"\";\n                            r21 = [r21 initWithTitle:r23 action:@selector(addLoggingChannels:) keyEquivalent:@\"\"];\n                            [r23 release];\n                            [r21 setTarget:var_138];\n                            [r21 setRepresentedObject:r26];\n                            [r21 setToolTip:r25];\n                            [r21 setIndentationLevel:0x1];\n                            r0 = [var_138 channelPresets];\n                            r0 = [r0 retain];\n                            r23 = r0;\n                            r0 = [r0 menu];\n                            r0 = [r0 retain];\n                            r24 = r0;\n                            [r0 addItem:r21];\n                            [r24 release];\n                            [r23 release];\n                            [r21 release];\n                            [r25 release];\n                            [r20 release];\n                            r19 = r19 + 0x1;\n                    } while (r22 != r19);\n                    r3 = &decomp_var_e0;\n                    r4 = 0x10;\n                    r0 = [var_148 countByEnumeratingWithState:&var_130 objects:r3 count:0x10];\n                    r22 = r0;\n            } while (r0 != 0x0);\n    }\n    [var_148 release];\n    [var_150 release];\n    if (**___stack_chk_guard != var_60) {\n            __stack_chk_fail();\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100034bf0",
+        "name": "-[LoggingOptionsViewController updateLogFileURL]",
+        "status": "written",
+        "relative_path": "functions/0x100034bf0.c",
+        "sha256": "67d531d29a62bfe2542413f5623f3eaf5421dbc5e08732f62407c1dbbe86612e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController updateLogFileURL]\n// address: 0x100034bf0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x60;\n    var_40 = r26;\n    decomp_var_38 = r25;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = self;\n    if (([self logFileNameFromUser] & 0x1) == 0x0) {\n            r20 = [[NSFileManager defaultManager] retain];\n            r26 = 0x1;\n            do {\n                    r0 = [r19 logFileName];\n                    r0 = [r0 retain];\n                    r24 = r0;\n                    r23 = [r0 mutableCopy];\n                    [r24 release];\n                    if (r26 != 0x1) {\n                            [r23 appendFormat:@\" %d\", r3];\n                    }\n                    [r23 appendString:@\".cxlog\"];\n                    r0 = [r19 logDirectoryURL];\n                    r0 = [r0 retain];\n                    r24 = r0;\n                    r3 = 0x0;\n                    r25 = [[r0 URLByAppendingPathComponent:r23 isDirectory:0x0] retain];\n                    [r19 setLogFileURL:r25];\n                    [r25 release];\n                    [r24 release];\n                    [r23 release];\n                    r0 = [r19 logFileURL];\n                    r0 = [r0 retain];\n                    r23 = r0;\n                    r24 = [[r0 path] retain];\n                    r25 = [r20 fileExistsAtPath:r24];\n                    [r24 release];\n                    [r23 release];\n                    r26 = r26 + 0x1;\n            } while ((r25 & 0x1) != 0x0);\n            [r20 release];\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100034d64",
+        "name": "-[LoggingOptionsViewController setLogFileName:]",
+        "status": "written",
+        "relative_path": "functions/0x100034d64.c",
+        "sha256": "3a40ed291475117f391132b444db8a33f33632817811e67b73abcff82c5f1295",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setLogFileName:]\n// address: 0x100034d64\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r2 = arg2;\n    r0 = self;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    r31 = r31 + 0xffffffffffffffe0;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r20 = sign_extend_64(*(int32_t *)ivar_offset(_logFileName));\n    if (*(r0 + r20) != r2) {\n            r19 = r0;\n            r0 = [r2 copy];\n            r8 = *(r19 + r20);\n            *(r19 + r20) = r0;\n            [r8 release];\n            [r19 updateLogFileURL];\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100034dbc",
+        "name": "-[LoggingOptionsViewController selectLogFile:]",
+        "status": "written",
+        "relative_path": "functions/0x100034dbc.c",
+        "sha256": "cdb2f4efb85106682dccab78644874ac4f88c50350285628c82a599407036af7",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController selectLogFile:]\n// address: 0x100034dbc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x80;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = self;\n    var_38 = **___stack_chk_guard;\n    r20 = [[NSSavePanel savePanel] retain];\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r21 = r0;\n    r22 = [[r0 localizedStringForKey:@\"Select a log file\" value:@\"\" table:0x0] retain];\n    [r20 setMessage:r22];\n    [r22 release];\n    [r21 release];\n    var_40 = @\"cxlog\";\n    r0 = [NSArray arrayWithObjects:&var_40 count:0x1];\n    r21 = [r0 retain];\n    [r20 setAllowedFileTypes:r21];\n    [r21 release];\n    [r20 setAllowsOtherFileTypes:0x1];\n    [r20 setCanSelectHiddenExtension:0x1];\n    r0 = [r19 logFileURL];\n    r0 = [r0 retain];\n    r22 = r0;\n    r21 = [[r0 lastPathComponent] retain];\n    [r22 release];\n    if (r21 != 0x0) {\n            [r20 setNameFieldStringValue:r21];\n    }\n    r22 = [[r19 logDirectoryURL] retain];\n    [r20 setDirectoryURL:r22];\n    [r22 release];\n    [r20 setShowsTagField:0x0];\n    r0 = [r19 view];\n    r0 = [r0 retain];\n    r22 = r0;\n    r23 = [[r0 window] retain];\n    var_70 = *__NSConcreteStackBlock;\n    r0 = [r20 retain];\n    r19 = r0;\n    [r0 beginSheetModalForWindow:r23 completionHandler:&var_70];\n    [r23 release];\n    [r22 release];\n    [r20 release];\n    [r19 release];\n    [r21 release];\n    if (**___stack_chk_guard != var_38) {\n            __stack_chk_fail();\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100034fe8",
+        "name": "___46-[LoggingOptionsViewController selectLogFile:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x100034fe8.c",
+        "sha256": "43fd3b8d5ee18f16520e4c3056154152967265f854c45f94aa475eb7fe61b39e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___46-[LoggingOptionsViewController selectLogFile:]_block_invoke\n// address: 0x100034fe8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = arg0;\n    if (r1 == 0x1) {\n            r19 = r0;\n            [r0[0x4] setLogFileNameFromUser:0x1];\n            r20 = [[r19[0x5] URL] retain];\n            [r19[0x4] setLogFileURL:r20];\n            [r20 release];\n            r0 = r19[0x4];\n            r0 = [r0 logFileURL];\n            r0 = [r0 retain];\n            r20 = r0;\n            r21 = [[r0 URLByDeletingLastPathComponent] retain];\n            [r19[0x4] setLogDirectoryURL:r21];\n            [r21 release];\n            [r20 release];\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035088",
+        "name": "-[LoggingOptionsViewController clearLoggingChannels:]",
+        "status": "written",
+        "relative_path": "functions/0x100035088.c",
+        "sha256": "7b4f6c9152ab50ac69479cf510f2e743149a53b71242e599bd7b5fc927d2680a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController clearLoggingChannels:]\n// address: 0x100035088\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    [self setLogChannels:0x0];\n    [self setLogEnvironment:0x0];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000350b4",
+        "name": "-[LoggingOptionsViewController combineChannels:with:andDelimiter:]",
+        "status": "written",
+        "relative_path": "functions/0x1000350b4.c",
+        "sha256": "a6b3b653ca2dd4977556b4ef7e3d4e589aefe30306dee391501c19fd459ddd5c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController combineChannels:with:andDelimiter:]\n// address: 0x1000350b4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x140;\n    var_50 = r28;\n    decomp_var_48 = r27;\n    var_40 = r26;\n    decomp_var_38 = r25;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    var_60 = **___stack_chk_guard;\n    r21 = [arg2 retain];\n    r19 = [arg3 retain];\n    r20 = [arg4 retain];\n    r22 = [[r21 componentsSeparatedByString:r20] retain];\n    if (r21 == 0x0) {\n            r21 = @\"\";\n    }\n    r23 = [[NSMutableString string] retain];\n    if ([r22 count] != 0x0) {\n            r24 = [[NSSet setWithArray:r22] retain];\n            var_120 = q0;\n            var_110 = q0;\n            var_128 = r19;\n            r0 = [r19 retain];\n            r25 = r0;\n            r0 = [r0 countByEnumeratingWithState:&var_120 objects:&decomp_var_e0 count:0x10];\n            if (r0 != 0x0) {\n                    r26 = r0;\n                    r28 = *var_110;\n                    do {\n                            r19 = 0x0;\n                            do {\n                                    if (*var_110 != r28) {\n                                            objc_enumerationMutation(r25);\n                                    }\n                                    r27 = *(var_118 + r19 * 0x8);\n                                    if (([r24 containsObject:r27] & 0x1) == 0x0) {\n                                            if ([r23 length] != 0x0) {\n                                                    [r23 appendString:r20];\n                                            }\n                                            [r23 appendString:r27];\n                                    }\n                                    r19 = r19 + 0x1;\n                            } while (r26 != r19);\n                            r0 = [r25 countByEnumeratingWithState:&var_120 objects:&decomp_var_e0 count:0x10];\n                            r26 = r0;\n                    } while (r0 != 0x0);\n            }\n            [r25 release];\n            [r24 release];\n            r19 = var_128;\n    }\n    else {\n            r24 = [[r19 componentsJoinedByString:r20] retain];\n            [r23 setString:r24];\n            [r24 release];\n    }\n    if ([r23 length] != 0x0) {\n            if ([r21 length] != 0x0 && ([r21 hasSuffix:r20] & 0x1) == 0x0) {\n                    r24 = [[r21 stringByAppendingString:r20] retain];\n                    [r21 release];\n                    r21 = r24;\n            }\n            r0 = [r21 stringByAppendingString:r23];\n            r0 = [r0 retain];\n    }\n    else {\n            r0 = [r21 retain];\n            r21 = r0;\n    }\n    r24 = r0;\n    [r23 release];\n    [r22 release];\n    [r20 release];\n    [r19 release];\n    r0 = [r21 release];\n    if (**___stack_chk_guard != var_60) {\n            __stack_chk_fail();\n    }\n    r0 = [r24 autorelease];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035354",
+        "name": "-[LoggingOptionsViewController addLoggingChannels:]",
+        "status": "written",
+        "relative_path": "functions/0x100035354.c",
+        "sha256": "c0189df40adfe7b0818e32377138c0d4c90ede3b2149c78aef163e93c5152bf6",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController addLoggingChannels:]\n// address: 0x100035354\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [arg2 retain];\n    r21 = r0;\n    r19 = [[r0 representedObject] retain];\n    r22 = [[self logChannels] retain];\n    r23 = [[NSCharacterSet whitespaceAndNewlineCharacterSet] retain];\n    r24 = [[r22 stringByRemovingCharactersInSet:r23] retain];\n    [r23 release];\n    [r22 release];\n    r22 = [[r19 logChannels] retain];\n    r23 = [[self combineChannels:r24 with:r22 andDelimiter:@\",\"] retain];\n    [self setLogChannels:r23];\n    [r23 release];\n    [r22 release];\n    [self addExtraEnvVariables:r21];\n    [r21 release];\n    [r24 release];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035464",
+        "name": "-[LoggingOptionsViewController addExtraEnvVariables:]",
+        "status": "written",
+        "relative_path": "functions/0x100035464.c",
+        "sha256": "994ed39e0b609e232fdf658c2ef4688ea370cb7be703f549279d8550daf714b7",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController addExtraEnvVariables:]\n// address: 0x100035464\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r20 = [[arg2 representedObject] retain];\n    r21 = [[self logEnvironment] retain];\n    r22 = [[r20 logEnvironment] retain];\n    r23 = [[self combineChannels:r21 with:r22 andDelimiter:@\" \"] retain];\n    [self setLogEnvironment:r23];\n    [r23 release];\n    [r22 release];\n    [r21 release];\n    [r20 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035518",
+        "name": "+[LoggingOptionsViewController keyPathsForValuesAffectingEnableControls]",
+        "status": "written",
+        "relative_path": "functions/0x100035518.c",
+        "sha256": "be93dc0cd4a9895ee9136006c4ff364ddb28f2e2da91520d6806b69eca04ba8d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[LoggingOptionsViewController keyPathsForValuesAffectingEnableControls]\n// address: 0x100035518\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x40;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    var_18 = **___stack_chk_guard;\n    var_28 = @\"createLogFile\";\n    r0 = [NSArray arrayWithObjects:&var_28 count:0x2];\n    r20 = [r0 retain];\n    r19 = [[NSSet setWithArray:r20] retain];\n    r0 = [r20 release];\n    if (**___stack_chk_guard != var_18) {\n            __stack_chk_fail();\n    }\n    r0 = [r19 autorelease];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000355c4",
+        "name": "-[LoggingOptionsViewController enableControls]",
+        "status": "written",
+        "relative_path": "functions/0x1000355c4.c",
+        "sha256": "41b21db81731de4099c0e8a28b568eb49cd4faba2b12cd9392de42cc4ce257d2",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController enableControls]\n// address: 0x1000355c4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_10 = r20;\n    decomp_var_8 = r19;\n    r31 = r31 + 0xffffffffffffffe0;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = self;\n    r0 = [self createLogFile];\n    if (r0 != 0x0) {\n            r0 = [r19 enabled];\n    }\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000355f8",
+        "name": "-[LoggingOptionsViewController sanitizeLogChannels]",
+        "status": "written",
+        "relative_path": "functions/0x1000355f8.c",
+        "sha256": "eee9d34240e1b5e4fbf36626267a0aa7cc2fe0ddaffbb5c60a3927a7fd3e66cb",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController sanitizeLogChannels]\n// address: 0x1000355f8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r21 = [[self logChannels] retain];\n    r20 = [[DebugChannelFormatter sanitizeChannelString:r21] retain];\n    [self setLogChannels:r20];\n    [r20 release];\n    [r21 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035664",
+        "name": "-[LoggingOptionsViewController saveSettingsToRecent]",
+        "status": "written",
+        "relative_path": "functions/0x100035664.c",
+        "sha256": "e3364d1cb1c6c4d2d3712682f80563597891ea92acd6b7afb084ab46ac2d94dc",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController saveSettingsToRecent]\n// address: 0x100035664\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x60;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = self;\n    var_38 = **___stack_chk_guard;\n    if ([self createLogFile] != 0x0) {\n            r0 = [r19 logChannels];\n            r0 = [r0 retain];\n            r20 = r0;\n            if ([r0 length] != 0x0) {\n                    [r20 release];\n                    r0 = [r19 logChannels];\n                    r0 = [r0 retain];\n                    r21 = r0;\n                    if (r0 != 0x0) {\n                            r22 = [[r19 logChannels] retain];\n                    }\n                    else {\n                            r22 = @\"\";\n                    }\n                    var_48 = r22;\n                    r0 = [r19 logEnvironment];\n                    r0 = [r0 retain];\n                    r23 = r0;\n                    if (r0 != 0x0) {\n                            r24 = [[r19 logEnvironment] retain];\n                    }\n                    else {\n                            r24 = @\"\";\n                    }\n                    r0 = [NSArray arrayWithObjects:&var_48 count:0x2];\n                    r20 = [r0 retain];\n                    if (r23 != 0x0) {\n                            [r24 release];\n                    }\n                    [r23 release];\n                    if (r21 != 0x0) {\n                            [r22 release];\n                    }\n                    [r21 release];\n                    r0 = [NSUserDefaults standardUserDefaults];\n                    r0 = [r0 retain];\n                    r22 = r0;\n                    r0 = [r0 arrayForKey:@\"RecentLoggingOptions\"];\n                    r0 = [r0 retain];\n                    r23 = r0;\n                    r21 = [r0 mutableCopy];\n                    [r23 release];\n                    [r22 release];\n                    if (r21 == 0x0) {\n                            r21 = [[NSMutableArray array] retain];\n                    }\n                    r0 = [r21 indexOfObject:r20];\n                    if (r0 != 0x7fffffffffffffff) {\n                            [r21 removeObjectAtIndex:r0];\n                    }\n                    [r21 insertObject:r20 atIndex:0x0];\n                    if ([r21 count] >= 0x4) {\n                            [r21 count] - 0x3;\n                            [r21 removeObjectsInRange:0x3];\n                    }\n                    r0 = [NSUserDefaults standardUserDefaults];\n                    r0 = [r0 retain];\n                    r22 = r0;\n                    [r0 setObject:r21 forKey:@\"RecentLoggingOptions\"];\n                    [r22 release];\n                    [r19 updateRecentMenuItems];\n                    [r21 release];\n                    [r20 release];\n                    if (**___stack_chk_guard != var_38) {\n                            __stack_chk_fail();\n                    }\n            }\n            else {\n                    r0 = [r19 logEnvironment];\n                    r0 = [r0 retain];\n                    r21 = r0;\n                    r22 = [r0 length];\n                    [r21 release];\n                    [r20 release];\n                    if (r22 != 0x0) {\n                            r0 = [r19 logChannels];\n                            r0 = [r0 retain];\n                            r21 = r0;\n                            if (r0 != 0x0) {\n                                    r22 = [[r19 logChannels] retain];\n                            }\n                            else {\n                                    r22 = @\"\";\n                            }\n                            var_48 = r22;\n                            r0 = [r19 logEnvironment];\n                            r0 = [r0 retain];\n                            r23 = r0;\n                            if (r0 != 0x0) {\n                                    r24 = [[r19 logEnvironment] retain];\n                            }\n                            else {\n                                    r24 = @\"\";\n                            }\n                            r0 = [NSArray arrayWithObjects:&var_48 count:0x2];\n                            r20 = [r0 retain];\n                            if (r23 != 0x0) {\n                                    [r24 release];\n                            }\n                            [r23 release];\n                            if (r21 != 0x0) {\n                                    [r22 release];\n                            }\n                            [r21 release];\n                            r0 = [NSUserDefaults standardUserDefaults];\n                            r0 = [r0 retain];\n                            r22 = r0;\n                            r0 = [r0 arrayForKey:@\"RecentLoggingOptions\"];\n                            r0 = [r0 retain];\n                            r23 = r0;\n                            r21 = [r0 mutableCopy];\n                            [r23 release];\n                            [r22 release];\n                            if (r21 == 0x0) {\n                                    r21 = [[NSMutableArray array] retain];\n                            }\n                            r0 = [r21 indexOfObject:r20];\n                            if (r0 != 0x7fffffffffffffff) {\n                                    [r21 removeObjectAtIndex:r0];\n                            }\n                            [r21 insertObject:r20 atIndex:0x0];\n                            if ([r21 count] >= 0x4) {\n                                    [r21 count] - 0x3;\n                                    [r21 removeObjectsInRange:0x3];\n                            }\n                            r0 = [NSUserDefaults standardUserDefaults];\n                            r0 = [r0 retain];\n                            r22 = r0;\n                            [r0 setObject:r21 forKey:@\"RecentLoggingOptions\"];\n                            [r22 release];\n                            [r19 updateRecentMenuItems];\n                            [r21 release];\n                            [r20 release];\n                            if (**___stack_chk_guard != var_38) {\n                                    __stack_chk_fail();\n                            }\n                    }\n                    else {\n                            if (**___stack_chk_guard != var_38) {\n                                    __stack_chk_fail();\n                            }\n                    }\n            }\n    }\n    else {\n            if (**___stack_chk_guard != var_38) {\n                    __stack_chk_fail();\n            }\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000358e8",
+        "name": "-[LoggingOptionsViewController updateRecentMenuItems]",
+        "status": "written",
+        "relative_path": "functions/0x1000358e8.c",
+        "sha256": "1dc3d6b30fe9d006efd9a19e42138a9679652bbe62c934251c0345909d484e41",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController updateRecentMenuItems]\n// address: 0x1000358e8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x170;\n    var_50 = r28;\n    decomp_var_48 = r27;\n    var_40 = r26;\n    decomp_var_38 = r25;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = self;\n    var_60 = **___stack_chk_guard;\n    r0 = [NSUserDefaults standardUserDefaults];\n    r0 = [r0 retain];\n    r20 = r0;\n    r21 = [[r0 arrayForKey:@\"RecentLoggingOptions\"] retain];\n    [r20 release];\n    if ([r21 count] == 0x0) {\n            r20 = 0x1;\n    }\n    r0 = [r19 recentChannelsMenuItem];\n    r0 = [r0 retain];\n    r22 = r0;\n    [r0 setHidden:r20];\n    r0 = [r19 recentChannelsDivider];\n    r0 = [r0 retain];\n    r23 = r0;\n    [r0 setHidden:r20];\n    [r23 release];\n    [r22 release];\n    r0 = [r19 channelPresets];\n    r0 = [r0 retain];\n    r20 = r0;\n    r22 = [[r0 menu] retain];\n    r26 = r19;\n    r23 = [[r19 recentChannelsMenuItem] retain];\n    var_138 = [r22 indexOfItem:r23] + 0x1;\n    [r23 release];\n    while (true) {\n            [r22 release];\n            [r20 release];\n            r0 = [r26 channelPresets];\n            r0 = [r0 retain];\n            r20 = r0;\n            r0 = [r0 menu];\n            r0 = [r0 retain];\n            r22 = r0;\n            r23 = [[r0 itemAtIndex:var_138] retain];\n            r0 = [r26 recentChannelsDivider];\n            r0 = [r0 retain];\n            r24 = r0;\n            [r0 release];\n            [r23 release];\n            [r22 release];\n            [r20 release];\n            if (r23 == r24) {\n                    break;\n            }\n            r0 = [r26 channelPresets];\n            r0 = [r0 retain];\n            r20 = r0;\n            r0 = [r0 menu];\n            r0 = [r0 retain];\n            r22 = r0;\n            [r0 removeItemAtIndex:var_138];\n    }\n    var_120 = q0;\n    var_110 = q0;\n    r0 = [r21 retain];\n    r3 = &decomp_var_e0;\n    var_150 = r0;\n    r0 = [r0 countByEnumeratingWithState:&var_120 objects:r3 count:0x10];\n    if (r0 == 0x0) goto loc_100035da8;\n    goto loc_100035ae4;\n\nloc_100035da8:\n    [var_150 release];\n    [var_150 release];\n    if (**___stack_chk_guard != var_60) {\n            __stack_chk_fail();\n    }\n    return;\n\nloc_100035ae4:\n    r25 = r0;\n    var_148 = *var_110;\n    goto loc_100035af4;\n\nloc_100035af4:\n    r19 = 0x0;\n    var_140 = @selector(restoreRecent:);\n    goto loc_100035b04;\n\nloc_100035b04:\n    if (*var_110 != var_148) {\n            objc_enumerationMutation(var_150);\n    }\n    r27 = *(var_118 + r19 * 0x8);\n    r20 = [[r27 objectAtIndexedSubscript:0x0] retain];\n    r21 = [[r27 objectAtIndexedSubscript:0x1] retain];\n    r28 = [[NSMutableString string] retain];\n    r0 = [r20 length];\n    var_130 = r21;\n    var_128 = r20;\n    if (r0 != 0x0) {\n            r23 = [r20 retain];\n            [r28 setString:r23];\n            if ([r21 length] != 0x0) {\n                    if (r23 != 0x0) {\n                            [r28 appendFormat:@\"\\n%@\", r3];\n                    }\n                    else {\n                            r23 = [r21 retain];\n                            [r28 setString:r23];\n                    }\n            }\n    }\n    else {\n            if ([r21 length] != 0x0) {\n                    r23 = [r21 retain];\n                    [r28 setString:r23];\n            }\n            else {\n                    r23 = 0x0;\n            }\n    }\n    r0 = [r23 length];\n    r24 = r0;\n    if (r0 >= 0x29) {\n            r21 = r27;\n            r27 = r28;\n            r22 = [[r23 substringToIndex:0x13] retain];\n            r28 = r26;\n            r26 = [[r23 substringFromIndex:[r23 length] - 0x14] retain];\n            r20 = [[NSString stringWithFormat:@\"%@…%@\", r3, r4] retain];\n            [r23 release];\n            r0 = r26;\n            r26 = r28;\n            [r0 release];\n            r28 = r27;\n            r27 = r21;\n            [r22 release];\n            r23 = r20;\n    }\n    r0 = [NSMenuItem alloc];\n    r0 = [r0 initWithTitle:r23 action:var_140 keyEquivalent:@\"\"];\n    r20 = r0;\n    [r0 setTarget:r26];\n    [r20 setRepresentedObject:r27];\n    [r20 setIndentationLevel:0x1];\n    if (r24 > 0x28 || [var_128 length] != 0x0 && [var_130 length] != 0x0) {\n            [r20 setToolTip:r28];\n    }\n    r0 = [r26 channelPresets];\n    r0 = [r0 retain];\n    r22 = r0;\n    r0 = [r0 menu];\n    r0 = [r0 retain];\n    r24 = r0;\n    r3 = var_138 + r19;\n    [r0 insertItem:r20 atIndex:r3];\n    [r24 release];\n    [r22 release];\n    [r20 release];\n    [r28 release];\n    [r23 release];\n    [var_130 release];\n    [var_128 release];\n    r19 = r19 + 0x1;\n    if (r25 != r19) {\n            continue;\n    }\n    break;\n    r3 = &decomp_var_e0;\n    r0 = [var_150 countByEnumeratingWithState:&var_120 objects:r3 count:0x10];\n    r25 = r0;\n    var_138 = var_138 + r19;\n    if (r0 != 0x0) {\n            continue;\n    }\n    break;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035df8",
+        "name": "-[LoggingOptionsViewController restoreRecent:]",
+        "status": "written",
+        "relative_path": "functions/0x100035df8.c",
+        "sha256": "a503454c8f1331b4317fb30767e86db9793181a86e8864aee38413a3550e5711",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController restoreRecent:]\n// address: 0x100035df8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [arg2 representedObject];\n    r0 = [r0 retain];\n    r20 = r0;\n    r21 = [[r0 objectAtIndexedSubscript:0x0] retain];\n    [self setLogChannels:r21];\n    [r21 release];\n    r21 = [[r20 objectAtIndexedSubscript:0x1] retain];\n    [self setLogEnvironment:r21];\n    [r21 release];\n    [r20 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035e88",
+        "name": "-[LoggingOptionsViewController createLogFile]",
+        "status": "written",
+        "relative_path": "functions/0x100035e88.c",
+        "sha256": "6d9699b2f6a37d29f8d306b77d24568473b16f161927fc5a4634115b6f40e526",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController createLogFile]\n// address: 0x100035e88\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *(int8_t *)(int64_t *)&self->_createLogFile & 0x1;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035e9c",
+        "name": "-[LoggingOptionsViewController setCreateLogFile:]",
+        "status": "written",
+        "relative_path": "functions/0x100035e9c.c",
+        "sha256": "1a74d20a73f9e6925d217c26cf7fab3c0dc627025ca6899c743a9c4da257a85f",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setCreateLogFile:]\n// address: 0x100035e9c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    *(int8_t *)(int64_t *)&self->_createLogFile = arg2;\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035eac",
+        "name": "-[LoggingOptionsViewController enabled]",
+        "status": "written",
+        "relative_path": "functions/0x100035eac.c",
+        "sha256": "ec94f29a710e7ed11bca10e6dfb196ccbd050ded4f5dcc27b3f8255b3b448605",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController enabled]\n// address: 0x100035eac\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *(int8_t *)(int64_t *)&self->_enabled & 0x1;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035ec0",
+        "name": "-[LoggingOptionsViewController setEnabled:]",
+        "status": "written",
+        "relative_path": "functions/0x100035ec0.c",
+        "sha256": "2f6c829cabe291b5c770b001bae430920e18e14997db02bc6f5b3216b7b7c433",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setEnabled:]\n// address: 0x100035ec0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    *(int8_t *)(int64_t *)&self->_enabled = arg2;\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035ed0",
+        "name": "-[LoggingOptionsViewController channelCombos]",
+        "status": "written",
+        "relative_path": "functions/0x100035ed0.c",
+        "sha256": "2647b2467dadeec20589ff241479059c0cee035b0b810bcc4befb14e0effc3b0",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController channelCombos]\n// address: 0x100035ed0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = objc_getProperty(self, _cmd, sign_extend_64(*(int32_t *)ivar_offset(_channelCombos)), 0x1);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035ee0",
+        "name": "-[LoggingOptionsViewController setChannelCombos:]",
+        "status": "written",
+        "relative_path": "functions/0x100035ee0.c",
+        "sha256": "ac38eb4fdfc4f458f972c0e79de40ec560e8de66efdcedb581451803eced300f",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setChannelCombos:]\n// address: 0x100035ee0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_setProperty_atomic();\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035eec",
+        "name": "-[LoggingOptionsViewController logChannels]",
+        "status": "written",
+        "relative_path": "functions/0x100035eec.c",
+        "sha256": "f58b764b9e82defc12a5be477679320e3d44c6a0ecc6869ae86dcfe79b425260",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController logChannels]\n// address: 0x100035eec\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = objc_getProperty(self, _cmd, sign_extend_64(*(int32_t *)ivar_offset(_logChannels)), 0x1);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035efc",
+        "name": "-[LoggingOptionsViewController setLogChannels:]",
+        "status": "written",
+        "relative_path": "functions/0x100035efc.c",
+        "sha256": "b0e312d804849c8bce9401696022b461b2e8674bd755573879bfb9e2f9b79b4c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setLogChannels:]\n// address: 0x100035efc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_setProperty_atomic_copy();\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035f08",
+        "name": "-[LoggingOptionsViewController logEnvironment]",
+        "status": "written",
+        "relative_path": "functions/0x100035f08.c",
+        "sha256": "43588ed6f4ef5137e4a658bb06ac43b5057da455433be4e48e618f5e960eba5e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController logEnvironment]\n// address: 0x100035f08\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = objc_getProperty(self, _cmd, sign_extend_64(*(int32_t *)ivar_offset(_logEnvironment)), 0x1);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035f18",
+        "name": "-[LoggingOptionsViewController setLogEnvironment:]",
+        "status": "written",
+        "relative_path": "functions/0x100035f18.c",
+        "sha256": "f92f572ba106ebbf0fbbbe30e55f2d0165206f43f08dbc889fd221a2a091ce4d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setLogEnvironment:]\n// address: 0x100035f18\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_setProperty_atomic_copy();\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035f24",
+        "name": "-[LoggingOptionsViewController logFileName]",
+        "status": "written",
+        "relative_path": "functions/0x100035f24.c",
+        "sha256": "d12abc4399d3e07888a4c17a31087f34b0d93ac9b673afeacac08de2eb37db40",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController logFileName]\n// address: 0x100035f24\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = self->_logFileName;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035f34",
+        "name": "-[LoggingOptionsViewController logFileURL]",
+        "status": "written",
+        "relative_path": "functions/0x100035f34.c",
+        "sha256": "c9a5892705c4c667f2fa7412e84756da18ad2d26fddb9006f2e9af707f318405",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController logFileURL]\n// address: 0x100035f34\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = self->_logFileURL;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035f44",
+        "name": "-[LoggingOptionsViewController setLogFileURL:]",
+        "status": "written",
+        "relative_path": "functions/0x100035f44.c",
+        "sha256": "6488df055d685b9993a84f7c4b17f3b1113578f66ce4571adfa4b4b947009ac5",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setLogFileURL:]\n// address: 0x100035f44\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_setProperty_nonatomic_copy();\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035f50",
+        "name": "-[LoggingOptionsViewController logDirectoryURL]",
+        "status": "written",
+        "relative_path": "functions/0x100035f50.c",
+        "sha256": "a28612964e85a9ee18e615a17cfaaeebec7f2d69dae64028deed80eb8f553471",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController logDirectoryURL]\n// address: 0x100035f50\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = objc_getProperty(self, _cmd, sign_extend_64(*(int32_t *)ivar_offset(_logDirectoryURL)), 0x1);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035f60",
+        "name": "-[LoggingOptionsViewController setLogDirectoryURL:]",
+        "status": "written",
+        "relative_path": "functions/0x100035f60.c",
+        "sha256": "f5c5f399c201c66673de6f3b5949e19c54e885d70248c9490d7d6daff729092f",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setLogDirectoryURL:]\n// address: 0x100035f60\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_setProperty_atomic_copy();\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035f6c",
+        "name": "-[LoggingOptionsViewController logFileNameFromUser]",
+        "status": "written",
+        "relative_path": "functions/0x100035f6c.c",
+        "sha256": "322ca326996a7a2c8eeeb26f9e268ada53237b2f3f8f113d0b58e32ed78d24ba",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController logFileNameFromUser]\n// address: 0x100035f6c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *(int8_t *)(int64_t *)&self->_logFileNameFromUser & 0x1;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035f80",
+        "name": "-[LoggingOptionsViewController setLogFileNameFromUser:]",
+        "status": "written",
+        "relative_path": "functions/0x100035f80.c",
+        "sha256": "631854743cdf28e12116a95ff6d398b856803a70991713c1ccbadc6a53e22854",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setLogFileNameFromUser:]\n// address: 0x100035f80\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    *(int8_t *)(int64_t *)&self->_logFileNameFromUser = arg2;\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035f90",
+        "name": "-[LoggingOptionsViewController channelPresets]",
+        "status": "written",
+        "relative_path": "functions/0x100035f90.c",
+        "sha256": "f740aad735776c7619573a5dd6146c4c3b359586015a839705d219ac54b75449",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController channelPresets]\n// address: 0x100035f90\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = objc_loadWeakRetained((int64_t *)&self->_channelPresets);\n    r0 = [r0 autorelease];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035fb0",
+        "name": "-[LoggingOptionsViewController setChannelPresets:]",
+        "status": "written",
+        "relative_path": "functions/0x100035fb0.c",
+        "sha256": "07a23d19e3b8518c31096380b0c0b2e400ce52e3ddd660b86e360c66dfd4cdc6",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setChannelPresets:]\n// address: 0x100035fb0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_storeWeak((int64_t *)&self->_channelPresets, arg2);\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035fc4",
+        "name": "-[LoggingOptionsViewController recentChannelsDivider]",
+        "status": "written",
+        "relative_path": "functions/0x100035fc4.c",
+        "sha256": "682989d0f7bdba65832454e2df255678ce63254fa04db91417abde20e62e2584",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController recentChannelsDivider]\n// address: 0x100035fc4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = objc_loadWeakRetained((int64_t *)&self->_recentChannelsDivider);\n    r0 = [r0 autorelease];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035fe4",
+        "name": "-[LoggingOptionsViewController setRecentChannelsDivider:]",
+        "status": "written",
+        "relative_path": "functions/0x100035fe4.c",
+        "sha256": "1fbff4470837f6d55dae8c24c6045b837d2d065185e85918074110a0eb98f44a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setRecentChannelsDivider:]\n// address: 0x100035fe4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_storeWeak((int64_t *)&self->_recentChannelsDivider, arg2);\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100035ff8",
+        "name": "-[LoggingOptionsViewController recentChannelsMenuItem]",
+        "status": "written",
+        "relative_path": "functions/0x100035ff8.c",
+        "sha256": "e9e5261cc2d0fee2f8d488578e09927928229e1a31f94883c7ac918d2f700c61",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController recentChannelsMenuItem]\n// address: 0x100035ff8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = objc_loadWeakRetained((int64_t *)&self->_recentChannelsMenuItem);\n    r0 = [r0 autorelease];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100036018",
+        "name": "-[LoggingOptionsViewController setRecentChannelsMenuItem:]",
+        "status": "written",
+        "relative_path": "functions/0x100036018.c",
+        "sha256": "b8b822a10f2a1b0721e74eb57346b161ecc5d006500e13ba74c68fc12827d78d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController setRecentChannelsMenuItem:]\n// address: 0x100036018\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_storeWeak((int64_t *)&self->_recentChannelsMenuItem, arg2);\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003602c",
+        "name": "-[LoggingOptionsViewController .cxx_destruct]",
+        "status": "written",
+        "relative_path": "functions/0x10003602c.c",
+        "sha256": "408feccbe99421f91c58ce074a473fa2d5d4a9f600e0ee17b17b6472da2d6e1a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[LoggingOptionsViewController .cxx_destruct]\n// address: 0x10003602c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_destroyWeak((int64_t *)&self->_recentChannelsMenuItem);\n    objc_destroyWeak((int64_t *)&self->_recentChannelsDivider);\n    objc_destroyWeak((int64_t *)&self->_channelPresets);\n    objc_storeStrong((int64_t *)&self->_logDirectoryURL, 0x0);\n    objc_storeStrong((int64_t *)&self->_logFileURL, 0x0);\n    objc_storeStrong((int64_t *)&self->_logFileName, 0x0);\n    objc_storeStrong((int64_t *)&self->_logEnvironment, 0x0);\n    objc_storeStrong((int64_t *)&self->_logChannels, 0x0);\n    objc_storeStrong((int64_t *)&self->_channelCombos, 0x0);\n    return;\n"
+    }
+  ]
+}

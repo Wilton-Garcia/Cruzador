@@ -1,0 +1,1596 @@
+{
+  "original_export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/bottle-menu-handler",
+  "manifest": {
+    "version": 1,
+    "target_sha256": "1d245f2f9f52bd56a120616fede8b1eb9cca9fa228319de04a2cbeabd8de7174",
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956"
+    },
+    "analysis_profile_digest": "3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a",
+    "layout": "address",
+    "layout_status": "address",
+    "latest_run": {
+      "resume": false,
+      "selected": 38,
+      "excluded": 10589,
+      "selection": {
+        "name": "[BottleMenuHandler ",
+        "namespace": null,
+        "address_start": null,
+        "address_end": null,
+        "limit": 256
+      },
+      "inventory_limitations": [
+        "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+        "Results depend on Hopper's completed static analysis."
+      ]
+    },
+    "limitations": [
+      "38 exported function record(s) report an unavailable body: Hopper's public Python API does not expose complete function body ranges"
+    ],
+    "functions": [
+      {
+        "address": "0x10000d2fc",
+        "name": "+[BottleMenuHandler deleteBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000d2fc.c",
+        "sha256": "067fa5f0c725c4a6d145ab4cde49b506275a491a572ce19bd3645a9c8545167d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000d624",
+        "name": "___45+[BottleMenuHandler deleteBottle:withWindow:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000d624.c",
+        "sha256": "550a5835dae3c8c8eb8dd1c00b15216ad04a6a415189c7b0487a5d3a2a3bb154",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000d750",
+        "name": "___45+[BottleMenuHandler deleteBottle:withWindow:]_block_invoke_2",
+        "status": "written",
+        "relative_path": "functions/0x10000d750.c",
+        "sha256": "1a57af6a9c5b4065f56dbbe9f7368326fae0e5a255581c14ea4b2f051dc520d7",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000d91c",
+        "name": "___45+[BottleMenuHandler deleteBottle:withWindow:]_block_invoke_3",
+        "status": "written",
+        "relative_path": "functions/0x10000d91c.c",
+        "sha256": "d81cb49e933c8ba0f3e7fe5981e70bf3723dc1ff1c07fc8538e1acc8806f32e2",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000d934",
+        "name": "+[BottleMenuHandler deleteManagedBottle:withWindow:authorization:]",
+        "status": "written",
+        "relative_path": "functions/0x10000d934.c",
+        "sha256": "330dec607714d6015847380285e82c9d188594f294e3a35a519d2bab9af71ae5",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000db9c",
+        "name": "___66+[BottleMenuHandler deleteManagedBottle:withWindow:authorization:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000db9c.c",
+        "sha256": "2ce13683346ce5d381a4239f6c27a6cda68434ca1a518f3012e61e5b8ddb7898",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000dbd8",
+        "name": "___66+[BottleMenuHandler deleteManagedBottle:withWindow:authorization:]_block_invoke_2",
+        "status": "written",
+        "relative_path": "functions/0x10000dbd8.c",
+        "sha256": "7aa36e2c8eab799b9bd29f99c3ea4b74cbf188189f88f4c645d16ff3c55ac0be",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000dd5c",
+        "name": "+[BottleMenuHandler duplicateBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000dd5c.c",
+        "sha256": "2202009ba3d1143753f844977545c6cf78d6aa2138947c8d46543ab6512e0268",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000de98",
+        "name": "+[BottleMenuHandler exportBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000de98.c",
+        "sha256": "17cc5a2cf96e2a2fa199ffaef597a83d8b59b9d0ac146b2dc0181d9788cff0cf",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000e070",
+        "name": "___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000e070.c",
+        "sha256": "6be6ea824680cd285cbe16ed27691f09fb0734f1fd8d6b1aaf68ff2dda388077",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000e1e0",
+        "name": "___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke_2",
+        "status": "written",
+        "relative_path": "functions/0x10000e1e0.c",
+        "sha256": "be5759c253337e32ba59f6883383166fb247405b0deb2a3611c4ad0e35c2874e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000e230",
+        "name": "___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke.42",
+        "status": "written",
+        "relative_path": "functions/0x10000e230.c",
+        "sha256": "7cf36321a42f6ad824333ca76a5bb254867042a35cfedb854d0e5cc727c94fbe",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000e33c",
+        "name": "___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke_2.43",
+        "status": "written",
+        "relative_path": "functions/0x10000e33c.c",
+        "sha256": "e02d3e64383f91b8ea0c917ba234a142eb72b74147fc295b2a4ac94bbb348770",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000e48c",
+        "name": "+[BottleMenuHandler installSoftwareIntoBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000e48c.c",
+        "sha256": "c85a1d40bb9fce83b8eb4e1791896b39eaaf5b1bda2e342c8709360226d43505",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000e518",
+        "name": "+[BottleMenuHandler installMissingDependencies:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000e518.c",
+        "sha256": "7970612659561c3d9d11eaa8db08b7554fef65836a0d01abd5c27a697ff68ac4",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000e5f4",
+        "name": "+[BottleMenuHandler openCDriveForBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x10000e5f4.c",
+        "sha256": "71d1fe17c9ff05b88668a81aa4576a7275f1fa83e23b27cb9b753bf32fc60ec4",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000e670",
+        "name": "+[BottleMenuHandler openShellForBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x10000e670.c",
+        "sha256": "5ae3cf011812bbbe5be5323532412631880509f01c896be2641708c50856f728",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000eae8",
+        "name": "___40+[BottleMenuHandler openShellForBottle:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000eae8.c",
+        "sha256": "614803144219d6e88b05b83afe8c8c0e1054c1a7b78227c1bf982cbca6154348",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000ec18",
+        "name": "+[BottleMenuHandler publishBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000ec18.c",
+        "sha256": "1763d3e488a0a001a24f53283ee43d6d5f1ff92f070dff69c0e41e4a887e762e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000ecf0",
+        "name": "+[BottleMenuHandler rateBottle:withWindow:isDeleting:]",
+        "status": "written",
+        "relative_path": "functions/0x10000ecf0.c",
+        "sha256": "4beaaea47e5bfa8b51341eedd3d8f6b2db14e19e4bd02613c54b9158371199c7",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000ede4",
+        "name": "___54+[BottleMenuHandler rateBottle:withWindow:isDeleting:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000ede4.c",
+        "sha256": "4c78b114a46257685bec1d9d64e20fef15f57016778791962289c9d25ca83722",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000ee94",
+        "name": "+[BottleMenuHandler runCommandInBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x10000ee94.c",
+        "sha256": "b75d067d44adffc7e99b81283fb95a9c44d2888829548764723d7e2037e05000",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000eea4",
+        "name": "+[BottleMenuHandler runCommandInBottle:withLauncher:]",
+        "status": "written",
+        "relative_path": "functions/0x10000eea4.c",
+        "sha256": "d80d12720fc342ff841225e6490fe9689adc14bdc0db3e8d7f3880bfa948fb5f",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000ef54",
+        "name": "+[BottleMenuHandler toggleDefaultBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x10000ef54.c",
+        "sha256": "b891010193b2ce3ad57fa1a3d979fee315db995c0c2bc26cf19c716d44691938",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000efbc",
+        "name": "___41+[BottleMenuHandler toggleDefaultBottle:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000efbc.c",
+        "sha256": "c072c01fd76e4f3c502749b5d84d79ee58d9b41f49dcb6b6664892e2d75b1e4b",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000eff8",
+        "name": "+[BottleMenuHandler toggleMSyncForBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000eff8.c",
+        "sha256": "f6fce658f5effc515a5f29a052502a2dbfb22a38b1b8ec52e975d0be45bf468a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000f000",
+        "name": "+[BottleMenuHandler toggleMSyncForBottle:withWindow:modalCompletionHandler:]",
+        "status": "written",
+        "relative_path": "functions/0x10000f000.c",
+        "sha256": "f6f09ceb1c01b327091e151e317f9117f77c2d713bf801b413c3455a3e900f3c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000f37c",
+        "name": "___76+[BottleMenuHandler toggleMSyncForBottle:withWindow:modalCompletionHandler:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000f37c.c",
+        "sha256": "bdda3d2ab9797b8a8905b7249fc679f23610f08359038c8cea4e825fcb4bdbdf",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000f410",
+        "name": "+[BottleMenuHandler toggleHighResolutionForBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000f410.c",
+        "sha256": "b04ac313ed1343c22da9921d6ef16556c7770fcedcb801f6cb7a08e740ee751e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000f418",
+        "name": "+[BottleMenuHandler toggleHighResolutionForBottle:withWindow:modalCompletionHandler:]",
+        "status": "written",
+        "relative_path": "functions/0x10000f418.c",
+        "sha256": "5b46e54160dbefe5cda89dad521fb3a69633c06ba7a50289c6bc6a15a4cc4b14",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000fa6c",
+        "name": "___85+[BottleMenuHandler toggleHighResolutionForBottle:withWindow:modalCompletionHandler:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000fa6c.c",
+        "sha256": "013029f21540a07f909f961da751c2e030fb422813edc14fa65622da83cfccee",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000facc",
+        "name": "+[BottleMenuHandler togglePreviewForBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000facc.c",
+        "sha256": "69b8ab1de5bb9ab04ef9173217f0fda5b2670a88fd82b315ea4a2eecd8885cba",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000fad4",
+        "name": "+[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]",
+        "status": "written",
+        "relative_path": "functions/0x10000fad4.c",
+        "sha256": "dccae3420318a3a8059b0db48e2c3a04438a1b5efb56c1ad2657e6ee6ca6d125",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10000ffe4",
+        "name": "___78+[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000ffe4.c",
+        "sha256": "68b6f2de859a876af5f29e1779d0923e7e41d4fe25b57b4229f1bbcc202e6381",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100010074",
+        "name": "___78+[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]_block_invoke_2",
+        "status": "written",
+        "relative_path": "functions/0x100010074.c",
+        "sha256": "504004ad341c54a3097950186607a472a60ef487aa8ef51f4f89d076f1ab6ccc",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10001007c",
+        "name": "___78+[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]_block_invoke.170",
+        "status": "written",
+        "relative_path": "functions/0x10001007c.c",
+        "sha256": "a8f05204acaa1b146ea2b1cc5b1c67160a7fa50e166440e7f292508ac8484447",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000100cc",
+        "name": "+[BottleMenuHandler quitBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x1000100cc.c",
+        "sha256": "b16f7093a073a255992bebcf2c2ac6eedaf2819aadfc60c12760a25599543cbb",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000100d8",
+        "name": "+[BottleMenuHandler forceQuitBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x1000100d8.c",
+        "sha256": "daffd8022ac642b88ddb29e45e83ab462e41e7446bb68a5c65587220c8b4f8ed",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      }
+    ]
+  },
+  "records": [
+    {
+      "record": {
+        "address": "0x10000d2fc",
+        "name": "+[BottleMenuHandler deleteBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000d2fc.c",
+        "sha256": "067fa5f0c725c4a6d145ab4cde49b506275a491a572ce19bd3645a9c8545167d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler deleteBottle:withWindow:]\n// address: 0x10000d2fc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0xa0;\n    var_50 = r28;\n    decomp_var_48 = r27;\n    var_40 = r26;\n    decomp_var_38 = r25;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r20 = [arg2 retain];\n    r21 = [arg3 retain];\n    r22 = [[r20 name] retain];\n    r19 = [[NSAlert alloc] init];\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r25 = r0;\n    r26 = [[r0 localizedStringForKey:@\"Are you sure you want to delete the '%@' bottle?\" value:@\"\" table:0x0] retain];\n    r24 = [[NSString stringWithFormat:r26] retain];\n    [r19 setMessageText:r24];\n    [r24 release];\n    [r26 release];\n    [r25 release];\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r25 = r0;\n    r26 = [[r0 localizedStringForKey:@\"Deleting this bottle will permanently erase all Windows applications contained in it, as well as any documents stored in its C: drive.\" value:@\"\" table:0x0] retain];\n    r24 = [[NSString stringWithFormat:r26] retain];\n    [r19 setInformativeText:r24];\n    [r24 release];\n    [r26 release];\n    [r25 release];\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r24 = r0;\n    r25 = [[r0 localizedStringForKey:@\"Cancel\" value:@\"\" table:0x0] retain];\n    objc_unsafeClaimAutoreleasedReturnValue([r19 addButtonWithTitle:r25]);\n    [r25 release];\n    [r24 release];\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r24 = r0;\n    r23 = [[r0 localizedStringForKey:@\"Delete\" value:@\"\" table:0x0] retain];\n    objc_unsafeClaimAutoreleasedReturnValue([r19 addButtonWithTitle:r23]);\n    [r23 release];\n    [r24 release];\n    if (___isPlatformVersionAtLeast(0x1, 0xb, 0x0, 0x0) != 0x0) {\n            r0 = [r19 buttons];\n            r0 = [r0 retain];\n            r23 = r0;\n            r0 = [r0 objectAtIndexedSubscript:0x1];\n            r0 = [r0 retain];\n            r24 = r0;\n            [r0 setHasDestructiveAction:0x1];\n            [r24 release];\n            [r23 release];\n    }\n    var_88 = *__NSConcreteStackBlock;\n    var_68 = r20;\n    var_60 = r21;\n    var_58 = r22;\n    r22 = [r22 retain];\n    r21 = [r21 retain];\n    r20 = [r20 retain];\n    [r19 beginSheetModalForWindow:r21 completionHandler:&var_88];\n    [var_58 release];\n    [var_60 release];\n    [var_68 release];\n    [r22 release];\n    [r21 release];\n    [r20 release];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000d624",
+        "name": "___45+[BottleMenuHandler deleteBottle:withWindow:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000d624.c",
+        "sha256": "550a5835dae3c8c8eb8dd1c00b15216ad04a6a415189c7b0487a5d3a2a3bb154",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___45+[BottleMenuHandler deleteBottle:withWindow:]_block_invoke\n// address: 0x10000d624\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = arg0;\n    if (r1 == 0x3e9) {\n            r31 = r31 - 0x80;\n            var_30 = r22;\n            decomp_var_28 = r21;\n            var_20 = r20;\n            decomp_var_18 = r19;\n            var_10 = r29;\n            decomp_var_8 = r30;\n            r20 = r0;\n            r0 = r0[0x4];\n            r0 = [r0 isIsManaged];\n            r21 = r0;\n            if (r0 != 0x0) {\n                    r0 = [SFAuthorization authorization];\n                    r0 = [r0 retain];\n                    r19 = r0;\n                    if ([r0 obtainWithRight:\"system.privilege.admin\" flags:0x13 error:0x0] == 0x0) {\n                            [r19 release];\n                    }\n                    else {\n                            [BottleMenuHandler rateBottle:r20[0x4] withWindow:r20[0x5] isDeleting:0x1];\n                            r22 = [r20[0x4] retain];\n                            [r20[0x6] retain];\n                            [r20[0x5] retain];\n                            r19 = [r19 retain];\n                            [r22 delete:&var_78];\n                            [var_40 release];\n                            [var_48 release];\n                            [var_50 release];\n                            [var_58 release];\n                            [r19 release];\n                    }\n            }\n            else {\n                    [BottleMenuHandler rateBottle:r20[0x4] withWindow:r20[0x5] isDeleting:0x1];\n                    r22 = [r20[0x4] retain];\n                    [r20[0x6] retain];\n                    [r20[0x5] retain];\n                    r19 = [0x0 retain];\n                    [r22 delete:&var_78];\n                    [var_40 release];\n                    [var_48 release];\n                    [var_50 release];\n                    [var_58 release];\n                    [r19 release];\n            }\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000d750",
+        "name": "___45+[BottleMenuHandler deleteBottle:withWindow:]_block_invoke_2",
+        "status": "written",
+        "relative_path": "functions/0x10000d750.c",
+        "sha256": "1a57af6a9c5b4065f56dbbe9f7368326fae0e5a255581c14ea4b2f051dc520d7",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___45+[BottleMenuHandler deleteBottle:withWindow:]_block_invoke_2\n// address: 0x10000d750\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x80;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = arg0;\n    r0 = arg0[0x4];\n    r0 = [r0 isIsDeleted];\n    if (r0 != 0x0) {\n            r0 = [CXSetupLib bottleCollectionClass];\n            r0 = [r0 sharedCollection];\n            r0 = [r0 retain];\n            r20 = r0;\n            [r0 refresh];\n            r0 = [r20 release];\n    }\n    else {\n            if (r19[0x40] == 0x0) {\n                    r20 = [[NSAlert alloc] init];\n                    r0 = [NSBundle mainBundle];\n                    r0 = [r0 retain];\n                    r22 = r0;\n                    r23 = [[r0 localizedStringForKey:@\"Failed to delete the bottle '%@'.\" value:@\"\" table:0x0] retain];\n                    r21 = [[NSString stringWithFormat:r23] retain];\n                    [r20 setMessageText:r21];\n                    [r21 release];\n                    [r23 release];\n                    [r22 release];\n                    [r20 beginSheetModalForWindow:r19[0x6] completionHandler:0x0];\n                    r0 = [r20 release];\n            }\n    }\n    if (r19[0x40] != 0x0) {\n            r20 = [dispatch_get_global_queue(0x0, 0x0) retain];\n            var_68 = *__NSConcreteStackBlock;\n            var_48 = [r19[0x4] retain];\n            var_40 = [r19[0x6] retain];\n            var_38 = [r19[0x7] retain];\n            dispatch_sync(r20, &var_68);\n            [r20 release];\n            [var_38 release];\n            [var_40 release];\n            r0 = [var_48 release];\n    }\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000d91c",
+        "name": "___45+[BottleMenuHandler deleteBottle:withWindow:]_block_invoke_3",
+        "status": "written",
+        "relative_path": "functions/0x10000d91c.c",
+        "sha256": "d81cb49e933c8ba0f3e7fe5981e70bf3723dc1ff1c07fc8538e1acc8806f32e2",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___45+[BottleMenuHandler deleteBottle:withWindow:]_block_invoke_3\n// address: 0x10000d91c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [BottleMenuHandler deleteManagedBottle:arg0[0x4] withWindow:arg0[0x5] authorization:arg0[0x6]];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000d934",
+        "name": "+[BottleMenuHandler deleteManagedBottle:withWindow:authorization:]",
+        "status": "written",
+        "relative_path": "functions/0x10000d934.c",
+        "sha256": "330dec607714d6015847380285e82c9d188594f294e3a35a519d2bab9af71ae5",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler deleteManagedBottle:withWindow:authorization:]\n// address: 0x10000d934\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r3 = arg3;\n    var_40 = r26;\n    decomp_var_38 = r25;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r31 = r31 + 0xffffffffffffffb0 - 0x490;\n    r20 = r3;\n    var_48 = **___stack_chk_guard;\n    r19 = [arg2 retain];\n    r20 = [r20 retain];\n    r21 = [arg4 retain];\n    if ([r19 isIsManaged] != 0x0) {\n            r0 = [r19 name];\n            r0 = [r0 retain];\n            var_88 = \"cxbottle\";\n            r0 = objc_retainAutorelease(r0);\n            r22 = r0;\n            [r0 UTF8String];\n            var_490 = 0x0;\n            r23 = [[**_NSApp crossOverRoot] retain];\n            r24 = [[NSString stringWithFormat:@\"%@/bin/cxbounce\", r3] retain];\n            r25 = [r21 authorizationRef];\n            r0 = objc_retainAutorelease(r24);\n            r24 = r0;\n            r0 = [r0 fileSystemRepresentation];\n            r0 = AuthorizationExecuteWithPrivileges(r25, r0, 0x0, &var_88, &var_490);\n            if (r0 != 0x0) {\n                    var_4C0 = *__NSConcreteStackBlock;\n                    var_4A0 = [r22 retain];\n                    var_498 = [r20 retain];\n                    dispatch_async(*__dispatch_main_q, &var_4C0);\n                    [var_498 release];\n                    [var_4A0 release];\n            }\n            else {\n                    do {\n                            r0 = fileno(var_490);\n                            r1 = &decomp_var_488;\n                            r0 = read(r0, r1, 0x400);\n                            if ((r0 & 0xffffffff80000000) != 0x0) {\n                                    r0 = __error(r0, r1, 0x400);\n                                    if (*(int32_t *)r0 == 0x4) {\n                                            continue;\n                                    }\n                                    if (*(int32_t *)__error(r0, r1, 0x400) == 0x23) {\n                                            continue;\n                                    }\n                                    break;\n                            }\n                    } while (r0 != 0x0);\n                    fclose(var_490);\n                    dispatch_async(*__dispatch_main_q, ___block_literal_global);\n            }\n            [r24 release];\n            [r23 release];\n            [r22 release];\n    }\n    [r21 release];\n    [r20 release];\n    [r19 release];\n    if (**___stack_chk_guard != var_48) {\n            __stack_chk_fail();\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000db9c",
+        "name": "___66+[BottleMenuHandler deleteManagedBottle:withWindow:authorization:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000db9c.c",
+        "sha256": "2ce13683346ce5d381a4239f6c27a6cda68434ca1a518f3012e61e5b8ddb7898",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___66+[BottleMenuHandler deleteManagedBottle:withWindow:authorization:]_block_invoke\n// address: 0x10000db9c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [CXSetupLib bottleCollectionClass];\n    r0 = [r0 sharedCollection];\n    r0 = [r0 retain];\n    r19 = r0;\n    [r0 refresh];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000dbd8",
+        "name": "___66+[BottleMenuHandler deleteManagedBottle:withWindow:authorization:]_block_invoke_2",
+        "status": "written",
+        "relative_path": "functions/0x10000dbd8.c",
+        "sha256": "7aa36e2c8eab799b9bd29f99c3ea4b74cbf188189f88f4c645d16ff3c55ac0be",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___66+[BottleMenuHandler deleteManagedBottle:withWindow:authorization:]_block_invoke_2\n// address: 0x10000dbd8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r21 = r0;\n    r20 = [[r0 localizedStringForKey:@\"Could not obtain the authorization to delete files owned by the administrator.\" value:@\"\" table:0x0] retain];\n    [r21 release];\n    r21 = [[NSAlert alloc] init];\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r24 = r0;\n    r22 = [[r0 localizedStringForKey:@\"Failed to delete the published bottle '%@'.\" value:@\"\" table:0x0] retain];\n    r23 = [[NSString stringWithFormat:r22] retain];\n    [r21 setMessageText:r23];\n    [r23 release];\n    [r22 release];\n    [r24 release];\n    [r21 setInformativeText:r20];\n    [r21 beginSheetModalForWindow:arg0[0x5] completionHandler:0x0];\n    [r21 release];\n    r0 = [r20 release];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000dd5c",
+        "name": "+[BottleMenuHandler duplicateBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000dd5c.c",
+        "sha256": "2202009ba3d1143753f844977545c6cf78d6aa2138947c8d46543ab6512e0268",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler duplicateBottle:withWindow:]\n// address: 0x10000dd5c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r20 = [arg3 retain];\n    r19 = [[arg2 name] retain];\n    r0 = [[NewBottleController alloc] init];\n    r21 = r0;\n    [r0 setCopyMode:0x1 withBottleToCopy:r19];\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r23 = r0;\n    r24 = [[r0 localizedStringForKey:@\"copy of %@\" value:@\"\" table:0x0] retain];\n    r22 = [[NSString stringWithFormat:r24] retain];\n    [r21 setSuggestedBottleName:r22];\n    [r22 release];\n    [r24 release];\n    [r23 release];\n    [r21 setupGUI];\n    r22 = [[r21 window] retain];\n    [r20 beginSheet:r22 completionHandler:0x0];\n    [r20 release];\n    [r22 release];\n    [r21 release];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000de98",
+        "name": "+[BottleMenuHandler exportBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000de98.c",
+        "sha256": "17cc5a2cf96e2a2fa199ffaef597a83d8b59b9d0ac146b2dc0181d9788cff0cf",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler exportBottle:withWindow:]\n// address: 0x10000de98\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0xa0;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    var_38 = **___stack_chk_guard;\n    r19 = [arg2 retain];\n    r21 = [arg3 retain];\n    r22 = [[r19 name] retain];\n    r20 = [[NSSavePanel savePanel] retain];\n    var_40 = @\"cxarchive\";\n    r0 = [NSArray arrayWithObjects:&var_40 count:0x1];\n    r23 = [r0 retain];\n    [r20 setAllowedFileTypes:r23];\n    [r23 release];\n    [r20 setCanSelectHiddenExtension:0x1];\n    r23 = [[NSString stringWithFormat:@\"%@.cxarchive\", r3] retain];\n    [r20 setNameFieldStringValue:r23];\n    [r23 release];\n    var_80 = *__NSConcreteStackBlock;\n    var_60 = r20;\n    var_58 = r19;\n    var_50 = r22;\n    var_48 = r21;\n    r21 = [r21 retain];\n    r22 = [r22 retain];\n    r19 = [r19 retain];\n    r0 = [r20 retain];\n    r20 = r0;\n    [r0 beginSheetModalForWindow:r21 completionHandler:&var_80];\n    [var_48 release];\n    [var_50 release];\n    [var_58 release];\n    [var_60 release];\n    [r21 release];\n    [r22 release];\n    [r19 release];\n    [r20 release];\n    if (**___stack_chk_guard != var_38) {\n            __stack_chk_fail();\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000e070",
+        "name": "___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000e070.c",
+        "sha256": "6be6ea824680cd285cbe16ed27691f09fb0734f1fd8d6b1aaf68ff2dda388077",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke\n// address: 0x10000e070\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = arg0;\n    if (r1 == 0x1) {\n            r19 = r0;\n            r0 = r0[0x4];\n            r0 = [r0 URL];\n            r0 = [r0 retain];\n            r21 = r0;\n            r0 = [r0 path];\n            r0 = [r0 retain];\n            r22 = r0;\n            r20 = [[r0 stringInFileSystemRepresentationForm] retain];\n            [r22 release];\n            [r21 release];\n            [r19[0x5] retain];\n            dispatch_async(*__dispatch_main_q, &var_68);\n            r21 = [dispatch_get_global_queue(0x0, 0x0) retain];\n            [r19[0x6] retain];\n            [r19[0x7] retain];\n            [r19[0x5] retain];\n            r19 = [r20 retain];\n            dispatch_async(r21, &var_A8);\n            [r21 release];\n            [var_70 release];\n            [var_78 release];\n            [var_80 release];\n            [var_88 release];\n            [var_48 release];\n            [r19 release];\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000e1e0",
+        "name": "___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke_2",
+        "status": "written",
+        "relative_path": "functions/0x10000e1e0.c",
+        "sha256": "be5759c253337e32ba59f6883383166fb247405b0deb2a3611c4ad0e35c2874e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke_2\n// address: 0x10000e1e0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r19 = arg0[0x4];\n    r20 = [[[CXSetupLib cxSetupClass] bottleStatus:@\"ARCHIVING\"] retain];\n    [r19 addStatusOverride:r20];\n    r0 = [r20 release];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000e230",
+        "name": "___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke.42",
+        "status": "written",
+        "relative_path": "functions/0x10000e230.c",
+        "sha256": "7cf36321a42f6ad824333ca76a5bb254867042a35cfedb854d0e5cc727c94fbe",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke.42\n// address: 0x10000e230\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [CXSetupLib bottleManagementClass];\n    r0 = [r0 archiveBottle:arg0[0x4] toPath:arg0[0x5]];\n    r0 = [r0 retain];\n    r20 = r0;\n    r0 = [r0 objectAtIndex:0x0];\n    r0 = [r0 retain];\n    r21 = r0;\n    [r0 boolValue];\n    [r21 release];\n    var_68 = *__NSConcreteStackBlock;\n    var_40 = [arg0[0x4] retain];\n    var_38 = [arg0[0x6] retain];\n    var_30 = [arg0[0x7] retain];\n    r19 = [r20 retain];\n    dispatch_async(*__dispatch_main_q, &var_68);\n    [var_30 release];\n    [var_38 release];\n    [var_40 release];\n    [r20 release];\n    r0 = [r19 release];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000e33c",
+        "name": "___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke_2.43",
+        "status": "written",
+        "relative_path": "functions/0x10000e33c.c",
+        "sha256": "e02d3e64383f91b8ea0c917ba234a142eb72b74147fc295b2a4ac94bbb348770",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___45+[BottleMenuHandler exportBottle:withWindow:]_block_invoke_2.43\n// address: 0x10000e33c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x50;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = arg0;\n    if (arg0[0x40] == 0x0) {\n            r0 = r19[0x4];\n            r0 = [r0 objectAtIndex:0x1];\n            r0 = [r0 retain];\n            r20 = r0;\n            if (r0 != 0x0) {\n                    r0 = [NSBundle mainBundle];\n                    r0 = [r0 retain];\n                    r21 = r0;\n                    r22 = [[r0 localizedStringForKey:@\"Failed to export bottle '%@' to an archive.\" value:@\"\" table:0x0] retain];\n                    [r21 release];\n                    r21 = [[NSAlert alloc] init];\n                    r23 = [[NSString stringWithFormat:r22] retain];\n                    [r21 setMessageText:r23];\n                    [r23 release];\n                    [r21 setInformativeText:r20];\n                    [r21 beginSheetModalForWindow:r19[0x6] completionHandler:0x0];\n                    [r21 release];\n                    [r22 release];\n            }\n            [r20 release];\n    }\n    r19 = r19[0x7];\n    r20 = [[[CXSetupLib cxSetupClass] bottleStatus:@\"ARCHIVING\"] retain];\n    [r19 removeStatusOverride:r20];\n    r0 = [r20 release];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000e48c",
+        "name": "+[BottleMenuHandler installSoftwareIntoBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000e48c.c",
+        "sha256": "c85a1d40bb9fce83b8eb4e1791896b39eaaf5b1bda2e342c8709360226d43505",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler installSoftwareIntoBottle:withWindow:]\n// address: 0x10000e48c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x30;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = [arg2 retain];\n    r20 = [[arg3 windowController] retain];\n    r1 = objc_opt_class(@class(MainWindowController));\n    if ((objc_opt_isKindOfClass() & 0x1) != 0x0) {\n            [r20 showInstallViewWithSelectedBottle:r19];\n    }\n    else {\n            NSLog(@\"Expected controller of window in +installSoftwareIntoBottle:withWindow: to be a MainWindowController, but got %@\", r1);\n    }\n    [r20 release];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000e518",
+        "name": "+[BottleMenuHandler installMissingDependencies:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000e518.c",
+        "sha256": "7970612659561c3d9d11eaa8db08b7554fef65836a0d01abd5c27a697ff68ac4",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler installMissingDependencies:withWindow:]\n// address: 0x10000e518\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x40;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = [arg2 retain];\n    r20 = [[arg3 windowController] retain];\n    r1 = objc_opt_class(@class(MainWindowController));\n    if ((objc_opt_isKindOfClass() & 0x1) != 0x0) {\n            r0 = [r19 getMissingDependenciesProfile];\n            r0 = [r0 retain];\n            r21 = r0;\n            if (r0 != 0x0) {\n                    r0 = [PackageTreeNode alloc];\n                    r0 = [r0 initWithProfile:r21];\n                    r22 = r0;\n                    [r0 loadIcon];\n                    [r20 showInstallViewWithSelectedBottle:r19 package:r22];\n                    [r22 release];\n            }\n            [r21 release];\n    }\n    else {\n            NSLog(@\"Expected controller of window in +installMissingDependencies:withWindow: to be a MainWindowController, but got %@\", r1);\n    }\n    [r20 release];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000e5f4",
+        "name": "+[BottleMenuHandler openCDriveForBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x10000e5f4.c",
+        "sha256": "71d1fe17c9ff05b88668a81aa4576a7275f1fa83e23b27cb9b753bf32fc60ec4",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler openCDriveForBottle:]\n// address: 0x10000e5f4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r20 = [arg2 retain];\n    r19 = [[NSWorkspace sharedWorkspace] retain];\n    r21 = [[r20 systemDrive] retain];\n    [r20 release];\n    [r19 openFile:r21];\n    [r21 release];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000e670",
+        "name": "+[BottleMenuHandler openShellForBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x10000e670.c",
+        "sha256": "5ae3cf011812bbbe5be5323532412631880509f01c896be2641708c50856f728",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler openShellForBottle:]\n// address: 0x10000e670\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r1 = _cmd;\n    r31 = r31 - 0x180;\n    var_50 = r28;\n    decomp_var_48 = r27;\n    var_40 = r26;\n    decomp_var_38 = r25;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r0 = [arg2 retain];\n    r20 = r0;\n    r21 = [[r0 name] retain];\n    r22 = [[r20 systemDrive] retain];\n    [r20 release];\n    r0 = **_NSApp;\n    r0 = [r0 crossOverRoot];\n    r0 = [r0 retain];\n    r20 = r0;\n    r28 = [[r0 stringByAppendingPathComponent:@\"bin\"] retain];\n    [r20 release];\n    r20 = [[NSSet setWithObjects:@\"HOME\"] retain];\n    r0 = [NSProcessInfo processInfo];\n    r0 = [r0 retain];\n    r23 = r0;\n    r19 = [[r0 environment] retain];\n    [r23 release];\n    r24 = [[NSMutableString string] retain];\n    var_88 = *__NSConcreteStackBlock;\n    r0 = [r20 retain];\n    r23 = r0;\n    var_68 = r0;\n    r0 = [r24 retain];\n    r24 = r0;\n    var_60 = r0;\n    var_B0 = r19;\n    [r19 enumerateKeysAndObjectsUsingBlock:&var_88];\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r26 = r0;\n    r27 = [[r0 localizedStringForKey:@\"%1$@ Bottle \\\"%2$@\\\"\" value:@\"\" table:0x0] retain];\n    r25 = [[NSString stringWithFormat:r27] retain];\n    [r27 release];\n    [r26 release];\n    var_98 = r21;\n    r27 = [[r21 stringQuotedForBash] retain];\n    var_A8 = r28;\n    r28 = [[r28 stringQuotedForBash] retain];\n    var_A0 = r22;\n    r21 = [[r22 stringQuotedForBash] retain];\n    r26 = [[NSString stringWithFormat:@\"export CX_BOTTLE=%@\\nexport PATH=%@\\\":$PATH\\\"\\ncd %@\", r3, r4, r5] retain];\n    [r21 release];\n    [r28 release];\n    [r27 release];\n    r21 = [[r25 stringQuotedForAppleScript] retain];\n    r28 = [[r26 stringQuotedForAppleScript] retain];\n    r27 = [[NSString stringWithFormat:@\"tell app \\\"Terminal\\\"\\nactivate\\ndelay 0.1\\ndo script \\\"exec /bin/bash -l\\\"\\nset theWindow to the front window\\nset the custom title of theWindow to %@\\ndelay 1.0\\n%@do script %@ in theWindow\\nend tell\", r3, r4, r5] retain];\n    [r28 release];\n    [r21 release];\n    r0 = [NSAppleScript alloc];\n    r0 = [r0 initWithSource:r27];\n    r28 = r0;\n    var_90 = 0x0;\n    r2 = &var_90;\n    r21 = [[r0 executeAndReturnError:r2] retain];\n    r20 = [var_90 retain];\n    [r21 release];\n    if (r21 == 0x0) {\n            NSLog(@\"Error running script: error %@\\nsource: %@\\n\", r1, r2);\n    }\n    [r20 release];\n    [r28 release];\n    [r27 release];\n    [r26 release];\n    [r25 release];\n    [var_60 release];\n    [var_68 release];\n    [r24 release];\n    [var_B0 release];\n    [r23 release];\n    [var_A8 release];\n    [var_A0 release];\n    [var_98 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000eae8",
+        "name": "___40+[BottleMenuHandler openShellForBottle:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000eae8.c",
+        "sha256": "614803144219d6e88b05b83afe8c8c0e1054c1a7b78227c1bf982cbca6154348",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___40+[BottleMenuHandler openShellForBottle:]_block_invoke\n// address: 0x10000eae8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x60;\n    var_40 = r26;\n    decomp_var_38 = r25;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r21 = arg0;\n    r19 = [arg1 retain];\n    r20 = [arg2 retain];\n    if (([r21[0x4] containsObject:r19] & 0x1) == 0x0) {\n            r23 = [[r19 stringQuotedForBash] retain];\n            r24 = [[r20 stringQuotedForBash] retain];\n            r22 = [[NSString stringWithFormat:@\"export %@=%@\", r3, r4] retain];\n            [r24 release];\n            [r23 release];\n            r24 = [[r22 stringQuotedForAppleScript] retain];\n            r23 = [[NSString stringWithFormat:@\"do script %@ in theWindow\\ndelay 0.1\\n\", r3] retain];\n            [r24 release];\n            [r21[0x5] appendString:r23];\n            [r23 release];\n            [r22 release];\n    }\n    [r20 release];\n    r0 = [r19 release];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000ec18",
+        "name": "+[BottleMenuHandler publishBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000ec18.c",
+        "sha256": "1763d3e488a0a001a24f53283ee43d6d5f1ff92f070dff69c0e41e4a887e762e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler publishBottle:withWindow:]\n// address: 0x10000ec18\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_30 = r24;\n    decomp_var_28 = r23;\n    r31 = r31 + 0xffffffffffffffc0;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = [arg2 retain];\n    r20 = [arg3 retain];\n    if (([@\"1\" isEqualToString:@\"0\"] & 0x1) == 0x0) {\n            r21 = [[r19 name] retain];\n            r0 = [[PublishController alloc] init];\n            r22 = r0;\n            [r0 setupGUI];\n            [r22 setSourceBottle:r21];\n            r23 = [[r22 window] retain];\n            [r20 beginSheet:r23 completionHandler:0x0];\n            [r23 release];\n            [r22 release];\n            [r21 release];\n    }\n    [r20 release];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000ecf0",
+        "name": "+[BottleMenuHandler rateBottle:withWindow:isDeleting:]",
+        "status": "written",
+        "relative_path": "functions/0x10000ecf0.c",
+        "sha256": "4beaaea47e5bfa8b51341eedd3d8f6b2db14e19e4bd02613c54b9158371199c7",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler rateBottle:withWindow:isDeleting:]\n// address: 0x10000ecf0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x70;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r22 = arg4;\n    r19 = [arg2 retain];\n    r20 = [arg3 retain];\n    if (r19 != 0x0) {\n            r0 = [r19 appid];\n            r0 = [r0 retain];\n            r21 = r0;\n            if ([r0 length] != 0x0 && ([r19 isIsManaged] & 0x1) == 0x0) {\n                    var_58 = *__NSConcreteStackBlock;\n                    var_38 = [r19 retain];\n                    var_30 = [r20 retain];\n                    dispatch_async(*__dispatch_main_q, &var_58);\n                    [var_30 release];\n                    [var_38 release];\n            }\n            [r21 release];\n    }\n    [r20 release];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000ede4",
+        "name": "___54+[BottleMenuHandler rateBottle:withWindow:isDeleting:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000ede4.c",
+        "sha256": "4c78b114a46257685bec1d9d64e20fef15f57016778791962289c9d25ca83722",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___54+[BottleMenuHandler rateBottle:withWindow:isDeleting:]_block_invoke\n// address: 0x10000ede4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_20 = r22;\n    decomp_var_18 = r21;\n    r31 = r31 + 0xffffffffffffffd0;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r20 = arg0;\n    r0 = [SubmitRatingController alloc];\n    r0 = [r0 initWithBottle:r20[0x4] isNag:0x1 isDeleting:r20[0x30]];\n    r19 = r0;\n    if (r0 != 0x0) {\n            r22 = r20[0x5];\n            r21 = [[r19 window] retain];\n            if (r22 != 0x0) {\n                    [r22 beginSheet:r21 completionHandler:0x0];\n            }\n            else {\n                    [r21 center];\n                    [r21 release];\n                    r0 = [r19 window];\n                    r0 = [r0 retain];\n                    r21 = r0;\n                    [r0 makeKeyAndOrderFront:r20[0x5]];\n            }\n            [r21 release];\n    }\n    r0 = [r19 release];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000ee94",
+        "name": "+[BottleMenuHandler runCommandInBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x10000ee94.c",
+        "sha256": "b75d067d44adffc7e99b81283fb95a9c44d2888829548764723d7e2037e05000",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler runCommandInBottle:]\n// address: 0x10000ee94\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    [BottleMenuHandler runCommandInBottle:arg2 withLauncher:0x0];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000eea4",
+        "name": "+[BottleMenuHandler runCommandInBottle:withLauncher:]",
+        "status": "written",
+        "relative_path": "functions/0x10000eea4.c",
+        "sha256": "d80d12720fc342ff841225e6490fe9689adc14bdc0db3e8d7f3880bfa948fb5f",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler runCommandInBottle:withLauncher:]\n// address: 0x10000eea4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_20 = r22;\n    decomp_var_18 = r21;\n    r31 = r31 + 0xffffffffffffffd0;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r20 = self;\n    r19 = [arg2 retain];\n    r21 = [arg3 retain];\n    if (r19 != 0x0) {\n            if ([r19 isCanRunCommands] != 0x0) {\n                    r22 = [[RunCommandController alloc] init];\n                    if (r21 != 0x0) {\n                            [r22 setLauncher:r21];\n                    }\n                    objc_unsafeClaimAutoreleasedReturnValue([r22 window]);\n                    if (r19 != 0x0) {\n                            [r22 setSelectedBottle:r19];\n                    }\n                    [r22 showWindow:r20];\n                    [r22 release];\n                    [r21 release];\n                    [r19 release];\n            }\n            else {\n                    [r21 release];\n                    [r19 release];\n            }\n    }\n    else {\n            r22 = [[RunCommandController alloc] init];\n            if (r21 != 0x0) {\n                    [r22 setLauncher:r21];\n            }\n            objc_unsafeClaimAutoreleasedReturnValue([r22 window]);\n            if (r19 != 0x0) {\n                    [r22 setSelectedBottle:r19];\n            }\n            [r22 showWindow:r20];\n            [r22 release];\n            [r21 release];\n            [r19 release];\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000ef54",
+        "name": "+[BottleMenuHandler toggleDefaultBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x10000ef54.c",
+        "sha256": "b891010193b2ce3ad57fa1a3d979fee315db995c0c2bc26cf19c716d44691938",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler toggleDefaultBottle:]\n// address: 0x10000ef54\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [arg2 retain];\n    r20 = r0;\n    r19 = [[NSNumber numberWithBool:[r0 isIsDefault] ^ 0x1] retain];\n    [r20 setIsDefault:r19 completionHandler:___block_literal_global.128];\n    [r20 release];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000efbc",
+        "name": "___41+[BottleMenuHandler toggleDefaultBottle:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000efbc.c",
+        "sha256": "c072c01fd76e4f3c502749b5d84d79ee58d9b41f49dcb6b6664892e2d75b1e4b",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___41+[BottleMenuHandler toggleDefaultBottle:]_block_invoke\n// address: 0x10000efbc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [CXSetupLib bottleCollectionClass];\n    r0 = [r0 sharedCollection];\n    r0 = [r0 retain];\n    r19 = r0;\n    [r0 refreshDefaultBottle];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000eff8",
+        "name": "+[BottleMenuHandler toggleMSyncForBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000eff8.c",
+        "sha256": "f6fce658f5effc515a5f29a052502a2dbfb22a38b1b8ec52e975d0be45bf468a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler toggleMSyncForBottle:withWindow:]\n// address: 0x10000eff8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    [self toggleMSyncForBottle:arg2 withWindow:arg3 modalCompletionHandler:0x0];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000f000",
+        "name": "+[BottleMenuHandler toggleMSyncForBottle:withWindow:modalCompletionHandler:]",
+        "status": "written",
+        "relative_path": "functions/0x10000f000.c",
+        "sha256": "f6f09ceb1c01b327091e151e317f9117f77c2d713bf801b413c3455a3e900f3c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler toggleMSyncForBottle:withWindow:modalCompletionHandler:]\n// address: 0x10000f000\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0xa0;\n    var_50 = r28;\n    decomp_var_48 = r27;\n    var_40 = r26;\n    decomp_var_38 = r25;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r20 = [arg2 retain];\n    r22 = [arg4 retain];\n    var_90 = [arg3 retain];\n    r23 = [r20 isIsMSyncEnabled];\n    r19 = [[NSAlert alloc] init];\n    r26 = [[NSBundle mainBundle] retain];\n    if ((r23 & 0x1) != 0x0) {\n            r24 = @\"\";\n            r25 = [[r26 localizedStringForKey:@\"Disable MSync\" value:@\"\" table:0x0] retain];\n            [r19 setMessageText:r25];\n            [r25 release];\n            [r26 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r26 = r0;\n            r2 = @\"Reboot Bottle and Disable MSync\";\n    }\n    else {\n            r24 = [[r26 localizedStringForKey:@\"Enable MSync\" value:@\"\" table:0x0] retain];\n            [r19 setMessageText:r24];\n            [r24 release];\n            [r26 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r24 = r0;\n            r26 = [[r0 localizedStringForKey:@\"WARNING: Some Windows applications will not work correctly with MSync enabled.\" value:@\"\" table:0x0] retain];\n            [r24 release];\n            r24 = [[r26 stringByAppendingString:@\"\\n\\n\"] retain];\n            [r26 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r26 = r0;\n            r2 = @\"Reboot Bottle and Enable MSync\";\n    }\n    r25 = [[r0 localizedStringForKey:r2 value:@\"\" table:0x0] retain];\n    objc_unsafeClaimAutoreleasedReturnValue([r19 addButtonWithTitle:r25]);\n    [r25 release];\n    [r26 release];\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r25 = r0;\n    r27 = [[r0 localizedStringForKey:@\"Changing this setting will reboot the bottle and cause any running applications in the bottle to quit. Are you sure you want to do this?\" value:@\"\" table:0x0] retain];\n    r23 = [[r24 stringByAppendingString:r27] retain];\n    [r24 release];\n    [r27 release];\n    [r25 release];\n    [r19 setInformativeText:r23];\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r24 = r0;\n    r25 = [[r0 localizedStringForKey:@\"Cancel\" value:@\"\" table:0x0] retain];\n    objc_unsafeClaimAutoreleasedReturnValue([r19 addButtonWithTitle:r25]);\n    [r25 release];\n    [r24 release];\n    var_88 = *__NSConcreteStackBlock;\n    var_68 = r20;\n    var_60 = r22;\n    r22 = [r22 retain];\n    r20 = [r20 retain];\n    [r19 beginSheetModalForWindow:var_90 completionHandler:&var_88];\n    [var_90 release];\n    [var_60 release];\n    [var_68 release];\n    [r22 release];\n    [r20 release];\n    [r23 release];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000f37c",
+        "name": "___76+[BottleMenuHandler toggleMSyncForBottle:withWindow:modalCompletionHandler:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000f37c.c",
+        "sha256": "bdda3d2ab9797b8a8905b7249fc679f23610f08359038c8cea4e825fcb4bdbdf",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___76+[BottleMenuHandler toggleMSyncForBottle:withWindow:modalCompletionHandler:]_block_invoke\n// address: 0x10000f37c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_10 = r20;\n    decomp_var_8 = r19;\n    r31 = r31 + 0xffffffffffffffe0;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = arg1;\n    r20 = arg0;\n    if (arg1 == 0x3e8) {\n            r8 = r20[0x30];\n            r0 = r20[0x4];\n            if (r8 != 0x0) {\n                    [r0 enableMSync];\n            }\n            else {\n                    [r0 disableMSync];\n            }\n    }\n    r0 = r20[0x5];\n    if (r0 != 0x0) {\n            r0 = (r0[0x2])();\n    }\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000f410",
+        "name": "+[BottleMenuHandler toggleHighResolutionForBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000f410.c",
+        "sha256": "b04ac313ed1343c22da9921d6ef16556c7770fcedcb801f6cb7a08e740ee751e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler toggleHighResolutionForBottle:withWindow:]\n// address: 0x10000f410\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    [self toggleHighResolutionForBottle:arg2 withWindow:arg3 modalCompletionHandler:0x0];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000f418",
+        "name": "+[BottleMenuHandler toggleHighResolutionForBottle:withWindow:modalCompletionHandler:]",
+        "status": "written",
+        "relative_path": "functions/0x10000f418.c",
+        "sha256": "5b46e54160dbefe5cda89dad521fb3a69633c06ba7a50289c6bc6a15a4cc4b14",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler toggleHighResolutionForBottle:withWindow:modalCompletionHandler:]\n// address: 0x10000f418\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x190;\n    var_50 = r28;\n    decomp_var_48 = r27;\n    var_40 = r26;\n    decomp_var_38 = r25;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    var_60 = **___stack_chk_guard;\n    r27 = [arg2 retain];\n    r19 = [arg3 retain];\n    r28 = [arg4 retain];\n    r21 = [r27 isIsHighResolutionEnabled];\n    r20 = [[NSAlert alloc] init];\n    var_160 = r19;\n    if ((r21 & 0x1) != 0x0) {\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r19 = r0;\n            r24 = @\"\";\n            r25 = [[r0 localizedStringForKey:@\"Disable High Resolution\" value:@\"\" table:0x0] retain];\n            [r20 setMessageText:r25];\n            [r25 release];\n            [r19 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r19 = r0;\n            r25 = [[r0 localizedStringForKey:@\"Reboot Bottle and Disable High Resolution Mode\" value:@\"\" table:0x0] retain];\n            objc_unsafeClaimAutoreleasedReturnValue([r20 addButtonWithTitle:r25]);\n            [r25 release];\n            [r19 release];\n    }\n    else {\n            var_17C = r21;\n            var_178 = r28;\n            var_170 = r27;\n            var_168 = r20;\n            var_120 = q0;\n            var_110 = q0;\n            r0 = [NSScreen screens];\n            r0 = [r0 retain];\n            r24 = r0;\n            r0 = [r0 countByEnumeratingWithState:&var_120 objects:&decomp_var_e0 count:0x10];\n            if (r0 != 0x0) {\n                    r25 = r0;\n                    r22 = 0x0;\n                    r21 = *var_110;\n                    r23 = 0x1;\n                    do {\n                            r20 = 0x0;\n                            do {\n                                    if (*var_110 != r21) {\n                                            objc_enumerationMutation(r24);\n                                    }\n                                    r8 = var_118;\n                                    r0 = *(r8 + r20 * 0x8);\n                                    r0 = [r0 deviceDescription];\n                                    r0 = [r0 retain];\n                                    r27 = r0;\n                                    r0 = [r0 objectForKey:@\"NSScreenNumber\"];\n                                    r0 = [r0 retain];\n                                    r28 = r0;\n                                    r19 = [r0 unsignedIntValue];\n                                    [r28 release];\n                                    [r27 release];\n                                    r0 = CGDisplayCopyDisplayMode(r19);\n                                    r19 = r0;\n                                    if (CGDisplayModeGetWidth(r0) != CGDisplayModeGetPixelWidth(r19)) {\n                                            r8 = 0x1;\n                                    }\n                                    r23 = r8 & r23;\n                                    r22 = r8 | r22;\n                                    CGDisplayModeRelease(r19);\n                                    r20 = r20 + 0x1;\n                            } while (r25 != r20);\n                            r0 = [r24 countByEnumeratingWithState:&var_120 objects:&decomp_var_e0 count:0x10];\n                            r25 = r0;\n                    } while (r0 != 0x0);\n            }\n            else {\n                    r22 = 0x0;\n                    r23 = 0x1;\n            }\n            [r24 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r19 = r0;\n            r25 = [[r0 localizedStringForKey:@\"Enable High Resolution\" value:@\"\" table:0x0] retain];\n            r20 = var_168;\n            [r20 setMessageText:r25];\n            [r25 release];\n            [r19 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r19 = r0;\n            r25 = [[r0 localizedStringForKey:@\"WARNING: Many Windows applications render incorrectly in high resolution mode.\" value:@\"\" table:0x0] retain];\n            [r19 release];\n            if ((r22 & 0x1) != 0x0) {\n                    r28 = var_178;\n                    r21 = var_17C;\n                    if ((r23 & 0x1) == 0x0) {\n                            r24 = [[r25 stringByAppendingString:@\"\\n\\n\"] retain];\n                            [r25 release];\n                            r0 = [NSBundle mainBundle];\n                            r0 = [r0 retain];\n                            r26 = r0;\n                            r27 = [[r0 localizedStringForKey:@\"NOTE: Your Mac has a mix of Retina and non-Retina displays. High resolution mode will make things look better on your Retina displays but worse on your non-Retina displays.\" value:@\"\" table:0x0] retain];\n                            r25 = [[r24 stringByAppendingString:r27] retain];\n                            [r24 release];\n                            [r27 release];\n                            [r26 release];\n                    }\n            }\n            else {\n                    r24 = [[r25 stringByAppendingString:@\"\\n\\n\"] retain];\n                    [r25 release];\n                    r0 = [NSBundle mainBundle];\n                    r0 = [r0 retain];\n                    r26 = r0;\n                    r27 = [[r0 localizedStringForKey:@\"NOTE: Your Mac does not have any Retina displays that would benefit from high resolution mode. Enabling it will just make things look blurry.\" value:@\"\" table:0x0] retain];\n                    r25 = [[r24 stringByAppendingString:r27] retain];\n                    r28 = var_178;\n                    r21 = var_17C;\n                    [r24 release];\n                    [r27 release];\n                    [r26 release];\n            }\n            r24 = [[r25 stringByAppendingString:@\"\\n\\n\"] retain];\n            [r25 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r19 = r0;\n            r25 = [[r0 localizedStringForKey:@\"Reboot Bottle and Enable High Resolution Mode\" value:@\"\" table:0x0] retain];\n            objc_unsafeClaimAutoreleasedReturnValue([r20 addButtonWithTitle:r25]);\n            [r25 release];\n            [r19 release];\n            r27 = var_170;\n    }\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r19 = r0;\n    r26 = [[r0 localizedStringForKey:@\"Changing this setting will reboot the bottle and cause any running applications in the bottle to quit. Are you sure you want to do this?\" value:@\"\" table:0x0] retain];\n    r23 = [[r24 stringByAppendingString:r26] retain];\n    [r24 release];\n    [r26 release];\n    [r19 release];\n    [r20 setInformativeText:r23];\n    r0 = [NSBundle mainBundle];\n    r0 = [r0 retain];\n    r19 = r0;\n    r24 = [[r0 localizedStringForKey:@\"Cancel\" value:@\"\" table:0x0] retain];\n    objc_unsafeClaimAutoreleasedReturnValue([r20 addButtonWithTitle:r24]);\n    [r24 release];\n    [r19 release];\n    var_158 = *__NSConcreteStackBlock;\n    r19 = [r28 retain];\n    r21 = [r27 retain];\n    [r20 beginSheetModalForWindow:var_160 completionHandler:&var_158];\n    [r28 release];\n    [r27 release];\n    [r19 release];\n    [r21 release];\n    [r23 release];\n    [r20 release];\n    [var_160 release];\n    if (**___stack_chk_guard != var_60) {\n            __stack_chk_fail();\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000fa6c",
+        "name": "___85+[BottleMenuHandler toggleHighResolutionForBottle:withWindow:modalCompletionHandler:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000fa6c.c",
+        "sha256": "013029f21540a07f909f961da751c2e030fb422813edc14fa65622da83cfccee",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___85+[BottleMenuHandler toggleHighResolutionForBottle:withWindow:modalCompletionHandler:]_block_invoke\n// address: 0x10000fa6c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_10 = r20;\n    decomp_var_8 = r19;\n    r31 = r31 + 0xffffffffffffffe0;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = arg1;\n    r20 = arg0;\n    if (arg1 == 0x3e8) {\n            r8 = r20[0x30];\n            r0 = r20[0x4];\n            if (r8 != 0x0) {\n                    [r0 enableHighResolution];\n            }\n            else {\n                    [r0 disableHighResolution];\n            }\n    }\n    r0 = r20[0x5];\n    if (r0 != 0x0) {\n            r0 = (r0[0x2])();\n    }\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000facc",
+        "name": "+[BottleMenuHandler togglePreviewForBottle:withWindow:]",
+        "status": "written",
+        "relative_path": "functions/0x10000facc.c",
+        "sha256": "69b8ab1de5bb9ab04ef9173217f0fda5b2670a88fd82b315ea4a2eecd8885cba",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler togglePreviewForBottle:withWindow:]\n// address: 0x10000facc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    [self togglePreviewForBottle:arg2 withWindow:arg3 modalCompletionHandler:0x0];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000fad4",
+        "name": "+[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]",
+        "status": "written",
+        "relative_path": "functions/0x10000fad4.c",
+        "sha256": "dccae3420318a3a8059b0db48e2c3a04438a1b5efb56c1ad2657e6ee6ca6d125",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]\n// address: 0x10000fad4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0xd0;\n    var_50 = r28;\n    decomp_var_48 = r27;\n    var_40 = r26;\n    decomp_var_38 = r25;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r21 = [arg2 retain];\n    r27 = [arg4 retain];\n    r20 = [arg3 retain];\n    r19 = [[NSAlert alloc] init];\n    r23 = [r21 isIsPreviewEnabled];\n    r25 = [[NSBundle mainBundle] retain];\n    if (r23 != 0x0) {\n            r26 = [[r25 localizedStringForKey:@\"Disable for CrossOver Preview\" value:@\"\" table:0x0] retain];\n            [r19 setMessageText:r26];\n            [r26 release];\n            [r25 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r25 = r0;\n            r26 = [[r0 localizedStringForKey:@\"Disabling this bottle for CrossOver Preview will cause any running applications in the bottle to quit. Are you sure you want to do this?\" value:@\"\" table:0x0] retain];\n            [r19 setInformativeText:r26];\n            [r26 release];\n            [r25 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r25 = r0;\n            r24 = [[r0 localizedStringForKey:@\"Disable for CrossOver Preview\" value:@\"\" table:0x0] retain];\n            objc_unsafeClaimAutoreleasedReturnValue([r19 addButtonWithTitle:r24]);\n            [r24 release];\n            [r25 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r24 = r0;\n            r23 = [[r0 localizedStringForKey:@\"Cancel\" value:@\"\" table:0x0] retain];\n            objc_unsafeClaimAutoreleasedReturnValue([r19 addButtonWithTitle:r23]);\n            [r23 release];\n            [r24 release];\n            var_80 = *__NSConcreteStackBlock;\n            r22 = [r27 retain];\n            r24 = [r21 retain];\n            [r19 beginSheetModalForWindow:r20 completionHandler:&var_80];\n            [r20 release];\n            [r27 release];\n            r23 = r21;\n    }\n    else {\n            r26 = [[r25 localizedStringForKey:@\"Enable for CrossOver Preview\" value:@\"\" table:0x0] retain];\n            [r19 setMessageText:r26];\n            [r26 release];\n            [r25 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r25 = r0;\n            r26 = [[r0 localizedStringForKey:@\"WARNING: CrossOver Preview contains untested changes that may permanently break bottles.\" value:@\"\" table:0x0] retain];\n            [r25 release];\n            r25 = [[r26 stringByAppendingString:@\"\\n\\n\"] retain];\n            [r26 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r26 = r0;\n            r24 = [[r0 localizedStringForKey:@\"Enable for CrossOver Preview\" value:@\"\" table:0x0] retain];\n            objc_unsafeClaimAutoreleasedReturnValue([r19 addButtonWithTitle:r24]);\n            [r24 release];\n            [r26 release];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r26 = r0;\n            r22 = r27;\n            r27 = [[r0 localizedStringForKey:@\"Are you sure you want to enable the '%@' bottle for CrossOver Preview?\" value:@\"\" table:0x0] retain];\n            r28 = [[r21 name] retain];\n            r0 = [NSString stringWithFormat:r27];\n            r0 = [r0 retain];\n            var_B8 = r20;\n            r20 = r0;\n            r24 = [[r25 stringByAppendingString:r20] retain];\n            [r25 release];\n            [r20 release];\n            [r28 release];\n            [r27 release];\n            [r26 release];\n            [r19 setInformativeText:r24];\n            r0 = [NSBundle mainBundle];\n            r0 = [r0 retain];\n            r20 = r0;\n            r23 = [[r0 localizedStringForKey:@\"Cancel\" value:@\"\" table:0x0] retain];\n            objc_unsafeClaimAutoreleasedReturnValue([r19 addButtonWithTitle:r23]);\n            [r23 release];\n            [r20 release];\n            var_B0 = *__NSConcreteStackBlock;\n            var_88 = r22;\n            r23 = [r22 retain];\n            r22 = [r21 retain];\n            r20 = var_B8;\n            [r19 beginSheetModalForWindow:r20 completionHandler:&var_B0];\n            [r20 release];\n            [var_88 release];\n            [r21 release];\n    }\n    [r23 release];\n    [r22 release];\n    [r24 release];\n    [r19 release];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10000ffe4",
+        "name": "___78+[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]_block_invoke",
+        "status": "written",
+        "relative_path": "functions/0x10000ffe4.c",
+        "sha256": "68b6f2de859a876af5f29e1779d0923e7e41d4fe25b57b4229f1bbcc202e6381",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___78+[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]_block_invoke\n// address: 0x10000ffe4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x50;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = arg1;\n    r20 = arg0;\n    if (arg1 == 0x3e8) {\n            r0 = r20[0x4];\n            var_38 = *__NSConcreteStackBlock;\n            r0 = [r0 retain];\n            var_18 = r0;\n            [r0 quit:&var_38];\n            [var_18 release];\n    }\n    r0 = r20[0x5];\n    if (r0 != 0x0) {\n            r0 = (r0[0x2])();\n    }\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100010074",
+        "name": "___78+[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]_block_invoke_2",
+        "status": "written",
+        "relative_path": "functions/0x100010074.c",
+        "sha256": "504004ad341c54a3097950186607a472a60ef487aa8ef51f4f89d076f1ab6ccc",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___78+[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]_block_invoke_2\n// address: 0x100010074\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = arg0[0x4];\n    r0 = [r0 disablePreview];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10001007c",
+        "name": "___78+[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]_block_invoke.170",
+        "status": "written",
+        "relative_path": "functions/0x10001007c.c",
+        "sha256": "a8f05204acaa1b146ea2b1cc5b1c67160a7fa50e166440e7f292508ac8484447",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: ___78+[BottleMenuHandler togglePreviewForBottle:withWindow:modalCompletionHandler:]_block_invoke.170\n// address: 0x10001007c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_10 = r20;\n    decomp_var_8 = r19;\n    r31 = r31 + 0xffffffffffffffe0;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = arg1;\n    r20 = arg0;\n    if (arg1 == 0x3e8) {\n            [r20[0x4] enablePreview];\n    }\n    r0 = r20[0x5];\n    if (r0 != 0x0) {\n            r0 = (r0[0x2])();\n    }\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000100cc",
+        "name": "+[BottleMenuHandler quitBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x1000100cc.c",
+        "sha256": "b16f7093a073a255992bebcf2c2ac6eedaf2819aadfc60c12760a25599543cbb",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler quitBottle:]\n// address: 0x1000100cc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    [arg2 quit:0x0];\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000100d8",
+        "name": "+[BottleMenuHandler forceQuitBottle:]",
+        "status": "written",
+        "relative_path": "functions/0x1000100d8.c",
+        "sha256": "daffd8022ac642b88ddb29e45e83ab462e41e7446bb68a5c65587220c8b4f8ed",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[BottleMenuHandler forceQuitBottle:]\n// address: 0x1000100d8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    [arg2 forceQuit:0x0];\n    return;\n"
+    }
+  ]
+}

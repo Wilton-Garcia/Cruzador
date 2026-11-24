@@ -1,0 +1,686 @@
+{
+  "version": 1,
+  "target_sha256": "1d245f2f9f52bd56a120616fede8b1eb9cca9fa228319de04a2cbeabd8de7174",
+  "architecture": "arm64",
+  "exported_records": 1360,
+  "exported_groups": 33,
+  "inventory_evidence_id": "ev_5b0612884f4c957cc430ecc1de0710af4f7e640ea251e89a4f313186d752ecb4",
+  "flows": [
+    {
+      "id": "new-bottle",
+      "entry": "0x10001ba64",
+      "provider_name": "-[NewBottleController doCreate]",
+      "evidence_id": "ev_e1413adff808c88f58325e2b71bdcacf2f3c0ac775d33228a8674f4c89ccee49",
+      "direct_targets": [
+        {
+          "destination": "0x100065580",
+          "provider_name": "imp___stubs__dispatch_async",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000656d0",
+          "provider_name": "imp___stubs__objc_autoreleasePoolPop",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000656dc",
+          "provider_name": "imp___stubs__objc_autoreleasePoolPush",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000657a8",
+          "provider_name": "imp___stubs__objc_release",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000657b4",
+          "provider_name": "imp___stubs__objc_retain",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000657d8",
+          "provider_name": "imp___stubs__objc_retainAutoreleasedReturnValue",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x100067200",
+          "provider_name": "_objc_msgSend$archiveURL",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100067a40",
+          "provider_name": "_objc_msgSend$boolValue",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100067ba0",
+          "provider_name": "_objc_msgSend$bottleManagementClass",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100067bc0",
+          "provider_name": "_objc_msgSend$bottleName",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100067ca0",
+          "provider_name": "_objc_msgSend$bottleTemplate",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100067cc0",
+          "provider_name": "_objc_msgSend$bottleToCopy",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100068e40",
+          "provider_name": "_objc_msgSend$copyMode",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100068ee0",
+          "provider_name": "_objc_msgSend$createBottle:fromTemplate:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006a0a0",
+          "provider_name": "_objc_msgSend$duplicateBottle:fromBottle:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006e920",
+          "provider_name": "_objc_msgSend$objectAtIndex:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006efa0",
+          "provider_name": "_objc_msgSend$path",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000706e0",
+          "provider_name": "_objc_msgSend$restoreBottle:fromArchive:",
+          "resolution": "selector-only"
+        }
+      ],
+      "dynamic_receiver_resolution": "unknown"
+    },
+    {
+      "id": "run-command",
+      "entry": "0x100017e4c",
+      "provider_name": "-[RunCommandController runCommand]",
+      "evidence_id": "ev_5f2f7b3b72f7fdbb105dc881664758e2922480c3c491cea27f4361bc8adc8145",
+      "direct_targets": [
+        {
+          "destination": "0x100065514",
+          "provider_name": "imp___stubs____stack_chk_fail",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x100065628",
+          "provider_name": "imp___stubs__fcntl",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000656ac",
+          "provider_name": "imp___stubs__objc_alloc",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000656b8",
+          "provider_name": "imp___stubs__objc_alloc_init",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000657a8",
+          "provider_name": "imp___stubs__objc_release",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000657c0",
+          "provider_name": "imp___stubs__objc_retainAutorelease",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000657d8",
+          "provider_name": "imp___stubs__objc_retainAutoreleasedReturnValue",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x10006585c",
+          "provider_name": "imp___stubs__open",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x100066b40",
+          "provider_name": "_objc_msgSend$addObserver:selector:name:object:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000672a0",
+          "provider_name": "_objc_msgSend$array",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000672c0",
+          "provider_name": "_objc_msgSend$arrayByAddingObject:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000672e0",
+          "provider_name": "_objc_msgSend$arrayByAddingObjectsFromArray:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000673c0",
+          "provider_name": "_objc_msgSend$arrayWithObjects:count:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100067a60",
+          "provider_name": "_objc_msgSend$bottle",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100067a80",
+          "provider_name": "_objc_msgSend$bottleArray",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100067fa0",
+          "provider_name": "_objc_msgSend$bundleWithURL:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100068700",
+          "provider_name": "_objc_msgSend$cmdLineToArgv:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000687e0",
+          "provider_name": "_objc_msgSend$command",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100068de0",
+          "provider_name": "_objc_msgSend$copy",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100068e80",
+          "provider_name": "_objc_msgSend$count",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100068fe0",
+          "provider_name": "_objc_msgSend$createLogFile",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000690a0",
+          "provider_name": "_objc_msgSend$crossOverRoot",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100069280",
+          "provider_name": "_objc_msgSend$cxUtilsClass",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100069320",
+          "provider_name": "_objc_msgSend$data",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000693a0",
+          "provider_name": "_objc_msgSend$dataUsingEncoding:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100069540",
+          "provider_name": "_objc_msgSend$defaultCenter",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100069b60",
+          "provider_name": "_objc_msgSend$dirname:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006a440",
+          "provider_name": "_objc_msgSend$envVars",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006a760",
+          "provider_name": "_objc_msgSend$fileDescriptor",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006a7c0",
+          "provider_name": "_objc_msgSend$fileHandleForReading",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006a860",
+          "provider_name": "_objc_msgSend$fileSystemRepresentation",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006bc20",
+          "provider_name": "_objc_msgSend$initWithFileDescriptor:closeOnDealloc:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006d5c0",
+          "provider_name": "_objc_msgSend$launch",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006d6a0",
+          "provider_name": "_objc_msgSend$launcher",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006d8e0",
+          "provider_name": "_objc_msgSend$length",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006dc40",
+          "provider_name": "_objc_msgSend$logChannels",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006dc80",
+          "provider_name": "_objc_msgSend$logEnvironment",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006dce0",
+          "provider_name": "_objc_msgSend$logFileURL",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006dd40",
+          "provider_name": "_objc_msgSend$loggingOptions",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006e400",
+          "provider_name": "_objc_msgSend$name",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006e920",
+          "provider_name": "_objc_msgSend$objectAtIndex:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006e960",
+          "provider_name": "_objc_msgSend$objectForInfoDictionaryKey:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006efa0",
+          "provider_name": "_objc_msgSend$path",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006f200",
+          "provider_name": "_objc_msgSend$pipe",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006fa80",
+          "provider_name": "_objc_msgSend$readToEndOfFileInBackgroundAndNotify",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000709e0",
+          "provider_name": "_objc_msgSend$sanitizeLogChannels",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100070a80",
+          "provider_name": "_objc_msgSend$saveSettingsToRecent",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100070ec0",
+          "provider_name": "_objc_msgSend$selectedObjects",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100071200",
+          "provider_name": "_objc_msgSend$setArguments:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100071800",
+          "provider_name": "_objc_msgSend$setCommandRunning:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000726c0",
+          "provider_name": "_objc_msgSend$setLaunchPath:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100073480",
+          "provider_name": "_objc_msgSend$setStandardError:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000734e0",
+          "provider_name": "_objc_msgSend$setStandardOutput:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100073540",
+          "provider_name": "_objc_msgSend$setStdErr:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000742c0",
+          "provider_name": "_objc_msgSend$standardError",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000742e0",
+          "provider_name": "_objc_msgSend$standardOutput",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100074620",
+          "provider_name": "_objc_msgSend$stringByAppendingFormat:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100074640",
+          "provider_name": "_objc_msgSend$stringByAppendingPathComponent:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000749e0",
+          "provider_name": "_objc_msgSend$stringWithFormat:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100074d00",
+          "provider_name": "_objc_msgSend$systemInfoClass",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100074d20",
+          "provider_name": "_objc_msgSend$systemInformationString",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100074d40",
+          "provider_name": "_objc_msgSend$systemInformationStringForBottle:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100075ae0",
+          "provider_name": "_objc_msgSend$url",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100075fc0",
+          "provider_name": "_objc_msgSend$writeData:",
+          "resolution": "selector-only"
+        }
+      ],
+      "dynamic_receiver_resolution": "unknown"
+    },
+    {
+      "id": "graphics",
+      "entry": "0x1000232f8",
+      "provider_name": "-[BottleViewController graphicsOptionChanged:]",
+      "evidence_id": "ev_516474838af861b9503845f24e9012f18828b73e3b99d3d79d326a0f2b47b0fe",
+      "direct_targets": [
+        {
+          "destination": "0x1000657a8",
+          "provider_name": "imp___stubs__objc_release",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000657d8",
+          "provider_name": "imp___stubs__objc_retainAutoreleasedReturnValue",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000675a0",
+          "provider_name": "_objc_msgSend$autoGraphicsMenuItem",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100067a60",
+          "provider_name": "_objc_msgSend$bottle",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100069300",
+          "provider_name": "_objc_msgSend$d3dMetalMenuItem",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006a0e0",
+          "provider_name": "_objc_msgSend$dxmtMenuItem",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006a100",
+          "provider_name": "_objc_msgSend$dxvkMenuItem",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006b200",
+          "provider_name": "_objc_msgSend$graphicsPopUpButton",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100070e60",
+          "provider_name": "_objc_msgSend$selectedItem",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100072080",
+          "provider_name": "_objc_msgSend$setGraphicsBackendAuto",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000720a0",
+          "provider_name": "_objc_msgSend$setGraphicsBackendD3DMetal",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000720c0",
+          "provider_name": "_objc_msgSend$setGraphicsBackendDXMT",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x1000720e0",
+          "provider_name": "_objc_msgSend$setGraphicsBackendDXVK",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100072100",
+          "provider_name": "_objc_msgSend$setGraphicsBackendWine",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x100075fa0",
+          "provider_name": "_objc_msgSend$wined3dMenuItem",
+          "resolution": "selector-only"
+        }
+      ],
+      "dynamic_receiver_resolution": "unknown"
+    },
+    {
+      "id": "python-bridge",
+      "entry": "0x100039c10",
+      "provider_name": "+[CXSetupLib initialize]",
+      "evidence_id": "ev_d37eb949a0c890e052f90bf7304e73be15a5ddb97fd48ae7f815559ee4464eea",
+      "direct_targets": [
+        {
+          "destination": "0x1000541d4",
+          "provider_name": "_InitializePython",
+          "resolution": "native-entry"
+        },
+        {
+          "destination": "0x100065304",
+          "provider_name": "imp___stubs__NSClassFromString",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x100065370",
+          "provider_name": "imp___stubs__NSLog",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x100065778",
+          "provider_name": "imp___stubs__objc_opt_class",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x100074ec0",
+          "provider_name": "_objc_msgSend$terminate:",
+          "resolution": "selector-only"
+        }
+      ],
+      "dynamic_receiver_resolution": "unknown"
+    },
+    {
+      "id": "task-launch",
+      "entry": "0x100039ad8",
+      "provider_name": "+[CXTask launchedTaskWithLaunchPath:arguments:]",
+      "evidence_id": "ev_6c111760de32ab092c4160aa267a06f5b3b922462b4460bedb35481e8f20160c",
+      "direct_targets": [
+        {
+          "destination": "0x1000656ac",
+          "provider_name": "imp___stubs__objc_alloc",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000656e8",
+          "provider_name": "imp___stubs__objc_autoreleaseReturnValue",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x100065778",
+          "provider_name": "imp___stubs__objc_opt_class",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000657a8",
+          "provider_name": "imp___stubs__objc_release",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000657b4",
+          "provider_name": "imp___stubs__objc_retain",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x1000657d8",
+          "provider_name": "imp___stubs__objc_retainAutoreleasedReturnValue",
+          "resolution": "import-stub"
+        },
+        {
+          "destination": "0x100067220",
+          "provider_name": "_objc_msgSend$argumentsWithStringsReplacedBySpecialStrings:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006bf60",
+          "provider_name": "_objc_msgSend$initWithTask:",
+          "resolution": "selector-only"
+        },
+        {
+          "destination": "0x10006d680",
+          "provider_name": "_objc_msgSend$launchedTaskWithLaunchPath:arguments:",
+          "resolution": "selector-only"
+        }
+      ],
+      "dynamic_receiver_resolution": "unknown"
+    }
+  ],
+  "dispatch_metadata": {
+    "evidence_id": "ev_8eeef7dc358942d7a41f9c1e77e273f66f009a0f868520f4ee04411c84125974",
+    "coverage": [
+      {
+        "decoded": 96,
+        "examined": 96,
+        "facet": "objc_class_method_ivar_metadata",
+        "reason": "max_records_reached",
+        "status": "partial"
+      },
+      {
+        "decoded": 2480,
+        "examined": 2480,
+        "facet": "binary_relative_pointers",
+        "reason": "max_records_reached",
+        "status": "partial"
+      },
+      {
+        "decoded": 0,
+        "examined": 0,
+        "facet": "objc_properties_categories",
+        "reason": "max_records_reached",
+        "status": "partial"
+      },
+      {
+        "decoded": 3,
+        "examined": 3,
+        "facet": "pointer_fixups",
+        "reason": "LC_DYLD_INFO rebase opcodes; LC_DYLD_INFO bind opcodes",
+        "status": "complete"
+      },
+      {
+        "decoded": 0,
+        "examined": 0,
+        "facet": "swift_generic_resilient_witnesses_overrides_async_coroutines",
+        "reason": "This reader admits Swift nominal type declarations, simple conformance/static witness records and non-generic, non-resilient class vtables; generic/resilient tables and other Swift metadata families are not decoded",
+        "status": "unsupported"
+      },
+      {
+        "decoded": 0,
+        "examined": 0,
+        "facet": "swift_conformances_static_witness_slots",
+        "reason": "max_records_reached",
+        "status": "partial"
+      },
+      {
+        "decoded": 0,
+        "examined": 0,
+        "facet": "swift_declarations",
+        "reason": "max_records_reached",
+        "status": "partial"
+      },
+      {
+        "decoded": 0,
+        "examined": 0,
+        "facet": "swift_class_vtable_descriptors",
+        "reason": "max_records_reached",
+        "status": "partial"
+      }
+    ]
+  },
+  "interrupted_observation": {
+    "operation": "inspect_native_dispatch_metadata",
+    "parameters": {
+      "max_records": 20000
+    },
+    "result": "MCP transport closed before a result was delivered",
+    "completion": "unknown",
+    "replayed": false
+  },
+  "limitations": [
+    "Direct target rows cover the provider observation, not every dynamic call.",
+    "An Objective-C selector does not identify a unique runtime receiver.",
+    "Selected application workflows were exported; decorative views and unrelated controllers were not exhaustively reviewed.",
+    "The main executable analysis does not establish Wine or graphics implementation internals."
+  ]
+}

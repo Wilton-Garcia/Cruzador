@@ -8,7 +8,7 @@ Alvo: `/Applications/CrossOver.app/Contents/MacOS/CrossOver`, SHA-256 `1d245f2f9
 
 O Hopper reportou 10.627 procedimentos e 5.524 objetos de string. O inventário inclui 2.108 métodos Objective-C, 132 nomes de blocos reconhecidos pelo padrão do compilador e 2.037 despachos `_objc_msgSend$…`; os demais nomes incluem auxiliares e funções sem nome recuperado. Essas categorias são uma classificação derivada dos nomes, não uma classificação semântica de cada função. A descoberta completa de funções permanece desconhecida. Evidências: `ev_408ea556820bb1ec8438240492220bef10b61a87c4dfb73567da3fdf13182232` e `ev_5b0612884f4c957cc430ecc1de0710af4f7e640ea251e89a4f313186d752ecb4`.
 
-Foram exportados 644 registros de pseudocódigo em nove grupos:
+A primeira etapa exportou 644 registros de pseudocódigo em nove grupos:
 
 | Grupo | Registros |
 | --- | ---: |
@@ -88,3 +88,13 @@ Já há fronteiras suficientes para orientar implementações próprias de sele�
 Permanecem sem recuperação completa as instruções dos módulos Python, o motor de receitas e dependências, os detalhes da persistência de configurações, Wine/Win32, integração de arquitetura e renderizadores. O `bin/wineloader` distribuído foi identificado localmente como Mach-O x86_64; seus caminhos de execução ainda não foram decompilados. Não há comprovação de equivalência funcional integral, nem do comportamento original em execução nesta etapa.
 
 O [mapa estruturado](../evidence/binary-feature-map.json) liga achados aos endereços, módulos e evidências. Os dados decompilados são material de análise; a implementação do Cruzador permanece separada em `Sources/`.
+
+## Ampliação do rastreamento nativo
+
+O catálogo atual contém 1.360 exports em 33 grupos. A ampliação cobre controladores de seleção e configuração de instalação, resumo, dependências, downloads, encerramento, preferências, CrossTie, launchers e estado de tarefas, além dos grupos iniciais. Os textos e hashes estão no mesmo catálogo versionado; a tabela acima preserva a contagem da primeira etapa.
+
+Cinco observações de alvos diretos foram relacionadas ao inventário de procedimentos em `evidence/native-workflows.json`: criação de bottle, execução de comando, seleção gráfica, inicialização da ponte e lançamento de tarefa. Destinos `_objc_msgSend$…` permanecem resolvidos apenas pelo seletor; destinos de stubs importados não são corpos de implementação recuperados. O relatório não transforma um nome de seletor em prova de um receptor dinâmico específico.
+
+A leitura inicial de metadados de despacho teve cobertura parcial, preservada por faceta. Uma solicitação ampliada foi interrompida pelo fechamento do transporte MCP; sua conclusão é desconhecida e não foi repetida. Os exports e a última coleção de evidências haviam sido persistidos. A CLI local existente continua disponível pelo launcher do projeto Limpador, com seu Node compatível, sem instalação de outro runtime.
+
+As fronteiras nativas relevantes aos fluxos catalogados estão mapeadas para continuar a reconstrução. Isso não significa revisão semântica integral de todos os 10.627 nomes do inventário, nem decompilação completa dos motores empacotados. Incertezas de código dinâmico e de intervalos de função continuam explícitas.

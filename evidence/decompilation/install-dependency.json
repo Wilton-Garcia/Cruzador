@@ -1,0 +1,1268 @@
+{
+  "original_export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/install-dependency",
+  "manifest": {
+    "version": 1,
+    "target_sha256": "1d245f2f9f52bd56a120616fede8b1eb9cca9fa228319de04a2cbeabd8de7174",
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956"
+    },
+    "analysis_profile_digest": "3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a",
+    "layout": "address",
+    "layout_status": "address",
+    "latest_run": {
+      "resume": false,
+      "selected": 30,
+      "excluded": 10597,
+      "selection": {
+        "name": "[InstallDependency ",
+        "namespace": null,
+        "address_start": null,
+        "address_end": null,
+        "limit": 256
+      },
+      "inventory_limitations": [
+        "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+        "Results depend on Hopper's completed static analysis."
+      ]
+    },
+    "limitations": [
+      "30 exported function record(s) report an unavailable body: Hopper's public Python API does not expose complete function body ranges"
+    ],
+    "functions": [
+      {
+        "address": "0x100031270",
+        "name": "-[InstallDependency description]",
+        "status": "written",
+        "relative_path": "functions/0x100031270.c",
+        "sha256": "ac002235f90be5cb3cf6aa6c90c5171928d6e06c1b27b5c959fa31ed72e229f1",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031364",
+        "name": "-[InstallDependency isEqual:]",
+        "status": "written",
+        "relative_path": "functions/0x100031364.c",
+        "sha256": "359eaa440771b106189687f8ccfee8755b154d1a3d7180ffb9c423bfa560bf07",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031418",
+        "name": "-[InstallDependency hash]",
+        "status": "written",
+        "relative_path": "functions/0x100031418.c",
+        "sha256": "54090b6c08ab2e85b097be4f1ab7b6cfa47803ff9e7983e74039da7fb51c8741",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031454",
+        "name": "+[InstallDependency keyPathsForValuesAffectingManuallyRemoved]",
+        "status": "written",
+        "relative_path": "functions/0x100031454.c",
+        "sha256": "dcd575f0437dfd9258201a589cca315fef7891195d0219f0ddb71d91e819507a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031468",
+        "name": "-[InstallDependency isManuallyRemoved]",
+        "status": "written",
+        "relative_path": "functions/0x100031468.c",
+        "sha256": "74302aacb25d04069570b4e6c040b29c1a510aa21c2b46b0bd2755a46ff94f54",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031484",
+        "name": "+[InstallDependency keyPathsForValuesAffectingManuallyAdded]",
+        "status": "written",
+        "relative_path": "functions/0x100031484.c",
+        "sha256": "e0a17375364eee21c9b7d7e4309632f7cceb328d28fffa20dc8da06e76e29d05",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031498",
+        "name": "-[InstallDependency isManuallyAdded]",
+        "status": "written",
+        "relative_path": "functions/0x100031498.c",
+        "sha256": "dc9020577b1fccb31570c975398b28541cf2a4bc62f69212fdb8c9403c52590e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000314b4",
+        "name": "+[InstallDependency keyPathsForValuesAffectingDisplayName]",
+        "status": "written",
+        "relative_path": "functions/0x1000314b4.c",
+        "sha256": "be45de34c84d714fba671b708b6e648e44231d122ac92035d458f2600ce80382",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000314ec",
+        "name": "-[InstallDependency displayName]",
+        "status": "written",
+        "relative_path": "functions/0x1000314ec.c",
+        "sha256": "c0243c0d07e6b6596a369cc301494806165cf4230335e459c11f5f052904176d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000315fc",
+        "name": "+[InstallDependency keyPathsForValuesAffectingCanRemove]",
+        "status": "written",
+        "relative_path": "functions/0x1000315fc.c",
+        "sha256": "4ac018c4599898a12852c8350d32bd93b8e28a5cce5f9f403614ccaa88e68bbe",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031634",
+        "name": "-[InstallDependency canRemove]",
+        "status": "written",
+        "relative_path": "functions/0x100031634.c",
+        "sha256": "e655179288016faf662f29101fc99b9fc901b37658f97209c7d53de00411cc91",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000316b8",
+        "name": "+[InstallDependency keyPathsForValuesAffectingCanReAdd]",
+        "status": "written",
+        "relative_path": "functions/0x1000316b8.c",
+        "sha256": "af64dbd48725549d5086378e011029b81e7a42a150a827c20c796b48e4df9012",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000316cc",
+        "name": "-[InstallDependency canReAdd]",
+        "status": "written",
+        "relative_path": "functions/0x1000316cc.c",
+        "sha256": "d937581d4afc8e23a28a7f7571acb5e4b5af7ff36de9c356bd63086d3b2b4c80",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000316d0",
+        "name": "-[InstallDependency depth]",
+        "status": "written",
+        "relative_path": "functions/0x1000316d0.c",
+        "sha256": "83efd8d55c5287c689441f02e4f9addac02580d7439b4f153eaddfeddba0928d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003173c",
+        "name": "-[InstallDependency sortKey]",
+        "status": "written",
+        "relative_path": "functions/0x10003173c.c",
+        "sha256": "203d9945a55348d0f303d954b4ed24e879a1d10252c89d211f4515ca36eb162d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031740",
+        "name": "-[InstallDependency compareInstallDependencySortKey:]",
+        "status": "written",
+        "relative_path": "functions/0x100031740.c",
+        "sha256": "c2cdbd6fb41831fc06c1d4f7e04de3ee7ae08b3cb7786caaefeb1e98cfc64a3e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000317cc",
+        "name": "-[InstallDependency compareInstallDependencyWithinDepth:]",
+        "status": "written",
+        "relative_path": "functions/0x1000317cc.c",
+        "sha256": "30a1d746e7f6a778d18cf963b558c7f0577a188a8b2396e0ca65feb99af5d47a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000318c0",
+        "name": "-[InstallDependency appID]",
+        "status": "written",
+        "relative_path": "functions/0x1000318c0.c",
+        "sha256": "6b023582e12bed0445fba14c7832a3f307cca18248384093461c4b5256907d71",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000318d0",
+        "name": "-[InstallDependency setAppID:]",
+        "status": "written",
+        "relative_path": "functions/0x1000318d0.c",
+        "sha256": "2eba5a98710164b857eed75ba0e903349b4969df47329ea7a347bd3bedd1a575",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000318dc",
+        "name": "-[InstallDependency parent]",
+        "status": "written",
+        "relative_path": "functions/0x1000318dc.c",
+        "sha256": "7dc5eb0e4f215ebeade7d123b58a10416d05c24d78f4ce2021b2130c7222a95a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x1000318fc",
+        "name": "-[InstallDependency setParent:]",
+        "status": "written",
+        "relative_path": "functions/0x1000318fc.c",
+        "sha256": "262d2601d5f7928341974188f28f6673b1e0211192d9ac98bafa67236beea370",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031910",
+        "name": "-[InstallDependency name]",
+        "status": "written",
+        "relative_path": "functions/0x100031910.c",
+        "sha256": "7b308d178d24ae24b9b136e54b67fdd81271ae860438dd8f9a9391383cea0d87",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031920",
+        "name": "-[InstallDependency setName:]",
+        "status": "written",
+        "relative_path": "functions/0x100031920.c",
+        "sha256": "18a81ed3f2272f2427c85e296539b5954e2169b79de3eca381139e1312ea4bff",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003192c",
+        "name": "-[InstallDependency reason]",
+        "status": "written",
+        "relative_path": "functions/0x10003192c.c",
+        "sha256": "8fb3e3924fa1659102848efe09d409409ed7b3baaab06df54d7ab843951cf0b5",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003193c",
+        "name": "-[InstallDependency setReason:]",
+        "status": "written",
+        "relative_path": "functions/0x10003193c.c",
+        "sha256": "f4770c7b5a00001c415f543682e821348c1197da5121222123f64043a68afe91",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031948",
+        "name": "-[InstallDependency reasonString]",
+        "status": "written",
+        "relative_path": "functions/0x100031948.c",
+        "sha256": "eea658b4d016c6d75d050d86a5e0a1df91d36c401c286d7229db7e9b09f9f7b1",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031958",
+        "name": "-[InstallDependency setReasonString:]",
+        "status": "written",
+        "relative_path": "functions/0x100031958.c",
+        "sha256": "0fd7eb1cec9baa55178d6d8b989ae1dcb4338a989a02bf70778de2cab12782bc",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031964",
+        "name": "-[InstallDependency undo]",
+        "status": "written",
+        "relative_path": "functions/0x100031964.c",
+        "sha256": "6f322f836bc07b7373d84b67589669885fc9b6bd30e7de4022761e77697243eb",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031974",
+        "name": "-[InstallDependency setUndo:]",
+        "status": "written",
+        "relative_path": "functions/0x100031974.c",
+        "sha256": "87d4b47b3120d2459c729cd427465d6b76610bda8877f933d9d6677f8a0c6d79",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x100031984",
+        "name": "-[InstallDependency .cxx_destruct]",
+        "status": "written",
+        "relative_path": "functions/0x100031984.c",
+        "sha256": "f4de3eaaac8d819bb604e319c89c2c48735a271192f1414d0da356b58597872c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      }
+    ]
+  },
+  "records": [
+    {
+      "record": {
+        "address": "0x100031270",
+        "name": "-[InstallDependency description]",
+        "status": "written",
+        "relative_path": "functions/0x100031270.c",
+        "sha256": "ac002235f90be5cb3cf6aa6c90c5171928d6e06c1b27b5c959fa31ed72e229f1",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency description]\n// address: 0x100031270\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_40 = self;\n    r0 = [[&var_40 super] description];\n    r21 = [r0 retain];\n    r22 = [[self appID] retain];\n    r23 = [[self reason] retain];\n    r24 = [[self reasonString] retain];\n    [self undo];\n    r19 = [[NSString stringWithFormat:@\"%@ appID %@ reason %@ %@ undo %lu\", r3, r4, r5, r6, r7] retain];\n    [r24 release];\n    [r23 release];\n    [r22 release];\n    [r21 release];\n    r0 = [r19 autorelease];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031364",
+        "name": "-[InstallDependency isEqual:]",
+        "status": "written",
+        "relative_path": "functions/0x100031364.c",
+        "sha256": "359eaa440771b106189687f8ccfee8755b154d1a3d7180ffb9c423bfa560bf07",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency isEqual:]\n// address: 0x100031364\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_20 = r22;\n    decomp_var_18 = r21;\n    r31 = r31 + 0xffffffffffffffd0;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r20 = self;\n    r0 = [arg2 retain];\n    r19 = r0;\n    if (r0 != r20) {\n            if ([r19 isMemberOfClass:objc_opt_class(r20)] != 0x0) {\n                    r21 = [[r20 appID] retain];\n                    r22 = [[r19 appID] retain];\n                    r20 = [r21 isEqualToString:r22];\n                    [r22 release];\n                    [r21 release];\n            }\n            else {\n                    r20 = 0x0;\n            }\n    }\n    else {\n            r20 = 0x1;\n    }\n    [r19 release];\n    r0 = r20;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031418",
+        "name": "-[InstallDependency hash]",
+        "status": "written",
+        "relative_path": "functions/0x100031418.c",
+        "sha256": "54090b6c08ab2e85b097be4f1ab7b6cfa47803ff9e7983e74039da7fb51c8741",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency hash]\n// address: 0x100031418\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [self appID];\n    r0 = [r0 retain];\n    r19 = r0;\n    r20 = [r0 hash];\n    [r19 release];\n    r0 = r20;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031454",
+        "name": "+[InstallDependency keyPathsForValuesAffectingManuallyRemoved]",
+        "status": "written",
+        "relative_path": "functions/0x100031454.c",
+        "sha256": "dcd575f0437dfd9258201a589cca315fef7891195d0219f0ddb71d91e819507a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[InstallDependency keyPathsForValuesAffectingManuallyRemoved]\n// address: 0x100031454\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [NSSet setWithObject:@\"undo\"];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031468",
+        "name": "-[InstallDependency isManuallyRemoved]",
+        "status": "written",
+        "relative_path": "functions/0x100031468.c",
+        "sha256": "74302aacb25d04069570b4e6c040b29c1a510aa21c2b46b0bd2755a46ff94f54",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency isManuallyRemoved]\n// address: 0x100031468\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r31 = r31 + 0xfffffffffffffff0;\n    r0 = [self undo];\n    if (r0 == 0x1) {\n            r0 = 0x1;\n    }\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031484",
+        "name": "+[InstallDependency keyPathsForValuesAffectingManuallyAdded]",
+        "status": "written",
+        "relative_path": "functions/0x100031484.c",
+        "sha256": "e0a17375364eee21c9b7d7e4309632f7cceb328d28fffa20dc8da06e76e29d05",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[InstallDependency keyPathsForValuesAffectingManuallyAdded]\n// address: 0x100031484\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [NSSet setWithObject:@\"undo\"];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031498",
+        "name": "-[InstallDependency isManuallyAdded]",
+        "status": "written",
+        "relative_path": "functions/0x100031498.c",
+        "sha256": "dc9020577b1fccb31570c975398b28541cf2a4bc62f69212fdb8c9403c52590e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency isManuallyAdded]\n// address: 0x100031498\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r31 = r31 + 0xfffffffffffffff0;\n    r0 = [self undo];\n    if (r0 == 0x2) {\n            r0 = 0x1;\n    }\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000314b4",
+        "name": "+[InstallDependency keyPathsForValuesAffectingDisplayName]",
+        "status": "written",
+        "relative_path": "functions/0x1000314b4.c",
+        "sha256": "be45de34c84d714fba671b708b6e648e44231d122ac92035d458f2600ce80382",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[InstallDependency keyPathsForValuesAffectingDisplayName]\n// address: 0x1000314b4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [NSSet setWithObjects:@\"name\"];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000314ec",
+        "name": "-[InstallDependency displayName]",
+        "status": "written",
+        "relative_path": "functions/0x1000314ec.c",
+        "sha256": "c0243c0d07e6b6596a369cc301494806165cf4230335e459c11f5f052904176d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency displayName]\n// address: 0x1000314ec\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_20 = r22;\n    decomp_var_18 = r21;\n    r31 = r31 + 0xffffffffffffffd0;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = self;\n    [NSFont systemFontSize];\n    r21 = [[NSFont systemFontOfSize:r2] retain];\n    r20 = [[NSMutableDictionary dictionaryWithObject:r21 forKey:**_NSFontAttributeName] retain];\n    [r21 release];\n    if ([r19 isManuallyRemoved] != 0x0) {\n            r21 = [@(0x1) retain];\n            [r20 setObject:r21 forKey:**_NSStrikethroughStyleAttributeName];\n            [r21 release];\n    }\n    r21 = [NSAttributedString alloc];\n    r19 = [[r19 name] retain];\n    r21 = [r21 initWithString:r19 attributes:r20];\n    [r19 release];\n    [r20 release];\n    r0 = [r21 autorelease];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000315fc",
+        "name": "+[InstallDependency keyPathsForValuesAffectingCanRemove]",
+        "status": "written",
+        "relative_path": "functions/0x1000315fc.c",
+        "sha256": "4ac018c4599898a12852c8350d32bd93b8e28a5cce5f9f403614ccaa88e68bbe",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[InstallDependency keyPathsForValuesAffectingCanRemove]\n// address: 0x1000315fc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [NSSet setWithObjects:@\"reason\"];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031634",
+        "name": "-[InstallDependency canRemove]",
+        "status": "written",
+        "relative_path": "functions/0x100031634.c",
+        "sha256": "e655179288016faf662f29101fc99b9fc901b37658f97209c7d53de00411cc91",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency canRemove]\n// address: 0x100031634\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_20 = r22;\n    decomp_var_18 = r21;\n    r31 = r31 + 0xffffffffffffffd0;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = self;\n    if (([self isManuallyRemoved] & 0x1) != 0x0) {\n            r0 = 0x0;\n    }\n    else {\n            r19 = [[r19 reason] retain];\n            r20 = [[InstallConfiguration reasonMain] retain];\n            r21 = [r19 isEqualToNumber:r20];\n            [r20 release];\n            [r19 release];\n            r0 = r21 ^ 0x1;\n    }\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000316b8",
+        "name": "+[InstallDependency keyPathsForValuesAffectingCanReAdd]",
+        "status": "written",
+        "relative_path": "functions/0x1000316b8.c",
+        "sha256": "af64dbd48725549d5086378e011029b81e7a42a150a827c20c796b48e4df9012",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[InstallDependency keyPathsForValuesAffectingCanReAdd]\n// address: 0x1000316b8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [NSSet setWithObject:@\"manuallyRemoved\"];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000316cc",
+        "name": "-[InstallDependency canReAdd]",
+        "status": "written",
+        "relative_path": "functions/0x1000316cc.c",
+        "sha256": "d937581d4afc8e23a28a7f7571acb5e4b5af7ff36de9c356bd63086d3b2b4c80",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency canReAdd]\n// address: 0x1000316cc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = [self isManuallyRemoved];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000316d0",
+        "name": "-[InstallDependency depth]",
+        "status": "written",
+        "relative_path": "functions/0x1000316d0.c",
+        "sha256": "83efd8d55c5287c689441f02e4f9addac02580d7439b4f153eaddfeddba0928d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency depth]\n// address: 0x1000316d0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_20 = r22;\n    decomp_var_18 = r21;\n    r31 = r31 + 0xffffffffffffffd0;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r0 = [self parent];\n    r0 = [r0 retain];\n    if (r0 != 0x0) {\n            r20 = r0;\n            r19 = 0x0;\n            do {\n                    r19 = r19 + 0x1;\n                    r21 = [[r20 parent] retain];\n                    [r20 release];\n                    r20 = r21;\n            } while (r21 != 0x0);\n    }\n    else {\n            r19 = 0x0;\n    }\n    r0 = r19;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003173c",
+        "name": "-[InstallDependency sortKey]",
+        "status": "written",
+        "relative_path": "functions/0x10003173c.c",
+        "sha256": "203d9945a55348d0f303d954b4ed24e879a1d10252c89d211f4515ca36eb162d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency sortKey]\n// address: 0x10003173c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = self;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031740",
+        "name": "-[InstallDependency compareInstallDependencySortKey:]",
+        "status": "written",
+        "relative_path": "functions/0x100031740.c",
+        "sha256": "c2cdbd6fb41831fc06c1d4f7e04de3ee7ae08b3cb7786caaefeb1e98cfc64a3e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency compareInstallDependencySortKey:]\n// address: 0x100031740\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_20 = r22;\n    decomp_var_18 = r21;\n    r31 = r31 + 0xffffffffffffffd0;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r20 = self;\n    r0 = [arg2 retain];\n    r19 = r0;\n    if (r20 != r0) {\n            r21 = [r20 depth];\n            r0 = [r19 depth];\n            bool_2 = r21 <= r0;\n            if (r21 < r0) {\n                    r20 = 0xffffffffffffffff;\n            }\n            else {\n                    if (!bool_2) {\n                            r20 = 0x1;\n                    }\n                    else {\n                            r20 = [r20 compareInstallDependencyWithinDepth:r19];\n                    }\n            }\n    }\n    else {\n            r20 = 0x0;\n    }\n    [r19 release];\n    r0 = r20;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000317cc",
+        "name": "-[InstallDependency compareInstallDependencyWithinDepth:]",
+        "status": "written",
+        "relative_path": "functions/0x1000317cc.c",
+        "sha256": "30a1d746e7f6a778d18cf963b558c7f0577a188a8b2396e0ca65feb99af5d47a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency compareInstallDependencyWithinDepth:]\n// address: 0x1000317cc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    var_30 = r24;\n    decomp_var_28 = r23;\n    r31 = r31 + 0xffffffffffffffc0;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r20 = self;\n    r19 = [arg2 retain];\n    r22 = [[r20 reason] retain];\n    r23 = [[r19 reason] retain];\n    r21 = [r22 compare:r23];\n    [r23 release];\n    [r22 release];\n    if (r21 == 0x0) {\n            r0 = [r20 parent];\n            r0 = [r0 retain];\n            r21 = r0;\n            [r0 release];\n            if (r21 != 0x0) {\n                    r20 = [[r20 parent] retain];\n                    r22 = [[r19 parent] retain];\n                    r21 = [r20 compareInstallDependencyWithinDepth:r22];\n                    [r22 release];\n                    [r20 release];\n            }\n    }\n    [r19 release];\n    r0 = r21;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000318c0",
+        "name": "-[InstallDependency appID]",
+        "status": "written",
+        "relative_path": "functions/0x1000318c0.c",
+        "sha256": "6b023582e12bed0445fba14c7832a3f307cca18248384093461c4b5256907d71",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency appID]\n// address: 0x1000318c0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = self->_appID;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000318d0",
+        "name": "-[InstallDependency setAppID:]",
+        "status": "written",
+        "relative_path": "functions/0x1000318d0.c",
+        "sha256": "2eba5a98710164b857eed75ba0e903349b4969df47329ea7a347bd3bedd1a575",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency setAppID:]\n// address: 0x1000318d0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_setProperty_nonatomic_copy();\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000318dc",
+        "name": "-[InstallDependency parent]",
+        "status": "written",
+        "relative_path": "functions/0x1000318dc.c",
+        "sha256": "7dc5eb0e4f215ebeade7d123b58a10416d05c24d78f4ce2021b2130c7222a95a",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency parent]\n// address: 0x1000318dc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = objc_loadWeakRetained((int64_t *)&self->_parent);\n    r0 = [r0 autorelease];\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x1000318fc",
+        "name": "-[InstallDependency setParent:]",
+        "status": "written",
+        "relative_path": "functions/0x1000318fc.c",
+        "sha256": "262d2601d5f7928341974188f28f6673b1e0211192d9ac98bafa67236beea370",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency setParent:]\n// address: 0x1000318fc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_storeWeak((int64_t *)&self->_parent, arg2);\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031910",
+        "name": "-[InstallDependency name]",
+        "status": "written",
+        "relative_path": "functions/0x100031910.c",
+        "sha256": "7b308d178d24ae24b9b136e54b67fdd81271ae860438dd8f9a9391383cea0d87",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency name]\n// address: 0x100031910\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = self->_name;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031920",
+        "name": "-[InstallDependency setName:]",
+        "status": "written",
+        "relative_path": "functions/0x100031920.c",
+        "sha256": "18a81ed3f2272f2427c85e296539b5954e2169b79de3eca381139e1312ea4bff",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency setName:]\n// address: 0x100031920\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_setProperty_nonatomic_copy();\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003192c",
+        "name": "-[InstallDependency reason]",
+        "status": "written",
+        "relative_path": "functions/0x10003192c.c",
+        "sha256": "8fb3e3924fa1659102848efe09d409409ed7b3baaab06df54d7ab843951cf0b5",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency reason]\n// address: 0x10003192c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = self->_reason;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003193c",
+        "name": "-[InstallDependency setReason:]",
+        "status": "written",
+        "relative_path": "functions/0x10003193c.c",
+        "sha256": "f4770c7b5a00001c415f543682e821348c1197da5121222123f64043a68afe91",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency setReason:]\n// address: 0x10003193c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_setProperty_nonatomic_copy();\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031948",
+        "name": "-[InstallDependency reasonString]",
+        "status": "written",
+        "relative_path": "functions/0x100031948.c",
+        "sha256": "eea658b4d016c6d75d050d86a5e0a1df91d36c401c286d7229db7e9b09f9f7b1",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency reasonString]\n// address: 0x100031948\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = self->_reasonString;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031958",
+        "name": "-[InstallDependency setReasonString:]",
+        "status": "written",
+        "relative_path": "functions/0x100031958.c",
+        "sha256": "0fd7eb1cec9baa55178d6d8b989ae1dcb4338a989a02bf70778de2cab12782bc",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency setReasonString:]\n// address: 0x100031958\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_setProperty_nonatomic_copy();\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031964",
+        "name": "-[InstallDependency undo]",
+        "status": "written",
+        "relative_path": "functions/0x100031964.c",
+        "sha256": "6f322f836bc07b7373d84b67589669885fc9b6bd30e7de4022761e77697243eb",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency undo]\n// address: 0x100031964\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = self->_undo;\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031974",
+        "name": "-[InstallDependency setUndo:]",
+        "status": "written",
+        "relative_path": "functions/0x100031974.c",
+        "sha256": "87d4b47b3120d2459c729cd427465d6b76610bda8877f933d9d6677f8a0c6d79",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency setUndo:]\n// address: 0x100031974\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    self->_undo = arg2;\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x100031984",
+        "name": "-[InstallDependency .cxx_destruct]",
+        "status": "written",
+        "relative_path": "functions/0x100031984.c",
+        "sha256": "f4de3eaaac8d819bb604e319c89c2c48735a271192f1414d0da356b58597872c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: -[InstallDependency .cxx_destruct]\n// address: 0x100031984\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    objc_storeStrong((int64_t *)&self->_reasonString, 0x0);\n    objc_storeStrong((int64_t *)&self->_reason, 0x0);\n    objc_storeStrong((int64_t *)&self->_name, 0x0);\n    objc_destroyWeak((int64_t *)&self->_parent);\n    objc_storeStrong((int64_t *)&self->_appID, 0x0);\n    return;\n"
+    }
+  ]
+}
