@@ -1,0 +1,6695 @@
+{
+  "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.pyc",
+  "sha256": "c535139474521ab9d373b2b94552525b4e26f4fe334018ba075b2e5cf3ff85c2",
+  "magic_hex": "f30d0d0a",
+  "python_version": "3.13.3 (tags/v3.13.3:6280bb54784, Jan  1 1970, 00:00:00) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "inspection": "marshal decode and CPython disassembly; target code not imported or executed",
+  "code_objects": [
+    {
+      "index": 0,
+      "name": "<module>",
+      "qualname": "<module>",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py",
+      "firstlineno": 1,
+      "argcount": 0,
+      "names": [
+        "cxlog",
+        "cxobjc",
+        "cxproduct",
+        "cxurlget",
+        "cxutils",
+        "distversion",
+        "proxyinfo",
+        "systeminfo",
+        "webutils",
+        "json",
+        "urllib.parse",
+        "urlencode",
+        "get_platform",
+        "Proxy",
+        "RatingUtils"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "int",
+          "value": 0
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "urlencode"
+            }
+          ]
+        },
+        {
+          "kind": "code",
+          "name": "get_platform",
+          "qualname": "get_platform"
+        },
+        {
+          "kind": "code",
+          "name": "RatingUtils",
+          "qualname": "RatingUtils"
+        },
+        {
+          "kind": "str",
+          "value": "RatingUtils"
+        }
+      ],
+      "bytecode_sha256": "ef63ac4cbd8d2e02cbef3a07173993ddf66040d883bcd185c699a0ee57726fb2",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "IMPORT_NAME",
+          "arg": 0,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 0,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "IMPORT_NAME",
+          "arg": 1,
+          "argrepr": "cxobjc",
+          "argval": {
+            "kind": "str",
+            "value": "cxobjc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "cxobjc",
+          "argval": {
+            "kind": "str",
+            "value": "cxobjc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "IMPORT_NAME",
+          "arg": 2,
+          "argrepr": "cxproduct",
+          "argval": {
+            "kind": "str",
+            "value": "cxproduct"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "cxproduct",
+          "argval": {
+            "kind": "str",
+            "value": "cxproduct"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "IMPORT_NAME",
+          "arg": 3,
+          "argrepr": "cxurlget",
+          "argval": {
+            "kind": "str",
+            "value": "cxurlget"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "cxurlget",
+          "argval": {
+            "kind": "str",
+            "value": "cxurlget"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "IMPORT_NAME",
+          "arg": 4,
+          "argrepr": "cxutils",
+          "argval": {
+            "kind": "str",
+            "value": "cxutils"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "cxutils",
+          "argval": {
+            "kind": "str",
+            "value": "cxutils"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 42,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 46,
+          "opname": "IMPORT_NAME",
+          "arg": 5,
+          "argrepr": "distversion",
+          "argval": {
+            "kind": "str",
+            "value": "distversion"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 48,
+          "opname": "STORE_NAME",
+          "arg": 5,
+          "argrepr": "distversion",
+          "argval": {
+            "kind": "str",
+            "value": "distversion"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 50,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 52,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "IMPORT_NAME",
+          "arg": 6,
+          "argrepr": "proxyinfo",
+          "argval": {
+            "kind": "str",
+            "value": "proxyinfo"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "STORE_NAME",
+          "arg": 6,
+          "argrepr": "proxyinfo",
+          "argval": {
+            "kind": "str",
+            "value": "proxyinfo"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 58,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 60,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "IMPORT_NAME",
+          "arg": 7,
+          "argrepr": "systeminfo",
+          "argval": {
+            "kind": "str",
+            "value": "systeminfo"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 64,
+          "opname": "STORE_NAME",
+          "arg": 7,
+          "argrepr": "systeminfo",
+          "argval": {
+            "kind": "str",
+            "value": "systeminfo"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 68,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "IMPORT_NAME",
+          "arg": 8,
+          "argrepr": "webutils",
+          "argval": {
+            "kind": "str",
+            "value": "webutils"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "STORE_NAME",
+          "arg": 8,
+          "argrepr": "webutils",
+          "argval": {
+            "kind": "str",
+            "value": "webutils"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 74,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 76,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 78,
+          "opname": "IMPORT_NAME",
+          "arg": 9,
+          "argrepr": "json",
+          "argval": {
+            "kind": "str",
+            "value": "json"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 80,
+          "opname": "STORE_NAME",
+          "arg": 9,
+          "argrepr": "json",
+          "argval": {
+            "kind": "str",
+            "value": "json"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 82,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 84,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "('urlencode',)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "urlencode"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 86,
+          "opname": "IMPORT_NAME",
+          "arg": 10,
+          "argrepr": "urllib.parse",
+          "argval": {
+            "kind": "str",
+            "value": "urllib.parse"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 88,
+          "opname": "IMPORT_FROM",
+          "arg": 11,
+          "argrepr": "urlencode",
+          "argval": {
+            "kind": "str",
+            "value": "urlencode"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 90,
+          "opname": "STORE_NAME",
+          "arg": 11,
+          "argrepr": "urlencode",
+          "argval": {
+            "kind": "str",
+            "value": "urlencode"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 92,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 94,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "code get_platform (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py:18)",
+          "argval": {
+            "kind": "code",
+            "name": "get_platform",
+            "qualname": "get_platform"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 96,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 98,
+          "opname": "STORE_NAME",
+          "arg": 12,
+          "argrepr": "get_platform",
+          "argval": {
+            "kind": "str",
+            "value": "get_platform"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 100,
+          "opname": "LOAD_BUILD_CLASS",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 102,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 104,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "code RatingUtils (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py:24)",
+          "argval": {
+            "kind": "code",
+            "name": "RatingUtils",
+            "qualname": "RatingUtils"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 106,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 108,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "'RatingUtils'",
+          "argval": {
+            "kind": "str",
+            "value": "RatingUtils"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 110,
+          "opname": "LOAD_NAME",
+          "arg": 1,
+          "argrepr": "cxobjc",
+          "argval": {
+            "kind": "str",
+            "value": "cxobjc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 112,
+          "opname": "LOAD_ATTR",
+          "arg": 26,
+          "argrepr": "Proxy",
+          "argval": {
+            "kind": "str",
+            "value": "Proxy"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 132,
+          "opname": "CALL",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 140,
+          "opname": "STORE_NAME",
+          "arg": 14,
+          "argrepr": "RatingUtils",
+          "argval": {
+            "kind": "str",
+            "value": "RatingUtils"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 142,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 1,
+      "name": "get_platform",
+      "qualname": "get_platform",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py",
+      "firstlineno": 18,
+      "argcount": 0,
+      "names": [
+        "cxproduct",
+        "is_crostini",
+        "distversion",
+        "PLATFORM"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Put the platform in the right format for the REST API. We submit\nratings from Chrome OS as \"Android\" for historical reasons"
+        },
+        {
+          "kind": "str",
+          "value": "Android"
+        }
+      ],
+      "bytecode_sha256": "815eac09bc8f46c82a364458606f878a322f0e384911456c675c9028626f5744",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "cxproduct",
+          "argval": {
+            "kind": "str",
+            "value": "cxproduct"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_ATTR",
+          "arg": 2,
+          "argrepr": "is_crostini",
+          "argval": {
+            "kind": "str",
+            "value": "is_crostini"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 42,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 50,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 2,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 58
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "'Android'",
+          "argval": {
+            "kind": "str",
+            "value": "Android"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 58,
+          "opname": "LOAD_GLOBAL",
+          "arg": 4,
+          "argrepr": "distversion",
+          "argval": {
+            "kind": "str",
+            "value": "distversion"
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 68,
+          "opname": "LOAD_ATTR",
+          "arg": 6,
+          "argrepr": "PLATFORM",
+          "argval": {
+            "kind": "str",
+            "value": "PLATFORM"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 88,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 2,
+      "name": "RatingUtils",
+      "qualname": "RatingUtils",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py",
+      "firstlineno": 24,
+      "argcount": 0,
+      "names": [
+        "__name__",
+        "__module__",
+        "__qualname__",
+        "__firstlineno__",
+        "__init__",
+        "initWithAppID_",
+        "cxobjc",
+        "namedSelector",
+        "get_rating",
+        "set_rating",
+        "__static_attributes__"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "RatingUtils"
+        },
+        {
+          "kind": "int",
+          "value": 24
+        },
+        {
+          "kind": "code",
+          "name": "__init__",
+          "qualname": "RatingUtils.__init__"
+        },
+        {
+          "kind": "code",
+          "name": "initWithAppID_",
+          "qualname": "RatingUtils.initWithAppID_"
+        },
+        {
+          "kind": "bytes",
+          "hex": "6665746368526174696e67"
+        },
+        {
+          "kind": "code",
+          "name": "get_rating",
+          "qualname": "RatingUtils.get_rating"
+        },
+        {
+          "kind": "bytes",
+          "hex": "736574526174696e673a4e6f7465733a"
+        },
+        {
+          "kind": "code",
+          "name": "set_rating",
+          "qualname": "RatingUtils.set_rating"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "connection_failed"
+            },
+            {
+              "kind": "str",
+              "value": "login_required"
+            },
+            {
+              "kind": "str",
+              "value": "name"
+            },
+            {
+              "kind": "str",
+              "value": "notes"
+            },
+            {
+              "kind": "str",
+              "value": "rating"
+            },
+            {
+              "kind": "str",
+              "value": "token"
+            },
+            {
+              "kind": "str",
+              "value": "url"
+            }
+          ]
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "e7519b03dc3acec10b701a46e1f599473612707c84805849c66a4e7754e235b7",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_NAME",
+          "arg": 0,
+          "argrepr": "__name__",
+          "argval": {
+            "kind": "str",
+            "value": "__name__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "__module__",
+          "argval": {
+            "kind": "str",
+            "value": "__module__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'RatingUtils'",
+          "argval": {
+            "kind": "str",
+            "value": "RatingUtils"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "__qualname__",
+          "argval": {
+            "kind": "str",
+            "value": "__qualname__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "24",
+          "argval": {
+            "kind": "int",
+            "value": 24
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "__firstlineno__",
+          "argval": {
+            "kind": "str",
+            "value": "__firstlineno__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "code RatingUtils.__init__ (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py:25)",
+          "argval": {
+            "kind": "code",
+            "name": "__init__",
+            "qualname": "RatingUtils.__init__"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "__init__",
+          "argval": {
+            "kind": "str",
+            "value": "__init__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "code RatingUtils.initWithAppID_ (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py:40)",
+          "argval": {
+            "kind": "code",
+            "name": "initWithAppID_",
+            "qualname": "RatingUtils.initWithAppID_"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "STORE_NAME",
+          "arg": 5,
+          "argrepr": "initWithAppID_",
+          "argval": {
+            "kind": "str",
+            "value": "initWithAppID_"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "LOAD_NAME",
+          "arg": 6,
+          "argrepr": "cxobjc",
+          "argval": {
+            "kind": "str",
+            "value": "cxobjc"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "LOAD_ATTR",
+          "arg": 14,
+          "argrepr": "namedSelector",
+          "argval": {
+            "kind": "str",
+            "value": "namedSelector"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 48,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 50,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "b'fetchRating'",
+          "argval": {
+            "kind": "bytes",
+            "hex": "6665746368526174696e67"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 52,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 60,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "code RatingUtils.get_rating (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py:46)",
+          "argval": {
+            "kind": "code",
+            "name": "get_rating",
+            "qualname": "RatingUtils.get_rating"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 64,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "STORE_NAME",
+          "arg": 8,
+          "argrepr": "get_rating",
+          "argval": {
+            "kind": "str",
+            "value": "get_rating"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 74,
+          "opname": "LOAD_NAME",
+          "arg": 6,
+          "argrepr": "cxobjc",
+          "argval": {
+            "kind": "str",
+            "value": "cxobjc"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 76,
+          "opname": "LOAD_ATTR",
+          "arg": 14,
+          "argrepr": "namedSelector",
+          "argval": {
+            "kind": "str",
+            "value": "namedSelector"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 96,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 98,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "b'setRating:Notes:'",
+          "argval": {
+            "kind": "bytes",
+            "hex": "736574526174696e673a4e6f7465733a"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 100,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 108,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "code RatingUtils.set_rating (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py:95)",
+          "argval": {
+            "kind": "code",
+            "name": "set_rating",
+            "qualname": "RatingUtils.set_rating"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 110,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 112,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 120,
+          "opname": "STORE_NAME",
+          "arg": 9,
+          "argrepr": "set_rating",
+          "argval": {
+            "kind": "str",
+            "value": "set_rating"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 122,
+          "opname": "LOAD_CONST",
+          "arg": 8,
+          "argrepr": "('connection_failed', 'login_required', 'name', 'notes', 'rating', 'token', 'url')",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "connection_failed"
+              },
+              {
+                "kind": "str",
+                "value": "login_required"
+              },
+              {
+                "kind": "str",
+                "value": "name"
+              },
+              {
+                "kind": "str",
+                "value": "notes"
+              },
+              {
+                "kind": "str",
+                "value": "rating"
+              },
+              {
+                "kind": "str",
+                "value": "token"
+              },
+              {
+                "kind": "str",
+                "value": "url"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 124,
+          "opname": "STORE_NAME",
+          "arg": 10,
+          "argrepr": "__static_attributes__",
+          "argval": {
+            "kind": "str",
+            "value": "__static_attributes__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 126,
+          "opname": "RETURN_CONST",
+          "arg": 9,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 3,
+      "name": "__init__",
+      "qualname": "RatingUtils.__init__",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py",
+      "firstlineno": 25,
+      "argcount": 3,
+      "names": [
+        "cxobjc",
+        "Proxy",
+        "__init__",
+        "url",
+        "login_required",
+        "connection_failed",
+        "token",
+        "rating",
+        "notes",
+        "name"
+      ],
+      "varnames": [
+        "self",
+        "bottle",
+        "appid"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "str",
+          "value": "https://www.codeweavers.com/bin/rest/rank/"
+        },
+        {
+          "kind": "bool",
+          "value": false
+        }
+      ],
+      "bytecode_sha256": "5effffc829edf744d158852f6a6f4a16e9e30f36d1d2b7ea2a8d7cd25e6cab59",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "cxobjc",
+          "argval": {
+            "kind": "str",
+            "value": "cxobjc"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_ATTR",
+          "arg": 2,
+          "argrepr": "Proxy",
+          "argval": {
+            "kind": "str",
+            "value": "Proxy"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "LOAD_ATTR",
+          "arg": 5,
+          "argrepr": "__init__ + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "__init__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 52,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 64,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "'https://www.codeweavers.com/bin/rest/rank/'",
+          "argval": {
+            "kind": "str",
+            "value": "https://www.codeweavers.com/bin/rest/rank/"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "appid",
+          "argval": {
+            "kind": "str",
+            "value": "appid"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 68,
+          "opname": "BINARY_OP",
+          "arg": 0,
+          "argrepr": "+",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 74,
+          "opname": "STORE_ATTR",
+          "arg": 3,
+          "argrepr": "url",
+          "argval": {
+            "kind": "str",
+            "value": "url"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 84,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 86,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 88,
+          "opname": "STORE_ATTR",
+          "arg": 4,
+          "argrepr": "login_required",
+          "argval": {
+            "kind": "str",
+            "value": "login_required"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 98,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 100,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 102,
+          "opname": "STORE_ATTR",
+          "arg": 5,
+          "argrepr": "connection_failed",
+          "argval": {
+            "kind": "str",
+            "value": "connection_failed"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 112,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 114,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 116,
+          "opname": "STORE_ATTR",
+          "arg": 6,
+          "argrepr": "token",
+          "argval": {
+            "kind": "str",
+            "value": "token"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 126,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 128,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 130,
+          "opname": "STORE_ATTR",
+          "arg": 7,
+          "argrepr": "rating",
+          "argval": {
+            "kind": "str",
+            "value": "rating"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 140,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 142,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 144,
+          "opname": "STORE_ATTR",
+          "arg": 8,
+          "argrepr": "notes",
+          "argval": {
+            "kind": "str",
+            "value": "notes"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 154,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 16,
+          "argrepr": "bottle, self",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "bottle"
+              },
+              {
+                "kind": "str",
+                "value": "self"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 156,
+          "opname": "STORE_ATTR",
+          "arg": 9,
+          "argrepr": "name",
+          "argval": {
+            "kind": "str",
+            "value": "name"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 166,
+          "opname": "RETURN_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 4,
+      "name": "initWithAppID_",
+      "qualname": "RatingUtils.initWithAppID_",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py",
+      "firstlineno": 40,
+      "argcount": 2,
+      "names": [
+        "cxobjc",
+        "Proxy",
+        "nsobject_init",
+        "__init__"
+      ],
+      "varnames": [
+        "self",
+        "appid"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "str",
+          "value": ""
+        }
+      ],
+      "bytecode_sha256": "de6c30d6682ea53548f3da8f489cdc9851659e8548bb3f26c154ea00ea637496",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "cxobjc",
+          "argval": {
+            "kind": "str",
+            "value": "cxobjc"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_ATTR",
+          "arg": 2,
+          "argrepr": "Proxy",
+          "argval": {
+            "kind": "str",
+            "value": "Proxy"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "LOAD_ATTR",
+          "arg": 5,
+          "argrepr": "nsobject_init + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "nsobject_init"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 52,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "STORE_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 64,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "POP_JUMP_IF_NONE",
+          "arg": 18,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 106
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "LOAD_ATTR",
+          "arg": 7,
+          "argrepr": "__init__ + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "__init__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 92,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "''",
+          "argval": {
+            "kind": "str",
+            "value": ""
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 94,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "appid",
+          "argval": {
+            "kind": "str",
+            "value": "appid"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 96,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 104,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 106,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 108,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 5,
+      "name": "get_rating",
+      "qualname": "RatingUtils.get_rating",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py",
+      "firstlineno": 46,
+      "argcount": 1,
+      "names": [
+        "login_required",
+        "connection_failed",
+        "webutils",
+        "get_token",
+        "token",
+        "proxyinfo",
+        "install_default_opener",
+        "get_platform",
+        "get_version",
+        "cxlog",
+        "log",
+        "url",
+        "urlencode",
+        "cxurlget",
+        "fetch_content",
+        "json",
+        "loads",
+        "cxutils",
+        "string_to_unicode",
+        "isinstance",
+        "dict",
+        "get",
+        "notes",
+        "name",
+        "int",
+        "rating",
+        "HttpError",
+        "code",
+        "reason",
+        "UrlError",
+        "warn"
+      ],
+      "varnames": [
+        "self",
+        "data",
+        "url",
+        "content",
+        "rating",
+        "e"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "rank_mode"
+            },
+            {
+              "kind": "str",
+              "value": "rank_ver"
+            }
+          ]
+        },
+        {
+          "kind": "str",
+          "value": "Obtaining a rating with arguments:"
+        },
+        {
+          "kind": "str",
+          "value": "token"
+        },
+        {
+          "kind": "str",
+          "value": "?"
+        },
+        {
+          "kind": "int",
+          "value": 5
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "timeout"
+            }
+          ]
+        },
+        {
+          "kind": "str",
+          "value": "Obtained rating data:"
+        },
+        {
+          "kind": "str",
+          "value": "rank_notes"
+        },
+        {
+          "kind": "str",
+          "value": "name"
+        },
+        {
+          "kind": "str",
+          "value": "medal_id"
+        },
+        {
+          "kind": "int",
+          "value": 401
+        }
+      ],
+      "bytecode_sha256": "2be4724d52535673eede54da965af4bb80e7403ebe52795465805e83fd03326c",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "STORE_ATTR",
+          "arg": 0,
+          "argrepr": "login_required",
+          "argval": {
+            "kind": "str",
+            "value": "login_required"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "STORE_ATTR",
+          "arg": 1,
+          "argrepr": "connection_failed",
+          "argval": {
+            "kind": "str",
+            "value": "connection_failed"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "LOAD_GLOBAL",
+          "arg": 4,
+          "argrepr": "webutils",
+          "argval": {
+            "kind": "str",
+            "value": "webutils"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "LOAD_ATTR",
+          "arg": 6,
+          "argrepr": "get_token",
+          "argval": {
+            "kind": "str",
+            "value": "get_token"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 60,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "STORE_ATTR",
+          "arg": 4,
+          "argrepr": "token",
+          "argval": {
+            "kind": "str",
+            "value": "token"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 82,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 84,
+          "opname": "LOAD_ATTR",
+          "arg": 8,
+          "argrepr": "token",
+          "argval": {
+            "kind": "str",
+            "value": "token"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 104,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 112,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 8,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 132
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 116,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "True",
+          "argval": {
+            "kind": "bool",
+            "value": true
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 118,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 120,
+          "opname": "STORE_ATTR",
+          "arg": 0,
+          "argrepr": "login_required",
+          "argval": {
+            "kind": "str",
+            "value": "login_required"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 130,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 132,
+          "opname": "NOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 134,
+          "opname": "LOAD_GLOBAL",
+          "arg": 10,
+          "argrepr": "proxyinfo",
+          "argval": {
+            "kind": "str",
+            "value": "proxyinfo"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 144,
+          "opname": "LOAD_ATTR",
+          "arg": 12,
+          "argrepr": "install_default_opener",
+          "argval": {
+            "kind": "str",
+            "value": "install_default_opener"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 164,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 166,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 174,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 176,
+          "opname": "LOAD_GLOBAL",
+          "arg": 15,
+          "argrepr": "get_platform + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "get_platform"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 186,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 194,
+          "opname": "LOAD_GLOBAL",
+          "arg": 4,
+          "argrepr": "webutils",
+          "argval": {
+            "kind": "str",
+            "value": "webutils"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 204,
+          "opname": "LOAD_ATTR",
+          "arg": 16,
+          "argrepr": "get_version",
+          "argval": {
+            "kind": "str",
+            "value": "get_version"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 224,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 226,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 234,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "('rank_mode', 'rank_ver')",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "rank_mode"
+              },
+              {
+                "kind": "str",
+                "value": "rank_ver"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 236,
+          "opname": "BUILD_CONST_KEY_MAP",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 238,
+          "opname": "STORE_FAST",
+          "arg": 1,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 240,
+          "opname": "LOAD_GLOBAL",
+          "arg": 18,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 250,
+          "opname": "LOAD_ATTR",
+          "arg": 20,
+          "argrepr": "log",
+          "argval": {
+            "kind": "str",
+            "value": "log"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 270,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 272,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "'Obtaining a rating with arguments:'",
+          "argval": {
+            "kind": "str",
+            "value": "Obtaining a rating with arguments:"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 274,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 282,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 284,
+          "opname": "LOAD_GLOBAL",
+          "arg": 18,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 294,
+          "opname": "LOAD_ATTR",
+          "arg": 20,
+          "argrepr": "log",
+          "argval": {
+            "kind": "str",
+            "value": "log"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 314,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 316,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 318,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 326,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 328,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 330,
+          "opname": "LOAD_ATTR",
+          "arg": 8,
+          "argrepr": "token",
+          "argval": {
+            "kind": "str",
+            "value": "token"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 350,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 352,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "'token'",
+          "argval": {
+            "kind": "str",
+            "value": "token"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 354,
+          "opname": "STORE_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 358,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 360,
+          "opname": "LOAD_ATTR",
+          "arg": 22,
+          "argrepr": "url",
+          "argval": {
+            "kind": "str",
+            "value": "url"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 380,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "'?'",
+          "argval": {
+            "kind": "str",
+            "value": "?"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 382,
+          "opname": "BINARY_OP",
+          "arg": 0,
+          "argrepr": "+",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 386,
+          "opname": "LOAD_GLOBAL",
+          "arg": 25,
+          "argrepr": "urlencode + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "urlencode"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 396,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 398,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 406,
+          "opname": "BINARY_OP",
+          "arg": 0,
+          "argrepr": "+",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 410,
+          "opname": "STORE_FAST",
+          "arg": 2,
+          "argrepr": "url",
+          "argval": {
+            "kind": "str",
+            "value": "url"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 412,
+          "opname": "LOAD_GLOBAL",
+          "arg": 26,
+          "argrepr": "cxurlget",
+          "argval": {
+            "kind": "str",
+            "value": "cxurlget"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 422,
+          "opname": "LOAD_ATTR",
+          "arg": 28,
+          "argrepr": "fetch_content",
+          "argval": {
+            "kind": "str",
+            "value": "fetch_content"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 442,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 444,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "url",
+          "argval": {
+            "kind": "str",
+            "value": "url"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 446,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "5",
+          "argval": {
+            "kind": "int",
+            "value": 5
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 448,
+          "opname": "LOAD_CONST",
+          "arg": 8,
+          "argrepr": "('timeout',)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "timeout"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 450,
+          "opname": "CALL_KW",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 452,
+          "opname": "STORE_FAST",
+          "arg": 3,
+          "argrepr": "content",
+          "argval": {
+            "kind": "str",
+            "value": "content"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 454,
+          "opname": "LOAD_GLOBAL",
+          "arg": 30,
+          "argrepr": "json",
+          "argval": {
+            "kind": "str",
+            "value": "json"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 464,
+          "opname": "LOAD_ATTR",
+          "arg": 32,
+          "argrepr": "loads",
+          "argval": {
+            "kind": "str",
+            "value": "loads"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 484,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 486,
+          "opname": "LOAD_GLOBAL",
+          "arg": 34,
+          "argrepr": "cxutils",
+          "argval": {
+            "kind": "str",
+            "value": "cxutils"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 496,
+          "opname": "LOAD_ATTR",
+          "arg": 36,
+          "argrepr": "string_to_unicode",
+          "argval": {
+            "kind": "str",
+            "value": "string_to_unicode"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 516,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 518,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "content",
+          "argval": {
+            "kind": "str",
+            "value": "content"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 520,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 528,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 536,
+          "opname": "STORE_FAST",
+          "arg": 1,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 538,
+          "opname": "LOAD_GLOBAL",
+          "arg": 18,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 548,
+          "opname": "LOAD_ATTR",
+          "arg": 20,
+          "argrepr": "log",
+          "argval": {
+            "kind": "str",
+            "value": "log"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 568,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 570,
+          "opname": "LOAD_CONST",
+          "arg": 9,
+          "argrepr": "'Obtained rating data:'",
+          "argval": {
+            "kind": "str",
+            "value": "Obtained rating data:"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 572,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 580,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 582,
+          "opname": "LOAD_GLOBAL",
+          "arg": 18,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 592,
+          "opname": "LOAD_ATTR",
+          "arg": 20,
+          "argrepr": "log",
+          "argval": {
+            "kind": "str",
+            "value": "log"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 612,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 614,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 616,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 624,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 626,
+          "opname": "LOAD_GLOBAL",
+          "arg": 39,
+          "argrepr": "isinstance + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "isinstance"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 636,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 638,
+          "opname": "LOAD_GLOBAL",
+          "arg": 40,
+          "argrepr": "dict",
+          "argval": {
+            "kind": "str",
+            "value": "dict"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 648,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 656,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 664,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 1,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 670
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 668,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 670,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 672,
+          "opname": "LOAD_ATTR",
+          "arg": 43,
+          "argrepr": "get + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "get"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 692,
+          "opname": "LOAD_CONST",
+          "arg": 10,
+          "argrepr": "'rank_notes'",
+          "argval": {
+            "kind": "str",
+            "value": "rank_notes"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 694,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 702,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 704,
+          "opname": "STORE_ATTR",
+          "arg": 22,
+          "argrepr": "notes",
+          "argval": {
+            "kind": "str",
+            "value": "notes"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 714,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 716,
+          "opname": "LOAD_ATTR",
+          "arg": 43,
+          "argrepr": "get + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "get"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 736,
+          "opname": "LOAD_CONST",
+          "arg": 11,
+          "argrepr": "'name'",
+          "argval": {
+            "kind": "str",
+            "value": "name"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 738,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 746,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 748,
+          "opname": "STORE_ATTR",
+          "arg": 23,
+          "argrepr": "name",
+          "argval": {
+            "kind": "str",
+            "value": "name"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 758,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 760,
+          "opname": "LOAD_ATTR",
+          "arg": 43,
+          "argrepr": "get + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "get"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 780,
+          "opname": "LOAD_CONST",
+          "arg": 12,
+          "argrepr": "'medal_id'",
+          "argval": {
+            "kind": "str",
+            "value": "medal_id"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 782,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 790,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "rating",
+          "argval": {
+            "kind": "str",
+            "value": "rating"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 792,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "rating",
+          "argval": {
+            "kind": "str",
+            "value": "rating"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 794,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 802,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 11,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 828
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 806,
+          "opname": "LOAD_GLOBAL",
+          "arg": 49,
+          "argrepr": "int + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 816,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "rating",
+          "argval": {
+            "kind": "str",
+            "value": "rating"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 818,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 826,
+          "opname": "JUMP_FORWARD",
+          "arg": 1,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 830
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 828,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 830,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 832,
+          "opname": "STORE_ATTR",
+          "arg": 25,
+          "argrepr": "rating",
+          "argval": {
+            "kind": "str",
+            "value": "rating"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 842,
+          "opname": "RETURN_CONST",
+          "arg": 2,
+          "argrepr": "True",
+          "argval": {
+            "kind": "bool",
+            "value": true
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 844,
+          "opname": "PUSH_EXC_INFO",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 846,
+          "opname": "LOAD_GLOBAL",
+          "arg": 26,
+          "argrepr": "cxurlget",
+          "argval": {
+            "kind": "str",
+            "value": "cxurlget"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 856,
+          "opname": "LOAD_ATTR",
+          "arg": 52,
+          "argrepr": "HttpError",
+          "argval": {
+            "kind": "str",
+            "value": "HttpError"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 876,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 878,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 65,
+          "argrepr": "to L6",
+          "argval": {
+            "kind": "int",
+            "value": 1012
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 882,
+          "opname": "STORE_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 884,
+          "opname": "LOAD_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 886,
+          "opname": "LOAD_ATTR",
+          "arg": 54,
+          "argrepr": "code",
+          "argval": {
+            "kind": "str",
+            "value": "code"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 906,
+          "opname": "LOAD_CONST",
+          "arg": 13,
+          "argrepr": "401",
+          "argval": {
+            "kind": "int",
+            "value": 401
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 908,
+          "opname": "COMPARE_OP",
+          "arg": 88,
+          "argrepr": "bool(==)",
+          "argval": {
+            "kind": "str",
+            "value": "=="
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 912,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 7,
+          "argrepr": "to L5",
+          "argval": {
+            "kind": "int",
+            "value": 930
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 916,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "True",
+          "argval": {
+            "kind": "bool",
+            "value": true
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 918,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 920,
+          "opname": "STORE_ATTR",
+          "arg": 0,
+          "argrepr": "login_required",
+          "argval": {
+            "kind": "str",
+            "value": "login_required"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 930,
+          "opname": "LOAD_GLOBAL",
+          "arg": 18,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 940,
+          "opname": "LOAD_ATTR",
+          "arg": 20,
+          "argrepr": "log",
+          "argval": {
+            "kind": "str",
+            "value": "log"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 960,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 962,
+          "opname": "LOAD_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 964,
+          "opname": "LOAD_ATTR",
+          "arg": 56,
+          "argrepr": "reason",
+          "argval": {
+            "kind": "str",
+            "value": "reason"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 984,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 992,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 994,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 996,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 998,
+          "opname": "STORE_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1000,
+          "opname": "DELETE_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1002,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1004,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 1006,
+          "opname": "STORE_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1008,
+          "opname": "DELETE_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1010,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1012,
+          "opname": "LOAD_GLOBAL",
+          "arg": 26,
+          "argrepr": "cxurlget",
+          "argval": {
+            "kind": "str",
+            "value": "cxurlget"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 1022,
+          "opname": "LOAD_ATTR",
+          "arg": 58,
+          "argrepr": "UrlError",
+          "argval": {
+            "kind": "str",
+            "value": "UrlError"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1042,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1044,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 49,
+          "argrepr": "to L7",
+          "argval": {
+            "kind": "int",
+            "value": 1146
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1048,
+          "opname": "STORE_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1050,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "True",
+          "argval": {
+            "kind": "bool",
+            "value": true
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 1052,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1054,
+          "opname": "STORE_ATTR",
+          "arg": 1,
+          "argrepr": "connection_failed",
+          "argval": {
+            "kind": "str",
+            "value": "connection_failed"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1064,
+          "opname": "LOAD_GLOBAL",
+          "arg": 18,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 1074,
+          "opname": "LOAD_ATTR",
+          "arg": 60,
+          "argrepr": "warn",
+          "argval": {
+            "kind": "str",
+            "value": "warn"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1094,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1096,
+          "opname": "LOAD_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1098,
+          "opname": "LOAD_ATTR",
+          "arg": 56,
+          "argrepr": "reason",
+          "argval": {
+            "kind": "str",
+            "value": "reason"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1118,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1126,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1128,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 1130,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1132,
+          "opname": "STORE_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1134,
+          "opname": "DELETE_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1136,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1138,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 1140,
+          "opname": "STORE_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1142,
+          "opname": "DELETE_FAST",
+          "arg": 5,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1144,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1146,
+          "opname": "RERAISE",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 1148,
+          "opname": "COPY",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 1150,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 1152,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": [
+        {
+          "start": 134,
+          "end": 668,
+          "target": 844,
+          "depth": 0,
+          "lasti": false
+        },
+        {
+          "start": 670,
+          "end": 842,
+          "target": 844,
+          "depth": 0,
+          "lasti": false
+        },
+        {
+          "start": 844,
+          "end": 884,
+          "target": 1148,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 884,
+          "end": 994,
+          "target": 1004,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 1004,
+          "end": 1050,
+          "target": 1148,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 1050,
+          "end": 1128,
+          "target": 1138,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 1138,
+          "end": 1148,
+          "target": 1148,
+          "depth": 1,
+          "lasti": true
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "set_rating",
+      "qualname": "RatingUtils.set_rating",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.py",
+      "firstlineno": 95,
+      "argcount": 3,
+      "names": [
+        "login_required",
+        "connection_failed",
+        "webutils",
+        "get_token",
+        "token",
+        "proxyinfo",
+        "install_default_opener",
+        "get_platform",
+        "get_version",
+        "json",
+        "dumps",
+        "systeminfo",
+        "get_system_information",
+        "cxlog",
+        "log",
+        "cxurlget",
+        "fetch_content",
+        "url",
+        "HttpError",
+        "code",
+        "reason",
+        "warn",
+        "UrlError"
+      ],
+      "varnames": [
+        "self",
+        "rating",
+        "notes",
+        "data",
+        "e"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "kind": "int",
+          "value": 0
+        },
+        {
+          "kind": "int",
+          "value": 5
+        },
+        {
+          "kind": "str",
+          "value": ""
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "rank_mode"
+            },
+            {
+              "kind": "str",
+              "value": "rank_ver"
+            },
+            {
+              "kind": "str",
+              "value": "medal_id"
+            },
+            {
+              "kind": "str",
+              "value": "rank_notes"
+            },
+            {
+              "kind": "str",
+              "value": "rank_sysinfo"
+            }
+          ]
+        },
+        {
+          "kind": "str",
+          "value": "Submitting a rating:"
+        },
+        {
+          "kind": "str",
+          "value": "token"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "timeout"
+            },
+            {
+              "kind": "str",
+              "value": "data"
+            }
+          ]
+        },
+        {
+          "kind": "int",
+          "value": 401
+        }
+      ],
+      "bytecode_sha256": "3ffef47a7bbb9a8d1de8f381f3c3741e656df1b1975182b5c7d0d55161f8e450",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "STORE_ATTR",
+          "arg": 0,
+          "argrepr": "login_required",
+          "argval": {
+            "kind": "str",
+            "value": "login_required"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "STORE_ATTR",
+          "arg": 1,
+          "argrepr": "connection_failed",
+          "argval": {
+            "kind": "str",
+            "value": "connection_failed"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "LOAD_GLOBAL",
+          "arg": 4,
+          "argrepr": "webutils",
+          "argval": {
+            "kind": "str",
+            "value": "webutils"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "LOAD_ATTR",
+          "arg": 6,
+          "argrepr": "get_token",
+          "argval": {
+            "kind": "str",
+            "value": "get_token"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 60,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "STORE_ATTR",
+          "arg": 4,
+          "argrepr": "token",
+          "argval": {
+            "kind": "str",
+            "value": "token"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 82,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 84,
+          "opname": "LOAD_ATTR",
+          "arg": 8,
+          "argrepr": "token",
+          "argval": {
+            "kind": "str",
+            "value": "token"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 104,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 112,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 8,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 132
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 116,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "True",
+          "argval": {
+            "kind": "bool",
+            "value": true
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 118,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 120,
+          "opname": "STORE_ATTR",
+          "arg": 0,
+          "argrepr": "login_required",
+          "argval": {
+            "kind": "str",
+            "value": "login_required"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 130,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 132,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "rating",
+          "argval": {
+            "kind": "str",
+            "value": "rating"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 134,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 142,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 12,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 170
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 146,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "rating",
+          "argval": {
+            "kind": "str",
+            "value": "rating"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 148,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 150,
+          "opname": "COMPARE_OP",
+          "arg": 58,
+          "argrepr": "bool(<=)",
+          "argval": {
+            "kind": "str",
+            "value": "<="
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 154,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 6,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 170
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 158,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "rating",
+          "argval": {
+            "kind": "str",
+            "value": "rating"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 160,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "5",
+          "argval": {
+            "kind": "int",
+            "value": 5
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 162,
+          "opname": "COMPARE_OP",
+          "arg": 148,
+          "argrepr": "bool(>)",
+          "argval": {
+            "kind": "str",
+            "value": ">"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 166,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 1,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 172
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 170,
+          "opname": "RETURN_CONST",
+          "arg": 2,
+          "argrepr": "True",
+          "argval": {
+            "kind": "bool",
+            "value": true
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 172,
+          "opname": "NOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 174,
+          "opname": "LOAD_GLOBAL",
+          "arg": 10,
+          "argrepr": "proxyinfo",
+          "argval": {
+            "kind": "str",
+            "value": "proxyinfo"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 184,
+          "opname": "LOAD_ATTR",
+          "arg": 12,
+          "argrepr": "install_default_opener",
+          "argval": {
+            "kind": "str",
+            "value": "install_default_opener"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 204,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 206,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 214,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 216,
+          "opname": "LOAD_GLOBAL",
+          "arg": 15,
+          "argrepr": "get_platform + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "get_platform"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 226,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 234,
+          "opname": "LOAD_GLOBAL",
+          "arg": 4,
+          "argrepr": "webutils",
+          "argval": {
+            "kind": "str",
+            "value": "webutils"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 244,
+          "opname": "LOAD_ATTR",
+          "arg": 16,
+          "argrepr": "get_version",
+          "argval": {
+            "kind": "str",
+            "value": "get_version"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 264,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 266,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 274,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "rating",
+          "argval": {
+            "kind": "str",
+            "value": "rating"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 276,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "notes",
+          "argval": {
+            "kind": "str",
+            "value": "notes"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 278,
+          "opname": "POP_JUMP_IF_NONE",
+          "arg": 2,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 286
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 282,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "notes",
+          "argval": {
+            "kind": "str",
+            "value": "notes"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 284,
+          "opname": "JUMP_FORWARD",
+          "arg": 1,
+          "argrepr": "to L5",
+          "argval": {
+            "kind": "int",
+            "value": 288
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 286,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "''",
+          "argval": {
+            "kind": "str",
+            "value": ""
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 288,
+          "opname": "LOAD_GLOBAL",
+          "arg": 18,
+          "argrepr": "json",
+          "argval": {
+            "kind": "str",
+            "value": "json"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 298,
+          "opname": "LOAD_ATTR",
+          "arg": 20,
+          "argrepr": "dumps",
+          "argval": {
+            "kind": "str",
+            "value": "dumps"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 318,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 320,
+          "opname": "LOAD_GLOBAL",
+          "arg": 22,
+          "argrepr": "systeminfo",
+          "argval": {
+            "kind": "str",
+            "value": "systeminfo"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 330,
+          "opname": "LOAD_ATTR",
+          "arg": 24,
+          "argrepr": "get_system_information",
+          "argval": {
+            "kind": "str",
+            "value": "get_system_information"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 350,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 352,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 360,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 368,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "('rank_mode', 'rank_ver', 'medal_id', 'rank_notes', 'rank_sysinfo')",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "rank_mode"
+              },
+              {
+                "kind": "str",
+                "value": "rank_ver"
+              },
+              {
+                "kind": "str",
+                "value": "medal_id"
+              },
+              {
+                "kind": "str",
+                "value": "rank_notes"
+              },
+              {
+                "kind": "str",
+                "value": "rank_sysinfo"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 370,
+          "opname": "BUILD_CONST_KEY_MAP",
+          "arg": 5,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 5
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 372,
+          "opname": "STORE_FAST",
+          "arg": 3,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 374,
+          "opname": "LOAD_GLOBAL",
+          "arg": 26,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 384,
+          "opname": "LOAD_ATTR",
+          "arg": 28,
+          "argrepr": "log",
+          "argval": {
+            "kind": "str",
+            "value": "log"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 404,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 406,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "'Submitting a rating:'",
+          "argval": {
+            "kind": "str",
+            "value": "Submitting a rating:"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 408,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 416,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 418,
+          "opname": "LOAD_GLOBAL",
+          "arg": 26,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 428,
+          "opname": "LOAD_ATTR",
+          "arg": 28,
+          "argrepr": "log",
+          "argval": {
+            "kind": "str",
+            "value": "log"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 448,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 450,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 452,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 460,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 462,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 464,
+          "opname": "LOAD_ATTR",
+          "arg": 8,
+          "argrepr": "token",
+          "argval": {
+            "kind": "str",
+            "value": "token"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 484,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 486,
+          "opname": "LOAD_CONST",
+          "arg": 8,
+          "argrepr": "'token'",
+          "argval": {
+            "kind": "str",
+            "value": "token"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 488,
+          "opname": "STORE_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 492,
+          "opname": "LOAD_GLOBAL",
+          "arg": 30,
+          "argrepr": "cxurlget",
+          "argval": {
+            "kind": "str",
+            "value": "cxurlget"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 502,
+          "opname": "LOAD_ATTR",
+          "arg": 32,
+          "argrepr": "fetch_content",
+          "argval": {
+            "kind": "str",
+            "value": "fetch_content"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 522,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 524,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 526,
+          "opname": "LOAD_ATTR",
+          "arg": 34,
+          "argrepr": "url",
+          "argval": {
+            "kind": "str",
+            "value": "url"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 546,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "5",
+          "argval": {
+            "kind": "int",
+            "value": 5
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 548,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "data",
+          "argval": {
+            "kind": "str",
+            "value": "data"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 550,
+          "opname": "LOAD_CONST",
+          "arg": 9,
+          "argrepr": "('timeout', 'data')",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "timeout"
+              },
+              {
+                "kind": "str",
+                "value": "data"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 552,
+          "opname": "CALL_KW",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 554,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 556,
+          "opname": "RETURN_CONST",
+          "arg": 2,
+          "argrepr": "True",
+          "argval": {
+            "kind": "bool",
+            "value": true
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 558,
+          "opname": "PUSH_EXC_INFO",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 560,
+          "opname": "LOAD_GLOBAL",
+          "arg": 30,
+          "argrepr": "cxurlget",
+          "argval": {
+            "kind": "str",
+            "value": "cxurlget"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 570,
+          "opname": "LOAD_ATTR",
+          "arg": 36,
+          "argrepr": "HttpError",
+          "argval": {
+            "kind": "str",
+            "value": "HttpError"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 590,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 592,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 102,
+          "argrepr": "to L7",
+          "argval": {
+            "kind": "int",
+            "value": 800
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 596,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 598,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 600,
+          "opname": "LOAD_ATTR",
+          "arg": 38,
+          "argrepr": "code",
+          "argval": {
+            "kind": "str",
+            "value": "code"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 620,
+          "opname": "LOAD_CONST",
+          "arg": 10,
+          "argrepr": "401",
+          "argval": {
+            "kind": "int",
+            "value": 401
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 622,
+          "opname": "COMPARE_OP",
+          "arg": 88,
+          "argrepr": "bool(==)",
+          "argval": {
+            "kind": "str",
+            "value": "=="
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 626,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 44,
+          "argrepr": "to L6",
+          "argval": {
+            "kind": "int",
+            "value": 718
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 630,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "True",
+          "argval": {
+            "kind": "bool",
+            "value": true
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 632,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 634,
+          "opname": "STORE_ATTR",
+          "arg": 0,
+          "argrepr": "login_required",
+          "argval": {
+            "kind": "str",
+            "value": "login_required"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 644,
+          "opname": "LOAD_GLOBAL",
+          "arg": 26,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 654,
+          "opname": "LOAD_ATTR",
+          "arg": 28,
+          "argrepr": "log",
+          "argval": {
+            "kind": "str",
+            "value": "log"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 674,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 676,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 678,
+          "opname": "LOAD_ATTR",
+          "arg": 40,
+          "argrepr": "reason",
+          "argval": {
+            "kind": "str",
+            "value": "reason"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 698,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 706,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 708,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 710,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 712,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 714,
+          "opname": "DELETE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 716,
+          "opname": "RETURN_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 718,
+          "opname": "LOAD_GLOBAL",
+          "arg": 26,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 728,
+          "opname": "LOAD_ATTR",
+          "arg": 42,
+          "argrepr": "warn",
+          "argval": {
+            "kind": "str",
+            "value": "warn"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 748,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 750,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 752,
+          "opname": "LOAD_ATTR",
+          "arg": 40,
+          "argrepr": "reason",
+          "argval": {
+            "kind": "str",
+            "value": "reason"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 772,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 780,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 782,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 784,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 786,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 788,
+          "opname": "DELETE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 790,
+          "opname": "RETURN_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 792,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 794,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 796,
+          "opname": "DELETE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 798,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 800,
+          "opname": "LOAD_GLOBAL",
+          "arg": 30,
+          "argrepr": "cxurlget",
+          "argval": {
+            "kind": "str",
+            "value": "cxurlget"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 810,
+          "opname": "LOAD_ATTR",
+          "arg": 44,
+          "argrepr": "UrlError",
+          "argval": {
+            "kind": "str",
+            "value": "UrlError"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 830,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 832,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 49,
+          "argrepr": "to L8",
+          "argval": {
+            "kind": "int",
+            "value": 934
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 836,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 838,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "True",
+          "argval": {
+            "kind": "bool",
+            "value": true
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 840,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 842,
+          "opname": "STORE_ATTR",
+          "arg": 1,
+          "argrepr": "connection_failed",
+          "argval": {
+            "kind": "str",
+            "value": "connection_failed"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 852,
+          "opname": "LOAD_GLOBAL",
+          "arg": 26,
+          "argrepr": "cxlog",
+          "argval": {
+            "kind": "str",
+            "value": "cxlog"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 862,
+          "opname": "LOAD_ATTR",
+          "arg": 42,
+          "argrepr": "warn",
+          "argval": {
+            "kind": "str",
+            "value": "warn"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 882,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 884,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 886,
+          "opname": "LOAD_ATTR",
+          "arg": 40,
+          "argrepr": "reason",
+          "argval": {
+            "kind": "str",
+            "value": "reason"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 906,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 914,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 916,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 918,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 920,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 922,
+          "opname": "DELETE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 924,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 926,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 928,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 930,
+          "opname": "DELETE_FAST",
+          "arg": 4,
+          "argrepr": "e",
+          "argval": {
+            "kind": "str",
+            "value": "e"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 932,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 934,
+          "opname": "RERAISE",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 936,
+          "opname": "COPY",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 938,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 940,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": [
+        {
+          "start": 174,
+          "end": 556,
+          "target": 558,
+          "depth": 0,
+          "lasti": false
+        },
+        {
+          "start": 558,
+          "end": 598,
+          "target": 936,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 598,
+          "end": 708,
+          "target": 792,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 718,
+          "end": 782,
+          "target": 792,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 792,
+          "end": 838,
+          "target": 936,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 838,
+          "end": 916,
+          "target": 926,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 926,
+          "end": 936,
+          "target": 936,
+          "depth": 1,
+          "lasti": true
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Disassembly is not recovered source.",
+    "Control-flow interpretation requires review of jumps and exception tables."
+  ]
+}

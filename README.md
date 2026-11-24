@@ -2,7 +2,7 @@
 
 Projeto de implementação própria do funcionamento do CrossOver para macOS, com o objetivo de não depender da instalação do CrossOver. A versão atual é um protótipo de gerenciamento e execução que ainda utiliza um motor externo.
 
-A [engenharia reversa do binário](docs/binary-reverse-engineering.md) preserva 1.360 exports de pseudocódigo nativo, metadados de cinco módulos Python empacotados e vínculos com recursos de interface. Esses achados orientam a reconstrução; não estabelecem equivalência integral.
+A [engenharia reversa do binário](docs/binary-reverse-engineering.md) preserva 1.360 exports de pseudocódigo nativo, desassemblagem de 50 módulos Python empacotados e vínculos com recursos de interface. Esses achados orientam a reconstrução; não estabelecem equivalência integral.
 
 ## Usar
 
@@ -51,6 +51,7 @@ Esta é uma primeira reconstrução dos fluxos de gerenciamento e execução. O 
 
 ```sh
 python3 scripts/verify-reverse-evidence.py
+python3 scripts/verify-python-disassembly.py
 ```
 
 O verificador confere hashes dos textos decompilados, identidade do alvo e vínculos entre achados e evidências. Não verifica a correção semântica do decompilador.

@@ -1,0 +1,4594 @@
+{
+  "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.pyc",
+  "sha256": "f3d5c262af43b79e7cd59951c2834a86004604b7931830cb5187e64391da653a",
+  "magic_hex": "f30d0d0a",
+  "python_version": "3.13.3 (tags/v3.13.3:6280bb54784, Jan  1 1970, 00:00:00) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "inspection": "marshal decode and CPython disassembly; target code not imported or executed",
+  "code_objects": [
+    {
+      "index": 0,
+      "name": "<module>",
+      "qualname": "<module>",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 1,
+      "argcount": 0,
+      "names": [
+        "__doc__",
+        "datetime",
+        "timedelta",
+        "tzinfo",
+        "re",
+        "__all__",
+        "compile",
+        "ISO8601_REGEX",
+        "TIMEZONE_REGEX",
+        "Exception",
+        "ParseError",
+        "ZERO",
+        "Utc",
+        "UTC",
+        "FixedOffset",
+        "parse_timezone",
+        "parse_date"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "ISO 8601 date time string parsing\n\nBasic usage:\n>>> import iso8601\n>>> iso8601.parse_date(\"2007-01-25T12:00:00Z\")\ndatetime.datetime(2007, 1, 25, 12, 0, tzinfo=<iso8601.iso8601.Utc ...>)\n>>>\n\n"
+        },
+        {
+          "kind": "int",
+          "value": 0
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "datetime"
+            },
+            {
+              "kind": "str",
+              "value": "timedelta"
+            },
+            {
+              "kind": "str",
+              "value": "tzinfo"
+            }
+          ]
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "str",
+          "value": "parse_date"
+        },
+        {
+          "kind": "str",
+          "value": "ParseError"
+        },
+        {
+          "kind": "str",
+          "value": "(?P<year>[0-9]{4})(-(?P<month>[0-9]{1,2})(-(?P<day>[0-9]{1,2})((?P<separator>.)(?P<hour>[0-9]{2}):(?P<minute>[0-9]{2})(:(?P<second>[0-9]{2})(\\.(?P<fraction>[0-9]+))?)?(?P<timezone>Z|(([-+])([0-9]{2}):([0-9]{2})))?)?)?)?"
+        },
+        {
+          "kind": "str",
+          "value": "(?P<prefix>[+-])(?P<hours>[0-9]{2}).(?P<minutes>[0-9]{2})"
+        },
+        {
+          "kind": "code",
+          "name": "ParseError",
+          "qualname": "ParseError"
+        },
+        {
+          "kind": "code",
+          "name": "Utc",
+          "qualname": "Utc"
+        },
+        {
+          "kind": "str",
+          "value": "Utc"
+        },
+        {
+          "kind": "code",
+          "name": "FixedOffset",
+          "qualname": "FixedOffset"
+        },
+        {
+          "kind": "str",
+          "value": "FixedOffset"
+        },
+        {
+          "kind": "code",
+          "name": "parse_timezone",
+          "qualname": "parse_timezone"
+        },
+        {
+          "kind": "code",
+          "name": "parse_date",
+          "qualname": "parse_date"
+        }
+      ],
+      "bytecode_sha256": "03d12a5d9651ff155d73761bd68986d566df17e51be05ff70317dc7b7c0d64b6",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'ISO 8601 date time string parsing\\n\\nBasic usage:\\n>>> import iso8601\\n>>> iso8601.parse_date(\"2007-01-25T12:00:00Z\")\\ndatetime.datetime(2007, 1, 25, 12, 0, tzinfo=<iso8601.iso8601.Utc ...>)\\n>>>\\n\\n'",
+          "argval": {
+            "kind": "str",
+            "value": "ISO 8601 date time string parsing\n\nBasic usage:\n>>> import iso8601\n>>> iso8601.parse_date(\"2007-01-25T12:00:00Z\")\ndatetime.datetime(2007, 1, 25, 12, 0, tzinfo=<iso8601.iso8601.Utc ...>)\n>>>\n\n"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 0,
+          "argrepr": "__doc__",
+          "argval": {
+            "kind": "str",
+            "value": "__doc__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "('datetime', 'timedelta', 'tzinfo')",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "datetime"
+              },
+              {
+                "kind": "str",
+                "value": "timedelta"
+              },
+              {
+                "kind": "str",
+                "value": "tzinfo"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "IMPORT_NAME",
+          "arg": 1,
+          "argrepr": "datetime",
+          "argval": {
+            "kind": "str",
+            "value": "datetime"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "IMPORT_FROM",
+          "arg": 1,
+          "argrepr": "datetime",
+          "argval": {
+            "kind": "str",
+            "value": "datetime"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "datetime",
+          "argval": {
+            "kind": "str",
+            "value": "datetime"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "IMPORT_FROM",
+          "arg": 2,
+          "argrepr": "timedelta",
+          "argval": {
+            "kind": "str",
+            "value": "timedelta"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "timedelta",
+          "argval": {
+            "kind": "str",
+            "value": "timedelta"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "IMPORT_FROM",
+          "arg": 3,
+          "argrepr": "tzinfo",
+          "argval": {
+            "kind": "str",
+            "value": "tzinfo"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "tzinfo",
+          "argval": {
+            "kind": "str",
+            "value": "tzinfo"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "IMPORT_NAME",
+          "arg": 4,
+          "argrepr": "re",
+          "argval": {
+            "kind": "str",
+            "value": "re"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "re",
+          "argval": {
+            "kind": "str",
+            "value": "re"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "'parse_date'",
+          "argval": {
+            "kind": "str",
+            "value": "parse_date"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "'ParseError'",
+          "argval": {
+            "kind": "str",
+            "value": "ParseError"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "BUILD_LIST",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "STORE_NAME",
+          "arg": 5,
+          "argrepr": "__all__",
+          "argval": {
+            "kind": "str",
+            "value": "__all__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 42,
+          "opname": "LOAD_NAME",
+          "arg": 4,
+          "argrepr": "re",
+          "argval": {
+            "kind": "str",
+            "value": "re"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "LOAD_ATTR",
+          "arg": 12,
+          "argrepr": "compile",
+          "argval": {
+            "kind": "str",
+            "value": "compile"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 64,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "'(?P<year>[0-9]{4})(-(?P<month>[0-9]{1,2})(-(?P<day>[0-9]{1,2})((?P<separator>.)(?P<hour>[0-9]{2}):(?P<minute>[0-9]{2})(:(?P<second>[0-9]{2})(\\\\.(?P<fraction>[0-9]+))?)?(?P<timezone>Z|(([-+])([0-9]{2}):([0-9]{2})))?)?)?)?'",
+          "argval": {
+            "kind": "str",
+            "value": "(?P<year>[0-9]{4})(-(?P<month>[0-9]{1,2})(-(?P<day>[0-9]{1,2})((?P<separator>.)(?P<hour>[0-9]{2}):(?P<minute>[0-9]{2})(:(?P<second>[0-9]{2})(\\.(?P<fraction>[0-9]+))?)?(?P<timezone>Z|(([-+])([0-9]{2}):([0-9]{2})))?)?)?)?"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 68,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 76,
+          "opname": "STORE_NAME",
+          "arg": 7,
+          "argrepr": "ISO8601_REGEX",
+          "argval": {
+            "kind": "str",
+            "value": "ISO8601_REGEX"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 78,
+          "opname": "LOAD_NAME",
+          "arg": 4,
+          "argrepr": "re",
+          "argval": {
+            "kind": "str",
+            "value": "re"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 80,
+          "opname": "LOAD_ATTR",
+          "arg": 12,
+          "argrepr": "compile",
+          "argval": {
+            "kind": "str",
+            "value": "compile"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 100,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 102,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "'(?P<prefix>[+-])(?P<hours>[0-9]{2}).(?P<minutes>[0-9]{2})'",
+          "argval": {
+            "kind": "str",
+            "value": "(?P<prefix>[+-])(?P<hours>[0-9]{2}).(?P<minutes>[0-9]{2})"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 104,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 112,
+          "opname": "STORE_NAME",
+          "arg": 8,
+          "argrepr": "TIMEZONE_REGEX",
+          "argval": {
+            "kind": "str",
+            "value": "TIMEZONE_REGEX"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 114,
+          "opname": "LOAD_BUILD_CLASS",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 116,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 118,
+          "opname": "LOAD_CONST",
+          "arg": 8,
+          "argrepr": "code ParseError (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:43)",
+          "argval": {
+            "kind": "code",
+            "name": "ParseError",
+            "qualname": "ParseError"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 120,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 122,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "'ParseError'",
+          "argval": {
+            "kind": "str",
+            "value": "ParseError"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 124,
+          "opname": "LOAD_NAME",
+          "arg": 9,
+          "argrepr": "Exception",
+          "argval": {
+            "kind": "str",
+            "value": "Exception"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 126,
+          "opname": "CALL",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 134,
+          "opname": "STORE_NAME",
+          "arg": 10,
+          "argrepr": "ParseError",
+          "argval": {
+            "kind": "str",
+            "value": "ParseError"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 136,
+          "opname": "LOAD_NAME",
+          "arg": 2,
+          "argrepr": "timedelta",
+          "argval": {
+            "kind": "str",
+            "value": "timedelta"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 138,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 140,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 142,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 150,
+          "opname": "STORE_NAME",
+          "arg": 11,
+          "argrepr": "ZERO",
+          "argval": {
+            "kind": "str",
+            "value": "ZERO"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 152,
+          "opname": "LOAD_BUILD_CLASS",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 154,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 156,
+          "opname": "LOAD_CONST",
+          "arg": 9,
+          "argrepr": "code Utc (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:48)",
+          "argval": {
+            "kind": "code",
+            "name": "Utc",
+            "qualname": "Utc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 158,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 160,
+          "opname": "LOAD_CONST",
+          "arg": 10,
+          "argrepr": "'Utc'",
+          "argval": {
+            "kind": "str",
+            "value": "Utc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 162,
+          "opname": "LOAD_NAME",
+          "arg": 3,
+          "argrepr": "tzinfo",
+          "argval": {
+            "kind": "str",
+            "value": "tzinfo"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 164,
+          "opname": "CALL",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 172,
+          "opname": "STORE_NAME",
+          "arg": 12,
+          "argrepr": "Utc",
+          "argval": {
+            "kind": "str",
+            "value": "Utc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 174,
+          "opname": "LOAD_NAME",
+          "arg": 12,
+          "argrepr": "Utc",
+          "argval": {
+            "kind": "str",
+            "value": "Utc"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 176,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 178,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 186,
+          "opname": "STORE_NAME",
+          "arg": 13,
+          "argrepr": "UTC",
+          "argval": {
+            "kind": "str",
+            "value": "UTC"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 188,
+          "opname": "LOAD_BUILD_CLASS",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 190,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 192,
+          "opname": "LOAD_CONST",
+          "arg": 11,
+          "argrepr": "code FixedOffset (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:62)",
+          "argval": {
+            "kind": "code",
+            "name": "FixedOffset",
+            "qualname": "FixedOffset"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 194,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 196,
+          "opname": "LOAD_CONST",
+          "arg": 12,
+          "argrepr": "'FixedOffset'",
+          "argval": {
+            "kind": "str",
+            "value": "FixedOffset"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 198,
+          "opname": "LOAD_NAME",
+          "arg": 3,
+          "argrepr": "tzinfo",
+          "argval": {
+            "kind": "str",
+            "value": "tzinfo"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 200,
+          "opname": "CALL",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 208,
+          "opname": "STORE_NAME",
+          "arg": 14,
+          "argrepr": "FixedOffset",
+          "argval": {
+            "kind": "str",
+            "value": "FixedOffset"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 210,
+          "opname": "LOAD_NAME",
+          "arg": 13,
+          "argrepr": "UTC",
+          "argval": {
+            "kind": "str",
+            "value": "UTC"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 212,
+          "opname": "BUILD_TUPLE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 214,
+          "opname": "LOAD_CONST",
+          "arg": 13,
+          "argrepr": "code parse_timezone (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:84)",
+          "argval": {
+            "kind": "code",
+            "name": "parse_timezone",
+            "qualname": "parse_timezone"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 216,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 218,
+          "opname": "SET_FUNCTION_ATTRIBUTE",
+          "arg": 1,
+          "argrepr": "defaults",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 220,
+          "opname": "STORE_NAME",
+          "arg": 15,
+          "argrepr": "parse_timezone",
+          "argval": {
+            "kind": "str",
+            "value": "parse_timezone"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 222,
+          "opname": "LOAD_NAME",
+          "arg": 13,
+          "argrepr": "UTC",
+          "argval": {
+            "kind": "str",
+            "value": "UTC"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 224,
+          "opname": "BUILD_TUPLE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 226,
+          "opname": "LOAD_CONST",
+          "arg": 14,
+          "argrepr": "code parse_date (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:103)",
+          "argval": {
+            "kind": "code",
+            "name": "parse_date",
+            "qualname": "parse_date"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 228,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 230,
+          "opname": "SET_FUNCTION_ATTRIBUTE",
+          "arg": 1,
+          "argrepr": "defaults",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 232,
+          "opname": "STORE_NAME",
+          "arg": 16,
+          "argrepr": "parse_date",
+          "argval": {
+            "kind": "str",
+            "value": "parse_date"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 234,
+          "opname": "RETURN_CONST",
+          "arg": 3,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 1,
+      "name": "ParseError",
+      "qualname": "ParseError",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 43,
+      "argcount": 0,
+      "names": [
+        "__name__",
+        "__module__",
+        "__qualname__",
+        "__firstlineno__",
+        "__doc__",
+        "__static_attributes__"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "ParseError"
+        },
+        {
+          "kind": "int",
+          "value": 43
+        },
+        {
+          "kind": "str",
+          "value": "Raised when there is a problem parsing a date string"
+        },
+        {
+          "kind": "tuple",
+          "items": []
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "2855ec774ec76cb233d003178ec4dfcb87617d417274b399831e0dd8f07f7a10",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_NAME",
+          "arg": 0,
+          "argrepr": "__name__",
+          "argval": {
+            "kind": "str",
+            "value": "__name__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "__module__",
+          "argval": {
+            "kind": "str",
+            "value": "__module__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'ParseError'",
+          "argval": {
+            "kind": "str",
+            "value": "ParseError"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "__qualname__",
+          "argval": {
+            "kind": "str",
+            "value": "__qualname__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "43",
+          "argval": {
+            "kind": "int",
+            "value": 43
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "__firstlineno__",
+          "argval": {
+            "kind": "str",
+            "value": "__firstlineno__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'Raised when there is a problem parsing a date string'",
+          "argval": {
+            "kind": "str",
+            "value": "Raised when there is a problem parsing a date string"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "__doc__",
+          "argval": {
+            "kind": "str",
+            "value": "__doc__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "()",
+          "argval": {
+            "kind": "tuple",
+            "items": []
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "STORE_NAME",
+          "arg": 5,
+          "argrepr": "__static_attributes__",
+          "argval": {
+            "kind": "str",
+            "value": "__static_attributes__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "RETURN_CONST",
+          "arg": 4,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 2,
+      "name": "Utc",
+      "qualname": "Utc",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 48,
+      "argcount": 0,
+      "names": [
+        "__name__",
+        "__module__",
+        "__qualname__",
+        "__firstlineno__",
+        "__doc__",
+        "utcoffset",
+        "tzname",
+        "dst",
+        "__static_attributes__"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Utc"
+        },
+        {
+          "kind": "int",
+          "value": 48
+        },
+        {
+          "kind": "str",
+          "value": "UTC\n\n    "
+        },
+        {
+          "kind": "code",
+          "name": "utcoffset",
+          "qualname": "Utc.utcoffset"
+        },
+        {
+          "kind": "code",
+          "name": "tzname",
+          "qualname": "Utc.tzname"
+        },
+        {
+          "kind": "code",
+          "name": "dst",
+          "qualname": "Utc.dst"
+        },
+        {
+          "kind": "tuple",
+          "items": []
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "e5c5c28669d70d70425bd2fab0962fa2f0cbdc684dcddbed3f9f9cbb9d7ce50f",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_NAME",
+          "arg": 0,
+          "argrepr": "__name__",
+          "argval": {
+            "kind": "str",
+            "value": "__name__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "__module__",
+          "argval": {
+            "kind": "str",
+            "value": "__module__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'Utc'",
+          "argval": {
+            "kind": "str",
+            "value": "Utc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "__qualname__",
+          "argval": {
+            "kind": "str",
+            "value": "__qualname__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "48",
+          "argval": {
+            "kind": "int",
+            "value": 48
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "__firstlineno__",
+          "argval": {
+            "kind": "str",
+            "value": "__firstlineno__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'UTC\\n\\n    '",
+          "argval": {
+            "kind": "str",
+            "value": "UTC\n\n    "
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "__doc__",
+          "argval": {
+            "kind": "str",
+            "value": "__doc__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "code Utc.utcoffset (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:52)",
+          "argval": {
+            "kind": "code",
+            "name": "utcoffset",
+            "qualname": "Utc.utcoffset"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "STORE_NAME",
+          "arg": 5,
+          "argrepr": "utcoffset",
+          "argval": {
+            "kind": "str",
+            "value": "utcoffset"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "code Utc.tzname (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:55)",
+          "argval": {
+            "kind": "code",
+            "name": "tzname",
+            "qualname": "Utc.tzname"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "STORE_NAME",
+          "arg": 6,
+          "argrepr": "tzname",
+          "argval": {
+            "kind": "str",
+            "value": "tzname"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "code Utc.dst (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:58)",
+          "argval": {
+            "kind": "code",
+            "name": "dst",
+            "qualname": "Utc.dst"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "STORE_NAME",
+          "arg": 7,
+          "argrepr": "dst",
+          "argval": {
+            "kind": "str",
+            "value": "dst"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "()",
+          "argval": {
+            "kind": "tuple",
+            "items": []
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "STORE_NAME",
+          "arg": 8,
+          "argrepr": "__static_attributes__",
+          "argval": {
+            "kind": "str",
+            "value": "__static_attributes__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "RETURN_CONST",
+          "arg": 7,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 3,
+      "name": "utcoffset",
+      "qualname": "Utc.utcoffset",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 52,
+      "argcount": 2,
+      "names": [
+        "ZERO"
+      ],
+      "varnames": [
+        "self",
+        "_dt"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "e4b5aa28035e840bcc545c239db8ee4874f4f3538faa700c37028e6af0d656a3",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "ZERO",
+          "argval": {
+            "kind": "str",
+            "value": "ZERO"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 4,
+      "name": "tzname",
+      "qualname": "Utc.tzname",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 55,
+      "argcount": 2,
+      "names": [],
+      "varnames": [
+        "self",
+        "_dt"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "str",
+          "value": "UTC"
+        }
+      ],
+      "bytecode_sha256": "bd3dcccc590c7f9ea648840924d7f5036eda7fd7440c41a634a4ba5ce1fe77a7",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "'UTC'",
+          "argval": {
+            "kind": "str",
+            "value": "UTC"
+          },
+          "line": true,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 5,
+      "name": "dst",
+      "qualname": "Utc.dst",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 58,
+      "argcount": 2,
+      "names": [
+        "ZERO"
+      ],
+      "varnames": [
+        "self",
+        "_dt"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "e4b5aa28035e840bcc545c239db8ee4874f4f3538faa700c37028e6af0d656a3",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "ZERO",
+          "argval": {
+            "kind": "str",
+            "value": "ZERO"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 6,
+      "name": "FixedOffset",
+      "qualname": "FixedOffset",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 62,
+      "argcount": 0,
+      "names": [
+        "__name__",
+        "__module__",
+        "__qualname__",
+        "__firstlineno__",
+        "__doc__",
+        "__init__",
+        "utcoffset",
+        "tzname",
+        "dst",
+        "__repr__",
+        "__static_attributes__"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "FixedOffset"
+        },
+        {
+          "kind": "int",
+          "value": 62
+        },
+        {
+          "kind": "str",
+          "value": "Fixed offset in hours and minutes from UTC\n\n    "
+        },
+        {
+          "kind": "code",
+          "name": "__init__",
+          "qualname": "FixedOffset.__init__"
+        },
+        {
+          "kind": "code",
+          "name": "utcoffset",
+          "qualname": "FixedOffset.utcoffset"
+        },
+        {
+          "kind": "code",
+          "name": "tzname",
+          "qualname": "FixedOffset.tzname"
+        },
+        {
+          "kind": "code",
+          "name": "dst",
+          "qualname": "FixedOffset.dst"
+        },
+        {
+          "kind": "code",
+          "name": "__repr__",
+          "qualname": "FixedOffset.__repr__"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "__name"
+            },
+            {
+              "kind": "str",
+              "value": "__offset"
+            }
+          ]
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "a39c36cfdd2c88f12a23675b1070c66ce9c9b5d10d1a5aad0bea1024b79badb1",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_NAME",
+          "arg": 0,
+          "argrepr": "__name__",
+          "argval": {
+            "kind": "str",
+            "value": "__name__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "__module__",
+          "argval": {
+            "kind": "str",
+            "value": "__module__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'FixedOffset'",
+          "argval": {
+            "kind": "str",
+            "value": "FixedOffset"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "__qualname__",
+          "argval": {
+            "kind": "str",
+            "value": "__qualname__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "62",
+          "argval": {
+            "kind": "int",
+            "value": 62
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "__firstlineno__",
+          "argval": {
+            "kind": "str",
+            "value": "__firstlineno__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'Fixed offset in hours and minutes from UTC\\n\\n    '",
+          "argval": {
+            "kind": "str",
+            "value": "Fixed offset in hours and minutes from UTC\n\n    "
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "__doc__",
+          "argval": {
+            "kind": "str",
+            "value": "__doc__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "code FixedOffset.__init__ (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:66)",
+          "argval": {
+            "kind": "code",
+            "name": "__init__",
+            "qualname": "FixedOffset.__init__"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "STORE_NAME",
+          "arg": 5,
+          "argrepr": "__init__",
+          "argval": {
+            "kind": "str",
+            "value": "__init__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "code FixedOffset.utcoffset (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:72)",
+          "argval": {
+            "kind": "code",
+            "name": "utcoffset",
+            "qualname": "FixedOffset.utcoffset"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "STORE_NAME",
+          "arg": 6,
+          "argrepr": "utcoffset",
+          "argval": {
+            "kind": "str",
+            "value": "utcoffset"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "code FixedOffset.tzname (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:75)",
+          "argval": {
+            "kind": "code",
+            "name": "tzname",
+            "qualname": "FixedOffset.tzname"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "STORE_NAME",
+          "arg": 7,
+          "argrepr": "tzname",
+          "argval": {
+            "kind": "str",
+            "value": "tzname"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "code FixedOffset.dst (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:78)",
+          "argval": {
+            "kind": "code",
+            "name": "dst",
+            "qualname": "FixedOffset.dst"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "STORE_NAME",
+          "arg": 8,
+          "argrepr": "dst",
+          "argval": {
+            "kind": "str",
+            "value": "dst"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 42,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "code FixedOffset.__repr__ (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py:81)",
+          "argval": {
+            "kind": "code",
+            "name": "__repr__",
+            "qualname": "FixedOffset.__repr__"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 46,
+          "opname": "STORE_NAME",
+          "arg": 9,
+          "argrepr": "__repr__",
+          "argval": {
+            "kind": "str",
+            "value": "__repr__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 48,
+          "opname": "LOAD_CONST",
+          "arg": 8,
+          "argrepr": "('__name', '__offset')",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "__name"
+              },
+              {
+                "kind": "str",
+                "value": "__offset"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 50,
+          "opname": "STORE_NAME",
+          "arg": 10,
+          "argrepr": "__static_attributes__",
+          "argval": {
+            "kind": "str",
+            "value": "__static_attributes__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 52,
+          "opname": "RETURN_CONST",
+          "arg": 9,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 7,
+      "name": "__init__",
+      "qualname": "FixedOffset.__init__",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 66,
+      "argcount": 4,
+      "names": [
+        "timedelta",
+        "_FixedOffset__offset",
+        "_FixedOffset__name"
+      ],
+      "varnames": [
+        "self",
+        "offset_hours",
+        "offset_minutes",
+        "name"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "hours"
+            },
+            {
+              "kind": "str",
+              "value": "minutes"
+            }
+          ]
+        }
+      ],
+      "bytecode_sha256": "be57e77eb48aeb9e26a6bb0229f7659a4766ff5eabccc09b1db357ff62c88dd4",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "timedelta + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "timedelta"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 18,
+          "argrepr": "offset_hours, offset_minutes",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "offset_hours"
+              },
+              {
+                "kind": "str",
+                "value": "offset_minutes"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "('hours', 'minutes')",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "hours"
+              },
+              {
+                "kind": "str",
+                "value": "minutes"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "CALL_KW",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "STORE_ATTR",
+          "arg": 1,
+          "argrepr": "_FixedOffset__offset",
+          "argval": {
+            "kind": "str",
+            "value": "_FixedOffset__offset"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 48,
+          "argrepr": "name, self",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "name"
+              },
+              {
+                "kind": "str",
+                "value": "self"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "STORE_ATTR",
+          "arg": 2,
+          "argrepr": "_FixedOffset__name",
+          "argval": {
+            "kind": "str",
+            "value": "_FixedOffset__name"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 42,
+          "opname": "RETURN_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 8,
+      "name": "utcoffset",
+      "qualname": "FixedOffset.utcoffset",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 72,
+      "argcount": 2,
+      "names": [
+        "_FixedOffset__offset"
+      ],
+      "varnames": [
+        "self",
+        "_dt"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "4a2918454966be2c1b2cbd3890ec30ed8d68a3e2802919c00de7411a960fcd7b",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_ATTR",
+          "arg": 0,
+          "argrepr": "_FixedOffset__offset",
+          "argval": {
+            "kind": "str",
+            "value": "_FixedOffset__offset"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 9,
+      "name": "tzname",
+      "qualname": "FixedOffset.tzname",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 75,
+      "argcount": 2,
+      "names": [
+        "_FixedOffset__name"
+      ],
+      "varnames": [
+        "self",
+        "_dt"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "4a2918454966be2c1b2cbd3890ec30ed8d68a3e2802919c00de7411a960fcd7b",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_ATTR",
+          "arg": 0,
+          "argrepr": "_FixedOffset__name",
+          "argval": {
+            "kind": "str",
+            "value": "_FixedOffset__name"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 10,
+      "name": "dst",
+      "qualname": "FixedOffset.dst",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 78,
+      "argcount": 2,
+      "names": [
+        "ZERO"
+      ],
+      "varnames": [
+        "self",
+        "_dt"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "e4b5aa28035e840bcc545c239db8ee4874f4f3538faa700c37028e6af0d656a3",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "ZERO",
+          "argval": {
+            "kind": "str",
+            "value": "ZERO"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 11,
+      "name": "__repr__",
+      "qualname": "FixedOffset.__repr__",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 81,
+      "argcount": 1,
+      "names": [
+        "_FixedOffset__name"
+      ],
+      "varnames": [
+        "self"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "str",
+          "value": "<FixedOffset %r>"
+        }
+      ],
+      "bytecode_sha256": "7b9c7e280e9cf317987e358dc3658c2ffb69ae2cc3d22c7cff343b44e5c9e909",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "'<FixedOffset %r>'",
+          "argval": {
+            "kind": "str",
+            "value": "<FixedOffset %r>"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_ATTR",
+          "arg": 0,
+          "argrepr": "_FixedOffset__name",
+          "argval": {
+            "kind": "str",
+            "value": "_FixedOffset__name"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "BINARY_OP",
+          "arg": 6,
+          "argrepr": "%",
+          "argval": {
+            "kind": "int",
+            "value": 6
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 12,
+      "name": "parse_timezone",
+      "qualname": "parse_timezone",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 84,
+      "argcount": 2,
+      "names": [
+        "TIMEZONE_REGEX",
+        "match",
+        "groups",
+        "int",
+        "FixedOffset"
+      ],
+      "varnames": [
+        "tzstring",
+        "default_timezone",
+        "m",
+        "prefix",
+        "hours",
+        "minutes"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Parses ISO 8601 time zone specs into tzinfo offsets\n\n    "
+        },
+        {
+          "kind": "str",
+          "value": "Z"
+        },
+        {
+          "kind": "str",
+          "value": "-"
+        }
+      ],
+      "bytecode_sha256": "b135776b681606c198618d947b7a37ad68fbb8f703711f383ffac17ea577b594",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "tzstring",
+          "argval": {
+            "kind": "str",
+            "value": "tzstring"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "'Z'",
+          "argval": {
+            "kind": "str",
+            "value": "Z"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "COMPARE_OP",
+          "arg": 88,
+          "argrepr": "bool(==)",
+          "argval": {
+            "kind": "str",
+            "value": "=="
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 2,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 18
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "default_timezone",
+          "argval": {
+            "kind": "str",
+            "value": "default_timezone"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "tzstring",
+          "argval": {
+            "kind": "str",
+            "value": "tzstring"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 20,
+          "opname": "POP_JUMP_IF_NOT_NONE",
+          "arg": 2,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 28
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "default_timezone",
+          "argval": {
+            "kind": "str",
+            "value": "default_timezone"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "TIMEZONE_REGEX",
+          "argval": {
+            "kind": "str",
+            "value": "TIMEZONE_REGEX"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 38,
+          "opname": "LOAD_ATTR",
+          "arg": 3,
+          "argrepr": "match + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "match"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 58,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "tzstring",
+          "argval": {
+            "kind": "str",
+            "value": "tzstring"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 60,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 68,
+          "opname": "STORE_FAST",
+          "arg": 2,
+          "argrepr": "m",
+          "argval": {
+            "kind": "str",
+            "value": "m"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "m",
+          "argval": {
+            "kind": "str",
+            "value": "m"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "LOAD_ATTR",
+          "arg": 5,
+          "argrepr": "groups + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 92,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 100,
+          "opname": "UNPACK_SEQUENCE",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 104,
+          "opname": "STORE_FAST_STORE_FAST",
+          "arg": 52,
+          "argrepr": "prefix, hours",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "prefix"
+              },
+              {
+                "kind": "str",
+                "value": "hours"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 106,
+          "opname": "STORE_FAST",
+          "arg": 5,
+          "argrepr": "minutes",
+          "argval": {
+            "kind": "str",
+            "value": "minutes"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 108,
+          "opname": "LOAD_GLOBAL",
+          "arg": 7,
+          "argrepr": "int + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 118,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "hours",
+          "argval": {
+            "kind": "str",
+            "value": "hours"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 120,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 128,
+          "opname": "LOAD_GLOBAL",
+          "arg": 7,
+          "argrepr": "int + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 138,
+          "opname": "LOAD_FAST",
+          "arg": 5,
+          "argrepr": "minutes",
+          "argval": {
+            "kind": "str",
+            "value": "minutes"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 140,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 148,
+          "opname": "STORE_FAST_STORE_FAST",
+          "arg": 84,
+          "argrepr": "minutes, hours",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "minutes"
+              },
+              {
+                "kind": "str",
+                "value": "hours"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 150,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "prefix",
+          "argval": {
+            "kind": "str",
+            "value": "prefix"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 152,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'-'",
+          "argval": {
+            "kind": "str",
+            "value": "-"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 154,
+          "opname": "COMPARE_OP",
+          "arg": 88,
+          "argrepr": "bool(==)",
+          "argval": {
+            "kind": "str",
+            "value": "=="
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 158,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 6,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 174
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 162,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "hours",
+          "argval": {
+            "kind": "str",
+            "value": "hours"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 164,
+          "opname": "UNARY_NEGATIVE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 166,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "hours",
+          "argval": {
+            "kind": "str",
+            "value": "hours"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 168,
+          "opname": "LOAD_FAST",
+          "arg": 5,
+          "argrepr": "minutes",
+          "argval": {
+            "kind": "str",
+            "value": "minutes"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 170,
+          "opname": "UNARY_NEGATIVE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 172,
+          "opname": "STORE_FAST",
+          "arg": 5,
+          "argrepr": "minutes",
+          "argval": {
+            "kind": "str",
+            "value": "minutes"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 174,
+          "opname": "LOAD_GLOBAL",
+          "arg": 9,
+          "argrepr": "FixedOffset + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "FixedOffset"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 184,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 69,
+          "argrepr": "hours, minutes",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "hours"
+              },
+              {
+                "kind": "str",
+                "value": "minutes"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 186,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "tzstring",
+          "argval": {
+            "kind": "str",
+            "value": "tzstring"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 188,
+          "opname": "CALL",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 196,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 13,
+      "name": "parse_date",
+      "qualname": "parse_date",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.py",
+      "firstlineno": 103,
+      "argcount": 2,
+      "names": [
+        "isinstance",
+        "str",
+        "ParseError",
+        "ISO8601_REGEX",
+        "match",
+        "groupdict",
+        "parse_timezone",
+        "int",
+        "float",
+        "datetime"
+      ],
+      "varnames": [
+        "datestring",
+        "default_timezone",
+        "m",
+        "groups",
+        "tz"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Parses ISO 8601 dates into datetime objects\n\nThe timezone is parsed from the date string. However it is quite common to\nhave dates without a timezone (not strictly correct). In this case the\ndefault timezone specified in default_timezone is used. This is UTC by\ndefault.\n"
+        },
+        {
+          "kind": "str",
+          "value": "Expecting a string %r"
+        },
+        {
+          "kind": "str",
+          "value": "Unable to parse date string %r"
+        },
+        {
+          "kind": "str",
+          "value": "timezone"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "default_timezone"
+            }
+          ]
+        },
+        {
+          "kind": "str",
+          "value": "fraction"
+        },
+        {
+          "kind": "int",
+          "value": 0
+        },
+        {
+          "kind": "str",
+          "value": "0.%s"
+        },
+        {
+          "kind": "float",
+          "value": 1000000.0
+        },
+        {
+          "kind": "str",
+          "value": "year"
+        },
+        {
+          "kind": "str",
+          "value": "month"
+        },
+        {
+          "kind": "str",
+          "value": "day"
+        },
+        {
+          "kind": "str",
+          "value": "hour"
+        },
+        {
+          "kind": "str",
+          "value": "minute"
+        },
+        {
+          "kind": "str",
+          "value": "second"
+        }
+      ],
+      "bytecode_sha256": "d7433070a0938fe84184295e79f6bcf74c68e5abd2c70bec62630332b397868f",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "isinstance + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "isinstance"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "datestring",
+          "argval": {
+            "kind": "str",
+            "value": "datestring"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_GLOBAL",
+          "arg": 2,
+          "argrepr": "str",
+          "argval": {
+            "kind": "str",
+            "value": "str"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 14,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 72
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "LOAD_GLOBAL",
+          "arg": 5,
+          "argrepr": "ParseError + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "ParseError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "'Expecting a string %r'",
+          "argval": {
+            "kind": "str",
+            "value": "Expecting a string %r"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "datestring",
+          "argval": {
+            "kind": "str",
+            "value": "datestring"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 58,
+          "opname": "BINARY_OP",
+          "arg": 6,
+          "argrepr": "%",
+          "argval": {
+            "kind": "int",
+            "value": 6
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "RAISE_VARARGS",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "LOAD_GLOBAL",
+          "arg": 6,
+          "argrepr": "ISO8601_REGEX",
+          "argval": {
+            "kind": "str",
+            "value": "ISO8601_REGEX"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 82,
+          "opname": "LOAD_ATTR",
+          "arg": 9,
+          "argrepr": "match + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "match"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 102,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "datestring",
+          "argval": {
+            "kind": "str",
+            "value": "datestring"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 104,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 112,
+          "opname": "STORE_FAST",
+          "arg": 2,
+          "argrepr": "m",
+          "argval": {
+            "kind": "str",
+            "value": "m"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 114,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "m",
+          "argval": {
+            "kind": "str",
+            "value": "m"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 116,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 124,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 14,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 156
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 128,
+          "opname": "LOAD_GLOBAL",
+          "arg": 5,
+          "argrepr": "ParseError + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "ParseError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 138,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'Unable to parse date string %r'",
+          "argval": {
+            "kind": "str",
+            "value": "Unable to parse date string %r"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 140,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "datestring",
+          "argval": {
+            "kind": "str",
+            "value": "datestring"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 142,
+          "opname": "BINARY_OP",
+          "arg": 6,
+          "argrepr": "%",
+          "argval": {
+            "kind": "int",
+            "value": 6
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 146,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 154,
+          "opname": "RAISE_VARARGS",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 156,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "m",
+          "argval": {
+            "kind": "str",
+            "value": "m"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 158,
+          "opname": "LOAD_ATTR",
+          "arg": 11,
+          "argrepr": "groupdict + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "groupdict"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 178,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 186,
+          "opname": "STORE_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 188,
+          "opname": "LOAD_GLOBAL",
+          "arg": 13,
+          "argrepr": "parse_timezone + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "parse_timezone"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 198,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 200,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "'timezone'",
+          "argval": {
+            "kind": "str",
+            "value": "timezone"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 202,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 206,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "default_timezone",
+          "argval": {
+            "kind": "str",
+            "value": "default_timezone"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 208,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "('default_timezone',)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "default_timezone"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 210,
+          "opname": "CALL_KW",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 212,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "tz",
+          "argval": {
+            "kind": "str",
+            "value": "tz"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 214,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 216,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "'fraction'",
+          "argval": {
+            "kind": "str",
+            "value": "fraction"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 218,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 222,
+          "opname": "POP_JUMP_IF_NOT_NONE",
+          "arg": 6,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 238
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 226,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 228,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 230,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "'fraction'",
+          "argval": {
+            "kind": "str",
+            "value": "fraction"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 232,
+          "opname": "STORE_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 236,
+          "opname": "JUMP_FORWARD",
+          "arg": 32,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 302
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 238,
+          "opname": "LOAD_GLOBAL",
+          "arg": 15,
+          "argrepr": "int + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 248,
+          "opname": "LOAD_GLOBAL",
+          "arg": 17,
+          "argrepr": "float + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "float"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 258,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "'0.%s'",
+          "argval": {
+            "kind": "str",
+            "value": "0.%s"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 260,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 262,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "'fraction'",
+          "argval": {
+            "kind": "str",
+            "value": "fraction"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 264,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 268,
+          "opname": "BINARY_OP",
+          "arg": 6,
+          "argrepr": "%",
+          "argval": {
+            "kind": "int",
+            "value": 6
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 272,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 280,
+          "opname": "LOAD_CONST",
+          "arg": 8,
+          "argrepr": "1000000.0",
+          "argval": {
+            "kind": "float",
+            "value": 1000000.0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 282,
+          "opname": "BINARY_OP",
+          "arg": 5,
+          "argrepr": "*",
+          "argval": {
+            "kind": "int",
+            "value": 5
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 286,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 294,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 296,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "'fraction'",
+          "argval": {
+            "kind": "str",
+            "value": "fraction"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 298,
+          "opname": "STORE_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 302,
+          "opname": "LOAD_GLOBAL",
+          "arg": 19,
+          "argrepr": "datetime + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "datetime"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 312,
+          "opname": "LOAD_GLOBAL",
+          "arg": 15,
+          "argrepr": "int + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 322,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 324,
+          "opname": "LOAD_CONST",
+          "arg": 9,
+          "argrepr": "'year'",
+          "argval": {
+            "kind": "str",
+            "value": "year"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 326,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 330,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 338,
+          "opname": "LOAD_GLOBAL",
+          "arg": 15,
+          "argrepr": "int + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 348,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 350,
+          "opname": "LOAD_CONST",
+          "arg": 10,
+          "argrepr": "'month'",
+          "argval": {
+            "kind": "str",
+            "value": "month"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 352,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 356,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 364,
+          "opname": "LOAD_GLOBAL",
+          "arg": 15,
+          "argrepr": "int + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 374,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 376,
+          "opname": "LOAD_CONST",
+          "arg": 11,
+          "argrepr": "'day'",
+          "argval": {
+            "kind": "str",
+            "value": "day"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 378,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 382,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 390,
+          "opname": "LOAD_GLOBAL",
+          "arg": 15,
+          "argrepr": "int + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 400,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 402,
+          "opname": "LOAD_CONST",
+          "arg": 12,
+          "argrepr": "'hour'",
+          "argval": {
+            "kind": "str",
+            "value": "hour"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 404,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 408,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 416,
+          "opname": "LOAD_GLOBAL",
+          "arg": 15,
+          "argrepr": "int + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 426,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 428,
+          "opname": "LOAD_CONST",
+          "arg": 13,
+          "argrepr": "'minute'",
+          "argval": {
+            "kind": "str",
+            "value": "minute"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 430,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 434,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 442,
+          "opname": "LOAD_GLOBAL",
+          "arg": 15,
+          "argrepr": "int + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 452,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 454,
+          "opname": "LOAD_CONST",
+          "arg": 14,
+          "argrepr": "'second'",
+          "argval": {
+            "kind": "str",
+            "value": "second"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 456,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 460,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 468,
+          "opname": "LOAD_GLOBAL",
+          "arg": 15,
+          "argrepr": "int + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 478,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "groups",
+          "argval": {
+            "kind": "str",
+            "value": "groups"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 480,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "'fraction'",
+          "argval": {
+            "kind": "str",
+            "value": "fraction"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 482,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 486,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 494,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "tz",
+          "argval": {
+            "kind": "str",
+            "value": "tz"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 496,
+          "opname": "CALL",
+          "arg": 8,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 8
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 504,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    }
+  ],
+  "limitations": [
+    "Disassembly is not recovered source.",
+    "Control-flow interpretation requires review of jumps and exception tables."
+  ]
+}

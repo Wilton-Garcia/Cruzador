@@ -1,0 +1,485 @@
+{
+  "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/distversion.pyc",
+  "sha256": "fcb04aaf86783e0a9a431d5fa9313fb0b6d9ba27f86d6926457f64d8457bd2c2",
+  "magic_hex": "f30d0d0a",
+  "python_version": "3.13.3 (tags/v3.13.3:6280bb54784, Jan  1 1970, 00:00:00) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "inspection": "marshal decode and CPython disassembly; target code not imported or executed",
+  "code_objects": [
+    {
+      "index": 0,
+      "name": "<module>",
+      "qualname": "<module>",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/distversion.py",
+      "firstlineno": 1,
+      "argcount": 0,
+      "names": [
+        "CX_VERSION",
+        "PUBLIC_VERSION",
+        "DATE",
+        "DEMO_EXTREP",
+        "DEMO_SKU",
+        "DEMO_URL",
+        "DEMO_URL_VISIBLE",
+        "HAS_MULTI_USER",
+        "IS_MACOSX",
+        "IS_PREVIEW",
+        "PLATFORM",
+        "BUILTIN_PRODUCT_ID",
+        "PRODUCT_NAME",
+        "PRODUCT_COPYRIGHT",
+        "IS_CJBUILD"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "26.3.0.39832"
+        },
+        {
+          "kind": "str",
+          "value": "26.3.0"
+        },
+        {
+          "kind": "str",
+          "value": "2026/07/13"
+        },
+        {
+          "kind": "str",
+          "value": "0"
+        },
+        {
+          "kind": "str",
+          "value": "crossmac"
+        },
+        {
+          "kind": "str",
+          "value": "https://www.codeweavers.com/store/checkout/?cart=add;sku%5Bsku%5D=crossmac-pro;sku%5Bqty%5D=1"
+        },
+        {
+          "kind": "str",
+          "value": "store.codeweavers.com"
+        },
+        {
+          "kind": "int",
+          "value": 1
+        },
+        {
+          "kind": "int",
+          "value": 0
+        },
+        {
+          "kind": "str",
+          "value": "Mac"
+        },
+        {
+          "kind": "str",
+          "value": "CrossOver"
+        },
+        {
+          "kind": "str",
+          "value": "2004-2026, CodeWeavers, Inc."
+        },
+        {
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "573f898b74d27b4ccc726287afb668301331fd6662273fb5e542563ea83f84fd",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'26.3.0.39832'",
+          "argval": {
+            "kind": "str",
+            "value": "26.3.0.39832"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 0,
+          "argrepr": "CX_VERSION",
+          "argval": {
+            "kind": "str",
+            "value": "CX_VERSION"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "'26.3.0'",
+          "argval": {
+            "kind": "str",
+            "value": "26.3.0"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "PUBLIC_VERSION",
+          "argval": {
+            "kind": "str",
+            "value": "PUBLIC_VERSION"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'2026/07/13'",
+          "argval": {
+            "kind": "str",
+            "value": "2026/07/13"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "DATE",
+          "argval": {
+            "kind": "str",
+            "value": "DATE"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "'0'",
+          "argval": {
+            "kind": "str",
+            "value": "0"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "DEMO_EXTREP",
+          "argval": {
+            "kind": "str",
+            "value": "DEMO_EXTREP"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "'crossmac'",
+          "argval": {
+            "kind": "str",
+            "value": "crossmac"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "DEMO_SKU",
+          "argval": {
+            "kind": "str",
+            "value": "DEMO_SKU"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "'https://www.codeweavers.com/store/checkout/?cart=add;sku%5Bsku%5D=crossmac-pro;sku%5Bqty%5D=1'",
+          "argval": {
+            "kind": "str",
+            "value": "https://www.codeweavers.com/store/checkout/?cart=add;sku%5Bsku%5D=crossmac-pro;sku%5Bqty%5D=1"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "STORE_NAME",
+          "arg": 5,
+          "argrepr": "DEMO_URL",
+          "argval": {
+            "kind": "str",
+            "value": "DEMO_URL"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "'store.codeweavers.com'",
+          "argval": {
+            "kind": "str",
+            "value": "store.codeweavers.com"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "STORE_NAME",
+          "arg": 6,
+          "argrepr": "DEMO_URL_VISIBLE",
+          "argval": {
+            "kind": "str",
+            "value": "DEMO_URL_VISIBLE"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "1",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "STORE_NAME",
+          "arg": 7,
+          "argrepr": "HAS_MULTI_USER",
+          "argval": {
+            "kind": "str",
+            "value": "HAS_MULTI_USER"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "1",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "STORE_NAME",
+          "arg": 8,
+          "argrepr": "IS_MACOSX",
+          "argval": {
+            "kind": "str",
+            "value": "IS_MACOSX"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "LOAD_CONST",
+          "arg": 8,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "STORE_NAME",
+          "arg": 9,
+          "argrepr": "IS_PREVIEW",
+          "argval": {
+            "kind": "str",
+            "value": "IS_PREVIEW"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 42,
+          "opname": "LOAD_CONST",
+          "arg": 9,
+          "argrepr": "'Mac'",
+          "argval": {
+            "kind": "str",
+            "value": "Mac"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "STORE_NAME",
+          "arg": 10,
+          "argrepr": "PLATFORM",
+          "argval": {
+            "kind": "str",
+            "value": "PLATFORM"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 46,
+          "opname": "LOAD_CONST",
+          "arg": 10,
+          "argrepr": "'CrossOver'",
+          "argval": {
+            "kind": "str",
+            "value": "CrossOver"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 48,
+          "opname": "STORE_NAME",
+          "arg": 11,
+          "argrepr": "BUILTIN_PRODUCT_ID",
+          "argval": {
+            "kind": "str",
+            "value": "BUILTIN_PRODUCT_ID"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 50,
+          "opname": "LOAD_CONST",
+          "arg": 10,
+          "argrepr": "'CrossOver'",
+          "argval": {
+            "kind": "str",
+            "value": "CrossOver"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 52,
+          "opname": "STORE_NAME",
+          "arg": 12,
+          "argrepr": "PRODUCT_NAME",
+          "argval": {
+            "kind": "str",
+            "value": "PRODUCT_NAME"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "LOAD_CONST",
+          "arg": 11,
+          "argrepr": "'2004-2026, CodeWeavers, Inc.'",
+          "argval": {
+            "kind": "str",
+            "value": "2004-2026, CodeWeavers, Inc."
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "STORE_NAME",
+          "arg": 13,
+          "argrepr": "PRODUCT_COPYRIGHT",
+          "argval": {
+            "kind": "str",
+            "value": "PRODUCT_COPYRIGHT"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 58,
+          "opname": "LOAD_CONST",
+          "arg": 12,
+          "argrepr": "False",
+          "argval": {
+            "kind": "bool",
+            "value": false
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 60,
+          "opname": "STORE_NAME",
+          "arg": 14,
+          "argrepr": "IS_CJBUILD",
+          "argval": {
+            "kind": "str",
+            "value": "IS_CJBUILD"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "RETURN_CONST",
+          "arg": 13,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    }
+  ],
+  "limitations": [
+    "Disassembly is not recovered source.",
+    "Control-flow interpretation requires review of jumps and exception tables."
+  ]
+}

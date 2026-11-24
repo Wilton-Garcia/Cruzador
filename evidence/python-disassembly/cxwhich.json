@@ -1,0 +1,1577 @@
+{
+  "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxwhich.pyc",
+  "sha256": "c88f28b131c0c75ff60122cf6ed4e3ee876c6ce32bd70d98e0f7f7be0c4e36c8",
+  "magic_hex": "f30d0d0a",
+  "python_version": "3.13.3 (tags/v3.13.3:6280bb54784, Jan  1 1970, 00:00:00) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "inspection": "marshal decode and CPython disassembly; target code not imported or executed",
+  "code_objects": [
+    {
+      "index": 0,
+      "name": "<module>",
+      "qualname": "<module>",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxwhich.py",
+      "firstlineno": 1,
+      "argcount": 0,
+      "names": [
+        "os",
+        "which"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "int",
+          "value": 0
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "code",
+          "name": "which",
+          "qualname": "which"
+        }
+      ],
+      "bytecode_sha256": "112d29be4345fdc5ef8b7352e815df1d40517293909a439b3a3a7058eeeca1cb",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "IMPORT_NAME",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "code which (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxwhich.py:6)",
+          "argval": {
+            "kind": "code",
+            "name": "which",
+            "qualname": "which"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "which",
+          "argval": {
+            "kind": "str",
+            "value": "which"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 1,
+      "name": "which",
+      "qualname": "which",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxwhich.py",
+      "firstlineno": 6,
+      "argcount": 2,
+      "names": [
+        "os",
+        "path",
+        "isabs",
+        "isfile",
+        "access",
+        "X_OK",
+        "sep",
+        "altsep",
+        "join",
+        "getcwd",
+        "split",
+        "pathsep"
+      ],
+      "varnames": [
+        "path",
+        "app",
+        "app_path",
+        "directory"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Looks for an executable in the specified directory list.\n\npath is an os.pathsep-separated list of directories and app is the\nexecutable name. If app contains a path separator then path is ignored.\nIf the file is not found, then None is returned.\n"
+        },
+        {
+          "kind": "str",
+          "value": ""
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "1aa2c12681d81bc0b825c0956f9facce4f3b074d5b0d5c2ed7d2cac742d21d9a",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_ATTR",
+          "arg": 2,
+          "argrepr": "path",
+          "argval": {
+            "kind": "str",
+            "value": "path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "LOAD_ATTR",
+          "arg": 5,
+          "argrepr": "isabs + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "isabs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 52,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "app",
+          "argval": {
+            "kind": "str",
+            "value": "app"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 81,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 236
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 74,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 84,
+          "opname": "LOAD_ATTR",
+          "arg": 2,
+          "argrepr": "path",
+          "argval": {
+            "kind": "str",
+            "value": "path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 104,
+          "opname": "LOAD_ATTR",
+          "arg": 7,
+          "argrepr": "isfile + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "isfile"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 124,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "app",
+          "argval": {
+            "kind": "str",
+            "value": "app"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 126,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 134,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 142,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 44,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 234
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 146,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 156,
+          "opname": "LOAD_ATTR",
+          "arg": 8,
+          "argrepr": "access",
+          "argval": {
+            "kind": "str",
+            "value": "access"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 176,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 178,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "app",
+          "argval": {
+            "kind": "str",
+            "value": "app"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 180,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 190,
+          "opname": "LOAD_ATTR",
+          "arg": 10,
+          "argrepr": "X_OK",
+          "argval": {
+            "kind": "str",
+            "value": "X_OK"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 210,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 218,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 226,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 2,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 234
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 230,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "app",
+          "argval": {
+            "kind": "str",
+            "value": "app"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 232,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 234,
+          "opname": "RETURN_CONST",
+          "arg": 2,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 236,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 246,
+          "opname": "LOAD_ATTR",
+          "arg": 12,
+          "argrepr": "sep",
+          "argval": {
+            "kind": "str",
+            "value": "sep"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 266,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "app",
+          "argval": {
+            "kind": "str",
+            "value": "app"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 268,
+          "opname": "CONTAINS_OP",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 272,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 41,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 358
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 276,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 286,
+          "opname": "LOAD_ATTR",
+          "arg": 14,
+          "argrepr": "altsep",
+          "argval": {
+            "kind": "str",
+            "value": "altsep"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 306,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 314,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 152,
+          "argrepr": "to L5",
+          "argval": {
+            "kind": "int",
+            "value": 622
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 318,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 328,
+          "opname": "LOAD_ATTR",
+          "arg": 14,
+          "argrepr": "altsep",
+          "argval": {
+            "kind": "str",
+            "value": "altsep"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 348,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "app",
+          "argval": {
+            "kind": "str",
+            "value": "app"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 350,
+          "opname": "CONTAINS_OP",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 354,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 132,
+          "argrepr": "to L5",
+          "argval": {
+            "kind": "int",
+            "value": 622
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 358,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 368,
+          "opname": "LOAD_ATTR",
+          "arg": 2,
+          "argrepr": "path",
+          "argval": {
+            "kind": "str",
+            "value": "path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 388,
+          "opname": "LOAD_ATTR",
+          "arg": 17,
+          "argrepr": "join + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "join"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 408,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 418,
+          "opname": "LOAD_ATTR",
+          "arg": 18,
+          "argrepr": "getcwd",
+          "argval": {
+            "kind": "str",
+            "value": "getcwd"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 438,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 440,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 448,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "app",
+          "argval": {
+            "kind": "str",
+            "value": "app"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 450,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 458,
+          "opname": "STORE_FAST",
+          "arg": 2,
+          "argrepr": "app_path",
+          "argval": {
+            "kind": "str",
+            "value": "app_path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 460,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 470,
+          "opname": "LOAD_ATTR",
+          "arg": 2,
+          "argrepr": "path",
+          "argval": {
+            "kind": "str",
+            "value": "path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 490,
+          "opname": "LOAD_ATTR",
+          "arg": 7,
+          "argrepr": "isfile + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "isfile"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 510,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "app_path",
+          "argval": {
+            "kind": "str",
+            "value": "app_path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 512,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 520,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 528,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 44,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 620
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 532,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 542,
+          "opname": "LOAD_ATTR",
+          "arg": 8,
+          "argrepr": "access",
+          "argval": {
+            "kind": "str",
+            "value": "access"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 562,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 564,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "app_path",
+          "argval": {
+            "kind": "str",
+            "value": "app_path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 566,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 576,
+          "opname": "LOAD_ATTR",
+          "arg": 10,
+          "argrepr": "X_OK",
+          "argval": {
+            "kind": "str",
+            "value": "X_OK"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 596,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 604,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 612,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 2,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 620
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 616,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "app_path",
+          "argval": {
+            "kind": "str",
+            "value": "app_path"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 618,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 620,
+          "opname": "RETURN_CONST",
+          "arg": 2,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 622,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "path",
+          "argval": {
+            "kind": "str",
+            "value": "path"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 624,
+          "opname": "LOAD_ATTR",
+          "arg": 21,
+          "argrepr": "split + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "split"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 644,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 654,
+          "opname": "LOAD_ATTR",
+          "arg": 22,
+          "argrepr": "pathsep",
+          "argval": {
+            "kind": "str",
+            "value": "pathsep"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 674,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 682,
+          "opname": "GET_ITER",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 684,
+          "opname": "FOR_ITER",
+          "arg": 126,
+          "argrepr": "to L10",
+          "argval": {
+            "kind": "int",
+            "value": 940
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 688,
+          "opname": "STORE_FAST",
+          "arg": 3,
+          "argrepr": "directory",
+          "argval": {
+            "kind": "str",
+            "value": "directory"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 690,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "directory",
+          "argval": {
+            "kind": "str",
+            "value": "directory"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 692,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "''",
+          "argval": {
+            "kind": "str",
+            "value": ""
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 694,
+          "opname": "COMPARE_OP",
+          "arg": 88,
+          "argrepr": "bool(==)",
+          "argval": {
+            "kind": "str",
+            "value": "=="
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 698,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 2,
+          "argrepr": "to L7",
+          "argval": {
+            "kind": "int",
+            "value": 706
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 702,
+          "opname": "JUMP_BACKWARD",
+          "arg": 11,
+          "argrepr": "to L6",
+          "argval": {
+            "kind": "int",
+            "value": 684
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 706,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 716,
+          "opname": "LOAD_ATTR",
+          "arg": 2,
+          "argrepr": "path",
+          "argval": {
+            "kind": "str",
+            "value": "path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 736,
+          "opname": "LOAD_ATTR",
+          "arg": 17,
+          "argrepr": "join + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "join"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 756,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 49,
+          "argrepr": "directory, app",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "directory"
+              },
+              {
+                "kind": "str",
+                "value": "app"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 758,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 766,
+          "opname": "STORE_FAST",
+          "arg": 2,
+          "argrepr": "app_path",
+          "argval": {
+            "kind": "str",
+            "value": "app_path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 768,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 778,
+          "opname": "LOAD_ATTR",
+          "arg": 2,
+          "argrepr": "path",
+          "argval": {
+            "kind": "str",
+            "value": "path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 798,
+          "opname": "LOAD_ATTR",
+          "arg": 7,
+          "argrepr": "isfile + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "isfile"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 818,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "app_path",
+          "argval": {
+            "kind": "str",
+            "value": "app_path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 820,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 828,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 836,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 2,
+          "argrepr": "to L8",
+          "argval": {
+            "kind": "int",
+            "value": 844
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 840,
+          "opname": "JUMP_BACKWARD",
+          "arg": 80,
+          "argrepr": "to L6",
+          "argval": {
+            "kind": "int",
+            "value": 684
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 844,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 854,
+          "opname": "LOAD_ATTR",
+          "arg": 8,
+          "argrepr": "access",
+          "argval": {
+            "kind": "str",
+            "value": "access"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 874,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 876,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "app_path",
+          "argval": {
+            "kind": "str",
+            "value": "app_path"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 878,
+          "opname": "LOAD_GLOBAL",
+          "arg": 0,
+          "argrepr": "os",
+          "argval": {
+            "kind": "str",
+            "value": "os"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 888,
+          "opname": "LOAD_ATTR",
+          "arg": 10,
+          "argrepr": "X_OK",
+          "argval": {
+            "kind": "str",
+            "value": "X_OK"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 908,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 916,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 924,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 2,
+          "argrepr": "to L9",
+          "argval": {
+            "kind": "int",
+            "value": 932
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 928,
+          "opname": "JUMP_BACKWARD",
+          "arg": 124,
+          "argrepr": "to L6",
+          "argval": {
+            "kind": "int",
+            "value": 684
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 932,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "app_path",
+          "argval": {
+            "kind": "str",
+            "value": "app_path"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 934,
+          "opname": "SWAP",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 936,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 938,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 940,
+          "opname": "END_FOR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 942,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 944,
+          "opname": "RETURN_CONST",
+          "arg": 2,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    }
+  ],
+  "limitations": [
+    "Disassembly is not recovered source.",
+    "Control-flow interpretation requires review of jumps and exception tables."
+  ]
+}

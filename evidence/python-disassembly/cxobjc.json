@@ -1,0 +1,7576 @@
+{
+  "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.pyc",
+  "sha256": "26595b9f3ffedbb6910c46a70ad14e6907ef294f91d3d1f66262aef1ae3214ea",
+  "magic_hex": "f30d0d0a",
+  "python_version": "3.13.3 (tags/v3.13.3:6280bb54784, Jan  1 1970, 00:00:00) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "inspection": "marshal decode and CPython disassembly; target code not imported or executed",
+  "code_objects": [
+    {
+      "index": 0,
+      "name": "<module>",
+      "qualname": "<module>",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 1,
+      "argcount": 0,
+      "names": [
+        "__doc__",
+        "Foundation",
+        "NSObject",
+        "CXMacObject",
+        "ImportError",
+        "objc",
+        "super",
+        "python_method",
+        "_FUNC_CODES",
+        "thunk",
+        "type",
+        "_FUNCTION_TYPE",
+        "Proxy",
+        "_ObjCDecorator",
+        "method",
+        "delegate",
+        "namedSelector",
+        "_object_wrapper",
+        "object_property",
+        "_object_property",
+        "array_property",
+        "_array_property",
+        "dict_property",
+        "_dict_property",
+        "_C_BOOL",
+        "BOOL"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Helpers to simplify calling  Python functions from Objective-C code using\nPyObjC.\n\nThe obstacle to overcome is that PyObjC provides no support for calling regular\nfunctions. The workaround is to declare proxy class methods with Objective-C\nimposed names and this module aims to simplify that process.\n"
+        },
+        {
+          "kind": "int",
+          "value": 0
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "code",
+          "name": "CXMacObject",
+          "qualname": "CXMacObject"
+        },
+        {
+          "kind": "str",
+          "value": "CXMacObject"
+        },
+        {
+          "kind": "code",
+          "name": "CXMacObject",
+          "qualname": "CXMacObject"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "super"
+            }
+          ]
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "python_method"
+            }
+          ]
+        },
+        {
+          "kind": "code",
+          "name": "python_method",
+          "qualname": "python_method"
+        },
+        {
+          "kind": "code",
+          "name": "thunk",
+          "qualname": "thunk"
+        },
+        {
+          "kind": "code",
+          "name": "Proxy",
+          "qualname": "Proxy"
+        },
+        {
+          "kind": "str",
+          "value": "Proxy"
+        },
+        {
+          "kind": "code",
+          "name": "_ObjCDecorator",
+          "qualname": "_ObjCDecorator"
+        },
+        {
+          "kind": "str",
+          "value": "_ObjCDecorator"
+        },
+        {
+          "kind": "code",
+          "name": "method",
+          "qualname": "method"
+        },
+        {
+          "kind": "code",
+          "name": "delegate",
+          "qualname": "delegate"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "namedSelector"
+            }
+          ]
+        },
+        {
+          "kind": "code",
+          "name": "namedSelector",
+          "qualname": "namedSelector"
+        },
+        {
+          "kind": "code",
+          "name": "_object_wrapper",
+          "qualname": "_object_wrapper"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "object_property"
+            }
+          ]
+        },
+        {
+          "kind": "code",
+          "name": "object_property",
+          "qualname": "object_property"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "array_property"
+            }
+          ]
+        },
+        {
+          "kind": "code",
+          "name": "array_property",
+          "qualname": "array_property"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "dict_property"
+            }
+          ]
+        },
+        {
+          "kind": "code",
+          "name": "dict_property",
+          "qualname": "dict_property"
+        },
+        {
+          "kind": "code",
+          "name": "object_property",
+          "qualname": "object_property"
+        },
+        {
+          "kind": "code",
+          "name": "array_property",
+          "qualname": "array_property"
+        },
+        {
+          "kind": "code",
+          "name": "dict_property",
+          "qualname": "dict_property"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "_C_BOOL"
+            }
+          ]
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "NoneType",
+              "value": null
+            }
+          ]
+        }
+      ],
+      "bytecode_sha256": "d300f0cf8736fab6bc32a3524aef8c69338ea8ac10dfe0654fb5afa0a6371c39",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'Helpers to simplify calling  Python functions from Objective-C code using\\nPyObjC.\\n\\nThe obstacle to overcome is that PyObjC provides no support for calling regular\\nfunctions. The workaround is to declare proxy class methods with Objective-C\\nimposed names and this module aims to simplify that process.\\n'",
+          "argval": {
+            "kind": "str",
+            "value": "Helpers to simplify calling  Python functions from Objective-C code using\nPyObjC.\n\nThe obstacle to overcome is that PyObjC provides no support for calling regular\nfunctions. The workaround is to declare proxy class methods with Objective-C\nimposed names and this module aims to simplify that process.\n"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 0,
+          "argrepr": "__doc__",
+          "argval": {
+            "kind": "str",
+            "value": "__doc__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "NOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "IMPORT_NAME",
+          "arg": 1,
+          "argrepr": "Foundation",
+          "argval": {
+            "kind": "str",
+            "value": "Foundation"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "Foundation",
+          "argval": {
+            "kind": "str",
+            "value": "Foundation"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "LOAD_BUILD_CLASS",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "code CXMacObject (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:13)",
+          "argval": {
+            "kind": "code",
+            "name": "CXMacObject",
+            "qualname": "CXMacObject"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "'CXMacObject'",
+          "argval": {
+            "kind": "str",
+            "value": "CXMacObject"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "LOAD_NAME",
+          "arg": 1,
+          "argrepr": "Foundation",
+          "argval": {
+            "kind": "str",
+            "value": "Foundation"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "LOAD_ATTR",
+          "arg": 4,
+          "argrepr": "NSObject",
+          "argval": {
+            "kind": "str",
+            "value": "NSObject"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 48,
+          "opname": "CALL",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "CXMacObject",
+          "argval": {
+            "kind": "str",
+            "value": "CXMacObject"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 58,
+          "opname": "NOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 60,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "('super',)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "super"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 64,
+          "opname": "IMPORT_NAME",
+          "arg": 5,
+          "argrepr": "objc",
+          "argval": {
+            "kind": "str",
+            "value": "objc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "IMPORT_FROM",
+          "arg": 6,
+          "argrepr": "super",
+          "argval": {
+            "kind": "str",
+            "value": "super"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 68,
+          "opname": "STORE_NAME",
+          "arg": 6,
+          "argrepr": "super",
+          "argval": {
+            "kind": "str",
+            "value": "super"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "NOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 74,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 76,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "('python_method',)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "python_method"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 78,
+          "opname": "IMPORT_NAME",
+          "arg": 5,
+          "argrepr": "objc",
+          "argval": {
+            "kind": "str",
+            "value": "objc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 80,
+          "opname": "IMPORT_FROM",
+          "arg": 7,
+          "argrepr": "python_method",
+          "argval": {
+            "kind": "str",
+            "value": "python_method"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 82,
+          "opname": "STORE_NAME",
+          "arg": 7,
+          "argrepr": "python_method",
+          "argval": {
+            "kind": "str",
+            "value": "python_method"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 84,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 86,
+          "opname": "BUILD_MAP",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 88,
+          "opname": "STORE_NAME",
+          "arg": 8,
+          "argrepr": "_FUNC_CODES",
+          "argval": {
+            "kind": "str",
+            "value": "_FUNC_CODES"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 90,
+          "opname": "LOAD_CONST",
+          "arg": 9,
+          "argrepr": "code thunk (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:60)",
+          "argval": {
+            "kind": "code",
+            "name": "thunk",
+            "qualname": "thunk"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 92,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 94,
+          "opname": "STORE_NAME",
+          "arg": 9,
+          "argrepr": "thunk",
+          "argval": {
+            "kind": "str",
+            "value": "thunk"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 96,
+          "opname": "LOAD_NAME",
+          "arg": 10,
+          "argrepr": "type",
+          "argval": {
+            "kind": "str",
+            "value": "type"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 98,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 100,
+          "opname": "LOAD_NAME",
+          "arg": 9,
+          "argrepr": "thunk",
+          "argval": {
+            "kind": "str",
+            "value": "thunk"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 102,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 110,
+          "opname": "STORE_NAME",
+          "arg": 11,
+          "argrepr": "_FUNCTION_TYPE",
+          "argval": {
+            "kind": "str",
+            "value": "_FUNCTION_TYPE"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 112,
+          "opname": "LOAD_BUILD_CLASS",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 114,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 116,
+          "opname": "LOAD_CONST",
+          "arg": 10,
+          "argrepr": "code Proxy (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:90)",
+          "argval": {
+            "kind": "code",
+            "name": "Proxy",
+            "qualname": "Proxy"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 118,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 120,
+          "opname": "LOAD_CONST",
+          "arg": 11,
+          "argrepr": "'Proxy'",
+          "argval": {
+            "kind": "str",
+            "value": "Proxy"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 122,
+          "opname": "LOAD_NAME",
+          "arg": 3,
+          "argrepr": "CXMacObject",
+          "argval": {
+            "kind": "str",
+            "value": "CXMacObject"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 124,
+          "opname": "CALL",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 132,
+          "opname": "STORE_NAME",
+          "arg": 12,
+          "argrepr": "Proxy",
+          "argval": {
+            "kind": "str",
+            "value": "Proxy"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 134,
+          "opname": "LOAD_BUILD_CLASS",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 136,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 138,
+          "opname": "LOAD_CONST",
+          "arg": 12,
+          "argrepr": "code _ObjCDecorator (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:159)",
+          "argval": {
+            "kind": "code",
+            "name": "_ObjCDecorator",
+            "qualname": "_ObjCDecorator"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 140,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 142,
+          "opname": "LOAD_CONST",
+          "arg": 13,
+          "argrepr": "'_ObjCDecorator'",
+          "argval": {
+            "kind": "str",
+            "value": "_ObjCDecorator"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 144,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 152,
+          "opname": "STORE_NAME",
+          "arg": 13,
+          "argrepr": "_ObjCDecorator",
+          "argval": {
+            "kind": "str",
+            "value": "_ObjCDecorator"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 154,
+          "opname": "LOAD_CONST",
+          "arg": 14,
+          "argrepr": "code method (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:176)",
+          "argval": {
+            "kind": "code",
+            "name": "method",
+            "qualname": "method"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 156,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 158,
+          "opname": "STORE_NAME",
+          "arg": 14,
+          "argrepr": "method",
+          "argval": {
+            "kind": "str",
+            "value": "method"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 160,
+          "opname": "LOAD_CONST",
+          "arg": 15,
+          "argrepr": "code delegate (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:207)",
+          "argval": {
+            "kind": "code",
+            "name": "delegate",
+            "qualname": "delegate"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 162,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 164,
+          "opname": "STORE_NAME",
+          "arg": 15,
+          "argrepr": "delegate",
+          "argval": {
+            "kind": "str",
+            "value": "delegate"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 166,
+          "opname": "NOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 168,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 170,
+          "opname": "LOAD_CONST",
+          "arg": 16,
+          "argrepr": "('namedSelector',)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "namedSelector"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 172,
+          "opname": "IMPORT_NAME",
+          "arg": 5,
+          "argrepr": "objc",
+          "argval": {
+            "kind": "str",
+            "value": "objc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 174,
+          "opname": "IMPORT_FROM",
+          "arg": 16,
+          "argrepr": "namedSelector",
+          "argval": {
+            "kind": "str",
+            "value": "namedSelector"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 176,
+          "opname": "STORE_NAME",
+          "arg": 16,
+          "argrepr": "namedSelector",
+          "argval": {
+            "kind": "str",
+            "value": "namedSelector"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 178,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 180,
+          "opname": "NOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 182,
+          "opname": "LOAD_CONST",
+          "arg": 18,
+          "argrepr": "code _object_wrapper (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:245)",
+          "argval": {
+            "kind": "code",
+            "name": "_object_wrapper",
+            "qualname": "_object_wrapper"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 184,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 186,
+          "opname": "STORE_NAME",
+          "arg": 17,
+          "argrepr": "_object_wrapper",
+          "argval": {
+            "kind": "str",
+            "value": "_object_wrapper"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 188,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 190,
+          "opname": "LOAD_CONST",
+          "arg": 19,
+          "argrepr": "('object_property',)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "object_property"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 192,
+          "opname": "IMPORT_NAME",
+          "arg": 5,
+          "argrepr": "objc",
+          "argval": {
+            "kind": "str",
+            "value": "objc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 194,
+          "opname": "IMPORT_FROM",
+          "arg": 18,
+          "argrepr": "object_property",
+          "argval": {
+            "kind": "str",
+            "value": "object_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 196,
+          "opname": "STORE_NAME",
+          "arg": 19,
+          "argrepr": "_object_property",
+          "argval": {
+            "kind": "str",
+            "value": "_object_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 198,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 200,
+          "opname": "LOAD_CONST",
+          "arg": 20,
+          "argrepr": "code object_property (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:274)",
+          "argval": {
+            "kind": "code",
+            "name": "object_property",
+            "qualname": "object_property"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 202,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 204,
+          "opname": "STORE_NAME",
+          "arg": 18,
+          "argrepr": "object_property",
+          "argval": {
+            "kind": "str",
+            "value": "object_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 206,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 208,
+          "opname": "LOAD_CONST",
+          "arg": 21,
+          "argrepr": "('array_property',)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "array_property"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 210,
+          "opname": "IMPORT_NAME",
+          "arg": 5,
+          "argrepr": "objc",
+          "argval": {
+            "kind": "str",
+            "value": "objc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 212,
+          "opname": "IMPORT_FROM",
+          "arg": 20,
+          "argrepr": "array_property",
+          "argval": {
+            "kind": "str",
+            "value": "array_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 214,
+          "opname": "STORE_NAME",
+          "arg": 21,
+          "argrepr": "_array_property",
+          "argval": {
+            "kind": "str",
+            "value": "_array_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 216,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 218,
+          "opname": "LOAD_CONST",
+          "arg": 22,
+          "argrepr": "code array_property (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:280)",
+          "argval": {
+            "kind": "code",
+            "name": "array_property",
+            "qualname": "array_property"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 220,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 222,
+          "opname": "STORE_NAME",
+          "arg": 20,
+          "argrepr": "array_property",
+          "argval": {
+            "kind": "str",
+            "value": "array_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 224,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 226,
+          "opname": "LOAD_CONST",
+          "arg": 23,
+          "argrepr": "('dict_property',)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "dict_property"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 228,
+          "opname": "IMPORT_NAME",
+          "arg": 5,
+          "argrepr": "objc",
+          "argval": {
+            "kind": "str",
+            "value": "objc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 230,
+          "opname": "IMPORT_FROM",
+          "arg": 22,
+          "argrepr": "dict_property",
+          "argval": {
+            "kind": "str",
+            "value": "dict_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 232,
+          "opname": "STORE_NAME",
+          "arg": 23,
+          "argrepr": "_dict_property",
+          "argval": {
+            "kind": "str",
+            "value": "_dict_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 234,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 236,
+          "opname": "LOAD_CONST",
+          "arg": 24,
+          "argrepr": "code dict_property (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:286)",
+          "argval": {
+            "kind": "code",
+            "name": "dict_property",
+            "qualname": "dict_property"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 238,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 240,
+          "opname": "STORE_NAME",
+          "arg": 22,
+          "argrepr": "dict_property",
+          "argval": {
+            "kind": "str",
+            "value": "dict_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 242,
+          "opname": "NOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 244,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "0",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 246,
+          "opname": "LOAD_CONST",
+          "arg": 28,
+          "argrepr": "('_C_BOOL',)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "_C_BOOL"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 248,
+          "opname": "IMPORT_NAME",
+          "arg": 5,
+          "argrepr": "objc",
+          "argval": {
+            "kind": "str",
+            "value": "objc"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 250,
+          "opname": "IMPORT_FROM",
+          "arg": 24,
+          "argrepr": "_C_BOOL",
+          "argval": {
+            "kind": "str",
+            "value": "_C_BOOL"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 252,
+          "opname": "STORE_NAME",
+          "arg": 25,
+          "argrepr": "BOOL",
+          "argval": {
+            "kind": "str",
+            "value": "BOOL"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 254,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 256,
+          "opname": "RETURN_CONST",
+          "arg": 2,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 258,
+          "opname": "PUSH_EXC_INFO",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 260,
+          "opname": "LOAD_NAME",
+          "arg": 4,
+          "argrepr": "ImportError",
+          "argval": {
+            "kind": "str",
+            "value": "ImportError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 262,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 264,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 13,
+          "argrepr": "to L6",
+          "argval": {
+            "kind": "int",
+            "value": 294
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 268,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 270,
+          "opname": "LOAD_BUILD_CLASS",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 272,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 274,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "code CXMacObject (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:16)",
+          "argval": {
+            "kind": "code",
+            "name": "CXMacObject",
+            "qualname": "CXMacObject"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 276,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 278,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "'CXMacObject'",
+          "argval": {
+            "kind": "str",
+            "value": "CXMacObject"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 280,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 288,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "CXMacObject",
+          "argval": {
+            "kind": "str",
+            "value": "CXMacObject"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 290,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 292,
+          "opname": "JUMP_BACKWARD_NO_INTERRUPT",
+          "arg": 118,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 58
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 294,
+          "opname": "RERAISE",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 296,
+          "opname": "COPY",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 298,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 300,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 302,
+          "opname": "PUSH_EXC_INFO",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 304,
+          "opname": "LOAD_NAME",
+          "arg": 4,
+          "argrepr": "ImportError",
+          "argval": {
+            "kind": "str",
+            "value": "ImportError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 306,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 308,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 3,
+          "argrepr": "to L7",
+          "argval": {
+            "kind": "int",
+            "value": 318
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 312,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 314,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 316,
+          "opname": "JUMP_BACKWARD_NO_INTERRUPT",
+          "arg": 123,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 72
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 318,
+          "opname": "RERAISE",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 320,
+          "opname": "COPY",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 322,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 324,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 326,
+          "opname": "PUSH_EXC_INFO",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 328,
+          "opname": "LOAD_NAME",
+          "arg": 4,
+          "argrepr": "ImportError",
+          "argval": {
+            "kind": "str",
+            "value": "ImportError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 330,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 332,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 6,
+          "argrepr": "to L8",
+          "argval": {
+            "kind": "int",
+            "value": 348
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 336,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 338,
+          "opname": "LOAD_CONST",
+          "arg": 8,
+          "argrepr": "code python_method (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:36)",
+          "argval": {
+            "kind": "code",
+            "name": "python_method",
+            "qualname": "python_method"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 340,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 342,
+          "opname": "STORE_NAME",
+          "arg": 7,
+          "argrepr": "python_method",
+          "argval": {
+            "kind": "str",
+            "value": "python_method"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 344,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 346,
+          "opname": "JUMP_BACKWARD_NO_INTERRUPT",
+          "arg": 131,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 86
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 348,
+          "opname": "RERAISE",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 350,
+          "opname": "COPY",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 352,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 354,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 356,
+          "opname": "PUSH_EXC_INFO",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 358,
+          "opname": "LOAD_NAME",
+          "arg": 4,
+          "argrepr": "ImportError",
+          "argval": {
+            "kind": "str",
+            "value": "ImportError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 360,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 362,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 8,
+          "argrepr": "to L9",
+          "argval": {
+            "kind": "int",
+            "value": 382
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 366,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 368,
+          "opname": "LOAD_CONST",
+          "arg": 29,
+          "argrepr": "(None,)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "NoneType",
+                "value": null
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 370,
+          "opname": "LOAD_CONST",
+          "arg": 17,
+          "argrepr": "code namedSelector (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:227)",
+          "argval": {
+            "kind": "code",
+            "name": "namedSelector",
+            "qualname": "namedSelector"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 372,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 374,
+          "opname": "SET_FUNCTION_ATTRIBUTE",
+          "arg": 1,
+          "argrepr": "defaults",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 376,
+          "opname": "STORE_NAME",
+          "arg": 16,
+          "argrepr": "namedSelector",
+          "argval": {
+            "kind": "str",
+            "value": "namedSelector"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 378,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 380,
+          "opname": "JUMP_BACKWARD_NO_INTERRUPT",
+          "arg": 101,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 180
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 382,
+          "opname": "RERAISE",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 384,
+          "opname": "COPY",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 386,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 388,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 390,
+          "opname": "PUSH_EXC_INFO",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 392,
+          "opname": "LOAD_NAME",
+          "arg": 4,
+          "argrepr": "ImportError",
+          "argval": {
+            "kind": "str",
+            "value": "ImportError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 394,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 396,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 12,
+          "argrepr": "to L10",
+          "argval": {
+            "kind": "int",
+            "value": 424
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 400,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 402,
+          "opname": "LOAD_CONST",
+          "arg": 25,
+          "argrepr": "code object_property (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:290)",
+          "argval": {
+            "kind": "code",
+            "name": "object_property",
+            "qualname": "object_property"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 404,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 406,
+          "opname": "STORE_NAME",
+          "arg": 18,
+          "argrepr": "object_property",
+          "argval": {
+            "kind": "str",
+            "value": "object_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 408,
+          "opname": "LOAD_CONST",
+          "arg": 26,
+          "argrepr": "code array_property (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:293)",
+          "argval": {
+            "kind": "code",
+            "name": "array_property",
+            "qualname": "array_property"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 410,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 412,
+          "opname": "STORE_NAME",
+          "arg": 20,
+          "argrepr": "array_property",
+          "argval": {
+            "kind": "str",
+            "value": "array_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 414,
+          "opname": "LOAD_CONST",
+          "arg": 27,
+          "argrepr": "code dict_property (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:296)",
+          "argval": {
+            "kind": "code",
+            "name": "dict_property",
+            "qualname": "dict_property"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 416,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 418,
+          "opname": "STORE_NAME",
+          "arg": 22,
+          "argrepr": "dict_property",
+          "argval": {
+            "kind": "str",
+            "value": "dict_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 420,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 422,
+          "opname": "JUMP_BACKWARD_NO_INTERRUPT",
+          "arg": 91,
+          "argrepr": "to L5",
+          "argval": {
+            "kind": "int",
+            "value": 242
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 424,
+          "opname": "RERAISE",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 426,
+          "opname": "COPY",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 428,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 430,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 432,
+          "opname": "PUSH_EXC_INFO",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 434,
+          "opname": "LOAD_NAME",
+          "arg": 4,
+          "argrepr": "ImportError",
+          "argval": {
+            "kind": "str",
+            "value": "ImportError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 436,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 438,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 5,
+          "argrepr": "to L11",
+          "argval": {
+            "kind": "int",
+            "value": 452
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 442,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 444,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 446,
+          "opname": "STORE_NAME",
+          "arg": 25,
+          "argrepr": "BOOL",
+          "argval": {
+            "kind": "str",
+            "value": "BOOL"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 448,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 450,
+          "opname": "RETURN_CONST",
+          "arg": 2,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 452,
+          "opname": "RERAISE",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 454,
+          "opname": "COPY",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 456,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 458,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": [
+        {
+          "start": 8,
+          "end": 58,
+          "target": 258,
+          "depth": 0,
+          "lasti": false
+        },
+        {
+          "start": 60,
+          "end": 72,
+          "target": 302,
+          "depth": 0,
+          "lasti": false
+        },
+        {
+          "start": 74,
+          "end": 86,
+          "target": 326,
+          "depth": 0,
+          "lasti": false
+        },
+        {
+          "start": 168,
+          "end": 180,
+          "target": 356,
+          "depth": 0,
+          "lasti": false
+        },
+        {
+          "start": 182,
+          "end": 242,
+          "target": 390,
+          "depth": 0,
+          "lasti": false
+        },
+        {
+          "start": 244,
+          "end": 256,
+          "target": 432,
+          "depth": 0,
+          "lasti": false
+        },
+        {
+          "start": 258,
+          "end": 290,
+          "target": 296,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 294,
+          "end": 296,
+          "target": 296,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 302,
+          "end": 314,
+          "target": 320,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 318,
+          "end": 320,
+          "target": 320,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 326,
+          "end": 344,
+          "target": 350,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 348,
+          "end": 350,
+          "target": 350,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 356,
+          "end": 378,
+          "target": 384,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 382,
+          "end": 384,
+          "target": 384,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 390,
+          "end": 420,
+          "target": 426,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 424,
+          "end": 426,
+          "target": 426,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 432,
+          "end": 448,
+          "target": 454,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 452,
+          "end": 454,
+          "target": 454,
+          "depth": 1,
+          "lasti": true
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "name": "CXMacObject",
+      "qualname": "CXMacObject",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 13,
+      "argcount": 0,
+      "names": [
+        "__name__",
+        "__module__",
+        "__qualname__",
+        "__firstlineno__",
+        "__static_attributes__"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "CXMacObject"
+        },
+        {
+          "kind": "int",
+          "value": 13
+        },
+        {
+          "kind": "tuple",
+          "items": []
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "1a76b97c80a99d6e339166d401a8bbf31f9ccf0642ccd12a4d31aaa026bbe904",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_NAME",
+          "arg": 0,
+          "argrepr": "__name__",
+          "argval": {
+            "kind": "str",
+            "value": "__name__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "__module__",
+          "argval": {
+            "kind": "str",
+            "value": "__module__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'CXMacObject'",
+          "argval": {
+            "kind": "str",
+            "value": "CXMacObject"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "__qualname__",
+          "argval": {
+            "kind": "str",
+            "value": "__qualname__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "13",
+          "argval": {
+            "kind": "int",
+            "value": 13
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "__firstlineno__",
+          "argval": {
+            "kind": "str",
+            "value": "__firstlineno__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "()",
+          "argval": {
+            "kind": "tuple",
+            "items": []
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "__static_attributes__",
+          "argval": {
+            "kind": "str",
+            "value": "__static_attributes__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "RETURN_CONST",
+          "arg": 3,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 2,
+      "name": "CXMacObject",
+      "qualname": "CXMacObject",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 16,
+      "argcount": 0,
+      "names": [
+        "__name__",
+        "__module__",
+        "__qualname__",
+        "__firstlineno__",
+        "__static_attributes__"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "CXMacObject"
+        },
+        {
+          "kind": "int",
+          "value": 16
+        },
+        {
+          "kind": "tuple",
+          "items": []
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "1a76b97c80a99d6e339166d401a8bbf31f9ccf0642ccd12a4d31aaa026bbe904",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_NAME",
+          "arg": 0,
+          "argrepr": "__name__",
+          "argval": {
+            "kind": "str",
+            "value": "__name__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "__module__",
+          "argval": {
+            "kind": "str",
+            "value": "__module__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'CXMacObject'",
+          "argval": {
+            "kind": "str",
+            "value": "CXMacObject"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "__qualname__",
+          "argval": {
+            "kind": "str",
+            "value": "__qualname__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "16",
+          "argval": {
+            "kind": "int",
+            "value": 16
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "__firstlineno__",
+          "argval": {
+            "kind": "str",
+            "value": "__firstlineno__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "()",
+          "argval": {
+            "kind": "tuple",
+            "items": []
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "__static_attributes__",
+          "argval": {
+            "kind": "str",
+            "value": "__static_attributes__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "RETURN_CONST",
+          "arg": 3,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 3,
+      "name": "python_method",
+      "qualname": "python_method",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 36,
+      "argcount": 1,
+      "names": [],
+      "varnames": [
+        "func"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "\nThis decorator (added in PyObjC 3.0) must be added to any method\ndefinitions in a bridged class (e.g. inheriting from cxobjc.Proxy) that\ndon't follow PyObjC's naming conventions (with an underscore for each\nargument).\n\nFor methods using multiple decorators, python_method must be the\noutermost / first one.\nA no-op decorator is defined for non-macOS and older PyObjC versions.\n\nSee <https://github.com/ronaldoussoren/pyobjc/blob/master/docs/changelog.rst#version-32>\n"
+        }
+      ],
+      "bytecode_sha256": "ad4a17f2b1ab819a5f08a90c3f72070999f718b633a5b6d11fdfc5cdc814783a",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "func",
+          "argval": {
+            "kind": "str",
+            "value": "func"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 4,
+      "name": "thunk",
+      "qualname": "thunk",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 60,
+      "argcount": 2,
+      "names": [
+        "count",
+        "_FUNC_CODES",
+        "KeyError",
+        "join",
+        "range",
+        "eval",
+        "__code__",
+        "__name__",
+        "_FUNCTION_TYPE",
+        "classmethod"
+      ],
+      "varnames": [
+        "func",
+        "wrapper_name",
+        "nargs",
+        "code_object",
+        "arglist",
+        "func_object",
+        "func_name",
+        "clsmethod"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Returns a class method encapsulating the func function.\n\nThis makes it easy to declare class methods that act as a wrapper for\nregular functions as part of a class declaration. For instance:\n\ndef some_function(arg):\n    pass\n\nclass MyClass(cxobj.Proxy):\n    someFunction_ = cxobj.thunk(some_function)\n\n# Then the following call is valid:\n# MyClass.someFunction_(my_arg)\n"
+        },
+        {
+          "kind": "str",
+          "value": "_"
+        },
+        {
+          "kind": "str",
+          "value": ","
+        },
+        {
+          "kind": "code",
+          "name": "<genexpr>",
+          "qualname": "thunk.<locals>.<genexpr>"
+        },
+        {
+          "kind": "str",
+          "value": "lambda _cls, "
+        },
+        {
+          "kind": "str",
+          "value": ": func("
+        },
+        {
+          "kind": "str",
+          "value": ")"
+        },
+        {
+          "kind": "str",
+          "value": "func"
+        },
+        {
+          "kind": "str",
+          "value": "clsmethod_%s"
+        }
+      ],
+      "bytecode_sha256": "1ee62d1e4610f67a713bb91b88a9d986c5399fa7e5369cb2ffee8b9b3182609b",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "wrapper_name",
+          "argval": {
+            "kind": "str",
+            "value": "wrapper_name"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_ATTR",
+          "arg": 1,
+          "argrepr": "count + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "count"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "'_'",
+          "argval": {
+            "kind": "str",
+            "value": "_"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "STORE_FAST",
+          "arg": 2,
+          "argrepr": "nargs",
+          "argval": {
+            "kind": "str",
+            "value": "nargs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "NOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "LOAD_GLOBAL",
+          "arg": 2,
+          "argrepr": "_FUNC_CODES",
+          "argval": {
+            "kind": "str",
+            "value": "_FUNC_CODES"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 48,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "nargs",
+          "argval": {
+            "kind": "str",
+            "value": "nargs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 50,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "STORE_FAST",
+          "arg": 3,
+          "argrepr": "code_object",
+          "argval": {
+            "kind": "str",
+            "value": "code_object"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "func",
+          "argval": {
+            "kind": "str",
+            "value": "func"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 58,
+          "opname": "LOAD_ATTR",
+          "arg": 14,
+          "argrepr": "__name__",
+          "argval": {
+            "kind": "str",
+            "value": "__name__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 78,
+          "opname": "STORE_FAST",
+          "arg": 6,
+          "argrepr": "func_name",
+          "argval": {
+            "kind": "str",
+            "value": "func_name"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 80,
+          "opname": "LOAD_GLOBAL",
+          "arg": 17,
+          "argrepr": "_FUNCTION_TYPE + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "_FUNCTION_TYPE"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 90,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "code_object",
+          "argval": {
+            "kind": "str",
+            "value": "code_object"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 92,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "'func'",
+          "argval": {
+            "kind": "str",
+            "value": "func"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 94,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "func",
+          "argval": {
+            "kind": "str",
+            "value": "func"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 96,
+          "opname": "BUILD_MAP",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 98,
+          "opname": "LOAD_CONST",
+          "arg": 8,
+          "argrepr": "'clsmethod_%s'",
+          "argval": {
+            "kind": "str",
+            "value": "clsmethod_%s"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 100,
+          "opname": "LOAD_FAST",
+          "arg": 6,
+          "argrepr": "func_name",
+          "argval": {
+            "kind": "str",
+            "value": "func_name"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 102,
+          "opname": "BINARY_OP",
+          "arg": 6,
+          "argrepr": "%",
+          "argval": {
+            "kind": "int",
+            "value": 6
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 106,
+          "opname": "CALL",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 114,
+          "opname": "STORE_FAST",
+          "arg": 7,
+          "argrepr": "clsmethod",
+          "argval": {
+            "kind": "str",
+            "value": "clsmethod"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 116,
+          "opname": "LOAD_GLOBAL",
+          "arg": 19,
+          "argrepr": "classmethod + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "classmethod"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 126,
+          "opname": "LOAD_FAST",
+          "arg": 7,
+          "argrepr": "clsmethod",
+          "argval": {
+            "kind": "str",
+            "value": "clsmethod"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 128,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 136,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 138,
+          "opname": "PUSH_EXC_INFO",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 140,
+          "opname": "LOAD_GLOBAL",
+          "arg": 4,
+          "argrepr": "KeyError",
+          "argval": {
+            "kind": "str",
+            "value": "KeyError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 150,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 152,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 77,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 310
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 156,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 158,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "','",
+          "argval": {
+            "kind": "str",
+            "value": ","
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 160,
+          "opname": "LOAD_ATTR",
+          "arg": 7,
+          "argrepr": "join + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "join"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 180,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "code thunk.<locals>.<genexpr> (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:79)",
+          "argval": {
+            "kind": "code",
+            "name": "<genexpr>",
+            "qualname": "thunk.<locals>.<genexpr>"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 182,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 184,
+          "opname": "LOAD_GLOBAL",
+          "arg": 9,
+          "argrepr": "range + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "range"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 194,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "nargs",
+          "argval": {
+            "kind": "str",
+            "value": "nargs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 196,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 204,
+          "opname": "GET_ITER",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 206,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 214,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 222,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "arglist",
+          "argval": {
+            "kind": "str",
+            "value": "arglist"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 224,
+          "opname": "LOAD_GLOBAL",
+          "arg": 11,
+          "argrepr": "eval + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "eval"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 234,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "'lambda _cls, '",
+          "argval": {
+            "kind": "str",
+            "value": "lambda _cls, "
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 236,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "arglist",
+          "argval": {
+            "kind": "str",
+            "value": "arglist"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 238,
+          "opname": "CONVERT_VALUE",
+          "arg": 1,
+          "argrepr": "str",
+          "argval": {
+            "kind": "interpreter-symbol",
+            "module": "builtins",
+            "name": "str"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 240,
+          "opname": "FORMAT_SIMPLE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 242,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "': func('",
+          "argval": {
+            "kind": "str",
+            "value": ": func("
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 244,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "arglist",
+          "argval": {
+            "kind": "str",
+            "value": "arglist"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 246,
+          "opname": "CONVERT_VALUE",
+          "arg": 1,
+          "argrepr": "str",
+          "argval": {
+            "kind": "interpreter-symbol",
+            "module": "builtins",
+            "name": "str"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 248,
+          "opname": "FORMAT_SIMPLE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 250,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "')'",
+          "argval": {
+            "kind": "str",
+            "value": ")"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 252,
+          "opname": "BUILD_STRING",
+          "arg": 5,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 5
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 254,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 262,
+          "opname": "STORE_FAST",
+          "arg": 5,
+          "argrepr": "func_object",
+          "argval": {
+            "kind": "str",
+            "value": "func_object"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 264,
+          "opname": "LOAD_FAST",
+          "arg": 5,
+          "argrepr": "func_object",
+          "argval": {
+            "kind": "str",
+            "value": "func_object"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 266,
+          "opname": "LOAD_ATTR",
+          "arg": 12,
+          "argrepr": "__code__",
+          "argval": {
+            "kind": "str",
+            "value": "__code__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 286,
+          "opname": "STORE_FAST",
+          "arg": 3,
+          "argrepr": "code_object",
+          "argval": {
+            "kind": "str",
+            "value": "code_object"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 288,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "code_object",
+          "argval": {
+            "kind": "str",
+            "value": "code_object"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 290,
+          "opname": "LOAD_GLOBAL",
+          "arg": 2,
+          "argrepr": "_FUNC_CODES",
+          "argval": {
+            "kind": "str",
+            "value": "_FUNC_CODES"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 300,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "nargs",
+          "argval": {
+            "kind": "str",
+            "value": "nargs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 302,
+          "opname": "STORE_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 306,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 308,
+          "opname": "JUMP_BACKWARD_NO_INTERRUPT",
+          "arg": 127,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 56
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 310,
+          "opname": "RERAISE",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 312,
+          "opname": "COPY",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 314,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 316,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": [
+        {
+          "start": 38,
+          "end": 56,
+          "target": 138,
+          "depth": 0,
+          "lasti": false
+        },
+        {
+          "start": 138,
+          "end": 306,
+          "target": 312,
+          "depth": 1,
+          "lasti": true
+        },
+        {
+          "start": 310,
+          "end": 312,
+          "target": 312,
+          "depth": 1,
+          "lasti": true
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "<genexpr>",
+      "qualname": "thunk.<locals>.<genexpr>",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 79,
+      "argcount": 1,
+      "names": [],
+      "varnames": [
+        ".0",
+        "x"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "arg%s"
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "5d807b2a6753a7d57658a582e31887fd056a91aceb308210d16794485371d7e9",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RETURN_GENERATOR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": ".0",
+          "argval": {
+            "kind": "str",
+            "value": ".0"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "GET_ITER",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "FOR_ITER",
+          "arg": 10,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 34
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 14,
+          "opname": "STORE_FAST",
+          "arg": 1,
+          "argrepr": "x",
+          "argval": {
+            "kind": "str",
+            "value": "x"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'arg%s'",
+          "argval": {
+            "kind": "str",
+            "value": "arg%s"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "x",
+          "argval": {
+            "kind": "str",
+            "value": "x"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "BINARY_OP",
+          "arg": 6,
+          "argrepr": "%",
+          "argval": {
+            "kind": "int",
+            "value": 6
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "YIELD_VALUE",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "RESUME",
+          "arg": 5,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 5
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "JUMP_BACKWARD",
+          "arg": 12,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 10
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "END_FOR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 36,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "CALL_INTRINSIC_1",
+          "arg": 3,
+          "argrepr": "INTRINSIC_STOPITERATION_ERROR",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 42,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": [
+        {
+          "start": 4,
+          "end": 40,
+          "target": 40,
+          "depth": 0,
+          "lasti": true
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "Proxy",
+      "qualname": "Proxy",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 90,
+      "argcount": 0,
+      "names": [
+        "__name__",
+        "__module__",
+        "__qualname__",
+        "__firstlineno__",
+        "__doc__",
+        "python_method",
+        "classmethod",
+        "add_thunk",
+        "nsobject_init",
+        "valueForUndefinedKey_",
+        "setValue_forUndefinedKey_",
+        "__static_attributes__",
+        "__classcell__"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Proxy"
+        },
+        {
+          "kind": "int",
+          "value": 90
+        },
+        {
+          "kind": "str",
+          "value": "Serves as a base class for defining proxies so one can call Python\nfunctions from Objective-C code using PyObjC.\n"
+        },
+        {
+          "kind": "code",
+          "name": "add_thunk",
+          "qualname": "Proxy.add_thunk"
+        },
+        {
+          "kind": "code",
+          "name": "nsobject_init",
+          "qualname": "Proxy.nsobject_init"
+        },
+        {
+          "kind": "code",
+          "name": "valueForUndefinedKey_",
+          "qualname": "Proxy.valueForUndefinedKey_"
+        },
+        {
+          "kind": "code",
+          "name": "setValue_forUndefinedKey_",
+          "qualname": "Proxy.setValue_forUndefinedKey_"
+        },
+        {
+          "kind": "tuple",
+          "items": []
+        }
+      ],
+      "bytecode_sha256": "539fc16846da4a159b172b8efede1c2f0912b92be1391a151ddf81bb6aef2ee5",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "MAKE_CELL",
+          "arg": 0,
+          "argrepr": "__class__",
+          "argval": {
+            "kind": "str",
+            "value": "__class__"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_NAME",
+          "arg": 0,
+          "argrepr": "__name__",
+          "argval": {
+            "kind": "str",
+            "value": "__name__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "__module__",
+          "argval": {
+            "kind": "str",
+            "value": "__module__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'Proxy'",
+          "argval": {
+            "kind": "str",
+            "value": "Proxy"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "__qualname__",
+          "argval": {
+            "kind": "str",
+            "value": "__qualname__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "90",
+          "argval": {
+            "kind": "int",
+            "value": 90
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "__firstlineno__",
+          "argval": {
+            "kind": "str",
+            "value": "__firstlineno__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'Serves as a base class for defining proxies so one can call Python\\nfunctions from Objective-C code using PyObjC.\\n'",
+          "argval": {
+            "kind": "str",
+            "value": "Serves as a base class for defining proxies so one can call Python\nfunctions from Objective-C code using PyObjC.\n"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "__doc__",
+          "argval": {
+            "kind": "str",
+            "value": "__doc__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "LOAD_NAME",
+          "arg": 5,
+          "argrepr": "python_method",
+          "argval": {
+            "kind": "str",
+            "value": "python_method"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "LOAD_NAME",
+          "arg": 6,
+          "argrepr": "classmethod",
+          "argval": {
+            "kind": "str",
+            "value": "classmethod"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "code Proxy.add_thunk (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:95)",
+          "argval": {
+            "kind": "code",
+            "name": "add_thunk",
+            "qualname": "Proxy.add_thunk"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "STORE_NAME",
+          "arg": 7,
+          "argrepr": "add_thunk",
+          "argval": {
+            "kind": "str",
+            "value": "add_thunk"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 46,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "__class__",
+          "argval": {
+            "kind": "str",
+            "value": "__class__"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 48,
+          "opname": "BUILD_TUPLE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 50,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "code Proxy.nsobject_init (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:123)",
+          "argval": {
+            "kind": "code",
+            "name": "nsobject_init",
+            "qualname": "Proxy.nsobject_init"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 52,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "SET_FUNCTION_ATTRIBUTE",
+          "arg": 8,
+          "argrepr": "closure",
+          "argval": {
+            "kind": "int",
+            "value": 8
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "STORE_NAME",
+          "arg": 8,
+          "argrepr": "nsobject_init",
+          "argval": {
+            "kind": "str",
+            "value": "nsobject_init"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 58,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "code Proxy.valueForUndefinedKey_ (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:138)",
+          "argval": {
+            "kind": "code",
+            "name": "valueForUndefinedKey_",
+            "qualname": "Proxy.valueForUndefinedKey_"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 60,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "STORE_NAME",
+          "arg": 9,
+          "argrepr": "valueForUndefinedKey_",
+          "argval": {
+            "kind": "str",
+            "value": "valueForUndefinedKey_"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 64,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "code Proxy.setValue_forUndefinedKey_ (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:147)",
+          "argval": {
+            "kind": "code",
+            "name": "setValue_forUndefinedKey_",
+            "qualname": "Proxy.setValue_forUndefinedKey_"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 68,
+          "opname": "STORE_NAME",
+          "arg": 10,
+          "argrepr": "setValue_forUndefinedKey_",
+          "argval": {
+            "kind": "str",
+            "value": "setValue_forUndefinedKey_"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "()",
+          "argval": {
+            "kind": "tuple",
+            "items": []
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "STORE_NAME",
+          "arg": 11,
+          "argrepr": "__static_attributes__",
+          "argval": {
+            "kind": "str",
+            "value": "__static_attributes__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 74,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "__class__",
+          "argval": {
+            "kind": "str",
+            "value": "__class__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 76,
+          "opname": "COPY",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 78,
+          "opname": "STORE_NAME",
+          "arg": 12,
+          "argrepr": "__classcell__",
+          "argval": {
+            "kind": "str",
+            "value": "__classcell__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 80,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 7,
+      "name": "add_thunk",
+      "qualname": "Proxy.add_thunk",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 95,
+      "argcount": 3,
+      "names": [
+        "setattr",
+        "thunk"
+      ],
+      "varnames": [
+        "cls",
+        "meth",
+        "func"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Dynamically adds a class method wrapper for the specified function.\n\nThis makes it possible to declare class methods that act as a wrapper\nfor regular functions right next to the function declaration, that is\noutside of the class declaration. For instance:\n\nclass MyClass(cxobj.Proxy):\n    pass\n\ndef function_one(arg):\n    pass\n\nMyClass.add_thunk('functionOne_', function_one)\n\ndef function_two():\n    pass\n\nMyClass.add_thunk('functionTwo', function_two)\n\n# Then the following calls are valid:\n# MyClass.functionOne_(my_arg)\n# MyClass.functionTwo()\n"
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "e4dc1c5d9ff7c9e15eecf466bdcb6359b0a56f1e26d1f2eb891b918f7a6573b2",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "setattr + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "setattr"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 1,
+          "argrepr": "cls, meth",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "cls"
+              },
+              {
+                "kind": "str",
+                "value": "meth"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_GLOBAL",
+          "arg": 3,
+          "argrepr": "thunk + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "thunk"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 33,
+          "argrepr": "func, meth",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "func"
+              },
+              {
+                "kind": "str",
+                "value": "meth"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "CALL",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 42,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 8,
+      "name": "nsobject_init",
+      "qualname": "Proxy.nsobject_init",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 123,
+      "argcount": 1,
+      "names": [
+        "super",
+        "init"
+      ],
+      "varnames": [
+        "self"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Calls the init() method of NSObject. Classes that need an Objective C\ninit method should implement it like so:\n\ndef init(self): # with arguments if applicable\n    self = cxobjc.Proxy.nsobject_init(self)\n    if self is not None:\n        self.__init__() # with arguments if applicable\n    return self"
+        }
+      ],
+      "bytecode_sha256": "bd4937e81658f4971fbd597893cdddd9ca6495655d773b3963c14f311aa18d97",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "COPY_FREE_VARS",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "super + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "super"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "LOAD_ATTR",
+          "arg": 3,
+          "argrepr": "init + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "init"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 42,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 50,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 9,
+      "name": "valueForUndefinedKey_",
+      "qualname": "Proxy.valueForUndefinedKey_",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 138,
+      "argcount": 2,
+      "names": [
+        "getattr"
+      ],
+      "varnames": [
+        "self",
+        "key"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Override of -[NSObject valueForUndefinedKey:] which directly\naccesses the named attribute. NSObject's implementation throws an\nexception, which provokes PyObjC to do this, but all the exceptions\nmakes it nearly impossible to debug CrossOver. Plus, they slow things\ndown quite a bit. I also suspect they cause leaks (e.g. KVO change\ndictionaries)."
+        }
+      ],
+      "bytecode_sha256": "058e79502610fdaad0c8f0b9a08ccf2c79c31e3891658086d811a4b1ae86c0bf",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "getattr + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "getattr"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 1,
+          "argrepr": "self, key",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "self"
+              },
+              {
+                "kind": "str",
+                "value": "key"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 10,
+      "name": "setValue_forUndefinedKey_",
+      "qualname": "Proxy.setValue_forUndefinedKey_",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 147,
+      "argcount": 3,
+      "names": [
+        "setattr"
+      ],
+      "varnames": [
+        "self",
+        "value",
+        "key"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Override of -[NSObject setValue:forUndefinedKey:] which directly\naccesses the named attribute. See valueForUndefinedKey_."
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "8fd29e9d2717447ef05bbbdcc772cb0336933dae55a3012ae52b4af59f97673d",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "setattr + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "setattr"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 2,
+          "argrepr": "self, key",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "self"
+              },
+              {
+                "kind": "str",
+                "value": "key"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "value",
+          "argval": {
+            "kind": "str",
+            "value": "value"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "CALL",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 11,
+      "name": "_ObjCDecorator",
+      "qualname": "_ObjCDecorator",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 159,
+      "argcount": 0,
+      "names": [
+        "__name__",
+        "__module__",
+        "__qualname__",
+        "__firstlineno__",
+        "__doc__",
+        "__init__",
+        "__call__",
+        "__static_attributes__"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "_ObjCDecorator"
+        },
+        {
+          "kind": "int",
+          "value": 159
+        },
+        {
+          "kind": "str",
+          "value": "Decorators receive either their parameters or the function to decorate.\nSo we use this callable class as a trampoline to get both at the same time.\n"
+        },
+        {
+          "kind": "code",
+          "name": "__init__",
+          "qualname": "_ObjCDecorator.__init__"
+        },
+        {
+          "kind": "code",
+          "name": "__call__",
+          "qualname": "_ObjCDecorator.__call__"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "_cls"
+            },
+            {
+              "kind": "str",
+              "value": "_method"
+            }
+          ]
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "a323202811598d8796e194531faf52de6ef119f2965165ffdf351f157eaa0241",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_NAME",
+          "arg": 0,
+          "argrepr": "__name__",
+          "argval": {
+            "kind": "str",
+            "value": "__name__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "__module__",
+          "argval": {
+            "kind": "str",
+            "value": "__module__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'_ObjCDecorator'",
+          "argval": {
+            "kind": "str",
+            "value": "_ObjCDecorator"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "__qualname__",
+          "argval": {
+            "kind": "str",
+            "value": "__qualname__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "159",
+          "argval": {
+            "kind": "int",
+            "value": 159
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "__firstlineno__",
+          "argval": {
+            "kind": "str",
+            "value": "__firstlineno__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'Decorators receive either their parameters or the function to decorate.\\nSo we use this callable class as a trampoline to get both at the same time.\\n'",
+          "argval": {
+            "kind": "str",
+            "value": "Decorators receive either their parameters or the function to decorate.\nSo we use this callable class as a trampoline to get both at the same time.\n"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "__doc__",
+          "argval": {
+            "kind": "str",
+            "value": "__doc__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "code _ObjCDecorator.__init__ (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:164)",
+          "argval": {
+            "kind": "code",
+            "name": "__init__",
+            "qualname": "_ObjCDecorator.__init__"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "STORE_NAME",
+          "arg": 5,
+          "argrepr": "__init__",
+          "argval": {
+            "kind": "str",
+            "value": "__init__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "code _ObjCDecorator.__call__ (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:171)",
+          "argval": {
+            "kind": "code",
+            "name": "__call__",
+            "qualname": "_ObjCDecorator.__call__"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "STORE_NAME",
+          "arg": 6,
+          "argrepr": "__call__",
+          "argval": {
+            "kind": "str",
+            "value": "__call__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "('_cls', '_method')",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "_cls"
+              },
+              {
+                "kind": "str",
+                "value": "_method"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "STORE_NAME",
+          "arg": 7,
+          "argrepr": "__static_attributes__",
+          "argval": {
+            "kind": "str",
+            "value": "__static_attributes__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "RETURN_CONST",
+          "arg": 6,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 12,
+      "name": "__init__",
+      "qualname": "_ObjCDecorator.__init__",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 164,
+      "argcount": 3,
+      "names": [
+        "_cls",
+        "_method"
+      ],
+      "varnames": [
+        "self",
+        "cls",
+        "meth"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Store the name of the method to create and the class to create it\ninto.\n"
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "215649f9dda6533b729206fcd91450ea69a92b70638ec24f9971c8347c1c51dd",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 16,
+          "argrepr": "cls, self",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "cls"
+              },
+              {
+                "kind": "str",
+                "value": "self"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_ATTR",
+          "arg": 0,
+          "argrepr": "_cls",
+          "argval": {
+            "kind": "str",
+            "value": "_cls"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 32,
+          "argrepr": "meth, self",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "meth"
+              },
+              {
+                "kind": "str",
+                "value": "self"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "STORE_ATTR",
+          "arg": 1,
+          "argrepr": "_method",
+          "argval": {
+            "kind": "str",
+            "value": "_method"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 13,
+      "name": "__call__",
+      "qualname": "_ObjCDecorator.__call__",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 171,
+      "argcount": 2,
+      "names": [
+        "_cls",
+        "add_thunk",
+        "_method"
+      ],
+      "varnames": [
+        "self",
+        "function"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Create the class method and return the original function."
+        }
+      ],
+      "bytecode_sha256": "f26039424af28b5bcf5417f11af2878bd14e8eff02238f6e5d21d7b5fcb12af8",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_ATTR",
+          "arg": 0,
+          "argrepr": "_cls",
+          "argval": {
+            "kind": "str",
+            "value": "_cls"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_ATTR",
+          "arg": 3,
+          "argrepr": "add_thunk + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "add_thunk"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 46,
+          "opname": "LOAD_ATTR",
+          "arg": 4,
+          "argrepr": "_method",
+          "argval": {
+            "kind": "str",
+            "value": "_method"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "function",
+          "argval": {
+            "kind": "str",
+            "value": "function"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 68,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 76,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 78,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "function",
+          "argval": {
+            "kind": "str",
+            "value": "function"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 80,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 14,
+      "name": "method",
+      "qualname": "method",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 176,
+      "argcount": 2,
+      "names": [
+        "_ObjCDecorator"
+      ],
+      "varnames": [
+        "cls",
+        "meth"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "This decorator specifies that the function it applies to should be\ncallable from Objective-C code as the 'cls.method' class method.\n\nThis simplifies equivalent to Proxy.add_thunk() but simplifies the syntax.\nHere is an example:\n\nclass MyClass(cxobj.Proxy):\n    pass\n\n@cxobjc.method(MyClass, 'functionOne_')\ndef function_one(arg):\n    pass\n\n@cxobjc.method(MyClass, 'functionTwo')\ndef function_two():\n    pass\n\n# Then the following calls are valid:\n# MyClass.functionOne_(my_arg)\n# MyClass.functionTwo()\n"
+        }
+      ],
+      "bytecode_sha256": "058e79502610fdaad0c8f0b9a08ccf2c79c31e3891658086d811a4b1ae86c0bf",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "_ObjCDecorator + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "_ObjCDecorator"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 1,
+          "argrepr": "cls, meth",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "cls"
+              },
+              {
+                "kind": "str",
+                "value": "meth"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 15,
+      "name": "delegate",
+      "qualname": "delegate",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 207,
+      "argcount": 1,
+      "names": [],
+      "varnames": [
+        "func"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "This decorator is a NOP.\n\nIts sole purpose is to identify methods that are part of a delegate design\npattern, where the delegate may be implemented on the Objective-C side and\nthus have to follow its naming conventions.\n"
+        }
+      ],
+      "bytecode_sha256": "ad4a17f2b1ab819a5f08a90c3f72070999f718b633a5b6d11fdfc5cdc814783a",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "func",
+          "argval": {
+            "kind": "str",
+            "value": "func"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 16,
+      "name": "namedSelector",
+      "qualname": "namedSelector",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 227,
+      "argcount": 2,
+      "names": [],
+      "varnames": [
+        "_name",
+        "_signature",
+        "_namedSelector"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "\nUse this decorator to explicitly set the Objective-C method name\ninstead of deducing it from the Python name.\n\nThis decorator should be used instead of making a separate \"alias\"\n(like 'fileIsInBottle_ = file_is_in_bottle'). PyObjC 3.2 and later\nrequire use of the 'python_method' decorator on methods in a bridged\nclass that don't follow PyObjC naming conventions and the decorator\nwould apply to both the original method and the alias, rendering it\nunusable from ObjC.\n"
+        },
+        {
+          "kind": "code",
+          "name": "_namedSelector",
+          "qualname": "namedSelector.<locals>._namedSelector"
+        }
+      ],
+      "bytecode_sha256": "4407675e9b63555eab803055198b9e2cd835f93c8245cf5a1b7e414fc53a4e26",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "code namedSelector.<locals>._namedSelector (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py:239)",
+          "argval": {
+            "kind": "code",
+            "name": "_namedSelector",
+            "qualname": "namedSelector.<locals>._namedSelector"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "STORE_FAST",
+          "arg": 2,
+          "argrepr": "_namedSelector",
+          "argval": {
+            "kind": "str",
+            "value": "_namedSelector"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "_namedSelector",
+          "argval": {
+            "kind": "str",
+            "value": "_namedSelector"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 17,
+      "name": "_namedSelector",
+      "qualname": "namedSelector.<locals>._namedSelector",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 239,
+      "argcount": 1,
+      "names": [],
+      "varnames": [
+        "func"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "ad4a17f2b1ab819a5f08a90c3f72070999f718b633a5b6d11fdfc5cdc814783a",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "func",
+          "argval": {
+            "kind": "str",
+            "value": "func"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 18,
+      "name": "_object_wrapper",
+      "qualname": "_object_wrapper",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 245,
+      "argcount": 1,
+      "names": [
+        "pop",
+        "getter"
+      ],
+      "varnames": [
+        "object_type",
+        "args",
+        "kwargs",
+        "python_name",
+        "getter",
+        "obj"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "str",
+          "value": "python_name"
+        },
+        {
+          "kind": "str",
+          "value": "ivar"
+        },
+        {
+          "kind": "str",
+          "value": "depends_on"
+        },
+        {
+          "kind": "str",
+          "value": "getter"
+        }
+      ],
+      "bytecode_sha256": "b1228d6f9e2bebf2ad816a1a766626042088e57c26643497cfa1002552d97547",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "kwargs",
+          "argval": {
+            "kind": "str",
+            "value": "kwargs"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_ATTR",
+          "arg": 1,
+          "argrepr": "pop + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "pop"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "'python_name'",
+          "argval": {
+            "kind": "str",
+            "value": "python_name"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "STORE_FAST",
+          "arg": 3,
+          "argrepr": "python_name",
+          "argval": {
+            "kind": "str",
+            "value": "python_name"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "python_name",
+          "argval": {
+            "kind": "str",
+            "value": "python_name"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 48,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 24,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 100
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 52,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'ivar'",
+          "argval": {
+            "kind": "str",
+            "value": "ivar"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "kwargs",
+          "argval": {
+            "kind": "str",
+            "value": "kwargs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "CONTAINS_OP",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 60,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 6,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 76
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 64,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "'depends_on'",
+          "argval": {
+            "kind": "str",
+            "value": "depends_on"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "kwargs",
+          "argval": {
+            "kind": "str",
+            "value": "kwargs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 68,
+          "opname": "CONTAINS_OP",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 2,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 80
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 76,
+          "opname": "LOAD_ASSERTION_ERROR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 78,
+          "opname": "RAISE_VARARGS",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 80,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 50,
+          "argrepr": "python_name, kwargs",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "python_name"
+              },
+              {
+                "kind": "str",
+                "value": "kwargs"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 82,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'ivar'",
+          "argval": {
+            "kind": "str",
+            "value": "ivar"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 84,
+          "opname": "STORE_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 88,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "python_name",
+          "argval": {
+            "kind": "str",
+            "value": "python_name"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 90,
+          "opname": "BUILD_LIST",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 92,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "kwargs",
+          "argval": {
+            "kind": "str",
+            "value": "kwargs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 94,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "'depends_on'",
+          "argval": {
+            "kind": "str",
+            "value": "depends_on"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 96,
+          "opname": "STORE_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 100,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "kwargs",
+          "argval": {
+            "kind": "str",
+            "value": "kwargs"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 102,
+          "opname": "LOAD_ATTR",
+          "arg": 1,
+          "argrepr": "pop + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "pop"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 122,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "'getter'",
+          "argval": {
+            "kind": "str",
+            "value": "getter"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 124,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 126,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 134,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "getter",
+          "argval": {
+            "kind": "str",
+            "value": "getter"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 136,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "object_type",
+          "argval": {
+            "kind": "str",
+            "value": "object_type"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 138,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 140,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "args",
+          "argval": {
+            "kind": "str",
+            "value": "args"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 142,
+          "opname": "BUILD_MAP",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 144,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "kwargs",
+          "argval": {
+            "kind": "str",
+            "value": "kwargs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 146,
+          "opname": "DICT_MERGE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 148,
+          "opname": "CALL_FUNCTION_EX",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 150,
+          "opname": "STORE_FAST",
+          "arg": 5,
+          "argrepr": "obj",
+          "argval": {
+            "kind": "str",
+            "value": "obj"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 152,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "getter",
+          "argval": {
+            "kind": "str",
+            "value": "getter"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 154,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 162,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 17,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 200
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 166,
+          "opname": "LOAD_FAST",
+          "arg": 5,
+          "argrepr": "obj",
+          "argval": {
+            "kind": "str",
+            "value": "obj"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 168,
+          "opname": "LOAD_ATTR",
+          "arg": 3,
+          "argrepr": "getter + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "getter"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 188,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "getter",
+          "argval": {
+            "kind": "str",
+            "value": "getter"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 190,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 198,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 200,
+          "opname": "LOAD_FAST",
+          "arg": 5,
+          "argrepr": "obj",
+          "argval": {
+            "kind": "str",
+            "value": "obj"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 202,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 19,
+      "name": "object_property",
+      "qualname": "object_property",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 274,
+      "argcount": 0,
+      "names": [
+        "_object_wrapper",
+        "_object_property"
+      ],
+      "varnames": [
+        "args",
+        "kwargs"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "ec313f182109178c628020225ff018bd2a93acc506856b64a44202e2e94a952e",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "_object_wrapper + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "_object_wrapper"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_GLOBAL",
+          "arg": 2,
+          "argrepr": "_object_property",
+          "argval": {
+            "kind": "str",
+            "value": "_object_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "BUILD_LIST",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "args",
+          "argval": {
+            "kind": "str",
+            "value": "args"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "LIST_EXTEND",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "CALL_INTRINSIC_1",
+          "arg": 6,
+          "argrepr": "INTRINSIC_LIST_TO_TUPLE",
+          "argval": {
+            "kind": "int",
+            "value": 6
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "BUILD_MAP",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "kwargs",
+          "argval": {
+            "kind": "str",
+            "value": "kwargs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "DICT_MERGE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "CALL_FUNCTION_EX",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 20,
+      "name": "array_property",
+      "qualname": "array_property",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 280,
+      "argcount": 0,
+      "names": [
+        "_object_wrapper",
+        "_array_property"
+      ],
+      "varnames": [
+        "args",
+        "kwargs"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "ec313f182109178c628020225ff018bd2a93acc506856b64a44202e2e94a952e",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "_object_wrapper + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "_object_wrapper"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_GLOBAL",
+          "arg": 2,
+          "argrepr": "_array_property",
+          "argval": {
+            "kind": "str",
+            "value": "_array_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "BUILD_LIST",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "args",
+          "argval": {
+            "kind": "str",
+            "value": "args"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "LIST_EXTEND",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "CALL_INTRINSIC_1",
+          "arg": 6,
+          "argrepr": "INTRINSIC_LIST_TO_TUPLE",
+          "argval": {
+            "kind": "int",
+            "value": 6
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "BUILD_MAP",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "kwargs",
+          "argval": {
+            "kind": "str",
+            "value": "kwargs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "DICT_MERGE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "CALL_FUNCTION_EX",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 21,
+      "name": "dict_property",
+      "qualname": "dict_property",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 286,
+      "argcount": 0,
+      "names": [
+        "_object_wrapper",
+        "_dict_property"
+      ],
+      "varnames": [
+        "args",
+        "kwargs"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "ec313f182109178c628020225ff018bd2a93acc506856b64a44202e2e94a952e",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "_object_wrapper + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "_object_wrapper"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_GLOBAL",
+          "arg": 2,
+          "argrepr": "_dict_property",
+          "argval": {
+            "kind": "str",
+            "value": "_dict_property"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "BUILD_LIST",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "args",
+          "argval": {
+            "kind": "str",
+            "value": "args"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 26,
+          "opname": "LIST_EXTEND",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "CALL_INTRINSIC_1",
+          "arg": 6,
+          "argrepr": "INTRINSIC_LIST_TO_TUPLE",
+          "argval": {
+            "kind": "int",
+            "value": 6
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "BUILD_MAP",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "kwargs",
+          "argval": {
+            "kind": "str",
+            "value": "kwargs"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "DICT_MERGE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "CALL_FUNCTION_EX",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 22,
+      "name": "object_property",
+      "qualname": "object_property",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 290,
+      "argcount": 0,
+      "names": [],
+      "varnames": [
+        "_args",
+        "_kwargs"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "6d3ee5f066757edff36dc5248fab8b58c7801aa99c231414b9650dbf46373d0a",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "RETURN_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 23,
+      "name": "array_property",
+      "qualname": "array_property",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 293,
+      "argcount": 0,
+      "names": [],
+      "varnames": [
+        "_args",
+        "_kwargs"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "6d3ee5f066757edff36dc5248fab8b58c7801aa99c231414b9650dbf46373d0a",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "RETURN_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 24,
+      "name": "dict_property",
+      "qualname": "dict_property",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.py",
+      "firstlineno": 296,
+      "argcount": 0,
+      "names": [],
+      "varnames": [
+        "_args",
+        "_kwargs"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "6d3ee5f066757edff36dc5248fab8b58c7801aa99c231414b9650dbf46373d0a",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "RETURN_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    }
+  ],
+  "limitations": [
+    "Disassembly is not recovered source.",
+    "Control-flow interpretation requires review of jumps and exception tables."
+  ]
+}

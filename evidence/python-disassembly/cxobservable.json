@@ -1,0 +1,4239 @@
+{
+  "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.pyc",
+  "sha256": "4601ee97ece4076a7e8d1e9c68a3b19744b52936ade6171a079a2bbe3597ac2e",
+  "magic_hex": "f30d0d0a",
+  "python_version": "3.13.3 (tags/v3.13.3:6280bb54784, Jan  1 1970, 00:00:00) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "inspection": "marshal decode and CPython disassembly; target code not imported or executed",
+  "code_objects": [
+    {
+      "index": 0,
+      "name": "<module>",
+      "qualname": "<module>",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py",
+      "firstlineno": 1,
+      "argcount": 0,
+      "names": [
+        "__doc__",
+        "ANY_EVENT",
+        "Object"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Provides a framework for classes that have observable properties."
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "code",
+          "name": "Object",
+          "qualname": "Object"
+        },
+        {
+          "kind": "str",
+          "value": "Object"
+        }
+      ],
+      "bytecode_sha256": "2ea47a095ac605c36597dcbb7ebb3b742d497380fde235e291095dc8bec9846e",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'Provides a framework for classes that have observable properties.'",
+          "argval": {
+            "kind": "str",
+            "value": "Provides a framework for classes that have observable properties."
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 0,
+          "argrepr": "__doc__",
+          "argval": {
+            "kind": "str",
+            "value": "__doc__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "ANY_EVENT",
+          "argval": {
+            "kind": "str",
+            "value": "ANY_EVENT"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_BUILD_CLASS",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "code Object (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py:8)",
+          "argval": {
+            "kind": "code",
+            "name": "Object",
+            "qualname": "Object"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "'Object'",
+          "argval": {
+            "kind": "str",
+            "value": "Object"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "Object",
+          "argval": {
+            "kind": "str",
+            "value": "Object"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 1,
+      "name": "Object",
+      "qualname": "Object",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py",
+      "firstlineno": 8,
+      "argcount": 0,
+      "names": [
+        "__name__",
+        "__module__",
+        "__qualname__",
+        "__firstlineno__",
+        "__doc__",
+        "frozenset",
+        "observable_events",
+        "__init__",
+        "add_observer",
+        "remove_observer",
+        "emit_event_for_observer",
+        "emit_event",
+        "all_observers",
+        "__static_attributes__"
+      ],
+      "varnames": [],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Object"
+        },
+        {
+          "kind": "int",
+          "value": 8
+        },
+        {
+          "kind": "str",
+          "value": "Provides a framework for a class that has observable properties.\n\nThe derived classes should have an observable_events class attribute that\ndefines the set of events this class can emit. Events can be strings or\nany other type of object.\n"
+        },
+        {
+          "kind": "code",
+          "name": "__init__",
+          "qualname": "Object.__init__"
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        },
+        {
+          "kind": "code",
+          "name": "add_observer",
+          "qualname": "Object.add_observer"
+        },
+        {
+          "kind": "code",
+          "name": "remove_observer",
+          "qualname": "Object.remove_observer"
+        },
+        {
+          "kind": "code",
+          "name": "emit_event_for_observer",
+          "qualname": "Object.emit_event_for_observer"
+        },
+        {
+          "kind": "code",
+          "name": "emit_event",
+          "qualname": "Object.emit_event"
+        },
+        {
+          "kind": "code",
+          "name": "all_observers",
+          "qualname": "Object.all_observers"
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "str",
+              "value": "_observers"
+            }
+          ]
+        },
+        {
+          "kind": "tuple",
+          "items": [
+            {
+              "kind": "NoneType",
+              "value": null
+            }
+          ]
+        }
+      ],
+      "bytecode_sha256": "93804a995f1abadbfe14edfd5f5acbbc15ee3dfae7209dcc5c29cb3e75a582a0",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_NAME",
+          "arg": 0,
+          "argrepr": "__name__",
+          "argval": {
+            "kind": "str",
+            "value": "__name__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_NAME",
+          "arg": 1,
+          "argrepr": "__module__",
+          "argval": {
+            "kind": "str",
+            "value": "__module__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_CONST",
+          "arg": 0,
+          "argrepr": "'Object'",
+          "argval": {
+            "kind": "str",
+            "value": "Object"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "STORE_NAME",
+          "arg": 2,
+          "argrepr": "__qualname__",
+          "argval": {
+            "kind": "str",
+            "value": "__qualname__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "8",
+          "argval": {
+            "kind": "int",
+            "value": 8
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "STORE_NAME",
+          "arg": 3,
+          "argrepr": "__firstlineno__",
+          "argval": {
+            "kind": "str",
+            "value": "__firstlineno__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'Provides a framework for a class that has observable properties.\\n\\nThe derived classes should have an observable_events class attribute that\\ndefines the set of events this class can emit. Events can be strings or\\nany other type of object.\\n'",
+          "argval": {
+            "kind": "str",
+            "value": "Provides a framework for a class that has observable properties.\n\nThe derived classes should have an observable_events class attribute that\ndefines the set of events this class can emit. Events can be strings or\nany other type of object.\n"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "STORE_NAME",
+          "arg": 4,
+          "argrepr": "__doc__",
+          "argval": {
+            "kind": "str",
+            "value": "__doc__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "LOAD_NAME",
+          "arg": 5,
+          "argrepr": "frozenset",
+          "argval": {
+            "kind": "str",
+            "value": "frozenset"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 30,
+          "opname": "STORE_NAME",
+          "arg": 6,
+          "argrepr": "observable_events",
+          "argval": {
+            "kind": "str",
+            "value": "observable_events"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "code Object.__init__ (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py:19)",
+          "argval": {
+            "kind": "code",
+            "name": "__init__",
+            "qualname": "Object.__init__"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 34,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 36,
+          "opname": "STORE_NAME",
+          "arg": 7,
+          "argrepr": "__init__",
+          "argval": {
+            "kind": "str",
+            "value": "__init__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 38,
+          "opname": "LOAD_CONST",
+          "arg": 11,
+          "argrepr": "(None,)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "NoneType",
+                "value": null
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "code Object.add_observer (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py:22)",
+          "argval": {
+            "kind": "code",
+            "name": "add_observer",
+            "qualname": "Object.add_observer"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 42,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "SET_FUNCTION_ATTRIBUTE",
+          "arg": 1,
+          "argrepr": "defaults",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 46,
+          "opname": "STORE_NAME",
+          "arg": 8,
+          "argrepr": "add_observer",
+          "argval": {
+            "kind": "str",
+            "value": "add_observer"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 48,
+          "opname": "LOAD_CONST",
+          "arg": 6,
+          "argrepr": "code Object.remove_observer (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py:52)",
+          "argval": {
+            "kind": "code",
+            "name": "remove_observer",
+            "qualname": "Object.remove_observer"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 50,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 52,
+          "opname": "STORE_NAME",
+          "arg": 9,
+          "argrepr": "remove_observer",
+          "argval": {
+            "kind": "str",
+            "value": "remove_observer"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "LOAD_CONST",
+          "arg": 7,
+          "argrepr": "code Object.emit_event_for_observer (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py:74)",
+          "argval": {
+            "kind": "code",
+            "name": "emit_event_for_observer",
+            "qualname": "Object.emit_event_for_observer"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 58,
+          "opname": "STORE_NAME",
+          "arg": 10,
+          "argrepr": "emit_event_for_observer",
+          "argval": {
+            "kind": "str",
+            "value": "emit_event_for_observer"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 60,
+          "opname": "LOAD_CONST",
+          "arg": 8,
+          "argrepr": "code Object.emit_event (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py:82)",
+          "argval": {
+            "kind": "code",
+            "name": "emit_event",
+            "qualname": "Object.emit_event"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 62,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 64,
+          "opname": "STORE_NAME",
+          "arg": 11,
+          "argrepr": "emit_event",
+          "argval": {
+            "kind": "str",
+            "value": "emit_event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "LOAD_CONST",
+          "arg": 9,
+          "argrepr": "code Object.all_observers (/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py:96)",
+          "argval": {
+            "kind": "code",
+            "name": "all_observers",
+            "qualname": "Object.all_observers"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 68,
+          "opname": "MAKE_FUNCTION",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "STORE_NAME",
+          "arg": 12,
+          "argrepr": "all_observers",
+          "argval": {
+            "kind": "str",
+            "value": "all_observers"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "LOAD_CONST",
+          "arg": 10,
+          "argrepr": "('_observers',)",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "_observers"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 74,
+          "opname": "STORE_NAME",
+          "arg": 13,
+          "argrepr": "__static_attributes__",
+          "argval": {
+            "kind": "str",
+            "value": "__static_attributes__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 76,
+          "opname": "RETURN_CONST",
+          "arg": 4,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 2,
+      "name": "__init__",
+      "qualname": "Object.__init__",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py",
+      "firstlineno": 19,
+      "argcount": 1,
+      "names": [
+        "_observers"
+      ],
+      "varnames": [
+        "self"
+      ],
+      "consts": [
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "4c76e782982e8443013a9ef372bc04a7d31800bd3010bc0fb193a3b346ff01f8",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "BUILD_MAP",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "STORE_ATTR",
+          "arg": 0,
+          "argrepr": "_observers",
+          "argval": {
+            "kind": "str",
+            "value": "_observers"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "RETURN_CONST",
+          "arg": 0,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 3,
+      "name": "add_observer",
+      "qualname": "Object.add_observer",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py",
+      "firstlineno": 22,
+      "argcount": 4,
+      "names": [
+        "isinstance",
+        "str",
+        "hasattr",
+        "observable_events",
+        "TypeError",
+        "__class__",
+        "repr",
+        "_observers",
+        "setdefault",
+        "id"
+      ],
+      "varnames": [
+        "self",
+        "events",
+        "observer",
+        "observer_data",
+        "event",
+        "observer_id"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Adds an event observer for the current object.\n\nevents can either be a single event or a sequence of events the\n  observer is interested in. To subscribe to all the events from\n  this object, specify the ANY_EVENT value.\n\nobserver_data is any data the observer would like to be given back\n  when it gets called.\n\nobserver is a callable. Its signature must be of the form:\n    observer(obj, event, observer_data, *args)\n  Where obj is the object the event happens on, event is the event that\n  was emitted, observer_data is the data specified above, and *args is\n  an optional set of extra data specific to the event. Observers must\n  not raise exceptions.\n"
+        },
+        {
+          "kind": "str",
+          "value": "__iter__"
+        },
+        {
+          "kind": "str",
+          "value": "class "
+        },
+        {
+          "kind": "str",
+          "value": " has no "
+        },
+        {
+          "kind": "str",
+          "value": " observable event"
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "e12bfcdb7e262d9230f867bf703750b1aca2f52b62dac3ea893a810a57965113",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "isinstance + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "isinstance"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "events",
+          "argval": {
+            "kind": "str",
+            "value": "events"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_GLOBAL",
+          "arg": 2,
+          "argrepr": "str",
+          "argval": {
+            "kind": "str",
+            "value": "str"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 17,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 78
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "LOAD_GLOBAL",
+          "arg": 5,
+          "argrepr": "hasattr + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "hasattr"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "events",
+          "argval": {
+            "kind": "str",
+            "value": "events"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "'__iter__'",
+          "argval": {
+            "kind": "str",
+            "value": "__iter__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 58,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 74,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 3,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 84
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 78,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "events",
+          "argval": {
+            "kind": "str",
+            "value": "events"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 80,
+          "opname": "BUILD_TUPLE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 82,
+          "opname": "STORE_FAST",
+          "arg": 1,
+          "argrepr": "events",
+          "argval": {
+            "kind": "str",
+            "value": "events"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 84,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "events",
+          "argval": {
+            "kind": "str",
+            "value": "events"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 86,
+          "opname": "GET_ITER",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 88,
+          "opname": "FOR_ITER",
+          "arg": 124,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 340
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 92,
+          "opname": "STORE_FAST",
+          "arg": 4,
+          "argrepr": "event",
+          "argval": {
+            "kind": "str",
+            "value": "event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 94,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "event",
+          "argval": {
+            "kind": "str",
+            "value": "event"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 96,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 104,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 54,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 216
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 108,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 64,
+          "argrepr": "event, self",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "event"
+              },
+              {
+                "kind": "str",
+                "value": "self"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 110,
+          "opname": "LOAD_ATTR",
+          "arg": 6,
+          "argrepr": "observable_events",
+          "argval": {
+            "kind": "str",
+            "value": "observable_events"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 130,
+          "opname": "CONTAINS_OP",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 134,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 39,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 216
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 138,
+          "opname": "LOAD_GLOBAL",
+          "arg": 9,
+          "argrepr": "TypeError + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "TypeError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 148,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'class '",
+          "argval": {
+            "kind": "str",
+            "value": "class "
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 150,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 152,
+          "opname": "LOAD_ATTR",
+          "arg": 10,
+          "argrepr": "__class__",
+          "argval": {
+            "kind": "str",
+            "value": "__class__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 172,
+          "opname": "CONVERT_VALUE",
+          "arg": 1,
+          "argrepr": "str",
+          "argval": {
+            "kind": "interpreter-symbol",
+            "module": "builtins",
+            "name": "str"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 174,
+          "opname": "FORMAT_SIMPLE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 176,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "' has no '",
+          "argval": {
+            "kind": "str",
+            "value": " has no "
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 178,
+          "opname": "LOAD_GLOBAL",
+          "arg": 13,
+          "argrepr": "repr + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "repr"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 188,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "event",
+          "argval": {
+            "kind": "str",
+            "value": "event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 190,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 198,
+          "opname": "CONVERT_VALUE",
+          "arg": 1,
+          "argrepr": "str",
+          "argval": {
+            "kind": "interpreter-symbol",
+            "module": "builtins",
+            "name": "str"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 200,
+          "opname": "FORMAT_SIMPLE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 202,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "' observable event'",
+          "argval": {
+            "kind": "str",
+            "value": " observable event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 204,
+          "opname": "BUILD_STRING",
+          "arg": 5,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 5
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 206,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 214,
+          "opname": "RAISE_VARARGS",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 216,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 218,
+          "opname": "LOAD_ATTR",
+          "arg": 14,
+          "argrepr": "_observers",
+          "argval": {
+            "kind": "str",
+            "value": "_observers"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 238,
+          "opname": "LOAD_ATTR",
+          "arg": 17,
+          "argrepr": "setdefault + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "setdefault"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 258,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "event",
+          "argval": {
+            "kind": "str",
+            "value": "event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 260,
+          "opname": "BUILD_MAP",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 262,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 270,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 272,
+          "opname": "LOAD_GLOBAL",
+          "arg": 19,
+          "argrepr": "id + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "id"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 282,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "observer",
+          "argval": {
+            "kind": "str",
+            "value": "observer"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 284,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 292,
+          "opname": "STORE_FAST",
+          "arg": 5,
+          "argrepr": "observer_id",
+          "argval": {
+            "kind": "str",
+            "value": "observer_id"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 294,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 35,
+          "argrepr": "observer, observer_data",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "observer"
+              },
+              {
+                "kind": "str",
+                "value": "observer_data"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 296,
+          "opname": "BUILD_TUPLE",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 298,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 300,
+          "opname": "LOAD_ATTR",
+          "arg": 14,
+          "argrepr": "_observers",
+          "argval": {
+            "kind": "str",
+            "value": "_observers"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 320,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "event",
+          "argval": {
+            "kind": "str",
+            "value": "event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 322,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 326,
+          "opname": "LOAD_FAST",
+          "arg": 5,
+          "argrepr": "observer_id",
+          "argval": {
+            "kind": "str",
+            "value": "observer_id"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 328,
+          "opname": "STORE_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 332,
+          "opname": "LOAD_FAST",
+          "arg": 5,
+          "argrepr": "observer_id",
+          "argval": {
+            "kind": "str",
+            "value": "observer_id"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 334,
+          "opname": "SWAP",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 336,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 338,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 340,
+          "opname": "END_FOR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 342,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 344,
+          "opname": "RETURN_CONST",
+          "arg": 5,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 4,
+      "name": "remove_observer",
+      "qualname": "Object.remove_observer",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py",
+      "firstlineno": 52,
+      "argcount": 3,
+      "names": [
+        "isinstance",
+        "int",
+        "TypeError",
+        "str",
+        "hasattr",
+        "observable_events",
+        "__class__",
+        "repr",
+        "_observers",
+        "KeyError"
+      ],
+      "varnames": [
+        "self",
+        "events",
+        "observer_id",
+        "event"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Removes the specified observer for the specified events.\n\nNo exception is raised if the observer has already been removed.\n"
+        },
+        {
+          "kind": "str",
+          "value": "Observers should be removed by id"
+        },
+        {
+          "kind": "str",
+          "value": "__iter__"
+        },
+        {
+          "kind": "str",
+          "value": "class "
+        },
+        {
+          "kind": "str",
+          "value": " has no "
+        },
+        {
+          "kind": "str",
+          "value": " observable event"
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "8e80e2f0fc741fe99370be73f5f9da2527e7b620f7e2aebd190a0490e09ff03b",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "isinstance + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "isinstance"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "observer_id",
+          "argval": {
+            "kind": "str",
+            "value": "observer_id"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LOAD_GLOBAL",
+          "arg": 2,
+          "argrepr": "int",
+          "argval": {
+            "kind": "str",
+            "value": "int"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 40,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 11,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 66
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "LOAD_GLOBAL",
+          "arg": 5,
+          "argrepr": "TypeError + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "TypeError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 54,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "'Observers should be removed by id'",
+          "argval": {
+            "kind": "str",
+            "value": "Observers should be removed by id"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 64,
+          "opname": "RAISE_VARARGS",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "LOAD_GLOBAL",
+          "arg": 1,
+          "argrepr": "isinstance + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "isinstance"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 76,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "events",
+          "argval": {
+            "kind": "str",
+            "value": "events"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 78,
+          "opname": "LOAD_GLOBAL",
+          "arg": 6,
+          "argrepr": "str",
+          "argval": {
+            "kind": "str",
+            "value": "str"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 88,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 96,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 104,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 17,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 142
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 108,
+          "opname": "LOAD_GLOBAL",
+          "arg": 9,
+          "argrepr": "hasattr + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "hasattr"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 118,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "events",
+          "argval": {
+            "kind": "str",
+            "value": "events"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 120,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "'__iter__'",
+          "argval": {
+            "kind": "str",
+            "value": "__iter__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 122,
+          "opname": "CALL",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 130,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 138,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 3,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 148
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 142,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "events",
+          "argval": {
+            "kind": "str",
+            "value": "events"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 144,
+          "opname": "BUILD_TUPLE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 146,
+          "opname": "STORE_FAST",
+          "arg": 1,
+          "argrepr": "events",
+          "argval": {
+            "kind": "str",
+            "value": "events"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 148,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "events",
+          "argval": {
+            "kind": "str",
+            "value": "events"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 150,
+          "opname": "GET_ITER",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 152,
+          "opname": "FOR_ITER",
+          "arg": 81,
+          "argrepr": "to L6",
+          "argval": {
+            "kind": "int",
+            "value": 318
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 156,
+          "opname": "STORE_FAST",
+          "arg": 3,
+          "argrepr": "event",
+          "argval": {
+            "kind": "str",
+            "value": "event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 158,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "event",
+          "argval": {
+            "kind": "str",
+            "value": "event"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 160,
+          "opname": "TO_BOOL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 168,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 54,
+          "argrepr": "to L5",
+          "argval": {
+            "kind": "int",
+            "value": 280
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 172,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 48,
+          "argrepr": "event, self",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "event"
+              },
+              {
+                "kind": "str",
+                "value": "self"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 174,
+          "opname": "LOAD_ATTR",
+          "arg": 10,
+          "argrepr": "observable_events",
+          "argval": {
+            "kind": "str",
+            "value": "observable_events"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 194,
+          "opname": "CONTAINS_OP",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 198,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 39,
+          "argrepr": "to L5",
+          "argval": {
+            "kind": "int",
+            "value": 280
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 202,
+          "opname": "LOAD_GLOBAL",
+          "arg": 5,
+          "argrepr": "TypeError + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "TypeError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 212,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "'class '",
+          "argval": {
+            "kind": "str",
+            "value": "class "
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 214,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 216,
+          "opname": "LOAD_ATTR",
+          "arg": 12,
+          "argrepr": "__class__",
+          "argval": {
+            "kind": "str",
+            "value": "__class__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 236,
+          "opname": "CONVERT_VALUE",
+          "arg": 1,
+          "argrepr": "str",
+          "argval": {
+            "kind": "interpreter-symbol",
+            "module": "builtins",
+            "name": "str"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 238,
+          "opname": "FORMAT_SIMPLE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 240,
+          "opname": "LOAD_CONST",
+          "arg": 4,
+          "argrepr": "' has no '",
+          "argval": {
+            "kind": "str",
+            "value": " has no "
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 242,
+          "opname": "LOAD_GLOBAL",
+          "arg": 15,
+          "argrepr": "repr + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "repr"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 252,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "event",
+          "argval": {
+            "kind": "str",
+            "value": "event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 254,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 262,
+          "opname": "CONVERT_VALUE",
+          "arg": 1,
+          "argrepr": "str",
+          "argval": {
+            "kind": "interpreter-symbol",
+            "module": "builtins",
+            "name": "str"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 264,
+          "opname": "FORMAT_SIMPLE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 266,
+          "opname": "LOAD_CONST",
+          "arg": 5,
+          "argrepr": "' observable event'",
+          "argval": {
+            "kind": "str",
+            "value": " observable event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 268,
+          "opname": "BUILD_STRING",
+          "arg": 5,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 5
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 270,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 278,
+          "opname": "RAISE_VARARGS",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 280,
+          "opname": "NOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 282,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 284,
+          "opname": "LOAD_ATTR",
+          "arg": 16,
+          "argrepr": "_observers",
+          "argval": {
+            "kind": "str",
+            "value": "_observers"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 304,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "event",
+          "argval": {
+            "kind": "str",
+            "value": "event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 306,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 310,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "observer_id",
+          "argval": {
+            "kind": "str",
+            "value": "observer_id"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 312,
+          "opname": "DELETE_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 314,
+          "opname": "JUMP_BACKWARD",
+          "arg": 83,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 152
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 318,
+          "opname": "END_FOR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 320,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 322,
+          "opname": "RETURN_CONST",
+          "arg": 6,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 324,
+          "opname": "PUSH_EXC_INFO",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 326,
+          "opname": "LOAD_GLOBAL",
+          "arg": 18,
+          "argrepr": "KeyError",
+          "argval": {
+            "kind": "str",
+            "value": "KeyError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 336,
+          "opname": "CHECK_EXC_MATCH",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 338,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 4,
+          "argrepr": "to L7",
+          "argval": {
+            "kind": "int",
+            "value": 350
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 342,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 344,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 346,
+          "opname": "JUMP_BACKWARD",
+          "arg": 99,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 152
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 350,
+          "opname": "RERAISE",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 352,
+          "opname": "COPY",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 354,
+          "opname": "POP_EXCEPT",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 356,
+          "opname": "RERAISE",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": [
+        {
+          "start": 282,
+          "end": 314,
+          "target": 324,
+          "depth": 1,
+          "lasti": false
+        },
+        {
+          "start": 324,
+          "end": 344,
+          "target": 352,
+          "depth": 2,
+          "lasti": true
+        },
+        {
+          "start": 350,
+          "end": 352,
+          "target": 352,
+          "depth": 2,
+          "lasti": true
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "emit_event_for_observer",
+      "qualname": "Object.emit_event_for_observer",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py",
+      "firstlineno": 74,
+      "argcount": 4,
+      "names": [],
+      "varnames": [
+        "self",
+        "event",
+        "observer",
+        "observer_data",
+        "args"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Emits the specified event for a specific observer. Override this\nmethod if you want the observers to be called in a different\nway.\n\n"
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "283441a323560420fe988c5cc6b1faf2032aa6d4527405515460873925001764",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "observer",
+          "argval": {
+            "kind": "str",
+            "value": "observer"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 1,
+          "argrepr": "self, event",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "self"
+              },
+              {
+                "kind": "str",
+                "value": "event"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "observer_data",
+          "argval": {
+            "kind": "str",
+            "value": "observer_data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 10,
+          "opname": "BUILD_LIST",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 12,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "args",
+          "argval": {
+            "kind": "str",
+            "value": "args"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 14,
+          "opname": "LIST_EXTEND",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 16,
+          "opname": "CALL_INTRINSIC_1",
+          "arg": 6,
+          "argrepr": "INTRINSIC_LIST_TO_TUPLE",
+          "argval": {
+            "kind": "int",
+            "value": 6
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 18,
+          "opname": "CALL_FUNCTION_EX",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 20,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 22,
+          "opname": "RETURN_CONST",
+          "arg": 1,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 6,
+      "name": "emit_event",
+      "qualname": "Object.emit_event",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py",
+      "firstlineno": 82,
+      "argcount": 2,
+      "names": [
+        "observable_events",
+        "TypeError",
+        "__class__",
+        "repr",
+        "ANY_EVENT",
+        "_observers",
+        "list",
+        "values",
+        "emit_event_for_observer"
+      ],
+      "varnames": [
+        "self",
+        "event",
+        "args",
+        "observer_event",
+        "observer",
+        "observer_data"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Emits the specified event.\n\nNote that observers will be called in the same thread as emit_event().\n"
+        },
+        {
+          "kind": "str",
+          "value": "class "
+        },
+        {
+          "kind": "str",
+          "value": " has no "
+        },
+        {
+          "kind": "str",
+          "value": " observable event"
+        },
+        {
+          "kind": "NoneType",
+          "value": null
+        }
+      ],
+      "bytecode_sha256": "4ab3932b7ed070d57e64855e698ae38b89c738769661316126e30150837d0493",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 16,
+          "argrepr": "event, self",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "event"
+              },
+              {
+                "kind": "str",
+                "value": "self"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "LOAD_ATTR",
+          "arg": 0,
+          "argrepr": "observable_events",
+          "argval": {
+            "kind": "str",
+            "value": "observable_events"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 24,
+          "opname": "CONTAINS_OP",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "POP_JUMP_IF_FALSE",
+          "arg": 39,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 110
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 32,
+          "opname": "LOAD_GLOBAL",
+          "arg": 3,
+          "argrepr": "TypeError + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "TypeError"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 42,
+          "opname": "LOAD_CONST",
+          "arg": 1,
+          "argrepr": "'class '",
+          "argval": {
+            "kind": "str",
+            "value": "class "
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 44,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 46,
+          "opname": "LOAD_ATTR",
+          "arg": 4,
+          "argrepr": "__class__",
+          "argval": {
+            "kind": "str",
+            "value": "__class__"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "CONVERT_VALUE",
+          "arg": 1,
+          "argrepr": "str",
+          "argval": {
+            "kind": "interpreter-symbol",
+            "module": "builtins",
+            "name": "str"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 68,
+          "opname": "FORMAT_SIMPLE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "LOAD_CONST",
+          "arg": 2,
+          "argrepr": "' has no '",
+          "argval": {
+            "kind": "str",
+            "value": " has no "
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "LOAD_GLOBAL",
+          "arg": 7,
+          "argrepr": "repr + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "repr"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 82,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "event",
+          "argval": {
+            "kind": "str",
+            "value": "event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 84,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 92,
+          "opname": "CONVERT_VALUE",
+          "arg": 1,
+          "argrepr": "str",
+          "argval": {
+            "kind": "interpreter-symbol",
+            "module": "builtins",
+            "name": "str"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 94,
+          "opname": "FORMAT_SIMPLE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 96,
+          "opname": "LOAD_CONST",
+          "arg": 3,
+          "argrepr": "' observable event'",
+          "argval": {
+            "kind": "str",
+            "value": " observable event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 98,
+          "opname": "BUILD_STRING",
+          "arg": 5,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 5
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 100,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 108,
+          "opname": "RAISE_VARARGS",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 110,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "event",
+          "argval": {
+            "kind": "str",
+            "value": "event"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 112,
+          "opname": "LOAD_GLOBAL",
+          "arg": 8,
+          "argrepr": "ANY_EVENT",
+          "argval": {
+            "kind": "str",
+            "value": "ANY_EVENT"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 122,
+          "opname": "BUILD_TUPLE",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 124,
+          "opname": "GET_ITER",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 126,
+          "opname": "FOR_ITER",
+          "arg": 87,
+          "argrepr": "to L6",
+          "argval": {
+            "kind": "int",
+            "value": 304
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 130,
+          "opname": "STORE_FAST",
+          "arg": 3,
+          "argrepr": "observer_event",
+          "argval": {
+            "kind": "str",
+            "value": "observer_event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 132,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 48,
+          "argrepr": "observer_event, self",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "observer_event"
+              },
+              {
+                "kind": "str",
+                "value": "self"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 134,
+          "opname": "LOAD_ATTR",
+          "arg": 10,
+          "argrepr": "_observers",
+          "argval": {
+            "kind": "str",
+            "value": "_observers"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 154,
+          "opname": "CONTAINS_OP",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 158,
+          "opname": "POP_JUMP_IF_TRUE",
+          "arg": 2,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 166
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 162,
+          "opname": "JUMP_BACKWARD",
+          "arg": 20,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 126
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 166,
+          "opname": "LOAD_GLOBAL",
+          "arg": 13,
+          "argrepr": "list + NULL",
+          "argval": {
+            "kind": "str",
+            "value": "list"
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 176,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 178,
+          "opname": "LOAD_ATTR",
+          "arg": 10,
+          "argrepr": "_observers",
+          "argval": {
+            "kind": "str",
+            "value": "_observers"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 198,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "observer_event",
+          "argval": {
+            "kind": "str",
+            "value": "observer_event"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 200,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 204,
+          "opname": "LOAD_ATTR",
+          "arg": 15,
+          "argrepr": "values + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "values"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 224,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 232,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 240,
+          "opname": "GET_ITER",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 242,
+          "opname": "FOR_ITER",
+          "arg": 25,
+          "argrepr": "to L5",
+          "argval": {
+            "kind": "int",
+            "value": 296
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 246,
+          "opname": "UNPACK_SEQUENCE",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 250,
+          "opname": "STORE_FAST_STORE_FAST",
+          "arg": 69,
+          "argrepr": "observer, observer_data",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "observer"
+              },
+              {
+                "kind": "str",
+                "value": "observer_data"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 252,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 254,
+          "opname": "LOAD_ATTR",
+          "arg": 16,
+          "argrepr": "emit_event_for_observer",
+          "argval": {
+            "kind": "str",
+            "value": "emit_event_for_observer"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 274,
+          "opname": "PUSH_NULL",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 276,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 20,
+          "argrepr": "event, observer",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "event"
+              },
+              {
+                "kind": "str",
+                "value": "observer"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 278,
+          "opname": "LOAD_FAST",
+          "arg": 5,
+          "argrepr": "observer_data",
+          "argval": {
+            "kind": "str",
+            "value": "observer_data"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 280,
+          "opname": "BUILD_LIST",
+          "arg": 3,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 3
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 282,
+          "opname": "LOAD_FAST",
+          "arg": 2,
+          "argrepr": "args",
+          "argval": {
+            "kind": "str",
+            "value": "args"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 284,
+          "opname": "LIST_EXTEND",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 286,
+          "opname": "CALL_INTRINSIC_1",
+          "arg": 6,
+          "argrepr": "INTRINSIC_LIST_TO_TUPLE",
+          "argval": {
+            "kind": "int",
+            "value": 6
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 288,
+          "opname": "CALL_FUNCTION_EX",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 290,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 292,
+          "opname": "JUMP_BACKWARD",
+          "arg": 27,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 242
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 296,
+          "opname": "END_FOR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 298,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 300,
+          "opname": "JUMP_BACKWARD",
+          "arg": 89,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 126
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 304,
+          "opname": "END_FOR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 306,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 308,
+          "opname": "RETURN_CONST",
+          "arg": 4,
+          "argrepr": "None",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    },
+    {
+      "index": 7,
+      "name": "all_observers",
+      "qualname": "Object.all_observers",
+      "filename": "/Volumes/gitlab_data/gitlab/builds/j911ygmXM/0/crossover/crossover/macosx/CrossOver/build/Build/Products/Release/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.py",
+      "firstlineno": 96,
+      "argcount": 1,
+      "names": [
+        "_observers",
+        "items",
+        "values",
+        "append"
+      ],
+      "varnames": [
+        "self",
+        "ret",
+        "event",
+        "observers",
+        "observer",
+        "_data"
+      ],
+      "consts": [
+        {
+          "kind": "str",
+          "value": "Return a dictionary containing all observers"
+        }
+      ],
+      "bytecode_sha256": "c7712c56f7a8fd4fc419422b9b1f0f5e5028fd5aeed33d12781c22211defd769",
+      "instructions": [
+        {
+          "offset": 0,
+          "opname": "RESUME",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 2,
+          "opname": "BUILD_MAP",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 4,
+          "opname": "STORE_FAST",
+          "arg": 1,
+          "argrepr": "ret",
+          "argval": {
+            "kind": "str",
+            "value": "ret"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 6,
+          "opname": "LOAD_FAST",
+          "arg": 0,
+          "argrepr": "self",
+          "argval": {
+            "kind": "str",
+            "value": "self"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 8,
+          "opname": "LOAD_ATTR",
+          "arg": 0,
+          "argrepr": "_observers",
+          "argval": {
+            "kind": "str",
+            "value": "_observers"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 28,
+          "opname": "LOAD_ATTR",
+          "arg": 3,
+          "argrepr": "items + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "items"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 48,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 56,
+          "opname": "GET_ITER",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 58,
+          "opname": "FOR_ITER",
+          "arg": 53,
+          "argrepr": "to L4",
+          "argval": {
+            "kind": "int",
+            "value": 168
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 62,
+          "opname": "UNPACK_SEQUENCE",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 66,
+          "opname": "STORE_FAST_STORE_FAST",
+          "arg": 35,
+          "argrepr": "event, observers",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "event"
+              },
+              {
+                "kind": "str",
+                "value": "observers"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 68,
+          "opname": "BUILD_LIST",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 70,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 18,
+          "argrepr": "ret, event",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "ret"
+              },
+              {
+                "kind": "str",
+                "value": "event"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 72,
+          "opname": "STORE_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 76,
+          "opname": "LOAD_FAST",
+          "arg": 3,
+          "argrepr": "observers",
+          "argval": {
+            "kind": "str",
+            "value": "observers"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 78,
+          "opname": "LOAD_ATTR",
+          "arg": 5,
+          "argrepr": "values + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "values"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 98,
+          "opname": "CALL",
+          "arg": 0,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 0
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 106,
+          "opname": "GET_ITER",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 108,
+          "opname": "FOR_ITER",
+          "arg": 24,
+          "argrepr": "to L3",
+          "argval": {
+            "kind": "int",
+            "value": 160
+          },
+          "line": false,
+          "jump_target": true
+        },
+        {
+          "offset": 112,
+          "opname": "UNPACK_SEQUENCE",
+          "arg": 2,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 2
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 116,
+          "opname": "STORE_FAST_STORE_FAST",
+          "arg": 69,
+          "argrepr": "observer, _data",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "observer"
+              },
+              {
+                "kind": "str",
+                "value": "_data"
+              }
+            ]
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 118,
+          "opname": "LOAD_FAST_LOAD_FAST",
+          "arg": 18,
+          "argrepr": "ret, event",
+          "argval": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "str",
+                "value": "ret"
+              },
+              {
+                "kind": "str",
+                "value": "event"
+              }
+            ]
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 120,
+          "opname": "BINARY_SUBSCR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 124,
+          "opname": "LOAD_ATTR",
+          "arg": 7,
+          "argrepr": "append + NULL|self",
+          "argval": {
+            "kind": "str",
+            "value": "append"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 144,
+          "opname": "LOAD_FAST",
+          "arg": 4,
+          "argrepr": "observer",
+          "argval": {
+            "kind": "str",
+            "value": "observer"
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 146,
+          "opname": "CALL",
+          "arg": 1,
+          "argrepr": "",
+          "argval": {
+            "kind": "int",
+            "value": 1
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 154,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 156,
+          "opname": "JUMP_BACKWARD",
+          "arg": 26,
+          "argrepr": "to L2",
+          "argval": {
+            "kind": "int",
+            "value": 108
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 160,
+          "opname": "END_FOR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 162,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 164,
+          "opname": "JUMP_BACKWARD",
+          "arg": 55,
+          "argrepr": "to L1",
+          "argval": {
+            "kind": "int",
+            "value": 58
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 168,
+          "opname": "END_FOR",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": true,
+          "jump_target": true
+        },
+        {
+          "offset": 170,
+          "opname": "POP_TOP",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        },
+        {
+          "offset": 172,
+          "opname": "LOAD_FAST",
+          "arg": 1,
+          "argrepr": "ret",
+          "argval": {
+            "kind": "str",
+            "value": "ret"
+          },
+          "line": true,
+          "jump_target": false
+        },
+        {
+          "offset": 174,
+          "opname": "RETURN_VALUE",
+          "arg": null,
+          "argrepr": "",
+          "argval": {
+            "kind": "NoneType",
+            "value": null
+          },
+          "line": false,
+          "jump_target": false
+        }
+      ],
+      "exception_entries": []
+    }
+  ],
+  "limitations": [
+    "Disassembly is not recovered source.",
+    "Control-flow interpretation requires review of jumps and exception tables."
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "version": 1,
+  "interpreter_library": "/Applications/CrossOver.app/Contents/Frameworks/Python.framework/Versions/3.13/Python",
+  "interpreter_sha256": "d90ed97c49a34c79032227afa37525fe5f924c707040815e732ae49c89090564",
+  "script_sha256": "17241ea233e9ef5d4561a339739413bb6433c2cc57ba3387a29ea862a7c51098",
+  "host_source_sha256": "46d214a9a2d6ce7424bca665ed9dae635f9885c04dec4979c6fee4bef6f99dce",
+  "modules": [
+    {
+      "module": "appdetector",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/appdetector.pyc",
+      "source_sha256": "740b1822331b7b71ca63e287f10d2e21649e2e569bb5ad04e18bc30e3bd7ad91",
+      "code_objects": 16,
+      "output": "evidence/python-disassembly/appdetector.json",
+      "output_sha256": "a6d1a45ef7f01323ac798f9bf92948a48d4fe4fc912ffcc900990139e6ef480c"
+    },
+    {
+      "module": "bottlecollection",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/bottlecollection.pyc",
+      "source_sha256": "d4562b7e589280a3f79fcfa7518f4a6669545a7906639640bce80aec865dec65",
+      "code_objects": 20,
+      "output": "evidence/python-disassembly/bottlecollection.json",
+      "output_sha256": "6ace3daa1d73c5c3c4b2b5cdae1e1a5f562bb40a3a1392904990e260e0de8081"
+    },
+    {
+      "module": "bottlemanagement",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/bottlemanagement.pyc",
+      "source_sha256": "9237f9f66462eb48715e8293b8fea76f565ca909c17c3b6438c81fb10d86ac1b",
+      "code_objects": 19,
+      "output": "evidence/python-disassembly/bottlemanagement.json",
+      "output_sha256": "2a2d5d41ed82e76f3327e6214916bdf984794a4cbed2601a0f49e863ba50afd4"
+    },
+    {
+      "module": "bottlequery",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/bottlequery.pyc",
+      "source_sha256": "304121786818f1581df0fef203e0b2acb1123ed62466001e0b031792b6053d62",
+      "code_objects": 59,
+      "output": "evidence/python-disassembly/bottlequery.json",
+      "output_sha256": "4696eca4e68913e992d976d4d255f2077c847f33e3f6e256d49996239753366b"
+    },
+    {
+      "module": "bottlewrapper",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/bottlewrapper.pyc",
+      "source_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+      "code_objects": 167,
+      "output": "evidence/python-disassembly/bottlewrapper.json",
+      "output_sha256": "149ce7c2b03e4f6dd0a8aedebf3e4dc27da1ddc07612f4bb795c75952c29985b"
+    },
+    {
+      "module": "c4parser",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/c4parser.pyc",
+      "source_sha256": "aa917152601f5c4770811c46a8f86ad0d787b25e1236f114bf3890c7ea3cff61",
+      "code_objects": 77,
+      "output": "evidence/python-disassembly/c4parser.json",
+      "output_sha256": "8005fe7f8e7de54e8fbf2f17eba09d4058104405ad5cdb12cc19880a565899cc"
+    },
+    {
+      "module": "c4profiles",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/c4profiles.pyc",
+      "source_sha256": "97e58ea547361bb8eb8a68fabc70d0c97e83a068fb7bc032aa660bb045bcf9d5",
+      "code_objects": 149,
+      "output": "evidence/python-disassembly/c4profiles.json",
+      "output_sha256": "e00c6e49d4a3658d3fca03abb92f015630fcf43d38cb19e6a896118597d959d3"
+    },
+    {
+      "module": "c4profilesmanager",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/c4profilesmanager.pyc",
+      "source_sha256": "b80f8825765da2c0b9987713c18890ed129232709025b6a06c0e19349c9315c9",
+      "code_objects": 28,
+      "output": "evidence/python-disassembly/c4profilesmanager.json",
+      "output_sha256": "075e424cd6b919da4309d9a90a4a49a04b16a4bbe450bf400f822bd0218d2663"
+    },
+    {
+      "module": "cddetector",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cddetector.pyc",
+      "source_sha256": "b97968b2325e11812fc3807de98afaba7634d585b762e5fe2944881099fa443f",
+      "code_objects": 4,
+      "output": "evidence/python-disassembly/cddetector.json",
+      "output_sha256": "fde36392eef925d3fb85d5cec0cba71e642c125af4a8ac21805c366ac73eb7c6"
+    },
+    {
+      "module": "cxaiebase",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxaiebase.pyc",
+      "source_sha256": "7f1336e43c14120a9c6770cf9c8a910f944de2638bc06ff952ace5fb62984b1b",
+      "code_objects": 45,
+      "output": "evidence/python-disassembly/cxaiebase.json",
+      "output_sha256": "1b55ec37879da46ae1a0fb3d2b4d2044e536f290354c192050b0dc046ba0b26c"
+    },
+    {
+      "module": "cxaiecore",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxaiecore.pyc",
+      "source_sha256": "0d54e7d82f5dcd62da56dec18446f6d1807e208c01158a0376299e2165eebe22",
+      "code_objects": 58,
+      "output": "evidence/python-disassembly/cxaiecore.json",
+      "output_sha256": "578c4b1a0b5c7cbfc991933a76e6482ea1ba123078fc7c3fe81c0cb7d90dccb9"
+    },
+    {
+      "module": "cxaiemedia",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxaiemedia.pyc",
+      "source_sha256": "fe61401c49d3f286aaa33a69c6d832610ab57578ade4356dcd626f8c3c2ff499",
+      "code_objects": 48,
+      "output": "evidence/python-disassembly/cxaiemedia.json",
+      "output_sha256": "7ed4fc75ae89c70b8b34d118dc62fdaf258b172e062093cd57e3c7ec59c7d643"
+    },
+    {
+      "module": "cxaiemisc",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxaiemisc.pyc",
+      "source_sha256": "c807afe3e461affa5f4df2653f3aad8fa779cec740f3afed230b030408640125",
+      "code_objects": 25,
+      "output": "evidence/python-disassembly/cxaiemisc.json",
+      "output_sha256": "d42f39a8cb308d3601e85e33d2fadb04b38c2c33e8c5e3e5e1a365a698dbf369"
+    },
+    {
+      "module": "cxaiengine",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxaiengine.pyc",
+      "source_sha256": "513abfc7082b59a282977bbea2f593cb0b0a7cd3cbef20201bf601b5c0fad0d7",
+      "code_objects": 11,
+      "output": "evidence/python-disassembly/cxaiengine.json",
+      "output_sha256": "df5e0e8fc1d836f94c1d28d5c943bee7eabfbae3aab26639aa83ddd260e6dfc8"
+    },
+    {
+      "module": "cxassoc",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxassoc.pyc",
+      "source_sha256": "cec75a2c27af8c80e4692ceeaf7831388604340d59306f2724f54e7c78bd1cf7",
+      "code_objects": 19,
+      "output": "evidence/python-disassembly/cxassoc.json",
+      "output_sha256": "2a377c3ab648ec6446203ba45bb820843eabe4f585a508ad2567dbaafe33155b"
+    },
+    {
+      "module": "cxconfig",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxconfig.pyc",
+      "source_sha256": "9d66adb564b8cdb2d66f1536102475a63c0d56a0878dad5cd8de190429e3542b",
+      "code_objects": 69,
+      "output": "evidence/python-disassembly/cxconfig.json",
+      "output_sha256": "603a45cc1f6b4bb8a4fc1053c144543ce5594d926bd00802cd6e7050bdcf756f"
+    },
+    {
+      "module": "cxdiag",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxdiag.pyc",
+      "source_sha256": "7b5616dbc2938e5c71ec880cac6e1c7fc0ff57cf2567a164284614b03781843d",
+      "code_objects": 16,
+      "output": "evidence/python-disassembly/cxdiag.json",
+      "output_sha256": "f3cd6afe5277a446dfa1a6d21ed4b28c903395695589d56311e5ef4bba630002"
+    },
+    {
+      "module": "cxevent",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxevent.pyc",
+      "source_sha256": "4cd1492b50fc57fea37aa1e4d1acf8439210b216f62aa85ce8291bb35c239848",
+      "code_objects": 14,
+      "output": "evidence/python-disassembly/cxevent.json",
+      "output_sha256": "6c746783afa29d879fd10e674fc37c9c00899a37e6c6278a710ccadea0e10e90"
+    },
+    {
+      "module": "cxfixes",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxfixes.pyc",
+      "source_sha256": "72d3c3fb8f6d81c84348ba5036981a808e82b661b88b8b8ffb74c551175f6489",
+      "code_objects": 48,
+      "output": "evidence/python-disassembly/cxfixes.json",
+      "output_sha256": "99e7fa8f7aa397c1c0065ef75f437d7f3fb263400e707b05255c716848e4657d"
+    },
+    {
+      "module": "cxfixesdialog",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxfixesdialog.pyc",
+      "source_sha256": "c36c699fa7ebc093f57676ea31be93f00560ab7fb0950a2c46b614220dbcfd69",
+      "code_objects": 9,
+      "output": "evidence/python-disassembly/cxfixesdialog.json",
+      "output_sha256": "d49bce1a7c57df2db6337f732e141c8824aec86cabe8ee20ff1815f849c6a399"
+    },
+    {
+      "module": "cxfixesobjs",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxfixesobjs.pyc",
+      "source_sha256": "7dde856579c3713d7ad63d8c725ddb64980d773b794f54fce9a2b8c40e3fe930",
+      "code_objects": 36,
+      "output": "evidence/python-disassembly/cxfixesobjs.json",
+      "output_sha256": "ba08a5589c49cb5ee104ffcc82562169d73375e95917e323dde9f7c5e5af91a4"
+    },
+    {
+      "module": "cxfixesparser",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxfixesparser.pyc",
+      "source_sha256": "9caae448992d707a68534705092195b86f1202bb586b4d23dfc8400118d667a3",
+      "code_objects": 43,
+      "output": "evidence/python-disassembly/cxfixesparser.json",
+      "output_sha256": "814c16cb7a32e95cbf16ed7b9bbc3c437bf278cf8d41db470680c4e8b6489164"
+    },
+    {
+      "module": "cxfsnotifier",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxfsnotifier.pyc",
+      "source_sha256": "f714ae939a0a144f3a867915741b8221f4e255ccc8bb7102bff7bf8141292eb8",
+      "code_objects": 24,
+      "output": "evidence/python-disassembly/cxfsnotifier.json",
+      "output_sha256": "6feb70a7a378081f6611b7771ced0e4bfea715adf597c9cd2c36454d01062c38"
+    },
+    {
+      "module": "cxglob",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxglob.pyc",
+      "source_sha256": "aec1ce27b83b267a38128035d62c925e3aa28f138f5527d7b648d6b77eb00e73",
+      "code_objects": 14,
+      "output": "evidence/python-disassembly/cxglob.json",
+      "output_sha256": "7e32c9995ae8286a330a3225e6dc072163d32ebe4855a4a63308baedf236cc2c"
+    },
+    {
+      "module": "cxhtmlutils",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxhtmlutils.pyc",
+      "source_sha256": "bcc8b623180323a294e624e716de79ab10b67c69514f544f2540db0320171a32",
+      "code_objects": 5,
+      "output": "evidence/python-disassembly/cxhtmlutils.json",
+      "output_sha256": "ebe74345d68196f167f080ad76d9ee33dc875fa67d897785611c45d9671c6e44"
+    },
+    {
+      "module": "cxlog",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxlog.pyc",
+      "source_sha256": "03a684e64e5801eae4262dfb34987bf484eab714b60f5631098393ac6ff75fe7",
+      "code_objects": 17,
+      "output": "evidence/python-disassembly/cxlog.json",
+      "output_sha256": "28612dabc1969e0b43c239f121caf31c00bd0f56d7df4a1d98c7e6866864db3a"
+    },
+    {
+      "module": "cxmenu",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxmenu.pyc",
+      "source_sha256": "94cdd0e792736a711621f10472432cdfaf3294151e534779c6203beab2286603",
+      "code_objects": 36,
+      "output": "evidence/python-disassembly/cxmenu.json",
+      "output_sha256": "0310249a392344764b98d8ecb0f27d4027957ef38d0d68d227d26036ad75a790"
+    },
+    {
+      "module": "cxobjc",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobjc.pyc",
+      "source_sha256": "26595b9f3ffedbb6910c46a70ad14e6907ef294f91d3d1f66262aef1ae3214ea",
+      "code_objects": 25,
+      "output": "evidence/python-disassembly/cxobjc.json",
+      "output_sha256": "99802cd4c87bd6ec23301bae9a5ac31140541ec9eab8d928e0ea5b0a60c927fa"
+    },
+    {
+      "module": "cxobservable",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxobservable.pyc",
+      "source_sha256": "4601ee97ece4076a7e8d1e9c68a3b19744b52936ade6171a079a2bbe3597ac2e",
+      "code_objects": 8,
+      "output": "evidence/python-disassembly/cxobservable.json",
+      "output_sha256": "f07ca3c5d86a08650fd6cfb052ae0dabcf17cf265a927297fee6b6e5077f154b"
+    },
+    {
+      "module": "cxopt",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxopt.pyc",
+      "source_sha256": "2b80ac83bf2758fea623d75868a19a0d59b1aef9747a151de497a405b9a287c3",
+      "code_objects": 4,
+      "output": "evidence/python-disassembly/cxopt.json",
+      "output_sha256": "1a3cc4a2048e5f5b56fd4978b13e267fe5a1ac76856fe5c12902ac5e51a5018f"
+    },
+    {
+      "module": "cxproduct",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxproduct.pyc",
+      "source_sha256": "475567cdeed613754d9865ac5d028274f1f29ab3d75ccd04a1d7fc832aa80abe",
+      "code_objects": 24,
+      "output": "evidence/python-disassembly/cxproduct.json",
+      "output_sha256": "7b46bb8452ccb977588ca76843c026475215f1d9f170802f4387604adcfb3b69"
+    },
+    {
+      "module": "cxurlget",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxurlget.pyc",
+      "source_sha256": "395d687aedcc967c5da217d18db856c81a4340a0c6247551bd5ab8d4c0601b2d",
+      "code_objects": 12,
+      "output": "evidence/python-disassembly/cxurlget.json",
+      "output_sha256": "48ef38480a365b1660bd3b5cb2d985fa714366db9947aa6fe61adf0aa61a21e9"
+    },
+    {
+      "module": "cxurlget_base",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxurlget_base.pyc",
+      "source_sha256": "60bd7ef418e8cede125f442716c313a97a4222b0d7cca2f00bfad72a7d1e7c7b",
+      "code_objects": 19,
+      "output": "evidence/python-disassembly/cxurlget_base.json",
+      "output_sha256": "31baddb9367cf94d1758dbba8df580770de1b985c7dcfad4b4313ddc71f01c4e"
+    },
+    {
+      "module": "cxurlget_nsurl",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxurlget_nsurl.pyc",
+      "source_sha256": "5d9b58b150b10dd46777d245679bd9728b1e923c792b0053eb6fb9edf7b1e53a",
+      "code_objects": 11,
+      "output": "evidence/python-disassembly/cxurlget_nsurl.json",
+      "output_sha256": "75baca26a486495004c03517d21455d52ae24211fe063eb00375adb85a14e537"
+    },
+    {
+      "module": "cxurlget_urllib",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxurlget_urllib.pyc",
+      "source_sha256": "7f8717382845fc82718e3b3f66297ae3fba62e6e0b5445160518ec91a190d099",
+      "code_objects": 14,
+      "output": "evidence/python-disassembly/cxurlget_urllib.json",
+      "output_sha256": "e27e8bf8ccc8e29c485046a242a4fed2e4a927f0084e1e66e791464bca248f2f"
+    },
+    {
+      "module": "cxutils",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxutils.pyc",
+      "source_sha256": "bcfb45568380f0f13e5d1051a28371b2bbd483d0149328e34ca66a84da7b7a50",
+      "code_objects": 68,
+      "output": "evidence/python-disassembly/cxutils.json",
+      "output_sha256": "7110ac66e9ac0752729382ce891e8f3a82f8d0abc9334be0a22be1bcde092dfb"
+    },
+    {
+      "module": "cxwhich",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxwhich.pyc",
+      "source_sha256": "c88f28b131c0c75ff60122cf6ed4e3ee876c6ce32bd70d98e0f7f7be0c4e36c8",
+      "code_objects": 2,
+      "output": "evidence/python-disassembly/cxwhich.json",
+      "output_sha256": "6450ee385cd5471236a1b8120f6623d4fcd56acf2f21b4b65613c862d27ecf2c"
+    },
+    {
+      "module": "demoutils",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/demoutils.pyc",
+      "source_sha256": "458c6d7f3bb6842441db5599888e05a96bdd3c9a9a0697ba237791aa6430c1ed",
+      "code_objects": 18,
+      "output": "evidence/python-disassembly/demoutils.json",
+      "output_sha256": "72f61c37c29ebed493d023b12b1acf9236044a32e5e5a46ed9fb3a07ec815ed7"
+    },
+    {
+      "module": "distversion",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/distversion.pyc",
+      "source_sha256": "fcb04aaf86783e0a9a431d5fa9313fb0b6d9ba27f86d6926457f64d8457bd2c2",
+      "code_objects": 1,
+      "output": "evidence/python-disassembly/distversion.json",
+      "output_sha256": "6545f4cc975890e7ee56bc90adc19db8dd1a20e7bc6639e6ffc3292903cda27a"
+    },
+    {
+      "module": "downloaddetector",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/downloaddetector.pyc",
+      "source_sha256": "db2e9b670e7ccc859d6bec3e70edc8e346400c810f9250918999a011904f21fb",
+      "code_objects": 7,
+      "output": "evidence/python-disassembly/downloaddetector.json",
+      "output_sha256": "371624270ec69c1a72d03d558082868957a4b776bdd145438da63e7185093e6e"
+    },
+    {
+      "module": "fileupdate",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/fileupdate.pyc",
+      "source_sha256": "f1e331a52be1b444bf4e3ea7e04253d8526ca0b901bce053cf64cfd1b86cca19",
+      "code_objects": 6,
+      "output": "evidence/python-disassembly/fileupdate.json",
+      "output_sha256": "147d92429336184e2e8e96eb63777cedc1b5a0eb5c1b085dec9b5fe1646ea89d"
+    },
+    {
+      "module": "globtree",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/globtree.pyc",
+      "source_sha256": "c383918a060cd72d9b088c91963220bfaff82f451ead8f20c72e3bda40534152",
+      "code_objects": 20,
+      "output": "evidence/python-disassembly/globtree.json",
+      "output_sha256": "68d2c3fa4f4289d53b36ff50c3ce36f5e967965a3c50e447464e7207a6e53221"
+    },
+    {
+      "module": "iconutils",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iconutils.pyc",
+      "source_sha256": "8e32a6790aff321e77222e96208e5f114c51f001bf2d117d42407839999fbdfe",
+      "code_objects": 8,
+      "output": "evidence/python-disassembly/iconutils.json",
+      "output_sha256": "db79627a4e006f6aab507890ea9d9a93c6e4f9713c7e696fa5c53dad8442be5c"
+    },
+    {
+      "module": "installtask",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/installtask.pyc",
+      "source_sha256": "2d3964d40793079d58d229cb4b18578f53175bb7a87bec5e30a1a5024eb1a2fb",
+      "code_objects": 128,
+      "output": "evidence/python-disassembly/installtask.json",
+      "output_sha256": "ee7cd22058b2b78b6bd75ad42a5d39785182670136ddbed11168c99d717fe13f"
+    },
+    {
+      "module": "iso8601",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/iso8601.pyc",
+      "source_sha256": "f3d5c262af43b79e7cd59951c2834a86004604b7931830cb5187e64391da653a",
+      "code_objects": 14,
+      "output": "evidence/python-disassembly/iso8601.json",
+      "output_sha256": "9bc3ee68a7da910783157c808b601e3dd88818be75a403eac6669a2760066db2"
+    },
+    {
+      "module": "proxyinfo",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/proxyinfo.pyc",
+      "source_sha256": "92b63b676b7db9be3fa3675222ec6dc58cf02cef03ad8ad17dc90c27489cd2c4",
+      "code_objects": 23,
+      "output": "evidence/python-disassembly/proxyinfo.json",
+      "output_sha256": "0794f059df339deedae1033886b95f5b3aa6f6fd35f620d65747fec89323912f"
+    },
+    {
+      "module": "pyop",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/pyop.pyc",
+      "source_sha256": "f7d527420578cd39cf109a31ec3c57a3119bdf1c5ca146df97d8bda19d2f562e",
+      "code_objects": 21,
+      "output": "evidence/python-disassembly/pyop.json",
+      "output_sha256": "b17ccbeafcf9452068dfb37a650b78c36ba65fb67b5cf6619ac859eed956ba3b"
+    },
+    {
+      "module": "ratingutils",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/ratingutils.pyc",
+      "source_sha256": "c535139474521ab9d373b2b94552525b4e26f4fe334018ba075b2e5cf3ff85c2",
+      "code_objects": 7,
+      "output": "evidence/python-disassembly/ratingutils.json",
+      "output_sha256": "6b1d8cbd5eeaa5e4f1afa90699652f5f57260847a840e0a15e7031b523aa71e8"
+    },
+    {
+      "module": "systeminfo",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/systeminfo.pyc",
+      "source_sha256": "2673e079df5c3cb5683e0d6e0f43ba330ccd7a83e0f077b27a46f8c12fb3f57c",
+      "code_objects": 7,
+      "output": "evidence/python-disassembly/systeminfo.json",
+      "output_sha256": "487f73dee99af595b90fd9e4ea28227621b8c6b69654199f537e0a1368fba4db"
+    },
+    {
+      "module": "webutils",
+      "source_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/webutils.pyc",
+      "source_sha256": "07ca9b7cff072733a5095ca3a713d639186624972449e67e2d9182b467d362c4",
+      "code_objects": 6,
+      "output": "evidence/python-disassembly/webutils.json",
+      "output_sha256": "cedd4e7833f96719faf24a114c8ca3a2da8379e03ca210f6c2bef43a7ea909ef"
+    }
+  ],
+  "inspection": "Business modules decoded with marshal and dis; never imported or executed",
+  "limitations": [
+    "The interpreter and its standard library execute as analysis tooling.",
+    "Only top-level lib/python/*.pyc files selected; nested modules and other language runtimes are outside this selection.",
+    "Disassembly is not original source and does not establish runtime behavior."
+  ]
+}
