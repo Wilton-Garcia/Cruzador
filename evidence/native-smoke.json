@@ -1,0 +1,45 @@
+{
+  "method": "CruzadorCore NativeSmokeTests with installed CrossOver 26.3",
+  "status": "passed",
+  "duration_seconds": 23.204,
+  "root": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-3aad3487-bf63-4220-92a9-c4412f5adcc9",
+  "observed": [
+    "cxbottle creation returned exit 0",
+    "system.reg and drive_c present",
+    "cmd.exe returned exit 0 and printed CRUZADOR_SMOKE_OK",
+    "prefix-specific wine --wait-all returned exit 0"
+  ],
+  "logs": [
+    {
+      "path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-3aad3487-bf63-4220-92a9-c4412f5adcc9/Logs/cmd.log",
+      "sha256": "5096d31edb5629e18f498654d30d1afac3d7669a5cdf5a0f343999c9230ccdb1",
+      "bytes": 19
+    },
+    {
+      "path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-3aad3487-bf63-4220-92a9-c4412f5adcc9/Logs/create.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-3aad3487-bf63-4220-92a9-c4412f5adcc9/Logs/shutdown.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "limitations": [
+    "Does not establish compatibility of arbitrary Windows applications.",
+    "EXE/MSI installer UI and graphical tools have not been exercised.",
+    "External standalone Wine engine not tested on a real installation."
+  ],
+  "ui_verification": {
+    "bottle": "Primeira bottle",
+    "observed": [
+      "Created bottle through native UI",
+      "Registered shortcut with three separate arguments",
+      "Clicked Execute; UI reported Opera\u00e7\u00e3o conclu\u00edda",
+      "Log contained CRUZADOR_UI_OK"
+    ],
+    "log_path": "/Users/wiltongarcia/Library/Application Support/Cruzador/Logs/1795550668.632831-5C8BE30A-6AE3-4463-A466-B02164EFE4D3.log",
+    "log_sha256": "189c2b186717fa7021d24697bb8cba56e5a81332ab8ddadea8953dafeb963d6c"
+  }
+}
