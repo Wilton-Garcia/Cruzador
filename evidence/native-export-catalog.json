@@ -1,0 +1,76 @@
+{
+  "target_path": "/Applications/CrossOver.app/Contents/MacOS/CrossOver",
+  "target_sha256": "1d245f2f9f52bd56a120616fede8b1eb9cca9fa228319de04a2cbeabd8de7174",
+  "architecture": "arm64",
+  "total_records": 644,
+  "groups": [
+    {
+      "group": "bottle-view-controller",
+      "records": 143,
+      "path": "evidence/decompilation/bottle-view-controller.json",
+      "sha256": "e14770563b5f72299b80abe360af3211c2a36ac93f1c6b82ea7ca88cf4bef574",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/bottle-view-controller"
+    },
+    {
+      "group": "c-x-server-cross-over",
+      "records": 87,
+      "path": "evidence/decompilation/c-x-server-cross-over.json",
+      "sha256": "6c46f737fee4f2cc322cd77155ce824cc837f27464a228b860aa80d1d644baa7",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/c-x-server-cross-over"
+    },
+    {
+      "group": "c-x-setup-lib",
+      "records": 18,
+      "path": "evidence/decompilation/c-x-setup-lib.json",
+      "sha256": "769a076b3ea61a0cd03d56b85781d50838796ba92e2be0359d77fbac3567575e",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/c-x-setup-lib"
+    },
+    {
+      "group": "c-x-task",
+      "records": 9,
+      "path": "evidence/decompilation/c-x-task.json",
+      "sha256": "91e122be8403554c2ae3b7946ab4e811c3128a74a55b0c465e34b709e1e23006",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/c-x-task"
+    },
+    {
+      "group": "install-configuration",
+      "records": 78,
+      "path": "evidence/decompilation/install-configuration.json",
+      "sha256": "6aa7f2131d0f8212cfeb9677c9e1ac8214dda1f43a57582edae4331563b253d8",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/install-configuration"
+    },
+    {
+      "group": "main-window-controller",
+      "records": 105,
+      "path": "evidence/decompilation/main-window-controller.json",
+      "sha256": "37f64919dc11dae12cec04c7ff937208f2e1cf2d9841b899e24605ee259d021c",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/main-window-controller"
+    },
+    {
+      "group": "new-bottle",
+      "records": 49,
+      "path": "evidence/decompilation/new-bottle.json",
+      "sha256": "81d35267d89eb1d2ec87cc1734093f8e3572370c20ed4d19133bf67f63dc9154",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/new-bottle"
+    },
+    {
+      "group": "package-installer",
+      "records": 96,
+      "path": "evidence/decompilation/package-installer.json",
+      "sha256": "1eb59447d2f09219a3c79a7b62eca0ecd1b3af34ce7e3fbcf3e90c8b67a5fced",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/package-installer"
+    },
+    {
+      "group": "run-command-controller",
+      "records": 59,
+      "path": "evidence/decompilation/run-command-controller.json",
+      "sha256": "eeff9d6c7f84548c08fb65a44bf8adf1e9a902172ea7f56cb678206eb2fc5874",
+      "export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/run-command-controller"
+    }
+  ],
+  "limitations": [
+    "Pseudocode is provider-derived, not original source.",
+    "Hopper does not expose complete native function body ranges through this API.",
+    "Only selected classes were exported; other native methods, helper thunks and embedded engines remain unexamined."
+  ]
+}

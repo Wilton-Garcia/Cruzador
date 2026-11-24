@@ -1,0 +1,269 @@
+{
+  "target": {
+    "identity": {
+      "architecture": "arm64",
+      "format": "mach-o-universal",
+      "kind": "file",
+      "selection": {
+        "cpu_subtype": 0,
+        "cpu_type": 16777228,
+        "kind": "universal-slice",
+        "offset": 1179648,
+        "size": 1243232
+      },
+      "sha256": "1d245f2f9f52bd56a120616fede8b1eb9cca9fa228319de04a2cbeabd8de7174"
+    },
+    "local_path": "/Applications/CrossOver.app/Contents/MacOS/CrossOver",
+    "name": "CrossOver"
+  },
+  "inventory": {
+    "procedures": 10627,
+    "evidence_id": "ev_5b0612884f4c957cc430ecc1de0710af4f7e640ea251e89a4f313186d752ecb4",
+    "scope": "Hopper inventory; discovery completeness unknown"
+  },
+  "findings": [
+    {
+      "id": "python-bootstrap",
+      "finding": "Inicializa Python e carrega os módulos da aplicação",
+      "kind": "static-decompilation",
+      "procedure": {
+        "address": "0x1000541d4",
+        "value": "_InitializePython"
+      },
+      "evidence_id": "ev_822475337568ea840099a2a6525b68f740510c7280b25d1f5a5fd74a4aa2ad73",
+      "runtime_observed": false
+    },
+    {
+      "id": "bottle-create",
+      "finding": "Escolhe criar, duplicar ou restaurar por BottleManagement",
+      "kind": "static-decompilation",
+      "procedure": {
+        "address": "0x10001ba64",
+        "value": "-[NewBottleController doCreate]"
+      },
+      "evidence_id": "ev_8066cc0293c0fb2bc7bfe09a1420ea302de1d36432e731781570a3c0f4b3ccaf",
+      "runtime_observed": false
+    },
+    {
+      "id": "command-launch",
+      "finding": "Monta um processo cxstart/cxmenu e conecta as saídas",
+      "kind": "static-decompilation",
+      "procedure": {
+        "address": "0x100017e4c",
+        "value": "-[RunCommandController runCommand]"
+      },
+      "evidence_id": "ev_ac23340567be6ee11ef8dba46a6287c68d7bd0ec229be49bca2911bcb8dec418",
+      "runtime_observed": false
+    },
+    {
+      "id": "graphics-selection",
+      "finding": "Despacha cinco seleções de backend para a bottle",
+      "kind": "static-decompilation",
+      "procedure": {
+        "address": "0x1000232f8",
+        "value": "-[BottleViewController graphicsOptionChanged:]"
+      },
+      "evidence_id": "ev_16ce093d904042b833d7546ea03f9541a1fb9b04b801538d049bb47141b2f616",
+      "runtime_observed": false
+    },
+    {
+      "id": "msync-confirmation",
+      "finding": "Exibe confirmação de reinício antes da troca de MSync",
+      "kind": "static-decompilation",
+      "procedure": {
+        "address": "0x10000f000",
+        "value": "+[BottleMenuHandler toggleMSyncForBottle:withWindow:modalCompletionHandler:]"
+      },
+      "evidence_id": "ev_0bef404c7e86be203b7bd24dd8530f7291bdc9027a1ff3d9921fe8b1ab175a9e",
+      "runtime_observed": false
+    }
+  ],
+  "python_modules": [
+    {
+      "path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/installtask.pyc",
+      "evidence_id": "ev_133f8a8f7301fcf9be9fe64db53a6ba04f275aebeec993227992cb27944cd58a",
+      "sha256": "2d3964d40793079d58d229cb4b18578f53175bb7a87bec5e30a1a5024eb1a2fb",
+      "code_objects": 128,
+      "bytecode_decoded": false
+    },
+    {
+      "path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/bottlecollection.pyc",
+      "evidence_id": "ev_3367b69eef051531750a7d62b95f899d59710fb7d78aa4cd0843418451b1ce2c",
+      "sha256": "d4562b7e589280a3f79fcfa7518f4a6669545a7906639640bce80aec865dec65",
+      "code_objects": 20,
+      "bytecode_decoded": false
+    },
+    {
+      "path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/cxaiengine.pyc",
+      "evidence_id": "ev_3ad9fbbe23e8f576fd85aaa378e1f90ab7e0615fa9d9d41cb88022232526c9c6",
+      "sha256": "513abfc7082b59a282977bbea2f593cb0b0a7cd3cbef20201bf601b5c0fad0d7",
+      "code_objects": 11,
+      "bytecode_decoded": false
+    },
+    {
+      "path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/bottlemanagement.pyc",
+      "evidence_id": "ev_575716010b3b26957cefac6606e8a6e3f1163532ae08cc28d43325333c79b5d9",
+      "sha256": "9237f9f66462eb48715e8293b8fea76f565ca909c17c3b6438c81fb10d86ac1b",
+      "code_objects": 19,
+      "bytecode_decoded": false
+    },
+    {
+      "path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/python/bottlewrapper.pyc",
+      "evidence_id": "ev_7cae754158a6c2197cd23fddb858602f9d3bb1bc7e2832fe02f80daea615410f",
+      "sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+      "code_objects": 167,
+      "bytecode_decoded": false
+    }
+  ],
+  "interface_actions": {
+    "evidence_id": "ev_655d0161276fb10f93796713530fd302f420f5081734b183ed703e06c74dc626",
+    "items": [
+      {
+        "attributes": {
+          "archive_object_id": "821",
+          "destination-id": "2",
+          "destination_id": "2",
+          "label": "graphicsOptionChanged:",
+          "selector": "graphicsOptionChanged:",
+          "source_id": "191",
+          "type": "action"
+        },
+        "evidence": [
+          {
+            "artifact_path": "Contents/Resources/Base.lproj/BottleView.nib",
+            "artifact_sha256": "130f65f863f42195a98a6e7b76acb6593f05e791305668265f16ae444685aa11",
+            "description": "action 191:connection:0",
+            "kind": "interface_builder_resource",
+            "location": {
+              "address": null,
+              "file_offset": null
+            }
+          }
+        ],
+        "id": "ib:\"Contents/Resources/Base.lproj/BottleView.nib\":action:[\"191:connection:0\"]",
+        "kind": "action",
+        "location": null,
+        "name": "graphicsOptionChanged:"
+      },
+      {
+        "attributes": {
+          "archive_object_id": "799",
+          "destination-id": "2",
+          "destination_id": "2",
+          "label": "msyncToggled:",
+          "selector": "msyncToggled:",
+          "source_id": "245",
+          "type": "action"
+        },
+        "evidence": [
+          {
+            "artifact_path": "Contents/Resources/Base.lproj/BottleView.nib",
+            "artifact_sha256": "130f65f863f42195a98a6e7b76acb6593f05e791305668265f16ae444685aa11",
+            "description": "action 245:connection:0",
+            "kind": "interface_builder_resource",
+            "location": {
+              "address": null,
+              "file_offset": null
+            }
+          }
+        ],
+        "id": "ib:\"Contents/Resources/Base.lproj/BottleView.nib\":action:[\"245:connection:0\"]",
+        "kind": "action",
+        "location": null,
+        "name": "msyncToggled:"
+      },
+      {
+        "attributes": {
+          "archive_object_id": "216",
+          "destination-id": "2",
+          "destination_id": "2",
+          "label": "createPressed:",
+          "selector": "createPressed:",
+          "source_id": "156",
+          "type": "action"
+        },
+        "evidence": [
+          {
+            "artifact_path": "Contents/Resources/Base.lproj/NewBottle.nib",
+            "artifact_sha256": "eb4317b5be0823bf4002b7eb45191904388cfa909d3935ca907fd8502296e510",
+            "description": "action 156:connection:0",
+            "kind": "interface_builder_resource",
+            "location": {
+              "address": null,
+              "file_offset": null
+            }
+          }
+        ],
+        "id": "ib:\"Contents/Resources/Base.lproj/NewBottle.nib\":action:[\"156:connection:0\"]",
+        "kind": "action",
+        "location": null,
+        "name": "createPressed:"
+      },
+      {
+        "attributes": {
+          "archive_object_id": "204",
+          "destination-id": "2",
+          "destination_id": "2",
+          "label": "createPressed:",
+          "selector": "createPressed:",
+          "source_id": "48",
+          "type": "action"
+        },
+        "evidence": [
+          {
+            "artifact_path": "Contents/Resources/Base.lproj/NoBottle.nib",
+            "artifact_sha256": "40461c4291f439aca2c942dc370072be85fb6141f8eda8d7ae6071000ee6feac",
+            "description": "action 48:connection:0",
+            "kind": "interface_builder_resource",
+            "location": {
+              "address": null,
+              "file_offset": null
+            }
+          }
+        ],
+        "id": "ib:\"Contents/Resources/Base.lproj/NoBottle.nib\":action:[\"48:connection:0\"]",
+        "kind": "action",
+        "location": null,
+        "name": "createPressed:"
+      },
+      {
+        "attributes": {
+          "archive_object_id": "273",
+          "destination-id": "2",
+          "destination_id": "2",
+          "label": "runCommandPressed:",
+          "selector": "runCommandPressed:",
+          "source_id": "225",
+          "type": "action"
+        },
+        "evidence": [
+          {
+            "artifact_path": "Contents/Resources/Base.lproj/RunCommand.nib",
+            "artifact_sha256": "9a12bd0e6d06ec913c91ff44c7518df824e6fb4586c798a0e23c0569f24fcddb",
+            "description": "action 225:connection:0",
+            "kind": "interface_builder_resource",
+            "location": {
+              "address": null,
+              "file_offset": null
+            }
+          }
+        ],
+        "id": "ib:\"Contents/Resources/Base.lproj/RunCommand.nib\":action:[\"225:connection:0\"]",
+        "kind": "action",
+        "location": null,
+        "name": "runCommandPressed:"
+      }
+    ],
+    "limitations": [
+      "Decoded archive declarations; not observed UI execution.",
+      "Graph is partial and hierarchy is incomplete."
+    ]
+  },
+  "unknowns": [
+    "No complete original source recovery",
+    "No original-app runtime trace in this study",
+    "Python bytecode instructions not decoded",
+    "Wine/graphics engine internals not decompiled in this stage",
+    "No behavioral equivalence or independence established"
+  ]
+}

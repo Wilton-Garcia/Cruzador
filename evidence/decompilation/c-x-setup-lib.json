@@ -1,0 +1,776 @@
+{
+  "original_export_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/reverse-engineering/c-x-setup-lib",
+  "manifest": {
+    "version": 1,
+    "target_sha256": "1d245f2f9f52bd56a120616fede8b1eb9cca9fa228319de04a2cbeabd8de7174",
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956"
+    },
+    "analysis_profile_digest": "3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a",
+    "layout": "address",
+    "layout_status": "address",
+    "latest_run": {
+      "resume": false,
+      "selected": 18,
+      "excluded": 10609,
+      "selection": {
+        "name": "[CXSetupLib ",
+        "namespace": null,
+        "address_start": null,
+        "address_end": null,
+        "limit": 256
+      },
+      "inventory_limitations": [
+        "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+        "Results depend on Hopper's completed static analysis."
+      ]
+    },
+    "limitations": [
+      "18 exported function record(s) report an unavailable body: Hopper's public Python API does not expose complete function body ranges"
+    ],
+    "functions": [
+      {
+        "address": "0x100039c10",
+        "name": "+[CXSetupLib initialize]",
+        "status": "written",
+        "relative_path": "functions/0x100039c10.c",
+        "sha256": "b9a4272e2a5c4be26c0f664da4737af224bd9c5e8f79b5fe2b13ab4893312e24",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a050",
+        "name": "+[CXSetupLib bottleQueryClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a050.c",
+        "sha256": "5cd273bc190ce0a402010006d00a9f9f5514e142db19f4d385ac5e21e1b62c8d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a05c",
+        "name": "+[CXSetupLib bottleManagementClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a05c.c",
+        "sha256": "167626a3856b0c2f30aca8be1eeda4b147ed59e34afccd39c7c853bd74113967",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a068",
+        "name": "+[CXSetupLib cxSetupClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a068.c",
+        "sha256": "fe65a026ef32142763eb2e40d4f463665d75c637f4fd26d76c277b6cc42d82fa",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a074",
+        "name": "+[CXSetupLib appDetectorClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a074.c",
+        "sha256": "b4a96dbc8bfa6cd58c370dcf9de0510622153c3bff16895195c7263e3a4fa334",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a080",
+        "name": "+[CXSetupLib cdDetectorClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a080.c",
+        "sha256": "af268698a7121d2b97911bcb502e029781c0bd8b1e1771eb42ad61a570e8c28e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a08c",
+        "name": "+[CXSetupLib demoUtilsClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a08c.c",
+        "sha256": "5228378d23ed09bd6dba505348aa7ff8472134a96dfa65df5e735a3ad84c8a99",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a098",
+        "name": "+[CXSetupLib c4ProfilesClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a098.c",
+        "sha256": "81583d6ca2dd7c8b68975a6e671dded1d35bd2f85a95d8bbe1d09cc6c17806e0",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a0a4",
+        "name": "+[CXSetupLib installTaskClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0a4.c",
+        "sha256": "6ada7724832fe0cf30e0a82a5f77ad31a9595180799088bf8d64c3a1c5649282",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a0b0",
+        "name": "+[CXSetupLib cxAiEngineClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0b0.c",
+        "sha256": "fbe8010ba7ffbdf660e7f52b8c542607f6740a2f750791f1685962a7248a63f9",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a0bc",
+        "name": "+[CXSetupLib cxUtilsClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0bc.c",
+        "sha256": "e4460ee6dfe886605a87e4909363ae90b8b8661f368f60ab0939841c5426c880",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a0c8",
+        "name": "+[CXSetupLib cxMenuClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0c8.c",
+        "sha256": "48c80175e743806db2504d6c84a44bb654e498d198a812b626ee6e9960de0a1b",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a0d4",
+        "name": "+[CXSetupLib bottleCollectionClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0d4.c",
+        "sha256": "c482e4fe7f46f7c01cb7dda2bfecc5968971361e8ea98eab205942772290d294",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a0e0",
+        "name": "+[CXSetupLib bottleWrapperClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0e0.c",
+        "sha256": "92941b8607159c0596614c9730d303ec3911613cfd785c487af5ee4b4341a060",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a0ec",
+        "name": "+[CXSetupLib iconUtilsClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0ec.c",
+        "sha256": "ecf783f3e3600eea71ba0808603b33b45e544e735c0791fb7a7a819a7f884c7c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a0f8",
+        "name": "+[CXSetupLib ratingUtilsClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0f8.c",
+        "sha256": "7feda42f4a406b45db2b602d39f5ee9c6d97f6e56c978dcbf7d0ac03dc7164fa",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a104",
+        "name": "+[CXSetupLib systemInfoClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a104.c",
+        "sha256": "66fc5ebe59e58b7e751526eb0c6f5ec717ac253cff19a7fde675e60cd44b04cd",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      {
+        "address": "0x10003a110",
+        "name": "+[CXSetupLib webUtilsClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a110.c",
+        "sha256": "a32fe294bbb4f149569bca54b3529727f91427f3f2866082ef769e48dc2b57a6",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      }
+    ]
+  },
+  "records": [
+    {
+      "record": {
+        "address": "0x100039c10",
+        "name": "+[CXSetupLib initialize]",
+        "status": "written",
+        "relative_path": "functions/0x100039c10.c",
+        "sha256": "b9a4272e2a5c4be26c0f664da4737af224bd9c5e8f79b5fe2b13ab4893312e24",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib initialize]\n// address: 0x100039c10\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r31 = r31 - 0x50;\n    var_30 = r24;\n    decomp_var_28 = r23;\n    var_20 = r22;\n    decomp_var_18 = r21;\n    var_10 = r20;\n    decomp_var_8 = r19;\n    saved_fp = r29;\n    decomp_var_m8 = r30;\n    r19 = self;\n    if (objc_opt_class(@class(CXSetupLib)) == r19) {\n            _InitializePython();\n            r0 = NSClassFromString(@\"BottleQuery\");\n            *_BottleQuery = r0;\n            if (r0 != 0x0) {\n                    r0 = NSClassFromString(@\"CXSetup\");\n                    *_CXSetup = r0;\n                    if (r0 != 0x0) {\n                            r0 = NSClassFromString(@\"CXUtils\");\n                            *_cxUtils = r0;\n                            if (r0 != 0x0) {\n                                    r0 = NSClassFromString(@\"BottleCollection\");\n                                    *_pyBottleCollection = r0;\n                                    if (r0 != 0x0) {\n                                            r0 = NSClassFromString(@\"BottleWrapper\");\n                                            *_pyBottleWrapper = r0;\n                                            if (r0 != 0x0) {\n                                                    r0 = NSClassFromString(@\"AppDetector\");\n                                                    *_AppDetector = r0;\n                                                    if (r0 != 0x0) {\n                                                            r0 = NSClassFromString(@\"BottleManagement\");\n                                                            *_BottleManagement = r0;\n                                                            if (r0 != 0x0) {\n                                                                    r0 = NSClassFromString(@\"CDDetector\");\n                                                                    *_CDDetector = r0;\n                                                                    if (r0 != 0x0) {\n                                                                            r0 = NSClassFromString(@\"DemoUtils\");\n                                                                            *_DemoUtils = r0;\n                                                                            if (r0 != 0x0) {\n                                                                                    r0 = NSClassFromString(@\"C4Profiles\");\n                                                                                    *_C4Profiles = r0;\n                                                                                    if (r0 != 0x0) {\n                                                                                            r0 = NSClassFromString(@\"InstallTask\");\n                                                                                            *_pyInstallTask = r0;\n                                                                                            if (r0 != 0x0) {\n                                                                                                    r0 = NSClassFromString(@\"Engine\");\n                                                                                                    *_cxAiEngine = r0;\n                                                                                                    if (r0 != 0x0) {\n                                                                                                            r0 = NSClassFromString(@\"CXMenu\");\n                                                                                                            *_cxMenu = r0;\n                                                                                                            if (r0 != 0x0) {\n                                                                                                                    r0 = NSClassFromString(@\"IconUtils\");\n                                                                                                                    *_pyIconUtils = r0;\n                                                                                                                    if (r0 != 0x0) {\n                                                                                                                            r0 = NSClassFromString(@\"RatingUtils\");\n                                                                                                                            *_pyRatingUtils = r0;\n                                                                                                                            if (r0 != 0x0) {\n                                                                                                                                    r0 = NSClassFromString(@\"SystemInfo\");\n                                                                                                                                    *_pySystemInfo = r0;\n                                                                                                                                    if (r0 != 0x0) {\n                                                                                                                                            r0 = NSClassFromString(@\"WebUtils\");\n                                                                                                                                            *_pyWebUtils = r0;\n                                                                                                                                            if (r0 == 0x0) {\n                                                                                                                                                    NSLog(@\"Unable to load the pyWebUtils class.\\n\");\n                                                                                                                                                    [**_NSApp terminate:r19];\n                                                                                                                                            }\n                                                                                                                                    }\n                                                                                                                                    else {\n                                                                                                                                            NSLog(@\"Unable to load the SystemInfo class.\\n\");\n                                                                                                                                            [**_NSApp terminate:r19];\n                                                                                                                                    }\n                                                                                                                            }\n                                                                                                                            else {\n                                                                                                                                    NSLog(@\"Unable to load the RatingUtils class.\\n\");\n                                                                                                                                    [**_NSApp terminate:r19];\n                                                                                                                            }\n                                                                                                                    }\n                                                                                                                    else {\n                                                                                                                            NSLog(@\"Unable to load the IconUtils class.\\n\");\n                                                                                                                            [**_NSApp terminate:r19];\n                                                                                                                    }\n                                                                                                            }\n                                                                                                            else {\n                                                                                                                    NSLog(@\"Unable to load the cxMenu class.\\n\");\n                                                                                                                    [**_NSApp terminate:r19];\n                                                                                                            }\n                                                                                                    }\n                                                                                                    else {\n                                                                                                            NSLog(@\"Unable to load the Engine class.\\n\");\n                                                                                                            [**_NSApp terminate:r19];\n                                                                                                    }\n                                                                                            }\n                                                                                            else {\n                                                                                                    NSLog(@\"Unable to load the InstallTask class.\\n\");\n                                                                                                    [**_NSApp terminate:r19];\n                                                                                            }\n                                                                                    }\n                                                                                    else {\n                                                                                            NSLog(@\"Unable to load the C4Profiles class.\\n\");\n                                                                                            [**_NSApp terminate:r19];\n                                                                                    }\n                                                                            }\n                                                                            else {\n                                                                                    NSLog(@\"Unable to load the DemoUtils class.\\n\");\n                                                                                    [**_NSApp terminate:r19];\n                                                                            }\n                                                                    }\n                                                                    else {\n                                                                            NSLog(@\"Unable to load the CDDetector class.\\n\");\n                                                                            [**_NSApp terminate:r19];\n                                                                    }\n                                                            }\n                                                            else {\n                                                                    NSLog(@\"Unable to load the BottleManagement class.\\n\");\n                                                                    [**_NSApp terminate:r19];\n                                                            }\n                                                    }\n                                                    else {\n                                                            NSLog(@\"Unable to load the AppDetector class.\\n\");\n                                                            [**_NSApp terminate:r19];\n                                                    }\n                                            }\n                                            else {\n                                                    NSLog(@\"Unable to load the BottleWrapper class.\\n\");\n                                                    [**_NSApp terminate:r19];\n                                            }\n                                    }\n                                    else {\n                                            NSLog(@\"Unable to load the BottleCollection class.\\n\");\n                                            [**_NSApp terminate:r19];\n                                    }\n                            }\n                            else {\n                                    NSLog(@\"Unable to load the cxUtils class.\\n\");\n                                    [**_NSApp terminate:r19];\n                            }\n                    }\n                    else {\n                            NSLog(@\"Unable to load the CXSetup class.\\n\");\n                            [**_NSApp terminate:r19];\n                    }\n            }\n            else {\n                    NSLog(@\"Unable to load the BottleQuery class.\\n\");\n                    [**_NSApp terminate:r19];\n            }\n    }\n    return;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a050",
+        "name": "+[CXSetupLib bottleQueryClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a050.c",
+        "sha256": "5cd273bc190ce0a402010006d00a9f9f5514e142db19f4d385ac5e21e1b62c8d",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib bottleQueryClass]\n// address: 0x10003a050\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_BottleQuery;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a05c",
+        "name": "+[CXSetupLib bottleManagementClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a05c.c",
+        "sha256": "167626a3856b0c2f30aca8be1eeda4b147ed59e34afccd39c7c853bd74113967",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib bottleManagementClass]\n// address: 0x10003a05c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_BottleManagement;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a068",
+        "name": "+[CXSetupLib cxSetupClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a068.c",
+        "sha256": "fe65a026ef32142763eb2e40d4f463665d75c637f4fd26d76c277b6cc42d82fa",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib cxSetupClass]\n// address: 0x10003a068\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_CXSetup;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a074",
+        "name": "+[CXSetupLib appDetectorClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a074.c",
+        "sha256": "b4a96dbc8bfa6cd58c370dcf9de0510622153c3bff16895195c7263e3a4fa334",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib appDetectorClass]\n// address: 0x10003a074\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_AppDetector;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a080",
+        "name": "+[CXSetupLib cdDetectorClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a080.c",
+        "sha256": "af268698a7121d2b97911bcb502e029781c0bd8b1e1771eb42ad61a570e8c28e",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib cdDetectorClass]\n// address: 0x10003a080\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_CDDetector;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a08c",
+        "name": "+[CXSetupLib demoUtilsClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a08c.c",
+        "sha256": "5228378d23ed09bd6dba505348aa7ff8472134a96dfa65df5e735a3ad84c8a99",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib demoUtilsClass]\n// address: 0x10003a08c\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_DemoUtils;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a098",
+        "name": "+[CXSetupLib c4ProfilesClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a098.c",
+        "sha256": "81583d6ca2dd7c8b68975a6e671dded1d35bd2f85a95d8bbe1d09cc6c17806e0",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib c4ProfilesClass]\n// address: 0x10003a098\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_C4Profiles;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a0a4",
+        "name": "+[CXSetupLib installTaskClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0a4.c",
+        "sha256": "6ada7724832fe0cf30e0a82a5f77ad31a9595180799088bf8d64c3a1c5649282",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib installTaskClass]\n// address: 0x10003a0a4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_pyInstallTask;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a0b0",
+        "name": "+[CXSetupLib cxAiEngineClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0b0.c",
+        "sha256": "fbe8010ba7ffbdf660e7f52b8c542607f6740a2f750791f1685962a7248a63f9",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib cxAiEngineClass]\n// address: 0x10003a0b0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_cxAiEngine;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a0bc",
+        "name": "+[CXSetupLib cxUtilsClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0bc.c",
+        "sha256": "e4460ee6dfe886605a87e4909363ae90b8b8661f368f60ab0939841c5426c880",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib cxUtilsClass]\n// address: 0x10003a0bc\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_cxUtils;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a0c8",
+        "name": "+[CXSetupLib cxMenuClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0c8.c",
+        "sha256": "48c80175e743806db2504d6c84a44bb654e498d198a812b626ee6e9960de0a1b",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib cxMenuClass]\n// address: 0x10003a0c8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_cxMenu;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a0d4",
+        "name": "+[CXSetupLib bottleCollectionClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0d4.c",
+        "sha256": "c482e4fe7f46f7c01cb7dda2bfecc5968971361e8ea98eab205942772290d294",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib bottleCollectionClass]\n// address: 0x10003a0d4\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_pyBottleCollection;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a0e0",
+        "name": "+[CXSetupLib bottleWrapperClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0e0.c",
+        "sha256": "92941b8607159c0596614c9730d303ec3911613cfd785c487af5ee4b4341a060",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib bottleWrapperClass]\n// address: 0x10003a0e0\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_pyBottleWrapper;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a0ec",
+        "name": "+[CXSetupLib iconUtilsClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0ec.c",
+        "sha256": "ecf783f3e3600eea71ba0808603b33b45e544e735c0791fb7a7a819a7f884c7c",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib iconUtilsClass]\n// address: 0x10003a0ec\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_pyIconUtils;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a0f8",
+        "name": "+[CXSetupLib ratingUtilsClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a0f8.c",
+        "sha256": "7feda42f4a406b45db2b602d39f5ee9c6d97f6e56c978dcbf7d0ac03dc7164fa",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib ratingUtilsClass]\n// address: 0x10003a0f8\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_pyRatingUtils;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a104",
+        "name": "+[CXSetupLib systemInfoClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a104.c",
+        "sha256": "66fc5ebe59e58b7e751526eb0c6f5ec717ac253cff19a7fde675e60cd44b04cd",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib systemInfoClass]\n// address: 0x10003a104\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_pySystemInfo;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    },
+    {
+      "record": {
+        "address": "0x10003a110",
+        "name": "+[CXSetupLib webUtilsClass]",
+        "status": "written",
+        "relative_path": "functions/0x10003a110.c",
+        "sha256": "a32fe294bbb4f149569bca54b3529727f91427f3f2866082ef769e48dc2b57a6",
+        "provider_source": {
+          "status": "unknown",
+          "reason": "source_not_available"
+        },
+        "body": {
+          "available": false,
+          "reason": "Hopper's public Python API does not expose complete function body ranges"
+        },
+        "limitations": [
+          "REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.",
+          "Results depend on Hopper's completed static analysis."
+        ]
+      },
+      "exported_text": "// rea decompile_all\n// name: +[CXSetupLib webUtilsClass]\n// address: 0x10003a110\n// body: unavailable\n// body_reason: Hopper's public Python API does not expose complete function body ranges\n// provider: Hopper Disassembler launcher-sha256:3546631e054690585330f168ea1fe158486a5ca98b17dd400766efb0f920b956 (hopper)\n// analysis_profile: 3007403bc1a761e7dce0aeabde7c8138cb8bb0f5f86e94abdabd2bfc5d3c9e2a\n// limitations: REA loaded a verified thin Mach-O image prepared from the original source. Identity and file offsets refer to the original file. The owned temporary image and its Hopper document close together, including on MCP shutdown.; Results depend on Hopper's completed static analysis.\n// pseudocode: provider-specific; not original source\n\n    r0 = *_pyWebUtils;\n    r0 = objc_retainAutoreleaseReturnValue(r0);\n    return r0;\n"
+    }
+  ]
+}

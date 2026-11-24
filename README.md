@@ -1,6 +1,8 @@
 # Cruzador
 
-Aplicativo macOS com interface própria para organizar bottles e executar programas Windows com um motor de compatibilidade externo. Inspirado em uma investigação local do CrossOver 26.3.
+Projeto de implementação própria do funcionamento do CrossOver para macOS, com o objetivo de não depender da instalação do CrossOver. A versão atual é um protótipo de gerenciamento e execução que ainda utiliza um motor externo.
+
+A [engenharia reversa do binário](docs/binary-reverse-engineering.md) preserva 644 exports de pseudocódigo nativo, metadados de cinco módulos Python empacotados e vínculos com recursos de interface. Esses achados orientam a reconstrução; não estabelecem equivalência integral.
 
 ## Usar
 
@@ -44,6 +46,14 @@ Esse script executa o CrossOver instalado, cria uma bottle em uma pasta nova `.l
 [Análise estática](docs/analysis.md), [inspeção REA do binário](evidence/crossover-native.evidence.json) e [proveniência dos scripts](evidence/script-sources.json). O manifesto original está em `crossover-initial.evidence.json`.
 
 Esta é uma primeira reconstrução dos fluxos de gerenciamento e execução. O Cruzador não reimplementa nem distribui Wine, DLLs, D3DMetal, DXVK ou componentes proprietários. Ainda não reproduz catálogo de compatibilidade, receitas CrossTie, importação/arquivamento de bottles ou ajustes gráficos avançados. O motor Wine externo tem montagem de comandos testada, mas precisa de validação com uma instalação real. A compatibilidade depende do motor, da arquitetura e do aplicativo Windows.
+
+## Verificar a investigação
+
+```sh
+python3 scripts/verify-reverse-evidence.py
+```
+
+O verificador confere hashes dos textos decompilados, identidade do alvo e vínculos entre achados e evidências. Não verifica a correção semântica do decompilador.
 
 ## Desenvolvimento
 
