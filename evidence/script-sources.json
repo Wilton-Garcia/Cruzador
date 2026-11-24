@@ -1,0 +1,43 @@
+{
+  "method": "read-only source inspection; no execution",
+  "sources": [
+    {
+      "path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/cxbottle",
+      "sha256": "e0509d0ecad44ac59a610b337f884bd93304d3eb2e1efee3a96c7db4eeba4005"
+    },
+    {
+      "path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/cxstart",
+      "sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953"
+    },
+    {
+      "path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953"
+    },
+    {
+      "path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/perl/CXBottle.pm",
+      "sha256": "83b2c8e1432b00d6867099ee26e68b3b4bebbfa85e8036052660fc91f827c074"
+    }
+  ],
+  "observations": [
+    {
+      "source": "bin/cxbottle",
+      "lines": "453-480",
+      "fact": "CLI exposes bottle creation, template selection and private/managed scope."
+    },
+    {
+      "source": "bin/cxstart",
+      "lines": "869-904,1245",
+      "fact": "CLI selects bottle, working directory and wait policy; final exec passes argument list."
+    },
+    {
+      "source": "lib/perl/CXBottle.pm",
+      "lines": "39-50,176-192,198-228",
+      "fact": "Bottle directories are scoped; lookup checks system.reg; validity checks directory and access separately."
+    }
+  ],
+  "limitations": [
+    "No runtime behavior established.",
+    "No complete native decompilation.",
+    "Graphic backends not traced."
+  ]
+}
