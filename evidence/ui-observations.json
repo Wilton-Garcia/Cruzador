@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "observed_on": "2026-11-24",
+  "target": "/Applications/CrossOver.app",
+  "bundle_version": "26.3",
+  "source": "Native accessibility observations through CUA; analyst-transcribed labels and enabled states",
+  "authorized_changes": ["Canceled the existing Steam installation after explicit user authorization"],
+  "observations": [
+    {"id":"home","surface":"Início","items":["Início","GARRAFAS","Instalar"]},
+    {"id":"install-catalog","surface":"Instalar uma Aplicação Windows","items":["Instalar uma aplicação não listada","Busca de aplicativos","Aplicações Populares","Classificação de compatibilidade"]},
+    {"id":"install-progress","surface":"Instalação Steam","items":["Indicador de progresso","Cancelar","Origem do instalador","Seleção da bottle","Dependências adicionais"],"result":"A instalação foi cancelada.; a bottle Steam continuou visível como Pronto"},
+    {"id":"unlisted-install","surface":"Aplicação não listada","items":["Instalar","Editar origem do instalador","Editar bottle de destino","Aviso de compatibilidade e dependências desconhecidas"]},
+    {"id":"bottle-detail","surface":"Steam","items":["Tipo da Garrafa: Windows 10","Status: Pronto","Aplicativos instalados","Executar Comando","Abrir Unidade C:","Instalar Aplicação na Garrafa","Encerrar Todos os Aplicativos","Excluir Garrafa","Gráficos","DLSS","MSync","Modo de alta resolução","Configuração do Wine","Controles de Jogos","Simular Reinicialização","Gerenciador de Tarefas","Configurações da Internet","DETALHES DA GARRAFA"]},
+    {"id":"graphics","surface":"Gráficos","items":["Auto","D3DMetal","DXMT","DXVK","Wine"],"selected":"Auto","changed":false},
+    {"id":"file-menu","surface":"Arquivo","items":["Abrir…","Arquivos Recentes","Limpar"]},
+    {"id":"bottle-menu","surface":"Garrafa","items":["Nova Garrafa…","Duplicar","Renomear","Excluir","Abrir Unidade C:","Exportar para Arquivo","Importar Arquivo de Garrafa","Publicar","Atualizar Garrafa Lançada","Garrafa padrão","Modo de alta resolução","Automatic graphics backend","D3DMetal graphics backend","DXMT graphics backend","DXVK graphics backend","Wine graphics backend","DLSS","Mach Semaphore-based Synchronization (MSync)","Instalar Software","Executar Comando","Abrir Shell","Sair","Forçar Saída"],"disabled_when_observed":["Atualizar Garrafa Lançada","Forçar Saída"]},
+    {"id":"configure-menu","surface":"Configurar","items":["Limpar e Reconstruir o Menu de Programas…","Reparar Garrafa…","Reparar Garrafas"]},
+    {"id":"application-menu","surface":"CrossOver","items":["Sobre CrossOver","Destravar CrossOver…","Verificar por Atualizações…","Ajustes…","Serviços","Ocultar CrossOver","Ocultar outros","Mostrar Tudo","Sair do CrossOver","Encerrar e Manter as Janelas"]},
+    {"id":"installer-preferences","surface":"Preferências / Instalar Assistente","items":["Executar o Assistente de Instalação quando o CrossOver abrir um arquivo .exe","Enable deprecated 32-bit bottles","Baixe automaticamente novos perfis de aplicações","Inclui entradas para aplicativos não testados e não funcionais","Cache de instaladores baixados","Limpar","Abrir no Finder"]},
+    {"id":"online-preferences","surface":"Preferências / Integração Online","items":["Verificar por atualizações do CrossOver","Lembrete sobre enviar avaliações"]},
+    {"id":"system-preferences","surface":"Preferências / Integração do Sistema","items":["Bottle Folder","Pasta de Programas","Reiniciar localização de bottles","Reiniciar localização de programas"],"observed_behavior_declarations":["Changing the bottle folder to a different filesystem can result in broken bottles.","Start Menu icons create launch icons in the configured programs folder."]},
+    {"id":"run-command","surface":"Executar Comando","items":["Utilizar Garrafa","Comando","Variáveis de ambiente","Navegar…","Criar arquivo de log","Additional Wine logging channels","Arquivo de log","Alterar…","Executar","Cancelar","Salvar comando no Menu de Programas"],"executed":false},
+    {"id":"environment-presets","surface":"Executar Comando / ambiente","items":["Metal Performance HUD","Don't advertise AVX capabilities"],"changed":false},
+    {"id":"new-bottle","surface":"Nova Garrafa","items":["Novo Nome da Garrafa","Tipo da Nova Garrafa","Criar","Cancelar"],"created":false},
+    {"id":"templates","surface":"Tipo da Nova Garrafa","items":["Windows 11","Windows 10","Windows 8","Windows 7","Windows Vista","Windows XP"],"selected":"Windows 10","changed":false}
+  ],
+  "limitations": [
+    "An observed control does not prove that its operation succeeds.",
+    "No account activation, purchase, compatibility rating submission or acceptance of license terms was performed.",
+    "No configuration value was changed during cataloging; only navigation and authorized cancellation were performed.",
+    "The original interface mixes Portuguese, English and Japanese labels in this installation.",
+    "Menus, dialogs or controls dependent on other apps, account state or running Windows programs may expose additional behavior.",
+    "Pixel screenshots were unavailable for the original application; this record covers accessibility text, not visual geometry."
+  ]
+}
