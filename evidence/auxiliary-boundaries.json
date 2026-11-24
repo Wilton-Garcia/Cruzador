@@ -1,0 +1,227 @@
+{
+  "version": 1,
+  "native_images": [
+    {
+      "id": "wineloader",
+      "source": "evidence/wineloader-macho.evidence.json",
+      "evidence_id": "ev_136a458c8b6abaefbee3d363fb241bd8c781e4cffda14c3e427d5174068f20ee",
+      "identity": {
+        "identity": {
+          "architecture": "x86_64",
+          "format": "mach-o",
+          "kind": "file",
+          "selection": null,
+          "sha256": "ed1318f573bbcd7f153c6fc4c0de66dcf5642b5967e9665991503acb29ea9159"
+        },
+        "local_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/CrossOver-Hosted Application/wineloader",
+        "name": "wineloader"
+      },
+      "dependencies": {
+        "exhaustive": true,
+        "items": [
+          {
+            "compatibility_version": "1.0.0",
+            "current_version": "1351.0.0",
+            "kind": "LC_LOAD_DYLIB",
+            "path": "/usr/lib/libSystem.B.dylib"
+          }
+        ],
+        "limitations": [],
+        "total": 1
+      },
+      "entrypoints": {
+        "exhaustive": true,
+        "items": [
+          {
+            "file_offset": 1648
+          }
+        ],
+        "limitations": [],
+        "total": 1
+      },
+      "exports_exhaustive": false
+    },
+    {
+      "id": "wineserver",
+      "source": "evidence/wineserver-macho.evidence.json",
+      "evidence_id": "ev_d6d34bfabf2cc381cc37a6125a850fac5bb5eb1375e82187acd95e12e8450d74",
+      "identity": {
+        "identity": {
+          "architecture": "x86_64",
+          "format": "mach-o",
+          "kind": "file",
+          "selection": null,
+          "sha256": "f9c4ed146c7d6dfc94334255907d4e0658218585085ca2107a5181b4deb474fc"
+        },
+        "local_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/CrossOver-Hosted Application/wineserver",
+        "name": "wineserver"
+      },
+      "dependencies": {
+        "exhaustive": true,
+        "items": [
+          {
+            "compatibility_version": "1.0.0",
+            "current_version": "1.0.0",
+            "kind": "LC_LOAD_DYLIB",
+            "path": "@rpath/libinotify.0.dylib"
+          },
+          {
+            "compatibility_version": "1.0.0",
+            "current_version": "1351.0.0",
+            "kind": "LC_LOAD_DYLIB",
+            "path": "/usr/lib/libSystem.B.dylib"
+          }
+        ],
+        "limitations": [],
+        "total": 2
+      },
+      "entrypoints": {
+        "exhaustive": true,
+        "items": [
+          {
+            "file_offset": 125872
+          }
+        ],
+        "limitations": [],
+        "total": 1
+      },
+      "exports_exhaustive": false
+    },
+    {
+      "id": "ntdll",
+      "source": "evidence/ntdll-macho.evidence.json",
+      "evidence_id": "ev_71ec9f4a8aa1464ee41dc7fd89dbfd73e73c21df51405add70f2a1026cf8a2af",
+      "identity": {
+        "identity": {
+          "architecture": "x86_64",
+          "format": "mach-o",
+          "kind": "file",
+          "selection": null,
+          "sha256": "ab32585d767ae631154235861a2e0e8ea61bd09267a2dd341a439e3e8ed071fc"
+        },
+        "local_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/wine/x86_64-unix/ntdll.so",
+        "name": "ntdll.so"
+      },
+      "dependencies": {
+        "exhaustive": true,
+        "items": [
+          {
+            "compatibility_version": "1.0.0",
+            "current_version": "275.0.0",
+            "kind": "LC_LOAD_DYLIB",
+            "path": "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit"
+          },
+          {
+            "compatibility_version": "150.0.0",
+            "current_version": "3107.0.0",
+            "kind": "LC_LOAD_DYLIB",
+            "path": "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation"
+          },
+          {
+            "compatibility_version": "1.0.0",
+            "current_version": "1226.0.0",
+            "kind": "LC_LOAD_DYLIB",
+            "path": "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+          },
+          {
+            "compatibility_version": "1.0.0",
+            "current_version": "1351.0.0",
+            "kind": "LC_LOAD_DYLIB",
+            "path": "/usr/lib/libSystem.B.dylib"
+          }
+        ],
+        "limitations": [],
+        "total": 4
+      },
+      "entrypoints": {
+        "exhaustive": true,
+        "items": [],
+        "limitations": [],
+        "total": 0
+      },
+      "exports_exhaustive": false
+    }
+  ],
+  "wrapper": {
+    "source": "evidence/auxiliary/winewrapper-imports.json",
+    "evidence_id": "ev_a17154bae9df058c4e9b66cd30205357c24b435c550bed57b068711bb833b1e3",
+    "artifact": {
+      "path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/wine/x86_64-windows/winewrapper.exe",
+      "sha256": "45df5cf009282977d213f5b0a7fab7575ef581b3089bd467e3be40e16cadf8b5",
+      "bytes": 204352
+    },
+    "coverage": {
+      "status": "complete",
+      "reason": null,
+      "examined_dlls": 9,
+      "imports": 137,
+      "delay_imports": 0
+    }
+  },
+  "loader_export": {
+    "index": "evidence/auxiliary/wineloader/decompile-index.json",
+    "records": 32,
+    "sha256": "ed1318f573bbcd7f153c6fc4c0de66dcf5642b5967e9665991503acb29ea9159"
+  },
+  "entry_decompilations": [
+    {
+      "source": "evidence/auxiliary/wineserver-entry.json",
+      "evidence_id": "ev_f0bd5fc635409768ecd7de31767c4aec4f9486b97d716a2979955d69f5d238ec",
+      "subject": {
+        "identity": {
+          "kind": "file",
+          "sha256": "f9c4ed146c7d6dfc94334255907d4e0658218585085ca2107a5181b4deb474fc",
+          "selection": null,
+          "format": "mach-o",
+          "architecture": "x86_64"
+        },
+        "name": "wineserver",
+        "local_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/CrossOver-Hosted Application/wineserver"
+      },
+      "parameters": {
+        "procedure": "EntryPoint"
+      }
+    },
+    {
+      "source": "evidence/auxiliary/ntdll-wine-main.json",
+      "evidence_id": "ev_5997f6bd1c61270c265ac9197ca471a5ca0856619a0cc8a01850259a2d7143a4",
+      "subject": {
+        "identity": {
+          "kind": "file",
+          "sha256": "ab32585d767ae631154235861a2e0e8ea61bd09267a2dd341a439e3e8ed071fc",
+          "selection": null,
+          "format": "mach-o",
+          "architecture": "x86_64"
+        },
+        "name": "ntdll.so",
+        "local_path": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib/wine/x86_64-unix/ntdll.so"
+      },
+      "parameters": {
+        "procedure": "___wine_main"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "kind": "static-decompilation",
+      "source": "evidence/auxiliary/wineloader/functions/0x100000670.c",
+      "fact": "Loader locates ntdll.so, uses dlopen and resolves __wine_main with dlsym; WINEDLLPATH participates in fallback lookup."
+    },
+    {
+      "kind": "static-decompilation",
+      "source": "evidence/auxiliary/ntdll-wine-main.json",
+      "fact": "__wine_main reads WINELOADERNOEXEC, handles help/version and initializes native runtime paths and a CoreFoundation run loop."
+    },
+    {
+      "kind": "static-decompilation",
+      "source": "evidence/auxiliary/wineserver-entry.json",
+      "fact": "Server entry parses options, registers signal handlers and configures descriptor resource limits before unnamed internal initialization calls."
+    }
+  ],
+  "limitations": [
+    "Selected images are x86_64; runtime execution under translation was not observed in this static step.",
+    "Exports of stripped images are not exhaustive inventories of internal functions.",
+    "Server protocol, Win32 semantics and graphics internals were not recovered in full.",
+    "Pseudocode is not original source; complete native body ranges remain unavailable."
+  ]
+}
