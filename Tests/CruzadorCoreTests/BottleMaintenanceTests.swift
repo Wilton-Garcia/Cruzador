@@ -20,6 +20,7 @@ final class BottleMaintenanceTests: XCTestCase {
         try FileManager.default.createSymbolicLink(atPath: prefix.appendingPathComponent("local-link").path, withDestinationPath: prefix.appendingPathComponent("drive_c").path)
         try FileManager.default.createSymbolicLink(atPath: prefix.appendingPathComponent("external-link").path, withDestinationPath: "/")
         bottle.state = .ready; bottle.apps = [WindowsApp(name: "App", path: prefix.appendingPathComponent("drive_c/test.exe").path, options: LaunchOptions(workingDirectory: prefix.appendingPathComponent("drive_c").path))]
+        bottle.configuration = BottleSettings(executionOptions: LaunchOptions(workingDirectory: prefix.appendingPathComponent("drive_c").path, environment: ["VALUE": "literal"]))
         var library = Library(); library.bottles = [bottle]; try store.save(library)
         return (BottleMaintenance(store: store, runner: CommandRunner()), bottle)
     }
@@ -32,6 +33,8 @@ final class BottleMaintenanceTests: XCTestCase {
         let prefix = maintenance.store.prefix(for: copy)
         XCTAssertEqual(copy.apps[0].path, prefix.appendingPathComponent("drive_c/test.exe").path)
         XCTAssertEqual(copy.apps[0].options?.workingDirectory, prefix.appendingPathComponent("drive_c").path)
+        XCTAssertEqual(copy.requestedSettings.executionOptions.workingDirectory, prefix.appendingPathComponent("drive_c").path)
+        XCTAssertEqual(copy.requestedSettings.executionOptions.environment, ["VALUE": "literal"])
         XCTAssertEqual(try FileManager.default.destinationOfSymbolicLink(atPath: prefix.appendingPathComponent("local-link").path), prefix.appendingPathComponent("drive_c").path)
         XCTAssertEqual(try FileManager.default.destinationOfSymbolicLink(atPath: prefix.appendingPathComponent("external-link").path), "/")
         do {
@@ -42,6 +45,7 @@ final class BottleMaintenanceTests: XCTestCase {
         try await maintenance.export(id: copy.id, destination: package)
         let imported = try maintenance.importBottle(from: package, engine: bottle.engine)
         XCTAssertEqual(imported.state, .interrupted)
+        XCTAssertEqual(imported.requestedSettings.executionOptions.workingDirectory, maintenance.store.prefix(for: imported).appendingPathComponent("drive_c").path)
         XCTAssertEqual(maintenance.store.health(of: imported), .initialized)
         var preferred = try maintenance.store.load()
         preferred.preferences.defaultBottleID = copy.id

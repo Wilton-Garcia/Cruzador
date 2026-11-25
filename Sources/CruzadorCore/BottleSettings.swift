@@ -6,7 +6,18 @@ public enum GraphicsBackend: String, Codable, CaseIterable, Sendable {
 }
 public struct BottleSettings: Codable, Equatable, Sendable {
     public var graphics: GraphicsBackend
-    public init(graphics: GraphicsBackend = .automatic) { self.graphics = graphics }
+    public var synchronization: SynchronizationMode
+    public var executionOptions: LaunchOptions
+    public init(graphics: GraphicsBackend = .automatic, synchronization: SynchronizationMode = .automatic, executionOptions: LaunchOptions = LaunchOptions()) {
+        self.graphics = graphics; self.synchronization = synchronization; self.executionOptions = executionOptions
+    }
+    private enum CodingKeys: String, CodingKey { case graphics, synchronization, executionOptions }
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        graphics = try values.decodeIfPresent(GraphicsBackend.self, forKey: .graphics) ?? .automatic
+        synchronization = try values.decodeIfPresent(SynchronizationMode.self, forKey: .synchronization) ?? .automatic
+        executionOptions = try values.decodeIfPresent(LaunchOptions.self, forKey: .executionOptions) ?? LaunchOptions()
+    }
 }
 public struct GraphicsSupport: Identifiable, Codable, Sendable {
     public var id: GraphicsBackend { backend }
@@ -61,13 +72,21 @@ public enum GraphicsConfiguration {
 public struct BottleSettingsStore: Sendable {
     public let store: LibraryStore
     public init(store: LibraryStore) { self.store = store }
-    /// Graphics options affect new client processes; no live prefix or DLL mutation.
-    public func save(_ settings: BottleSettings, bottleID: UUID) throws {
-        var library = try store.load()
-        guard let index = library.bottles.firstIndex(where: { $0.id == bottleID }) else { throw CruzadorError.invalid("Bottle não encontrada.") }
-        _ = try GraphicsConfiguration.environment(backend: settings.graphics, engine: library.bottles[index].engine, explicitOverride: nil)
-        if library.bottles[index].requestedSettings == settings { return }
-        library.bottles[index].configuration = settings
-        try store.save(library)
+    public func save(_ settings: BottleSettings, bottleID: UUID, runner: CommandRunner, operationID: UUID = UUID()) async throws {
+        let library = try store.load()
+        guard let bottle = library.bottles.first(where: { $0.id == bottleID }) else { throw CruzadorError.invalid("Bottle não encontrada.") }
+        try settings.executionOptions.validate()
+        _ = try GraphicsConfiguration.environment(backend: settings.graphics, engine: bottle.engine, explicitOverride: settings.executionOptions.environment["WINE_D3D_CONFIG"])
+        let next = try SynchronizationConfiguration.environment(settings: settings, engine: bottle.engine)
+        if bottle.requestedSettings == settings { return }
+        let previous = try SynchronizationConfiguration.environment(settings: bottle.requestedSettings, engine: bottle.engine)
+        if previous != next, store.health(of: bottle) != .absent {
+            let result = try await runner.run(EngineCommands.make(.waitForIdle, bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("settings-\(operationID).log"), operationID: operationID)
+            try result.requireSuccess()
+        }
+        var current = try store.load()
+        guard let index = current.bottles.firstIndex(where: { $0.id == bottleID }), current.bottles[index].requestedSettings == bottle.requestedSettings else { throw CruzadorError.invalid("A configuração mudou durante a espera. Confira e tente novamente.") }
+        current.bottles[index].configuration = settings
+        try store.save(current)
     }
 }

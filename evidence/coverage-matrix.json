@@ -757,10 +757,33 @@
         "ib:f6c87051fb1cb1228e87"
       ],
       "reverse_knowledge": "native-and-python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Confirmação e metadados conhecidos; implementação e ciclo de reinício não reconstruídos.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/Synchronization.swift",
+        "Sources/CruzadorCore/BottleSettings.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/CruzadorCore/WineRuntime.swift",
+        "config/wine-msync-runtime-lock.json",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/SynchronizationTests.swift",
+          "name": "testRealMSyncRuntimeAndServerMode",
+          "scope": "Motor opcional real em Apple Silicon: MSync, comando Windows, troca para servidor e espera final."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/SynchronizationTests.swift",
+          "name": "testCancelledSettingsWaitNeverCommitsNewMode",
+          "scope": "Espera cancelada preserva o modo anterior."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/SynchronizationTests.swift",
+          "name": "testSettingsCommitOnlyAfterSuccessfulWaitAndAreIdempotent",
+          "scope": "Espera com falha não salva; sucesso e repetição idempotente."
+        }
+      ],
+      "remaining_gap": "Fluxo próprio no pacote opcional WineCX validado localmente; equivalência integral, Intel, desempenho e jogos não estabelecidos. Wine 11.21 padrão não oferece MSync.",
       "independent_equivalence_established": false
     },
     {
@@ -2822,37 +2845,40 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "53222fb7ec677cbba0c33440c8e275e96179bddf19a53cd41a4e46f7a8096247",
-    "Sources/Cruzador/ContentView.swift": "98a22ff005d911aee356669f106fca8cd2cdaa1270b77b8522043e2ea9626bfa",
+    "Sources/Cruzador/AppModel.swift": "935cd7c9aae6d01a0611b1f3cd9701b3de01b8841917b7371dad41418eb21c0c",
+    "Sources/Cruzador/ContentView.swift": "7ecbc9fe34007edfdacebf5c42a99433991262649eb793b2df50ea7df2d99a60",
     "Sources/Cruzador/CruzadorApp.swift": "b99938955afd29ca18bce312d7ee79b9fb165b0ba69c82ccc79fdd6901dcf897",
     "Sources/CruzadorCore/AppDiscovery.swift": "bd7e56c17df92e3fed7ea7e945e72d9a684237210abfdc77b44ec3e25fe110b5",
     "Sources/CruzadorCore/BottleLifecycle.swift": "6535f188d6c34bac80fee8b582aa790a79b0df9327c7001066f763442355e13d",
-    "Sources/CruzadorCore/BottleMaintenance.swift": "cd3f76a77b279aaf1c32cec511e30353c2b6c6d392a38139cb135c3166e266ab",
-    "Sources/CruzadorCore/BottleSettings.swift": "6d04cc3af245bac79bc7b2792bfe654b7b324448c67c9155aa4b54c0073e5e96",
+    "Sources/CruzadorCore/BottleMaintenance.swift": "bdcf4673ab8d4577edad97cefc7f3f1f4e751f8d2b39b4d5fecacc56e578b29e",
+    "Sources/CruzadorCore/BottleSettings.swift": "e944ed642353268798014e1a85ef9b32d472f70af6d57418eb5b0f2d6b0ed34d",
     "Sources/CruzadorCore/CommandRunner.swift": "c62b19e9cd8396db312126833bb0c94dcbfbb9aac47a0a6a70843c3735eaf376",
-    "Sources/CruzadorCore/EngineCommands.swift": "938b5b1bd9d5d18b44c1bd9aba7ebb70a4c5ca9a3d9409a54ba55e4de6edcc31",
+    "Sources/CruzadorCore/EngineCommands.swift": "40db75e9c066b569684ac17274c710e04c44655fa04818d35854cf9bd851cb01",
     "Sources/CruzadorCore/Installers.swift": "1cefe10fa581794025bed25174854ef1ab3363a1483a6061dbcc476db82e8df7",
     "Sources/CruzadorCore/LaunchRequest.swift": "242f32cadb35c954d475a6a21fe06edba47a1404ffb8f436202551d3e769fa7f",
     "Sources/CruzadorCore/LibraryStore.swift": "e19b3c07bcac9f96ab49c40f64ca7e03a1143daf8fe396ca032fb6dd84221597",
-    "Sources/CruzadorCore/Models.swift": "110a3e71ea4e1774877e72790b0bd0eae1c879d85fde263445eb91c25a1c15bb",
+    "Sources/CruzadorCore/Models.swift": "c652532426a5e7d460072be8a0d0e47140a4bc8a897e55bb00ad7a44d9c18195",
     "Sources/CruzadorCore/Recipes.swift": "80c78a3b25eb86636fddb394d792c33e93be09d7fe7d0d968a37605474efa57b",
+    "Sources/CruzadorCore/Synchronization.swift": "a626c0ec9687a5c2d40a44f568e6dd14a179b18d04863f259f043afde32ff2e0",
     "Sources/CruzadorCore/WindowsFile.swift": "54772c12b750ab3b8e9d93b82b6a9cf15c8ce7c770c9467d82caa54e15299bfe",
     "Sources/CruzadorCore/WineRegistry.swift": "38eca8ce1a9efac336823d28b3f7a96398b131c463ed4e29f1e383e78b351551",
-    "Sources/CruzadorCore/WineRuntime.swift": "26f30b33750afea74f7312f79710ac04b5cb9f327201210f09608fc0d6d2f3f0",
+    "Sources/CruzadorCore/WineRuntime.swift": "f71319665641aecfb1a00273d08648b20253bef2d7be14d42e879b05268c54e0",
     "Tests/CruzadorCoreTests/BottleLifecycleTests.swift": "5435298b8b533ee151817535977381c5ccb08db4455d86840e43fbbfdb0e097d",
-    "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "2894370226dcc035b17a47fb51c6ee4f7fbd23fd67e4ca61d6ebadb7ad12bc73",
+    "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "ba2a5519816b81ebbb6c920530053a1b45a13181de5d5fc2a3934875c2335821",
     "Tests/CruzadorCoreTests/CommandRunnerTests.swift": "20473c4a7489ce15107d0744fc7d868edc396fc50573f497f78a78521bb0d889",
     "Tests/CruzadorCoreTests/CoreTests.swift": "3b6378c2a79b38d3c2260c59acce4fad78146187a9e3c90078f4ed07f1e82e8a",
     "Tests/CruzadorCoreTests/DiscoveryTests.swift": "c1eefbaf48c39a90f79ff945d2d8546771cb4d955f6d58eadb6ee8ac261306e4",
-    "Tests/CruzadorCoreTests/GraphicsTests.swift": "99b27aa26f831e09d013a38ccc61c4bd77dde9dfd76a52cb87eaf05d4b606220",
+    "Tests/CruzadorCoreTests/GraphicsTests.swift": "de9fe7d1177f0798149d606694e4be49bbe8a9a084b4c19c77a26e6f61b04867",
     "Tests/CruzadorCoreTests/InstallerTests.swift": "a8cd8908e6b767528b5907de1b3699ac138e6d80e1011b0b141ab615768b939d",
     "Tests/CruzadorCoreTests/LaunchTests.swift": "7f7adafe8378029fd5b1184003e896ad3d5f7fe55f408e97527dade3e36fe210",
-    "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "847fac11186117ef7575e56a767158c3dcec956d9a85994d6eb5b09e3f2b0276",
+    "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "ddb419f623d0aafb68ad3058410d30f78806bae10ebd8705b58f854724105713",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "0f7b7703620b0e9aa3aa78f1fd549365a89f7d5530d422ed853b9c3c962d61d3",
     "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "6e9fea8739572685433288976cb22950620c48d3921b95b58fac88d4c1baf2f6",
     "Tests/CruzadorCoreTests/RecipeTests.swift": "e67bf964843365aeb40fc73925535319982e77eedd63e326ff6838eadfbaab3c",
-    "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "1c85661de661d1262553d1f7edbcf52d2820c10f0504718add903d9039afa376",
+    "Tests/CruzadorCoreTests/SynchronizationTests.swift": "0ab0e01437c99e8c0fe104b2d9d6adc952f3eb6b9490c1d97cef9dff78064cb4",
+    "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "993713671d71006a834e46dbf3a82961eb24cd2b1da01528d58633d2557b54e8",
     "config/recipes.json": "d61a4fe567b4196894446bebf77bdc05aa6d74c7dd911d654380cc8a928876ee",
+    "config/wine-msync-runtime-lock.json": "cbaae271f4a0fbaea717e13bf49c41a6840e839829e9c20a627ace5f1444c992",
     "tools/build-d3d9-probe.py": "2dba657bc29498e1a1eb5cde39b867e09208d8984b12e6bbaf3e01647a49429f"
   },
   "counts": {
@@ -2861,8 +2887,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 25,
-      "missing": 15
+      "partial": 26,
+      "missing": 14
     }
   },
   "limitations": [

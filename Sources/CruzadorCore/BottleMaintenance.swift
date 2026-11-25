@@ -86,6 +86,9 @@ public struct BottleMaintenance: Sendable {
             return mapped
         }
         copy.configuration = bottle.configuration
+        if let working = copy.configuration?.executionOptions.workingDirectory {
+            copy.configuration?.executionOptions.workingDirectory = relocate(working, from: originalPrefix, to: destination.path)
+        }
         copy.installations = bottle.installations
         copy.state = requiresPreparation ? .interrupted : bottle.state
         if requiresPreparation { copy.lastError = "Bottle importada. Prepare novamente com o motor selecionado antes de executar aplicativos." }

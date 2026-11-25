@@ -65,6 +65,8 @@ def prepare(lock,archive,licenses,destination):
         if manifest['archiveSHA256']!=lock['archive']['sha256']:raise ValueError('Existing runtime belongs to another archive; preserve it before replacement')
         for key in ['identifier','version','sourceURL','sourceRevision','architectures']:
             if manifest[key]!=lock[key]:raise ValueError(f'Existing runtime metadata differs: {key}')
+        for key in ['formatVersion','minimumMacOSVersion','features','builderRevision']:
+            if manifest.get(key,1 if key=='formatVersion' else None)!=lock.get(key,1 if key=='formatVersion' else None):raise ValueError(f'Existing runtime metadata differs: {key}')
         if manifest['licenseFiles']!=list(licenses):raise ValueError('Existing license selection differs')
         for relative,source in licenses.items():
             if sha(destination/relative)!=sha(source):raise ValueError(f'Existing license differs: {relative}')
@@ -72,7 +74,7 @@ def prepare(lock,archive,licenses,destination):
     destination.parent.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='runtime-stage-',dir=destination.parent) as temporary:
         stage=Path(temporary)
-        with tarfile.open(archive,'r:xz') as package:
+        with tarfile.open(archive,'r:*') as package:
             members=package.getmembers();validate_members(members);package.extractall(stage,members=members)
         runtime=stage/lock['archive']['runtimePath']
         if not runtime.is_dir():raise ValueError('Selected runtime directory is absent from archive')
@@ -83,23 +85,25 @@ def prepare(lock,archive,licenses,destination):
         for relative in ['bin/wine','bin/wineserver']:
             if not (runtime/relative).is_file() or not os.access(runtime/relative,os.X_OK):raise ValueError(f'Missing executable: {relative}')
         (runtime/'runtime-files.json').write_text(json.dumps(inventory(runtime),ensure_ascii=False,indent=2)+'\n')
-        manifest={'formatVersion':1,'identifier':lock['identifier'],'version':lock['version'],'sourceURL':lock['sourceURL'],'sourceRevision':lock['sourceRevision'],
+        manifest={'formatVersion':lock.get('formatVersion',1),'identifier':lock['identifier'],'version':lock['version'],'sourceURL':lock['sourceURL'],'sourceRevision':lock['sourceRevision'],
                   'providerRelease':lock['providerRelease'],'archiveSHA256':lock['archive']['sha256'],'architectures':lock['architectures'],
                   'wineExecutable':'bin/wine','serverExecutable':'bin/wineserver','licenseFiles':list(licenses),'inventorySHA256':sha(runtime/'runtime-files.json'),
                   'distributionStatus':'development-package; complete third-party attribution review remains unverified'}
+        for key in ['minimumMacOSVersion','features','builderRevision']:
+            if key in lock:manifest[key]=lock[key]
         (runtime/'runtime.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
         verify(runtime)
         runtime.rename(destination)
     return manifest
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--destination',type=Path,default=ROOT/'.local/Runtime-11.21');parser.add_argument('--verify',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--destination',type=Path,default=ROOT/'.local/Runtime-11.21');parser.add_argument('--verify',action='store_true');parser.add_argument('--lock',type=Path,default=ROOT/'config/wine-runtime-lock.json');args=parser.parse_args()
     if args.verify:
         manifest=verify(args.destination.resolve())
     else:
-        lock=json.loads((ROOT/'config/wine-runtime-lock.json').read_text());cache=ROOT/'.local/downloads'
+        lock=json.loads(args.lock.read_text());cache=ROOT/'.local/downloads'
         archive=fetch(lock['archive'],cache);licenses={}
         for item in lock['licenses']:
-            cached=fetch(dict(item,name='wine-11.21-'+Path(item['path']).name),cache);licenses[item['path']]=cached
+            cached=fetch(dict(item,name=lock['version']+'-'+Path(item['path']).name),cache);licenses[item['path']]=cached
         manifest=prepare(lock,archive,licenses,args.destination.resolve())
     print(json.dumps({'runtime':str(args.destination.resolve()),'version':manifest['version'],'archiveSHA256':manifest['archiveSHA256']},indent=2))

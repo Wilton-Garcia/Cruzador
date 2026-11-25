@@ -1,0 +1,100 @@
+{
+  "observations": [
+    {
+      "log": "msync: bootstrapped mach port on wine-2d70e9b-msync.\nmsync: up and running.\n00b4:err:ntoskrnl:ZwLoadDriver failed to create driver L\"\\\\Registry\\\\Machine\\\\System\\\\CurrentControlSet\\\\Services\\\\winebth\": c00000e5\n0038:fixme:service:scmdatabase_autostart_services Auto-start service L\"winebth\" failed to start: 1359\nCRUZADOR_SYNC_1_GLOBAL_OK\r\n",
+      "marker": "CRUZADOR_SYNC_1_GLOBAL_OK",
+      "mode": "msync"
+    },
+    {
+      "log": "00b4:err:ntoskrnl:ZwLoadDriver failed to create driver L\"\\\\Registry\\\\Machine\\\\System\\\\CurrentControlSet\\\\Services\\\\winebth\": c00000e5\n0038:fixme:service:scmdatabase_autostart_services Auto-start service L\"winebth\" failed to start: 1359\nCRUZADOR_SYNC_0_GLOBAL_OK\r\n",
+      "marker": "CRUZADOR_SYNC_0_GLOBAL_OK",
+      "mode": "server"
+    }
+  ],
+  "root": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-abdd34cb-cada-46ef-aba5-bae7f4931ca8",
+  "runtime": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-WineCX-26.3",
+  "server_wait_exit": 0,
+  "kind": "observed-local-execution",
+  "runtime_manifest": {
+    "formatVersion": 2,
+    "identifier": "org.winehq.wine",
+    "version": "winecx-26.3.0-wine-11.19",
+    "sourceURL": "https://github.com/dappermint/winecx/tree/9f3f6447844add700bc0dde650e4f398fd5f69ab",
+    "sourceRevision": "9f3f6447844add700bc0dde650e4f398fd5f69ab",
+    "providerRelease": "https://github.com/dappermint/winecx-gptk/releases/tag/runtime-v4.8.1",
+    "archiveSHA256": "e8b23bafa4e41be6c8ad468581bc92b86758bfd13c6fb4091585a33a4ec257d7",
+    "architectures": [
+      "x86_64"
+    ],
+    "wineExecutable": "bin/wine",
+    "serverExecutable": "bin/wineserver",
+    "licenseFiles": [
+      "licenses/Wine/LICENSE",
+      "licenses/Wine/COPYING.LIB"
+    ],
+    "inventorySHA256": "854332a4f1abe55e34f9d84b51aa471e75d25bf38a9c367924edafccfac8a753",
+    "distributionStatus": "development-package; complete third-party attribution review remains unverified",
+    "minimumMacOSVersion": {
+      "major": 26,
+      "minor": 0,
+      "patch": 0
+    },
+    "features": [
+      "msync"
+    ],
+    "builderRevision": "58b27bf5a288eee60ffabe9a7a28dee3c576750e"
+  },
+  "host": {
+    "architecture": "arm64",
+    "macOS": "27.2.1"
+  },
+  "supervision": {
+    "timeout_seconds": 150.0,
+    "elapsed_seconds": 75.865468208,
+    "result": 0,
+    "timeout_cleanup": [],
+    "limitations": [
+      "CPU time and peak process-family memory were not measured."
+    ]
+  },
+  "logs": [
+    {
+      "path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-abdd34cb-cada-46ef-aba5-bae7f4931ca8/Logs/final-wait.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tail": ""
+    },
+    {
+      "path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-abdd34cb-cada-46ef-aba5-bae7f4931ca8/Logs/initialize.log",
+      "sha256": "e261d87b936d96fcb33643382e0b35283989894dbc09338d2f951662144968cb",
+      "tail": "t_local_server_stream Failed: 0x80004002\n009c:err:setupapi:SetupDefaultQueueCallbackW copy error 1812 L\"@C:\\\\windows\\\\system32\\\\drivers\\\\wineusb.sys,-1\" -> L\"C:\\\\windows\\\\inf\\\\wineusb.inf\"\n009c:fixme:file:NtLockFile I/O completion on lock not implemented yet\n009c:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION\n009c:fixme:msi:internal_ui_handler internal UI not implemented for message 0x0b000000 (UI level = 1)\n009c:fixme:msi:internal_ui_handler internal UI not implemented for message 0x0b000000 (UI level = 1)\n011c:fixme:msg:pack_message msg 14 (WM_ERASEBKGND) not supported yet\n0128:fixme:icon:NtUserDrawIconEx Error retrieving icon frame 0\n0128:fixme:icon:NtUserDrawIconEx Error retrieving icon frame 0\n002c:err:setupapi:do_file_copyW Unsupported style(s) 0x10\n0144:err:ntoskrnl:ZwLoadDriver failed to create driver L\"\\\\Registry\\\\Machine\\\\System\\\\CurrentControlSet\\\\Services\\\\winebth\": c00000e5\n002c:err:setupapi:SetupDiInstallDevice Failed to start service L\"winebth\" for device L\"ROOT\\\\WINE\\\\winebth\", error 1359.\n002c:err:setupapi:SetupDiInstallDevice Failed to control service L\"winebth\" for device L\"ROOT\\\\WINE\\\\winebth\", error 1062.\n002c:err:setupapi:do_file_copyW Unsupported style(s) 0x10\n0170:err:setupapi:do_file_copyW Unsupported style(s) 0x10\n0170:err:setupapi:do_file_copyW Unsupported style(s) 0x10\n0058:err:ole:start_rpcss Failed to start RpcSs service\n01b8:err:rpc:I_RpcReceive we got fault packet with status 0x1c010003\n01d4:err:rpc:RpcServerAssoc_FindContextHandle no context handle found for uuid {9180ab39-ce92-461e-833e-2e590eae1501}, guard 0000000000000000\n01b8:err:rpc:I_RpcReceive we got fault packet with status 0x1c00001a\n01a8:fixme:service:scmdatabase_autostart_services Auto-start service L\"MountMgr\" failed to start: 1053\n01a8:fixme:service:scmdatabase_autostart_services Auto-start service L\"PlugPlay\" failed to start: 1115\n01a8:fixme:service:scmdatabase_autostart_services Auto-start service L\"Eventlog\" failed to start: 1115\n01a8:fixme:service:scmdatabase_autostart_services Auto-start service L\"nsiproxy\" failed to start: 1115\n01a8:fixme:service:scmdatabase_autostart_services Auto-start service L\"NDIS\" failed to start: 1115\n01a8:fixme:service:scmdatabase_autostart_services Auto-start service L\"winebus\" failed to start: 1115\n01a8:fixme:service:scmdatabase_autostart_services Auto-start service L\"winebth\" failed to start: 1115\n"
+    },
+    {
+      "path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-abdd34cb-cada-46ef-aba5-bae7f4931ca8/Logs/msync.log",
+      "sha256": "a0cca3207aa5d2e668529700ae8a6fd103588195b52122fa0eb103df7e88e8a2",
+      "tail": "msync: bootstrapped mach port on wine-2d70e9b-msync.\nmsync: up and running.\n00b4:err:ntoskrnl:ZwLoadDriver failed to create driver L\"\\\\Registry\\\\Machine\\\\System\\\\CurrentControlSet\\\\Services\\\\winebth\": c00000e5\n0038:fixme:service:scmdatabase_autostart_services Auto-start service L\"winebth\" failed to start: 1359\nCRUZADOR_SYNC_1_GLOBAL_OK\n"
+    },
+    {
+      "path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-abdd34cb-cada-46ef-aba5-bae7f4931ca8/Logs/server.log",
+      "sha256": "04f47dae98f2166e0d9ab53f40e0da9b81ed133b5948534c520e141553e47759",
+      "tail": "00b4:err:ntoskrnl:ZwLoadDriver failed to create driver L\"\\\\Registry\\\\Machine\\\\System\\\\CurrentControlSet\\\\Services\\\\winebth\": c00000e5\n0038:fixme:service:scmdatabase_autostart_services Auto-start service L\"winebth\" failed to start: 1359\nCRUZADOR_SYNC_0_GLOBAL_OK\n"
+    },
+    {
+      "path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-abdd34cb-cada-46ef-aba5-bae7f4931ca8/Logs/settings-1D5B9A25-6C0A-4762-B02F-54134821BD2C.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tail": ""
+    }
+  ],
+  "source_contract": {
+    "client": "https://github.com/dappermint/winecx/blob/9f3f6447844add700bc0dde650e4f398fd5f69ab/dlls/ntdll/unix/msync.c",
+    "server": "https://github.com/dappermint/winecx/blob/9f3f6447844add700bc0dde650e4f398fd5f69ab/server/msync.c",
+    "fact": "Client and server enable MSync when WINEMSYNC is present and atoi(value) is nonzero; unset means disabled. Their modes must agree."
+  },
+  "limitations": [
+    "Local Apple Silicon with Rosetta only; optional runtime not verified on Intel hardware.",
+    "Wine diagnostics include Bluetooth service startup failures and initialization OLE/setup warnings; successful cmd commands do not establish these services work.",
+    "No performance comparison, game compatibility, graphics backend or broad Windows application validation for the optional runtime.",
+    "The default Wine 11.21 package is preserved.",
+    "Complete third-party attribution/source correspondence for public distribution is unverified.",
+    "wineserver wait success is not a census of arbitrary detached helpers."
+  ]
+}

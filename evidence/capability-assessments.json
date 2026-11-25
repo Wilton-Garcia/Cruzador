@@ -758,10 +758,33 @@
         "ib:f6c87051fb1cb1228e87"
       ],
       "reverse_knowledge": "native-and-python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Confirmação e metadados conhecidos; implementação e ciclo de reinício não reconstruídos.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/Synchronization.swift",
+        "Sources/CruzadorCore/BottleSettings.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/CruzadorCore/WineRuntime.swift",
+        "config/wine-msync-runtime-lock.json",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/SynchronizationTests.swift",
+          "name": "testRealMSyncRuntimeAndServerMode",
+          "scope": "Motor opcional real em Apple Silicon: MSync, comando Windows, troca para servidor e espera final."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/SynchronizationTests.swift",
+          "name": "testCancelledSettingsWaitNeverCommitsNewMode",
+          "scope": "Espera cancelada preserva o modo anterior."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/SynchronizationTests.swift",
+          "name": "testSettingsCommitOnlyAfterSuccessfulWaitAndAreIdempotent",
+          "scope": "Espera com falha não salva; sucesso e repetição idempotente."
+        }
+      ],
+      "remaining_gap": "Fluxo próprio no pacote opcional WineCX validado localmente; equivalência integral, Intel, desempenho e jogos não estabelecidos. Wine 11.21 padrão não oferece MSync.",
       "independent_equivalence_established": false
     },
     {

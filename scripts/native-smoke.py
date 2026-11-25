@@ -16,7 +16,9 @@ parser.add_argument('--runtime', type=Path, help='Select a prepared Wine package
 parser.add_argument('--installer-msi', type=Path, help='Optional pinned 7-Zip MSI for positive installation validation')
 parser.add_argument('--recipes', type=Path, help='Optional own recipe catalog for end-to-end 7-Zip recipe validation')
 parser.add_argument('--timeout', type=float, default=120, help='Overall test deadline in seconds (default: 120); timeout retains logs and cleans the isolated Wine server')
+parser.add_argument('--msync', action='store_true', help='Test the optional MSync runtime and switching back to server synchronization')
 args = parser.parse_args()
+if args.msync and not args.runtime: parser.error('--msync requires --runtime')
 if not math.isfinite(args.timeout) or args.timeout <= 0: parser.error('--timeout must be positive')
 project = Path(__file__).resolve().parent.parent
 root = project / '.local' / ('smoke-' + str(uuid.uuid4()))
@@ -24,6 +26,9 @@ root.parent.mkdir(exist_ok=True)
 if args.runtime:
     environment = dict(os.environ, CRUZADOR_PACKAGED_RUNTIME=str(args.runtime.resolve()), CRUZADOR_PACKAGED_SMOKE_ROOT=str(root))
     selection = 'PackagedNativeSmokeTests'
+    if args.msync:
+        environment.update(CRUZADOR_MSYNC_RUNTIME=str(args.runtime.resolve()), CRUZADOR_MSYNC_ROOT=str(root))
+        selection = 'SynchronizationTests.testRealMSyncRuntimeAndServerMode'
 else:
     environment = dict(os.environ, CRUZADOR_NATIVE_SMOKE_ROOT=str(root))
     selection = 'NativeSmokeTests.testInstalledCrossOverCreatesBottleAndRunsWindowsCommand'
@@ -71,7 +76,7 @@ print('Test output:', log)
 if result == 124:
     print('Timeout: inspect retained logs and the isolated prefix before retrying.')
 
-if args.runtime and result == 0:
+if args.runtime and not args.msync and result == 0:
     import struct
     report_path = root / 'runtime-smoke.json'
     report = json.loads(report_path.read_text())

@@ -35,7 +35,7 @@ final class GraphicsTests: XCTestCase {
         let bottle = Bottle(name: "Graphics", engine: engine)
         var library = Library(); library.bottles = [bottle]; try store.save(library)
         let settings = BottleSettings(graphics: .vulkan)
-        try BottleSettingsStore(store: store).save(settings, bottleID: bottle.id)
+        try await BottleSettingsStore(store: store).save(settings, bottleID: bottle.id, runner: CommandRunner())
         let saved = try store.load().bottles[0]
         XCTAssertEqual(saved.requestedSettings.graphics, .vulkan)
         let plan = try EngineCommands.make(.tool("winecfg"), bottle: saved, store: store)

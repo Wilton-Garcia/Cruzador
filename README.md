@@ -26,6 +26,7 @@ O aplicativo gerado recebe assinatura ad hoc para uso local; não é um pacote n
 - Wine incluído com inicialização e execução verificadas em Intel e Apple Silicon; adaptadores externos opcionais.
 - Assistente EXE/MSI com opções, inspeção do arquivo, histórico e logs; execução de arquivos e atalhos configuráveis.
 - Configurações Wine, editor de registro e desinstalador.
+- Opções globais de execução por bottle e sincronização MSync no [pacote opcional compatível](docs/wine-runtime.md#sincronização-e-opções-da-bottle).
 - Logs por operação, erros de saída e preservação de preparação incompleta.
 - Metadados JSON com backup antes de sobrescrever uma biblioteca válida.
 - Catálogo próprio com dependências ordenadas, downloads verificados e atalhos de receita.

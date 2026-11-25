@@ -1,5 +1,11 @@
 import Foundation
 
+public struct RuntimeMacOSVersion: Codable, Equatable, Sendable {
+    public let major: Int
+    public let minor: Int
+    public let patch: Int
+    public init(major: Int, minor: Int = 0, patch: Int = 0) { self.major = major; self.minor = minor; self.patch = patch }
+}
 public struct WineRuntimeManifest: Codable, Equatable, Sendable {
     public let formatVersion: Int
     public let identifier: String
@@ -10,10 +16,13 @@ public struct WineRuntimeManifest: Codable, Equatable, Sendable {
     public let wineExecutable: String
     public let serverExecutable: String
     public let licenseFiles: [String]
-    public init(formatVersion: Int = 1, identifier: String = "org.winehq.wine", version: String, sourceURL: String, sourceRevision: String, architectures: [String], wineExecutable: String = "bin/wine", serverExecutable: String = "bin/wineserver", licenseFiles: [String]) {
+    public let minimumMacOSVersion: RuntimeMacOSVersion?
+    public let features: [String]?
+    public init(formatVersion: Int = 1, identifier: String = "org.winehq.wine", version: String, sourceURL: String, sourceRevision: String, architectures: [String], wineExecutable: String = "bin/wine", serverExecutable: String = "bin/wineserver", licenseFiles: [String], minimumMacOSVersion: RuntimeMacOSVersion? = nil, features: [String]? = nil) {
         self.formatVersion = formatVersion; self.identifier = identifier; self.version = version
         self.sourceURL = sourceURL; self.sourceRevision = sourceRevision; self.architectures = architectures
         self.wineExecutable = wineExecutable; self.serverExecutable = serverExecutable; self.licenseFiles = licenseFiles
+        self.minimumMacOSVersion = minimumMacOSVersion; self.features = features
     }
 }
 public enum WineRuntimeError: LocalizedError {
@@ -44,7 +53,13 @@ public struct WineRuntime: Sendable {
         let decoded: WineRuntimeManifest
         do { decoded = try JSONDecoder().decode(WineRuntimeManifest.self, from: Data(contentsOf: path)) }
         catch { throw WineRuntimeError.invalidManifest(error.localizedDescription) }
-        guard decoded.formatVersion == 1 else { throw WineRuntimeError.invalidManifest("versão de formato não suportada") }
+        guard [1, 2].contains(decoded.formatVersion) else { throw WineRuntimeError.invalidManifest("versão de formato não suportada") }
+        if decoded.formatVersion == 2 && decoded.minimumMacOSVersion == nil { throw WineRuntimeError.invalidManifest("o formato 2 exige a versão mínima do macOS") }
+        if decoded.formatVersion == 1 && (decoded.minimumMacOSVersion != nil || decoded.features != nil) { throw WineRuntimeError.invalidManifest("metadados de plataforma e recursos exigem o formato 2") }
+        if let minimum = decoded.minimumMacOSVersion {
+            guard minimum.major > 0, minimum.minor >= 0, minimum.patch >= 0 else { throw WineRuntimeError.invalidManifest("versão mínima de macOS inválida") }
+            guard ProcessInfo.processInfo.isOperatingSystemAtLeast(OperatingSystemVersion(majorVersion: minimum.major, minorVersion: minimum.minor, patchVersion: minimum.patch)) else { throw WineRuntimeError.invalidManifest("este pacote exige macOS \(minimum.major).\(minimum.minor).\(minimum.patch); escolha um motor compatível") }
+        }
         guard decoded.identifier == "org.winehq.wine", !decoded.version.isEmpty, !decoded.sourceURL.isEmpty, !decoded.sourceRevision.isEmpty, !decoded.architectures.isEmpty, !decoded.licenseFiles.isEmpty else {
             throw WineRuntimeError.invalidManifest("identidade, versão, proveniência, arquiteturas e licenças são obrigatórias")
         }

@@ -48,7 +48,7 @@ public struct LibraryPreferences: Codable, Sendable {
     public init(defaultBottleID: UUID? = nil) { self.defaultBottleID = defaultBottleID }
 }
 public struct Library: Codable, Sendable {
-    public static let currentVersion = 3
+    public static let currentVersion = 4
     public var version = currentVersion
     public var preferences = LibraryPreferences()
     public var bottles: [Bottle] = []

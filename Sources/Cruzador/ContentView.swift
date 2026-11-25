@@ -380,7 +380,10 @@ struct BottleSettingsView: View {
     @ObservedObject var model: AppModel
     let bottle: Bottle
     @State private var settings: BottleSettings
-    init(model: AppModel, bottle: Bottle) { self.model = model; self.bottle = bottle; _settings = State(initialValue: bottle.requestedSettings) }
+    @State private var workingDirectory: String
+    @State private var environmentJSON: String
+    @State private var validationError: String?
+    init(model: AppModel, bottle: Bottle) { self.model = model; self.bottle = bottle; _settings = State(initialValue: bottle.requestedSettings); _workingDirectory = State(initialValue: bottle.requestedSettings.executionOptions.workingDirectory ?? ""); _environmentJSON = State(initialValue: bottle.requestedSettings.executionOptions.environmentJSON) }
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
             Text("Opções de \(bottle.name)").font(.title2.bold())
@@ -393,10 +396,25 @@ struct BottleSettingsView: View {
             Text(support.reason).font(.callout).foregroundStyle(.secondary)
             Text("A opção vale para novos processos. Feche e abra o aplicativo Windows para aplicá-la. Variáveis explícitas do atalho podem substituir a seleção da bottle.").font(.caption).foregroundStyle(.secondary)
             ForEach(support.limitations, id: \.self) { Text($0).font(.caption).foregroundStyle(.secondary) }
+            Picker("Sincronização", selection: $settings.synchronization) {
+                ForEach(SynchronizationMode.allCases, id: \.self) { mode in
+                    Text(mode.displayName).tag(mode).disabled(mode == .msync && !SynchronizationConfiguration.supportsMSync(engine: bottle.engine))
+                }
+            }
+            Text("MSync requer o pacote opcional WineCX e macOS 26+. Mudanças aguardam o servidor sair. Feche os programas Windows para concluir a espera. Cancelar encerra os processos da bottle e mantém as opções anteriores. Atalhos não podem mudar esse modo isoladamente.").font(.caption).foregroundStyle(.secondary)
+            TextField("Pasta de trabalho padrão (opcional)", text: $workingDirectory)
+            Text("Variáveis da bottle (JSON); as variáveis do atalho têm prioridade, exceto a sincronização.").font(.caption)
+            TextEditor(text: $environmentJSON).font(.system(.body, design: .monospaced)).frame(height: 80)
+            if let validationError { Text(validationError).foregroundStyle(.red) }
             HStack {
                 Button("Cancelar") { model.showBottleSettings = false }.keyboardShortcut(.cancelAction)
                 Spacer()
-                Button("Salvar opções") { model.saveBottleSettings(settings, bottleID: bottle.id) }.buttonStyle(.borderedProminent).disabled(!model.canStart || !support.requestSupported)
+                Button("Salvar opções") {
+                    do {
+                        settings.executionOptions = try LaunchOptions.parse(workingDirectory: workingDirectory, environmentJSON: environmentJSON)
+                        model.saveBottleSettings(settings, bottleID: bottle.id)
+                    } catch { validationError = error.localizedDescription }
+                }.buttonStyle(.borderedProminent).disabled(!model.canStart || !support.requestSupported)
             }
         }.padding(28).frame(width: 620)
     }

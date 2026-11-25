@@ -1,0 +1,38 @@
+{
+  "formatVersion": 2,
+  "version": "winecx-26.3.0-wine-11.19",
+  "identifier": "org.winehq.wine",
+  "sourceURL": "https://github.com/dappermint/winecx/tree/9f3f6447844add700bc0dde650e4f398fd5f69ab",
+  "sourceRevision": "9f3f6447844add700bc0dde650e4f398fd5f69ab",
+  "providerRelease": "https://github.com/dappermint/winecx-gptk/releases/tag/runtime-v4.8.1",
+  "builderRevision": "58b27bf5a288eee60ffabe9a7a28dee3c576750e",
+  "minimumMacOSVersion": {
+    "major": 26,
+    "minor": 0,
+    "patch": 0
+  },
+  "features": [
+    "msync"
+  ],
+  "archive": {
+    "name": "winecx-runtime-v4.8.1.tar.gz",
+    "url": "https://github.com/dappermint/winecx-gptk/releases/download/runtime-v4.8.1/Libraries.tar.gz",
+    "sha256": "e8b23bafa4e41be6c8ad468581bc92b86758bfd13c6fb4091585a33a4ec257d7",
+    "runtimePath": "Libraries/Wine"
+  },
+  "architectures": [
+    "x86_64"
+  ],
+  "licenses": [
+    {
+      "path": "licenses/Wine/LICENSE",
+      "url": "https://raw.githubusercontent.com/dappermint/winecx/9f3f6447844add700bc0dde650e4f398fd5f69ab/LICENSE",
+      "sha256": "ae025f125a5d639f0f7abe5146efa1e3d7453cc10b744b2910806fa3f46626ef"
+    },
+    {
+      "path": "licenses/Wine/COPYING.LIB",
+      "url": "https://raw.githubusercontent.com/dappermint/winecx/9f3f6447844add700bc0dde650e4f398fd5f69ab/COPYING.LIB",
+      "sha256": "e237fa56668030e928551ddd60f05df5fe957f75eab874bbd017e085ed722e7c"
+    }
+  ]
+}

@@ -16,6 +16,22 @@ final class WineRuntimeTests: XCTestCase {
         try JSONEncoder().encode(manifest).write(to: root.appendingPathComponent("runtime.json"))
         return root
     }
+    func testPlatformMetadataCannotBeSilentlyIgnored() throws {
+        let root = try fixture(), file = root.appendingPathComponent("runtime.json")
+        var object = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: file)) as? [String: Any])
+        object["features"] = ["msync"]
+        try JSONSerialization.data(withJSONObject: object).write(to: file)
+        XCTAssertThrowsError(try WineRuntime(root: root))
+        object["formatVersion"] = 2
+        try JSONSerialization.data(withJSONObject: object).write(to: file)
+        XCTAssertThrowsError(try WineRuntime(root: root))
+        object["minimumMacOSVersion"] = ["major": 999, "minor": 0, "patch": 0]
+        try JSONSerialization.data(withJSONObject: object).write(to: file)
+        XCTAssertThrowsError(try WineRuntime(root: root))
+        object["minimumMacOSVersion"] = ["major": 14, "minor": 0, "patch": 0]
+        try JSONSerialization.data(withJSONObject: object).write(to: file)
+        XCTAssertEqual(try WineRuntime(root: root).manifest.features, ["msync"])
+    }
     func testPackagedEngineLaunchesWithItsOwnServerAndPrefix() async throws {
         let root = try fixture(); let store = LibraryStore(root: root.appendingPathComponent("data"))
         let bottle = Bottle(name: "Own engine", engine: Engine(kind: .packagedWine, path: root.path))

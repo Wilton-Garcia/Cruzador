@@ -87,11 +87,16 @@ public enum EngineCommands {
         let options: LaunchOptions?
         switch action { case .run(let request): options = request.options; case .install(let request): options = request.options; default: options = nil }
         if case .waitForIdle = action {} else {
-            environment.merge(try GraphicsConfiguration.environment(backend: bottle.requestedSettings.graphics, engine: bottle.engine, explicitOverride: options?.environment["WINE_D3D_CONFIG"])) { _, selected in selected }
-        }
-        if let options {
-            environment.merge(options.environment) { _, selected in selected }
-            workingDirectory = options.workingDirectory.map { URL(fileURLWithPath: $0) }
+            let settings = bottle.requestedSettings
+            try settings.executionOptions.validate()
+            let synchronization = try SynchronizationConfiguration.environment(settings: settings, engine: bottle.engine)
+            try SynchronizationConfiguration.validateOverride(options?.environment["WINEMSYNC"], global: synchronization, engine: bottle.engine)
+            var selected = settings.executionOptions.environment
+            selected.merge(synchronization) { _, value in value }
+            if let options { selected.merge(options.environment) { _, value in value } }
+            environment.merge(try GraphicsConfiguration.environment(backend: settings.graphics, engine: bottle.engine, explicitOverride: selected["WINE_D3D_CONFIG"])) { _, value in value }
+            environment.merge(selected) { _, value in value }
+            workingDirectory = (options?.workingDirectory ?? settings.executionOptions.workingDirectory).map { URL(fileURLWithPath: $0) }
         }
         return EnginePlan(primary: Command(executable: executable, arguments: arguments, environment: environment, workingDirectory: workingDirectory), finalization: finalization, cancellation: cancellation,
                           cancellationWarning: cancellation.isEmpty ? "O motor não forneceu um encerramento verificável do servidor da bottle. Seus processos podem continuar ativos; consulte o log antes de retomar." : nil)

@@ -156,12 +156,23 @@ final class AppModel: ObservableObject {
     }
     func saveBottleSettings(_ settings: BottleSettings, bottleID: UUID) {
         guard canStart else { return }
-        do {
-            try BottleSettingsStore(store: store).save(settings, bottleID: bottleID)
-            library = try store.load(); showBottleSettings = false
-            status = "Configuração salva para os próximos processos Windows"
-        } catch { self.error = error.localizedDescription }
+        let operationID = UUID()
+        busy = true; activeOperationID = operationID; cancelling = false
+        status = "Salvando opções; mudanças de sincronização aguardam o servidor…"
+        Task {
+            defer { busy = false; activeOperationID = nil; cancelling = false }
+            do {
+                try await BottleSettingsStore(store: store).save(settings, bottleID: bottleID, runner: runner, operationID: operationID)
+                library = try store.load(); showBottleSettings = false
+                status = "Configuração salva para os próximos processos Windows"
+            } catch {
+                if let failure = error as? CommandRunnerError, failure.requiresBottleDiagnosis { cleanupOperationID = operationID }
+                self.error = error.localizedDescription
+                status = "Configuração não salva; confira o diagnóstico"
+            }
+        }
     }
+
     func discoverApps() {
         guard let bottle = selected, canStart else { return }
         busy = true; status = "Buscando aplicativos na bottle…"

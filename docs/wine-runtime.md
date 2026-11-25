@@ -8,7 +8,7 @@ O código upstream descreve Wine como software livre sob LGPL e mantém instruç
 
 ## Formato admitido
 
-O pacote é uma pasta com `runtime.json`, executáveis Wine e wineserver e os textos de licença indicados. O manifesto tem formato 1, identificador `org.winehq.wine`, versão, URL/revisão de origem, arquiteturas declaradas e caminhos relativos. Sua interpretação pertence a `WineRuntime`; consumidores usam os caminhos já resolvidos por esse objeto.
+O pacote é uma pasta com `runtime.json`, executáveis Wine e wineserver e os textos de licença indicados. O manifesto aceita o formato 1 e o formato 2; o segundo exige `minimumMacOSVersion` e pode declarar `features`. Pacotes incompatíveis com a versão do macOS são recusados antes da execução. Metadados de plataforma no formato 1 são recusados para evitar que sejam ignorados. Ambos usam identificador `org.winehq.wine`, versão, URL/revisão de origem, arquiteturas declaradas e caminhos relativos. Sua interpretação pertence a `WineRuntime`; consumidores usam os caminhos já resolvidos por esse objeto.
 
 O manifesto identifica `wineExecutable`, `serverExecutable` e `licenseFiles`. Componentes externos à raiz do pacote, inclusive por symlinks, são recusados. Um pacote sem componente ou proveniência obrigatória gera erro específico. A declaração de arquitetura não substitui a inspeção real dos binários.
 
@@ -41,3 +41,27 @@ A inicialização inclui `wineserver -w` como fase de finalização. O término 
 A [execução registrada](../evidence/runtime-architecture-ci.json) passou em ambos os runners, incluindo programas Windows de 32/64 bits e build universal. O registro identifica o commit exercitado e preserva os relatórios de cada arquitetura.
 
 Novas configurações selecionam o pacote incluído. Preferências externas já salvas e o motor de cada bottle existente são preservados; preferências incompletas exigem uma seleção explícita. O build do aplicativo recusa um pacote ausente e indica como prepará-lo.
+
+## Sincronização e opções da bottle
+
+Em **Opções da bottle**, configure a pasta de trabalho e variáveis em JSON para novos processos. Opções do atalho têm prioridade; valores são passados literalmente, sem expansão por shell. As variáveis que escolhem prefixo e motor continuam reservadas. Duplicação e importação remapeiam a pasta de trabalho quando ela fica dentro do prefixo transferido. A biblioteca usa formato 4 e preserva um backup exato ao migrar versões anteriores.
+
+Wine 11.21 continua sendo o padrão. Ele não oferece o protocolo MSync; não há uma opção fictícia de aceleração para esse pacote. Há um pacote **opcional**, separado, que exige macOS 26 ou posterior e Rosetta em Apple Silicon:
+
+```sh
+python3 scripts/prepare-wine-runtime.py --lock config/wine-msync-runtime-lock.json --destination .local/Runtime-WineCX-26.3
+```
+
+Selecione essa pasta como pacote Wine ao criar uma nova bottle. A seleção do motor de bottles existentes é preservada. O lock fixa o [runtime aberto WineCX](https://github.com/dappermint/winecx-gptk/releases/tag/runtime-v4.8.1), seu archive e SHA-256, o [código Wine correspondente](https://github.com/dappermint/winecx/tree/9f3f6447844add700bc0dde650e4f398fd5f69ab) e a revisão do builder. Somente a árvore `Libraries/Wine` entra no pacote final. Não são importados D3DMetal ou componentes da instalação local do CrossOver. A revisão integral das dependências para distribuição pública permanece pendente.
+
+Nesse código, cliente e servidor leem `WINEMSYNC`: zero desativa, valores inteiros diferentes de zero ativam; a ausência desativa. O Cruzador aplica explicitamente zero no modo padrão desse pacote para não herdar um modo diferente do ambiente do macOS. **MSync** aplica `1`, e **Servidor Wine** aplica `0`. Um valor manual deve ser um inteiro decimal de 32 bits sem espaços. Não se permite ao atalho escolher um valor que discorde do modo da bottle.
+
+Uma mudança de sincronização aguarda `wineserver -w` e só salva após sucesso não cancelado. Feche os programas da bottle para concluir a espera. Cancelar usa o encerramento do servidor dessa bottle e mantém a configuração anterior; uma falha de limpeza bloqueia novas operações até diagnóstico. A confirmação de término de uma função, isoladamente, não é tratada como sucesso do encerramento observado no contrato original.
+
+Após compilar os testes, o cenário real opcional usa uma pasta nova e supervisão com prazo:
+
+```sh
+python3 scripts/native-smoke.py --runtime .local/Runtime-WineCX-26.3 --msync --timeout 150
+```
+
+A evidência de execução e seus limites ficam em [runtime-msync.json](../evidence/runtime-msync.json). Não há promessa de ganho de desempenho ou compatibilidade de jogos. O pacote opcional ainda não foi verificado em hardware Intel nem nos runners macOS 15 usados para o Wine padrão; a versão mínima do novo pacote é superior à desses runners.
