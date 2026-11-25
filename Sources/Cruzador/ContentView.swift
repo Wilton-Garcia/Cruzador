@@ -59,12 +59,14 @@ struct ContentView: View {
                     Text(model.status).font(.caption).foregroundStyle(.secondary)
                     Spacer()
                     if model.busy && model.canCancelOperation { Button(model.cancelling ? "Encerrando…" : "Cancelar operação") { model.cancelCurrentOperation() }.disabled(model.cancelling).help("No Wine, cancelar encerra os programas Windows desta bottle e aguarda o servidor.") }
+                    if !model.incomingRequests.isEmpty { Button("Arquivos recebidos (\(model.incomingRequests.count))") { model.showIncoming = true } }
                     if model.cleanupOperationID != nil { Button("Repetir encerramento") { model.retryCleanup() }.disabled(model.busy) }
                     if let log = model.lastLog { Button("Ver log") { NSWorkspace.shared.open(log) }.buttonStyle(.link) }
                 }.padding(14).background(.bar)
             }
         }
         .tint(.teal)
+        .sheet(isPresented: $model.showIncoming) { if let incoming = model.incomingRequests.first { ExternalOpeningView(model: model, incoming: incoming) } }
         .sheet(isPresented: $model.showCreate) { CreateBottleView(model: model) }
         .sheet(isPresented: $model.showBottleSettings) { if let bottle = model.selected { BottleSettingsView(model: model, bottle: bottle) } }
         .sheet(isPresented: $model.showDiscovery) { if let report = model.discoveryReport { DiscoveredAppsView(model: model, report: report) } }
@@ -144,6 +146,9 @@ struct ContentView: View {
                                 .background(.background, in: RoundedRectangle(cornerRadius: 14))
                                 .overlay(RoundedRectangle(cornerRadius: 14).stroke(.quaternary))
                                 .contextMenu {
+                                    Button("Exportar atalho para o Finder…") { model.exportLauncher(app, bottle: bottle) }.disabled(!model.canStart)
+                                    Button("Copiar link do atalho") { model.copyLauncherLink(app, bottle: bottle) }
+                                    Button("Mostrar executável no Finder") { NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: app.path)]) }
                                     Button("Editar atalho…") { model.beginRegister(app) }.disabled(!model.canStart)
                                     Button("Remover atalho") { model.removeShortcut(app, bottle: bottle) }.disabled(!model.canStart)
                                 }
@@ -417,5 +422,46 @@ struct BottleSettingsView: View {
                 }.buttonStyle(.borderedProminent).disabled(!model.canStart || !support.requestSupported)
             }
         }.padding(28).frame(width: 620)
+    }
+}
+
+struct ExternalOpeningView: View {
+    @ObservedObject var model: AppModel
+    let incoming: ExternalOpenRequest
+    @State private var bottleID: UUID?
+    @State private var install = true
+    init(model: AppModel, incoming: ExternalOpenRequest) {
+        self.model = model; self.incoming = incoming
+        _bottleID = State(initialValue: model.library.preferences.defaultBottleID ?? model.selection)
+    }
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            Text("Abrir no Cruzador").font(.title2.bold())
+            Text(incoming.source.isFileURL ? incoming.source.path : incoming.source.absoluteString).font(.caption).textSelection(.enabled)
+            switch incoming.target {
+            case .windowsFile:
+                Picker("Bottle", selection: $bottleID) {
+                    Text("Selecione uma bottle pronta").tag(nil as UUID?)
+                    ForEach(model.library.bottles.filter { model.store.isReady($0) }) { bottle in Text(bottle.name).tag(Optional(bottle.id)) }
+                }
+                Picker("Ação", selection: $install) { Text("Instalar com opções…").tag(true); Text("Executar").tag(false) }
+                Text("O arquivo será inspecionado antes de abrir. A execução usa o motor e as opções da bottle escolhida.").font(.caption)
+            case .launcher(let reference):
+                if let resolved = try? reference.resolve(in: model.library) {
+                    Text("\(resolved.app.name) em \(resolved.bottle.name)").font(.headline)
+                } else { Text("Referência indisponível nesta biblioteca. Você pode dispensar o pedido e exportar outro atalho.").foregroundStyle(.secondary) }
+                Text("O atalho usa a configuração atual da biblioteca. Revise antes de executar.").font(.caption)
+            case .bottlePackage:
+                Text("Importar cópia com \(model.engineKind.displayName)")
+                Text(model.enginePath).font(.caption).textSelection(.enabled)
+                Text("A origem será preservada. A cópia recebe novos identificadores e exige preparação. Selecione outro motor em Configurações antes de continuar, se necessário.").font(.caption)
+            }
+            if model.busy { Text("Aguarde a operação atual ou use Cancelar operação na janela principal.").foregroundStyle(.secondary) }
+            HStack {
+                Button("Dispensar") { model.discardIncoming() }.keyboardShortcut(.cancelAction)
+                Spacer()
+                Button("Continuar") { model.acceptIncoming(bottleID: bottleID, install: install) }.buttonStyle(.borderedProminent).disabled(!model.canStart || !model.loaded)
+            }
+        }.padding(28).frame(width: 580)
     }
 }

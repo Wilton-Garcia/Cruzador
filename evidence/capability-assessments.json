@@ -490,7 +490,7 @@
           "scope": "Armazenamento próprio e backup de metadados"
         }
       ],
-      "remaining_gap": "Armazenamento próprio fixo; mudança de local, migração e exportação de launchers não implementadas.",
+      "remaining_gap": "Armazenamento próprio fixo e exportação de referências .cruzadorapp; mudança de local, migração e bundles de launcher .app ainda não implementados.",
       "independent_equivalence_established": false
     },
     {
@@ -889,10 +889,32 @@
         "ui:file-menu:2"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Sem associação de arquivos e documentos recentes do Cruzador.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/ExternalOpening.swift",
+        "Sources/Cruzador/CruzadorApp.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/Cruzador/ContentView.swift",
+        "scripts/build-app.sh"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/ExternalOpeningTests.swift",
+          "name": "testShortcutAndLinkResolveCurrentLibraryWithoutEmbeddedCommands",
+          "scope": "Referências de arquivo/link usam a biblioteca atual, sem incorporar comandos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/ExternalOpeningTests.swift",
+          "name": "testMalformedLinksUnknownFormatsAndMissingFilesAreRejected",
+          "scope": "Entradas inválidas, formatos futuros e referências ausentes."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/ExternalOpeningTests.swift",
+          "name": "testWindowsFilesAndTransferPackagesHaveDistinctRoutes",
+          "scope": "Rotas separadas e fatos atuais do sistema de arquivos."
+        }
+      ],
+      "remaining_gap": "Abertura alternativa de EXE/MSI, pacotes próprios, links e recentes; associação de documentos a apps Windows, .lnk e equivalência com launchers originais não estabelecidas.",
       "independent_equivalence_established": false
     },
     {

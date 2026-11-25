@@ -25,6 +25,9 @@ final class AppModel: ObservableObject {
     @Published var showDiscovery = false
     @Published var discoveryReport: AppDiscoveryReport?
     @Published var showBottleSettings = false
+    @Published var incomingRequests: [ExternalOpenRequest] = []
+    @Published var recentDocuments: [URL] = NSDocumentController.shared.recentDocumentURLs
+    @Published var showIncoming = false
     @Published var search = ""
     @Published var engineKind: EngineKind = .packagedWine
     @Published var enginePath = WineRuntime.bundledRoot.path
@@ -133,6 +136,82 @@ final class AppModel: ObservableObject {
                 }
             }
         } catch { self.error = error.localizedDescription }
+    }
+    func receiveExternal(_ urls: [URL]) {
+        for url in urls {
+            do { incomingRequests.append(try ExternalOpenRequest(source: url)) }
+            catch { self.error = "\(url.absoluteString): \(error.localizedDescription)" }
+        }
+        if !incomingRequests.isEmpty { showIncoming = true }
+        NSApp.activate(ignoringOtherApps: true)
+    }
+    func discardIncoming() {
+        if !incomingRequests.isEmpty { incomingRequests.removeFirst() }
+        showIncoming = false
+    }
+    func openFile() {
+        let panel = NSOpenPanel(); panel.canChooseDirectories = true; panel.canChooseFiles = true
+        panel.allowsMultipleSelection = true; panel.treatsFilePackagesAsDirectories = false
+        panel.message = "Abra um programa Windows, atalho ou transferência do Cruzador."
+        guard panel.runModal() == .OK else { return }
+        receiveExternal(panel.urls)
+    }
+    func clearRecentDocuments() {
+        NSDocumentController.shared.clearRecentDocuments(nil)
+        recentDocuments = []
+    }
+    func acceptIncoming(bottleID: UUID?, install: Bool) {
+        guard loaded, canStart, let incoming = incomingRequests.first else { return }
+        do {
+            let current = try store.load()
+            switch incoming.target {
+            case .launcher(let reference):
+                let resolved = try reference.resolve(in: current)
+                guard store.isReady(resolved.bottle) else { throw CruzadorError.invalid("A bottle do atalho precisa ser preparada antes de executar.") }
+                selection = resolved.bottle.id
+                perform(.run(resolved.app.launchRequest), bottle: resolved.bottle, title: "Executando \(resolved.app.name)…")
+                guard busy else { return }
+            case .windowsFile(let url):
+                guard let bottle = current.bottles.first(where: { $0.id == bottleID }), store.isReady(bottle) else { throw CruzadorError.invalid("Selecione uma bottle pronta.") }
+                let inspection = try WindowsFileInspection.inspect(path: url.path)
+                selection = bottle.id
+                if install {
+                    selectedInstaller = inspection; showInstall = true
+                } else {
+                    perform(.run(LaunchRequest(path: url.path)), bottle: bottle, title: "Executando \(url.lastPathComponent)…")
+                    guard busy else { return }
+                }
+            case .bottlePackage(let url):
+                if let enginePreferenceError { throw CruzadorError.invalid(enginePreferenceError) }
+                let engine = Engine(kind: engineKind, path: enginePath)
+                maintenance("Importando bottle…") { service in try service.importBottle(from: url, engine: engine).id }
+            }
+            if incoming.source.isFileURL {
+                NSDocumentController.shared.noteNewRecentDocumentURL(incoming.source)
+                recentDocuments = NSDocumentController.shared.recentDocumentURLs
+            }
+            discardIncoming()
+        } catch { self.error = error.localizedDescription }
+    }
+    func exportLauncher(_ app: WindowsApp, bottle: Bottle) {
+        guard canStart else { return }
+        let panel = NSSavePanel(); panel.allowedContentTypes = [UTType(filenameExtension: "cruzadorapp") ?? .data]
+        panel.nameFieldStringValue = app.name + ".cruzadorapp"
+        panel.message = "O arquivo referencia este atalho na biblioteca atual. Ele não contém o programa Windows."
+        guard panel.runModal() == .OK, let url = panel.url else { return }
+        do {
+            let reference = LauncherReference(bottleID: bottle.id, appID: app.id)
+            _ = try reference.resolve(in: store.load())
+            try reference.write(to: url)
+            NSWorkspace.shared.activateFileViewerSelecting([url])
+            status = "Atalho exportado"
+        } catch { self.error = error.localizedDescription }
+    }
+    func copyLauncherLink(_ app: WindowsApp, bottle: Bottle) {
+        let link = LauncherReference(bottleID: bottle.id, appID: app.id).link
+        NSPasteboard.general.clearContents()
+        NSPasteboard.general.setString(link.absoluteString, forType: .string)
+        status = "Link do atalho copiado"
     }
     func chooseProgram(installer: Bool = false) {
         guard let bottle = selected, canStart else { return }

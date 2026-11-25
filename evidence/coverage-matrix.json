@@ -489,7 +489,7 @@
           "scope": "Armazenamento próprio e backup de metadados"
         }
       ],
-      "remaining_gap": "Armazenamento próprio fixo; mudança de local, migração e exportação de launchers não implementadas.",
+      "remaining_gap": "Armazenamento próprio fixo e exportação de referências .cruzadorapp; mudança de local, migração e bundles de launcher .app ainda não implementados.",
       "independent_equivalence_established": false
     },
     {
@@ -888,10 +888,32 @@
         "ui:file-menu:2"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Sem associação de arquivos e documentos recentes do Cruzador.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/ExternalOpening.swift",
+        "Sources/Cruzador/CruzadorApp.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/Cruzador/ContentView.swift",
+        "scripts/build-app.sh"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/ExternalOpeningTests.swift",
+          "name": "testShortcutAndLinkResolveCurrentLibraryWithoutEmbeddedCommands",
+          "scope": "Referências de arquivo/link usam a biblioteca atual, sem incorporar comandos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/ExternalOpeningTests.swift",
+          "name": "testMalformedLinksUnknownFormatsAndMissingFilesAreRejected",
+          "scope": "Entradas inválidas, formatos futuros e referências ausentes."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/ExternalOpeningTests.swift",
+          "name": "testWindowsFilesAndTransferPackagesHaveDistinctRoutes",
+          "scope": "Rotas separadas e fatos atuais do sistema de arquivos."
+        }
+      ],
+      "remaining_gap": "Abertura alternativa de EXE/MSI, pacotes próprios, links e recentes; associação de documentos a apps Windows, .lnk e equivalência com launchers originais não estabelecidas.",
       "independent_equivalence_established": false
     },
     {
@@ -2845,15 +2867,16 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "935cd7c9aae6d01a0611b1f3cd9701b3de01b8841917b7371dad41418eb21c0c",
-    "Sources/Cruzador/ContentView.swift": "7ecbc9fe34007edfdacebf5c42a99433991262649eb793b2df50ea7df2d99a60",
-    "Sources/Cruzador/CruzadorApp.swift": "b99938955afd29ca18bce312d7ee79b9fb165b0ba69c82ccc79fdd6901dcf897",
+    "Sources/Cruzador/AppModel.swift": "3ea766458a37d99319a3e31049aa92e686cb9a92691545e8be6d39c713cc317b",
+    "Sources/Cruzador/ContentView.swift": "ff24596b6e68266db78f767ba45309851775b58fad8adc9609b6a94561545bb3",
+    "Sources/Cruzador/CruzadorApp.swift": "77ffddd4c85a46b7dbd4304d155e079b62cb8dafe192518cb9a3c370310de942",
     "Sources/CruzadorCore/AppDiscovery.swift": "bd7e56c17df92e3fed7ea7e945e72d9a684237210abfdc77b44ec3e25fe110b5",
     "Sources/CruzadorCore/BottleLifecycle.swift": "6535f188d6c34bac80fee8b582aa790a79b0df9327c7001066f763442355e13d",
     "Sources/CruzadorCore/BottleMaintenance.swift": "bdcf4673ab8d4577edad97cefc7f3f1f4e751f8d2b39b4d5fecacc56e578b29e",
     "Sources/CruzadorCore/BottleSettings.swift": "e944ed642353268798014e1a85ef9b32d472f70af6d57418eb5b0f2d6b0ed34d",
     "Sources/CruzadorCore/CommandRunner.swift": "c62b19e9cd8396db312126833bb0c94dcbfbb9aac47a0a6a70843c3735eaf376",
     "Sources/CruzadorCore/EngineCommands.swift": "40db75e9c066b569684ac17274c710e04c44655fa04818d35854cf9bd851cb01",
+    "Sources/CruzadorCore/ExternalOpening.swift": "d5e911d9485e8bc6f16813dbfe2e7c2ea9cf7f73f4e374b42981dfddc4a8e701",
     "Sources/CruzadorCore/Installers.swift": "1cefe10fa581794025bed25174854ef1ab3363a1483a6061dbcc476db82e8df7",
     "Sources/CruzadorCore/LaunchRequest.swift": "242f32cadb35c954d475a6a21fe06edba47a1404ffb8f436202551d3e769fa7f",
     "Sources/CruzadorCore/LibraryStore.swift": "e19b3c07bcac9f96ab49c40f64ca7e03a1143daf8fe396ca032fb6dd84221597",
@@ -2868,6 +2891,7 @@
     "Tests/CruzadorCoreTests/CommandRunnerTests.swift": "20473c4a7489ce15107d0744fc7d868edc396fc50573f497f78a78521bb0d889",
     "Tests/CruzadorCoreTests/CoreTests.swift": "3b6378c2a79b38d3c2260c59acce4fad78146187a9e3c90078f4ed07f1e82e8a",
     "Tests/CruzadorCoreTests/DiscoveryTests.swift": "c1eefbaf48c39a90f79ff945d2d8546771cb4d955f6d58eadb6ee8ac261306e4",
+    "Tests/CruzadorCoreTests/ExternalOpeningTests.swift": "40539413b640e1f9bbfefb3f1023086884247e6379b5420ee2b96ca63a6ec916",
     "Tests/CruzadorCoreTests/GraphicsTests.swift": "de9fe7d1177f0798149d606694e4be49bbe8a9a084b4c19c77a26e6f61b04867",
     "Tests/CruzadorCoreTests/InstallerTests.swift": "a8cd8908e6b767528b5907de1b3699ac138e6d80e1011b0b141ab615768b939d",
     "Tests/CruzadorCoreTests/LaunchTests.swift": "7f7adafe8378029fd5b1184003e896ad3d5f7fe55f408e97527dade3e36fe210",
@@ -2879,6 +2903,7 @@
     "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "993713671d71006a834e46dbf3a82961eb24cd2b1da01528d58633d2557b54e8",
     "config/recipes.json": "d61a4fe567b4196894446bebf77bdc05aa6d74c7dd911d654380cc8a928876ee",
     "config/wine-msync-runtime-lock.json": "cbaae271f4a0fbaea717e13bf49c41a6840e839829e9c20a627ace5f1444c992",
+    "scripts/build-app.sh": "c6e19ad20ff6cb84341eb0f9de2737227221212e7f6fa0697a4f8e27ca6bcec3",
     "tools/build-d3d9-probe.py": "2dba657bc29498e1a1eb5cde39b867e09208d8984b12e6bbaf3e01647a49429f"
   },
   "counts": {
@@ -2887,8 +2912,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 26,
-      "missing": 14
+      "partial": 27,
+      "missing": 13
     }
   },
   "limitations": [

@@ -1,0 +1,36 @@
+{
+  "kind": "observed-native-opening-and-contract-tests",
+  "client_date": "2026-11-25",
+  "fixture": {
+    "path": "/Users/wiltongarcia/Developer/Cruzador/.local/finder-fixture.cruzadorapp",
+    "sha256": "8d8241a2b59f4a0eee46919392c4fc41e11baa4e79c3b02a3b652c9e2cd481a7",
+    "reference": {
+      "formatVersion": 1,
+      "bottleID": "B22BAE59-D4F0-4A6A-A48D-32E4C03C13D9",
+      "appID": "B22BAE59-D4F0-4A6A-A48D-32E4C03C13D8"
+    }
+  },
+  "native_open": {
+    "cold_file_open_exit": 0,
+    "warm_url_open_exit": 0,
+    "trace": "2026-11-25 00:05:53.032 Cruzador[47694:874108] Cruzador library window: visible=1\n2026-11-25 00:05:53.034 Cruzador[47694:874108] Cruzador external opening: received=1 pending=1\n2026-11-25 00:05:53.166 Cruzador[47694:874108] Cruzador library window: visible=1\n2026-11-25 00:05:59.948 Cruzador[47694:874108] Cruzador library window: visible=1\n2026-11-25 00:05:59.950 Cruzador[47694:874108] Cruzador external opening: received=1 pending=2\n",
+    "trace_sha256": "9c21f278acc20b3ccf0f0d2eb29b4c7519ac9761a35fafaf1e561f660627796c",
+    "app_reported_window_visible": true,
+    "pending_requests_after_cold_file": 1,
+    "pending_requests_after_warm_link": 2,
+    "requests_accepted_by_test": false
+  },
+  "contracts": {
+    "swift_tests": 55,
+    "skipped_opt_in_tests": 5,
+    "failures": 0
+  },
+  "limitations": [
+    "Window visibility and pending counts are reported by the app; no screenshot or accessibility inspection succeeded.",
+    "Computer Use returned cgWindowNotFound for bundle ID, path and display name; this does not establish that a window was absent.",
+    "Opening by command-line Launch Services was observed; Finder double-click, recent-menu interaction and user acceptance of the review are not visually verified.",
+    "Diagnostic execution used an arm64 debug executable; final universal packaging is a separate check.",
+    "No Windows program was selected for execution by this test; the fixture references missing library identifiers.",
+    "Document associations to arbitrary Windows applications, .lnk and .app launcher bundles are not implemented."
+  ]
+}

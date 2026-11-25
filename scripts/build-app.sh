@@ -24,6 +24,15 @@ cat > "$app/Contents/Info.plist" <<'PLIST'
 <key>CFBundleVersion</key><string>1</string>
 <key>LSMinimumSystemVersion</key><string>14.0</string>
 <key>NSHighResolutionCapable</key><true/>
+<key>CFBundleURLTypes</key><array><dict>
+<key>CFBundleURLName</key><string>io.github.wilton-garcia.cruzador.launch</string>
+<key>CFBundleURLSchemes</key><array><string>cruzador</string></array>
+</dict></array>
+<key>CFBundleDocumentTypes</key><array>
+<dict><key>CFBundleTypeName</key><string>Programa Windows</string><key>CFBundleTypeExtensions</key><array><string>exe</string><string>msi</string></array><key>CFBundleTypeRole</key><string>Viewer</string><key>LSHandlerRank</key><string>Alternate</string></dict>
+<dict><key>CFBundleTypeName</key><string>Atalho Cruzador</string><key>CFBundleTypeExtensions</key><array><string>cruzadorapp</string></array><key>CFBundleTypeRole</key><string>Viewer</string><key>LSHandlerRank</key><string>Owner</string></dict>
+<dict><key>CFBundleTypeName</key><string>Bottle Cruzador</string><key>CFBundleTypeExtensions</key><array><string>cruzadorbottle</string></array><key>CFBundleTypeRole</key><string>Viewer</string><key>LSHandlerRank</key><string>Owner</string><key>LSTypeIsPackage</key><true/></dict>
+</array>
 </dict></plist>
 PLIST
 runtime_source="${CRUZADOR_RUNTIME_PATH:-.local/Runtime-11.21}"
