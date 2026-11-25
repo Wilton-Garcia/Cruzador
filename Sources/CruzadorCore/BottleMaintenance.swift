@@ -11,7 +11,8 @@ public struct BottleTransferManifest: Codable, Sendable {
 public struct BottleMaintenance: Sendable {
     public let store: LibraryStore
     public let runner: CommandRunner
-    public init(store: LibraryStore, runner: CommandRunner) { self.store = store; self.runner = runner }
+    public let operationID: UUID
+    public init(store: LibraryStore, runner: CommandRunner, operationID: UUID = UUID()) { self.store = store; self.runner = runner; self.operationID = operationID }
 
     public func rename(id: UUID, name: String) throws {
         let name = name.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -95,8 +96,8 @@ public struct BottleMaintenance: Sendable {
         return copy
     }
     private func idle(_ bottle: Bottle) async throws {
-        let result = try await runner.run(EngineCommands.make(.waitForIdle, bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("maintenance-\(UUID().uuidString).log"))
-        guard result.exitCode == 0 else { throw CruzadorError.invalid("O servidor da bottle não confirmou o encerramento (\(result.exitCode)). Nenhum arquivo foi transferido.") }
+        let result = try await runner.run(EngineCommands.make(.waitForIdle, bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("maintenance-\(UUID().uuidString).log"), operationID: operationID)
+        try result.requireSuccess()
     }
     private func index(_ id: UUID, in library: Library) throws -> Int {
         guard let found = library.bottles.firstIndex(where: { $0.id == id }) else { throw CruzadorError.invalid("Bottle não encontrada.") }

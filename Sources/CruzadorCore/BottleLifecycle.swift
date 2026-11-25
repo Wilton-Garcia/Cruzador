@@ -33,7 +33,7 @@ public struct BottleLifecycle: Sendable {
         if changed { try store.save(library) }
     }
 
-    public func prepare(id: UUID, mode: PreparationMode, runner: CommandRunner, log: URL) async throws -> RunResult {
+    public func prepare(id: UUID, mode: PreparationMode, runner: CommandRunner, log: URL, operationID: UUID = UUID()) async throws -> RunResult {
         var library = try store.load()
         guard let index = library.bottles.firstIndex(where: { $0.id == id }) else { throw CruzadorError.invalid("Bottle não encontrada na biblioteca.") }
         let bottle = library.bottles[index]
@@ -46,14 +46,15 @@ public struct BottleLifecycle: Sendable {
         library.bottles[index].lastLogPath = log.path
         try store.save(library)
         let result: RunResult
-        do { result = try await runner.run(plan, log: log) }
+        do { result = try await runner.run(plan, log: log, operationID: operationID) }
         catch {
             try finish(id: id, ready: false, reason: error.localizedDescription)
             throw error
         }
-        let ready = result.exitCode == 0 && store.health(of: bottle) == .initialized
-        let reason = ready ? nil : "Preparação incompleta (código \(result.exitCode)). Consulte o log; os arquivos foram preservados."
+        let ready = !result.cancelled && result.exitCode == 0 && store.health(of: bottle) == .initialized
+        let reason = result.cancelled ? CommandRunnerError.cancelled(log: log.path, cleanupFailures: result.cleanupFailures, phases: result.phases).localizedDescription : ready ? nil : "Preparação incompleta (código \(result.exitCode)). Consulte o log; os arquivos foram preservados."
         try finish(id: id, ready: ready, reason: reason)
+        if result.cancelled { throw CommandRunnerError.cancelled(log: log.path, cleanupFailures: result.cleanupFailures, phases: result.phases) }
         if let reason { throw CruzadorError.invalid(reason) }
         return result
     }

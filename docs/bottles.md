@@ -14,7 +14,7 @@ Os testes de ciclo de vida verificam criação, reparo, falha, retomada, preserv
 
 ## Manutenção e transferência
 
-O menu **Gerenciar** oferece renomeação, duplicação, exportação e remoção. **Importar bottle** recebe uma pasta `.cruzadorbottle` com `bottle.json` e `Prefix`. É um formato próprio, sem compressão; não é o arquivo de backup do CrossOver. O motor Wine precisa estar disponível e seus programas devem ser fechados: cópia, exportação e remoção aguardam o servidor da bottle antes de alterar arquivos. A espera ainda não possui cancelamento pela interface.
+O menu **Gerenciar** oferece renomeação, duplicação, exportação e remoção. **Importar bottle** recebe uma pasta `.cruzadorbottle` com `bottle.json` e `Prefix`. É um formato próprio, sem compressão; não é o arquivo de backup do CrossOver. O motor Wine precisa estar disponível e seus programas devem ser fechados: cópia, exportação e remoção aguardam o servidor da bottle antes de alterar arquivos. A espera pode ser cancelada pela interface; a cópia de arquivos já iniciada termina antes de liberar a operação.
 
 Duplicar gera outro UUID e ajusta atalhos e links absolutos que apontavam para o prefixo original. Links relativos e destinos externos são preservados como links: arquivos fora do prefixo não são incluídos no pacote. Argumentos arbitrários dos atalhos não são reinterpretados como caminhos. A importação copia o conteúdo para outro UUID, usa o motor escolhido nas configurações e exige nova preparação antes de executar. A origem permanece intacta.
 
@@ -35,3 +35,13 @@ A seleção de motor em preferências usa um único valor versionado. Os antigos
 Um atalho salva executável, argumentos, pasta de trabalho opcional e variáveis de ambiente. A edição preserva sua identidade. Cada linha de argumentos é transmitida literalmente ao motor, sem shell macOS; comandos dentro de `cmd.exe` continuam sujeitos à interpretação do próprio Windows. As variáveis usam um objeto JSON de nomes e valores de texto. `WINEPREFIX`, `WINESERVER`, `WINELOADER`, `WINEDLLPATH`, `CX_BOTTLE` e `CX_BOTTLE_PATH` pertencem à seleção do motor e não podem ser substituídos por um atalho.
 
 A pasta deve existir e ser absoluta; vazio mantém o comportamento herdado do processo. O arquivo Windows deve existir e ser regular. Opções são revalidadas no lançamento, pois arquivos e pastas podem mudar depois do cadastro. Atalhos antigos, sem opções, mantêm argumentos e comportamento anteriores. Ao transferir uma bottle, pastas de trabalho internas são remapeadas junto dos executáveis; variáveis e argumentos não são reinterpretados como caminhos.
+
+## Processos e cancelamento
+
+O supervisor executa uma operação por vez, retém os objetos de processo até seus callbacks de término e registra separadamente os resultados das fases. A saída vai diretamente para arquivo com append, inclusive durante encerramento, sem pipes que possam bloquear por falta de leitura. Falhas de lançamento não impedem a tentativa dos finalizadores seguintes.
+
+**Cancelar operação** encerra o cliente que o supervisor iniciou e, no Wine independente, solicita `wineserver -k` seguido de `-w` com o prefixo e servidor escolhidos para a bottle. Isso pode encerrar outros programas Windows dessa mesma bottle. O pedido usa o UUID da operação: um cancelamento atrasado não é aplicado à operação seguinte. O estado ocupado só termina após os processos supervisionados e as fases de encerramento retornarem. Um código zero não desfaz o estado cancelado.
+
+Falhas de encerramento mantêm a operação pendente de recuperação e bloqueiam novas execuções no supervisor. **Repetir encerramento** tenta novamente os comandos do mesmo motor/prefixo e só libera a pendência se todos tiverem sucesso. Cancelamento ou falha durante uma preparação preserva seu prefixo e impede registrá-lo como pronto. Quando o encerramento permanece desconhecido, a interface exige diagnóstico e nova preparação antes de retomar.
+
+A supervisão de um comando nativo genérico cobre o processo diretamente iniciado, não uma árvore arbitrária de processos que se desvinculem dele. O cancelamento Wine usa a fronteira do servidor do prefixo; não é um censo de todos os processos do sistema. O adaptador legado CrossOver não declara limpeza verificável de seu servidor e deixa o encerramento como desconhecido se cancelado. A recuperação automática pendente é mantida durante a sessão; os estados e logs da bottle continuam persistidos depois de reabrir o aplicativo.

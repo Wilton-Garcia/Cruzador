@@ -30,7 +30,7 @@ O aplicativo gerado recebe assinatura ad hoc para uso local; não é um pacote n
 - Metadados JSON com backup antes de sobrescrever uma biblioteca válida.
 - Reparo, retomada e manutenção de bottles com duplicação, transferência em formato próprio e remoção recuperável.
 
-Os dados ficam em `~/Library/Application Support/Cruzador`. As bottles existentes do CrossOver não são importadas nem usadas como armazenamento. Durante uma operação, aguarde o encerramento do programa Windows antes de sair. Os atalhos são cadastrados manualmente. O botão de remover atalho não desinstala nem apaga o executável.
+Os dados ficam em `~/Library/Application Support/Cruzador`. As bottles existentes do CrossOver não são importadas nem usadas como armazenamento. Durante uma operação, feche o programa Windows ou use Cancelar operação e aguarde a limpeza antes de sair. No Wine, o cancelamento pode encerrar outros programas da mesma bottle. Os atalhos são cadastrados manualmente. O botão de remover atalho não desinstala nem apaga o executável.
 
 ## Testes
 

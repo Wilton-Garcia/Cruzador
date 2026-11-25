@@ -28,8 +28,8 @@ struct ContentView: View {
                     }
                 }.listStyle(.sidebar)
                 Button { model.showCreate = true } label: { Label("Nova bottle", systemImage: "plus").frame(maxWidth: .infinity) }
-                    .controlSize(.large).disabled(model.busy || !model.loaded)
-                Button { model.importBottle() } label: { Label("Importar bottle…", systemImage: "square.and.arrow.down") }.disabled(model.busy || !model.loaded)
+                    .controlSize(.large).disabled(!model.canStart || !model.loaded)
+                Button { model.importBottle() } label: { Label("Importar bottle…", systemImage: "square.and.arrow.down") }.disabled(!model.canStart || !model.loaded)
                 SettingsLink { Label("Configurar motor", systemImage: "gearshape") }.buttonStyle(.plain).foregroundStyle(.secondary)
             }.padding(18).navigationSplitViewColumnWidth(min: 235, ideal: 260, max: 320)
         } detail: {
@@ -49,7 +49,7 @@ struct ContentView: View {
                     } description: {
                         Text("Crie uma bottle para manter os arquivos e as configurações\nde seus programas Windows em um só lugar.")
                     } actions: {
-                        Button("Criar primeira bottle") { model.showCreate = true }.buttonStyle(.borderedProminent).tint(.teal).disabled(model.busy)
+                        Button("Criar primeira bottle") { model.showCreate = true }.buttonStyle(.borderedProminent).tint(.teal).disabled(!model.canStart)
                     }
                 }
                 Divider()
@@ -58,6 +58,8 @@ struct ContentView: View {
                     else { Image(systemName: "circle.fill").font(.system(size: 7)).foregroundStyle(.teal) }
                     Text(model.status).font(.caption).foregroundStyle(.secondary)
                     Spacer()
+                    if model.busy { Button(model.cancelling ? "Encerrando…" : "Cancelar operação") { model.cancelCurrentOperation() }.disabled(model.cancelling).help("No Wine, cancelar encerra os programas Windows desta bottle e aguarda o servidor.") }
+                    if model.cleanupOperationID != nil { Button("Repetir encerramento") { model.retryCleanup() }.disabled(model.busy) }
                     if let log = model.lastLog { Button("Ver log") { NSWorkspace.shared.open(log) }.buttonStyle(.link) }
                 }.padding(14).background(.bar)
             }
@@ -91,14 +93,14 @@ struct ContentView: View {
                         Button("Exportar…") { model.exportBottle(bottle) }
                         Divider()
                         Button("Remover da biblioteca…", role: .destructive) { model.removeBottle(bottle) }
-                    } label: { Label("Gerenciar", systemImage: "ellipsis.circle") }.disabled(model.busy)
+                    } label: { Label("Gerenciar", systemImage: "ellipsis.circle") }.disabled(!model.canStart)
                     Image(systemName: "shippingbox.fill").font(.system(size: 54)).foregroundStyle(.teal.gradient).padding(10)
                 }
                 HStack(spacing: 12) {
                     Button { model.chooseProgram(installer: true) } label: { Label("Instalar programa", systemImage: "plus.circle.fill") }.buttonStyle(.borderedProminent)
                     Button { model.chooseProgram() } label: { Label("Executar arquivo…", systemImage: "play.fill") }
                     Button { NSWorkspace.shared.open(model.store.prefix(for: bottle)) } label: { Label("Abrir pasta", systemImage: "folder") }
-                }.controlSize(.large).disabled(model.busy || bottle.state != .ready || !model.store.isInitialized(bottle))
+                }.controlSize(.large).disabled(!model.canStart || bottle.state != .ready || !model.store.isInitialized(bottle))
                 if bottle.state != .ready || !model.store.isInitialized(bottle) {
                     GroupBox {
                         HStack {
@@ -107,13 +109,13 @@ struct ContentView: View {
                                 Text(bottle.lastError ?? "Os arquivos parciais foram preservados. Consulte o log antes de tentar novamente.").font(.callout).foregroundStyle(.secondary)
                             }
                             Spacer()
-                            Button("Preparar novamente") { model.perform(.initialize, bottle: bottle, title: "Preparando \(bottle.name)…") }.disabled(model.busy)
+                            Button("Preparar novamente") { model.perform(.initialize, bottle: bottle, title: "Preparando \(bottle.name)…") }.disabled(!model.canStart)
                         }.padding(12)
                     }
                 }
                 HStack {
                     Text("Aplicativos").font(.title2.weight(.semibold)); Spacer()
-                    Button { model.beginRegister() } label: { Label("Adicionar atalho", systemImage: "plus") }.disabled(model.busy || bottle.state != .ready)
+                    Button { model.beginRegister() } label: { Label("Adicionar atalho", systemImage: "plus") }.disabled(!model.canStart || bottle.state != .ready)
                 }
                 if bottle.apps.isEmpty {
                     VStack(spacing: 12) {
@@ -130,13 +132,13 @@ struct ContentView: View {
                                 Text(URL(fileURLWithPath: app.path).lastPathComponent).font(.caption).foregroundStyle(.secondary).lineLimit(1)
                                 Button { model.perform(.run(app.launchRequest), bottle: bottle, title: "Executando \(app.name)…") } label: {
                                     Label("Executar", systemImage: "play.fill").frame(maxWidth: .infinity)
-                                }.disabled(model.busy || bottle.state != .ready)
+                                }.disabled(!model.canStart || bottle.state != .ready)
                             }.padding(20).frame(maxWidth: .infinity, alignment: .leading)
                                 .background(.background, in: RoundedRectangle(cornerRadius: 14))
                                 .overlay(RoundedRectangle(cornerRadius: 14).stroke(.quaternary))
                                 .contextMenu {
-                                    Button("Editar atalho…") { model.beginRegister(app) }.disabled(model.busy)
-                                    Button("Remover atalho") { model.removeShortcut(app, bottle: bottle) }.disabled(model.busy)
+                                    Button("Editar atalho…") { model.beginRegister(app) }.disabled(!model.canStart)
+                                    Button("Remover atalho") { model.removeShortcut(app, bottle: bottle) }.disabled(!model.canStart)
                                 }
                         }
                     }
@@ -148,7 +150,7 @@ struct ContentView: View {
                     tool("Configurações Wine", "slider.horizontal.3", "winecfg", bottle)
                     tool("Registro", "list.bullet.rectangle", "regedit", bottle)
                     tool("Desinstalar programas", "minus.circle", "uninstaller", bottle)
-                }.disabled(model.busy || bottle.state != .ready || !model.store.isInitialized(bottle))
+                }.disabled(!model.canStart || bottle.state != .ready || !model.store.isInitialized(bottle))
                 Text("Motor: \(bottle.engine.path)").font(.caption).foregroundStyle(.tertiary).textSelection(.enabled)
             }.padding(34)
         }

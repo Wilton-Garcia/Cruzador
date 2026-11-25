@@ -90,10 +90,30 @@
         "ui:install-progress:1"
       ],
       "reverse_knowledge": "runtime-observed-cancellation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Cancelamento foi observado no original; o Cruzador ainda não cancela subprocessos.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/CommandRunner.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CommandRunnerTests.swift",
+          "name": "testCancellationDuringFinalizationKeepsCleanupAndRejectsStaleIDs",
+          "scope": "Cancelamento na finalização, incluindo saída zero, IDs atrasados e limpeza."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/CommandRunnerTests.swift",
+          "name": "testCleanupFailureRetainsRecoveryAndRetryRemovesItOnlyAfterSuccess",
+          "scope": "Falha de limpeza e retry preservam a pendência até sucesso."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Cancelamento do cliente Windows real, wineserver -k/-w e execução posterior no mesmo prefixo."
+        }
+      ],
+      "remaining_gap": "Cancelamento do Wine próprio implementado; porcentagem de instalação e censo de processos desvinculados não estabelecidos. Limpeza do adaptador legado CrossOver permanece desconhecida.",
       "independent_equivalence_established": false
     },
     {
@@ -519,10 +539,30 @@
         "ui:bottle-menu:22"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Sem supervisão/cancelamento completo no produto; smoke test apenas aguarda wineserver próprio.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/CommandRunner.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CommandRunnerTests.swift",
+          "name": "testCancellationDuringFinalizationKeepsCleanupAndRejectsStaleIDs",
+          "scope": "Cancelamento na finalização, incluindo saída zero, IDs atrasados e limpeza."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/CommandRunnerTests.swift",
+          "name": "testCleanupFailureRetainsRecoveryAndRetryRemovesItOnlyAfterSuccess",
+          "scope": "Falha de limpeza e retry preservam a pendência até sucesso."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Cancelamento do cliente Windows real, wineserver -k/-w e execução posterior no mesmo prefixo."
+        }
+      ],
+      "remaining_gap": "Cancelamento do Wine próprio implementado; porcentagem de instalação e censo de processos desvinculados não estabelecidos. Limpeza do adaptador legado CrossOver permanece desconhecida.",
       "independent_equivalence_established": false
     },
     {
@@ -2674,23 +2714,25 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "85bea022d93dbfed12f9fab16bdae42668dc9f2869ae237a6171bb270540889c",
-    "Sources/Cruzador/ContentView.swift": "ff91ff4a693e636c4a103a5c4566a87ba71667654e7bd59ada1218aaa41eec83",
-    "Sources/Cruzador/CruzadorApp.swift": "8491e480c40115839f1eb76eb79fda94bcc01df79eb9f50daa7152f1fccc4943",
-    "Sources/CruzadorCore/BottleLifecycle.swift": "aa71477d0172bc01d80769c7d9e602babf2979bcd76854f8d7f776af40f5bafe",
-    "Sources/CruzadorCore/BottleMaintenance.swift": "2c3d485f2d76f4289a2891f92703d6972e20747cf3efc9bd586c4170fcaf3090",
-    "Sources/CruzadorCore/EngineCommands.swift": "8aa457d0ef6299406bc734bd0d1d94f7875726fa2d59513d645a07389fbdd1f0",
+    "Sources/Cruzador/AppModel.swift": "b5cda49752b6efe9df564b082cbcc7b1ea93ac4741ebfb3fe342f23678943039",
+    "Sources/Cruzador/ContentView.swift": "f22de37b931c23d5538f6d4a080107bb36d0019a0c0db2ffc27010c22ef5afe0",
+    "Sources/Cruzador/CruzadorApp.swift": "b99938955afd29ca18bce312d7ee79b9fb165b0ba69c82ccc79fdd6901dcf897",
+    "Sources/CruzadorCore/BottleLifecycle.swift": "6535f188d6c34bac80fee8b582aa790a79b0df9327c7001066f763442355e13d",
+    "Sources/CruzadorCore/BottleMaintenance.swift": "57b88cdc186a099289f618ec455aa2d091270cfb299460ff116dfa0b88b80292",
+    "Sources/CruzadorCore/CommandRunner.swift": "de3f7a9dd0b2207e586a82711135bf82eb31ae172c16efba8788b554bf07286c",
+    "Sources/CruzadorCore/EngineCommands.swift": "491d5139679ddea2d33e1b6baae581babde436b5b87245705853008706a142a1",
     "Sources/CruzadorCore/LaunchRequest.swift": "242f32cadb35c954d475a6a21fe06edba47a1404ffb8f436202551d3e769fa7f",
     "Sources/CruzadorCore/LibraryStore.swift": "796da2fbcbf0bd27cbf064b5336170218b37814945e3d815997ef817728bf540",
     "Sources/CruzadorCore/Models.swift": "7080e65947187f4c6adb0c6ab68897f105610e5e41d3f9debc6bf8a116cb2d36",
     "Sources/CruzadorCore/WineRuntime.swift": "26f30b33750afea74f7312f79710ac04b5cb9f327201210f09608fc0d6d2f3f0",
     "Tests/CruzadorCoreTests/BottleLifecycleTests.swift": "5435298b8b533ee151817535977381c5ccb08db4455d86840e43fbbfdb0e097d",
     "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "2894370226dcc035b17a47fb51c6ee4f7fbd23fd67e4ca61d6ebadb7ad12bc73",
+    "Tests/CruzadorCoreTests/CommandRunnerTests.swift": "20473c4a7489ce15107d0744fc7d868edc396fc50573f497f78a78521bb0d889",
     "Tests/CruzadorCoreTests/CoreTests.swift": "d3d19d208bdfb49a05baec89041f9a3d9c5b37710731f25efa792a1b6553078a",
     "Tests/CruzadorCoreTests/LaunchTests.swift": "7f7adafe8378029fd5b1184003e896ad3d5f7fe55f408e97527dade3e36fe210",
     "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "55338d79e841468b8db0ef065b9f13854a2dbf66ae420bcdb6c863c1aa41bced",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "0f7b7703620b0e9aa3aa78f1fd549365a89f7d5530d422ed853b9c3c962d61d3",
-    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "cdf4e1504d4898ca2a8fca2d081cb69da950d11e2f2e30fd31f2bd6e4f795446",
+    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "9b3f7a0ab895b93e5aad87a8a13eac2b67cfe4672016af17d739bf96decb22ea",
     "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "1c85661de661d1262553d1f7edbcf52d2820c10f0504718add903d9039afa376"
   },
   "counts": {
@@ -2699,8 +2741,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 20,
-      "missing": 20
+      "partial": 22,
+      "missing": 18
     }
   },
   "limitations": [

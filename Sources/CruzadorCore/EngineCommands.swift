@@ -12,7 +12,11 @@ public struct Command: Sendable {
 public struct EnginePlan: Sendable {
     public let primary: Command
     public let finalization: [Command]
-    public init(primary: Command, finalization: [Command] = []) { self.primary = primary; self.finalization = finalization }
+    public let cancellation: [Command]
+    public let cancellationWarning: String?
+    public init(primary: Command, finalization: [Command] = [], cancellation: [Command] = [], cancellationWarning: String? = nil) {
+        self.primary = primary; self.finalization = finalization; self.cancellation = cancellation; self.cancellationWarning = cancellationWarning
+    }
 }
 public enum BottleAction: Sendable { case initialize, repair, waitForIdle, run(LaunchRequest), install(String), tool(String) }
 public enum EngineCommands {
@@ -24,6 +28,7 @@ public enum EngineCommands {
         var executable: URL
         var arguments: [String]
         var finalization: [Command] = []
+        var cancellation: [Command] = []
         switch bottle.engine.kind {
         case .crossOver:
             let base = engineURL.appendingPathComponent("Contents/SharedSupport/CrossOver")
@@ -58,9 +63,13 @@ public enum EngineCommands {
             } else {
                 executable = engineURL
             }
+            let server = environment["WINESERVER"].map { URL(fileURLWithPath: $0) } ?? engineURL.deletingLastPathComponent().appendingPathComponent("wineserver")
+            if FileManager.default.isExecutableFile(atPath: server.path) {
+                environment["WINESERVER"] = server.path
+                cancellation = [Command(executable: server, arguments: ["-k"], environment: environment), Command(executable: server, arguments: ["-w"], environment: environment)]
+            }
             switch action {
             case .initialize, .repair, .waitForIdle:
-                let server = environment["WINESERVER"].map { URL(fileURLWithPath: $0) } ?? engineURL.deletingLastPathComponent().appendingPathComponent("wineserver")
                 guard FileManager.default.isExecutableFile(atPath: server.path) else { throw CruzadorError.invalid("wineserver não está disponível ao lado do motor selecionado: \(server.path)") }
                 if case .waitForIdle = action {
                     executable = server; arguments = ["-w"]
@@ -79,7 +88,8 @@ public enum EngineCommands {
             environment.merge(request.options.environment) { _, selected in selected }
             workingDirectory = request.options.workingDirectory.map { URL(fileURLWithPath: $0) }
         }
-        return EnginePlan(primary: Command(executable: executable, arguments: arguments, environment: environment, workingDirectory: workingDirectory), finalization: finalization)
+        return EnginePlan(primary: Command(executable: executable, arguments: arguments, environment: environment, workingDirectory: workingDirectory), finalization: finalization, cancellation: cancellation,
+                          cancellationWarning: cancellation.isEmpty ? "O motor não forneceu um encerramento verificável do servidor da bottle. Seus processos podem continuar ativos; consulte o log antes de retomar." : nil)
     }
     private static func modeFlag(_ action: BottleAction) -> String {
         if case .repair = action { return "--update" }
@@ -100,45 +110,4 @@ public enum EngineCommands {
         }
     }
 
-}
-
-public struct RunResult: Sendable {
-    public let exitCode: Int32
-    public let log: URL
-}
-/// Runs away from the UI actor; output goes directly to disk, never a blocking pipe.
-public actor CommandRunner {
-    public init() {}
-    public func run(_ plan: EnginePlan, log: URL) throws -> RunResult {
-        let primary = try runOne(plan.primary, log: log, append: false)
-        var failure = primary.exitCode
-        for command in plan.finalization {
-            let result = try runOne(command, log: log, append: true)
-            if failure == 0 { failure = result.exitCode }
-        }
-        return RunResult(exitCode: failure, log: log)
-    }
-    public func run(_ command: Command, log: URL) throws -> RunResult {
-        try runOne(command, log: log, append: false)
-    }
-    private func runOne(_ command: Command, log: URL, append: Bool) throws -> RunResult {
-        try FileManager.default.createDirectory(at: log.deletingLastPathComponent(), withIntermediateDirectories: true)
-        if !append || !FileManager.default.fileExists(atPath: log.path) {
-            guard FileManager.default.createFile(atPath: log.path, contents: nil) else { throw CruzadorError.invalid("Não foi possível criar o log.") }
-        }
-        let handle = try FileHandle(forWritingTo: log)
-        defer { try? handle.close() }
-        if append { try handle.seekToEnd() }
-        let process = Process()
-        process.executableURL = command.executable; process.arguments = command.arguments
-        var environment = ProcessInfo.processInfo.environment
-        // Inherited CrossOver/Wine routing must not override the selected bottle.
-        for key in environment.keys where key.hasPrefix("CX_") || key.hasPrefix("WINE") { environment.removeValue(forKey: key) }
-        environment.merge(command.environment) { _, selected in selected }
-        process.environment = environment; process.currentDirectoryURL = command.workingDirectory
-        process.standardInput = FileHandle.nullDevice; process.standardOutput = handle; process.standardError = handle
-        try process.run()
-        process.waitUntilExit()
-        return RunResult(exitCode: process.terminationStatus, log: log)
-    }
 }

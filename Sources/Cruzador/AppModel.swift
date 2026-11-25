@@ -8,6 +8,9 @@ final class AppModel: ObservableObject {
     @Published var library = Library()
     @Published var selection: UUID?
     @Published var busy = false
+    @Published var cancelling = false
+    @Published var cleanupOperationID: UUID?
+    private var activeOperationID: UUID?
     @Published var status = "Sua biblioteca Windows no Mac"
     @Published var error: String?
     @Published var lastLog: URL?
@@ -21,6 +24,7 @@ final class AppModel: ObservableObject {
     @Published var loaded = false
     let store = LibraryStore(root: LibraryStore.defaultRoot)
     private let runner = CommandRunner()
+    var canStart: Bool { !busy && cleanupOperationID == nil }
     var selected: Bottle? { library.bottles.first { $0.id == selection } }
     var filteredBottles: [Bottle] { library.bottles.filter { search.isEmpty || $0.name.localizedCaseInsensitiveContains(search) } }
     init() {
@@ -56,7 +60,7 @@ final class AppModel: ObservableObject {
     private func persist(_ next: Library) throws { try store.save(next); library = next }
     func create(name: String) {
         let name = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !name.isEmpty, loaded, !busy else { return }
+        guard !name.isEmpty, loaded, canStart else { return }
         do {
             if let enginePreferenceError { throw CruzadorError.invalid(enginePreferenceError) }
             let bottle = try BottleLifecycle(store: store).create(name: name, engine: Engine(kind: engineKind, path: enginePath))
@@ -66,7 +70,7 @@ final class AppModel: ObservableObject {
         } catch { self.error = error.localizedDescription }
     }
     func perform(_ action: BottleAction, bottle: Bottle, title: String) {
-        guard loaded, !busy else { return }
+        guard loaded, canStart else { return }
         do {
             switch action {
             case .initialize, .repair: break
@@ -79,25 +83,37 @@ final class AppModel: ObservableObject {
             default: command = try EngineCommands.make(action, bottle: bottle, store: store)
             }
             let log = store.logsRoot.appendingPathComponent("\(Date().timeIntervalSince1970)-\(UUID().uuidString).log")
+            let operationID = UUID()
+            activeOperationID = operationID; cancelling = false
             busy = true; status = title; lastLog = log
             Task {
-                defer { busy = false }
+                defer { busy = false; activeOperationID = nil; cancelling = false }
                 do {
                     let result: RunResult
                     switch action {
                     case .initialize, .repair:
                         result = try await BottleLifecycle(store: store).prepare(id: bottle.id, mode: {
                             if case .repair = action { return .repair }; return .initialize
-                        }(), runner: runner, log: log)
+                        }(), runner: runner, log: log, operationID: operationID)
                         library = try store.load()
                     default:
                         guard let command else { throw CruzadorError.invalid("Plano de execução ausente.") }
-                        result = try await runner.run(command, log: log)
+                        result = try await runner.run(command, log: log, operationID: operationID)
                     }
-                    guard result.exitCode == 0 else { throw CruzadorError.invalid("O motor terminou com código \(result.exitCode). Consulte o log para os detalhes.") }
+                    try result.requireSuccess()
                     status = "Operação concluída"
                 } catch {
                     status = "Operação não concluída"
+                    if let failure = error as? CommandRunnerError, failure.requiresBottleDiagnosis {
+                        cleanupOperationID = operationID
+                        do {
+                            var next = try store.load()
+                            if let index = next.bottles.firstIndex(where: { $0.id == bottle.id }) {
+                                next.bottles[index].state = .interrupted; next.bottles[index].lastError = failure.localizedDescription
+                            }
+                            try persist(next)
+                        } catch { self.error = "Falha ao preservar o estado: \(error.localizedDescription)"; return }
+                    }
                     do { library = try store.load() }
                     catch { self.error = "Não foi possível reler a biblioteca: \(error.localizedDescription)"; return }
                     self.error = error.localizedDescription
@@ -106,7 +122,7 @@ final class AppModel: ObservableObject {
         } catch { self.error = error.localizedDescription }
     }
     func chooseProgram(installer: Bool = false) {
-        guard let bottle = selected, !busy else { return }
+        guard let bottle = selected, canStart else { return }
         let panel = NSOpenPanel(); panel.canChooseDirectories = false
         panel.allowedContentTypes = ["exe", "msi"].compactMap { UTType(filenameExtension: $0) }
         panel.message = installer ? "Escolha o instalador Windows" : "Escolha o executável Windows"
@@ -141,11 +157,12 @@ final class AppModel: ObservableObject {
         } catch { self.error = error.localizedDescription }
     }
     private func maintenance(_ title: String, operation: @escaping @Sendable (BottleMaintenance) async throws -> UUID?) {
-        guard loaded, !busy else { return }
-        busy = true; status = title
+        guard loaded, canStart else { return }
+        busy = true; status = title; cancelling = false
         let service = BottleMaintenance(store: store, runner: runner)
+        activeOperationID = service.operationID
         Task {
-            defer { busy = false }
+            defer { busy = false; activeOperationID = nil; cancelling = false }
             do {
                 let selectedID = try await operation(service)
                 library = try store.load()
@@ -153,8 +170,33 @@ final class AppModel: ObservableObject {
                 status = "Operação concluída"
             } catch {
                 status = "Operação não concluída"
+                if let failure = error as? CommandRunnerError, failure.requiresBottleDiagnosis { cleanupOperationID = service.operationID }
                 self.error = error.localizedDescription
             }
+        }
+    }
+    func cancelCurrentOperation() {
+        guard let operationID = activeOperationID, busy, !cancelling else { return }
+        cancelling = true; status = "Solicitando encerramento…"
+        Task {
+            let accepted = await runner.cancel(operationID: operationID)
+            if activeOperationID == operationID {
+                status = accepted ? "Aguardando encerramento e limpeza…" : "A fase atual não tem processo cancelável. Aguarde sua conclusão."
+                if !accepted { cancelling = false }
+            }
+        }
+    }
+    func retryCleanup() {
+        guard let failedID = cleanupOperationID, !busy else { return }
+        let operationID = UUID(); activeOperationID = operationID; busy = true; cancelling = false
+        status = "Repetindo encerramento…"
+        Task {
+            defer { busy = false; activeOperationID = nil; cancelling = false }
+            do {
+                let result = try await runner.retryCleanup(failedOperationID: failedID, operationID: operationID)
+                lastLog = result.log; cleanupOperationID = nil
+                status = "Encerramento concluído. Prepare a bottle novamente antes de retomar."
+            } catch { self.error = error.localizedDescription; status = "Encerramento não confirmado" }
         }
     }
     func makeDefault(_ bottle: Bottle) {

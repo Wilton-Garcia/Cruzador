@@ -12,7 +12,7 @@ struct CruzadorApp: App {
                 .onAppear { delegate.model = model; NSApp.setActivationPolicy(.regular); NSApp.activate(ignoringOtherApps: true) }
         }
         .defaultSize(width: 1140, height: 760)
-        .commands { CommandGroup(replacing: .newItem) { Button("Nova bottle…") { model.showCreate = true }.keyboardShortcut("n").disabled(model.busy || !model.loaded) } }
+        .commands { CommandGroup(replacing: .newItem) { Button("Nova bottle…") { model.showCreate = true }.keyboardShortcut("n").disabled(!model.canStart || !model.loaded) } }
         Settings { EngineSettings(model: model).frame(width: 560).padding(28) }
     }
 }
@@ -22,7 +22,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         guard model?.busy == true else { return .terminateNow }
         let alert = NSAlert(); alert.messageText = "Há uma operação em andamento"
-        alert.informativeText = "Feche o programa Windows ou aguarde a operação terminar antes de sair do Cruzador."
+        alert.informativeText = "Cancele a operação pelo aplicativo ou feche o programa Windows e aguarde o encerramento antes de sair do Cruzador."
         alert.runModal(); return .terminateCancel
     }
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { false }

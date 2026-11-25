@@ -91,10 +91,30 @@
         "ui:install-progress:1"
       ],
       "reverse_knowledge": "runtime-observed-cancellation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Cancelamento foi observado no original; o Cruzador ainda não cancela subprocessos.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/CommandRunner.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CommandRunnerTests.swift",
+          "name": "testCancellationDuringFinalizationKeepsCleanupAndRejectsStaleIDs",
+          "scope": "Cancelamento na finalização, incluindo saída zero, IDs atrasados e limpeza."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/CommandRunnerTests.swift",
+          "name": "testCleanupFailureRetainsRecoveryAndRetryRemovesItOnlyAfterSuccess",
+          "scope": "Falha de limpeza e retry preservam a pendência até sucesso."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Cancelamento do cliente Windows real, wineserver -k/-w e execução posterior no mesmo prefixo."
+        }
+      ],
+      "remaining_gap": "Cancelamento do Wine próprio implementado; porcentagem de instalação e censo de processos desvinculados não estabelecidos. Limpeza do adaptador legado CrossOver permanece desconhecida.",
       "independent_equivalence_established": false
     },
     {
@@ -520,10 +540,30 @@
         "ui:bottle-menu:22"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Sem supervisão/cancelamento completo no produto; smoke test apenas aguarda wineserver próprio.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/CommandRunner.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CommandRunnerTests.swift",
+          "name": "testCancellationDuringFinalizationKeepsCleanupAndRejectsStaleIDs",
+          "scope": "Cancelamento na finalização, incluindo saída zero, IDs atrasados e limpeza."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/CommandRunnerTests.swift",
+          "name": "testCleanupFailureRetainsRecoveryAndRetryRemovesItOnlyAfterSuccess",
+          "scope": "Falha de limpeza e retry preservam a pendência até sucesso."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Cancelamento do cliente Windows real, wineserver -k/-w e execução posterior no mesmo prefixo."
+        }
+      ],
+      "remaining_gap": "Cancelamento do Wine próprio implementado; porcentagem de instalação e censo de processos desvinculados não estabelecidos. Limpeza do adaptador legado CrossOver permanece desconhecida.",
       "independent_equivalence_established": false
     },
     {

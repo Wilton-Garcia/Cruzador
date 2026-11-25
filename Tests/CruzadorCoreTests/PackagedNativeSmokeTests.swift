@@ -30,6 +30,21 @@ final class PackagedNativeSmokeTests: XCTestCase {
         let cmd = store.prefix(for: bottle).appendingPathComponent("drive_c/windows/system32/cmd.exe")
         let failure = try await runner.run(EngineCommands.make(.run(LaunchRequest(path: cmd.path, arguments: ["/c", "exit", "7"])), bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("exit7.log"))
         XCTAssertEqual(failure.exitCode, 7)
+        let cancelID = UUID(), cancelLog = store.logsRoot.appendingPathComponent("cancel.log")
+        let cancelPlan = try EngineCommands.make(.run(LaunchRequest(path: cmd.path, arguments: ["/c", "echo CRUZADOR_WAIT_READY && notepad.exe"])), bottle: bottle, store: store)
+        let running = Task { try await runner.run(cancelPlan, log: cancelLog, operationID: cancelID) }
+        var readyToCancel = false
+        for _ in 0..<500 {
+            if (try? String(contentsOf: cancelLog, encoding: .utf8))?.contains("CRUZADOR_WAIT_READY") == true { readyToCancel = true; break }
+            try await Task.sleep(for: .milliseconds(20))
+        }
+        await runner.cancel(operationID: cancelID)
+        let cancelled = try await running.value
+        XCTAssertTrue(readyToCancel); XCTAssertTrue(cancelled.cancelled); XCTAssertTrue(cancelled.cleanupFailures.isEmpty)
+        XCTAssertEqual(cancelled.phases.filter { $0.phase == "cancellation" }.compactMap(\.exitCode), [0, 0])
+        let afterCancel = try await runner.run(EngineCommands.make(.run(LaunchRequest(path: cmd.path, arguments: ["/c", "echo", "CRUZADOR_AFTER_CANCEL"])), bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("after-cancel.log"))
+        try afterCancel.requireSuccess()
+        XCTAssertTrue(try String(contentsOf: afterCancel.log, encoding: .utf8).contains("CRUZADOR_AFTER_CANCEL"))
         let stopped = try await runner.run(Command(executable: runtime.server, arguments: ["-w"], environment: ["WINEPREFIX": store.prefix(for: bottle).path]), log: store.logsRoot.appendingPathComponent("server-wait.log"))
         XCTAssertEqual(stopped.exitCode, 0)
         #if arch(arm64)
@@ -41,7 +56,7 @@ final class PackagedNativeSmokeTests: XCTestCase {
         #endif
         let report: [String: Any] = ["runtime": runtime.root.path, "version": runtime.manifest.version, "test_process_architecture": hostArchitecture,
                                     "operating_system": ProcessInfo.processInfo.operatingSystemVersionString, "initialization_exit": created.exitCode, "repair_exit": repaired.exitCode,
-                                    "windows_commands": observations, "nonzero_exit": failure.exitCode, "server_wait_exit": stopped.exitCode,
+                                    "windows_commands": observations, "nonzero_exit": failure.exitCode, "server_wait_exit": stopped.exitCode, "cancelled": cancelled.cancelled, "cancellation_cleanup_codes": cancelled.phases.filter { $0.phase == "cancellation" }.compactMap(\.exitCode), "after_cancellation_exit": afterCancel.exitCode,
                                     "limitations": ["No CrossOver executable is selected by these commands.", "No general application or graphics compatibility established."]]
         try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys]).write(to: store.root.appendingPathComponent("runtime-smoke.json"), options: .atomic)
     }
