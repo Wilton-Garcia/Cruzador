@@ -197,18 +197,18 @@ struct EngineSettings: View {
     var body: some View {
         Form {
             Text("Motor de compatibilidade").font(.title2.bold())
-            Text("Escolha uma instalação existente. Cada bottle mantém o motor escolhido no momento da criação.").foregroundStyle(.secondary)
-            Picker("Motor", selection: $model.engineKind) {
-                Text("CrossOver instalado").tag(EngineKind.crossOver)
+            Text("O Wine incluído prepara seus ambientes Windows. Cada bottle mantém o motor escolhido no momento da criação.").foregroundStyle(.secondary)
+            Picker("Motor", selection: Binding(get: { model.engineKind }, set: { model.selectEngine($0) })) {
                 Text("Wine externo").tag(EngineKind.wine)
                 Text("Pacote Wine do Cruzador").tag(EngineKind.packagedWine)
+                Text("CrossOver externo (comparação/legado)").tag(EngineKind.crossOver)
             }
             TextField(model.engineKind == .crossOver ? "Caminho do CrossOver.app" : model.engineKind == .packagedWine ? "Pasta do pacote com runtime.json" : "Caminho do executável wine", text: $model.enginePath)
             Button("Escolher…") {
                 let panel = NSOpenPanel(); panel.canChooseDirectories = model.engineKind != .wine; panel.canChooseFiles = true; panel.treatsFilePackagesAsDirectories = false
                 if panel.runModal() == .OK, let url = panel.url { model.enginePath = url.path; model.saveEngine() }
             }
-            Text("O Cruzador não instala o motor e não usa as bottles existentes do CrossOver.").font(.caption).foregroundStyle(.secondary)
+            Text("O pacote incluído é a opção padrão. Motores externos são opcionais e usam bottles separadas.").font(.caption).foregroundStyle(.secondary)
             if model.engineKind == .packagedWine {
                 Button("Usar pacote incluído no aplicativo") { model.enginePath = WineRuntime.bundledRoot.path; model.saveEngine() }
             }

@@ -14,7 +14,7 @@ final class CoreTests: XCTestCase {
     }
     func testMetadataRoundTripAndBackupPreserveNames() throws {
         let store = LibraryStore(root: try temporary()); var library = Library()
-        let bottle = Bottle(name: "../ Jogos 日本語", engine: .crossOver)
+        let bottle = Bottle(name: "../ Jogos 日本語", engine: Engine(kind: .crossOver, path: "/Applications/CrossOver.app"))
         library.bottles = [bottle]; try store.save(library)
         XCTAssertEqual(try store.load().bottles, [bottle])
         XCTAssertEqual(store.prefix(for: bottle).lastPathComponent, bottle.id.uuidString)

@@ -11,7 +11,7 @@ final class NativeSmokeTests: XCTestCase {
             throw CruzadorError.invalid("O smoke test exige uma pasta absoluta que ainda não exista.")
         }
         let store = LibraryStore(root: URL(fileURLWithPath: root)); try store.prepare()
-        var bottle = Bottle(name: "Cruzador smoke", engine: .crossOver)
+        var bottle = Bottle(name: "Cruzador smoke", engine: Engine(kind: .crossOver, path: "/Applications/CrossOver.app"))
         var library = Library(); library.bottles = [bottle]; try store.save(library)
         let runner = CommandRunner()
         let create = try EngineCommands.make(.initialize, bottle: bottle, store: store)

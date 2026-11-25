@@ -14,17 +14,21 @@ final class AppModel: ObservableObject {
     @Published var showCreate = false
     @Published var showRegister = false
     @Published var search = ""
-    @Published var engineKind: EngineKind = .crossOver
-    @Published var enginePath = "/Applications/CrossOver.app"
+    @Published var engineKind: EngineKind = .packagedWine
+    @Published var enginePath = WineRuntime.bundledRoot.path
+    private var enginePreferenceError: String?
     @Published var loaded = false
     let store = LibraryStore(root: LibraryStore.defaultRoot)
     private let runner = CommandRunner()
     var selected: Bottle? { library.bottles.first { $0.id == selection } }
     var filteredBottles: [Bottle] { library.bottles.filter { search.isEmpty || $0.name.localizedCaseInsensitiveContains(search) } }
     init() {
-        if let raw = UserDefaults.standard.string(forKey: "engineKind"), let kind = EngineKind(rawValue: raw) { engineKind = kind }
-        if let path = UserDefaults.standard.string(forKey: "enginePath") { enginePath = path }
+        do {
+            let engine = try EnginePreferences.load(from: .standard)
+            engineKind = engine.kind; enginePath = engine.path
+        } catch { enginePreferenceError = error.localizedDescription }
         reload()
+        if let enginePreferenceError { error = enginePreferenceError }
     }
     func reload() {
         do {
@@ -33,8 +37,14 @@ final class AppModel: ObservableObject {
         } catch { loaded = false; self.error = "Não foi possível abrir a biblioteca: \(error.localizedDescription)" }
     }
     func saveEngine() {
-        UserDefaults.standard.set(engineKind.rawValue, forKey: "engineKind")
-        UserDefaults.standard.set(enginePath, forKey: "enginePath")
+        do {
+            try EnginePreferences.save(Engine(kind: engineKind, path: enginePath), to: .standard)
+            enginePreferenceError = nil
+        } catch { self.error = error.localizedDescription }
+    }
+    func selectEngine(_ kind: EngineKind) {
+        engineKind = kind
+        enginePath = kind == .packagedWine ? WineRuntime.bundledRoot.path : ""
     }
     private func persist(_ next: Library) throws { try store.save(next); library = next }
     func create(name: String) {
@@ -42,6 +52,7 @@ final class AppModel: ObservableObject {
         guard !name.isEmpty, loaded, !busy else { return }
         let bottle = Bottle(name: name, engine: Engine(kind: engineKind, path: enginePath))
         do {
+            if let enginePreferenceError { throw CruzadorError.invalid(enginePreferenceError) }
             _ = try EngineCommands.make(.initialize, bottle: bottle, store: store)
             var next = library; next.bottles.append(bottle); try persist(next)
             selection = bottle.id; showCreate = false

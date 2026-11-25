@@ -14,7 +14,6 @@ public struct Engine: Codable, Equatable, Sendable {
     public var kind: EngineKind
     public var path: String
     public init(kind: EngineKind, path: String) { self.kind = kind; self.path = path }
-    public static let crossOver = Engine(kind: .crossOver, path: "/Applications/CrossOver.app")
 }
 public enum BottleState: String, Codable, Sendable { case preparing, ready, failed }
 public struct WindowsApp: Identifiable, Codable, Equatable, Sendable {
