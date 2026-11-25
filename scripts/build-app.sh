@@ -20,5 +20,12 @@ cat > "$app/Contents/Info.plist" <<'PLIST'
 <key>NSHighResolutionCapable</key><true/>
 </dict></plist>
 PLIST
+runtime_source="${CRUZADOR_RUNTIME_PATH:-.local/Runtime-11.21}"
+if [ -d "$runtime_source" ]; then
+    python3 scripts/stage-wine-runtime.py "$runtime_source" "$app"
+elif [ -n "${CRUZADOR_RUNTIME_PATH:-}" ]; then
+    printf 'Pacote Wine selecionado não existe: %s\n' "$runtime_source" >&2
+    exit 1
+fi
 codesign --force --sign - "$app"
 printf 'Aplicativo gerado: %s\n' "$app"

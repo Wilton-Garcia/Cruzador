@@ -14,8 +14,18 @@ O manifesto identifica `wineExecutable`, `serverExecutable` e `licenseFiles`. Co
 
 No lançamento, o adaptador usa o Wine do pacote, o wineserver do mesmo pacote e o prefixo escolhido para a bottle. Não injeta `CX_BOTTLE` ou usa ferramentas da instalação do CrossOver. O ambiente herdado continua pertencendo ao processo; somente as substituições explicitamente escolhidas compõem o comando do adaptador.
 
-O caminho padrão de um pacote incluído no aplicativo é `Contents/Resources/Runtime`. A interface permite selecionar uma pasta com manifesto ou esse caminho padrão. Nesta etapa, o formato e a integração estão implementados; ainda não há um pacote Wine real distribuído pelo build do Cruzador.
+O caminho padrão de um pacote incluído no aplicativo é `Contents/Resources/Runtime`. A interface permite selecionar uma pasta com manifesto ou esse caminho padrão. O build pode incluir um pacote Wine real preparado pelo procedimento abaixo; a presença do pacote não estabelece compatibilidade com todos os programas Windows.
 
 ## Validação
 
 Os testes executam uma ferramenta de fixture dentro de um pacote temporário e verificam seleção do servidor/prefixo, ausência de fallback, componentes ausentes e resolução fora da raiz. Eles não estabelecem compatibilidade Wine nem uma distribuição independente pronta. A preparação de um pacote real e a validação de suas dependências são etapas separadas.
+
+## Preparação reproduzível do pacote real
+
+`config/wine-runtime-lock.json` fixa Wine 11.21, o asset macOS do mantenedor, sua URL e SHA-256, além dos textos de licença upstream selecionados. `python3 scripts/prepare-wine-runtime.py` verifica os downloads, valida os caminhos do arquivo tar e prepara `.local/Runtime-11.21`. A extração não instala software no sistema e não usa binários do CrossOver.
+
+O pacote tem inventário por arquivo e link, com hashes dos arquivos regulares. Repetir a preparação verifica e reutiliza um pacote idêntico; metadados ou licenças diferentes não são aceitos silenciosamente. O build inclui esse runtime quando presente, ou usa a pasta explicitamente selecionada por `CRUZADOR_RUNTIME_PATH`. A cópia para o app é verificada e uma versão substituída é preservada como backup. Pacotes e downloads ficam fora do Git.
+
+O pacote real foi incluído no Cruzador.app local; a verificação do inventário passou após a cópia e a assinatura ad hoc do aplicativo foi conferida. O executável incluído retornou `wine-11.21` com status 0. O [registro de preparação](../evidence/runtime-package.json) preserva a identidade e os limites dessa validação.
+
+É um pacote de desenvolvimento: os textos de licença Wine selecionados estão incluídos, mas a revisão integral das atribuições e correspondência de fontes de todas as dependências do pacote do mantenedor ainda não foi concluída. Nenhuma declaração de conformidade integral para redistribuição pública é feita. A inspeção de arquiteturas e os cenários Windows do motor próprio são validações separadas do preparo do pacote.

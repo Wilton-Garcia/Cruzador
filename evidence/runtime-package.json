@@ -1,0 +1,40 @@
+{
+  "runtime_path": "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime",
+  "manifest": {
+    "formatVersion": 1,
+    "identifier": "org.winehq.wine",
+    "version": "11.21",
+    "sourceURL": "https://github.com/wine-mirror/wine/tree/wine-11.21",
+    "sourceRevision": "wine-11.21",
+    "providerRelease": "https://github.com/Gcenx/macOS_Wine_builds/releases/tag/11.21",
+    "archiveSHA256": "9909b486657e10ab66c7279371ae1f990345b596b3b1b3a0cf21f28af24fa0ce",
+    "architectures": [
+      "x86_64"
+    ],
+    "wineExecutable": "bin/wine",
+    "serverExecutable": "bin/wineserver",
+    "licenseFiles": [
+      "licenses/Wine/LICENSE",
+      "licenses/Wine/COPYING.LIB"
+    ],
+    "inventorySHA256": "42f1148eb6f80f7b77d0f341e3b49bfcddbf0dc6803202ae2e4191757792e665",
+    "distributionStatus": "development-package; complete third-party attribution review remains unverified"
+  },
+  "entries": 5660,
+  "regular_file_bytes": 1030356055,
+  "wine_sha256": "0a6318981ece3921e2161bc4b4e060001380bb11e22847d99e3faa1cacd31037",
+  "server_sha256": "fd24f27d77c34e0dec9515d4d1f6763bd555eb93bb812367a4ec606da62fdbab",
+  "source_archive_sha256": "9909b486657e10ab66c7279371ae1f990345b596b3b1b3a0cf21f28af24fa0ce",
+  "observed_version": "wine-11.21",
+  "checks": [
+    "Full runtime inventory verified after app staging",
+    "App ad hoc signature verified with codesign --verify --strict",
+    "wine --version exited 0"
+  ],
+  "limitations": [
+    "No general Windows compatibility established by a version probe",
+    "Complete third-party attribution/source correspondence review remains unverified",
+    "Local ad hoc signing is not notarized distribution",
+    "Binaries and generated package are local artifacts, not committed"
+  ]
+}

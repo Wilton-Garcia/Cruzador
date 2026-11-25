@@ -1,0 +1,18 @@
+{
+  "version": "11.21",
+  "identifier": "org.winehq.wine",
+  "sourceURL": "https://github.com/wine-mirror/wine/tree/wine-11.21",
+  "sourceRevision": "wine-11.21",
+  "providerRelease": "https://github.com/Gcenx/macOS_Wine_builds/releases/tag/11.21",
+  "archive": {
+    "name": "wine-devel-11.21-osx64.tar.xz",
+    "url": "https://github.com/Gcenx/macOS_Wine_builds/releases/download/11.21/wine-devel-11.21-osx64.tar.xz",
+    "sha256": "9909b486657e10ab66c7279371ae1f990345b596b3b1b3a0cf21f28af24fa0ce",
+    "runtimePath": "Wine Devel.app/Contents/Resources/wine"
+  },
+  "architectures": ["x86_64"],
+  "licenses": [
+    {"path":"licenses/Wine/LICENSE","url":"https://raw.githubusercontent.com/wine-mirror/wine/wine-11.21/LICENSE","sha256":"ae025f125a5d639f0f7abe5146efa1e3d7453cc10b744b2910806fa3f46626ef"},
+    {"path":"licenses/Wine/COPYING.LIB","url":"https://raw.githubusercontent.com/wine-mirror/wine/wine-11.21/COPYING.LIB","sha256":"e237fa56668030e928551ddd60f05df5fe957f75eab874bbd017e085ed722e7c"}
+  ]
+}
