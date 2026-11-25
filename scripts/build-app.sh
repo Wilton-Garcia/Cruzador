@@ -46,4 +46,6 @@ else
     exit 1
 fi
 codesign --force --sign - "$app"
+# Finder displays the bundle directory date; record completion after updating its contents.
+touch "$app"
 printf 'Aplicativo gerado: %s\n' "$app"
