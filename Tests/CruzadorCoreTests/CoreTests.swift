@@ -73,3 +73,28 @@ final class CoreTests: XCTestCase {
         XCTAssertFalse(FileManager.default.fileExists(atPath: root.appendingPathComponent("sentinel").path))
     }
 }
+
+extension CoreTests {
+    func testLegacyBottleRemovalWaitsOnlyForItsPrivateLibraryPrefix() async throws {
+        let root = try temporary(), app = root.appendingPathComponent("Legacy.app"), trace = root.appendingPathComponent("wait.txt")
+        let bin = app.appendingPathComponent("Contents/SharedSupport/CrossOver/bin")
+        try FileManager.default.createDirectory(at: bin, withIntermediateDirectories: true)
+        try executable(bin.appendingPathComponent("wine"), text: "#!/bin/sh\nprintf '%s\\n' \"$CX_BOTTLE_PATH\" \"$CX_BOTTLE\" \"$WINEPREFIX\" \"$@\" > '\(trace.path)'\n")
+        let store = LibraryStore(root: root.appendingPathComponent("library"))
+        var bottle = Bottle(name: "Legacy owned prefix", engine: Engine(kind: .crossOver, path: app.path)); bottle.state = .ready
+        let prefix = store.prefix(for: bottle)
+        try FileManager.default.createDirectory(at: prefix.appendingPathComponent("drive_c"), withIntermediateDirectories: true)
+        try Data("owned registry".utf8).write(to: prefix.appendingPathComponent("system.reg"))
+        let control = root.appendingPathComponent("outside-control.txt"); try Data("preserve".utf8).write(to: control)
+        var library = Library(); library.bottles = [bottle]; try store.save(library)
+        let plan = try EngineCommands.make(.waitForIdle, bottle: bottle, store: store)
+        XCTAssertTrue(plan.cancellation.isEmpty); XCTAssertNotNil(plan.cancellationWarning)
+        let recovered = try await BottleMaintenance(store: store, runner: CommandRunner()).remove(id: bottle.id)
+        let facts = try String(contentsOf: trace, encoding: .utf8)
+        XCTAssertTrue(facts.contains(store.bottlesRoot.path)); XCTAssertTrue(facts.contains(bottle.id.uuidString))
+        XCTAssertTrue(facts.contains("--scope\nprivate\n--no-gui\n--wait-all"))
+        XCTAssertTrue(try store.load().bottles.isEmpty)
+        XCTAssertTrue(FileManager.default.fileExists(atPath: recovered.appendingPathComponent("Prefix/system.reg").path))
+        XCTAssertEqual(try Data(contentsOf: control), Data("preserve".utf8))
+    }
+}

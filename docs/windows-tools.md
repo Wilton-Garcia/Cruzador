@@ -1,6 +1,6 @@
 # Ferramentas Windows da bottle
 
-As ferramentas usam o mesmo planejador, ambiente e supervisor dos programas Windows. Identidades tipadas evitam nomes livres de ferramentas. O painel de controles exige `control.exe` e `joy.cpl` íntegros como arquivos PE de arquitetura compatível na pasta System32 da bottle selecionada; componentes ausentes ou malformados produzem uma mensagem para preparar/reparar essa bottle.
+As ferramentas usam o mesmo planejador, ambiente e supervisor dos programas Windows. Identidades tipadas evitam nomes livres de ferramentas. O painel de controles exige `control.exe` e `joy.cpl` presentes com cabeçalho PE reconhecido e arquitetura compatível na pasta System32 da bottle selecionada; componentes ausentes ou malformados produzem uma mensagem para preparar/reparar essa bottle.
 
 **Controles de jogos** abre o painel `joy.cpl` do Wine. O [painel do Wine 11.21](https://github.com/wine-mirror/wine/blob/wine-11.21/dlls/joy.cpl/joy.rc) oferece listagem, habilitação, testes de eixos/botões e abas das interfaces que o motor suporta. A presença dessas funções não comprova suporte a todos os dispositivos, mapeamentos, vibração ou drivers do macOS.
 
@@ -14,4 +14,4 @@ O [registro de execução do gerenciador](../evidence/runtime-task-manager.json)
 
 **Opções de Internet** abre `control.exe inetcpl.cpl` da bottle. O botão abre a ferramenta; alterações são aquelas que você confirmar no painel Windows. O plano não executa comandos de configuração de rede do macOS. As opções disponíveis dependem da implementação WinINet/Internet Control Panel do motor.
 
-O [registro do painel Internet](../evidence/runtime-internet-panel.json) inclui o comando produzido pelo código, o processo observado e a limpeza do prefixo. Nenhuma alteração de proxy ou rede foi feita durante a inspeção, e o conteúdo gráfico não foi verificado automaticamente.
+O [registro do painel Internet](../evidence/runtime-internet-panel.json) inclui o comando produzido pelo código, o processo observado e a limpeza do prefixo. Não foram acionadas opções de alteração de proxy ou rede durante a inspeção, e o conteúdo gráfico não foi verificado automaticamente.

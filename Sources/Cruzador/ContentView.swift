@@ -25,7 +25,7 @@ struct ContentView: View {
                                 Text(bottle.name).lineLimit(1)
                                 Text(bottle.apps.count == 1 ? "1 aplicativo" : "\(bottle.apps.count) aplicativos").font(.caption).foregroundStyle(.secondary)
                             }
-                        }.padding(.vertical, 7).tag(bottle.id)
+                        }.frame(maxWidth: .infinity, alignment: .leading).contentShape(Rectangle()).padding(.vertical, 7).tag(bottle.id)
                             .contextMenu {
                                 Button("Excluir bottle…", role: .destructive) { model.removeBottle(bottle) }.disabled(!model.canStart || !model.loaded)
                             }
@@ -64,11 +64,17 @@ struct ContentView: View {
                         Button("Criar primeira bottle") { model.presentation = .create }.buttonStyle(.borderedProminent).tint(.teal).disabled(!model.canStart)
                     }
                 }
+                if model.preparingBottleID != nil {
+                    VStack(alignment: .leading, spacing: 8) {
+                        ProgressView(model.status).progressViewStyle(.linear).frame(maxWidth: .infinity).accessibilityLabel("Preparação da bottle em andamento")
+                        Text("Configurando o ambiente Windows. Esta etapa pode levar alguns minutos.").font(.caption).foregroundStyle(.secondary)
+                    }.padding(14).background(.bar)
+                }
                 Divider()
                 HStack(spacing: 10) {
-                    if model.busy { ProgressView().controlSize(.small) }
+                    if model.busy { if model.preparingBottleID == nil { ProgressView().controlSize(.small) } }
                     else { Image(systemName: "circle.fill").font(.system(size: 7)).foregroundStyle(.teal) }
-                    Text(model.status).font(.caption).foregroundStyle(.secondary)
+                    if model.preparingBottleID == nil { Text(model.status).font(.caption).foregroundStyle(.secondary) }
                     Spacer()
                     if model.busy && model.canCancelOperation { Button(model.cancelling ? "Encerrando…" : "Cancelar operação") { model.cancelCurrentOperation() }.disabled(model.cancelling).help("No Wine, cancelar encerra os programas Windows desta bottle e aguarda o servidor.") }
                     if !model.incomingRequests.isEmpty { Button("Arquivos recebidos (\(model.incomingRequests.count))") { model.reviewIncoming() }.disabled(model.busy) }
@@ -143,15 +149,6 @@ struct ContentView: View {
                         Button("Remover da biblioteca…", role: .destructive) { model.removeBottle(bottle) }
                     } label: { Label("Gerenciar", systemImage: "ellipsis.circle") }.disabled(!model.canStart)
                     Image(systemName: "shippingbox.fill").font(.system(size: 54)).foregroundStyle(.teal.gradient).padding(10)
-                }
-                if model.preparingBottleID == bottle.id {
-                    GroupBox {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text(model.status).font(.headline)
-                            ProgressView().progressViewStyle(.linear).frame(maxWidth: .infinity).accessibilityLabel("Preparação da bottle em andamento")
-                            Text("Configurando o ambiente Windows. Esta etapa pode levar alguns minutos.").font(.caption).foregroundStyle(.secondary)
-                        }.padding(10).frame(maxWidth: .infinity, alignment: .leading)
-                    }
                 }
                 HStack(spacing: 12) {
                     Button { model.openRecipes() } label: { Label("Receitas…", systemImage: "list.bullet.clipboard") }

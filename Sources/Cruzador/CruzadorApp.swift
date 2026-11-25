@@ -6,10 +6,28 @@ import CruzadorCore
 struct CruzadorApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
-        Settings { EngineSettings(model: delegate.model).frame(width: 560).padding(28) }
+        Window("Cruzador", id: "library") {
+            LibraryRootView(delegate: delegate).frame(minWidth: 980, minHeight: 650)
+        }
+        .defaultSize(width: 1140, height: 760)
+        .defaultPosition(.center)
         .commands { LibraryCommands(model: delegate.model, showLibrary: delegate.showLibraryWindow) }
+        Settings { EngineSettings(model: delegate.model).frame(width: 560).padding(28) }
     }
 }
+private struct LibraryRootView: View {
+    let delegate: AppDelegate
+    @Environment(\.openWindow) private var openWindow
+    var body: some View {
+        ContentView(model: delegate.model).onAppear {
+            let action = openWindow
+            delegate.openLibraryWindow = { action(id: "library") }
+            delegate.loadDocumentHistoryIfNeeded()
+            NSLog("Cruzador library scene appeared; selected root: %@", delegate.model.store.root.path)
+        }
+    }
+}
+
 struct LibraryCommands: Commands {
     @ObservedObject var model: AppModel
     let showLibrary: () -> Void
@@ -33,23 +51,22 @@ struct LibraryCommands: Commands {
 /// Owns the single library window and external events, including cold file opens.
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
-    let model = AppModel()
-    private var libraryWindow: NSWindow?
-    func applicationDidFinishLaunching(_ notification: Notification) { model.loadRecentDocuments(); showLibraryWindow() }
-    func showLibraryWindow() {
-        if libraryWindow == nil {
-            let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 1140, height: 760), styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
-            window.title = "Cruzador"
-            window.contentMinSize = NSSize(width: 980, height: 650)
-            window.isReleasedWhenClosed = false
-            window.contentView = NSHostingView(rootView: ContentView(model: model).frame(minWidth: 980, minHeight: 650))
-            window.center()
-            libraryWindow = window
+    let model: AppModel = {
+        switch ApplicationLibrarySelection.resolve(arguments: Array(CommandLine.arguments.dropFirst())) {
+        case .success(let root): return AppModel(store: LibraryStore(root: root ?? LibraryStore.defaultRoot))
+        case .failure(let error): return AppModel(startupError: error.localizedDescription)
         }
-        NSApp.setActivationPolicy(.regular)
-        libraryWindow?.makeKeyAndOrderFront(nil)
+    }()
+    var openLibraryWindow: (() -> Void)?
+    private var documentHistoryLoaded = false
+    func loadDocumentHistoryIfNeeded() {
+        guard !documentHistoryLoaded else { return }
+        model.loadRecentDocuments(); documentHistoryLoaded = true
+    }
+    func applicationDidFinishLaunching(_ notification: Notification) { loadDocumentHistoryIfNeeded() }
+    func showLibraryWindow() {
+        openLibraryWindow?()
         NSApp.activate(ignoringOtherApps: true)
-        NSLog("Cruzador library window: visible=%d", libraryWindow?.isVisible == true)
     }
     func application(_ application: NSApplication, open urls: [URL]) {
         showLibraryWindow()

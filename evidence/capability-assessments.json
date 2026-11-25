@@ -386,6 +386,11 @@
           "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
           "name": "testServerFailurePreventsCopyAndRemoval",
           "scope": "Falha do servidor bloqueia mutação."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testLegacyBottleRemovalWaitsOnlyForItsPrivateLibraryPrefix",
+          "scope": "Remoção de bottle legada pertencente à biblioteca aguarda somente sua raiz/UUID, conserva cópia e não toca arquivo externo de controle."
         }
       ],
       "remaining_gap": "Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado.",
@@ -1140,16 +1145,22 @@
       "source_files": [
         "Sources/Cruzador/ContentView.swift",
         "Sources/Cruzador/CruzadorApp.swift",
-        "Sources/Cruzador/AppPresentation.swift"
+        "Sources/Cruzador/AppPresentation.swift",
+        "Sources/CruzadorCore/ApplicationLibrarySelection.swift"
       ],
       "tests": [
         {
           "file": "Tests/CruzadorPresentationTests/PresentationTests.swift",
           "name": "testIncomingRequestsDoNotReplaceExistingDialogOrStartWhileBusy",
           "scope": "Fila de abertura respeita diálogo ativo e operação em curso."
+        },
+        {
+          "file": "Tests/CruzadorPresentationTests/PresentationTests.swift",
+          "name": "testInvalidLaunchDoesNotTouchTheDefaultOrSelectedLibrary",
+          "scope": "Entrada inválida impede inicialização e recarga sem acessar biblioteca padrão."
         }
       ],
-      "remaining_gap": "Configuração própria, janela retida para reabertura e bloqueio de saída durante operação; restauração entre sessões e demais preferências não estabelecidas.",
+      "remaining_gap": "Janela principal pertence à cena SwiftUI, com reabertura, bloqueio de saída durante operações e seleção explícita de biblioteca; restauração entre sessões e equivalência integral não estabelecidas.",
       "independent_equivalence_established": false
     },
     {

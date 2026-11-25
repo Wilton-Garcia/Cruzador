@@ -1,0 +1,71 @@
+{
+  "formatVersion": 1,
+  "recordedAtUTC": "2026-11-25T18:32:24.203786+00:00",
+  "requested_feature_numbers": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "excluded_feature_numbers": [
+    5,
+    11,
+    12
+  ],
+  "additional_requests": [
+    "sidebar context-menu deletion",
+    "pinned indeterminate preparation progress bar"
+  ],
+  "app": "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador-Atualizado.app",
+  "executable_sha256": "ce83923148fa94d3fd947350ee68f63ae94f6f299c6a4b49210f7e2aae26a0ed",
+  "icon_sha256": "8d5cf45739c9c36a2a2bb60b33c946e5f882c0deba2b2487378fcac3d237e364",
+  "architectures": [
+    "x86_64",
+    "arm64"
+  ],
+  "bundle_modified_at_client": "2026-11-25T15:30:11.239792-03:00",
+  "minimum_macos": "14.0",
+  "local_checks": {
+    "core_tests": 88,
+    "presentation_tests": 5,
+    "optional_tests_skipped": 8,
+    "failures": 0,
+    "python_tests": 17,
+    "strict_code_signature_verified": true,
+    "dmg_verified_and_readonly_mounted": true
+  },
+  "cold_launch_observation": {
+    "instance": "Cruzador QA2",
+    "separate_library": "/Users/wiltongarcia/Developer/Cruzador/.local/ui-verification-library-final-20261125",
+    "observed_output": "Cruzador library scene appeared; selected root: /Users/wiltongarcia/Developer/Cruzador/.local/ui-verification-library-final-20261125",
+    "qa_changes": [
+      "Distinct bundle identifier",
+      "File and URL associations removed from QA copy"
+    ],
+    "qa_library_created_or_modified": false,
+    "visual_inspection_completed": false
+  },
+  "ci": {
+    "observed_run": "https://github.com/Wilton-Garcia/Cruzador/actions/runs/45661400338",
+    "source_commit": "19bc986a7ba8fa4ad55fb1d53b47d57d4a7d9a40",
+    "status": "not-started",
+    "scope": "No runner or workflow steps were allocated. The account execution restriction is retained in local annotations; this is not reported as remote validation of the final code."
+  },
+  "release": {
+    "image": "/Users/wiltongarcia/Developer/Cruzador/build/releases/entrega-final-20261125/Cruzador.dmg",
+    "sha256": "995f5ff20d945cfd1f820202c2f09c233086eb450148823e6442d6ad9b3adb7b",
+    "published": false
+  },
+  "limitations": [
+    "CUA returned cgWindowNotFound and later expired its continuation; final pixel-level inspection of the native UI was unavailable.",
+    "The cold-launch observation proves scene initialization and selected root, not every control or interaction.",
+    "Wine game-controller/task-manager/Internet processes were observed, but their rendered contents and physical-controller behavior were not automatically verified.",
+    "Developer ID signing and notarization remain deferred at the user request.",
+    "No full behavioral equivalence with CrossOver is claimed."
+  ]
+}

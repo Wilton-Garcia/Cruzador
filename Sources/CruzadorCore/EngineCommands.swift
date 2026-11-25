@@ -50,7 +50,8 @@ public enum EngineCommands {
             case .reboot:
                 throw CruzadorError.invalid("A reinicialização usa o Wine independente do Cruzador.")
             case .waitForIdle:
-                throw CruzadorError.invalid("A manutenção usa o motor Wine independente. O adaptador CrossOver é reservado para comparação e execução legada.")
+                executable = base.appendingPathComponent("bin/wine")
+                arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait-all"]
             case .repair:
                 executable = base.appendingPathComponent("bin/wine")
                 arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait", "--", "wineboot", "--update"]

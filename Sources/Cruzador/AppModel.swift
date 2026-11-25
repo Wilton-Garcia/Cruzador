@@ -35,15 +35,17 @@ final class AppModel: ObservableObject {
     let store: LibraryStore
     private let preferences: UserDefaults
     private let documents: any DocumentHistory
+    private let startupFailure: String?
     private let runner = CommandRunner()
     var canCancelOperation: Bool { activeOperationID != nil }
-    var canStart: Bool { !busy && cleanupOperationID == nil }
+    var canStart: Bool { !busy && cleanupOperationID == nil && startupFailure == nil }
     var selected: Bottle? { library.bottles.first { $0.id == selection } }
     var searchResults: [LibrarySearchMatch] { LibrarySearch(text: search).results(in: library) }
     var filteredBottles: [Bottle] { searchResults.map(\.bottle) }
     func filteredApps(in bottle: Bottle) -> [WindowsApp] { searchResults.first { $0.bottle.id == bottle.id }?.apps ?? [] }
-    init(store: LibraryStore = LibraryStore(root: LibraryStore.defaultRoot), preferences: UserDefaults = .standard, documents: (any DocumentHistory)? = nil) {
-        self.store = store; self.preferences = preferences; self.documents = documents ?? SystemDocumentHistory()
+    init(store: LibraryStore = LibraryStore(root: LibraryStore.defaultRoot), preferences: UserDefaults = .standard, documents: (any DocumentHistory)? = nil, startupError: String? = nil) {
+        self.store = store; self.preferences = preferences; self.documents = documents ?? SystemDocumentHistory(); self.startupFailure = startupError
+        if let startupError { self.error = startupError; return }
         do {
             let engine = try EnginePreferences.load(from: preferences)
             engineKind = engine.kind; enginePath = engine.path
@@ -61,6 +63,7 @@ final class AppModel: ObservableObject {
     }
     func reload() {
         guard !busy else { return }
+        if let startupFailure { loaded = false; error = startupFailure; return }
         do {
             library = try store.load(); loaded = true
             if selection == nil { selection = library.preferences.defaultBottleID ?? library.bottles.first?.id }

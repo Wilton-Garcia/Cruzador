@@ -81,3 +81,14 @@ final class PresentationTests: XCTestCase {
         XCTAssertNotNil(model.error); XCTAssertFalse(model.busy)
     }
 }
+
+@MainActor
+final class LaunchFailureTests: XCTestCase {
+    func testInvalidLaunchDoesNotTouchTheDefaultOrSelectedLibrary() throws {
+        let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let model = AppModel(store: LibraryStore(root: root), startupError: "Invalid selected root")
+        XCTAssertFalse(model.loaded); XCTAssertFalse(model.canStart); XCTAssertEqual(model.error, "Invalid selected root")
+        model.reload(); XCTAssertFalse(model.loaded); XCTAssertFalse(model.canStart)
+        XCTAssertFalse(FileManager.default.fileExists(atPath: root.path))
+    }
+}

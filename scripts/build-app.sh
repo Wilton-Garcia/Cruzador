@@ -8,7 +8,11 @@ case "${CRUZADOR_UNIVERSAL:-0}" in
 esac
 swift build -c release --jobs 4 "$@"
 binary_dir=$(swift build -c release "$@" --show-bin-path)
-app="build/Cruzador.app"
+app="${CRUZADOR_APP_OUTPUT:-build/Cruzador.app}"
+case "$app" in
+    *.app) ;;
+    *) printf 'CRUZADOR_APP_OUTPUT deve terminar em .app.\n' >&2; exit 2 ;;
+esac
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
 cp "$binary_dir/Cruzador" "$app/Contents/MacOS/Cruzador"
 scripts/build-icon.sh

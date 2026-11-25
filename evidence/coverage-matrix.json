@@ -385,6 +385,11 @@
           "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
           "name": "testServerFailurePreventsCopyAndRemoval",
           "scope": "Falha do servidor bloqueia mutação."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
+          "name": "testLegacyBottleRemovalWaitsOnlyForItsPrivateLibraryPrefix",
+          "scope": "Remoção de bottle legada pertencente à biblioteca aguarda somente sua raiz/UUID, conserva cópia e não toca arquivo externo de controle."
         }
       ],
       "remaining_gap": "Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado.",
@@ -1139,16 +1144,22 @@
       "source_files": [
         "Sources/Cruzador/ContentView.swift",
         "Sources/Cruzador/CruzadorApp.swift",
-        "Sources/Cruzador/AppPresentation.swift"
+        "Sources/Cruzador/AppPresentation.swift",
+        "Sources/CruzadorCore/ApplicationLibrarySelection.swift"
       ],
       "tests": [
         {
           "file": "Tests/CruzadorPresentationTests/PresentationTests.swift",
           "name": "testIncomingRequestsDoNotReplaceExistingDialogOrStartWhileBusy",
           "scope": "Fila de abertura respeita diálogo ativo e operação em curso."
+        },
+        {
+          "file": "Tests/CruzadorPresentationTests/PresentationTests.swift",
+          "name": "testInvalidLaunchDoesNotTouchTheDefaultOrSelectedLibrary",
+          "scope": "Entrada inválida impede inicialização e recarga sem acessar biblioteca padrão."
         }
       ],
-      "remaining_gap": "Configuração própria, janela retida para reabertura e bloqueio de saída durante operação; restauração entre sessões e demais preferências não estabelecidas.",
+      "remaining_gap": "Janela principal pertence à cena SwiftUI, com reabertura, bloqueio de saída durante operações e seleção explícita de biblioteca; restauração entre sessões e equivalência integral não estabelecidas.",
       "independent_equivalence_established": false
     },
     {
@@ -3052,16 +3063,17 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "292f71b4d5de4643c43180e707841caa72c29f9b449b3b9f934dbfa6c25e897b",
+    "Sources/Cruzador/AppModel.swift": "d5146a3656cc1b868b53c0f2b8e9644a4f2c43c3d41c11f3d7f26fe4b085a2aa",
     "Sources/Cruzador/AppPresentation.swift": "e9c95fda11f36df3b16481a03a643d9c029fbe7fb846f9aa1cf757493dff8075",
     "Sources/Cruzador/CompatibilityView.swift": "b423f5014ac05cd2a3d3237cf430db248de34c6de30d5989a8cfa5541732aac4",
-    "Sources/Cruzador/ContentView.swift": "2fe536c4592973161e73f04acf3abafa37a48b239807b38807025344013a4c61",
-    "Sources/Cruzador/CruzadorApp.swift": "431ede55976cca26a32067c1d7a2dfa8c480919639c25b7beab3895988730c80",
+    "Sources/Cruzador/ContentView.swift": "36fe5daef464d6f94cb84cc1df460d07c30203f6da11665af4a92a7c1af8505c",
+    "Sources/Cruzador/CruzadorApp.swift": "d5e400111c0f31fb121bfac8a688c9dff13df1aaca3a2696d094041377d7179a",
     "Sources/Cruzador/DiagnosticsView.swift": "d297e744b5b841a06322193fd8acd1f4fedbef742e7378db52b14d4089590378",
     "Sources/Cruzador/DocumentHistory.swift": "2e5fc0229ff9ae0f81bd655f17d21d0e35122b1314c09e91e271988757079ee3",
     "Sources/Cruzador/InstallerPreferencesView.swift": "22e437ac8131f55e975fae3197af1cb884c8b85a96e7dc6cf93668e15f00dab9",
     "Sources/Cruzador/RetinaView.swift": "53c2c24bfc72bf210d7718ce40ce614a8dce56eba64f20e3226468ede212dbee",
     "Sources/CruzadorCore/AppDiscovery.swift": "bd7e56c17df92e3fed7ea7e945e72d9a684237210abfdc77b44ec3e25fe110b5",
+    "Sources/CruzadorCore/ApplicationLibrarySelection.swift": "9e07c7e473e61ae5bf055c620fe8c6aeaf4e23cfb46f2bd45fa5af1055b96440",
     "Sources/CruzadorCore/BottleLifecycle.swift": "068afaab8f5fba4322a3daaea269c7f4b313bc403a0939bb51916ba84daa4c91",
     "Sources/CruzadorCore/BottleMaintenance.swift": "e339d91afad94e6a14a44daebcb50bd8a491fba61475dc4f57b164517cc2443f",
     "Sources/CruzadorCore/BottleOperationRecovery.swift": "d9640346576c820c0bc5c9a4b09330a5ee730190f7d47aaae921c758ba85d681",
@@ -3072,7 +3084,7 @@
     "Sources/CruzadorCore/CommandRunner.swift": "f054ec7d68e2e68261d66ddd8336aac246886561307c56c4c1f7556547bc9fc2",
     "Sources/CruzadorCore/Compatibility.swift": "e81de06e4b10adeae15defd6294226ef46f74af5094388f5f0ac2c9f93e4c3ab",
     "Sources/CruzadorCore/Diagnostics.swift": "e944c39b8ba277791cb36df6135c483eef49d744b0fa587956613920e187a3ba",
-    "Sources/CruzadorCore/EngineCommands.swift": "3bbbc5155b066e9fb85ee2d15e3bc8e4b707da17702207e91a8de797f83cd551",
+    "Sources/CruzadorCore/EngineCommands.swift": "f48c5f15c80706b46d607d5650e30189e84f49610e8f947896bd801dea63ade3",
     "Sources/CruzadorCore/ExternalOpening.swift": "d5e911d9485e8bc6f16813dbfe2e7c2ea9cf7f73f4e374b42981dfddc4a8e701",
     "Sources/CruzadorCore/InstallerPreferences.swift": "f8db82da449b617b02aa9c8db86b88e38b982aa8f98c1f157260364508710242",
     "Sources/CruzadorCore/Installers.swift": "407e100255475311c3244ab0db652b7eae8260522b7a87798e96304da5d4f146",
@@ -3095,7 +3107,7 @@
     "Tests/CruzadorCoreTests/BottleToolTests.swift": "902995949e62194fe55b3959d273d8dc3e4137117da91624a74067f3676bd66e",
     "Tests/CruzadorCoreTests/CommandRunnerTests.swift": "20473c4a7489ce15107d0744fc7d868edc396fc50573f497f78a78521bb0d889",
     "Tests/CruzadorCoreTests/CompatibilityTests.swift": "5241c8b2b283d6e8e5701ecd9dac8963ec200b88b670d54c785b5c1204f15c41",
-    "Tests/CruzadorCoreTests/CoreTests.swift": "4b0c8bb4f91574888a956265f13135b523bec7010fdf9100ccb2ccffb4c867e0",
+    "Tests/CruzadorCoreTests/CoreTests.swift": "f58197b7d4b831739498af213f1095efe15120a2fbde07eabc9f80c2ee4ba271",
     "Tests/CruzadorCoreTests/DiagnosticsTests.swift": "02708d44f6190b219298c770dd43c3bf65226d1942a14cc64c10efd5485f825b",
     "Tests/CruzadorCoreTests/DiscoveryTests.swift": "c1eefbaf48c39a90f79ff945d2d8546771cb4d955f6d58eadb6ee8ac261306e4",
     "Tests/CruzadorCoreTests/ExternalOpeningTests.swift": "40539413b640e1f9bbfefb3f1023086884247e6379b5420ee2b96ca63a6ec916",
@@ -3111,10 +3123,10 @@
     "Tests/CruzadorCoreTests/RetinaTests.swift": "9798b76e3c1079493edef490040aa1abb1840eb8c3bc0e0999867b0dc82952ab",
     "Tests/CruzadorCoreTests/SynchronizationTests.swift": "c869bf408cae4f0f61c683a43ed09eb90826415a0bb8654f83d61fa69030fe1b",
     "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "a99fee46e3c57d711d3d7499a3d92a958ede07540dca417084b334a65fb8df2a",
-    "Tests/CruzadorPresentationTests/PresentationTests.swift": "42da09f80743b7a97326d6dffd4772d0f63a06a4d04e9ef5c0dc789ad69ae775",
+    "Tests/CruzadorPresentationTests/PresentationTests.swift": "94e35cacb100b838de14f87a977929b75c980f3729c79a28b25ef5cd2f754fe0",
     "config/recipes.json": "d61a4fe567b4196894446bebf77bdc05aa6d74c7dd911d654380cc8a928876ee",
     "config/wine-msync-runtime-lock.json": "cbaae271f4a0fbaea717e13bf49c41a6840e839829e9c20a627ace5f1444c992",
-    "scripts/build-app.sh": "0218bddcf246866dbcdd77fd0eba9fc9945c157e7874327fbb8855a43c4e4efb",
+    "scripts/build-app.sh": "38a58867a0d9ec57d2d3bc395992ecfa135230e3dc47b1650dffafa5b24f0cee",
     "scripts/package-release.py": "f26a6b2decea157580a13ad7da592914c402166bb7344fe6bab65efdd51efabb",
     "tools/build-d3d9-probe.py": "2dba657bc29498e1a1eb5cde39b867e09208d8984b12e6bbaf3e01647a49429f"
   },

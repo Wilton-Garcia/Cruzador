@@ -14,13 +14,13 @@ Os testes de ciclo de vida verificam criação, reparo, falha, retomada, preserv
 
 ## Manutenção e transferência
 
-O menu **Gerenciar** oferece renomeação, duplicação, exportação e remoção. **Importar bottle** recebe uma pasta `.cruzadorbottle` com `bottle.json` e `Prefix`. É um formato próprio, sem compressão; não é o arquivo de backup do CrossOver. O motor Wine precisa estar disponível e seus programas devem ser fechados: cópia, exportação e remoção aguardam o servidor da bottle antes de alterar arquivos. A espera pode ser cancelada pela interface; a cópia de arquivos já iniciada termina antes de liberar a operação.
+O menu **Gerenciar** oferece renomeação, duplicação, exportação e remoção. **Importar bottle** recebe uma pasta `.cruzadorbottle` com `bottle.json` e `Prefix`. É um formato próprio, sem compressão; não é o arquivo de backup do CrossOver. O motor selecionado precisa estar disponível e seus programas devem ser fechados: cópia, exportação e remoção aguardam o servidor da bottle antes de alterar arquivos. A espera pode ser cancelada pela interface; a cópia de arquivos já iniciada termina antes de liberar a operação.
 
 Duplicar gera outro UUID e ajusta atalhos e links absolutos que apontavam para o prefixo original. Links relativos e destinos externos são preservados como links: arquivos fora do prefixo não são incluídos no pacote. Argumentos arbitrários dos atalhos não são reinterpretados como caminhos. A importação copia o conteúdo para outro UUID, usa o motor escolhido nas configurações e exige nova preparação antes de executar. A origem permanece intacta.
 
 Remover move o registro e o prefixo para `Removed/<UUID>.cruzadorbottle`; não os apaga definitivamente. Um pacote com prefixo inicializado pode ser importado novamente. Preparações incompletas ou registros sem prefixo permanecem disponíveis para diagnóstico nessa pasta, mas não satisfazem a validação de importação. Transferências que falham preservam arquivos parciais no caminho informado pelo erro. Não se deve apagá-los antes de conferir a origem e o manifesto da biblioteca.
 
-Esses fluxos são próprios do Wine independente. O adaptador CrossOver permanece para investigação e execução legada; a manutenção não declara suporte a seus formatos ou à transferência de suas bottles gerenciadas.
+Duplicação e importação usam o Wine independente. Bottles legadas que já pertencem à biblioteca podem ser exportadas ou removidas de forma recuperável após a espera privada do adaptador CrossOver. Essa espera usa somente a raiz e o UUID selecionados; não acessa bottles externas da instalação original. Isso não declara suporte aos formatos originais ou à transferência de suas bottles gerenciadas.
 
 ## Persistência e atualização do formato
 

@@ -22,3 +22,7 @@ O build atual usa assinatura ad hoc. Ainda faltam uma identidade válida **Devel
 A distribuição pública também depende da revisão da correspondência de fontes e licenças das dependências do runtime. O lock registra a origem do pacote, revisão Wine e textos de licença; isso não conclui a revisão de todos os componentes de terceiros. O pacote opcional WineCX tem a mesma pendência e permanece separado do padrão.
 
 Assinatura e notarização foram adiadas por solicitação do mantenedor. O preparo local não envia o aplicativo à Apple, publica uma release ou instala certificados. Credenciais e chaves privadas não entram no repositório.
+
+## Biblioteca isolada para verificação
+
+O aplicativo aceita `--library-root /caminho/absoluto` para iniciar com uma biblioteca separada, sem mudar a preferência persistida. Entrada inválida deixa a biblioteca indisponível e não acessa a padrão, inclusive ao tentar recarregar. O build aceita `CRUZADOR_APP_OUTPUT=build/Cruzador-Atualizado.app` para preservar uma versão já aberta. A cópia de QA usa outro identificador e não registra associações de arquivos ou URLs.
