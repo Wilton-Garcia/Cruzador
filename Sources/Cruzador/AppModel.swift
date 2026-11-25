@@ -14,29 +14,23 @@ final class AppModel: ObservableObject {
     @Published var status = "Sua biblioteca Windows no Mac"
     @Published var error: String?
     @Published var lastLog: URL?
-    @Published var showCreate = false
-    @Published var showRegister = false
     @Published var editingApp: WindowsApp?
-    @Published var showInstall = false
     @Published var selectedInstaller: WindowsFileInspection?
-    @Published var showRecipes = false
     @Published var recipeCatalog: RecipeCatalog?
     private var recipeTask: Task<Void, Never>?
-    @Published var showDiscovery = false
     @Published var discoveryReport: AppDiscoveryReport?
-    @Published var showBottleSettings = false
     @Published var incomingRequests: [ExternalOpenRequest] = []
-    @Published var recentDocuments: [URL] = NSDocumentController.shared.recentDocumentURLs
-    @Published var showIncoming = false
-    @Published var showDiagnostics = false
-    @Published var showHistory = false
+    @Published var recentDocuments: [URL] = []
+    @Published var presentation: AppPresentation?
     @Published var searchFocusRequest = UUID()
     @Published var search = ""
     @Published var engineKind: EngineKind = .packagedWine
     @Published var enginePath = WineRuntime.bundledRoot.path
     private var enginePreferenceError: String?
     @Published var loaded = false
-    let store = LibraryStore(root: LibraryStore.defaultRoot)
+    let store: LibraryStore
+    private let preferences: UserDefaults
+    private let documents: any DocumentHistory
     private let runner = CommandRunner()
     var canCancelOperation: Bool { activeOperationID != nil }
     var canStart: Bool { !busy && cleanupOperationID == nil }
@@ -44,9 +38,10 @@ final class AppModel: ObservableObject {
     var searchResults: [LibrarySearchMatch] { LibrarySearch(text: search).results(in: library) }
     var filteredBottles: [Bottle] { searchResults.map(\.bottle) }
     func filteredApps(in bottle: Bottle) -> [WindowsApp] { searchResults.first { $0.bottle.id == bottle.id }?.apps ?? [] }
-    init() {
+    init(store: LibraryStore = LibraryStore(root: LibraryStore.defaultRoot), preferences: UserDefaults = .standard, documents: (any DocumentHistory)? = nil) {
+        self.store = store; self.preferences = preferences; self.documents = documents ?? SystemDocumentHistory()
         do {
-            let engine = try EnginePreferences.load(from: .standard)
+            let engine = try EnginePreferences.load(from: preferences)
             engineKind = engine.kind; enginePath = engine.path
         } catch { enginePreferenceError = error.localizedDescription }
         do {
@@ -67,7 +62,7 @@ final class AppModel: ObservableObject {
     }
     func saveEngine() {
         do {
-            try EnginePreferences.save(Engine(kind: engineKind, path: enginePath), to: .standard)
+            try EnginePreferences.save(Engine(kind: engineKind, path: enginePath), to: preferences)
             enginePreferenceError = nil
         } catch { self.error = error.localizedDescription }
     }
@@ -78,12 +73,12 @@ final class AppModel: ObservableObject {
     private func persist(_ next: Library) throws { try store.save(next); library = next }
     func create(name: String) {
         let name = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !name.isEmpty, loaded, canStart else { return }
+        guard !name.isEmpty, loaded, canStart, presentation == .create else { return }
         do {
             if let enginePreferenceError { throw CruzadorError.invalid(enginePreferenceError) }
             let bottle = try BottleLifecycle(store: store).create(name: name, engine: Engine(kind: engineKind, path: enginePath))
             library = try store.load()
-            selection = bottle.id; showCreate = false
+            selection = bottle.id; dismissPresentation(.create)
             perform(.initialize, bottle: bottle, title: "Preparando \(name)…")
         } catch { self.error = error.localizedDescription }
     }
@@ -157,24 +152,32 @@ final class AppModel: ObservableObject {
             defer { busy = false }
             do {
                 let result = try await Task.detached(priority: .userInitiated) { try service.export(to: destination, bottleID: bottleID, includeSourceLibrary: includeSourceLibrary, includeLogs: includeLogs) }.value
-                showDiagnostics = false; status = "Diagnóstico exportado; revise os arquivos antes de compartilhar"
+                dismissPresentation(.diagnostics); status = "Diagnóstico exportado; revise os arquivos antes de compartilhar"
                 NSWorkspace.shared.activateFileViewerSelecting([result])
             } catch { self.error = error.localizedDescription; status = "Diagnóstico não concluído" }
         }
+    }
+    func loadRecentDocuments() { recentDocuments = documents.urls }
+    func dismissPresentation(_ expected: AppPresentation) {
+        if presentation == expected { presentation = nil }
+    }
+    func reviewIncoming() {
+        guard !busy, presentation == nil, !incomingRequests.isEmpty else { return }
+        presentation = .incoming
     }
     func receiveExternal(_ urls: [URL]) {
         for url in urls {
             do { incomingRequests.append(try ExternalOpenRequest(source: url)) }
             catch { self.error = "\(url.absoluteString): \(error.localizedDescription)" }
         }
-        if !incomingRequests.isEmpty { showIncoming = true }
-        NSApp.activate(ignoringOtherApps: true)
+        reviewIncoming()
     }
     func discardIncoming() {
         if !incomingRequests.isEmpty { incomingRequests.removeFirst() }
-        showIncoming = false
+        dismissPresentation(.incoming)
     }
     func openFile() {
+        guard !busy, presentation == nil else { return }
         let panel = NSOpenPanel(); panel.canChooseDirectories = true; panel.canChooseFiles = true
         panel.allowsMultipleSelection = true; panel.treatsFilePackagesAsDirectories = false
         panel.message = "Abra um programa Windows, atalho ou transferência do Cruzador."
@@ -182,7 +185,7 @@ final class AppModel: ObservableObject {
         receiveExternal(panel.urls)
     }
     func clearRecentDocuments() {
-        NSDocumentController.shared.clearRecentDocuments(nil)
+        documents.clear()
         recentDocuments = []
     }
     func acceptIncoming(bottleID: UUID?, install: Bool) {
@@ -201,7 +204,7 @@ final class AppModel: ObservableObject {
                 let inspection = try WindowsFileInspection.inspect(path: url.path)
                 selection = bottle.id
                 if install {
-                    selectedInstaller = inspection; showInstall = true
+                    selectedInstaller = inspection; presentation = .installer
                 } else {
                     perform(.run(LaunchRequest(path: url.path)), bottle: bottle, title: "Executando \(url.lastPathComponent)…")
                     guard busy else { return }
@@ -212,8 +215,8 @@ final class AppModel: ObservableObject {
                 maintenance("Importando bottle…") { service in try service.importBottle(from: url, engine: engine).id }
             }
             if incoming.source.isFileURL {
-                NSDocumentController.shared.noteNewRecentDocumentURL(incoming.source)
-                recentDocuments = NSDocumentController.shared.recentDocumentURLs
+                documents.note(incoming.source)
+                recentDocuments = documents.urls
             }
             discardIncoming()
         } catch { self.error = error.localizedDescription }
@@ -245,21 +248,21 @@ final class AppModel: ObservableObject {
         panel.message = installer ? "Escolha o instalador Windows" : "Escolha o executável Windows"
         guard panel.runModal() == .OK, let url = panel.url else { return }
         if installer {
-            do { selectedInstaller = try WindowsFileInspection.inspect(path: url.path); showInstall = true }
+            do { selectedInstaller = try WindowsFileInspection.inspect(path: url.path); presentation = .installer }
             catch { self.error = error.localizedDescription }
         } else { perform(.run(LaunchRequest(path: url.path)), bottle: bottle, title: "Executando programa…") }
     }
     func installSelected(mode: InstallerMode, arguments: String, workingDirectory: String, environmentJSON: String) {
-        guard let inspection = selectedInstaller, let bottle = selected, canStart else { return }
+        guard let inspection = selectedInstaller, let bottle = selected, canStart, presentation == .installer else { return }
         do {
             let options = try LaunchOptions.parse(workingDirectory: workingDirectory, environmentJSON: environmentJSON)
             let request = try InstallationRequest(inspection: inspection, mode: mode, arguments: arguments.isEmpty ? [] : arguments.components(separatedBy: "\n"), options: options)
-            showInstall = false
+            dismissPresentation(.installer)
             perform(.install(request), bottle: bottle, title: "Instalando \(URL(fileURLWithPath: inspection.path).lastPathComponent)…")
         } catch { self.error = error.localizedDescription }
     }
     func saveBottleSettings(_ settings: BottleSettings, bottleID: UUID) {
-        guard canStart else { return }
+        guard canStart, presentation == .bottleSettings else { return }
         let operationID = UUID()
         busy = true; activeOperationID = operationID; cancelling = false
         status = "Salvando opções; mudanças de sincronização aguardam o servidor…"
@@ -267,7 +270,7 @@ final class AppModel: ObservableObject {
             defer { busy = false; activeOperationID = nil; cancelling = false }
             do {
                 try await BottleSettingsStore(store: store).save(settings, bottleID: bottleID, runner: runner, operationID: operationID)
-                library = try store.load(); showBottleSettings = false
+                library = try store.load(); dismissPresentation(.bottleSettings)
                 status = "Configuração salva para os próximos processos Windows"
             } catch {
                 self.error = preserveShutdownFailure(error, bottleID: bottleID, operationID: operationID)
@@ -284,7 +287,7 @@ final class AppModel: ObservableObject {
             defer { busy = false }
             do {
                 discoveryReport = try await Task.detached(priority: .userInitiated) { try discovery.scan(bottle) }.value
-                showDiscovery = true; status = "Busca concluída; confira a cobertura e os candidatos"
+                presentation = .discovery; status = "Busca concluída; confira a cobertura e os candidatos"
             } catch { self.error = error.localizedDescription; status = "Busca não concluída" }
         }
     }
@@ -293,19 +296,19 @@ final class AppModel: ObservableObject {
         do {
             try AppDiscovery(store: store).add(ids: ids, from: report)
             library = try store.load(); selection = report.bottleID
-            showDiscovery = false; status = "Atalhos adicionados"
+            dismissPresentation(.discovery); status = "Atalhos adicionados"
         } catch { self.error = error.localizedDescription }
     }
     func openRecipes() {
         guard canStart else { return }
-        do { recipeCatalog = try RecipeCatalog(data: Data(contentsOf: RecipeCatalog.bundledURL)); showRecipes = true }
+        do { recipeCatalog = try RecipeCatalog(data: Data(contentsOf: RecipeCatalog.bundledURL)); presentation = .recipes }
         catch { self.error = "Não foi possível abrir o catálogo incluído: \(error.localizedDescription)" }
     }
     func installRecipe(id: String, catalog: RecipeCatalog) {
-        guard let bottle = selected, store.isReady(bottle), canStart else { return }
+        guard let bottle = selected, store.isReady(bottle), canStart, presentation == .recipes else { return }
         let operationID = UUID()
         let service = RecipeInstallationService(store: store, runner: runner, cache: ArtifactCache(root: store.root.appendingPathComponent("Downloads")), operationID: operationID)
-        showRecipes = false; busy = true; cancelling = false; activeOperationID = operationID
+        dismissPresentation(.recipes); busy = true; cancelling = false; activeOperationID = operationID
         status = "Preparando receita…"
         recipeTask = Task {
             defer { busy = false; cancelling = false; activeOperationID = nil; recipeTask = nil }
@@ -327,31 +330,31 @@ final class AppModel: ObservableObject {
         }
     }
     func beginRegister(_ app: WindowsApp? = nil) {
-        guard canStart, let bottle = selected, app != nil || store.isReady(bottle) else { return }
-        editingApp = app; showRegister = true
+        guard canStart, presentation == nil, let bottle = selected, app != nil || store.isReady(bottle) else { return }
+        editingApp = app; presentation = .register
     }
     func register(name: String, path: String, arguments: String, workingDirectory: String, environmentJSON: String) {
-        guard let selected, !busy else { return }
+        guard let selected, canStart, presentation == .register else { return }
         do {
             let options = try LaunchOptions.parse(workingDirectory: workingDirectory, environmentJSON: environmentJSON)
             let request = LaunchRequest(path: path, arguments: arguments.isEmpty ? [] : arguments.components(separatedBy: "\n"), options: options)
             try request.validate()
             let name = name.trimmingCharacters(in: .whitespacesAndNewlines)
             guard !name.isEmpty else { throw CruzadorError.invalid("Informe um nome para o aplicativo.") }
-            var next = library
+            var next = try store.load()
             guard let index = next.bottles.firstIndex(where: { $0.id == selected.id }) else { return }
             var app = WindowsApp(name: name, path: path, arguments: request.arguments, options: options)
             if let editingApp {
                 guard let appIndex = next.bottles[index].apps.firstIndex(where: { $0.id == editingApp.id }) else { throw CruzadorError.invalid("O atalho não existe mais nesta bottle.") }
                 app.id = editingApp.id; next.bottles[index].apps[appIndex] = app
             } else { next.bottles[index].apps.append(app) }
-            try persist(next); showRegister = false
+            try persist(next); dismissPresentation(.register)
         } catch { self.error = error.localizedDescription }
     }
     func removeShortcut(_ app: WindowsApp, bottle: Bottle) {
         guard !busy else { return }
         do {
-            var next = library
+            var next = try store.load()
             guard let index = next.bottles.firstIndex(where: { $0.id == bottle.id }) else { return }
             next.bottles[index].apps.removeAll { $0.id == app.id }; try persist(next)
         } catch { self.error = error.localizedDescription }
@@ -404,7 +407,7 @@ final class AppModel: ObservableObject {
     func makeDefault(_ bottle: Bottle) {
         guard !busy else { return }
         do {
-            var next = library; next.preferences.defaultBottleID = bottle.id
+            var next = try store.load(); next.preferences.defaultBottleID = bottle.id
             try persist(next); status = "Bottle padrão: \(bottle.name)"
         } catch { self.error = error.localizedDescription }
     }

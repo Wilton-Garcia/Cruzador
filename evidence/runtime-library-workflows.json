@@ -1,0 +1,181 @@
+{
+  "kind": "observed-local-runtime-workflows",
+  "runtime_report": {
+    "after_cancellation_exit": 0,
+    "cancellation_cleanup_codes": [
+      0,
+      0
+    ],
+    "cancelled": true,
+    "discovered_executables": 10,
+    "discovered_software_records": 3,
+    "formatVersion": 2,
+    "initialization_exit": 0,
+    "invalid_msi_macOS_exit": 91,
+    "invalid_msi_status": "unconfirmed",
+    "library_workflows": {
+      "copied_probe": {
+        "exit": 0,
+        "global_and_local_options_observed": true,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-59e5a9db-86b2-43c3-b251-bb94acad683d/Logs/copy-probe.log",
+        "working_directory_observed": true
+      },
+      "diagnostics": "/Users/wiltongarcia/Developer/Cruzador/.local/workflow-diagnostics-979EF5F5-AB26-4536-A806-A3399A755D72",
+      "diagnostics_log_hashes_verified": true,
+      "diagnostics_source_preserved": true,
+      "duplicate_id": "F75AD6A3-2218-4B9C-98B8-6ADE536C47B0",
+      "export_package": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-59e5a9db-86b2-43c3-b251-bb94acad683d/real-transfer.cruzadorbottle",
+      "final_server_wait_exit": 0,
+      "import_preparation_exit": 0,
+      "imported_7zip_exit": 0,
+      "imported_id": "0552C64B-E494-4629-83A1-6B6C422674B7",
+      "imported_probe": {
+        "exit": 0,
+        "global_and_local_options_observed": true,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-59e5a9db-86b2-43c3-b251-bb94acad683d/Logs/import-probe.log",
+        "working_directory_observed": true
+      },
+      "original_id": "9CEBFA53-5938-4636-AB14-0FEF86271FF5",
+      "original_probe": {
+        "exit": 0,
+        "global_and_local_options_observed": true,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-59e5a9db-86b2-43c3-b251-bb94acad683d/Logs/original-probe.log",
+        "working_directory_observed": true
+      },
+      "original_reference_resolved_after_transfers": true,
+      "removed_copy_recovery": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-59e5a9db-86b2-43c3-b251-bb94acad683d/Removed/1578E3C8-C45B-4F05-919B-F00B9C24B63F.cruzadorbottle",
+      "removed_reference_rejected": true
+    },
+    "limitations": [
+      "No CrossOver executable is selected by these commands.",
+      "No general application or graphics compatibility established."
+    ],
+    "nonzero_exit": 7,
+    "operating_system": "Versão 27.2.1 (Compilação 26B131)",
+    "positive_7zip_msi_exit": 0,
+    "recipe_installation_count": 1,
+    "recipe_verified_shortcuts": 2,
+    "repair_exit": 0,
+    "root": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-59e5a9db-86b2-43c3-b251-bb94acad683d",
+    "runtime": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21",
+    "server_wait_exit": 0,
+    "test_process_architecture": "arm64",
+    "version": "11.21",
+    "windows_commands": [
+      {
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-59e5a9db-86b2-43c3-b251-bb94acad683d/Bottles/9CEBFA53-5938-4636-AB14-0FEF86271FF5/drive_c/windows/system32/cmd.exe",
+        "exit_code": 0,
+        "explicit_environment_observed": true,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-59e5a9db-86b2-43c3-b251-bb94acad683d/Logs/system32.log",
+        "marker": "CRUZADOR_WIN64_OK",
+        "marker_observed": true,
+        "pe_machine": "0x8664"
+      },
+      {
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-59e5a9db-86b2-43c3-b251-bb94acad683d/Bottles/9CEBFA53-5938-4636-AB14-0FEF86271FF5/drive_c/windows/syswow64/cmd.exe",
+        "exit_code": 0,
+        "explicit_environment_observed": true,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-59e5a9db-86b2-43c3-b251-bb94acad683d/Logs/syswow64.log",
+        "marker": "CRUZADOR_WIN32_OK",
+        "marker_observed": true,
+        "pe_machine": "0x14c"
+      }
+    ]
+  },
+  "runtime_report_path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-59e5a9db-86b2-43c3-b251-bb94acad683d/runtime-smoke.json",
+  "runtime_report_sha256": "a64320715b0b50d4082c4a8080f6d4f980dd2ecf3426680620f84da48121ae0c",
+  "supervision": {
+    "format_version": 2,
+    "timed_out": false,
+    "timeout_seconds": 300.0,
+    "elapsed_seconds": 80.910208875,
+    "result": 0,
+    "test_exit": 0,
+    "cleanup_status": "not-requested",
+    "cleanup": [],
+    "report_error": null,
+    "previous_summary": "/Users/wiltongarcia/Developer/Cruzador/.local/packaged-runtime-smoke.previous-smoke-59e5a9db-86b2-43c3-b251-bb94acad683d.json",
+    "requested_output_root": null,
+    "output_root": "/Users/wiltongarcia/Developer/Cruzador/.local",
+    "requested_runtime": ".local/Runtime-11.21",
+    "runtime": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21",
+    "requested_installer_msi": ".local/downloads/7z2606-x64.msi",
+    "requested_recipes": "config/recipes.json",
+    "limitations": [
+      "CPU time and peak process-family memory were not measured."
+    ]
+  },
+  "msync_report": {
+    "cancellation": {
+      "after_cancel_exit": 0,
+      "after_cancel_marker": true,
+      "cancelled": true,
+      "cleanup_codes": [
+        0,
+        0
+      ]
+    },
+    "formatVersion": 2,
+    "initialization_exit": 0,
+    "observations": [
+      {
+        "cancelled": false,
+        "exit": 0,
+        "log": "msync: bootstrapped mach port on wine-2d7c1ca-msync.\nmsync: up and running.\n00b4:err:ntoskrnl:ZwLoadDriver failed to create driver L\"\\\\Registry\\\\Machine\\\\System\\\\CurrentControlSet\\\\Services\\\\winebth\": c00000e5\n0038:fixme:service:scmdatabase_autostart_services Auto-start service L\"winebth\" failed to start: 1359\nCRUZADOR_SYNC_1_GLOBAL_OK\r\n",
+        "marker": "CRUZADOR_SYNC_1_GLOBAL_OK",
+        "mode": "msync"
+      },
+      {
+        "cancelled": false,
+        "exit": 0,
+        "log": "00b4:err:ntoskrnl:ZwLoadDriver failed to create driver L\"\\\\Registry\\\\Machine\\\\System\\\\CurrentControlSet\\\\Services\\\\winebth\": c00000e5\n0038:fixme:service:scmdatabase_autostart_services Auto-start service L\"winebth\" failed to start: 1359\nCRUZADOR_SYNC_0_GLOBAL_OK\r\n",
+        "marker": "CRUZADOR_SYNC_0_GLOBAL_OK",
+        "mode": "server"
+      }
+    ],
+    "root": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-597da3c2-b302-4c5f-8eb7-f45dc6fa6181",
+    "runtime": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-WineCX-26.3",
+    "server_wait_exit": 0,
+    "watchdog_seconds": 120
+  },
+  "msync_report_path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-597da3c2-b302-4c5f-8eb7-f45dc6fa6181/msync-observations.json",
+  "msync_report_sha256": "1eb82d8bef9266c004d34ac6d4a4dd755ff39aa48ef50d74aaf68802caba50c8",
+  "msync_supervision": {
+    "format_version": 2,
+    "timed_out": false,
+    "timeout_seconds": 180.0,
+    "elapsed_seconds": 43.651522375,
+    "result": 0,
+    "test_exit": 0,
+    "cleanup_status": "not-requested",
+    "cleanup": [],
+    "report_error": null,
+    "previous_summary": null,
+    "requested_output_root": null,
+    "output_root": "/Users/wiltongarcia/Developer/Cruzador/.local",
+    "requested_runtime": ".local/Runtime-WineCX-26.3",
+    "runtime": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-WineCX-26.3",
+    "requested_installer_msi": null,
+    "requested_recipes": null,
+    "limitations": [
+      "CPU time and peak process-family memory were not measured.",
+      "Cleanup control commands concern only the selected retained prefixes; arbitrary detached helpers were not enumerated."
+    ]
+  },
+  "local_checks": {
+    "core_tests": 66,
+    "presentation_state_tests": 4,
+    "opt_in_skips_in_default_suite": 6,
+    "supervisor_contract_tests": 6,
+    "collection_tests": 1,
+    "packaging_tests": 3,
+    "failures": 0
+  },
+  "limitations": [
+    "Local Apple Silicon execution only; new Intel CI execution remains separate.",
+    "Presentation tests verify state transitions, not visual rendering or VoiceOver.",
+    "The retained runtime-control metadata hook was added after these local Windows executions and checked through producer/consumer fixture tests; exact-commit CI verification remains separate.",
+    "No game compatibility or performance gain is established.",
+    "No arbitrary detached-process census was performed."
+  ]
+}

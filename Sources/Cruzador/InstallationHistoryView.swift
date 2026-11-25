@@ -54,7 +54,7 @@ struct InstallationHistoryView: View {
                     }
                 } else { ContentUnavailableView("Selecione uma instalação", systemImage: "clock.arrow.circlepath") }
             }
-            HStack { Spacer(); Button("Fechar") { model.showHistory = false }.keyboardShortcut(.cancelAction) }
+            HStack { Spacer(); Button("Fechar") { model.dismissPresentation(.history) }.keyboardShortcut(.cancelAction) }
         }.padding(24).frame(width: 800, height: 560)
         .onAppear { selection = records.first?.id }
     }

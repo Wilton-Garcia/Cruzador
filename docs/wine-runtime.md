@@ -65,3 +65,13 @@ python3 scripts/native-smoke.py --runtime .local/Runtime-WineCX-26.3 --msync --t
 ```
 
 A evidência de execução e seus limites ficam em [runtime-msync.json](../evidence/runtime-msync.json). Não há promessa de ganho de desempenho ou compatibilidade de jogos. O pacote opcional ainda não foi verificado em hardware Intel nem nos runners macOS 15 usados para o Wine padrão; a versão mínima do novo pacote é superior à desses runners.
+
+## Cenário integrado de comportamento
+
+O smoke do pacote independente também verifica opções globais e sobrescritas do atalho, pasta de trabalho Windows, referência de launcher, duplicação, exportação, remoção recuperável, importação e preparo da cópia. Executa o comando de prova nas três bottles e, quando há atalho 7-Zip, executa o console na importada. Exporta diagnóstico e confere os hashes das cópias. O [registro local](../evidence/runtime-library-workflows.json) conserva resultados e limites.
+
+O supervisor exige relatórios estruturados completos e identidade compatível com o runtime e a pasta selecionados. Uma saída 0 do processo de teste sem essas observações não basta. Um resumo anterior é preservado com outro nome antes de iniciar. Falhas tentam encerrar somente os prefixos desse teste; o servidor é obtido de `runtime-control.json`, produzido pelo próprio `WineRuntime`, inclusive para caminhos personalizados. Sem metadados válidos, não há fallback para um executável presumido. O adaptador legado conserva explicitamente a limitação de limpeza automática.
+
+`--output-root` permite escolher onde reter os resultados. O registro de supervisão distingue saída do teste, prazo excedido, erro do relatório e resultado das tentativas de limpeza. A coleta de CI preserva caminhos e hashes em `evidence-index.json`; não achata logs com nomes iguais e não inclui binários, prefixos ou a cópia bruta da biblioteca.
+
+Os testes de apresentação usam armazenamento e histórico recentes isolados. Pedidos recebidos durante outra tela ou operação aguardam revisão, e ações atrasadas de uma tela não fecham outra. Isso não substitui validação visual da interface.

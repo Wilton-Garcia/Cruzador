@@ -31,5 +31,14 @@ final class NativeSmokeTests: XCTestCase {
         let stop = Command(executable: base, arguments: ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait-all"], environment: create.primary.environment)
         let stopped = try await runner.run(stop, log: store.logsRoot.appendingPathComponent("shutdown.log"))
         XCTAssertEqual(stopped.exitCode, 0)
+        try result.requireSuccess(); try runResult.requireSuccess(); try stopped.requireSuccess()
+        let marker = try String(contentsOf: runResult.log, encoding: .utf8).contains("CRUZADOR_SMOKE_OK")
+        let report: [String: Any] = ["formatVersion": 1, "root": store.root.path, "engine_kind": bottle.engine.kind.rawValue, "bottle_id": bottle.id.uuidString,
+                                    "initialization_exit": result.exitCode, "initialization_cancelled": result.cancelled,
+                                    "command_exit": runResult.exitCode, "command_cancelled": runResult.cancelled,
+                                    "marker_observed": marker, "prefix_initialized": store.isInitialized(bottle),
+                                    "server_wait_exit": stopped.exitCode, "server_wait_cancelled": stopped.cancelled,
+                                    "limitations": ["Only the selected original private bottle was exercised.", "Server wait is not a census of arbitrary detached helpers."]]
+        try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys]).write(to: store.root.appendingPathComponent("original-runtime-smoke.json"))
     }
 }

@@ -924,7 +924,9 @@
         "Sources/Cruzador/CruzadorApp.swift",
         "Sources/Cruzador/AppModel.swift",
         "Sources/Cruzador/ContentView.swift",
-        "scripts/build-app.sh"
+        "scripts/build-app.sh",
+        "Sources/Cruzador/AppPresentation.swift",
+        "Sources/Cruzador/DocumentHistory.swift"
       ],
       "tests": [
         {
@@ -941,6 +943,11 @@
           "file": "Tests/CruzadorCoreTests/ExternalOpeningTests.swift",
           "name": "testWindowsFilesAndTransferPackagesHaveDistinctRoutes",
           "scope": "Rotas separadas e fatos atuais do sistema de arquivos."
+        },
+        {
+          "file": "Tests/CruzadorPresentationTests/PresentationTests.swift",
+          "name": "testExternalReviewTransitionsToInstallerWithoutBeingDismissedByPreviousRoute",
+          "scope": "Transição da revisão para o assistente com um único diálogo; sem execução do instalador."
         }
       ],
       "remaining_gap": "Abertura alternativa de EXE/MSI, pacotes próprios, links e recentes; associação de documentos a apps Windows, .lnk e equivalência com launchers originais não estabelecidas.",

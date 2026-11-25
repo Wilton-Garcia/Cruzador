@@ -35,7 +35,7 @@ struct ContentView: View {
                     Text("Nenhuma bottle ou aplicativo encontrado.").font(.caption).foregroundStyle(.secondary)
                     Button("Limpar busca") { model.search = "" }
                 }
-                Button { model.showCreate = true } label: { Label("Nova bottle", systemImage: "plus").frame(maxWidth: .infinity) }
+                Button { model.presentation = .create } label: { Label("Nova bottle", systemImage: "plus").frame(maxWidth: .infinity) }
                     .controlSize(.large).disabled(!model.canStart || !model.loaded)
                 Button { model.importBottle() } label: { Label("Importar bottle…", systemImage: "square.and.arrow.down") }.disabled(!model.canStart || !model.loaded)
                 SettingsLink { Label("Configurar motor", systemImage: "gearshape") }.buttonStyle(.plain).foregroundStyle(.secondary)
@@ -57,7 +57,7 @@ struct ContentView: View {
                     } description: {
                         Text("Crie uma bottle para manter os arquivos e as configurações\nde seus programas Windows em um só lugar.")
                     } actions: {
-                        Button("Criar primeira bottle") { model.showCreate = true }.buttonStyle(.borderedProminent).tint(.teal).disabled(!model.canStart)
+                        Button("Criar primeira bottle") { model.presentation = .create }.buttonStyle(.borderedProminent).tint(.teal).disabled(!model.canStart)
                     }
                 }
                 Divider()
@@ -67,28 +67,45 @@ struct ContentView: View {
                     Text(model.status).font(.caption).foregroundStyle(.secondary)
                     Spacer()
                     if model.busy && model.canCancelOperation { Button(model.cancelling ? "Encerrando…" : "Cancelar operação") { model.cancelCurrentOperation() }.disabled(model.cancelling).help("No Wine, cancelar encerra os programas Windows desta bottle e aguarda o servidor.") }
-                    if !model.incomingRequests.isEmpty { Button("Arquivos recebidos (\(model.incomingRequests.count))") { model.showIncoming = true } }
+                    if !model.incomingRequests.isEmpty { Button("Arquivos recebidos (\(model.incomingRequests.count))") { model.reviewIncoming() }.disabled(model.busy) }
                     if model.cleanupOperationID != nil { Button("Repetir encerramento") { model.retryCleanup() }.disabled(model.busy) }
-                    Button("Diagnóstico…") { model.showDiagnostics = true }.disabled(model.busy)
+                    Button("Diagnóstico…") { model.presentation = .diagnostics }.disabled(model.busy)
                     if let log = model.lastLog { Button("Ver log") { NSWorkspace.shared.open(log) }.buttonStyle(.link) }
                 }.padding(14).background(.bar)
             }
         }
         .onChange(of: model.searchFocusRequest) { searchFocused = true }
         .tint(.teal)
-        .sheet(isPresented: $model.showDiagnostics) { DiagnosticsView(model: model) }
-        .sheet(isPresented: $model.showHistory) { if let bottle = model.selected { InstallationHistoryView(model: model, bottle: bottle) } }
-        .sheet(isPresented: $model.showIncoming) { if let incoming = model.incomingRequests.first { ExternalOpeningView(model: model, incoming: incoming) } }
-        .sheet(isPresented: $model.showCreate) { CreateBottleView(model: model) }
-        .sheet(isPresented: $model.showBottleSettings) { if let bottle = model.selected { BottleSettingsView(model: model, bottle: bottle) } }
-        .sheet(isPresented: $model.showDiscovery) { if let report = model.discoveryReport { DiscoveredAppsView(model: model, report: report) } }
-        .sheet(isPresented: $model.showRecipes) { if let catalog = model.recipeCatalog { RecipesView(model: model, catalog: catalog) } }
-        .sheet(isPresented: $model.showInstall) { if let installer = model.selectedInstaller { InstallProgramView(model: model, installer: installer) } }
-        .sheet(isPresented: $model.showRegister) { RegisterAppView(model: model, app: model.editingApp) }
+        .sheet(item: $model.presentation) { route in presentedView(route) }
         .alert("Não foi possível concluir", isPresented: Binding(get: { model.error != nil }, set: { if !$0 { model.error = nil } })) {
             Button("OK") { model.error = nil }
             if let log = model.lastLog { Button("Abrir log") { NSWorkspace.shared.open(log) } }
         } message: { Text(model.error ?? "") }
+    }
+    @ViewBuilder private func presentedView(_ route: AppPresentation) -> some View {
+        switch route {
+        case .create: CreateBottleView(model: model)
+        case .register: RegisterAppView(model: model, app: model.editingApp)
+        case .diagnostics: DiagnosticsView(model: model)
+        case .bottleSettings:
+            if let bottle = model.selected { BottleSettingsView(model: model, bottle: bottle) } else { unavailablePresentation(route) }
+        case .history:
+            if let bottle = model.selected { InstallationHistoryView(model: model, bottle: bottle) } else { unavailablePresentation(route) }
+        case .discovery:
+            if let report = model.discoveryReport { DiscoveredAppsView(model: model, report: report) } else { unavailablePresentation(route) }
+        case .recipes:
+            if let catalog = model.recipeCatalog { RecipesView(model: model, catalog: catalog) } else { unavailablePresentation(route) }
+        case .installer:
+            if let installer = model.selectedInstaller { InstallProgramView(model: model, installer: installer) } else { unavailablePresentation(route) }
+        case .incoming:
+            if let incoming = model.incomingRequests.first { ExternalOpeningView(model: model, incoming: incoming) } else { unavailablePresentation(route) }
+        }
+    }
+    private func unavailablePresentation(_ route: AppPresentation) -> some View {
+        VStack(spacing: 18) {
+            Text("Os dados desta ação não estão mais disponíveis.")
+            Button("Fechar") { model.dismissPresentation(route) }.keyboardShortcut(.cancelAction)
+        }.padding(28)
     }
     private func detail(_ bottle: Bottle) -> some View {
         ScrollView {
@@ -105,7 +122,7 @@ struct ContentView: View {
                     }
                     Spacer()
                     Menu {
-                        Button("Opções da bottle…") { model.showBottleSettings = true }
+                        Button("Opções da bottle…") { model.presentation = .bottleSettings }
                         Button(model.library.preferences.defaultBottleID == bottle.id ? "Bottle padrão" : "Usar como padrão") { model.makeDefault(bottle) }.disabled(model.library.preferences.defaultBottleID == bottle.id)
                         Button("Renomear…") { model.nameBottle(bottle, duplicate: false) }
                         Button("Duplicar…") { model.nameBottle(bottle, duplicate: true) }
@@ -185,7 +202,7 @@ struct ContentView: View {
                                     Button("Log") { NSWorkspace.shared.open(URL(fileURLWithPath: record.logPath)) }
                                 }
                             }
-                            Button("Ver histórico completo…") { model.showHistory = true }
+                            Button("Ver histórico completo…") { model.presentation = .history }.disabled(model.busy)
                             Text("O resultado descreve o instalador. Cadastre o atalho do programa instalado para executá-lo.").font(.caption).foregroundStyle(.secondary)
                         }.padding(10)
                     }
@@ -238,7 +255,7 @@ struct CreateBottleView: View {
                 Text(model.enginePath).font(.caption).foregroundStyle(.secondary).textSelection(.enabled)
                 Text("O motor será executado para preparar os arquivos da bottle.").font(.caption).foregroundStyle(.secondary)
             }
-            HStack { Button("Cancelar") { model.showCreate = false }.keyboardShortcut(.cancelAction); Spacer(); Button("Criar bottle") { model.create(name: name) }.buttonStyle(.borderedProminent).keyboardShortcut(.defaultAction).disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) }
+            HStack { Button("Cancelar") { model.dismissPresentation(.create) }.keyboardShortcut(.cancelAction); Spacer(); Button("Criar bottle") { model.create(name: name) }.buttonStyle(.borderedProminent).keyboardShortcut(.defaultAction).disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) }
         }.padding(30).frame(width: 470)
     }
 }
@@ -274,7 +291,7 @@ struct RegisterAppView: View {
             TextField("Pasta de trabalho opcional (caminho absoluto)", text: $workingDirectory).textFieldStyle(.roundedBorder)
             Text("Variáveis de ambiente em JSON, por exemplo: {\"LANG\": \"pt_BR.UTF-8\"}").font(.caption).foregroundStyle(.secondary)
             TextEditor(text: $environmentJSON).font(.system(.body, design: .monospaced)).frame(height: 85).border(.quaternary)
-            HStack { Button("Cancelar") { model.showRegister = false }.keyboardShortcut(.cancelAction); Spacer(); Button("Salvar atalho") { model.register(name: name, path: path, arguments: arguments, workingDirectory: workingDirectory, environmentJSON: environmentJSON) }.buttonStyle(.borderedProminent).disabled(name.isEmpty || path.isEmpty) }
+            HStack { Button("Cancelar") { model.dismissPresentation(.register) }.keyboardShortcut(.cancelAction); Spacer(); Button("Salvar atalho") { model.register(name: name, path: path, arguments: arguments, workingDirectory: workingDirectory, environmentJSON: environmentJSON) }.buttonStyle(.borderedProminent).disabled(name.isEmpty || path.isEmpty) }
         }.padding(30).frame(width: 520)
     }
 }
@@ -333,7 +350,7 @@ struct InstallProgramView: View {
                 TextEditor(text: $environmentJSON).font(.system(.body, design: .monospaced)).frame(height: 75).border(.quaternary)
             }
             HStack {
-                Button("Cancelar") { model.showInstall = false }.keyboardShortcut(.cancelAction)
+                Button("Cancelar") { model.dismissPresentation(.installer) }.keyboardShortcut(.cancelAction)
                 Spacer()
                 Button("Iniciar instalação") { model.installSelected(mode: mode, arguments: arguments, workingDirectory: workingDirectory, environmentJSON: environmentJSON) }.buttonStyle(.borderedProminent).disabled(!model.canStart)
             }
@@ -361,7 +378,7 @@ struct RecipesView: View {
                 Text("A receita baixa o instalador fixado, verifica seu conteúdo e executa as opções declaradas. Argumentos: \(recipe.arguments.joined(separator: " "))").font(.caption).foregroundStyle(.secondary)
             }
             HStack {
-                Button("Cancelar") { model.showRecipes = false }.keyboardShortcut(.cancelAction)
+                Button("Cancelar") { model.dismissPresentation(.recipes) }.keyboardShortcut(.cancelAction)
                 Spacer()
                 Button("Instalar receita") { if let selectedID { model.installRecipe(id: selectedID, catalog: catalog) } }.buttonStyle(.borderedProminent).disabled(selectedID == nil || !model.canStart)
             }
@@ -399,7 +416,7 @@ struct DiscoveredAppsView: View {
                 }.frame(maxHeight: 150)
             }
             HStack {
-                Button("Fechar") { model.showDiscovery = false }.keyboardShortcut(.cancelAction)
+                Button("Fechar") { model.dismissPresentation(.discovery) }.keyboardShortcut(.cancelAction)
                 Spacer()
                 Button("Adicionar selecionados") { model.addDiscovered(selectedIDs, report: report) }.buttonStyle(.borderedProminent).disabled(selectedIDs.isEmpty || !model.canStart)
             }
@@ -442,7 +459,7 @@ struct BottleSettingsView: View {
                 }.frame(maxWidth: .infinity, alignment: .leading)
             }
             HStack {
-                Button("Fechar") { model.showBottleSettings = false }.keyboardShortcut(.cancelAction)
+                Button("Fechar") { model.dismissPresentation(.bottleSettings) }.keyboardShortcut(.cancelAction)
                 Spacer()
                 Button("Salvar opções") {
                     do {

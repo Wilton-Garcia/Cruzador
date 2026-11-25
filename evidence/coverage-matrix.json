@@ -923,7 +923,9 @@
         "Sources/Cruzador/CruzadorApp.swift",
         "Sources/Cruzador/AppModel.swift",
         "Sources/Cruzador/ContentView.swift",
-        "scripts/build-app.sh"
+        "scripts/build-app.sh",
+        "Sources/Cruzador/AppPresentation.swift",
+        "Sources/Cruzador/DocumentHistory.swift"
       ],
       "tests": [
         {
@@ -940,6 +942,11 @@
           "file": "Tests/CruzadorCoreTests/ExternalOpeningTests.swift",
           "name": "testWindowsFilesAndTransferPackagesHaveDistinctRoutes",
           "scope": "Rotas separadas e fatos atuais do sistema de arquivos."
+        },
+        {
+          "file": "Tests/CruzadorPresentationTests/PresentationTests.swift",
+          "name": "testExternalReviewTransitionsToInstallerWithoutBeingDismissedByPreviousRoute",
+          "scope": "Transição da revisão para o assistente com um único diálogo; sem execução do instalador."
         }
       ],
       "remaining_gap": "Abertura alternativa de EXE/MSI, pacotes próprios, links e recentes; associação de documentos a apps Windows, .lnk e equivalência com launchers originais não estabelecidas.",
@@ -2896,10 +2903,12 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "3ebf8d4b27d289bc81358d2d15d6951033b6e88ef8aad9a4e2bf17056c3f8643",
-    "Sources/Cruzador/ContentView.swift": "de258e8df92abfb976ed74c8ab32d0c565a20d9b5b1eb044939ea497e9a4a201",
-    "Sources/Cruzador/CruzadorApp.swift": "0e4c6cfb2a1894fbe98a2f0d5efd13df8b6feca0a8119e64a3f6f8afe060cad3",
-    "Sources/Cruzador/DiagnosticsView.swift": "50748ff81822654d054b0888d844b891feb224fe363fd2b16c7bc7b74644fa25",
+    "Sources/Cruzador/AppModel.swift": "9ac01b63b299476dc304673b5ea74163094c5c1e58d52e0e2a7a08d769a689d8",
+    "Sources/Cruzador/AppPresentation.swift": "118e7545fc824f5884d16cb9ab33a53225a3b2ca8231f0ecedf379b5f2809f9c",
+    "Sources/Cruzador/ContentView.swift": "ec8c5b99db48952e807e71b4175541df9ccfb6efb7d88ffa5825e28a991bdc50",
+    "Sources/Cruzador/CruzadorApp.swift": "431ede55976cca26a32067c1d7a2dfa8c480919639c25b7beab3895988730c80",
+    "Sources/Cruzador/DiagnosticsView.swift": "d297e744b5b841a06322193fd8acd1f4fedbef742e7378db52b14d4089590378",
+    "Sources/Cruzador/DocumentHistory.swift": "2e5fc0229ff9ae0f81bd655f17d21d0e35122b1314c09e91e271988757079ee3",
     "Sources/CruzadorCore/AppDiscovery.swift": "bd7e56c17df92e3fed7ea7e945e72d9a684237210abfdc77b44ec3e25fe110b5",
     "Sources/CruzadorCore/BottleLifecycle.swift": "0611f7b49f7ab6969be864c70cf426de12c960c8c62c64055f27d03e53f90541",
     "Sources/CruzadorCore/BottleMaintenance.swift": "e339d91afad94e6a14a44daebcb50bd8a491fba61475dc4f57b164517cc2443f",
@@ -2932,11 +2941,12 @@
     "Tests/CruzadorCoreTests/LaunchTests.swift": "7f7adafe8378029fd5b1184003e896ad3d5f7fe55f408e97527dade3e36fe210",
     "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "ddb419f623d0aafb68ad3058410d30f78806bae10ebd8705b58f854724105713",
     "Tests/CruzadorCoreTests/LibrarySearchTests.swift": "56da908ac1eac1e3263c8c3901da410e06f9c886fb35f9d03abd60c3d538d34f",
-    "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "0f7b7703620b0e9aa3aa78f1fd549365a89f7d5530d422ed853b9c3c962d61d3",
-    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "6e9fea8739572685433288976cb22950620c48d3921b95b58fac88d4c1baf2f6",
+    "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "de4672c5c1b4da9e00e40a610d81e2239c903c5b369487cc1cfdf5428bc85a74",
+    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "9c82920289e542e9a57984685df184a142f46d8e04b116817f50269be3bf97fa",
     "Tests/CruzadorCoreTests/RecipeTests.swift": "e67bf964843365aeb40fc73925535319982e77eedd63e326ff6838eadfbaab3c",
-    "Tests/CruzadorCoreTests/SynchronizationTests.swift": "c9fe0ecd391468133746004c6fd59864ad2f8d01d08bab1521956feca59bb2cd",
+    "Tests/CruzadorCoreTests/SynchronizationTests.swift": "fda0c85efe968243418b74851e9aa372473b28d5e8c0a4cba138bcd5565e0461",
     "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "a99fee46e3c57d711d3d7499a3d92a958ede07540dca417084b334a65fb8df2a",
+    "Tests/CruzadorPresentationTests/PresentationTests.swift": "42da09f80743b7a97326d6dffd4772d0f63a06a4d04e9ef5c0dc789ad69ae775",
     "config/recipes.json": "d61a4fe567b4196894446bebf77bdc05aa6d74c7dd911d654380cc8a928876ee",
     "config/wine-msync-runtime-lock.json": "cbaae271f4a0fbaea717e13bf49c41a6840e839829e9c20a627ace5f1444c992",
     "scripts/build-app.sh": "c6e19ad20ff6cb84341eb0f9de2737227221212e7f6fa0697a4f8e27ca6bcec3",

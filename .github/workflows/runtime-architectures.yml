@@ -27,6 +27,8 @@ jobs:
           swift --version
           swift test --jobs 3
           python3 Tests/Inspection/test_runtime_packaging.py
+          python3 Tests/Inspection/test_native_smoke.py
+          python3 Tests/Inspection/test_validation_collection.py
       - name: Prepare pinned standalone Wine
         run: |
           python3 scripts/prepare-wine-runtime.py
@@ -45,11 +47,7 @@ jobs:
         if: always()
         run: |
           mkdir -p validation
-          if [ -f .local/packaged-runtime-smoke.json ]; then cp .local/packaged-runtime-smoke.json validation/; fi
-          find .local -maxdepth 1 -name 'smoke-*.test.log' -exec cp {} validation/ \;
-          find .local -path '*/Logs/*.log' -exec cp {} validation/ \;
-          find .local -maxdepth 1 -name 'smoke-*.supervision.json' -exec cp {} validation/ \;
-          find .local -name 'phases.jsonl' -exec cp {} validation/ \;
+          python3 scripts/collect-runtime-validation.py --source-commit "$GITHUB_SHA"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

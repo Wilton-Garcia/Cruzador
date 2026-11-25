@@ -16,10 +16,10 @@ struct LibraryCommands: Commands {
     var body: some Commands {
         CommandGroup(replacing: .newItem) {
             Button("Biblioteca") { showLibrary() }.keyboardShortcut("0")
-            Button("Nova bottle…") { showLibrary(); model.showCreate = true }.keyboardShortcut("n").disabled(!model.canStart || !model.loaded)
-            Button("Abrir…") { showLibrary(); model.openFile() }.keyboardShortcut("o")
-            Button("Buscar na biblioteca") { showLibrary(); model.searchFocusRequest = UUID() }.keyboardShortcut("f")
-            Button("Adicionar atalho…") { showLibrary(); model.beginRegister() }.keyboardShortcut("a", modifiers: [.command, .shift]).disabled(!model.canStart || model.selected.map { !model.store.isReady($0) } != false)
+            Button("Nova bottle…") { showLibrary(); model.presentation = .create }.keyboardShortcut("n").disabled(!model.canStart || !model.loaded || model.presentation != nil)
+            Button("Abrir…") { showLibrary(); model.openFile() }.keyboardShortcut("o").disabled(model.busy || model.presentation != nil)
+            Button("Buscar na biblioteca") { showLibrary(); model.searchFocusRequest = UUID() }.keyboardShortcut("f").disabled(model.presentation != nil)
+            Button("Adicionar atalho…") { showLibrary(); model.beginRegister() }.keyboardShortcut("a", modifiers: [.command, .shift]).disabled(!model.canStart || model.presentation != nil || model.selected.map { !model.store.isReady($0) } != false)
             Menu("Abrir recentes") {
                 ForEach(model.recentDocuments, id: \.self) { url in
                     Button(url.lastPathComponent) { showLibrary(); model.receiveExternal([url]) }
@@ -35,7 +35,7 @@ struct LibraryCommands: Commands {
 final class AppDelegate: NSObject, NSApplicationDelegate {
     let model = AppModel()
     private var libraryWindow: NSWindow?
-    func applicationDidFinishLaunching(_ notification: Notification) { showLibraryWindow() }
+    func applicationDidFinishLaunching(_ notification: Notification) { model.loadRecentDocuments(); showLibraryWindow() }
     func showLibraryWindow() {
         if libraryWindow == nil {
             let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 1140, height: 760), styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)

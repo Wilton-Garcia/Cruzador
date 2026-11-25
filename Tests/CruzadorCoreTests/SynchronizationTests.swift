@@ -98,12 +98,15 @@ final class SynchronizationTests: XCTestCase {
         XCTAssertTrue(SynchronizationConfiguration.supportsMSync(engine: engine))
         let store = LibraryStore(root: URL(fileURLWithPath: rootPath)), lifecycle = BottleLifecycle(store: store), runner = CommandRunner()
         var bottle = try lifecycle.create(name: "MSync real", engine: engine)
+        try NativeSmokeTrace(root: store.root).recordRuntime(WineRuntime(root: URL(fileURLWithPath: engine.path)))
         try await BottleSettingsStore(store: store).save(BottleSettings(synchronization: .msync), bottleID: bottle.id, runner: runner)
         let operationID = UUID()
-        let watchdog = Task { try? await Task.sleep(for: .seconds(90)); if !Task.isCancelled { await runner.cancel(operationID: operationID) } }
+        let watchdog = Task { try? await Task.sleep(for: .seconds(120)); if !Task.isCancelled { await runner.cancel(operationID: operationID) } }
         defer { watchdog.cancel() }
-        try await lifecycle.prepare(id: bottle.id, mode: .initialize, runner: runner, log: store.logsRoot.appendingPathComponent("initialize.log"), operationID: operationID).requireSuccess()
-        var observations: [[String: String]] = []
+        let initialized = try await lifecycle.prepare(id: bottle.id, mode: .initialize, runner: runner, log: store.logsRoot.appendingPathComponent("initialize.log"), operationID: operationID)
+        try initialized.requireSuccess()
+        var observations: [[String: Any]] = []
+        var cancellation: [String: Any] = [:]
         for mode in [SynchronizationMode.msync, .server] {
             let settings = BottleSettings(synchronization: mode, executionOptions: LaunchOptions(workingDirectory: store.root.path, environment: ["CRUZADOR_GLOBAL": "GLOBAL_OK"]))
             try await BottleSettingsStore(store: store).save(settings, bottleID: bottle.id, runner: runner, operationID: operationID)
@@ -115,10 +118,30 @@ final class SynchronizationTests: XCTestCase {
             let marker = "CRUZADOR_SYNC_\(mode == .msync ? "1" : "0")_GLOBAL_OK"
             XCTAssertTrue(text.contains(marker), text)
             if mode == .msync { XCTAssertTrue(text.contains("msync: up and running."), text) }
-            observations.append(["mode": mode.rawValue, "marker": marker, "log": text])
+            observations.append(["mode": mode.rawValue, "marker": marker, "log": text, "exit": result.exitCode, "cancelled": result.cancelled])
+            if mode == .msync {
+                let cancelLog = store.logsRoot.appendingPathComponent("msync-cancel.log")
+                let plan = try EngineCommands.make(.run(LaunchRequest(path: cmd.path, arguments: ["/c", "echo CRUZADOR_MSYNC_WAIT_READY && notepad.exe"])), bottle: bottle, store: store)
+                let running = Task { try await runner.run(plan, log: cancelLog, operationID: operationID) }
+                var started = false
+                for _ in 0..<500 {
+                    if (try? String(contentsOf: cancelLog, encoding: .utf8))?.contains("CRUZADOR_MSYNC_WAIT_READY") == true { started = true; break }
+                    try await Task.sleep(for: .milliseconds(20))
+                }
+                _ = await runner.cancel(operationID: operationID)
+                let cancelled = try await running.value
+                XCTAssertTrue(started); XCTAssertTrue(cancelled.cancelled); XCTAssertTrue(cancelled.cleanupFailures.isEmpty)
+                let codes = cancelled.phases.filter { $0.phase == "cancellation" }.compactMap(\.exitCode)
+                XCTAssertEqual(codes, [0, 0])
+                let after = try await runner.run(EngineCommands.make(.run(LaunchRequest(path: cmd.path, arguments: ["/c", "echo", "CRUZADOR_AFTER_MSYNC_CANCEL"])), bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("msync-after-cancel.log"), operationID: operationID)
+                try after.requireSuccess()
+                let marker = try String(contentsOf: after.log, encoding: .utf8).contains("CRUZADOR_AFTER_MSYNC_CANCEL")
+                XCTAssertTrue(marker)
+                cancellation = ["cancelled": cancelled.cancelled, "cleanup_codes": codes, "after_cancel_exit": after.exitCode, "after_cancel_marker": marker]
+            }
         }
         let stopped = try await runner.run(EngineCommands.make(.waitForIdle, bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("final-wait.log"), operationID: operationID)
         try stopped.requireSuccess()
-        try JSONSerialization.data(withJSONObject: ["runtime": path, "root": rootPath, "observations": observations, "server_wait_exit": stopped.exitCode], options: [.prettyPrinted, .sortedKeys]).write(to: store.root.appendingPathComponent("msync-observations.json"))
+        try JSONSerialization.data(withJSONObject: ["formatVersion": 2, "runtime": path, "root": rootPath, "initialization_exit": initialized.exitCode, "observations": observations, "cancellation": cancellation, "watchdog_seconds": 120, "server_wait_exit": stopped.exitCode], options: [.prettyPrinted, .sortedKeys]).write(to: store.root.appendingPathComponent("msync-observations.json"))
     }
 }
