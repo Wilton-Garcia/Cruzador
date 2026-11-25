@@ -4,6 +4,7 @@ import CruzadorCore
 
 struct ContentView: View {
     @ObservedObject var model: AppModel
+    @FocusState private var searchFocused: Bool
     var body: some View {
         NavigationSplitView {
             VStack(alignment: .leading, spacing: 20) {
@@ -14,7 +15,7 @@ struct ContentView: View {
                         Text("Windows, no seu Mac").font(.caption).foregroundStyle(.secondary)
                     }
                 }.padding(.top, 15)
-                TextField("Buscar bottles", text: $model.search).textFieldStyle(.roundedBorder)
+                TextField("Buscar bottles e aplicativos", text: $model.search).textFieldStyle(.roundedBorder).focused($searchFocused).accessibilityIdentifier("library-search")
                 HStack { Text("BIBLIOTECA").font(.caption.weight(.semibold)).foregroundStyle(.secondary); Spacer(); Text("\(model.library.bottles.count)").foregroundStyle(.secondary) }
                 List(selection: $model.selection) {
                     ForEach(model.filteredBottles) { bottle in
@@ -25,8 +26,15 @@ struct ContentView: View {
                                 Text(bottle.apps.count == 1 ? "1 aplicativo" : "\(bottle.apps.count) aplicativos").font(.caption).foregroundStyle(.secondary)
                             }
                         }.padding(.vertical, 7).tag(bottle.id)
+                            .accessibilityElement(children: .combine)
+                            .accessibilityLabel("\(bottle.name), \(bottle.apps.count) aplicativos, \(stateLabel(bottle))")
+                            .accessibilityIdentifier("bottle-\(bottle.id)")
                     }
                 }.listStyle(.sidebar)
+                if model.filteredBottles.isEmpty && !model.library.bottles.isEmpty {
+                    Text("Nenhuma bottle ou aplicativo encontrado.").font(.caption).foregroundStyle(.secondary)
+                    Button("Limpar busca") { model.search = "" }
+                }
                 Button { model.showCreate = true } label: { Label("Nova bottle", systemImage: "plus").frame(maxWidth: .infinity) }
                     .controlSize(.large).disabled(!model.canStart || !model.loaded)
                 Button { model.importBottle() } label: { Label("Importar bottle…", systemImage: "square.and.arrow.down") }.disabled(!model.canStart || !model.loaded)
@@ -65,7 +73,9 @@ struct ContentView: View {
                 }.padding(14).background(.bar)
             }
         }
+        .onChange(of: model.searchFocusRequest) { searchFocused = true }
         .tint(.teal)
+        .sheet(isPresented: $model.showHistory) { if let bottle = model.selected { InstallationHistoryView(model: model, bottle: bottle) } }
         .sheet(isPresented: $model.showIncoming) { if let incoming = model.incomingRequests.first { ExternalOpeningView(model: model, incoming: incoming) } }
         .sheet(isPresented: $model.showCreate) { CreateBottleView(model: model) }
         .sheet(isPresented: $model.showBottleSettings) { if let bottle = model.selected { BottleSettingsView(model: model, bottle: bottle) } }
@@ -122,11 +132,14 @@ struct ContentView: View {
                     }
                 }
                 HStack {
-                    Text("Aplicativos").font(.title2.weight(.semibold)); Spacer()
+                    Text("Aplicativos (\(model.filteredApps(in: bottle).count))").font(.title2.weight(.semibold)); Spacer()
                     Button("Buscar instalados…") { model.discoverApps() }.disabled(!model.canStart)
-                    Button { model.beginRegister() } label: { Label("Adicionar atalho", systemImage: "plus") }.disabled(!model.canStart || bottle.state != .ready)
+                    Button { model.beginRegister() } label: { Label("Adicionar atalho", systemImage: "plus") }.disabled(!model.canStart || !model.store.isReady(bottle))
                 }
-                if bottle.apps.isEmpty {
+                if !bottle.apps.isEmpty && model.filteredApps(in: bottle).isEmpty {
+                    ContentUnavailableView.search(text: model.search)
+                    Button("Mostrar todos os aplicativos") { model.search = "" }
+                } else if bottle.apps.isEmpty {
                     VStack(spacing: 12) {
                         Image(systemName: "app.dashed").font(.system(size: 36)).foregroundStyle(.secondary)
                         Text("Sua bottle está esperando o primeiro app").font(.headline)
@@ -134,14 +147,14 @@ struct ContentView: View {
                     }.frame(maxWidth: .infinity).padding(.vertical, 42).background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 16))
                 } else {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 210), spacing: 16)], spacing: 16) {
-                        ForEach(bottle.apps) { app in
+                        ForEach(model.filteredApps(in: bottle)) { app in
                             VStack(alignment: .leading, spacing: 16) {
                                 Image(systemName: "app.fill").font(.system(size: 30)).foregroundStyle(.teal)
                                 Text(app.name).font(.headline).lineLimit(2)
                                 Text(URL(fileURLWithPath: app.path).lastPathComponent).font(.caption).foregroundStyle(.secondary).lineLimit(1)
                                 Button { model.perform(.run(app.launchRequest), bottle: bottle, title: "Executando \(app.name)…") } label: {
                                     Label("Executar", systemImage: "play.fill").frame(maxWidth: .infinity)
-                                }.disabled(!model.canStart || bottle.state != .ready)
+                                }.disabled(!model.canStart || !model.store.isReady(bottle)).help("Executar \(app.name) em \(bottle.name)").accessibilityIdentifier("launch-\(app.id)")
                             }.padding(20).frame(maxWidth: .infinity, alignment: .leading)
                                 .background(.background, in: RoundedRectangle(cornerRadius: 14))
                                 .overlay(RoundedRectangle(cornerRadius: 14).stroke(.quaternary))
@@ -170,6 +183,7 @@ struct ContentView: View {
                                     Button("Log") { NSWorkspace.shared.open(URL(fileURLWithPath: record.logPath)) }
                                 }
                             }
+                            Button("Ver histórico completo…") { model.showHistory = true }
                             Text("O resultado descreve o instalador. Cadastre o atalho do programa instalado para executá-lo.").font(.caption).foregroundStyle(.secondary)
                         }.padding(10)
                     }
@@ -390,14 +404,16 @@ struct BottleSettingsView: View {
     @State private var validationError: String?
     init(model: AppModel, bottle: Bottle) { self.model = model; self.bottle = bottle; _settings = State(initialValue: bottle.requestedSettings); _workingDirectory = State(initialValue: bottle.requestedSettings.executionOptions.workingDirectory ?? ""); _environmentJSON = State(initialValue: bottle.requestedSettings.executionOptions.environmentJSON) }
     var body: some View {
+        let support = GraphicsConfiguration.inspect(settings.graphics, engine: bottle.engine)
         VStack(alignment: .leading, spacing: 18) {
             Text("Opções de \(bottle.name)").font(.title2.bold())
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
             Picker("Gráficos", selection: $settings.graphics) {
                 ForEach(GraphicsBackend.allCases, id: \.self) { backend in
                     Text(backend.displayName).tag(backend).disabled(!GraphicsConfiguration.inspect(backend, engine: bottle.engine).requestSupported)
                 }
             }
-            let support = GraphicsConfiguration.inspect(settings.graphics, engine: bottle.engine)
             Text(support.reason).font(.callout).foregroundStyle(.secondary)
             Text("A opção vale para novos processos. Feche e abra o aplicativo Windows para aplicá-la. Variáveis explícitas do atalho podem substituir a seleção da bottle.").font(.caption).foregroundStyle(.secondary)
             ForEach(support.limitations, id: \.self) { Text($0).font(.caption).foregroundStyle(.secondary) }
@@ -411,8 +427,10 @@ struct BottleSettingsView: View {
             Text("Variáveis da bottle (JSON); as variáveis do atalho têm prioridade, exceto a sincronização.").font(.caption)
             TextEditor(text: $environmentJSON).font(.system(.body, design: .monospaced)).frame(height: 80)
             if let validationError { Text(validationError).foregroundStyle(.red) }
+                }.frame(maxWidth: .infinity, alignment: .leading)
+            }
             HStack {
-                Button("Cancelar") { model.showBottleSettings = false }.keyboardShortcut(.cancelAction)
+                Button("Fechar") { model.showBottleSettings = false }.keyboardShortcut(.cancelAction)
                 Spacer()
                 Button("Salvar opções") {
                     do {
@@ -421,7 +439,7 @@ struct BottleSettingsView: View {
                     } catch { validationError = error.localizedDescription }
                 }.buttonStyle(.borderedProminent).disabled(!model.canStart || !support.requestSupported)
             }
-        }.padding(28).frame(width: 620)
+        }.padding(28).frame(width: 620, height: 640)
     }
 }
 

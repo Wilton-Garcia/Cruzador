@@ -28,6 +28,8 @@ final class AppModel: ObservableObject {
     @Published var incomingRequests: [ExternalOpenRequest] = []
     @Published var recentDocuments: [URL] = NSDocumentController.shared.recentDocumentURLs
     @Published var showIncoming = false
+    @Published var showHistory = false
+    @Published var searchFocusRequest = UUID()
     @Published var search = ""
     @Published var engineKind: EngineKind = .packagedWine
     @Published var enginePath = WineRuntime.bundledRoot.path
@@ -38,7 +40,9 @@ final class AppModel: ObservableObject {
     var canCancelOperation: Bool { activeOperationID != nil }
     var canStart: Bool { !busy && cleanupOperationID == nil }
     var selected: Bottle? { library.bottles.first { $0.id == selection } }
-    var filteredBottles: [Bottle] { library.bottles.filter { search.isEmpty || $0.name.localizedCaseInsensitiveContains(search) } }
+    var searchResults: [LibrarySearchMatch] { LibrarySearch(text: search).results(in: library) }
+    var filteredBottles: [Bottle] { searchResults.map(\.bottle) }
+    func filteredApps(in bottle: Bottle) -> [WindowsApp] { searchResults.first { $0.bottle.id == bottle.id }?.apps ?? [] }
     init() {
         do {
             let engine = try EnginePreferences.load(from: .standard)
@@ -302,7 +306,10 @@ final class AppModel: ObservableObject {
             }
         }
     }
-    func beginRegister(_ app: WindowsApp? = nil) { editingApp = app; showRegister = true }
+    func beginRegister(_ app: WindowsApp? = nil) {
+        guard canStart, let bottle = selected, app != nil || store.isReady(bottle) else { return }
+        editingApp = app; showRegister = true
+    }
     func register(name: String, path: String, arguments: String, workingDirectory: String, environmentJSON: String) {
         guard let selected, !busy else { return }
         do {

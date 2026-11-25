@@ -16,7 +16,8 @@
         "Sources/Cruzador/AppModel.swift",
         "Sources/CruzadorCore/AppDiscovery.swift",
         "Sources/CruzadorCore/WineRegistry.swift",
-        "Sources/CruzadorCore/WindowsFile.swift"
+        "Sources/CruzadorCore/WindowsFile.swift",
+        "Sources/CruzadorCore/LibrarySearch.swift"
       ],
       "tests": [
         {
@@ -33,6 +34,11 @@
           "file": "Tests/CruzadorCoreTests/DiscoveryTests.swift",
           "name": "testFileDiscoverySkipsLinksAndAddsOnlySelectedUnchangedCandidates",
           "scope": "Seleção explícita, links não seguidos, origem alterada e atalhos sem duplicação."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/LibrarySearchTests.swift",
+          "name": "testSearchProjectsMatchingAppsWithoutChangingIdentityOrLibrary",
+          "scope": "Busca conjunta por bottle, aplicativo e nome de executável; mantém identidades e ordem."
         }
       ],
       "remaining_gap": "Descoberta própria de registros de software e arquivos PE nas pastas de programas; arquivos .lnk, launchers e instalação por usuário ainda não enumerados.",
@@ -2867,9 +2873,9 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "3ea766458a37d99319a3e31049aa92e686cb9a92691545e8be6d39c713cc317b",
-    "Sources/Cruzador/ContentView.swift": "ff24596b6e68266db78f767ba45309851775b58fad8adc9609b6a94561545bb3",
-    "Sources/Cruzador/CruzadorApp.swift": "77ffddd4c85a46b7dbd4304d155e079b62cb8dafe192518cb9a3c370310de942",
+    "Sources/Cruzador/AppModel.swift": "a1e97f1f7e259c75e6eed066798b08ead9968ec67ed4117e1bc01ae163502caa",
+    "Sources/Cruzador/ContentView.swift": "9509d4ec7ab896f5b2bdc43abc887f85a2dd097495aaceb85e12594329ea9789",
+    "Sources/Cruzador/CruzadorApp.swift": "a8b17f00b4df22434d1afa4ca5a30f89994bcee6ef9edc65f55aa1f0be8329fb",
     "Sources/CruzadorCore/AppDiscovery.swift": "bd7e56c17df92e3fed7ea7e945e72d9a684237210abfdc77b44ec3e25fe110b5",
     "Sources/CruzadorCore/BottleLifecycle.swift": "6535f188d6c34bac80fee8b582aa790a79b0df9327c7001066f763442355e13d",
     "Sources/CruzadorCore/BottleMaintenance.swift": "bdcf4673ab8d4577edad97cefc7f3f1f4e751f8d2b39b4d5fecacc56e578b29e",
@@ -2879,6 +2885,7 @@
     "Sources/CruzadorCore/ExternalOpening.swift": "d5e911d9485e8bc6f16813dbfe2e7c2ea9cf7f73f4e374b42981dfddc4a8e701",
     "Sources/CruzadorCore/Installers.swift": "1cefe10fa581794025bed25174854ef1ab3363a1483a6061dbcc476db82e8df7",
     "Sources/CruzadorCore/LaunchRequest.swift": "242f32cadb35c954d475a6a21fe06edba47a1404ffb8f436202551d3e769fa7f",
+    "Sources/CruzadorCore/LibrarySearch.swift": "171b784e1377ba20a92bcb68f7f82ea7ac66fb887111d154157e891df2aefd11",
     "Sources/CruzadorCore/LibraryStore.swift": "e19b3c07bcac9f96ab49c40f64ca7e03a1143daf8fe396ca032fb6dd84221597",
     "Sources/CruzadorCore/Models.swift": "c652532426a5e7d460072be8a0d0e47140a4bc8a897e55bb00ad7a44d9c18195",
     "Sources/CruzadorCore/Recipes.swift": "80c78a3b25eb86636fddb394d792c33e93be09d7fe7d0d968a37605474efa57b",
@@ -2896,6 +2903,7 @@
     "Tests/CruzadorCoreTests/InstallerTests.swift": "a8cd8908e6b767528b5907de1b3699ac138e6d80e1011b0b141ab615768b939d",
     "Tests/CruzadorCoreTests/LaunchTests.swift": "7f7adafe8378029fd5b1184003e896ad3d5f7fe55f408e97527dade3e36fe210",
     "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "ddb419f623d0aafb68ad3058410d30f78806bae10ebd8705b58f854724105713",
+    "Tests/CruzadorCoreTests/LibrarySearchTests.swift": "56da908ac1eac1e3263c8c3901da410e06f9c886fb35f9d03abd60c3d538d34f",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "0f7b7703620b0e9aa3aa78f1fd549365a89f7d5530d422ed853b9c3c962d61d3",
     "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "6e9fea8739572685433288976cb22950620c48d3921b95b58fac88d4c1baf2f6",
     "Tests/CruzadorCoreTests/RecipeTests.swift": "e67bf964843365aeb40fc73925535319982e77eedd63e326ff6838eadfbaab3c",

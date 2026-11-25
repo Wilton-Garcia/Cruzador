@@ -18,6 +18,8 @@ struct LibraryCommands: Commands {
             Button("Biblioteca") { showLibrary() }.keyboardShortcut("0")
             Button("Nova bottle…") { showLibrary(); model.showCreate = true }.keyboardShortcut("n").disabled(!model.canStart || !model.loaded)
             Button("Abrir…") { showLibrary(); model.openFile() }.keyboardShortcut("o")
+            Button("Buscar na biblioteca") { showLibrary(); model.searchFocusRequest = UUID() }.keyboardShortcut("f")
+            Button("Adicionar atalho…") { showLibrary(); model.beginRegister() }.keyboardShortcut("a", modifiers: [.command, .shift]).disabled(!model.canStart || model.selected.map { !model.store.isReady($0) } != false)
             Menu("Abrir recentes") {
                 ForEach(model.recentDocuments, id: \.self) { url in
                     Button(url.lastPathComponent) { showLibrary(); model.receiveExternal([url]) }

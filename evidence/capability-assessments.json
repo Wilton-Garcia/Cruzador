@@ -17,7 +17,8 @@
         "Sources/Cruzador/AppModel.swift",
         "Sources/CruzadorCore/AppDiscovery.swift",
         "Sources/CruzadorCore/WineRegistry.swift",
-        "Sources/CruzadorCore/WindowsFile.swift"
+        "Sources/CruzadorCore/WindowsFile.swift",
+        "Sources/CruzadorCore/LibrarySearch.swift"
       ],
       "tests": [
         {
@@ -34,6 +35,11 @@
           "file": "Tests/CruzadorCoreTests/DiscoveryTests.swift",
           "name": "testFileDiscoverySkipsLinksAndAddsOnlySelectedUnchangedCandidates",
           "scope": "Seleção explícita, links não seguidos, origem alterada e atalhos sem duplicação."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/LibrarySearchTests.swift",
+          "name": "testSearchProjectsMatchingAppsWithoutChangingIdentityOrLibrary",
+          "scope": "Busca conjunta por bottle, aplicativo e nome de executável; mantém identidades e ordem."
         }
       ],
       "remaining_gap": "Descoberta própria de registros de software e arquivos PE nas pastas de programas; arquivos .lnk, launchers e instalação por usuário ainda não enumerados.",
