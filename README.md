@@ -15,7 +15,7 @@ CRUZADOR_UNIVERSAL=1 ./scripts/build-app.sh
 open build/Cruzador.app
 ```
 
-O [pacote Wine do Cruzador](docs/wine-runtime.md) incluído é o motor padrão. **Configurar motor** permite escolher outro pacote ou um motor externo para comparação. Crie uma bottle, use **Instalar programa** para abrir um EXE/MSI e **Adicionar atalho** para cadastrar o executável instalado. Cada linha no campo de argumentos é um argumento separado, incluindo espaços; não use aspas de shell.
+O [pacote Wine do Cruzador](docs/wine-runtime.md) incluído é o motor padrão. **Configurar motor** permite escolher outro pacote ou um motor externo para comparação. Crie uma bottle, use **Instalar programa** para abrir um EXE/MSI e **Adicionar atalho** para cadastrar o executável instalado. Cada linha no campo de argumentos é um argumento separado, incluindo espaços; não use aspas de shell. Atalhos podem ser editados e ter pasta de trabalho e variáveis de ambiente em JSON próprias. Os campos que identificam o motor e o prefixo são controlados pela bottle.
 
 O aplicativo gerado recebe assinatura ad hoc para uso local; não é um pacote notarizado para distribuição. Não precisa de dependências Swift de terceiros.
 

@@ -13,6 +13,7 @@ final class AppModel: ObservableObject {
     @Published var lastLog: URL?
     @Published var showCreate = false
     @Published var showRegister = false
+    @Published var editingApp: WindowsApp?
     @Published var search = ""
     @Published var engineKind: EngineKind = .packagedWine
     @Published var enginePath = WineRuntime.bundledRoot.path
@@ -110,17 +111,24 @@ final class AppModel: ObservableObject {
         panel.allowedContentTypes = ["exe", "msi"].compactMap { UTType(filenameExtension: $0) }
         panel.message = installer ? "Escolha o instalador Windows" : "Escolha o executável Windows"
         guard panel.runModal() == .OK, let url = panel.url else { return }
-        perform(installer ? .install(url.path) : .run(url.path, []), bottle: bottle, title: installer ? "Instalando programa…" : "Executando programa…")
+        perform(installer ? .install(url.path) : .run(LaunchRequest(path: url.path)), bottle: bottle, title: installer ? "Instalando programa…" : "Executando programa…")
     }
-    func register(name: String, path: String, arguments: String) {
+    func beginRegister(_ app: WindowsApp? = nil) { editingApp = app; showRegister = true }
+    func register(name: String, path: String, arguments: String, workingDirectory: String, environmentJSON: String) {
         guard let selected, !busy else { return }
         do {
-            _ = try EngineCommands.make(.run(path, []), bottle: selected, store: store)
+            let options = try LaunchOptions.parse(workingDirectory: workingDirectory, environmentJSON: environmentJSON)
+            let request = LaunchRequest(path: path, arguments: arguments.isEmpty ? [] : arguments.components(separatedBy: "\n"), options: options)
+            try request.validate()
             let name = name.trimmingCharacters(in: .whitespacesAndNewlines)
             guard !name.isEmpty else { throw CruzadorError.invalid("Informe um nome para o aplicativo.") }
             var next = library
             guard let index = next.bottles.firstIndex(where: { $0.id == selected.id }) else { return }
-            next.bottles[index].apps.append(WindowsApp(name: name, path: path, arguments: arguments.isEmpty ? [] : arguments.components(separatedBy: "\n")))
+            var app = WindowsApp(name: name, path: path, arguments: request.arguments, options: options)
+            if let editingApp {
+                guard let appIndex = next.bottles[index].apps.firstIndex(where: { $0.id == editingApp.id }) else { throw CruzadorError.invalid("O atalho não existe mais nesta bottle.") }
+                app.id = editingApp.id; next.bottles[index].apps[appIndex] = app
+            } else { next.bottles[index].apps.append(app) }
             try persist(next); showRegister = false
         } catch { self.error = error.localizedDescription }
     }

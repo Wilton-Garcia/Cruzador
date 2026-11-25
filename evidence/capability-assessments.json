@@ -452,10 +452,25 @@
         "ui:environment-presets:1"
       ],
       "reverse_knowledge": "native-decompilation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/LaunchRequest.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/LaunchTests.swift",
+          "name": "testLaunchPreservesArgumentsWorkingDirectoryEnvironmentAndPrefix",
+          "scope": "Execução de fixture real verifica diretório por identidade, ambiente, prefixo e argumentos literais."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Wine real recebe variável explícita em processos Windows 32/64 bits."
+        }
+      ],
+      "remaining_gap": "Opções próprias por atalho; presets e opções avançadas do original ainda não estabelecidos.",
       "independent_equivalence_established": false
     },
     {

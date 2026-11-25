@@ -19,7 +19,7 @@ final class BottleMaintenanceTests: XCTestCase {
         try Data("user data".utf8).write(to: prefix.appendingPathComponent("drive_c/test.exe"))
         try FileManager.default.createSymbolicLink(atPath: prefix.appendingPathComponent("local-link").path, withDestinationPath: prefix.appendingPathComponent("drive_c").path)
         try FileManager.default.createSymbolicLink(atPath: prefix.appendingPathComponent("external-link").path, withDestinationPath: "/")
-        bottle.state = .ready; bottle.apps = [WindowsApp(name: "App", path: prefix.appendingPathComponent("drive_c/test.exe").path)]
+        bottle.state = .ready; bottle.apps = [WindowsApp(name: "App", path: prefix.appendingPathComponent("drive_c/test.exe").path, options: LaunchOptions(workingDirectory: prefix.appendingPathComponent("drive_c").path))]
         var library = Library(); library.bottles = [bottle]; try store.save(library)
         return (BottleMaintenance(store: store, runner: CommandRunner()), bottle)
     }
@@ -31,6 +31,7 @@ final class BottleMaintenanceTests: XCTestCase {
         XCTAssertNotEqual(copy.id, bottle.id)
         let prefix = maintenance.store.prefix(for: copy)
         XCTAssertEqual(copy.apps[0].path, prefix.appendingPathComponent("drive_c/test.exe").path)
+        XCTAssertEqual(copy.apps[0].options?.workingDirectory, prefix.appendingPathComponent("drive_c").path)
         XCTAssertEqual(try FileManager.default.destinationOfSymbolicLink(atPath: prefix.appendingPathComponent("local-link").path), prefix.appendingPathComponent("drive_c").path)
         XCTAssertEqual(try FileManager.default.destinationOfSymbolicLink(atPath: prefix.appendingPathComponent("external-link").path), "/")
         do {

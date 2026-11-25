@@ -21,8 +21,10 @@ public struct WindowsApp: Identifiable, Codable, Equatable, Sendable {
     public var name: String
     public var path: String
     public var arguments: [String]
-    public init(name: String, path: String, arguments: [String] = []) {
-        id = UUID(); self.name = name; self.path = path; self.arguments = arguments
+    public var options: LaunchOptions?
+    public var launchRequest: LaunchRequest { LaunchRequest(path: path, arguments: arguments, options: options ?? LaunchOptions()) }
+    public init(name: String, path: String, arguments: [String] = [], options: LaunchOptions? = nil) {
+        id = UUID(); self.name = name; self.path = path; self.arguments = arguments; self.options = options
     }
 }
 public struct Bottle: Identifiable, Codable, Equatable, Sendable {

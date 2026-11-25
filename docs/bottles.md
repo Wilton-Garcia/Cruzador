@@ -29,3 +29,9 @@ A biblioteca usa o formato 2. A leitura de um manifesto 1 permanece suportada; a
 Versões futuras, JSON malformado, IDs duplicados e referências a uma bottle padrão inexistente impedem a gravação. O aplicativo mantém os arquivos para diagnóstico. **Gerenciar → Usar como padrão** salva a bottle preferida para a próxima abertura; removê-la limpa essa preferência.
 
 A seleção de motor em preferências usa um único valor versionado. Os antigos campos separados continuam legíveis e são preservados em backup quando o usuário salva a seleção atual. Um valor novo inválido não usa os campos antigos como fallback. Essas migrações não movem prefixos nem substituem o motor registrado em bottles existentes.
+
+## Lançamento por atalho
+
+Um atalho salva executável, argumentos, pasta de trabalho opcional e variáveis de ambiente. A edição preserva sua identidade. Cada linha de argumentos é transmitida literalmente ao motor, sem shell macOS; comandos dentro de `cmd.exe` continuam sujeitos à interpretação do próprio Windows. As variáveis usam um objeto JSON de nomes e valores de texto. `WINEPREFIX`, `WINESERVER`, `WINELOADER`, `WINEDLLPATH`, `CX_BOTTLE` e `CX_BOTTLE_PATH` pertencem à seleção do motor e não podem ser substituídos por um atalho.
+
+A pasta deve existir e ser absoluta; vazio mantém o comportamento herdado do processo. O arquivo Windows deve existir e ser regular. Opções são revalidadas no lançamento, pois arquivos e pastas podem mudar depois do cadastro. Atalhos antigos, sem opções, mantêm argumentos e comportamento anteriores. Ao transferir uma bottle, pastas de trabalho internas são remapeadas junto dos executáveis; variáveis e argumentos não são reinterpretados como caminhos.

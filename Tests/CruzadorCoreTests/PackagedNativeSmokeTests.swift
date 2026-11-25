@@ -21,14 +21,14 @@ final class PackagedNativeSmokeTests: XCTestCase {
         var observations: [[String: Any]] = []
         for (folder, marker) in [("system32", "CRUZADOR_WIN64_OK"), ("syswow64", "CRUZADOR_WIN32_OK")] {
             let executable = store.prefix(for: bottle).appendingPathComponent("drive_c/windows/\(folder)/cmd.exe")
-            let command = try EngineCommands.make(.run(executable.path, ["/c", "echo", marker]), bottle: bottle, store: store)
+            let command = try EngineCommands.make(.run(LaunchRequest(path: executable.path, arguments: ["/c", "echo", marker, "%CRUZADOR_LAUNCH_VALUE%"], options: LaunchOptions(workingDirectory: store.prefix(for: bottle).appendingPathComponent("drive_c").path, environment: ["CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"]))), bottle: bottle, store: store)
             let result = try await runner.run(command, log: store.logsRoot.appendingPathComponent("\(folder).log"))
             let text = try String(contentsOf: result.log, encoding: .utf8)
-            XCTAssertEqual(result.exitCode, 0); XCTAssertTrue(text.contains(marker))
-            observations.append(["executable": executable.path, "exit_code": result.exitCode, "marker": marker, "marker_observed": text.contains(marker), "log": result.log.path])
+            XCTAssertEqual(result.exitCode, 0); XCTAssertTrue(text.contains(marker)); XCTAssertTrue(text.contains("OWN_ENV_OK"))
+            observations.append(["executable": executable.path, "exit_code": result.exitCode, "marker": marker, "marker_observed": text.contains(marker), "explicit_environment_observed": text.contains("OWN_ENV_OK"), "log": result.log.path])
         }
         let cmd = store.prefix(for: bottle).appendingPathComponent("drive_c/windows/system32/cmd.exe")
-        let failure = try await runner.run(EngineCommands.make(.run(cmd.path, ["/c", "exit", "7"]), bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("exit7.log"))
+        let failure = try await runner.run(EngineCommands.make(.run(LaunchRequest(path: cmd.path, arguments: ["/c", "exit", "7"])), bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("exit7.log"))
         XCTAssertEqual(failure.exitCode, 7)
         let stopped = try await runner.run(Command(executable: runtime.server, arguments: ["-w"], environment: ["WINEPREFIX": store.prefix(for: bottle).path]), log: store.logsRoot.appendingPathComponent("server-wait.log"))
         XCTAssertEqual(stopped.exitCode, 0)

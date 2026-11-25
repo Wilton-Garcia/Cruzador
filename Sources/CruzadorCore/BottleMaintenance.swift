@@ -81,6 +81,7 @@ public struct BottleMaintenance: Sendable {
             var mapped = app
             mapped.id = UUID()
             mapped.path = relocate(app.path, from: originalPrefix, to: destination.path)
+            if let working = app.options?.workingDirectory { mapped.options?.workingDirectory = relocate(working, from: originalPrefix, to: destination.path) }
             return mapped
         }
         copy.state = requiresPreparation ? .interrupted : bottle.state

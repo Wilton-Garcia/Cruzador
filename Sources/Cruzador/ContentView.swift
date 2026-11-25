@@ -64,7 +64,7 @@ struct ContentView: View {
         }
         .tint(.teal)
         .sheet(isPresented: $model.showCreate) { CreateBottleView(model: model) }
-        .sheet(isPresented: $model.showRegister) { RegisterAppView(model: model) }
+        .sheet(isPresented: $model.showRegister) { RegisterAppView(model: model, app: model.editingApp) }
         .alert("Não foi possível concluir", isPresented: Binding(get: { model.error != nil }, set: { if !$0 { model.error = nil } })) {
             Button("OK") { model.error = nil }
             if let log = model.lastLog { Button("Abrir log") { NSWorkspace.shared.open(log) } }
@@ -113,7 +113,7 @@ struct ContentView: View {
                 }
                 HStack {
                     Text("Aplicativos").font(.title2.weight(.semibold)); Spacer()
-                    Button { model.showRegister = true } label: { Label("Adicionar atalho", systemImage: "plus") }.disabled(model.busy || bottle.state != .ready)
+                    Button { model.beginRegister() } label: { Label("Adicionar atalho", systemImage: "plus") }.disabled(model.busy || bottle.state != .ready)
                 }
                 if bottle.apps.isEmpty {
                     VStack(spacing: 12) {
@@ -128,13 +128,16 @@ struct ContentView: View {
                                 Image(systemName: "app.fill").font(.system(size: 30)).foregroundStyle(.teal)
                                 Text(app.name).font(.headline).lineLimit(2)
                                 Text(URL(fileURLWithPath: app.path).lastPathComponent).font(.caption).foregroundStyle(.secondary).lineLimit(1)
-                                Button { model.perform(.run(app.path, app.arguments), bottle: bottle, title: "Executando \(app.name)…") } label: {
+                                Button { model.perform(.run(app.launchRequest), bottle: bottle, title: "Executando \(app.name)…") } label: {
                                     Label("Executar", systemImage: "play.fill").frame(maxWidth: .infinity)
                                 }.disabled(model.busy || bottle.state != .ready)
                             }.padding(20).frame(maxWidth: .infinity, alignment: .leading)
                                 .background(.background, in: RoundedRectangle(cornerRadius: 14))
                                 .overlay(RoundedRectangle(cornerRadius: 14).stroke(.quaternary))
-                                .contextMenu { Button("Remover atalho") { model.removeShortcut(app, bottle: bottle) }.disabled(model.busy) }
+                                .contextMenu {
+                                    Button("Editar atalho…") { model.beginRegister(app) }.disabled(model.busy)
+                                    Button("Remover atalho") { model.removeShortcut(app, bottle: bottle) }.disabled(model.busy)
+                                }
                         }
                     }
                 }
@@ -185,9 +188,19 @@ struct RegisterAppView: View {
     @State private var name = ""
     @State private var path = ""
     @State private var arguments = ""
+    @State private var workingDirectory = ""
+    @State private var environmentJSON = "{}"
+    init(model: AppModel, app: WindowsApp?) {
+        self.model = model
+        _name = State(initialValue: app?.name ?? "")
+        _path = State(initialValue: app?.path ?? "")
+        _arguments = State(initialValue: app?.arguments.joined(separator: "\n") ?? "")
+        _workingDirectory = State(initialValue: app?.options?.workingDirectory ?? "")
+        _environmentJSON = State(initialValue: app?.options?.environmentJSON ?? "{}")
+    }
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
-            Text("Adicionar atalho").font(.title2.bold())
+            Text(model.editingApp == nil ? "Adicionar atalho" : "Editar atalho").font(.title2.bold())
             TextField("Nome do aplicativo", text: $name).textFieldStyle(.roundedBorder)
             HStack {
                 TextField("Caminho do executável", text: $path).textFieldStyle(.roundedBorder)
@@ -199,7 +212,10 @@ struct RegisterAppView: View {
             }
             Text("Argumentos opcionais, um por linha").font(.caption).foregroundStyle(.secondary)
             TextEditor(text: $arguments).font(.system(.body, design: .monospaced)).frame(height: 90).border(.quaternary)
-            HStack { Button("Cancelar") { model.showRegister = false }.keyboardShortcut(.cancelAction); Spacer(); Button("Adicionar") { model.register(name: name, path: path, arguments: arguments) }.buttonStyle(.borderedProminent).disabled(name.isEmpty || path.isEmpty) }
+            TextField("Pasta de trabalho opcional (caminho absoluto)", text: $workingDirectory).textFieldStyle(.roundedBorder)
+            Text("Variáveis de ambiente em JSON, por exemplo: {\"LANG\": \"pt_BR.UTF-8\"}").font(.caption).foregroundStyle(.secondary)
+            TextEditor(text: $environmentJSON).font(.system(.body, design: .monospaced)).frame(height: 85).border(.quaternary)
+            HStack { Button("Cancelar") { model.showRegister = false }.keyboardShortcut(.cancelAction); Spacer(); Button("Salvar atalho") { model.register(name: name, path: path, arguments: arguments, workingDirectory: workingDirectory, environmentJSON: environmentJSON) }.buttonStyle(.borderedProminent).disabled(name.isEmpty || path.isEmpty) }
         }.padding(30).frame(width: 520)
     }
 }

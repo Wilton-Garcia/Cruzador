@@ -36,7 +36,7 @@ final class CoreTests: XCTestCase {
         let engine = Engine(kind: .crossOver, path: root.appendingPathComponent("Cross Over.app").path)
         let bottle = Bottle(name: "Meu jogo", engine: engine)
         let program = root.appendingPathComponent("a ; $(touch nope).exe"); try Data().write(to: program)
-        let run = try EngineCommands.make(.run(program.path, ["two words", "--flag"]), bottle: bottle, store: store)
+        let run = try EngineCommands.make(.run(LaunchRequest(path: program.path, arguments: ["two words", "--flag"])), bottle: bottle, store: store)
         XCTAssertEqual(Array(run.primary.arguments.suffix(4)), ["--", program.path, "two words", "--flag"])
         XCTAssertEqual(run.primary.environment["CX_BOTTLE_PATH"], store.bottlesRoot.path)
         XCTAssertEqual(run.primary.environment["WINEPREFIX"], store.prefix(for: bottle).path)

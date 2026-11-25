@@ -14,7 +14,7 @@ public struct EnginePlan: Sendable {
     public let finalization: [Command]
     public init(primary: Command, finalization: [Command] = []) { self.primary = primary; self.finalization = finalization }
 }
-public enum BottleAction: Sendable { case initialize, repair, waitForIdle, run(String, [String]), install(String), tool(String) }
+public enum BottleAction: Sendable { case initialize, repair, waitForIdle, run(LaunchRequest), install(String), tool(String) }
 public enum EngineCommands {
     public static func make(_ action: BottleAction, bottle: Bottle, store: LibraryStore) throws -> EnginePlan {
         guard bottle.engine.path.hasPrefix("/") else { throw CruzadorError.invalid("Selecione um caminho absoluto para o motor.") }
@@ -74,7 +74,12 @@ public enum EngineCommands {
         guard FileManager.default.isExecutableFile(atPath: executable.path) else {
             throw CruzadorError.invalid("Motor indisponível em \(executable.path). Escolha uma instalação existente nas configurações.")
         }
-        return EnginePlan(primary: Command(executable: executable, arguments: arguments, environment: environment), finalization: finalization)
+        var workingDirectory: URL?
+        if case .run(let request) = action {
+            environment.merge(request.options.environment) { _, selected in selected }
+            workingDirectory = request.options.workingDirectory.map { URL(fileURLWithPath: $0) }
+        }
+        return EnginePlan(primary: Command(executable: executable, arguments: arguments, environment: environment, workingDirectory: workingDirectory), finalization: finalization)
     }
     private static func modeFlag(_ action: BottleAction) -> String {
         if case .repair = action { return "--update" }
@@ -82,11 +87,11 @@ public enum EngineCommands {
     }
     private static func windowsArguments(_ action: BottleAction) throws -> [String] {
         switch action {
-        case .run(let path, let arguments):
-            try validateProgram(path)
-            return (URL(fileURLWithPath: path).pathExtension.lowercased() == "msi" ? ["msiexec", "/i", path] : [path]) + arguments
+        case .run(let request):
+            try request.validate()
+            return (URL(fileURLWithPath: request.path).pathExtension.lowercased() == "msi" ? ["msiexec", "/i", request.path] : [request.path]) + request.arguments
         case .install(let path):
-            try validateProgram(path)
+            try LaunchRequest(path: path).validate()
             return URL(fileURLWithPath: path).pathExtension.lowercased() == "msi" ? ["msiexec", "/i", path] : [path]
         case .tool(let name):
             guard ["winecfg", "regedit", "uninstaller", "cmd"].contains(name) else { throw CruzadorError.invalid("Ferramenta desconhecida.") }
@@ -94,11 +99,7 @@ public enum EngineCommands {
         case .initialize, .repair, .waitForIdle: return []
         }
     }
-    private static func validateProgram(_ path: String) throws {
-        guard path.hasPrefix("/"), FileManager.default.isReadableFile(atPath: path), ["exe", "msi"].contains(URL(fileURLWithPath: path).pathExtension.lowercased()) else {
-            throw CruzadorError.invalid("Selecione um arquivo Windows existente (.exe ou .msi).")
-        }
-    }
+
 }
 
 public struct RunResult: Sendable {

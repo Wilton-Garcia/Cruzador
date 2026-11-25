@@ -22,7 +22,7 @@ final class NativeSmokeTests: XCTestCase {
         }
         bottle.state = .ready; library.bottles = [bottle]; try store.save(library)
         let cmd = store.prefix(for: bottle).appendingPathComponent("drive_c/windows/system32/cmd.exe")
-        let run = try EngineCommands.make(.run(cmd.path, ["/c", "echo", "CRUZADOR_SMOKE_OK"]), bottle: bottle, store: store)
+        let run = try EngineCommands.make(.run(LaunchRequest(path: cmd.path, arguments: ["/c", "echo", "CRUZADOR_SMOKE_OK"])), bottle: bottle, store: store)
         let runResult = try await runner.run(run, log: store.logsRoot.appendingPathComponent("cmd.log"))
         XCTAssertEqual(runResult.exitCode, 0)
         XCTAssertTrue(try String(contentsOf: runResult.log, encoding: .utf8).contains("CRUZADOR_SMOKE_OK"))

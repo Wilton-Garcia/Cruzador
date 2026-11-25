@@ -451,10 +451,25 @@
         "ui:environment-presets:1"
       ],
       "reverse_knowledge": "native-decompilation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/LaunchRequest.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/LaunchTests.swift",
+          "name": "testLaunchPreservesArgumentsWorkingDirectoryEnvironmentAndPrefix",
+          "scope": "Execução de fixture real verifica diretório por identidade, ambiente, prefixo e argumentos literais."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Wine real recebe variável explícita em processos Windows 32/64 bits."
+        }
+      ],
+      "remaining_gap": "Opções próprias por atalho; presets e opções avançadas do original ainda não estabelecidos.",
       "independent_equivalence_established": false
     },
     {
@@ -2659,21 +2674,23 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "6827d0cb9432a7b9cf429dea4108be5a955ec865d14792873bde8a05b2c905a8",
-    "Sources/Cruzador/ContentView.swift": "a8d5b15c34609841dc057d50bae6e876120346dc80945e52c8cfe749fecee453",
+    "Sources/Cruzador/AppModel.swift": "85bea022d93dbfed12f9fab16bdae42668dc9f2869ae237a6171bb270540889c",
+    "Sources/Cruzador/ContentView.swift": "ff91ff4a693e636c4a103a5c4566a87ba71667654e7bd59ada1218aaa41eec83",
     "Sources/Cruzador/CruzadorApp.swift": "8491e480c40115839f1eb76eb79fda94bcc01df79eb9f50daa7152f1fccc4943",
     "Sources/CruzadorCore/BottleLifecycle.swift": "aa71477d0172bc01d80769c7d9e602babf2979bcd76854f8d7f776af40f5bafe",
-    "Sources/CruzadorCore/BottleMaintenance.swift": "55d7325d231570a9161a39c8f01eecb872884b736bf105fc66401ef7b727bd07",
-    "Sources/CruzadorCore/EngineCommands.swift": "d2c16be4b16e90cc4db95a55b53fba939625cee1afaf19dbe70a6122b59fabf1",
+    "Sources/CruzadorCore/BottleMaintenance.swift": "2c3d485f2d76f4289a2891f92703d6972e20747cf3efc9bd586c4170fcaf3090",
+    "Sources/CruzadorCore/EngineCommands.swift": "8aa457d0ef6299406bc734bd0d1d94f7875726fa2d59513d645a07389fbdd1f0",
+    "Sources/CruzadorCore/LaunchRequest.swift": "242f32cadb35c954d475a6a21fe06edba47a1404ffb8f436202551d3e769fa7f",
     "Sources/CruzadorCore/LibraryStore.swift": "796da2fbcbf0bd27cbf064b5336170218b37814945e3d815997ef817728bf540",
-    "Sources/CruzadorCore/Models.swift": "d73e941d3603eda05b5e77007fc75e0e76f5789c84c5b8ff6cfe356c0bda89c9",
+    "Sources/CruzadorCore/Models.swift": "7080e65947187f4c6adb0c6ab68897f105610e5e41d3f9debc6bf8a116cb2d36",
     "Sources/CruzadorCore/WineRuntime.swift": "26f30b33750afea74f7312f79710ac04b5cb9f327201210f09608fc0d6d2f3f0",
     "Tests/CruzadorCoreTests/BottleLifecycleTests.swift": "5435298b8b533ee151817535977381c5ccb08db4455d86840e43fbbfdb0e097d",
-    "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "9a1862dc9feac3d6c0b8c4deb033e61c3f218bd86b7ea986af51b1b78fca1716",
-    "Tests/CruzadorCoreTests/CoreTests.swift": "a9bbe5447dbd4c96559f6e87791094acf4d0a9744eefbdd280a2796669e95d2c",
+    "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "2894370226dcc035b17a47fb51c6ee4f7fbd23fd67e4ca61d6ebadb7ad12bc73",
+    "Tests/CruzadorCoreTests/CoreTests.swift": "d3d19d208bdfb49a05baec89041f9a3d9c5b37710731f25efa792a1b6553078a",
+    "Tests/CruzadorCoreTests/LaunchTests.swift": "7f7adafe8378029fd5b1184003e896ad3d5f7fe55f408e97527dade3e36fe210",
     "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "55338d79e841468b8db0ef065b9f13854a2dbf66ae420bcdb6c863c1aa41bced",
-    "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "088e11f4065ae970b063a12d29fdeb4f915d6422dff9c091c1df0a86236f1b46",
-    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "11b761cbfe83423d2f8e6e5a23cb95817a7326affbb74b7366a0a99b8a89590e",
+    "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "0f7b7703620b0e9aa3aa78f1fd549365a89f7d5530d422ed853b9c3c962d61d3",
+    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "cdf4e1504d4898ca2a8fca2d081cb69da950d11e2f2e30fd31f2bd6e4f795446",
     "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "1c85661de661d1262553d1f7edbcf52d2820c10f0504718add903d9039afa376"
   },
   "counts": {
@@ -2682,8 +2699,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 19,
-      "missing": 21
+      "partial": 20,
+      "missing": 20
     }
   },
   "limitations": [
