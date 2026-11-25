@@ -1,0 +1,484 @@
+{
+  "version": 1,
+  "scope": "Recovered original workflow contracts; not a statement of implementation parity",
+  "contracts": [
+    {
+      "id": "bottle-name",
+      "inputs": [
+        "new bottle name"
+      ],
+      "observed_outputs": [
+        "boolean validity"
+      ],
+      "effects": [],
+      "failure_semantics": [
+        "Rejects empty/reserved names and names differing from sanitized unique candidate."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlequery.json",
+          "module_sha256": "304121786818f1581df0fef203e0b2acb1123ed62466001e0b031792b6053d62",
+          "qualname": "is_valid_new_bottle_name",
+          "firstlineno": 114,
+          "bytecode_sha256": "bbb0a4a1db9edc5587a7202889f7569447daccb82db22393840cb41f2def79e0"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": [
+        "Full sanitization and filesystem collision behavior need their own contract; display names and prefix identity need not be coupled in Cruzador."
+      ]
+    },
+    {
+      "id": "prefix-validation",
+      "inputs": [
+        "prefix path"
+      ],
+      "observed_outputs": [
+        "boolean validity"
+      ],
+      "effects": [],
+      "failure_semantics": [
+        "Empty/non-directory/unreadable path, missing system.reg or non-file cxbottle.conf are rejected."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlequery.json",
+          "module_sha256": "304121786818f1581df0fef203e0b2acb1123ed62466001e0b031792b6053d62",
+          "qualname": "_validate_wineprefix",
+          "firstlineno": 29,
+          "bytecode_sha256": "da6d0c42d047f098a9802280e3de7343e59c32ec840998c91961ff294ce41591"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": []
+    },
+    {
+      "id": "create-bottle",
+      "inputs": [
+        "name",
+        "template",
+        "optional appid",
+        "explicit environment"
+      ],
+      "observed_outputs": [
+        "tuple(success, error text)"
+      ],
+      "effects": [
+        "Invokes cxbottle --bottle NAME --create --template TEMPLATE --install; optional creator parameter."
+      ],
+      "failure_semantics": [
+        "Success is child status == 0; stderr is returned."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlemanagement.json",
+          "module_sha256": "9237f9f66462eb48715e8293b8fea76f565ca909c17c3b6438c81fb10d86ac1b",
+          "qualname": "create_bottle",
+          "firstlineno": 24,
+          "bytecode_sha256": "6700ca5036ad644797d18c8d824f56d67699b35e86756eb7f905960a8ddd9c18"
+        }
+      ],
+      "runtime_scenarios": [
+        "create",
+        "duplicate-create-rejected"
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "copy-bottle",
+      "inputs": [
+        "destination name",
+        "source bottle"
+      ],
+      "observed_outputs": [
+        "tuple(success, error text)"
+      ],
+      "effects": [
+        "Invokes cxbottle --copy SOURCE with --install."
+      ],
+      "failure_semantics": [
+        "Child status controls success."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlemanagement.json",
+          "module_sha256": "9237f9f66462eb48715e8293b8fea76f565ca909c17c3b6438c81fb10d86ac1b",
+          "qualname": "copy_bottle",
+          "firstlineno": 38,
+          "bytecode_sha256": "320ea6340c0dafa65d7d9e4424b6e6ed1fe4c9c45d9ee8b7844fe41f9d2a8175"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": []
+    },
+    {
+      "id": "rename-bottle",
+      "inputs": [
+        "old name",
+        "new name"
+      ],
+      "observed_outputs": [
+        "tuple(success, error text)"
+      ],
+      "effects": [
+        "Checks destination, uninstalls old integration, renames directory, installs new name with new UUID and optional default."
+      ],
+      "failure_semantics": [
+        "Different failure stages retain distinct error messages."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlemanagement.json",
+          "module_sha256": "9237f9f66462eb48715e8293b8fea76f565ca909c17c3b6438c81fb10d86ac1b",
+          "qualname": "rename_bottle",
+          "firstlineno": 80,
+          "bytecode_sha256": "1161b8787024e21ff367d38b10ac2fbcd2207944430e5bb3b599b8af8628a0eb"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": [
+        "No complete rollback established after the directory rename."
+      ]
+    },
+    {
+      "id": "archive-bottle",
+      "inputs": [
+        "name",
+        "output path"
+      ],
+      "observed_outputs": [
+        "tuple(success, error text)"
+      ],
+      "effects": [
+        "Invokes cxbottle --tar; adjusts locale environment on macOS."
+      ],
+      "failure_semantics": [
+        "Child status controls success."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlemanagement.json",
+          "module_sha256": "9237f9f66462eb48715e8293b8fea76f565ca909c17c3b6438c81fb10d86ac1b",
+          "qualname": "archive_bottle",
+          "firstlineno": 168,
+          "bytecode_sha256": "839c300c2b9764d8bbb15810169bc31f3c008bdfedb04c246910bc418b77467b"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": []
+    },
+    {
+      "id": "restore-bottle",
+      "inputs": [
+        "new name",
+        "archive path"
+      ],
+      "observed_outputs": [
+        "tuple(success, error text)"
+      ],
+      "effects": [
+        "Invokes cxbottle --restore with --install; locale preparation on macOS."
+      ],
+      "failure_semantics": [
+        "Child status controls success."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlemanagement.json",
+          "module_sha256": "9237f9f66462eb48715e8293b8fea76f565ca909c17c3b6438c81fb10d86ac1b",
+          "qualname": "restore_bottle",
+          "firstlineno": 64,
+          "bytecode_sha256": "24492eacd80a502956b2ce1e4f3e8879a102ffd2e7d91270dcd548bf39058a84"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": []
+    },
+    {
+      "id": "quit-bottle",
+      "inputs": [
+        "name"
+      ],
+      "observed_outputs": [
+        "boolean success"
+      ],
+      "effects": [
+        "Checks active execution; otherwise invokes bottle-specific wineboot shutdown."
+      ],
+      "failure_semantics": [
+        "No active server returns success; otherwise child status is compared to zero."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlemanagement.json",
+          "module_sha256": "9237f9f66462eb48715e8293b8fea76f565ca909c17c3b6438c81fb10d86ac1b",
+          "qualname": "quit_bottle",
+          "firstlineno": 238,
+          "bytecode_sha256": "1a3d93c5e1b62d2007102bc6d3eb63efb88ec27a5e42f7944af32d78729deed2"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": [
+        "A successful no-server check is not proof of ownership of arbitrary detached host processes."
+      ]
+    },
+    {
+      "id": "config-write",
+      "inputs": [
+        "section",
+        "key",
+        "value"
+      ],
+      "observed_outputs": [
+        "None"
+      ],
+      "effects": [
+        "Gets writable configuration, locks, updates key, saves and unlocks."
+      ],
+      "failure_semantics": [
+        "Absent writable config logs warning and returns; complete exception/lock recovery depends on cxconfig.File."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.set_config_value",
+          "firstlineno": 217,
+          "bytecode_sha256": "0129c017d2e8da31486311693b553c52ea80299c433546396126455080f03019"
+        },
+        {
+          "path": "evidence/python-disassembly/cxconfig.json",
+          "module_sha256": "9d66adb564b8cdb2d66f1536102475a63c0d56a0878dad5cd8de190429e3542b",
+          "qualname": "File.lock_file",
+          "firstlineno": 715,
+          "bytecode_sha256": "887b3afdcb86b77365878fba2650e5b747a7fe941f39d9b7c62a1e6d6b89bee8"
+        },
+        {
+          "path": "evidence/python-disassembly/cxconfig.json",
+          "module_sha256": "9d66adb564b8cdb2d66f1536102475a63c0d56a0878dad5cd8de190429e3542b",
+          "qualname": "File.save_and_unlock_file",
+          "firstlineno": 745,
+          "bytecode_sha256": "6207a426caca3224ff6ee4e152b79fc59d582c9ec6fcf563cdd91de4c6aa7b11"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": []
+    },
+    {
+      "id": "graphics-setting",
+      "inputs": [
+        "selected backend"
+      ],
+      "observed_outputs": [
+        "None"
+      ],
+      "effects": [
+        "Writes CX_GRAPHICS_BACKEND, reloads backend information and notifies bottle change."
+      ],
+      "failure_semantics": [
+        "Availability and renderer behavior are separate from storing the requested setting."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.set_graphics_backend_auto",
+          "firstlineno": 434,
+          "bytecode_sha256": "5a91756f8d951974ce1ef53e769a23cd417f61fd3e7d9c2489e2d97629fb6df8"
+        },
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.set_graphics_backend_d3dmetal",
+          "firstlineno": 440,
+          "bytecode_sha256": "5a91756f8d951974ce1ef53e769a23cd417f61fd3e7d9c2489e2d97629fb6df8"
+        },
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.set_graphics_backend_dxmt",
+          "firstlineno": 446,
+          "bytecode_sha256": "5a91756f8d951974ce1ef53e769a23cd417f61fd3e7d9c2489e2d97629fb6df8"
+        },
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.set_graphics_backend_dxvk",
+          "firstlineno": 452,
+          "bytecode_sha256": "5a91756f8d951974ce1ef53e769a23cd417f61fd3e7d9c2489e2d97629fb6df8"
+        },
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.set_graphics_backend_wine",
+          "firstlineno": 458,
+          "bytecode_sha256": "5a91756f8d951974ce1ef53e769a23cd417f61fd3e7d9c2489e2d97629fb6df8"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": []
+    },
+    {
+      "id": "msync-transition",
+      "inputs": [
+        "requested enabled state"
+      ],
+      "observed_outputs": [
+        "callback without a success argument"
+      ],
+      "effects": [
+        "Suspends bottle, requests quit, then callback changes setting and resumes."
+      ],
+      "failure_semantics": [
+        "QuitBottleOperation.finish marks last_quit_failed on failure but calls its callback regardless; callback occurrence alone is not success."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.enable_msync",
+          "firstlineno": 699,
+          "bytecode_sha256": "7bb1e5c3d708938251c612d771c88ef36a5926845a95191b21ccf541951c604d"
+        },
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.enable_msync.<locals>.quit_callback",
+          "firstlineno": 701,
+          "bytecode_sha256": "2d7a76280735209d29e75a23fa772daa2566a4eb19cf539d7dedcbe7b9e1608d"
+        },
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.disable_msync",
+          "firstlineno": 715,
+          "bytecode_sha256": "7bb1e5c3d708938251c612d771c88ef36a5926845a95191b21ccf541951c604d"
+        },
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "QuitBottleOperation.finish",
+          "firstlineno": 1440,
+          "bytecode_sha256": "f07b900e4472eb1b463fce5a4ce2c0f92b794e8c2d8cd554f1ec801df1743be1"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": []
+    },
+    {
+      "id": "capabilities",
+      "inputs": [
+        "fresh up_to_date, managed, busy, disabled and status overrides"
+      ],
+      "observed_outputs": [
+        "separate booleans for run/edit/usable"
+      ],
+      "effects": [],
+      "failure_semantics": [
+        "Run: (up_to_date or not managed) and not busy and not disabled. Edit: up_to_date and not busy and not managed. Usable examines allowed overrides."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.get_can_run_commands",
+          "firstlineno": 911,
+          "bytecode_sha256": "88de9a53d57e9f717e0700fa984d9654a17b37473464adaab6c2a5f64a918e69"
+        },
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.get_can_edit",
+          "firstlineno": 920,
+          "bytecode_sha256": "40b98f0603ffd333c1d0220fd8196904b1b682cca0a97869c90206277e31d597"
+        },
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapper.get_is_usable",
+          "firstlineno": 929,
+          "bytecode_sha256": "69e79af598979ab94b31893c5311896480a4defe3593722ef609fc2155018f91"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": []
+    },
+    {
+      "id": "operation-cancel",
+      "inputs": [
+        "operation instance"
+      ],
+      "observed_outputs": [
+        "None"
+      ],
+      "effects": [
+        "Sets canceled flag and resumes; bottle operation removes itself from queued operation collection when present."
+      ],
+      "failure_semantics": [
+        "Cancellation is not a returned proof of process termination or final cleanup."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/pyop.json",
+          "module_sha256": "f7d527420578cd39cf109a31ec3c57a3119bdf1c5ca146df97d8bda19d2f562e",
+          "qualname": "PythonOperation.cancel",
+          "firstlineno": 95,
+          "bytecode_sha256": "2f5a49ea59a938e1af2edc9510f84b0688ca5b53d4eabb9474460dca095b3f23"
+        },
+        {
+          "path": "evidence/python-disassembly/bottlewrapper.json",
+          "module_sha256": "7d846409683eba269a64f501572345a90e486bd5d87512d93b0f2aac414c616f",
+          "qualname": "BottleWrapperOperation.cancel",
+          "firstlineno": 1129,
+          "bytecode_sha256": "70ffc004ab57dee8e10f493f8630ba85d2d8ab5b260ec52f14224752af02eacf"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": []
+    },
+    {
+      "id": "engine-cancel",
+      "inputs": [
+        "installation engine"
+      ],
+      "observed_outputs": [
+        "None"
+      ],
+      "effects": [
+        "Delegates AIETask.cancel, marks canceled and calls cleanup."
+      ],
+      "failure_semantics": [
+        "Cleanup effects and outcomes require the cleanup implementation; cancel request alone does not establish complete recovery."
+      ],
+      "sources": [
+        {
+          "path": "evidence/python-disassembly/cxaiecore.json",
+          "module_sha256": "0d54e7d82f5dcd62da56dec18446f6d1807e208c01158a0376299e2165eebe22",
+          "qualname": "AIECore.cancel",
+          "firstlineno": 1168,
+          "bytecode_sha256": "e275472de8b196bc0b05a0eb01f7cbe9a2b4c9001261f6e11d1cff634862a5bc"
+        }
+      ],
+      "runtime_scenarios": [],
+      "unknowns": []
+    }
+  ],
+  "native_contracts": [
+    {
+      "id": "command-completion",
+      "sources": [
+        "evidence/decompilation/run-command-controller.json"
+      ],
+      "fact": "Completion joins process termination and both output completions; log-to-file path supplies its own stderr completion state."
+    },
+    {
+      "id": "loader-entry",
+      "sources": [
+        "evidence/auxiliary/wineloader/functions/0x100000670.c",
+        "evidence/auxiliary/ntdll-wine-main.json"
+      ],
+      "fact": "Loader resolves __wine_main in ntdll; native runtime behavior remains a separate component."
+    }
+  ],
+  "runtime_results": "evidence/runtime/original-workflows.json"
+}
