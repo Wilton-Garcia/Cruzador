@@ -74,3 +74,5 @@ O histórico resumido oferece **Ver histórico completo…**, com todas as insta
 A [conferência visual selecionada](docs/runtime-comparison.md) verificou a biblioteca e diálogos básicos. Navegação completa por VoiceOver e equivalência integral com o CrossOver continuam não estabelecidas.
 
 A [validação de aplicativos Windows](docs/application-validation.md) cobre casos selecionados de Plink e SQLite além do 7-Zip, com entradas fixadas e logs verificáveis.
+
+O [pacote de instalação e atualização manual](docs/distribution.md) pode ser gerado localmente como DMG. Assinatura Developer ID, notarização e distribuição pública permanecem pendentes.

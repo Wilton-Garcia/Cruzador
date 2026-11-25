@@ -1,0 +1,11 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Instalar Cruzador</title>
+<style>body{font:18px system-ui;line-height:1.6;max-width:740px;margin:60px auto;padding:0 24px;color:#193a3c}h1,h2{line-height:1.2}code{font-size:.9em}</style>
+<h1>Cruzador — instalação de teste</h1>
+<p>Requer macOS 14 ou posterior. O Wine incluído é x86-64; em Macs Apple Silicon, o macOS precisa disponibilizar Rosetta para executá-lo.</p>
+<h2>Instalar</h2><ol><li>Abra a imagem Cruzador.dmg.</li><li>Arraste Cruzador.app para Applications.</li><li>Abra o aplicativo pela pasta Aplicativos.</li></ol>
+<p>Este pacote local usa assinatura ad hoc e ainda não foi notarizado. A validação local não estabelece aceitação pelo Gatekeeper em outro Mac.</p>
+<h2>Atualizar</h2><ol><li>Encerre os programas Windows e o Cruzador.</li><li>Faça uma cópia do aplicativo atual e exporte as bottles que deseja preservar.</li><li>Arraste a nova versão para a mesma pasta e escolha substituir no Finder.</li></ol>
+<p>A biblioteca fica em <code>~/Library/Application Support/Cruzador</code>, separada do aplicativo. Substituir apenas Cruzador.app não apaga essa pasta. Migrações suportadas preservam uma cópia do arquivo de biblioteca anterior.</p>
+<p>Para voltar a uma versão antiga, preserve a biblioteca atual antes de restaurar aplicativo e backup compatíveis entre si. Uma versão antiga pode não ler o formato de uma versão nova.</p>
+<h2>Limites desta versão</h2><p>Atualização manual. Não há atualização automática, assinatura Developer ID ou garantia de compatibilidade integral com programas e jogos Windows.</p>
+</html>

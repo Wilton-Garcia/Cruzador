@@ -1,0 +1,21 @@
+{
+  "formatVersion": 1,
+  "bundleIdentifier": "io.github.wilton-garcia.cruzador",
+  "version": "0.1.0",
+  "build": "1",
+  "source_app": "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app",
+  "image": "/Users/wiltongarcia/Developer/Cruzador/build/releases/task34-with-icon/Cruzador.dmg",
+  "sha256": "dffd2baf0305e6f2492697eb93aa58b1f80a7a7f5b611037b7a8578a41738e9c",
+  "bytes": 477980290,
+  "executable_sha256": "db79ab14f6a1736d73c9e1a5fe9e4f9942efa4373922d3050e56493e00423595",
+  "signature_observation": "Executable=/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/MacOS/Cruzador\nIdentifier=io.github.wilton-garcia.cruzador\nFormat=app bundle with Mach-O universal (x86_64 arm64)\nCodeDirectory v=20400 size=6393 flags=0x2(adhoc) hashes=193+3 location=embedded\nSignature=adhoc\nInfo.plist entries=11\nTeamIdentifier=not set\nSealed Resources version=2 rules=13 files=5664\nInternal requirements count=0 size=12\nTotal signatures=1\nChosen signature=1\n",
+  "image_verified": true,
+  "mounted_bundle_verified": true,
+  "published": false,
+  "limitations": [
+    "Installation and update use Finder drag-and-replace with the app closed; no automatic updater is implemented.",
+    "A valid local signature does not establish Developer ID, notarization or Gatekeeper acceptance.",
+    "Third-party source and license correspondence must be reviewed before public redistribution.",
+    "No installed app or user library was changed by packaging."
+  ]
+}
