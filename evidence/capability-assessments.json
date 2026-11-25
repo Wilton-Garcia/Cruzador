@@ -955,10 +955,20 @@
         "ui:bottle-detail:15"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleTool.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleToolTests.swift",
+          "name": "testTaskManagerPlanIsScopedToTheRequestedBottle",
+          "scope": "Seleciona taskmgr e prefixo da bottle pedida; outra bottle sem componente é rejeitada."
+        }
+      ],
+      "remaining_gap": "Taskmgr Wine integrado e processo real observado; conteúdo visual, todos os contadores e ações de encerramento não validados integralmente.",
       "independent_equivalence_established": false
     },
     {

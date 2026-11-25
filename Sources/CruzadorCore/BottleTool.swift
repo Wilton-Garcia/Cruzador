@@ -2,9 +2,9 @@ import Foundation
 
 /// One owner of tool identities, component checks and literal Windows arguments.
 public enum BottleTool: String, CaseIterable, Sendable {
-    case wineConfiguration = "winecfg", registryEditor = "regedit", uninstaller, commandPrompt = "cmd", gameControllers = "gamepads"
+    case wineConfiguration = "winecfg", registryEditor = "regedit", uninstaller, commandPrompt = "cmd", gameControllers = "gamepads", taskManager = "taskmgr"
     private var components: [String] {
-        switch self { case .gameControllers: ["control.exe", "joy.cpl"]; default: [] }
+        switch self { case .gameControllers: ["control.exe", "joy.cpl"]; case .taskManager: ["taskmgr.exe"]; default: [] }
     }
     func arguments(bottle: Bottle, store: LibraryStore) throws -> [String] {
         guard !components.isEmpty else { return [rawValue] }

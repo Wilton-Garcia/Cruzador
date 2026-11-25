@@ -7,3 +7,7 @@ As ferramentas usam o mesmo planejador, ambiente e supervisor dos programas Wind
 Enquanto uma ferramenta estiver aberta, ela pode manter a operação em andamento. Feche sua janela para continuar ou use Cancelar operação, que encerra os programas Wine **desta bottle** pelo servidor selecionado. Não há encerramento global de outros prefixos.
 
 O [registro de inspeção](../evidence/runtime-gamepad-panel.json) distingue plano produzido pelo código, processo observado e limites. A ferramenta nativa de UI não conseguiu acessar o processo Windows sem bundle macOS; não se apresenta atividade do processo como prova de conteúdo da janela. Não houve teste com controle físico.
+
+**Gerenciador de tarefas** inicia `taskmgr.exe` da System32 desta bottle. O painel do Wine permite consultar e administrar seus processos Windows; suas informações representam o ambiente emulado, não um monitor completo dos processos do macOS. O executável também passa pela validação de componentes antes da abertura.
+
+O [registro de execução do gerenciador](../evidence/runtime-task-manager.json) conserva o plano real, processo ativo e encerramento confirmado do prefixo. Seu conteúdo gráfico não foi inspecionado automaticamente; nenhuma ação de terminar processos foi exercitada nessa observação.

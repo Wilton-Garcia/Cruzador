@@ -25,3 +25,15 @@ extension BottleMaintenanceTests {
         XCTAssertThrowsError(try EngineCommands.make(.tool(.gameControllers), bottle: bottle, store: store))
     }
 }
+
+extension BottleMaintenanceTests {
+    func testTaskManagerPlanIsScopedToTheRequestedBottle() throws {
+        let (maintenance, bottle) = try fixture(), store = maintenance.store
+        let system = try toolComponents(["taskmgr.exe"], bottle: bottle, store: store)
+        let other = Bottle(name: "Other", engine: bottle.engine)
+        let plan = try EngineCommands.make(.tool(.taskManager), bottle: bottle, store: store)
+        XCTAssertEqual(plan.primary.arguments, [system.appendingPathComponent("taskmgr.exe").path])
+        XCTAssertEqual(plan.primary.environment["WINEPREFIX"], store.prefix(for: bottle).path)
+        XCTAssertThrowsError(try EngineCommands.make(.tool(.taskManager), bottle: other, store: store))
+    }
+}
