@@ -77,10 +77,9 @@ public struct BottleSettingsStore: Sendable {
         guard let bottle = library.bottles.first(where: { $0.id == bottleID }) else { throw CruzadorError.invalid("Bottle não encontrada.") }
         try settings.executionOptions.validate()
         _ = try GraphicsConfiguration.environment(backend: settings.graphics, engine: bottle.engine, explicitOverride: settings.executionOptions.environment["WINE_D3D_CONFIG"])
-        let next = try SynchronizationConfiguration.environment(settings: settings, engine: bottle.engine)
+        let waitRequired = try SynchronizationConfiguration.requiresServerWait(from: bottle.requestedSettings, to: settings, engine: bottle.engine)
         if bottle.requestedSettings == settings { return }
-        let previous = try SynchronizationConfiguration.environment(settings: bottle.requestedSettings, engine: bottle.engine)
-        if previous != next, store.health(of: bottle) != .absent {
+        if waitRequired, store.health(of: bottle) != .absent {
             do {
                 let result = try await runner.run(EngineCommands.make(.waitForIdle, bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("settings-\(operationID).log"), operationID: operationID)
                 try result.requireSuccess()

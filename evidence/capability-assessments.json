@@ -811,6 +811,11 @@
           "file": "Tests/CruzadorCoreTests/SynchronizationTests.swift",
           "name": "testSettingsCommitOnlyAfterSuccessfulWaitAndAreIdempotent",
           "scope": "Espera com falha não salva; sucesso e repetição idempotente."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/SynchronizationTests.swift",
+          "name": "testEquivalentProtocolSkipsWaitAndInvalidPreviousChoiceCanBeCorrected",
+          "scope": "Valores equivalentes não drenam servidor; protocolo antigo inválido só é corrigido após espera confirmada."
         }
       ],
       "remaining_gap": "Fluxo próprio no pacote opcional WineCX validado localmente; equivalência integral, Intel, desempenho e jogos não estabelecidos. Wine 11.21 padrão não oferece MSync.",
@@ -979,10 +984,12 @@
         "ui:online-preferences:0"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
+      "prototype_status": "partial",
+      "source_files": [
+        "scripts/package-release.py"
+      ],
       "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "remaining_gap": "Pacote local e atualização manual por substituição do bundle; verificação automática de versões, feed e instalação automática ainda ausentes. Assinatura/notarização adiadas por solicitação do mantenedor.",
       "independent_equivalence_established": false
     },
     {
@@ -997,10 +1004,17 @@
       "prototype_status": "partial",
       "source_files": [
         "Sources/Cruzador/ContentView.swift",
-        "Sources/Cruzador/CruzadorApp.swift"
+        "Sources/Cruzador/CruzadorApp.swift",
+        "Sources/Cruzador/AppPresentation.swift"
       ],
-      "tests": [],
-      "remaining_gap": "Configuração básica de motor e bloqueio de saída durante operação; restauração de janelas e demais preferências ausentes.",
+      "tests": [
+        {
+          "file": "Tests/CruzadorPresentationTests/PresentationTests.swift",
+          "name": "testIncomingRequestsDoNotReplaceExistingDialogOrStartWhileBusy",
+          "scope": "Fila de abertura respeita diálogo ativo e operação em curso."
+        }
+      ],
+      "remaining_gap": "Configuração própria, janela retida para reabertura e bloqueio de saída durante operação; restauração entre sessões e demais preferências não estabelecidas.",
       "independent_equivalence_established": false
     },
     {

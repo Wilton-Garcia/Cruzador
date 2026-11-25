@@ -1,0 +1,72 @@
+{
+  "formatVersion": 1,
+  "report_path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-970a95a9-d3f5-4512-a83f-d720f0590379/msync-observations.json",
+  "report_sha256": "7c67e645458f20ebd272028e5d4166702fefda2e2da311111b0f30a60e9e32ae",
+  "report": {
+    "cancellation": {
+      "after_cancel_exit": 0,
+      "after_cancel_marker": true,
+      "cancelled": true,
+      "cleanup_codes": [
+        0,
+        0
+      ]
+    },
+    "formatVersion": 2,
+    "initialization_exit": 0,
+    "observations": [
+      {
+        "cancelled": false,
+        "exit": 0,
+        "log": "msync: bootstrapped mach port on wine-2d8ed1e-msync.\nmsync: up and running.\n00b4:err:ntoskrnl:ZwLoadDriver failed to create driver L\"\\\\Registry\\\\Machine\\\\System\\\\CurrentControlSet\\\\Services\\\\winebth\": c00000e5\n0038:fixme:service:scmdatabase_autostart_services Auto-start service L\"winebth\" failed to start: 1359\nCRUZADOR_SYNC_1_GLOBAL_OK\r\n",
+        "marker": "CRUZADOR_SYNC_1_GLOBAL_OK",
+        "mode": "msync"
+      },
+      {
+        "cancelled": false,
+        "exit": 0,
+        "log": "00b4:err:ntoskrnl:ZwLoadDriver failed to create driver L\"\\\\Registry\\\\Machine\\\\System\\\\CurrentControlSet\\\\Services\\\\winebth\": c00000e5\n0038:fixme:service:scmdatabase_autostart_services Auto-start service L\"winebth\" failed to start: 1359\nCRUZADOR_SYNC_0_GLOBAL_OK\r\n",
+        "marker": "CRUZADOR_SYNC_0_GLOBAL_OK",
+        "mode": "server"
+      }
+    ],
+    "root": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-970a95a9-d3f5-4512-a83f-d720f0590379",
+    "runtime": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-WineCX-26.3",
+    "server_wait_exit": 0,
+    "watchdog_seconds": 120
+  },
+  "supervision": {
+    "format_version": 2,
+    "timed_out": false,
+    "timeout_seconds": 180.0,
+    "elapsed_seconds": 45.328564417,
+    "result": 0,
+    "test_exit": 0,
+    "cleanup_status": "not-requested",
+    "cleanup": [],
+    "report_error": null,
+    "previous_summary": null,
+    "requested_output_root": null,
+    "output_root": "/Users/wiltongarcia/Developer/Cruzador/.local",
+    "requested_runtime": ".local/Runtime-WineCX-26.3",
+    "runtime": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-WineCX-26.3",
+    "requested_installer_msi": null,
+    "requested_recipes": null,
+    "requested_apps": null,
+    "limitations": [
+      "CPU time and peak process-family memory were not measured.",
+      "Cleanup control commands concern only the selected retained prefixes; arbitrary detached helpers were not enumerated."
+    ]
+  },
+  "local_checks": {
+    "core_tests": 67,
+    "presentation_tests": 4,
+    "skipped_opt_in": 6,
+    "failures": 0
+  },
+  "limitations": [
+    "MSync runtime observed locally on arm64 only; no Intel claim for the optional runtime.",
+    "Latest stock-runtime Intel and arm64 CI evidence has its own pinned earlier commit.",
+    "The invalid-old-protocol and equivalent-value scenarios use supervised fixture servers, not real corrupted Wine state."
+  ]
+}

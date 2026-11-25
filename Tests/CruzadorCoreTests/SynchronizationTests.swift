@@ -69,6 +69,30 @@ final class SynchronizationTests: XCTestCase {
         try await service.save(settings, bottleID: bottle.id, runner: runner)
         XCTAssertEqual(try Data(contentsOf: store.manifest), before)
     }
+    func testEquivalentProtocolSkipsWaitAndInvalidPreviousChoiceCanBeCorrected() async throws {
+        let root = try makeSynchronizationPackage(), store = LibraryStore(root: root.appendingPathComponent("data"))
+        var bottle = Bottle(name: "Semantic protocol", engine: Engine(kind: .packagedWine, path: root.path))
+        bottle.configuration = BottleSettings(synchronization: .msync, executionOptions: LaunchOptions(environment: ["WINEMSYNC": "2"]))
+        var library = Library(); library.bottles = [bottle]; try store.save(library)
+        try FileManager.default.createDirectory(at: store.prefix(for: bottle), withIntermediateDirectories: true)
+        let server = root.appendingPathComponent("bin/wineserver")
+        func writeServer(exit: Int) throws {
+            try "#!/bin/sh\nexit \(exit)\n".write(to: server, atomically: true, encoding: .utf8)
+            try FileManager.default.setAttributes([.posixPermissions: 0o755], ofItemAtPath: server.path)
+        }
+        try writeServer(exit: 9)
+        let service = BottleSettingsStore(store: store), runner = CommandRunner()
+        let equivalent = BottleSettings(synchronization: .msync, executionOptions: LaunchOptions(environment: ["WINEMSYNC": "1"]))
+        try await service.save(equivalent, bottleID: bottle.id, runner: runner)
+        XCTAssertEqual(try store.load().bottles[0].requestedSettings, equivalent)
+        library = try store.load(); library.bottles[0].configuration?.executionOptions.environment["WINEMSYNC"] = "invalid"; try store.save(library)
+        let corrected = BottleSettings(synchronization: .server)
+        do { try await service.save(corrected, bottleID: bottle.id, runner: runner); XCTFail("Unknown old protocol requires successful wait") } catch CommandRunnerError.failed {}
+        XCTAssertEqual(try store.load().bottles[0].requestedSettings.executionOptions.environment["WINEMSYNC"], "invalid")
+        try writeServer(exit: 0)
+        try await service.save(corrected, bottleID: bottle.id, runner: runner)
+        XCTAssertEqual(try store.load().bottles[0].requestedSettings, corrected)
+    }
     func testCancelledSettingsWaitNeverCommitsNewMode() async throws {
         let root = try makeSynchronizationPackage(), store = LibraryStore(root: root.appendingPathComponent("data"))
         let bottle = Bottle(name: "Cancel", engine: Engine(kind: .packagedWine, path: root.path))

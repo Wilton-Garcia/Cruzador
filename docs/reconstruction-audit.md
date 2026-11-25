@@ -1,0 +1,15 @@
+# Auditoria da reconstrução independente
+
+A [matriz revisada](coverage.md) contém 40 grupos: 28 parciais e 12 sem implementação mapeada. Nenhum grupo tem equivalência integral estabelecida. Dos 330 itens de catálogo, 107 estão vinculados a grupos e 223 continuam sem avaliação individual; muitos são declarações de controles e ações de framework, não funcionalidades independentes. Esses números não são uma porcentagem de conclusão.
+
+O código implementa fluxos próprios de biblioteca, preparo de bottles, execução EXE/MSI, receitas iniciais, transferência, diagnóstico, integração com arquivos e configuração de gráficos/sincronização. O Wine padrão é incluído no aplicativo; o motor original não é uma dependência de execução desses fluxos. Os [testes de CI](standalone-validation.md) passaram em Intel e Apple Silicon com ausência do CrossOver registrada nas pastas inspecionadas, incluindo Plink e SQLite. O [comparativo](runtime-comparison.md) conserva observações selecionadas do original e limites explícitos.
+
+O ícone próprio e o pacote local estão integrados. A atualização disponível é manual por substituição do bundle; não há feed ou atualizador automático. Assinatura Developer ID e notarização foram adiadas por solicitação do mantenedor. A validação de assinatura ad hoc verifica integridade local, sem estabelecer aceitação pelo Gatekeeper ou autorização para redistribuir todos os componentes de terceiros.
+
+A revisão encontrou duas decisões incorretas na alteração de sincronização: comparar textos de ambiente fazia `WINEMSYNC=1` e `WINEMSYNC=2` parecerem protocolos diferentes; rejeitar a seleção anterior inválida impedia corrigi-la. A configuração de sincronização agora possui a comparação semântica. Uma escolha anterior inválida permanece desconhecida e exige espera confirmada antes de ser substituída. Testes de serviço verificam ausência de espera em valores equivalentes e preservação/correção após falha/sucesso da espera. O [cenário MSync real](../evidence/runtime-audit-msync.json) passou novamente no arm64; não comprova MSync em Intel nem reproduz um servidor real com configuração corrompida.
+
+O comparador também passou a exigir os marcadores de saída e ambiente solicitados: saídas numéricas iguais, isoladamente, não estabelecem observações iguais. Regressões cobrem marcador ausente, observação indisponível e classificação de falha. Os registros anteriores bem-sucedidos permanecem compatíveis com essa regra.
+
+A verificação local dessa revisão passou com 67 testes Core e 4 testes de apresentação, sendo 6 cenários reais opcionais pulados na execução padrão. Os cenários opt-in citados têm relatórios separados. Ferramentas Wine gráficas, jogos, desempenho, VoiceOver e todos os templates não foram validados integralmente. O registro de CI fixa um commit anterior à revisão de sincronização; não é apresentado como teste remoto dessas alterações posteriores.
+
+As lacunas completas e os limites por capacidade permanecem na matriz. Ativação/licenciamento da edição original foi observada, mas não é uma dependência que um programa independente deva reproduzir. A reconstrução integral continua aberta.

@@ -29,6 +29,7 @@ jobs:
           swift --version
           swift test --jobs 3
           python3 Tests/Inspection/test_runtime_packaging.py
+          python3 Tests/Inspection/test_runtime_comparison.py
           python3 Tests/Inspection/test_native_smoke.py
           python3 Tests/Inspection/test_standalone_environment.py
           python3 Tests/Inspection/test_validation_collection.py

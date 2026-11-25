@@ -8,7 +8,6 @@ from pathlib import Path
 import plistlib
 import signal
 import subprocess
-import time
 import uuid
 from runtime_smoke_report import validate_runtime_report
 
@@ -95,6 +94,17 @@ def observe(app, independent_path, msi):
     if not report['completed'] or not report['server_wait_confirmed']: raise RuntimeError('Comparison incomplete; retained data requires diagnosis')
     return report, independent
 
+def assess(row):
+    if type(row.get('independent_exit')) is not int or type(row.get('original_exit')) is not int:
+        return 'observation unavailable'
+    if row['scenario'] == 'invalid-msi':
+        return 'same observed failure class' if row['original_exit'] != 0 and row['independent_exit'] != 0 else 'different observed outcome'
+    if row['original_exit'] != row['independent_exit']: return 'different observed status'
+    markers = ['original_marker_and_environment', 'independent_marker_and_environment']
+    if any(key in row for key in markers) and not all(row.get(key) is True for key in markers):
+        return 'marker or environment observation differs or is incomplete'
+    return 'matching selected observations'
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(); parser.add_argument('--original', type=Path, default=Path('/Applications/CrossOver.app'))
     parser.add_argument('--independent-report', type=Path, default=ROOT/'.local/packaged-runtime-smoke.json')
@@ -115,9 +125,7 @@ if __name__ == '__main__':
              {'scenario':'server-wait','original_exit':lookup['server-wait']['exit_code'],'independent_exit':independent['server_wait_exit']}]
     original['comparison'] = rows
     for row in rows:
-        if row['independent_exit'] is None: row['assessment'] = 'independent observation unavailable'
-        elif row['scenario'] == 'invalid-msi': row['assessment'] = 'same observed failure class' if row['original_exit'] != 0 and row['independent_exit'] != 0 else 'different observed outcome'
-        else: row['assessment'] = 'matching selected observations' if row['original_exit'] == row['independent_exit'] else 'different observed status'
+        row['assessment'] = assess(row)
     original['original_command_images'] = []
     for folder in ['system32', 'syswow64']:
         path = Path(original['prefix'])/'drive_c/windows'/folder/'cmd.exe'

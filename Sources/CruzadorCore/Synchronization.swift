@@ -33,6 +33,13 @@ public enum SynchronizationConfiguration {
         }
         return selected.map { ["WINEMSYNC": $0] } ?? [:]
     }
+    /// Compare the protocol selected by Wine, preserving literal environment values for launch.
+    /// An invalid old selection is unknown and must be drained before a correction is saved.
+    public static func requiresServerWait(from previous: BottleSettings, to next: BottleSettings, engine: Engine) throws -> Bool {
+        let nextEnvironment = try environment(settings: next, engine: engine)
+        guard let previousEnvironment = try? environment(settings: previous, engine: engine) else { return true }
+        return try flag(previousEnvironment["WINEMSYNC"] ?? "0") != flag(nextEnvironment["WINEMSYNC"] ?? "0")
+    }
     public static func validateOverride(_ value: String?, global: [String: String], engine: Engine) throws {
         guard let value else { return }
         guard supportsMSync(engine: engine), try flag(value) == flag(global["WINEMSYNC"] ?? "0") else { throw CruzadorError.invalid("O atalho deve usar o mesmo WINEMSYNC da bottle. Altere a sincronização nas opções da bottle e aguarde o servidor encerrar.") }
