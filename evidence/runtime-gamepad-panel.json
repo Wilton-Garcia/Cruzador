@@ -1,0 +1,91 @@
+{
+  "formatVersion": 1,
+  "plan": {
+    "cancellation": [
+      {
+        "arguments": [
+          "-k"
+        ],
+        "environment": {
+          "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB",
+          "WINESERVER": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+        },
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+      },
+      {
+        "arguments": [
+          "-w"
+        ],
+        "environment": {
+          "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB",
+          "WINESERVER": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+        },
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+      }
+    ],
+    "finalization": [],
+    "formatVersion": 1,
+    "primary": {
+      "arguments": [
+        "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB/drive_c/windows/system32/control.exe",
+        "joy.cpl"
+      ],
+      "environment": {
+        "CRUZADOR_GLOBAL": "GLOBAL_OK",
+        "CRUZADOR_VALUE": "GLOBAL_VALUE",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB",
+        "WINESERVER": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+      },
+      "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wine",
+      "workingDirectory": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB/drive_c"
+    },
+    "root": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541",
+    "tool": "gamepads"
+  },
+  "plan_sha256": "4d6e041683869757a6aee6e9cac7303177b9856989595911a7311478e5d26155",
+  "observation": {
+    "process_started": true,
+    "running_process_observed": true,
+    "window_contents_verified": false,
+    "native_ui_tool_result": "Invalid app for the running control.exe path",
+    "physical_controller_verified": false
+  },
+  "cleanup": [
+    {
+      "command": {
+        "arguments": [
+          "-k"
+        ],
+        "environment": {
+          "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB",
+          "WINESERVER": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+        },
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+      },
+      "exit": 1,
+      "output": ""
+    },
+    {
+      "command": {
+        "arguments": [
+          "-w"
+        ],
+        "environment": {
+          "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB",
+          "WINESERVER": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+        },
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+      },
+      "exit": 0,
+      "output": ""
+    }
+  ],
+  "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/gamepads-native.log",
+  "log_sha256": "7580339876d4d4e8a19b75b6904145acf1a21f583bbead9df651c26c7701f9a1",
+  "limitations": [
+    "Process liveness is not proof of rendered panel contents.",
+    "CUA could not inspect the unbundled Wine Windows application; window content and physical controller behavior remain unverified.",
+    "The first inspection harness timed out while waiting for interactive closure; its raw failure was retained and selected-prefix cleanup was checked separately.",
+    "No arbitrary detached-helper census was performed."
+  ]
+}

@@ -234,16 +234,17 @@ struct ContentView: View {
                     Button("Alta resolução…") { model.presentation = .retina }
                     Button("Reiniciar bottle…") { model.rebootBottle(bottle) }
                     Button("Reparar bottle") { model.perform(.repair, bottle: bottle, title: "Reparando \(bottle.name)…") }
-                    tool("Configurações Wine", "slider.horizontal.3", "winecfg", bottle)
+                    tool("Configurações Wine", "slider.horizontal.3", .wineConfiguration, bottle)
                     Button("Shell no Terminal") { model.openBottleShell(bottle) }.help("Abre um shell independente com o motor e o ambiente desta bottle. Feche seus programas antes da manutenção.")
-                    tool("Registro", "list.bullet.rectangle", "regedit", bottle)
-                    tool("Desinstalar programas", "minus.circle", "uninstaller", bottle)
+                    tool("Controles de jogos", "gamecontroller", .gameControllers, bottle)
+                    tool("Registro", "list.bullet.rectangle", .registryEditor, bottle)
+                    tool("Desinstalar programas", "minus.circle", .uninstaller, bottle)
                 }.disabled(!model.canStart || !model.store.isReady(bottle))
                 Text("Motor: \(bottle.engine.path)").font(.caption).foregroundStyle(.tertiary).textSelection(.enabled)
             }.padding(34)
         }
     }
-    private func tool(_ title: String, _ symbol: String, _ command: String, _ bottle: Bottle) -> some View {
+    private func tool(_ title: String, _ symbol: String, _ command: BottleTool, _ bottle: Bottle) -> some View {
         Button { model.perform(.tool(command), bottle: bottle, title: "Abrindo \(title)…") } label: { Label(title, systemImage: symbol) }
     }
     private func readinessExplanation(_ bottle: Bottle) -> String {

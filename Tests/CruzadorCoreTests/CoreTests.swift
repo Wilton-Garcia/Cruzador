@@ -52,7 +52,7 @@ final class CoreTests: XCTestCase {
         let store = LibraryStore(root: try temporary())
         let bottle = Bottle(name: "A", engine: Engine(kind: .wine, path: "/no/such/wine"))
         XCTAssertThrowsError(try EngineCommands.make(.initialize, bottle: bottle, store: store))
-        XCTAssertThrowsError(try EngineCommands.make(.tool("unexpected"), bottle: bottle, store: store))
+        XCTAssertNil(BottleTool(rawValue: "unexpected"))
     }
     func testMSIUsesMsiexec() throws {
         let root = try temporary(); let wine = root.appendingPathComponent("wine"); try executable(wine)

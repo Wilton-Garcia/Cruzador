@@ -19,7 +19,7 @@ public struct EnginePlan: Sendable {
         self.primary = primary; self.prerequisites = prerequisites; self.finalization = finalization; self.cancellation = cancellation; self.cancellationWarning = cancellationWarning
     }
 }
-public enum BottleAction: Sendable { case initialize, repair, reboot, waitForIdle, run(LaunchRequest), install(InstallationRequest), tool(String) }
+public enum BottleAction: Sendable { case initialize, repair, reboot, waitForIdle, run(LaunchRequest), install(InstallationRequest), tool(BottleTool) }
 public enum EngineCommands {
     public static func make(_ action: BottleAction, bottle: Bottle, store: LibraryStore) throws -> EnginePlan {
         guard bottle.engine.path.hasPrefix("/") else { throw CruzadorError.invalid("Selecione um caminho absoluto para o motor.") }
@@ -56,7 +56,7 @@ public enum EngineCommands {
                 arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait", "--", "wineboot", "--update"]
             default:
                 executable = base.appendingPathComponent("bin/wine")
-                arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait", "--"] + (try windowsArguments(action, store: store))
+                arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait", "--"] + (try windowsArguments(action, bottle: bottle, store: store))
             }
         case .wine, .packagedWine:
             if bottle.engine.kind == .packagedWine {
@@ -81,7 +81,7 @@ public enum EngineCommands {
                     else { arguments = ["wineboot", modeFlag(action)] }
                     finalization = [Command(executable: server, arguments: ["-w"], environment: environment)]
                 }
-            default: arguments = try windowsArguments(action, store: store)
+            default: arguments = try windowsArguments(action, bottle: bottle, store: store)
             }
         }
         guard FileManager.default.isExecutableFile(atPath: executable.path) else {
@@ -114,16 +114,14 @@ public enum EngineCommands {
         if case .repair = action { return "--update" }
         return "--init"
     }
-    private static func windowsArguments(_ action: BottleAction, store: LibraryStore) throws -> [String] {
+    private static func windowsArguments(_ action: BottleAction, bottle: Bottle, store: LibraryStore) throws -> [String] {
         switch action {
         case .run(let request):
             try request.validate()
             return (URL(fileURLWithPath: request.path).pathExtension.lowercased() == "msi" ? ["msiexec", "/i", request.path] : [request.path]) + request.arguments
         case .install(let request):
             return try request.windowsArguments(msiLog: store.logsRoot.appendingPathComponent("installer-\(request.id).msi.log"))
-        case .tool(let name):
-            guard ["winecfg", "regedit", "uninstaller", "cmd"].contains(name) else { throw CruzadorError.invalid("Ferramenta desconhecida.") }
-            return [name]
+        case .tool(let tool): return try tool.arguments(bottle: bottle, store: store)
         case .initialize, .repair, .reboot, .waitForIdle: return []
         }
     }

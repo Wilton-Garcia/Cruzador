@@ -38,7 +38,7 @@ final class GraphicsTests: XCTestCase {
         try await BottleSettingsStore(store: store).save(settings, bottleID: bottle.id, runner: CommandRunner())
         let saved = try store.load().bottles[0]
         XCTAssertEqual(saved.requestedSettings.graphics, .vulkan)
-        let plan = try EngineCommands.make(.tool("winecfg"), bottle: saved, store: store)
+        let plan = try EngineCommands.make(.tool(.wineConfiguration), bottle: saved, store: store)
         XCTAssertEqual(plan.primary.environment["WINE_D3D_CONFIG"], "renderer=vulkan")
         let result = try await CommandRunner().run(plan, log: root.appendingPathComponent("graphics.log"))
         XCTAssertEqual(try String(contentsOf: result.log, encoding: .utf8), "renderer=vulkan")
@@ -64,7 +64,7 @@ final class GraphicsTests: XCTestCase {
         let root = try package(), store = LibraryStore(root: root.appendingPathComponent("data"))
         var bottle = Bottle(name: "Broken graphics", engine: Engine(kind: .packagedWine, path: root.path)); bottle.configuration = BottleSettings(graphics: .vulkan)
         try FileManager.default.removeItem(at: root.appendingPathComponent("lib/libMoltenVK.dylib"))
-        XCTAssertThrowsError(try EngineCommands.make(.tool("winecfg"), bottle: bottle, store: store))
+        XCTAssertThrowsError(try EngineCommands.make(.tool(.wineConfiguration), bottle: bottle, store: store))
         XCTAssertNoThrow(try EngineCommands.make(.waitForIdle, bottle: bottle, store: store))
     }
     func testRealRuntimeGraphicsRequestsAndFrameProbe() async throws {

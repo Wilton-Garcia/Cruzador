@@ -5,7 +5,7 @@ public enum BottleShell {
     private static func quote(_ value: String) -> String { "'" + value.replacingOccurrences(of: "'", with: "'\\''") + "'" }
     public static func prepare(bottle: Bottle, store: LibraryStore) throws -> URL {
         guard bottle.engine.kind != .crossOver, store.isReady(bottle) else { throw CruzadorError.invalid("O shell exige uma bottle pronta com Wine independente.") }
-        let command = try EngineCommands.make(.tool("cmd"), bottle: bottle, store: store).primary
+        let command = try EngineCommands.make(.tool(.commandPrompt), bottle: bottle, store: store).primary
         var environment = command.environment
         environment["CRUZADOR_WINE"] = command.executable.path
         environment["PATH"] = command.executable.deletingLastPathComponent().path + ":/usr/bin:/bin:/usr/sbin:/sbin"

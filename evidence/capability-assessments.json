@@ -932,10 +932,20 @@
         "ui:bottle-detail:13"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleTool.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleToolTests.swift",
+          "name": "testGameControllerPlanUsesItsOwnPanelAndRejectsMissingOrMalformedComponents",
+          "scope": "Plano usa control/joy da bottle; ausência, PE inválido e arquiteturas diferentes são rejeitados."
+        }
+      ],
+      "remaining_gap": "Painel joy.cpl integrado; processo Wine observado, mas UI nativa sem acesso ao conteúdo da janela e hardware físico não validado.",
       "independent_equivalence_established": false
     },
     {

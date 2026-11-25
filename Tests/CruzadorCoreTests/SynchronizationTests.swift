@@ -33,7 +33,7 @@ final class SynchronizationTests: XCTestCase {
         XCTAssertNil(plan.cancellation[0].environment["GLOBAL"])
         XCTAssertThrowsError(try EngineCommands.make(.run(LaunchRequest(path: app.path, options: LaunchOptions(environment: ["WINEMSYNC": "0"]))), bottle: bottle, store: store))
         bottle.configuration?.executionOptions.workingDirectory = "/missing-\(UUID())"
-        XCTAssertThrowsError(try EngineCommands.make(.tool("cmd"), bottle: bottle, store: store))
+        XCTAssertThrowsError(try EngineCommands.make(.tool(.commandPrompt), bottle: bottle, store: store))
         XCTAssertNoThrow(try EngineCommands.make(.waitForIdle, bottle: bottle, store: store))
     }
     func testUnsupportedModesAndOlderGraphicsSettingsRemainExplicit() throws {
