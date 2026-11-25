@@ -66,6 +66,7 @@ struct ContentView: View {
         }
         .tint(.teal)
         .sheet(isPresented: $model.showCreate) { CreateBottleView(model: model) }
+        .sheet(isPresented: $model.showRecipes) { if let catalog = model.recipeCatalog { RecipesView(model: model, catalog: catalog) } }
         .sheet(isPresented: $model.showInstall) { if let installer = model.selectedInstaller { InstallProgramView(model: model, installer: installer) } }
         .sheet(isPresented: $model.showRegister) { RegisterAppView(model: model, app: model.editingApp) }
         .alert("Não foi possível concluir", isPresented: Binding(get: { model.error != nil }, set: { if !$0 { model.error = nil } })) {
@@ -98,11 +99,12 @@ struct ContentView: View {
                     Image(systemName: "shippingbox.fill").font(.system(size: 54)).foregroundStyle(.teal.gradient).padding(10)
                 }
                 HStack(spacing: 12) {
+                    Button { model.openRecipes() } label: { Label("Receitas…", systemImage: "list.bullet.clipboard") }
                     Button { model.chooseProgram(installer: true) } label: { Label("Instalar programa", systemImage: "plus.circle.fill") }.buttonStyle(.borderedProminent)
                     Button { model.chooseProgram() } label: { Label("Executar arquivo…", systemImage: "play.fill") }
                     Button { NSWorkspace.shared.open(model.store.prefix(for: bottle)) } label: { Label("Abrir pasta", systemImage: "folder") }
-                }.controlSize(.large).disabled(!model.canStart || bottle.state != .ready || !model.store.isInitialized(bottle))
-                if bottle.state != .ready || !model.store.isInitialized(bottle) {
+                }.controlSize(.large).disabled(!model.canStart || !model.store.isReady(bottle))
+                if !model.store.isReady(bottle) {
                     GroupBox {
                         HStack {
                             VStack(alignment: .leading, spacing: 5) {
@@ -170,7 +172,7 @@ struct ContentView: View {
                     tool("Configurações Wine", "slider.horizontal.3", "winecfg", bottle)
                     tool("Registro", "list.bullet.rectangle", "regedit", bottle)
                     tool("Desinstalar programas", "minus.circle", "uninstaller", bottle)
-                }.disabled(!model.canStart || bottle.state != .ready || !model.store.isInitialized(bottle))
+                }.disabled(!model.canStart || !model.store.isReady(bottle))
                 Text("Motor: \(bottle.engine.path)").font(.caption).foregroundStyle(.tertiary).textSelection(.enabled)
             }.padding(34)
         }
@@ -301,5 +303,33 @@ struct InstallProgramView: View {
                 Button("Iniciar instalação") { model.installSelected(mode: mode, arguments: arguments, workingDirectory: workingDirectory, environmentJSON: environmentJSON) }.buttonStyle(.borderedProminent).disabled(!model.canStart)
             }
         }.padding(28).frame(width: 560)
+    }
+}
+
+struct RecipesView: View {
+    @ObservedObject var model: AppModel
+    let catalog: RecipeCatalog
+    @State private var selectedID: String?
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            Label("Instalar por receita", systemImage: "list.bullet.clipboard").font(.title2.bold())
+            Text("Destino: \(model.selected?.name ?? "Nenhuma bottle")").foregroundStyle(.secondary)
+            List(catalog.recipes, selection: $selectedID) { recipe in
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack { Text(recipe.name).font(.headline); Spacer(); Text(recipe.version).foregroundStyle(.secondary) }
+                    Text(recipe.summary).font(.callout)
+                }.padding(.vertical, 6).tag(recipe.id)
+            }.frame(height: 180)
+            if let recipe = catalog.recipes.first(where: { $0.id == selectedID }) {
+                Link("Site do fornecedor", destination: recipe.homepage)
+                Text(recipe.dependencies.isEmpty ? "Sem dependências adicionais declaradas." : "Dependências: " + recipe.dependencies.joined(separator: ", ")).font(.caption).foregroundStyle(.secondary)
+                Text("A receita baixa o instalador fixado, verifica seu conteúdo e executa as opções declaradas. Argumentos: \(recipe.arguments.joined(separator: " "))").font(.caption).foregroundStyle(.secondary)
+            }
+            HStack {
+                Button("Cancelar") { model.showRecipes = false }.keyboardShortcut(.cancelAction)
+                Spacer()
+                Button("Instalar receita") { if let selectedID { model.installRecipe(id: selectedID, catalog: catalog) } }.buttonStyle(.borderedProminent).disabled(selectedID == nil || !model.canStart)
+            }
+        }.padding(28).frame(width: 580)
     }
 }

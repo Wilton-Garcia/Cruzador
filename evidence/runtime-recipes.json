@@ -1,0 +1,104 @@
+{
+  "after_cancellation_exit": 0,
+  "cancellation_cleanup_codes": [
+    0,
+    0
+  ],
+  "cancelled": true,
+  "initialization_exit": 0,
+  "invalid_msi_macOS_exit": 91,
+  "invalid_msi_status": "unconfirmed",
+  "limitations": [
+    "No CrossOver executable is selected by these commands.",
+    "No general application or graphics compatibility established."
+  ],
+  "nonzero_exit": 7,
+  "operating_system": "Vers\u00e3o 27.2.1 (Compila\u00e7\u00e3o 26B131)",
+  "positive_7zip_msi_exit": 0,
+  "recipe_installation_count": 1,
+  "recipe_verified_shortcuts": 2,
+  "repair_exit": 0,
+  "runtime": "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime",
+  "server_wait_exit": 0,
+  "test_process_architecture": "arm64",
+  "version": "11.21",
+  "windows_commands": [
+    {
+      "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/Bottles/357277C2-6F50-4101-88B1-DFE3343E22C8/drive_c/windows/system32/cmd.exe",
+      "exit_code": 0,
+      "explicit_environment_observed": true,
+      "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/Logs/system32.log",
+      "marker": "CRUZADOR_WIN64_OK",
+      "marker_observed": true,
+      "pe_machine": "0x8664"
+    },
+    {
+      "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/Bottles/357277C2-6F50-4101-88B1-DFE3343E22C8/drive_c/windows/syswow64/cmd.exe",
+      "exit_code": 0,
+      "explicit_environment_observed": true,
+      "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/Logs/syswow64.log",
+      "marker": "CRUZADOR_WIN32_OK",
+      "marker_observed": true,
+      "pe_machine": "0x14c"
+    }
+  ],
+  "phase_starts": [
+    {
+      "phase": "initialize",
+      "timestamp": 1795569906.12743
+    },
+    {
+      "phase": "repair",
+      "timestamp": 1795569932.4253101
+    },
+    {
+      "phase": "system32",
+      "timestamp": 1795569953.777516
+    },
+    {
+      "phase": "syswow64",
+      "timestamp": 1795569955.344513
+    },
+    {
+      "phase": "nonzero-exit",
+      "timestamp": 1795569955.887255
+    },
+    {
+      "phase": "cancellation",
+      "timestamp": 1795569956.173852
+    },
+    {
+      "phase": "after-cancellation",
+      "timestamp": 1795569956.6826491
+    },
+    {
+      "phase": "positive-msi",
+      "timestamp": 1795569958.232805
+    },
+    {
+      "phase": "recipe",
+      "timestamp": 1795569966.4463449
+    },
+    {
+      "phase": "negative-msi",
+      "timestamp": 1795569968.065167
+    },
+    {
+      "phase": "server-wait",
+      "timestamp": 1795569968.656824
+    },
+    {
+      "phase": "completed",
+      "timestamp": 1795569972.8224711
+    }
+  ],
+  "supervision": {
+    "timeout_seconds": 300.0,
+    "elapsed_seconds": 68.094254709,
+    "result": 0,
+    "timeout_cleanup": [],
+    "limitations": [
+      "CPU time and peak process-family memory were not measured."
+    ]
+  }
+}

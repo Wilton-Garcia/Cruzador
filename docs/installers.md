@@ -20,6 +20,6 @@ O histórico exibe os cinco registros mais recentes; os demais permanecem no man
 
 ## Cenários de validação
 
-O teste nativo admite `--installer-msi` com o MSI x64 do 7-Zip fixado em `config/windows-validation-assets.json`. `python3 scripts/prepare-validation-assets.py --asset sevenzip-msi` baixa o asset oficial e verifica tamanho e SHA-256 publicados no release. O teste exige a conclusão do instalador, a presença de `7z.exe` dentro do prefixo e sua execução; também verifica a rejeição de um pacote inválido. Downloads e prefixos de teste não entram no Git.
+O teste nativo admite `--installer-msi` com o MSI x64 do 7-Zip fixado em `config/recipes.json`. `python3 scripts/prepare-validation-assets.py --asset sevenzip-msi` baixa o asset oficial e verifica tamanho e SHA-256 publicados no release. O teste exige a conclusão do instalador, a presença de `7z.exe` dentro do prefixo e sua execução; também verifica a rejeição de um pacote inválido. Downloads e prefixos de teste não entram no Git.
 
 Uma tentativa separada com `winemono-support.msi` do próprio pacote provocou uma falha de memória no Wine. O [registro da falha](../evidence/runtime-msi-support-failure.json) preserva a observação e o encerramento da bottle isolada. A causa não foi estabelecida. Esse resultado permanece uma limitação de compatibilidade, sem ser convertido em sucesso ou repetido sem mudanças.

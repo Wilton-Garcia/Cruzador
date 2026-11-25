@@ -17,11 +17,11 @@ def digest(path):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(); parser.add_argument('--asset', action='append'); args = parser.parse_args()
-    lock = json.loads((ROOT/'config/windows-validation-assets.json').read_text()); assert lock['formatVersion'] == 1
-    selected = set(args.asset or [a['id'] for a in lock['assets']])
-    assert selected <= {a['id'] for a in lock['assets']}, 'Unknown asset'
+    lock = json.loads((ROOT/'config/recipes.json').read_text()); assert lock['formatVersion'] == 1
+    selected = set(args.asset or [a['id'] for a in lock['artifacts']])
+    assert selected <= {a['id'] for a in lock['artifacts']}, 'Unknown asset'
     destination = ROOT/'.local/downloads'; destination.mkdir(parents=True, exist_ok=True)
-    for asset in lock['assets']:
+    for asset in lock['artifacts']:
         if asset['id'] not in selected: continue
         path = destination/asset['filename']; assert path.parent == destination
         if path.exists():

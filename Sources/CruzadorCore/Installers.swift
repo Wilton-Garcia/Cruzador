@@ -47,11 +47,15 @@ public struct InstallationRequest: Sendable {
     public let mode: InstallerMode
     public let arguments: [String]
     public let options: LaunchOptions
-    public init(path: String, mode: InstallerMode = .interactive, arguments: [String] = [], options: LaunchOptions? = nil) throws {
-        try self.init(inspection: InstallerInspection.inspect(path: path), mode: mode, arguments: arguments, options: options)
+    public let recipeID: String?
+    public let sourceURL: URL?
+    public let sourceSHA256: String?
+    public init(path: String, mode: InstallerMode = .interactive, arguments: [String] = [], options: LaunchOptions? = nil, recipeID: String? = nil, sourceURL: URL? = nil, sourceSHA256: String? = nil) throws {
+        try self.init(inspection: InstallerInspection.inspect(path: path), mode: mode, arguments: arguments, options: options, recipeID: recipeID, sourceURL: sourceURL, sourceSHA256: sourceSHA256)
     }
-    public init(inspection: InstallerInspection, mode: InstallerMode = .interactive, arguments: [String] = [], options: LaunchOptions? = nil) throws {
+    public init(inspection: InstallerInspection, mode: InstallerMode = .interactive, arguments: [String] = [], options: LaunchOptions? = nil, recipeID: String? = nil, sourceURL: URL? = nil, sourceSHA256: String? = nil) throws {
         id = UUID(); self.inspection = inspection; self.mode = mode; self.arguments = arguments
+        self.recipeID = recipeID; self.sourceURL = sourceURL; self.sourceSHA256 = sourceSHA256
         self.options = options ?? LaunchOptions(workingDirectory: URL(fileURLWithPath: inspection.path).deletingLastPathComponent().path)
         try validate()
     }
@@ -79,6 +83,9 @@ public struct InstallationRecord: Identifiable, Codable, Sendable, Equatable {
     public var sourcePath: String { inspection.path }
     public var kind: InstallerKind { inspection.kind }
     public let options: LaunchOptions
+    public let recipeID: String?
+    public let sourceURL: URL?
+    public let sourceSHA256: String?
     public let mode: InstallerMode
     public let arguments: [String]
     public let startedAt: Date
@@ -97,9 +104,9 @@ public struct InstallationService: Sendable {
         var library = try store.load()
         guard let index = library.bottles.firstIndex(where: { $0.id == bottle.id }) else { throw CruzadorError.invalid("Bottle não encontrada.") }
         let current = library.bottles[index]
-        guard current.state == .ready, store.isInitialized(current) else { throw CruzadorError.invalid("Prepare a bottle antes de instalar programas.") }
+        guard store.isReady(current) else { throw CruzadorError.invalid("Prepare a bottle antes de instalar programas.") }
         let plan = try EngineCommands.make(.install(request), bottle: current, store: store)
-        let record = InstallationRecord(id: request.id, inspection: request.inspection, options: request.options, mode: request.mode, arguments: request.arguments, startedAt: Date(), logPath: log.path, status: .running)
+        let record = InstallationRecord(id: request.id, inspection: request.inspection, options: request.options, recipeID: request.recipeID, sourceURL: request.sourceURL, sourceSHA256: request.sourceSHA256, mode: request.mode, arguments: request.arguments, startedAt: Date(), logPath: log.path, status: .running)
         library.bottles[index].installations = (library.bottles[index].installations ?? []) + [record]
         try store.save(library)
         let result: RunResult

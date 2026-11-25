@@ -65,5 +65,6 @@ public struct LibraryStore: Sendable {
             && FileManager.default.fileExists(atPath: prefix.appendingPathComponent("drive_c").path, isDirectory: &directory) && directory.boolValue
         return valid ? .initialized : .incomplete
     }
+    public func isReady(_ bottle: Bottle) -> Bool { bottle.state == .ready && health(of: bottle) == .initialized }
     public func isInitialized(_ bottle: Bottle) -> Bool { health(of: bottle) == .initialized }
 }

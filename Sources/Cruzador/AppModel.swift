@@ -19,6 +19,9 @@ final class AppModel: ObservableObject {
     @Published var editingApp: WindowsApp?
     @Published var showInstall = false
     @Published var selectedInstaller: InstallerInspection?
+    @Published var showRecipes = false
+    @Published var recipeCatalog: RecipeCatalog?
+    private var recipeTask: Task<Void, Never>?
     @Published var search = ""
     @Published var engineKind: EngineKind = .packagedWine
     @Published var enginePath = WineRuntime.bundledRoot.path
@@ -78,7 +81,7 @@ final class AppModel: ObservableObject {
             switch action {
             case .initialize, .repair: break
             default:
-                guard bottle.state == .ready, store.isInitialized(bottle) else { throw CruzadorError.invalid("A bottle ainda não está pronta. Use Preparar novamente ou consulte o log.") }
+                guard store.isReady(bottle) else { throw CruzadorError.invalid("A bottle ainda não está pronta. Use Preparar novamente ou consulte o log.") }
             }
             let command: EnginePlan?
             switch action {
@@ -147,6 +150,36 @@ final class AppModel: ObservableObject {
             perform(.install(request), bottle: bottle, title: "Instalando \(URL(fileURLWithPath: inspection.path).lastPathComponent)…")
         } catch { self.error = error.localizedDescription }
     }
+    func openRecipes() {
+        guard canStart else { return }
+        do { recipeCatalog = try RecipeCatalog(data: Data(contentsOf: RecipeCatalog.bundledURL)); showRecipes = true }
+        catch { self.error = "Não foi possível abrir o catálogo incluído: \(error.localizedDescription)" }
+    }
+    func installRecipe(id: String, catalog: RecipeCatalog) {
+        guard let bottle = selected, store.isReady(bottle), canStart else { return }
+        let operationID = UUID()
+        let service = RecipeInstallationService(store: store, runner: runner, cache: ArtifactCache(root: store.root.appendingPathComponent("Downloads")), operationID: operationID)
+        showRecipes = false; busy = true; cancelling = false; activeOperationID = operationID
+        status = "Preparando receita…"
+        recipeTask = Task {
+            defer { busy = false; cancelling = false; activeOperationID = nil; recipeTask = nil }
+            do {
+                _ = try await service.install(id: id, bottleID: bottle.id, catalog: catalog) { message in
+                    await MainActor.run { if self.activeOperationID == operationID { self.status = message } }
+                }
+                library = try store.load()
+                lastLog = library.bottles.first(where: { $0.id == bottle.id })?.installations?.last.map { URL(fileURLWithPath: $0.logPath) }
+                status = "Receita concluída; atalhos verificados"
+            } catch {
+                if let failure = error as? CommandRunnerError, failure.requiresBottleDiagnosis { cleanupOperationID = operationID }
+                do {
+                    library = try store.load()
+                    lastLog = library.bottles.first(where: { $0.id == bottle.id })?.installations?.last.map { URL(fileURLWithPath: $0.logPath) }
+                } catch { self.error = error.localizedDescription; return }
+                self.error = error.localizedDescription; status = "Receita não concluída"
+            }
+        }
+    }
     func beginRegister(_ app: WindowsApp? = nil) { editingApp = app; showRegister = true }
     func register(name: String, path: String, arguments: String, workingDirectory: String, environmentJSON: String) {
         guard let selected, !busy else { return }
@@ -196,11 +229,13 @@ final class AppModel: ObservableObject {
     func cancelCurrentOperation() {
         guard let operationID = activeOperationID, busy, !cancelling else { return }
         cancelling = true; status = "Solicitando encerramento…"
+        let recipe = recipeTask
         Task {
             let accepted = await runner.cancel(operationID: operationID)
+            recipe?.cancel()
             if activeOperationID == operationID {
-                status = accepted ? "Aguardando encerramento e limpeza…" : "A fase atual não tem processo cancelável. Aguarde sua conclusão."
-                if !accepted { cancelling = false }
+                status = accepted || recipe != nil ? "Aguardando encerramento e limpeza…" : "A fase atual não tem processo cancelável. Aguarde sua conclusão."
+                if !accepted && recipe == nil { cancelling = false }
             }
         }
     }

@@ -28,6 +28,7 @@ O aplicativo gerado recebe assinatura ad hoc para uso local; não é um pacote n
 - Configurações Wine, editor de registro e desinstalador.
 - Logs por operação, erros de saída e preservação de preparação incompleta.
 - Metadados JSON com backup antes de sobrescrever uma biblioteca válida.
+- Catálogo próprio com dependências ordenadas, downloads verificados e atalhos de receita.
 - Reparo, retomada e manutenção de bottles com duplicação, transferência em formato próprio e remoção recuperável.
 
 Os dados ficam em `~/Library/Application Support/Cruzador`. As bottles existentes do CrossOver não são importadas nem usadas como armazenamento. Durante uma operação, feche o programa Windows ou use Cancelar operação e aguarde a limpeza antes de sair. No Wine, o cancelamento pode encerrar outros programas da mesma bottle. Os atalhos são cadastrados manualmente. O botão de remover atalho não desinstala nem apaga o executável.
@@ -47,7 +48,7 @@ Esse comando executa o Wine independente, cria uma bottle em uma pasta nova `.lo
 
 [Análise estática](docs/analysis.md), [inspeção REA do binário](evidence/crossover-native.evidence.json) e [proveniência dos scripts](evidence/script-sources.json). O manifesto original está em `crossover-initial.evidence.json`.
 
-Esta é uma primeira reconstrução dos fluxos de gerenciamento e execução. O Cruzador inclui o pacote Wine aberto fixado para desenvolvimento; não reimplementa Wine nem distribui componentes proprietários do CrossOver. Ainda não reproduz catálogo de compatibilidade, receitas CrossTie, formatos de importação/arquivamento do CrossOver ou ajustes gráficos avançados. A revisão integral de atribuições e fontes das dependências permanece pendente antes da redistribuição pública. A compatibilidade depende do motor, da arquitetura e do aplicativo Windows.
+Esta é uma primeira reconstrução dos fluxos de gerenciamento e execução. O Cruzador inclui o pacote Wine aberto fixado para desenvolvimento; não reimplementa Wine nem distribui componentes proprietários do CrossOver. Inclui um catálogo próprio inicial de receitas; ainda não reproduz catálogo de compatibilidade, receitas CrossTie, formatos de importação/arquivamento do CrossOver ou ajustes gráficos avançados. A revisão integral de atribuições e fontes das dependências permanece pendente antes da redistribuição pública. A compatibilidade depende do motor, da arquitetura e do aplicativo Windows.
 
 ## Verificar a investigação
 

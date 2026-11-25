@@ -1,0 +1,18 @@
+{
+  "source_commit": "85119b8",
+  "workflow_url": "https://github.com/Wilton-Garcia/Cruzador/actions/runs/45523980602",
+  "job_url": "https://github.com/Wilton-Garcia/Cruzador/actions/runs/45523980602/job/138902609220",
+  "observed_result": "timeout at overall 120-second deadline",
+  "retained_phases": [
+    "initialize.log",
+    "repair.log",
+    "system32.log (empty)"
+  ],
+  "limitations": [
+    "No completion or nonzero exit was observed for the first Windows command.",
+    "Timeout does not establish functional failure or success.",
+    "No CPU or process-family peak-memory measurements available."
+  ],
+  "log_archive_sha256": "a3b29212dec8897e902dfdd7809566ca993ee22846839f4e2db26f34d83a7b96",
+  "next_validation": "Expanded scenario uses explicit 300-second deadline and phase start timestamps; result remains pending."
+}

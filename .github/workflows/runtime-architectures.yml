@@ -32,7 +32,7 @@ jobs:
           python3 scripts/prepare-wine-runtime.py
           python3 scripts/prepare-validation-assets.py --asset sevenzip-msi
       - name: Execute 32-bit and 64-bit Windows programs
-        run: python3 scripts/native-smoke.py --runtime .local/Runtime-11.21 --installer-msi .local/downloads/7z2606-x64.msi
+        run: python3 scripts/native-smoke.py --runtime .local/Runtime-11.21 --installer-msi .local/downloads/7z2606-x64.msi --recipes config/recipes.json --timeout 300
       - name: Build and verify universal application
         env:
           CRUZADOR_UNIVERSAL: '1'
@@ -48,6 +48,8 @@ jobs:
           if [ -f .local/packaged-runtime-smoke.json ]; then cp .local/packaged-runtime-smoke.json validation/; fi
           find .local -maxdepth 1 -name 'smoke-*.test.log' -exec cp {} validation/ \;
           find .local -path '*/Logs/*.log' -exec cp {} validation/ \;
+          find .local -maxdepth 1 -name 'smoke-*.supervision.json' -exec cp {} validation/ \;
+          find .local -name 'phases.jsonl' -exec cp {} validation/ \;
       - uses: actions/upload-artifact@v4
         if: always()
         with:

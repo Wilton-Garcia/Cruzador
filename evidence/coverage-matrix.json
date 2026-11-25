@@ -33,10 +33,31 @@
         "ui:install-catalog:2"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Sem catálogo de receitas próprio.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/Recipes.swift",
+        "Sources/CruzadorCore/Installers.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "config/recipes.json"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testGraphOrderingMissingDependenciesAndCycles",
+          "scope": "Ordem, dependências ausentes e ciclos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testDependencyExecutionAndShortcutsUseVerifiedCache",
+          "scope": "Execução de dependências, falha que interrompe o plano, cache alterado e atalhos sem duplicação."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
+        }
+      ],
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
       "independent_equivalence_established": false
     },
     {
@@ -137,10 +158,29 @@
       "reverse_knowledge": "ui-observation",
       "prototype_status": "partial",
       "source_files": [
-        "Sources/Cruzador/AppModel.swift"
+        "Sources/CruzadorCore/Recipes.swift",
+        "Sources/CruzadorCore/Installers.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "config/recipes.json"
       ],
-      "tests": [],
-      "remaining_gap": "Seleção local existe no protótipo; downloads geridos e verificação não reconstruídos.",
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testGraphOrderingMissingDependenciesAndCycles",
+          "scope": "Ordem, dependências ausentes e ciclos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testDependencyExecutionAndShortcutsUseVerifiedCache",
+          "scope": "Execução de dependências, falha que interrompe o plano, cache alterado e atalhos sem duplicação."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
+        }
+      ],
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
       "independent_equivalence_established": false
     },
     {
@@ -150,10 +190,31 @@
         "ui:install-progress:4"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Metadados InstallTask examinados; instruções e semântica de resolução pendentes.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/Recipes.swift",
+        "Sources/CruzadorCore/Installers.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "config/recipes.json"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testGraphOrderingMissingDependenciesAndCycles",
+          "scope": "Ordem, dependências ausentes e ciclos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testDependencyExecutionAndShortcutsUseVerifiedCache",
+          "scope": "Execução de dependências, falha que interrompe o plano, cache alterado e atalhos sem duplicação."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
+        }
+      ],
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
       "independent_equivalence_established": false
     },
     {
@@ -2726,17 +2787,18 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "57f57bb7e30a3cd202e803dbb75f7c5554b6fe8d09315ab0cc0b379809876ee1",
-    "Sources/Cruzador/ContentView.swift": "54dada6a3f2c7f3f7ed98e7a93e5bf0d78ee97c6e4afa9c46008872ba6815e1f",
+    "Sources/Cruzador/AppModel.swift": "638192ec628b27331c72d4a29b39f7b516641ccdc673653d176464c8adc08d94",
+    "Sources/Cruzador/ContentView.swift": "bd4df8ba908970a72e1eed03d2e2d63e65d096e26fadb7c029904995343059c1",
     "Sources/Cruzador/CruzadorApp.swift": "b99938955afd29ca18bce312d7ee79b9fb165b0ba69c82ccc79fdd6901dcf897",
     "Sources/CruzadorCore/BottleLifecycle.swift": "6535f188d6c34bac80fee8b582aa790a79b0df9327c7001066f763442355e13d",
     "Sources/CruzadorCore/BottleMaintenance.swift": "b48d97be2a8a3c855691e7db2b40344478060cf343936b29f587da1e0c6a19b7",
     "Sources/CruzadorCore/CommandRunner.swift": "c62b19e9cd8396db312126833bb0c94dcbfbb9aac47a0a6a70843c3735eaf376",
     "Sources/CruzadorCore/EngineCommands.swift": "fb6c58e1335704a19864ba7d27bf5c7fd19ce778434bd6a587b5271a62bfff9b",
-    "Sources/CruzadorCore/Installers.swift": "6f435dd4af0ff1f01ec915dd91bada577b2c1402f36a27be7829b3165bbe4f47",
+    "Sources/CruzadorCore/Installers.swift": "995f2dc911177cb2f01180fb5f45310f18a64e66ab79fd8fea2eb7cf8a02677f",
     "Sources/CruzadorCore/LaunchRequest.swift": "242f32cadb35c954d475a6a21fe06edba47a1404ffb8f436202551d3e769fa7f",
-    "Sources/CruzadorCore/LibraryStore.swift": "ac58baeaba019d01aac5d9a91eba8d345f7c0438487a5da2f86b926c4ec824e5",
+    "Sources/CruzadorCore/LibraryStore.swift": "a43908d04b3b7b3fb33151478318caeeb3103c8e56596cf6a4002c6c10ae6014",
     "Sources/CruzadorCore/Models.swift": "ff3f2a3f7ae3102267d2528bc0adab21b9ef9037c08b02f477265d9c5cb1f6a1",
+    "Sources/CruzadorCore/Recipes.swift": "8ac6e02a287347bef6723ada57fb74a2fbb21f6b75931b41a606f944baf31e80",
     "Sources/CruzadorCore/WineRuntime.swift": "26f30b33750afea74f7312f79710ac04b5cb9f327201210f09608fc0d6d2f3f0",
     "Tests/CruzadorCoreTests/BottleLifecycleTests.swift": "5435298b8b533ee151817535977381c5ccb08db4455d86840e43fbbfdb0e097d",
     "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "2894370226dcc035b17a47fb51c6ee4f7fbd23fd67e4ca61d6ebadb7ad12bc73",
@@ -2746,8 +2808,10 @@
     "Tests/CruzadorCoreTests/LaunchTests.swift": "7f7adafe8378029fd5b1184003e896ad3d5f7fe55f408e97527dade3e36fe210",
     "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "55338d79e841468b8db0ef065b9f13854a2dbf66ae420bcdb6c863c1aa41bced",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "0f7b7703620b0e9aa3aa78f1fd549365a89f7d5530d422ed853b9c3c962d61d3",
-    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "0a6a10ea4307d186c28be1aab35fc0bf15ac10b2c4eeaf3e04243a1d92c2f76c",
-    "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "1c85661de661d1262553d1f7edbcf52d2820c10f0504718add903d9039afa376"
+    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "ff7e345d3d8d53f295164b61e001a0a880d5579cdf6e2240d25a5421e5d7e194",
+    "Tests/CruzadorCoreTests/RecipeTests.swift": "e67bf964843365aeb40fc73925535319982e77eedd63e326ff6838eadfbaab3c",
+    "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "1c85661de661d1262553d1f7edbcf52d2820c10f0504718add903d9039afa376",
+    "config/recipes.json": "d61a4fe567b4196894446bebf77bdc05aa6d74c7dd911d654380cc8a928876ee"
   },
   "counts": {
     "capabilities": 40,
@@ -2755,8 +2819,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 22,
-      "missing": 18
+      "partial": 24,
+      "missing": 16
     }
   },
   "limitations": [

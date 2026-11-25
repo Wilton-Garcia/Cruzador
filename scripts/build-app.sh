@@ -11,6 +11,7 @@ binary_dir=$(swift build -c release "$@" --show-bin-path)
 app="build/Cruzador.app"
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
 cp "$binary_dir/Cruzador" "$app/Contents/MacOS/Cruzador"
+cp config/recipes.json "$app/Contents/Resources/recipes.json"
 cat > "$app/Contents/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">

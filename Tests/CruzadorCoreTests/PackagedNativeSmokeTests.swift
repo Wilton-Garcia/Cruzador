@@ -13,13 +13,24 @@ final class PackagedNativeSmokeTests: XCTestCase {
         let lifecycle = BottleLifecycle(store: store)
         let bottle = try lifecycle.create(name: "Motor próprio", engine: Engine(kind: .packagedWine, path: runtime.root.path))
         let runner = CommandRunner()
+        func phase(_ name: String) throws {
+            let file = store.root.appendingPathComponent("phases.jsonl")
+            if !FileManager.default.fileExists(atPath: file.path) { FileManager.default.createFile(atPath: file.path, contents: nil) }
+            let handle = try FileHandle(forWritingTo: file); defer { try? handle.close() }
+            try handle.seekToEnd()
+            var data = try JSONSerialization.data(withJSONObject: ["phase": name, "timestamp": Date().timeIntervalSince1970], options: [.sortedKeys])
+            data.append(0x0a); try handle.write(contentsOf: data)
+        }
+        try phase("initialize")
         let created = try await lifecycle.prepare(id: bottle.id, mode: .initialize, runner: runner, log: store.logsRoot.appendingPathComponent("initialize.log"))
         XCTAssertEqual(created.exitCode, 0)
         XCTAssertEqual(try store.load().bottles[0].state, .ready)
+        try phase("repair")
         let repaired = try await lifecycle.prepare(id: bottle.id, mode: .repair, runner: runner, log: store.logsRoot.appendingPathComponent("repair.log"))
         XCTAssertEqual(repaired.exitCode, 0)
         var observations: [[String: Any]] = []
         for (folder, marker) in [("system32", "CRUZADOR_WIN64_OK"), ("syswow64", "CRUZADOR_WIN32_OK")] {
+            try phase(folder)
             let executable = store.prefix(for: bottle).appendingPathComponent("drive_c/windows/\(folder)/cmd.exe")
             let command = try EngineCommands.make(.run(LaunchRequest(path: executable.path, arguments: ["/c", "echo", marker, "%CRUZADOR_LAUNCH_VALUE%"], options: LaunchOptions(workingDirectory: store.prefix(for: bottle).appendingPathComponent("drive_c").path, environment: ["CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"]))), bottle: bottle, store: store)
             let result = try await runner.run(command, log: store.logsRoot.appendingPathComponent("\(folder).log"))
@@ -28,8 +39,10 @@ final class PackagedNativeSmokeTests: XCTestCase {
             observations.append(["executable": executable.path, "exit_code": result.exitCode, "marker": marker, "marker_observed": text.contains(marker), "explicit_environment_observed": text.contains("OWN_ENV_OK"), "log": result.log.path])
         }
         let cmd = store.prefix(for: bottle).appendingPathComponent("drive_c/windows/system32/cmd.exe")
+        try phase("nonzero-exit")
         let failure = try await runner.run(EngineCommands.make(.run(LaunchRequest(path: cmd.path, arguments: ["/c", "exit", "7"])), bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("exit7.log"))
         XCTAssertEqual(failure.exitCode, 7)
+        try phase("cancellation")
         let cancelID = UUID(), cancelLog = store.logsRoot.appendingPathComponent("cancel.log")
         let cancelPlan = try EngineCommands.make(.run(LaunchRequest(path: cmd.path, arguments: ["/c", "echo CRUZADOR_WAIT_READY && notepad.exe"])), bottle: bottle, store: store)
         let running = Task { try await runner.run(cancelPlan, log: cancelLog, operationID: cancelID) }
@@ -42,11 +55,13 @@ final class PackagedNativeSmokeTests: XCTestCase {
         let cancelled = try await running.value
         XCTAssertTrue(readyToCancel); XCTAssertTrue(cancelled.cancelled); XCTAssertTrue(cancelled.cleanupFailures.isEmpty)
         XCTAssertEqual(cancelled.phases.filter { $0.phase == "cancellation" }.compactMap(\.exitCode), [0, 0])
+        try phase("after-cancellation")
         let afterCancel = try await runner.run(EngineCommands.make(.run(LaunchRequest(path: cmd.path, arguments: ["/c", "echo", "CRUZADOR_AFTER_CANCEL"])), bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("after-cancel.log"))
         try afterCancel.requireSuccess()
         XCTAssertTrue(try String(contentsOf: afterCancel.log, encoding: .utf8).contains("CRUZADOR_AFTER_CANCEL"))
         var positiveMSIExit: Int32?
         if let msi = ProcessInfo.processInfo.environment["CRUZADOR_TEST_MSI"] {
+            try phase("positive-msi")
             let request = try InstallationRequest(path: msi, mode: .quiet)
             let installed = try await InstallationService(store: store).run(request, bottle: try store.load().bottles[0], runner: runner, log: store.logsRoot.appendingPathComponent("positive-msi.log"))
             XCTAssertEqual(installed.exitCode, 0)
@@ -58,6 +73,23 @@ final class PackagedNativeSmokeTests: XCTestCase {
             XCTAssertTrue(try String(contentsOf: launched.log, encoding: .utf8).contains("7-Zip"))
             positiveMSIExit = installed.exitCode
         }
+        var recipeInstallationCount: Int?
+        if let source = ProcessInfo.processInfo.environment["CRUZADOR_TEST_RECIPES"] {
+            try phase("recipe")
+            let catalog = try RecipeCatalog(data: Data(contentsOf: URL(fileURLWithPath: source)))
+            let service = RecipeInstallationService(store: store, runner: runner, cache: ArtifactCache(root: store.root.appendingPathComponent("Downloads")))
+            let records = try await service.install(id: "7zip", bottleID: bottle.id, catalog: catalog)
+            recipeInstallationCount = records.count
+            let updated = try store.load().bottles[0]
+            XCTAssertEqual(updated.installations?.last?.recipeID, "7zip")
+            XCTAssertEqual(updated.installations?.last?.sourceSHA256, try catalog.artifact(for: catalog.recipes[0]).sha256)
+            XCTAssertEqual(updated.apps.count, 2)
+            let console = try XCTUnwrap(updated.apps.first(where: { $0.name == "7-Zip Console" }))
+            let launched = try await runner.run(EngineCommands.make(.run(console.launchRequest), bottle: updated, store: store), log: store.logsRoot.appendingPathComponent("recipe-app.log"))
+            try launched.requireSuccess()
+            XCTAssertTrue(try String(contentsOf: launched.log, encoding: .utf8).contains("7-Zip"))
+        }
+        try phase("negative-msi")
         let invalidMSI = store.root.appendingPathComponent("invalid-package.msi")
         try Data([0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1]).write(to: invalidMSI)
         let invalidRequest = try InstallationRequest(path: invalidMSI.path, mode: .quiet)
@@ -68,6 +100,7 @@ final class PackagedNativeSmokeTests: XCTestCase {
         let installation = try XCTUnwrap(try store.load().bottles[0].installations?.last)
         let invalidMSIExit = try XCTUnwrap(installation.macOSExitCode)
         XCTAssertEqual(installation.status, .unconfirmed); XCTAssertNotEqual(invalidMSIExit, 0)
+        try phase("server-wait")
         let stopped = try await runner.run(Command(executable: runtime.server, arguments: ["-w"], environment: ["WINEPREFIX": store.prefix(for: bottle).path]), log: store.logsRoot.appendingPathComponent("server-wait.log"))
         XCTAssertEqual(stopped.exitCode, 0)
         #if arch(arm64)
@@ -77,11 +110,13 @@ final class PackagedNativeSmokeTests: XCTestCase {
         #else
         let hostArchitecture = "unknown"
         #endif
+        try phase("completed")
         var report: [String: Any] = ["runtime": runtime.root.path, "version": runtime.manifest.version, "test_process_architecture": hostArchitecture,
                                     "operating_system": ProcessInfo.processInfo.operatingSystemVersionString, "initialization_exit": created.exitCode, "repair_exit": repaired.exitCode,
                                     "windows_commands": observations, "nonzero_exit": failure.exitCode, "server_wait_exit": stopped.exitCode, "cancelled": cancelled.cancelled, "cancellation_cleanup_codes": cancelled.phases.filter { $0.phase == "cancellation" }.compactMap(\.exitCode), "after_cancellation_exit": afterCancel.exitCode, "invalid_msi_status": installation.status.rawValue, "invalid_msi_macOS_exit": invalidMSIExit,
                                     "limitations": ["No CrossOver executable is selected by these commands.", "No general application or graphics compatibility established."]]
         if let positiveMSIExit { report["positive_7zip_msi_exit"] = positiveMSIExit }
+        if let recipeInstallationCount { report["recipe_installation_count"] = recipeInstallationCount; report["recipe_verified_shortcuts"] = 2 }
         try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys]).write(to: store.root.appendingPathComponent("runtime-smoke.json"), options: .atomic)
     }
 }

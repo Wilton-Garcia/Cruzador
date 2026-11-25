@@ -34,10 +34,31 @@
         "ui:install-catalog:2"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Sem catálogo de receitas próprio.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/Recipes.swift",
+        "Sources/CruzadorCore/Installers.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "config/recipes.json"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testGraphOrderingMissingDependenciesAndCycles",
+          "scope": "Ordem, dependências ausentes e ciclos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testDependencyExecutionAndShortcutsUseVerifiedCache",
+          "scope": "Execução de dependências, falha que interrompe o plano, cache alterado e atalhos sem duplicação."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
+        }
+      ],
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
       "independent_equivalence_established": false
     },
     {
@@ -138,10 +159,29 @@
       "reverse_knowledge": "ui-observation",
       "prototype_status": "partial",
       "source_files": [
-        "Sources/Cruzador/AppModel.swift"
+        "Sources/CruzadorCore/Recipes.swift",
+        "Sources/CruzadorCore/Installers.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "config/recipes.json"
       ],
-      "tests": [],
-      "remaining_gap": "Seleção local existe no protótipo; downloads geridos e verificação não reconstruídos.",
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testGraphOrderingMissingDependenciesAndCycles",
+          "scope": "Ordem, dependências ausentes e ciclos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testDependencyExecutionAndShortcutsUseVerifiedCache",
+          "scope": "Execução de dependências, falha que interrompe o plano, cache alterado e atalhos sem duplicação."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
+        }
+      ],
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
       "independent_equivalence_established": false
     },
     {
@@ -151,10 +191,31 @@
         "ui:install-progress:4"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Metadados InstallTask examinados; instruções e semântica de resolução pendentes.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/Recipes.swift",
+        "Sources/CruzadorCore/Installers.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "config/recipes.json"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testGraphOrderingMissingDependenciesAndCycles",
+          "scope": "Ordem, dependências ausentes e ciclos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/RecipeTests.swift",
+          "name": "testDependencyExecutionAndShortcutsUseVerifiedCache",
+          "scope": "Execução de dependências, falha que interrompe o plano, cache alterado e atalhos sem duplicação."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
+        }
+      ],
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
       "independent_equivalence_established": false
     },
     {

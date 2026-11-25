@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "assets": [
+  "artifacts": [
     {
       "id": "sevenzip-msi",
       "filename": "7z2606-x64.msi",
@@ -18,6 +18,33 @@
       "size": 1659704,
       "upstream": "https://www.7-zip.org/download.html",
       "release": "https://github.com/ip7z/7zip/releases/tag/26.06"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "7zip",
+      "name": "7-Zip",
+      "version": "26.06",
+      "summary": "Compactador e gerenciador de arquivos para Windows x64.",
+      "homepage": "https://www.7-zip.org/",
+      "dependencies": [],
+      "installerArtifactID": "sevenzip-exe",
+      "mode": "interactive",
+      "arguments": [
+        "/S"
+      ],
+      "shortcuts": [
+        {
+          "name": "7-Zip",
+          "relativePath": "drive_c/Program Files/7-Zip/7zFM.exe",
+          "arguments": []
+        },
+        {
+          "name": "7-Zip Console",
+          "relativePath": "drive_c/Program Files/7-Zip/7z.exe",
+          "arguments": []
+        }
+      ]
     }
   ]
 }
