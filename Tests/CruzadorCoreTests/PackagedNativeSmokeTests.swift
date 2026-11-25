@@ -45,6 +45,29 @@ final class PackagedNativeSmokeTests: XCTestCase {
         let afterCancel = try await runner.run(EngineCommands.make(.run(LaunchRequest(path: cmd.path, arguments: ["/c", "echo", "CRUZADOR_AFTER_CANCEL"])), bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("after-cancel.log"))
         try afterCancel.requireSuccess()
         XCTAssertTrue(try String(contentsOf: afterCancel.log, encoding: .utf8).contains("CRUZADOR_AFTER_CANCEL"))
+        var positiveMSIExit: Int32?
+        if let msi = ProcessInfo.processInfo.environment["CRUZADOR_TEST_MSI"] {
+            let request = try InstallationRequest(path: msi, mode: .quiet)
+            let installed = try await InstallationService(store: store).run(request, bottle: try store.load().bottles[0], runner: runner, log: store.logsRoot.appendingPathComponent("positive-msi.log"))
+            XCTAssertEqual(installed.exitCode, 0)
+            XCTAssertEqual(try store.load().bottles[0].installations?.last?.status, .completed)
+            let installedProgram = store.prefix(for: bottle).appendingPathComponent("drive_c/Program Files/7-Zip/7z.exe")
+            XCTAssertTrue(FileManager.default.fileExists(atPath: installedProgram.path))
+            let launched = try await runner.run(EngineCommands.make(.run(LaunchRequest(path: installedProgram.path)), bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("installed-program.log"))
+            try launched.requireSuccess()
+            XCTAssertTrue(try String(contentsOf: launched.log, encoding: .utf8).contains("7-Zip"))
+            positiveMSIExit = installed.exitCode
+        }
+        let invalidMSI = store.root.appendingPathComponent("invalid-package.msi")
+        try Data([0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1]).write(to: invalidMSI)
+        let invalidRequest = try InstallationRequest(path: invalidMSI.path, mode: .quiet)
+        do {
+            _ = try await InstallationService(store: store).run(invalidRequest, bottle: try store.load().bottles[0], runner: runner, log: store.logsRoot.appendingPathComponent("invalid-msi.log"))
+            XCTFail("An invalid MSI must not be successful")
+        } catch CommandRunnerError.failed {}
+        let installation = try XCTUnwrap(try store.load().bottles[0].installations?.last)
+        let invalidMSIExit = try XCTUnwrap(installation.macOSExitCode)
+        XCTAssertEqual(installation.status, .unconfirmed); XCTAssertNotEqual(invalidMSIExit, 0)
         let stopped = try await runner.run(Command(executable: runtime.server, arguments: ["-w"], environment: ["WINEPREFIX": store.prefix(for: bottle).path]), log: store.logsRoot.appendingPathComponent("server-wait.log"))
         XCTAssertEqual(stopped.exitCode, 0)
         #if arch(arm64)
@@ -54,10 +77,11 @@ final class PackagedNativeSmokeTests: XCTestCase {
         #else
         let hostArchitecture = "unknown"
         #endif
-        let report: [String: Any] = ["runtime": runtime.root.path, "version": runtime.manifest.version, "test_process_architecture": hostArchitecture,
+        var report: [String: Any] = ["runtime": runtime.root.path, "version": runtime.manifest.version, "test_process_architecture": hostArchitecture,
                                     "operating_system": ProcessInfo.processInfo.operatingSystemVersionString, "initialization_exit": created.exitCode, "repair_exit": repaired.exitCode,
-                                    "windows_commands": observations, "nonzero_exit": failure.exitCode, "server_wait_exit": stopped.exitCode, "cancelled": cancelled.cancelled, "cancellation_cleanup_codes": cancelled.phases.filter { $0.phase == "cancellation" }.compactMap(\.exitCode), "after_cancellation_exit": afterCancel.exitCode,
+                                    "windows_commands": observations, "nonzero_exit": failure.exitCode, "server_wait_exit": stopped.exitCode, "cancelled": cancelled.cancelled, "cancellation_cleanup_codes": cancelled.phases.filter { $0.phase == "cancellation" }.compactMap(\.exitCode), "after_cancellation_exit": afterCancel.exitCode, "invalid_msi_status": installation.status.rawValue, "invalid_msi_macOS_exit": invalidMSIExit,
                                     "limitations": ["No CrossOver executable is selected by these commands.", "No general application or graphics compatibility established."]]
+        if let positiveMSIExit { report["positive_7zip_msi_exit"] = positiveMSIExit }
         try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys]).write(to: store.root.appendingPathComponent("runtime-smoke.json"), options: .atomic)
     }
 }

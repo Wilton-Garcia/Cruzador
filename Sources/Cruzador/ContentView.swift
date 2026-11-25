@@ -66,6 +66,7 @@ struct ContentView: View {
         }
         .tint(.teal)
         .sheet(isPresented: $model.showCreate) { CreateBottleView(model: model) }
+        .sheet(isPresented: $model.showInstall) { if let installer = model.selectedInstaller { InstallProgramView(model: model, installer: installer) } }
         .sheet(isPresented: $model.showRegister) { RegisterAppView(model: model, app: model.editingApp) }
         .alert("Não foi possível concluir", isPresented: Binding(get: { model.error != nil }, set: { if !$0 { model.error = nil } })) {
             Button("OK") { model.error = nil }
@@ -141,6 +142,25 @@ struct ContentView: View {
                                     Button("Remover atalho") { model.removeShortcut(app, bottle: bottle) }.disabled(!model.canStart)
                                 }
                         }
+                    }
+                }
+                if let installations = bottle.installations, !installations.isEmpty {
+                    GroupBox("Histórico de instalação") {
+                        VStack(alignment: .leading, spacing: 12) {
+                            ForEach(Array(installations.suffix(5).reversed())) { record in
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(URL(fileURLWithPath: record.sourcePath).lastPathComponent).fontWeight(.medium)
+                                        Text(record.status.displayName).font(.caption).foregroundStyle(.secondary)
+                                        if let code = record.macOSExitCode { Text("Saída macOS: \(code)").font(.caption2).foregroundStyle(.secondary) }
+                                    }
+                                    Spacer()
+                                    Text(record.startedAt, style: .date).font(.caption)
+                                    Button("Log") { NSWorkspace.shared.open(URL(fileURLWithPath: record.logPath)) }
+                                }
+                            }
+                            Text("O resultado descreve o instalador. Cadastre o atalho do programa instalado para executá-lo.").font(.caption).foregroundStyle(.secondary)
+                        }.padding(10)
                     }
                 }
                 Divider()
@@ -243,5 +263,43 @@ struct EngineSettings: View {
             }
             Button("Salvar configuração") { model.saveEngine() }.buttonStyle(.borderedProminent)
         }.disabled(model.busy)
+    }
+}
+
+struct InstallProgramView: View {
+    @ObservedObject var model: AppModel
+    let installer: InstallerInspection
+    @State private var mode = InstallerMode.interactive
+    @State private var arguments = ""
+    @State private var workingDirectory: String
+    @State private var environmentJSON = "{}"
+    init(model: AppModel, installer: InstallerInspection) {
+        self.model = model; self.installer = installer
+        _workingDirectory = State(initialValue: URL(fileURLWithPath: installer.path).deletingLastPathComponent().path)
+    }
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Label("Instalar programa", systemImage: "shippingbox").font(.title2.bold())
+            Text(URL(fileURLWithPath: installer.path).lastPathComponent).font(.headline)
+            Text("Destino: \(model.selected?.name ?? "Nenhuma bottle")").foregroundStyle(.secondary)
+            Text("\(installer.kind.rawValue.uppercased()) · \(installer.size.formatted()) bytes").font(.caption).foregroundStyle(.secondary)
+            if installer.kind == .msi {
+                Picker("Interface", selection: $mode) { ForEach(InstallerMode.allCases, id: \.self) { Text($0.displayName).tag($0) } }
+                Text("Será criado um log MSI detalhado. O Cruzador solicita execução sem reinício automático.").font(.caption).foregroundStyle(.secondary)
+            } else {
+                Text("O EXE abrirá sua própria interface. Argumentos silenciosos dependem do fornecedor.").font(.caption).foregroundStyle(.secondary)
+            }
+            Text("Argumentos adicionais, um por linha").font(.caption)
+            TextEditor(text: $arguments).font(.system(.body, design: .monospaced)).frame(height: 65).border(.quaternary)
+            TextField("Pasta de trabalho", text: $workingDirectory).textFieldStyle(.roundedBorder)
+            DisclosureGroup("Variáveis de ambiente (JSON)") {
+                TextEditor(text: $environmentJSON).font(.system(.body, design: .monospaced)).frame(height: 75).border(.quaternary)
+            }
+            HStack {
+                Button("Cancelar") { model.showInstall = false }.keyboardShortcut(.cancelAction)
+                Spacer()
+                Button("Iniciar instalação") { model.installSelected(mode: mode, arguments: arguments, workingDirectory: workingDirectory, environmentJSON: environmentJSON) }.buttonStyle(.borderedProminent).disabled(!model.canStart)
+            }
+        }.padding(28).frame(width: 560)
     }
 }

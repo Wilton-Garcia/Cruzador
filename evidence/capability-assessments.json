@@ -70,17 +70,29 @@
       "reverse_knowledge": "ui-observation",
       "prototype_status": "partial",
       "source_files": [
+        "Sources/CruzadorCore/Installers.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
         "Sources/Cruzador/AppModel.swift",
-        "Sources/CruzadorCore/EngineCommands.swift"
+        "Sources/Cruzador/ContentView.swift"
       ],
       "tests": [
         {
-          "file": "Tests/CruzadorCoreTests/CoreTests.swift",
-          "name": "testMSIUsesMsiexec",
-          "scope": "Montagem de argv com motor simulado"
+          "file": "Tests/CruzadorCoreTests/InstallerTests.swift",
+          "name": "testPEBoundsModesAndMetadataChangesAreValidated",
+          "scope": "Cabeçalhos PE, modos EXE e metadados alterados."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/InstallerTests.swift",
+          "name": "testMSIArgumentsAndFailedResultAreRecordedWithoutClaimingInstallation",
+          "scope": "Opções MSI, histórico, saída Unix e conclusão interrompida."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Cenário opt-in: instalação MSI oficial do 7-Zip, execução do programa instalado e pacote inválido."
         }
       ],
-      "remaining_gap": "Instalador genérico encaminhado ao motor externo; instalação real e recuperação ainda não validadas.",
+      "remaining_gap": "Fluxo próprio para EXE/MSI; compatibilidade geral e formatos CrossTie não estabelecidos. Falha do MSI de suporte Mono registrada separadamente.",
       "independent_equivalence_established": false
     },
     {

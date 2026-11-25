@@ -29,7 +29,8 @@ public struct LibraryStore: Sendable {
         guard Set(library.bottles.map(\.id)).count == library.bottles.count else { throw CruzadorError.invalid("Biblioteca com identificadores de bottle duplicados.") }
         if let selected = library.preferences.defaultBottleID, !library.bottles.contains(where: { $0.id == selected }) { throw CruzadorError.invalid("A bottle padrão não existe na biblioteca.") }
         for bottle in library.bottles {
-            guard !bottle.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, bottle.engine.path.hasPrefix("/"), Set(bottle.apps.map(\.id)).count == bottle.apps.count else {
+            guard !bottle.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, bottle.engine.path.hasPrefix("/"), Set(bottle.apps.map(\.id)).count == bottle.apps.count,
+                  Set((bottle.installations ?? []).map(\.id)).count == (bottle.installations ?? []).count else {
                 throw CruzadorError.invalid("Metadados inválidos na bottle \(bottle.id). Preserve o manifesto para diagnóstico.")
             }
         }

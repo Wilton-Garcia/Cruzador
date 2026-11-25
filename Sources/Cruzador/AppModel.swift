@@ -17,6 +17,8 @@ final class AppModel: ObservableObject {
     @Published var showCreate = false
     @Published var showRegister = false
     @Published var editingApp: WindowsApp?
+    @Published var showInstall = false
+    @Published var selectedInstaller: InstallerInspection?
     @Published var search = ""
     @Published var engineKind: EngineKind = .packagedWine
     @Published var enginePath = WineRuntime.bundledRoot.path
@@ -35,6 +37,7 @@ final class AppModel: ObservableObject {
         do {
             try store.migrateIfNeeded()
             try BottleLifecycle(store: store).recoverInterruptedPreparations()
+            try InstallationService(store: store).recoverInterrupted()
         }
         catch { self.error = error.localizedDescription }
         reload()
@@ -79,7 +82,7 @@ final class AppModel: ObservableObject {
             }
             let command: EnginePlan?
             switch action {
-            case .initialize, .repair: command = nil
+            case .initialize, .repair, .install: command = nil
             default: command = try EngineCommands.make(action, bottle: bottle, store: store)
             }
             let log = store.logsRoot.appendingPathComponent("\(Date().timeIntervalSince1970)-\(UUID().uuidString).log")
@@ -95,6 +98,9 @@ final class AppModel: ObservableObject {
                         result = try await BottleLifecycle(store: store).prepare(id: bottle.id, mode: {
                             if case .repair = action { return .repair }; return .initialize
                         }(), runner: runner, log: log, operationID: operationID)
+                        library = try store.load()
+                    case .install(let request):
+                        result = try await InstallationService(store: store).run(request, bottle: bottle, runner: runner, log: log, operationID: operationID)
                         library = try store.load()
                     default:
                         guard let command else { throw CruzadorError.invalid("Plano de execução ausente.") }
@@ -127,7 +133,19 @@ final class AppModel: ObservableObject {
         panel.allowedContentTypes = ["exe", "msi"].compactMap { UTType(filenameExtension: $0) }
         panel.message = installer ? "Escolha o instalador Windows" : "Escolha o executável Windows"
         guard panel.runModal() == .OK, let url = panel.url else { return }
-        perform(installer ? .install(url.path) : .run(LaunchRequest(path: url.path)), bottle: bottle, title: installer ? "Instalando programa…" : "Executando programa…")
+        if installer {
+            do { selectedInstaller = try InstallerInspection.inspect(path: url.path); showInstall = true }
+            catch { self.error = error.localizedDescription }
+        } else { perform(.run(LaunchRequest(path: url.path)), bottle: bottle, title: "Executando programa…") }
+    }
+    func installSelected(mode: InstallerMode, arguments: String, workingDirectory: String, environmentJSON: String) {
+        guard let inspection = selectedInstaller, let bottle = selected, canStart else { return }
+        do {
+            let options = try LaunchOptions.parse(workingDirectory: workingDirectory, environmentJSON: environmentJSON)
+            let request = try InstallationRequest(inspection: inspection, mode: mode, arguments: arguments.isEmpty ? [] : arguments.components(separatedBy: "\n"), options: options)
+            showInstall = false
+            perform(.install(request), bottle: bottle, title: "Instalando \(URL(fileURLWithPath: inspection.path).lastPathComponent)…")
+        } catch { self.error = error.localizedDescription }
     }
     func beginRegister(_ app: WindowsApp? = nil) { editingApp = app; showRegister = true }
     func register(name: String, path: String, arguments: String, workingDirectory: String, environmentJSON: String) {

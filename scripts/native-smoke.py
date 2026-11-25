@@ -10,6 +10,7 @@ import uuid
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--runtime', type=Path, help='Select a prepared Wine package instead of the original CrossOver')
+parser.add_argument('--installer-msi', type=Path, help='Optional pinned 7-Zip MSI for positive installation validation')
 args = parser.parse_args()
 project = Path(__file__).resolve().parent.parent
 root = project / '.local' / ('smoke-' + str(uuid.uuid4()))
@@ -20,6 +21,8 @@ if args.runtime:
 else:
     environment = dict(os.environ, CRUZADOR_NATIVE_SMOKE_ROOT=str(root))
     selection = 'NativeSmokeTests.testInstalledCrossOverCreatesBottleAndRunsWindowsCommand'
+if args.installer_msi:
+    environment['CRUZADOR_TEST_MSI'] = str(args.installer_msi.resolve())
 log = root.parent / (root.name + '.test.log')
 with log.open('w') as output:
     child = subprocess.Popen(['swift', 'test', '--skip-build', '--filter', selection], cwd=project, env=environment, stdout=output, stderr=subprocess.STDOUT, start_new_session=True)

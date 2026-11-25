@@ -24,7 +24,7 @@ O aplicativo gerado recebe assinatura ad hoc para uso local; não é um pacote n
 - Interface SwiftUI em português, busca e biblioteca de aplicativos por bottle.
 - Criação de bottles com armazenamento separado por UUID.
 - Wine incluído com inicialização e execução verificadas em Intel e Apple Silicon; adaptadores externos opcionais.
-- Instalação EXE/MSI, execução de arquivos e atalhos com argumentos próprios.
+- Assistente EXE/MSI com opções, inspeção do arquivo, histórico e logs; execução de arquivos e atalhos configuráveis.
 - Configurações Wine, editor de registro e desinstalador.
 - Logs por operação, erros de saída e preservação de preparação incompleta.
 - Metadados JSON com backup antes de sobrescrever uma biblioteca válida.

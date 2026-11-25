@@ -56,10 +56,11 @@ final class CoreTests: XCTestCase {
     }
     func testMSIUsesMsiexec() throws {
         let root = try temporary(); let wine = root.appendingPathComponent("wine"); try executable(wine)
-        let msi = root.appendingPathComponent("Setup with spaces.msi"); try Data().write(to: msi)
+        let msi = root.appendingPathComponent("Setup with spaces.msi"); try Data([0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1]).write(to: msi)
         let bottle = Bottle(name: "A", engine: Engine(kind: .wine, path: wine.path))
-        let command = try EngineCommands.make(.install(msi.path), bottle: bottle, store: LibraryStore(root: root))
-        XCTAssertEqual(command.primary.arguments, ["msiexec", "/i", msi.path])
+        let command = try EngineCommands.make(.install(try InstallationRequest(path: msi.path)), bottle: bottle, store: LibraryStore(root: root))
+        XCTAssertEqual(Array(command.primary.arguments.prefix(4)), ["msiexec", "/i", msi.path, "/norestart"])
+        XCTAssertTrue(command.primary.arguments.contains("/L*V"))
     }
     func testRunnerKeepsExitAndDoesNotInterpretShellArguments() async throws {
         let root = try temporary(); let script = root.appendingPathComponent("engine")

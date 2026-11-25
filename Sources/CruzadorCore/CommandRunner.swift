@@ -1,7 +1,7 @@
 import Foundation
 import Darwin
 
-public struct CommandPhaseResult: Codable, Sendable {
+public struct CommandPhaseResult: Codable, Sendable, Equatable {
     public let phase: String
     public let executable: String
     public let arguments: [String]

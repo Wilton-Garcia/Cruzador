@@ -35,6 +35,7 @@ public struct Bottle: Identifiable, Codable, Equatable, Sendable {
     public var state: BottleState
     public var lastError: String?
     public var lastLogPath: String?
+    public var installations: [InstallationRecord]?
     public var apps: [WindowsApp]
     public init(name: String, engine: Engine) {
         id = UUID(); self.name = name; self.engine = engine; createdAt = Date(); state = .preparing; apps = []

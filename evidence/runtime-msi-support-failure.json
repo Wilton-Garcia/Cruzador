@@ -1,0 +1,13 @@
+{
+  "scenario": "Bundled winemono-support.msi through InstallationService",
+  "source_msi": "share/wine/mono/wine-mono-11.3.0/support/winemono-support.msi",
+  "observed": "Wine reported an unhandled page fault and started its debugger.",
+  "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-ad863ffe-d4db-4ec3-af0d-bcde7702c3f9/Logs/support-msi.log",
+  "observed_log_tail": "K_moltenvk v37\n\tVK_NV_fragment_shader_barycentric v1\n[mvk-info] GPU device:\n\tmodel: Apple M1 Pro\n\ttype: Integrated\n\tvendorID: 0x106b\n\tdeviceID: 0x1b020207\n\tpipelineCacheUUID: 45887054-1B02-0207-0000-000100000000\n\tGPU memory available: 12124 MB\n\tGPU memory used: 0 MB\n\tMetal Shading Language 3.1\n\tsupports the following GPU Features:\n\t\tGPU Family Metal 3\n\t\tGPU Family Apple 7\n\t\tGPU Family Mac 2\n\t\tRead-Write Texture Tier 2\n[mvk-info] Created VkInstance for Vulkan version 1.0.323, as requested by app, with the following 3 Vulkan extensions enabled:\n\tVK_KHR_external_fence_capabilities v1\n\tVK_KHR_external_semaphore_capabilities v1\n\tVK_KHR_get_physical_device_properties2 v2\nwine: Unhandled page fault on read access to 006D002E00740072 at address 00006FFFFFC7EADD (thread 0100), starting debugger...\n",
+  "isolated_prefix": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-ad863ffe-d4db-4ec3-af0d-bcde7702c3f9/Bottles/2B042553-B02F-4612-B61D-9547840FA07B",
+  "recovery": "Explicitly selected wineserver -k and -w both returned 0; the test then returned failure.",
+  "limitations": [
+    "This failure does not establish general MSI compatibility or identify its root cause.",
+    "No unchanged retry was performed."
+  ]
+}

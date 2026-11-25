@@ -18,7 +18,7 @@ public struct EnginePlan: Sendable {
         self.primary = primary; self.finalization = finalization; self.cancellation = cancellation; self.cancellationWarning = cancellationWarning
     }
 }
-public enum BottleAction: Sendable { case initialize, repair, waitForIdle, run(LaunchRequest), install(String), tool(String) }
+public enum BottleAction: Sendable { case initialize, repair, waitForIdle, run(LaunchRequest), install(InstallationRequest), tool(String) }
 public enum EngineCommands {
     public static func make(_ action: BottleAction, bottle: Bottle, store: LibraryStore) throws -> EnginePlan {
         guard bottle.engine.path.hasPrefix("/") else { throw CruzadorError.invalid("Selecione um caminho absoluto para o motor.") }
@@ -53,7 +53,7 @@ public enum EngineCommands {
                 arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait", "--", "wineboot", "--update"]
             default:
                 executable = base.appendingPathComponent("bin/wine")
-                arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait", "--"] + (try windowsArguments(action))
+                arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait", "--"] + (try windowsArguments(action, store: store))
             }
         case .wine, .packagedWine:
             if bottle.engine.kind == .packagedWine {
@@ -77,16 +77,18 @@ public enum EngineCommands {
                     arguments = ["wineboot", modeFlag(action)]
                     finalization = [Command(executable: server, arguments: ["-w"], environment: environment)]
                 }
-            default: arguments = try windowsArguments(action)
+            default: arguments = try windowsArguments(action, store: store)
             }
         }
         guard FileManager.default.isExecutableFile(atPath: executable.path) else {
             throw CruzadorError.invalid("Motor indisponível em \(executable.path). Escolha uma instalação existente nas configurações.")
         }
         var workingDirectory: URL?
-        if case .run(let request) = action {
-            environment.merge(request.options.environment) { _, selected in selected }
-            workingDirectory = request.options.workingDirectory.map { URL(fileURLWithPath: $0) }
+        let options: LaunchOptions?
+        switch action { case .run(let request): options = request.options; case .install(let request): options = request.options; default: options = nil }
+        if let options {
+            environment.merge(options.environment) { _, selected in selected }
+            workingDirectory = options.workingDirectory.map { URL(fileURLWithPath: $0) }
         }
         return EnginePlan(primary: Command(executable: executable, arguments: arguments, environment: environment, workingDirectory: workingDirectory), finalization: finalization, cancellation: cancellation,
                           cancellationWarning: cancellation.isEmpty ? "O motor não forneceu um encerramento verificável do servidor da bottle. Seus processos podem continuar ativos; consulte o log antes de retomar." : nil)
@@ -95,14 +97,13 @@ public enum EngineCommands {
         if case .repair = action { return "--update" }
         return "--init"
     }
-    private static func windowsArguments(_ action: BottleAction) throws -> [String] {
+    private static func windowsArguments(_ action: BottleAction, store: LibraryStore) throws -> [String] {
         switch action {
         case .run(let request):
             try request.validate()
             return (URL(fileURLWithPath: request.path).pathExtension.lowercased() == "msi" ? ["msiexec", "/i", request.path] : [request.path]) + request.arguments
-        case .install(let path):
-            try LaunchRequest(path: path).validate()
-            return URL(fileURLWithPath: path).pathExtension.lowercased() == "msi" ? ["msiexec", "/i", path] : [path]
+        case .install(let request):
+            return try request.windowsArguments(msiLog: store.logsRoot.appendingPathComponent("installer-\(request.id).msi.log"))
         case .tool(let name):
             guard ["winecfg", "regedit", "uninstaller", "cmd"].contains(name) else { throw CruzadorError.invalid("Ferramenta desconhecida.") }
             return [name]
