@@ -1,0 +1,457 @@
+{
+  "formatVersion": 1,
+  "run_id": 45599167886,
+  "run_url": "https://github.com/Wilton-Garcia/Cruzador/actions/runs/45599167886",
+  "source_commit": "f79c5041c8ca008f0a673d9b2bb72d99237518de",
+  "architectures": [
+    {
+      "architecture": "arm64",
+      "artifact_sha256": "a0513e20ba21968e911db6fa409faaea74f158aeaec5a50b1698f7f91e27a22c",
+      "records": {
+        "standalone-before.json": {
+          "formatVersion": 1,
+          "status": "absent-in-inspected-roots",
+          "roots": [
+            "/Applications",
+            "/System/Applications",
+            "/Users/runner/Applications"
+          ],
+          "application_bundles_examined": 97,
+          "findings": [],
+          "errors": [],
+          "host_architecture": "arm64",
+          "operating_system": "macOS-15.8.2-arm64-arm-64bit-Mach-O",
+          "limitations": [
+            "Only named application directories were inspected; this is not a whole-disk or running-process census.",
+            "Application bundles are inspected through their names and Info.plist identities; arbitrary renamed binaries outside bundles are not detected.",
+            "No target executable was run or changed by this inspection."
+          ]
+        },
+        "standalone-after.json": {
+          "formatVersion": 1,
+          "status": "absent-in-inspected-roots",
+          "roots": [
+            "/Applications",
+            "/System/Applications",
+            "/Users/runner/Applications"
+          ],
+          "application_bundles_examined": 97,
+          "findings": [],
+          "errors": [],
+          "host_architecture": "arm64",
+          "operating_system": "macOS-15.8.2-arm64-arm-64bit-Mach-O",
+          "limitations": [
+            "Only named application directories were inspected; this is not a whole-disk or running-process census.",
+            "Application bundles are inspected through their names and Info.plist identities; arbitrary renamed binaries outside bundles are not detected.",
+            "No target executable was run or changed by this inspection."
+          ]
+        },
+        "packaged-runtime-smoke.json": {
+          "additional_apps": [
+            {
+              "arguments": [
+                "-V"
+              ],
+              "cancelled": false,
+              "case": "version",
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/additional-apps/plink-w32.exe",
+              "exit": 0,
+              "id": "plink-w32",
+              "integrity_ok": false,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Logs/plink-w32-version.log",
+              "log_sha256": "cbaf3adf9a1e302cfe31a2d17261c257fff7ec2d18a7a8e6cfe806efe62cf55d",
+              "marker_observed": true,
+              "pe_machine": "0x14c",
+              "sha256": "c7be84cc42565ad4de7e77e99f0a61f3a8dec17c77d5ff1afad79d005af54c93"
+            },
+            {
+              "arguments": [
+                "-V"
+              ],
+              "cancelled": false,
+              "case": "version",
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/additional-apps/plink-w64.exe",
+              "exit": 0,
+              "id": "plink-w64",
+              "integrity_ok": false,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Logs/plink-w64-version.log",
+              "log_sha256": "5c31a0b0099b3f8a7b5d6fbf3f4f37589d4bb138ffc83db99e765f624bda3197",
+              "marker_observed": true,
+              "pe_machine": "0x8664",
+              "sha256": "969f36879d5716aa1a9811f43a6a6510e8f08372dbeb9695b810b9c776f39c75"
+            },
+            {
+              "arguments": [
+                "C:\\cruzador-compatibility.db",
+                "CREATE TABLE sample(value TEXT); INSERT INTO sample VALUES('CRUZADOR_SQLITE_OK'); SELECT value FROM sample;"
+              ],
+              "cancelled": false,
+              "case": "write",
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/additional-apps/sqlite3.exe",
+              "exit": 0,
+              "id": "sqlite-tools-x64",
+              "integrity_ok": false,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Logs/sqlite-tools-x64-write.log",
+              "log_sha256": "2decf1d17803eee19f273f423c114c633eba97d6f8bc486e7062d9ea5336344d",
+              "marker_observed": true,
+              "pe_machine": "0x8664",
+              "sha256": "3627c4ce2632949ee6d795c92e0a33f68fb30235f0a55a7719f0636414d8e1d3"
+            },
+            {
+              "arguments": [
+                "C:\\cruzador-compatibility.db",
+                "PRAGMA integrity_check; SELECT value FROM sample;"
+              ],
+              "cancelled": false,
+              "case": "read",
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/additional-apps/sqlite3.exe",
+              "exit": 0,
+              "id": "sqlite-tools-x64",
+              "integrity_ok": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Logs/sqlite-tools-x64-read.log",
+              "log_sha256": "bfcf06ec0cf6beb1b37ca07bf6776941d1b2eb2efbcfd6e35a21c9dc0ddb56a3",
+              "marker_observed": true,
+              "pe_machine": "0x8664",
+              "sha256": "3627c4ce2632949ee6d795c92e0a33f68fb30235f0a55a7719f0636414d8e1d3"
+            }
+          ],
+          "after_cancellation_exit": 0,
+          "cancellation_cleanup_codes": [
+            0,
+            0
+          ],
+          "cancelled": true,
+          "discovered_executables": 10,
+          "discovered_software_records": 3,
+          "formatVersion": 2,
+          "initialization_exit": 0,
+          "invalid_msi_macOS_exit": 91,
+          "invalid_msi_status": "unconfirmed",
+          "library_workflows": {
+            "copied_probe": {
+              "exit": 0,
+              "global_and_local_options_observed": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Logs/copy-probe.log",
+              "working_directory_observed": true
+            },
+            "diagnostics": "/Users/runner/work/Cruzador/Cruzador/.local/workflow-diagnostics-B2A37C5D-37C5-43E1-AAA9-81BA289F5516",
+            "diagnostics_log_hashes_verified": true,
+            "diagnostics_source_preserved": true,
+            "duplicate_id": "E46D7402-463D-491B-8A91-C53597861282",
+            "export_package": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/real-transfer.cruzadorbottle",
+            "final_server_wait_exit": 0,
+            "import_preparation_exit": 0,
+            "imported_7zip_exit": 0,
+            "imported_id": "D9F69361-287A-47CB-8E43-D9C7065D24AD",
+            "imported_probe": {
+              "exit": 0,
+              "global_and_local_options_observed": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Logs/import-probe.log",
+              "working_directory_observed": true
+            },
+            "original_id": "A7933F24-0CBB-431E-AD3D-4713457C741B",
+            "original_probe": {
+              "exit": 0,
+              "global_and_local_options_observed": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Logs/original-probe.log",
+              "working_directory_observed": true
+            },
+            "original_reference_resolved_after_transfers": true,
+            "removed_copy_recovery": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Removed/8249DCFD-7087-4F32-950E-B983F8EB18B5.cruzadorbottle",
+            "removed_reference_rejected": true
+          },
+          "limitations": [
+            "No CrossOver executable is selected by these commands.",
+            "No general application or graphics compatibility established."
+          ],
+          "nonzero_exit": 7,
+          "operating_system": "Version 15.8.2 (Build 24H232)",
+          "positive_7zip_msi_exit": 0,
+          "recipe_installation_count": 1,
+          "recipe_verified_shortcuts": 2,
+          "repair_exit": 0,
+          "root": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16",
+          "runtime": "/Users/runner/work/Cruzador/Cruzador/.local/Runtime-11.21",
+          "server_wait_exit": 0,
+          "test_process_architecture": "arm64",
+          "version": "11.21",
+          "windows_commands": [
+            {
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Bottles/A7933F24-0CBB-431E-AD3D-4713457C741B/drive_c/windows/system32/cmd.exe",
+              "exit_code": 0,
+              "explicit_environment_observed": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Logs/system32.log",
+              "marker": "CRUZADOR_WIN64_OK",
+              "marker_observed": true,
+              "pe_machine": "0x8664"
+            },
+            {
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Bottles/A7933F24-0CBB-431E-AD3D-4713457C741B/drive_c/windows/syswow64/cmd.exe",
+              "exit_code": 0,
+              "explicit_environment_observed": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-6d336025-23d8-491d-a3c0-c774788a4d16/Logs/syswow64.log",
+              "marker": "CRUZADOR_WIN32_OK",
+              "marker_observed": true,
+              "pe_machine": "0x14c"
+            }
+          ]
+        }
+      },
+      "supervision": {
+        "format_version": 2,
+        "timed_out": false,
+        "timeout_seconds": 300.0,
+        "elapsed_seconds": 130.17244545800003,
+        "result": 0,
+        "test_exit": 0,
+        "cleanup_status": "not-requested",
+        "cleanup": [],
+        "report_error": null,
+        "previous_summary": null,
+        "requested_output_root": null,
+        "output_root": "/Users/runner/work/Cruzador/Cruzador/.local",
+        "requested_runtime": ".local/Runtime-11.21",
+        "runtime": "/Users/runner/work/Cruzador/Cruzador/.local/Runtime-11.21",
+        "requested_installer_msi": ".local/downloads/7z2606-x64.msi",
+        "requested_recipes": "config/recipes.json",
+        "requested_apps": ".local/additional-apps",
+        "limitations": [
+          "CPU time and peak process-family memory were not measured.",
+          "Cleanup control commands concern only the selected retained prefixes; arbitrary detached helpers were not enumerated."
+        ]
+      },
+      "record_sha256": {
+        "standalone-before.json": "92e3fed75566d2d91d9b16e6db993d629286b3a599cc7b079a9743f21f407c3c",
+        "standalone-after.json": "92e3fed75566d2d91d9b16e6db993d629286b3a599cc7b079a9743f21f407c3c",
+        "packaged-runtime-smoke.json": "9776f0d70b83e79b2836c710f8146adf625c40830aefd2a69c7e85de2f549969"
+      }
+    },
+    {
+      "architecture": "x86_64",
+      "artifact_sha256": "75157de17f2cfaa68d3a0b5c4885f40a468a8936779afb04b5d28a2d2a59f16e",
+      "records": {
+        "standalone-before.json": {
+          "formatVersion": 1,
+          "status": "absent-in-inspected-roots",
+          "roots": [
+            "/Applications",
+            "/System/Applications",
+            "/Users/runner/Applications"
+          ],
+          "application_bundles_examined": 95,
+          "findings": [],
+          "errors": [],
+          "host_architecture": "x86_64",
+          "operating_system": "macOS-15.7.9-x86_64-i386-64bit-Mach-O",
+          "limitations": [
+            "Only named application directories were inspected; this is not a whole-disk or running-process census.",
+            "Application bundles are inspected through their names and Info.plist identities; arbitrary renamed binaries outside bundles are not detected.",
+            "No target executable was run or changed by this inspection."
+          ]
+        },
+        "standalone-after.json": {
+          "formatVersion": 1,
+          "status": "absent-in-inspected-roots",
+          "roots": [
+            "/Applications",
+            "/System/Applications",
+            "/Users/runner/Applications"
+          ],
+          "application_bundles_examined": 95,
+          "findings": [],
+          "errors": [],
+          "host_architecture": "x86_64",
+          "operating_system": "macOS-15.7.9-x86_64-i386-64bit-Mach-O",
+          "limitations": [
+            "Only named application directories were inspected; this is not a whole-disk or running-process census.",
+            "Application bundles are inspected through their names and Info.plist identities; arbitrary renamed binaries outside bundles are not detected.",
+            "No target executable was run or changed by this inspection."
+          ]
+        },
+        "packaged-runtime-smoke.json": {
+          "additional_apps": [
+            {
+              "arguments": [
+                "-V"
+              ],
+              "cancelled": false,
+              "case": "version",
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/additional-apps/plink-w32.exe",
+              "exit": 0,
+              "id": "plink-w32",
+              "integrity_ok": false,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Logs/plink-w32-version.log",
+              "log_sha256": "cbaf3adf9a1e302cfe31a2d17261c257fff7ec2d18a7a8e6cfe806efe62cf55d",
+              "marker_observed": true,
+              "pe_machine": "0x14c",
+              "sha256": "c7be84cc42565ad4de7e77e99f0a61f3a8dec17c77d5ff1afad79d005af54c93"
+            },
+            {
+              "arguments": [
+                "-V"
+              ],
+              "cancelled": false,
+              "case": "version",
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/additional-apps/plink-w64.exe",
+              "exit": 0,
+              "id": "plink-w64",
+              "integrity_ok": false,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Logs/plink-w64-version.log",
+              "log_sha256": "5c31a0b0099b3f8a7b5d6fbf3f4f37589d4bb138ffc83db99e765f624bda3197",
+              "marker_observed": true,
+              "pe_machine": "0x8664",
+              "sha256": "969f36879d5716aa1a9811f43a6a6510e8f08372dbeb9695b810b9c776f39c75"
+            },
+            {
+              "arguments": [
+                "C:\\cruzador-compatibility.db",
+                "CREATE TABLE sample(value TEXT); INSERT INTO sample VALUES('CRUZADOR_SQLITE_OK'); SELECT value FROM sample;"
+              ],
+              "cancelled": false,
+              "case": "write",
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/additional-apps/sqlite3.exe",
+              "exit": 0,
+              "id": "sqlite-tools-x64",
+              "integrity_ok": false,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Logs/sqlite-tools-x64-write.log",
+              "log_sha256": "2decf1d17803eee19f273f423c114c633eba97d6f8bc486e7062d9ea5336344d",
+              "marker_observed": true,
+              "pe_machine": "0x8664",
+              "sha256": "3627c4ce2632949ee6d795c92e0a33f68fb30235f0a55a7719f0636414d8e1d3"
+            },
+            {
+              "arguments": [
+                "C:\\cruzador-compatibility.db",
+                "PRAGMA integrity_check; SELECT value FROM sample;"
+              ],
+              "cancelled": false,
+              "case": "read",
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/additional-apps/sqlite3.exe",
+              "exit": 0,
+              "id": "sqlite-tools-x64",
+              "integrity_ok": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Logs/sqlite-tools-x64-read.log",
+              "log_sha256": "bfcf06ec0cf6beb1b37ca07bf6776941d1b2eb2efbcfd6e35a21c9dc0ddb56a3",
+              "marker_observed": true,
+              "pe_machine": "0x8664",
+              "sha256": "3627c4ce2632949ee6d795c92e0a33f68fb30235f0a55a7719f0636414d8e1d3"
+            }
+          ],
+          "after_cancellation_exit": 0,
+          "cancellation_cleanup_codes": [
+            0,
+            0
+          ],
+          "cancelled": true,
+          "discovered_executables": 10,
+          "discovered_software_records": 3,
+          "formatVersion": 2,
+          "initialization_exit": 0,
+          "invalid_msi_macOS_exit": 91,
+          "invalid_msi_status": "unconfirmed",
+          "library_workflows": {
+            "copied_probe": {
+              "exit": 0,
+              "global_and_local_options_observed": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Logs/copy-probe.log",
+              "working_directory_observed": true
+            },
+            "diagnostics": "/Users/runner/work/Cruzador/Cruzador/.local/workflow-diagnostics-C6120E73-F91F-4414-9C1A-CB2B012F599C",
+            "diagnostics_log_hashes_verified": true,
+            "diagnostics_source_preserved": true,
+            "duplicate_id": "36433D4C-A0FC-46A1-AA30-B43D843EC61C",
+            "export_package": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/real-transfer.cruzadorbottle",
+            "final_server_wait_exit": 0,
+            "import_preparation_exit": 0,
+            "imported_7zip_exit": 0,
+            "imported_id": "4CB6D7DC-1972-404E-A9A5-4B342CD6474C",
+            "imported_probe": {
+              "exit": 0,
+              "global_and_local_options_observed": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Logs/import-probe.log",
+              "working_directory_observed": true
+            },
+            "original_id": "C4364BC8-C783-4AA3-877C-E4AA94EDE2A8",
+            "original_probe": {
+              "exit": 0,
+              "global_and_local_options_observed": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Logs/original-probe.log",
+              "working_directory_observed": true
+            },
+            "original_reference_resolved_after_transfers": true,
+            "removed_copy_recovery": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Removed/78410393-7904-40C7-9CB9-ABF746248CBE.cruzadorbottle",
+            "removed_reference_rejected": true
+          },
+          "limitations": [
+            "No CrossOver executable is selected by these commands.",
+            "No general application or graphics compatibility established."
+          ],
+          "nonzero_exit": 7,
+          "operating_system": "Version 15.7.9 (Build 24G830)",
+          "positive_7zip_msi_exit": 0,
+          "recipe_installation_count": 1,
+          "recipe_verified_shortcuts": 2,
+          "repair_exit": 0,
+          "root": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795",
+          "runtime": "/Users/runner/work/Cruzador/Cruzador/.local/Runtime-11.21",
+          "server_wait_exit": 0,
+          "test_process_architecture": "x86_64",
+          "version": "11.21",
+          "windows_commands": [
+            {
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Bottles/C4364BC8-C783-4AA3-877C-E4AA94EDE2A8/drive_c/windows/system32/cmd.exe",
+              "exit_code": 0,
+              "explicit_environment_observed": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Logs/system32.log",
+              "marker": "CRUZADOR_WIN64_OK",
+              "marker_observed": true,
+              "pe_machine": "0x8664"
+            },
+            {
+              "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Bottles/C4364BC8-C783-4AA3-877C-E4AA94EDE2A8/drive_c/windows/syswow64/cmd.exe",
+              "exit_code": 0,
+              "explicit_environment_observed": true,
+              "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-5c3950e7-50d1-47c9-aaec-884be6418795/Logs/syswow64.log",
+              "marker": "CRUZADOR_WIN32_OK",
+              "marker_observed": true,
+              "pe_machine": "0x14c"
+            }
+          ]
+        }
+      },
+      "supervision": {
+        "format_version": 2,
+        "timed_out": false,
+        "timeout_seconds": 300.0,
+        "elapsed_seconds": 230.35732723800004,
+        "result": 0,
+        "test_exit": 0,
+        "cleanup_status": "not-requested",
+        "cleanup": [],
+        "report_error": null,
+        "previous_summary": null,
+        "requested_output_root": null,
+        "output_root": "/Users/runner/work/Cruzador/Cruzador/.local",
+        "requested_runtime": ".local/Runtime-11.21",
+        "runtime": "/Users/runner/work/Cruzador/Cruzador/.local/Runtime-11.21",
+        "requested_installer_msi": ".local/downloads/7z2606-x64.msi",
+        "requested_recipes": "config/recipes.json",
+        "requested_apps": ".local/additional-apps",
+        "limitations": [
+          "CPU time and peak process-family memory were not measured.",
+          "Cleanup control commands concern only the selected retained prefixes; arbitrary detached helpers were not enumerated."
+        ]
+      },
+      "record_sha256": {
+        "standalone-before.json": "f45252d2e9fdf4e04ceea78d652de1d65ee6e08c5d92ddd8c674b6538b8cab47",
+        "standalone-after.json": "f45252d2e9fdf4e04ceea78d652de1d65ee6e08c5d92ddd8c674b6538b8cab47",
+        "packaged-runtime-smoke.json": "5700c5f94606859fd68516a4cff8b063106f5900b324847be609b959909de709"
+      }
+    }
+  ],
+  "limitations": [
+    "Absence is scoped to the three named application directories, not the entire disk or arbitrary renamed binaries.",
+    "The CI source commit precedes later packaging, icon and audit changes.",
+    "Selected application behavior does not establish compatibility with arbitrary Windows programs."
+  ]
+}
