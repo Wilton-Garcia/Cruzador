@@ -1,0 +1,42 @@
+{
+  "limitations": [
+    "A single D3D9 clear/present API sequence does not establish pixel correctness, performance or game compatibility.",
+    "Each frame probe had a 30-second cancellation watchdog."
+  ],
+  "observations": [
+    {
+      "backend": "openGL",
+      "component_paths": [
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/x86_64-windows/wined3d.dll",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/i386-windows/wined3d.dll"
+      ],
+      "environment_log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/graphics-C82E72C3-4DDA-487C-BDBF-E2AB3F81A958/openGL-environment.log",
+      "frame_cancelled": false,
+      "frame_exit": 0,
+      "frame_log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/graphics-C82E72C3-4DDA-487C-BDBF-E2AB3F81A958/openGL-frame.log",
+      "frame_success_marker": true,
+      "frame_log_sha256": "fc824f110464bbfdb74b249c3f24ee10ad7213b4db02c82285d934dc08b50829",
+      "frame_log_tail": "ment v1\n\tVK_EXT_texture_compression_astc_hdr v1\n\tVK_EXT_tooling_info v1\n\tVK_EXT_vertex_attribute_divisor v3\n\tVK_AMD_gpu_shader_half_float v2\n\tVK_AMD_negative_viewport_height v1\n\tVK_AMD_shader_image_load_store_lod v1\n\tVK_AMD_shader_trinary_minmax v1\n\tVK_GOOGLE_display_timing v1\n\tVK_IMG_format_pvrtc v1\n\tVK_INTEL_shader_integer_functions2 v1\n\tVK_MVK_macos_surface v3\n\tVK_MVK_moltenvk v37\n\tVK_NV_fragment_shader_barycentric v1\n[mvk-info] GPU device:\n\tmodel: Apple M1 Pro\n\ttype: Integrated\n\tvendorID: 0x106b\n\tdeviceID: 0x1b020207\n\tpipelineCacheUUID: 45887054-1B02-0207-0000-000100000000\n\tGPU memory available: 12124 MB\n\tGPU memory used: 0 MB\n\tMetal Shading Language 3.1\n\tsupports the following GPU Features:\n\t\tGPU Family Metal 3\n\t\tGPU Family Apple 7\n\t\tGPU Family Mac 2\n\t\tRead-Write Texture Tier 2\n[mvk-info] Created VkInstance for Vulkan version 1.0.323, as requested by app, with the following 3 Vulkan extensions enabled:\n\tVK_KHR_external_fence_capabilities v1\n\tVK_KHR_external_semaphore_capabilities v1\n\tVK_KHR_get_physical_device_properties2 v2\n00f4:fixme:d3d:wined3d_guess_gl_vendor Received unrecognized GL_VENDOR \"Apple\". Returning GL_VENDOR_UNKNOWN.\n00f4:fixme:d3d:wined3d_guess_card_vendor Received unrecognized GL_VENDOR \"Apple\". Returning HW_VENDOR_NVIDIA.\n00f4:fixme:d3d:select_card_handler Couldn't find a suitable card selector for GL vendor 0000 (using GL_RENDERER \"Apple M1 Pro\")\n00f4:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION\nCRUZADOR_D3D9_FRAME_OK\n"
+    },
+    {
+      "backend": "vulkan",
+      "component_paths": [
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/x86_64-windows/wined3d.dll",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/i386-windows/wined3d.dll",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/x86_64-windows/winevulkan.dll",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/i386-windows/winevulkan.dll",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/share/vulkan/icd.d/MoltenVK_icd.json",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/libMoltenVK.dylib"
+      ],
+      "environment_log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/graphics-C82E72C3-4DDA-487C-BDBF-E2AB3F81A958/vulkan-environment.log",
+      "frame_cancelled": false,
+      "frame_exit": 0,
+      "frame_log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/graphics-C82E72C3-4DDA-487C-BDBF-E2AB3F81A958/vulkan-frame.log",
+      "frame_success_marker": true,
+      "frame_log_sha256": "266a0e52ca5de4f43d54918daca76676847512b15c422e6d7a5583054f2d4384",
+      "frame_log_tail": "x8d) should have a representative.\n0158:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_LOCALVIEWER) (0x8e) should have a representative.\n0158:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_NORMALIZENORMALS) (0x8f) should have a representative.\n0158:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_DIFFUSEMATERIALSOURCE) (0x91) should have a representative.\n0158:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_SPECULARMATERIALSOURCE) (0x92) should have a representative.\n0158:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_AMBIENTMATERIALSOURCE) (0x93) should have a representative.\n0158:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_EMISSIVEMATERIALSOURCE) (0x94) should have a representative.\n0158:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_VERTEXBLEND) (0x97) should have a representative.\n[mvk-info] Created 2 swapchain images with size (312, 206) and contents scale 1.0 in layer CAMetalLayer: WineMetalView (0x7f8100027000) on screen Main Screen.\n[mvk-info] Created 2 swapchain images with size (312, 206) and contents scale 1.0 in layer CAMetalLayer: WineMetalView (0x7f8100027000) on screen Main Screen.\n[mvk-info] Destroyed VkDevice on GPU Apple M1 Pro with 12 Vulkan extensions enabled.\n[mvk-info] Destroyed VkPhysicalDevice for GPU Apple M1 Pro with 1 MB of GPU memory still allocated.\n[mvk-info] Destroying VkInstance for Vulkan version 1.1.323 with 4 Vulkan extensions enabled.\nCRUZADOR_D3D9_FRAME_OK\n"
+    }
+  ],
+  "probe": "/Users/wiltongarcia/Developer/Cruzador/.local/probes/d3d9-probe.exe",
+  "probe_sha256": "d74c5d433ea6946231faa8f32829ee03e5d87aee30178e75eaa1d5dbc19daf29"
+}

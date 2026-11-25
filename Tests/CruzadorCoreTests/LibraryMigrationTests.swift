@@ -13,7 +13,7 @@ final class LibraryMigrationTests: XCTestCase {
         let original = Data("{\n  \"version\": 1, \"bottles\": []\n}\n".utf8)
         try original.write(to: store.manifest)
         try store.migrateIfNeeded()
-        XCTAssertEqual(try store.load().version, 2)
+        XCTAssertEqual(try store.load().version, 3)
         let backup = store.root.appendingPathComponent("library-v1.json.bak")
         XCTAssertEqual(try Data(contentsOf: backup), original)
         let migrated = try Data(contentsOf: store.manifest)

@@ -66,6 +66,7 @@ struct ContentView: View {
         }
         .tint(.teal)
         .sheet(isPresented: $model.showCreate) { CreateBottleView(model: model) }
+        .sheet(isPresented: $model.showBottleSettings) { if let bottle = model.selected { BottleSettingsView(model: model, bottle: bottle) } }
         .sheet(isPresented: $model.showDiscovery) { if let report = model.discoveryReport { DiscoveredAppsView(model: model, report: report) } }
         .sheet(isPresented: $model.showRecipes) { if let catalog = model.recipeCatalog { RecipesView(model: model, catalog: catalog) } }
         .sheet(isPresented: $model.showInstall) { if let installer = model.selectedInstaller { InstallProgramView(model: model, installer: installer) } }
@@ -90,6 +91,7 @@ struct ContentView: View {
                     }
                     Spacer()
                     Menu {
+                        Button("Opções da bottle…") { model.showBottleSettings = true }
                         Button(model.library.preferences.defaultBottleID == bottle.id ? "Bottle padrão" : "Usar como padrão") { model.makeDefault(bottle) }.disabled(model.library.preferences.defaultBottleID == bottle.id)
                         Button("Renomear…") { model.nameBottle(bottle, duplicate: false) }
                         Button("Duplicar…") { model.nameBottle(bottle, duplicate: true) }
@@ -371,5 +373,31 @@ struct DiscoveredAppsView: View {
                 Button("Adicionar selecionados") { model.addDiscovered(selectedIDs, report: report) }.buttonStyle(.borderedProminent).disabled(selectedIDs.isEmpty || !model.canStart)
             }
         }.padding(28).frame(width: 720)
+    }
+}
+
+struct BottleSettingsView: View {
+    @ObservedObject var model: AppModel
+    let bottle: Bottle
+    @State private var settings: BottleSettings
+    init(model: AppModel, bottle: Bottle) { self.model = model; self.bottle = bottle; _settings = State(initialValue: bottle.requestedSettings) }
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            Text("Opções de \(bottle.name)").font(.title2.bold())
+            Picker("Gráficos", selection: $settings.graphics) {
+                ForEach(GraphicsBackend.allCases, id: \.self) { backend in
+                    Text(backend.displayName).tag(backend).disabled(!GraphicsConfiguration.inspect(backend, engine: bottle.engine).requestSupported)
+                }
+            }
+            let support = GraphicsConfiguration.inspect(settings.graphics, engine: bottle.engine)
+            Text(support.reason).font(.callout).foregroundStyle(.secondary)
+            Text("A opção vale para novos processos. Feche e abra o aplicativo Windows para aplicá-la. Variáveis explícitas do atalho podem substituir a seleção da bottle.").font(.caption).foregroundStyle(.secondary)
+            ForEach(support.limitations, id: \.self) { Text($0).font(.caption).foregroundStyle(.secondary) }
+            HStack {
+                Button("Cancelar") { model.showBottleSettings = false }.keyboardShortcut(.cancelAction)
+                Spacer()
+                Button("Salvar opções") { model.saveBottleSettings(settings, bottleID: bottle.id) }.buttonStyle(.borderedProminent).disabled(!model.canStart || !support.requestSupported)
+            }
+        }.padding(28).frame(width: 620)
     }
 }

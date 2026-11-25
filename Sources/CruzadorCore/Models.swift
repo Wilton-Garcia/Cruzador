@@ -37,6 +37,8 @@ public struct Bottle: Identifiable, Codable, Equatable, Sendable {
     public var lastLogPath: String?
     public var installations: [InstallationRecord]?
     public var apps: [WindowsApp]
+    public var configuration: BottleSettings?
+    public var requestedSettings: BottleSettings { configuration ?? BottleSettings() }
     public init(name: String, engine: Engine) {
         id = UUID(); self.name = name; self.engine = engine; createdAt = Date(); state = .preparing; apps = []
     }
@@ -46,7 +48,7 @@ public struct LibraryPreferences: Codable, Sendable {
     public init(defaultBottleID: UUID? = nil) { self.defaultBottleID = defaultBottleID }
 }
 public struct Library: Codable, Sendable {
-    public static let currentVersion = 2
+    public static let currentVersion = 3
     public var version = currentVersion
     public var preferences = LibraryPreferences()
     public var bottles: [Bottle] = []

@@ -24,6 +24,7 @@ final class AppModel: ObservableObject {
     private var recipeTask: Task<Void, Never>?
     @Published var showDiscovery = false
     @Published var discoveryReport: AppDiscoveryReport?
+    @Published var showBottleSettings = false
     @Published var search = ""
     @Published var engineKind: EngineKind = .packagedWine
     @Published var enginePath = WineRuntime.bundledRoot.path
@@ -151,6 +152,14 @@ final class AppModel: ObservableObject {
             let request = try InstallationRequest(inspection: inspection, mode: mode, arguments: arguments.isEmpty ? [] : arguments.components(separatedBy: "\n"), options: options)
             showInstall = false
             perform(.install(request), bottle: bottle, title: "Instalando \(URL(fileURLWithPath: inspection.path).lastPathComponent)…")
+        } catch { self.error = error.localizedDescription }
+    }
+    func saveBottleSettings(_ settings: BottleSettings, bottleID: UUID) {
+        guard canStart else { return }
+        do {
+            try BottleSettingsStore(store: store).save(settings, bottleID: bottleID)
+            library = try store.load(); showBottleSettings = false
+            status = "Configuração salva para os próximos processos Windows"
         } catch { self.error = error.localizedDescription }
     }
     func discoverApps() {

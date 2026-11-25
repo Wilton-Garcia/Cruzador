@@ -1,0 +1,49 @@
+{
+  "limitations": [
+    "Environment receipt and a DxDiag report do not prove successful 3D rendering or game compatibility.",
+    "Each DxDiag observation had a 30-second cancellation watchdog."
+  ],
+  "observations": [
+    {
+      "backend": "openGL",
+      "component_paths": [
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/x86_64-windows/wined3d.dll",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/i386-windows/wined3d.dll"
+      ],
+      "diagnostic_cancelled": true,
+      "diagnostic_exit": 15,
+      "diagnostic_log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/graphics-0D98A77B-D411-4DF0-80F9-62E37880BD8B/openGL-dxdiag.log",
+      "diagnostic_xml": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/Bottles/357277C2-6F50-4101-88B1-DFE3343E22C8/drive_c/cruzador-dxdiag-132833ED-B466-4533-94BD-2B4E7A84A6EA.xml",
+      "diagnostic_xml_exists": false,
+      "environment_log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/graphics-0D98A77B-D411-4DF0-80F9-62E37880BD8B/openGL-environment.log",
+      "log_tail": "R_UNKNOWN.\n00f4:fixme:d3d:wined3d_guess_card_vendor Received unrecognized GL_VENDOR \"Apple\". Returning HW_VENDOR_NVIDIA.\n00f4:fixme:d3d:select_card_handler Couldn't find a suitable card selector for GL vendor 0000 (using GL_RENDERER \"Apple M1 Pro\")\n00f4:fixme:d3d:wined3d_guess_gl_vendor Received unrecognized GL_VENDOR \"Apple\". Returning GL_VENDOR_UNKNOWN.\n00f4:fixme:d3d:wined3d_guess_card_vendor Received unrecognized GL_VENDOR \"Apple\". Returning HW_VENDOR_NVIDIA.\n00f4:fixme:d3d:select_card_handler Couldn't find a suitable card selector for GL vendor 0000 (using GL_RENDERER \"Apple M1 Pro\")\n00f4:fixme:ddraw:ddraw7_Initialize Ignoring guid {aeb2cdd4-6e41-43ea-941c-8361cc760781}.\n0144:err:d3d:wined3d_check_gl_call >>>>>>> GL_INVALID_FRAMEBUFFER_OPERATION (0x506) from glClear @ /private/tmp/wine-11.21/dlls/wined3d/context_gl.c / 2246.\nobjc[43350]: Class MVKBlockObserver is implemented in both /Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/libMoltenVK.dylib (0x21455b5f0) and /Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/GStreamer.framework/Versions/1.0/lib/libMoltenVK.dylib (0x21cff0618). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.\n"
+    },
+    {
+      "backend": "vulkan",
+      "component_paths": [
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/x86_64-windows/wined3d.dll",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/i386-windows/wined3d.dll",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/x86_64-windows/winevulkan.dll",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/wine/i386-windows/winevulkan.dll",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/share/vulkan/icd.d/MoltenVK_icd.json",
+        "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/libMoltenVK.dylib"
+      ],
+      "diagnostic_cancelled": true,
+      "diagnostic_exit": 15,
+      "diagnostic_log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/graphics-0D98A77B-D411-4DF0-80F9-62E37880BD8B/vulkan-dxdiag.log",
+      "diagnostic_xml": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/Bottles/357277C2-6F50-4101-88B1-DFE3343E22C8/drive_c/cruzador-dxdiag-F0DFBD81-5D5C-4E87-A8DD-3833BCE2AB2E.xml",
+      "diagnostic_xml_exists": false,
+      "environment_log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/graphics-0D98A77B-D411-4DF0-80F9-62E37880BD8B/vulkan-environment.log",
+      "log_tail": "ive.\n00f4:err:d3d:validate_state_table State STATE_RENDER(WINED3D_RS_VERTEXBLEND) (0x97) should have a representative.\n00f4:fixme:ddraw:ddraw7_Initialize Ignoring guid {aeb2cdd4-6e41-43ea-941c-8361cc760781}.\n[mvk-info] Created 2 swapchain images with size (2050, 1297) and contents scale 1.0 in layer CAMetalLayer: WineMetalView (0x7fbb051aef90) on screen Main Screen.\n[mvk-info] Destroyed VkDevice on GPU Apple M1 Pro with 12 Vulkan extensions enabled.\n[mvk-info] Destroyed VkPhysicalDevice for GPU Apple M1 Pro with 0 MB of GPU memory still allocated.\n[mvk-info] Destroying VkInstance for Vulkan version 1.1.323 with 4 Vulkan extensions enabled.\n[mvk-info] Destroyed VkPhysicalDevice for GPU Apple M1 Pro with 0 MB of GPU memory still allocated.\n[mvk-info] Destroying VkInstance for Vulkan version 1.1.323 with 4 Vulkan extensions enabled.\nobjc[43622]: Class MVKBlockObserver is implemented in both /Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/libMoltenVK.dylib (0x2147785f0) and /Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime/lib/GStreamer.framework/Versions/1.0/lib/libMoltenVK.dylib (0x21c7ca618). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.\n"
+    }
+  ],
+  "moltenvk_hashes": {
+    "runtime_library": "aac02fea75b00aa23fca5af9c19fc0d4b2e0f12dc0f78b3bee57b7b67fa5b61b",
+    "gstreamer_library": "4bd141fcc4c18e069b2cd40560f43e57fb51713ff3477e45e3af613596519987"
+  },
+  "observed_limitations": [
+    "Both DxDiag processes reached the watchdog and were cancelled; no XML report was created.",
+    "OpenGL log contains GL_INVALID_FRAMEBUFFER_OPERATION.",
+    "Both logs report duplicate Objective-C MVKBlockObserver implementations from distinct MoltenVK libraries; ABI interchangeability was not established."
+  ]
+}

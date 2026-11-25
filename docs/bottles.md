@@ -24,7 +24,7 @@ Esses fluxos são próprios do Wine independente. O adaptador CrossOver permanec
 
 ## Persistência e atualização do formato
 
-A biblioteca usa o formato 2. A leitura de um manifesto 1 permanece suportada; ao migrar ou salvar, o Cruzador preserva seus bytes originais em `library-v1.json.bak` antes de gravar o formato atual. Esse backup de migração não é substituído nas próximas gravações. O `library.json.bak` continua sendo o backup da alteração anterior. Repetir a migração não regrava um manifesto já atualizado.
+A biblioteca usa o formato 3. A leitura de manifestos 1 e 2 permanece suportada; ao migrar ou salvar, o Cruzador preserva seus bytes originais em `library-v1.json.bak` antes de gravar o formato atual. Esse backup de migração não é substituído nas próximas gravações. O `library.json.bak` continua sendo o backup da alteração anterior. Repetir a migração não regrava um manifesto já atualizado.
 
 Versões futuras, JSON malformado, IDs duplicados e referências a uma bottle padrão inexistente impedem a gravação. O aplicativo mantém os arquivos para diagnóstico. **Gerenciar → Usar como padrão** salva a bottle preferida para a próxima abertura; removê-la limpa essa preferência.
 

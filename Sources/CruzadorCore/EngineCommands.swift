@@ -86,6 +86,9 @@ public enum EngineCommands {
         var workingDirectory: URL?
         let options: LaunchOptions?
         switch action { case .run(let request): options = request.options; case .install(let request): options = request.options; default: options = nil }
+        if case .waitForIdle = action {} else {
+            environment.merge(try GraphicsConfiguration.environment(backend: bottle.requestedSettings.graphics, engine: bottle.engine, explicitOverride: options?.environment["WINE_D3D_CONFIG"])) { _, selected in selected }
+        }
         if let options {
             environment.merge(options.environment) { _, selected in selected }
             workingDirectory = options.workingDirectory.map { URL(fileURLWithPath: $0) }

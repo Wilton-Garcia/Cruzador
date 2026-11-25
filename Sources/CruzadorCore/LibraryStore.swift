@@ -25,7 +25,7 @@ public struct LibraryStore: Sendable {
         if library.version < Library.currentVersion { try save(library) }
     }
     private func validate(_ library: Library) throws {
-        guard [1, Library.currentVersion].contains(library.version) else { throw CruzadorError.invalid("Versão da biblioteca não suportada. Preserve library.json antes de atualizar.") }
+        guard (1...Library.currentVersion).contains(library.version) else { throw CruzadorError.invalid("Versão da biblioteca não suportada. Preserve library.json antes de atualizar.") }
         guard Set(library.bottles.map(\.id)).count == library.bottles.count else { throw CruzadorError.invalid("Biblioteca com identificadores de bottle duplicados.") }
         if let selected = library.preferences.defaultBottleID, !library.bottles.contains(where: { $0.id == selected }) { throw CruzadorError.invalid("A bottle padrão não existe na biblioteca.") }
         for bottle in library.bottles {

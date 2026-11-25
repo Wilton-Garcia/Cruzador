@@ -708,10 +708,31 @@
         "ib:2f3138d8adfa95c9e7cc"
       ],
       "reverse_knowledge": "native-and-python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Seletores e chaves identificados; renderizadores e disponibilidade não reconstruídos.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleSettings.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/CruzadorCore/WindowsFile.swift",
+        "tools/build-d3d9-probe.py"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/GraphicsTests.swift",
+          "name": "testGraphicsRequestsPersistAndShortcutOverrideRemainsExplicit",
+          "scope": "Persistência e precedência do ambiente."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/GraphicsTests.swift",
+          "name": "testCleanupDoesNotDependOnBrokenGraphicsConfiguration",
+          "scope": "Limpeza independente de componentes gráficos válidos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/GraphicsTests.swift",
+          "name": "testRealRuntimeGraphicsRequestsAndFrameProbe",
+          "scope": "Opt-in no M1 Pro: D3D9 cria dispositivo, limpa/apresenta frame, retorna zero e marcador em OpenGL/Vulkan."
+        }
+      ],
+      "remaining_gap": "Caso D3D9 básico próprio; correção de pixels, shaders e jogos não comprovada. DXVK e D3DMetal não integrados. Falhas do DxDiag e duas bibliotecas MoltenVK distintas permanecem registradas.",
       "independent_equivalence_established": false
     },
     {
