@@ -26,6 +26,9 @@ struct ContentView: View {
                                 Text(bottle.apps.count == 1 ? "1 aplicativo" : "\(bottle.apps.count) aplicativos").font(.caption).foregroundStyle(.secondary)
                             }
                         }.padding(.vertical, 7).tag(bottle.id)
+                            .contextMenu {
+                                Button("Excluir bottle…", role: .destructive) { model.removeBottle(bottle) }.disabled(!model.canStart || !model.loaded)
+                            }
                             .accessibilityElement(children: .combine)
                             .accessibilityLabel("\(bottle.name), \(bottle.apps.count) aplicativos, \(stateLabel(bottle))")
                             .accessibilityIdentifier("bottle-\(bottle.id)")
