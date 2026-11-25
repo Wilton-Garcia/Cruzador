@@ -237,6 +237,7 @@ struct ContentView: View {
                     tool("Configurações Wine", "slider.horizontal.3", .wineConfiguration, bottle)
                     Button("Shell no Terminal") { model.openBottleShell(bottle) }.help("Abre um shell independente com o motor e o ambiente desta bottle. Feche seus programas antes da manutenção.")
                     tool("Gerenciador de tarefas", "list.bullet.rectangle.portrait", .taskManager, bottle)
+                    tool("Opções de Internet", "network", .internetOptions, bottle)
                     tool("Controles de jogos", "gamecontroller", .gameControllers, bottle)
                     tool("Registro", "list.bullet.rectangle", .registryEditor, bottle)
                     tool("Desinstalar programas", "minus.circle", .uninstaller, bottle)

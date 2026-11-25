@@ -37,3 +37,16 @@ extension BottleMaintenanceTests {
         XCTAssertThrowsError(try EngineCommands.make(.tool(.taskManager), bottle: other, store: store))
     }
 }
+
+extension BottleMaintenanceTests {
+    func testInternetOptionsUsesItsBottleControlAppletWithoutHostConfigurationCommands() throws {
+        let (maintenance, bottle) = try fixture(), store = maintenance.store
+        let system = try toolComponents(["control.exe", "inetcpl.cpl"], bottle: bottle, store: store)
+        let plan = try EngineCommands.make(.tool(.internetOptions), bottle: bottle, store: store)
+        XCTAssertEqual(plan.primary.executable.path, bottle.engine.path)
+        XCTAssertEqual(plan.primary.arguments, [system.appendingPathComponent("control.exe").path, "inetcpl.cpl"])
+        XCTAssertEqual(plan.primary.environment["WINEPREFIX"], store.prefix(for: bottle).path)
+        try FileManager.default.removeItem(at: system.appendingPathComponent("inetcpl.cpl"))
+        XCTAssertThrowsError(try EngineCommands.make(.tool(.internetOptions), bottle: bottle, store: store))
+    }
+}

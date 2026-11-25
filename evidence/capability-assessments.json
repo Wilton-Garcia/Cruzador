@@ -978,10 +978,20 @@
         "ui:bottle-detail:16"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleTool.swift",
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleToolTests.swift",
+          "name": "testInternetOptionsUsesItsBottleControlAppletWithoutHostConfigurationCommands",
+          "scope": "Seleciona control/inetcpl da bottle, sem comandos de rede do macOS; falta do applet é rejeitada."
+        }
+      ],
+      "remaining_gap": "Painel inetcpl integrado e processo real observado; conteúdo da janela e todas as configurações de rede não exercitados.",
       "independent_equivalence_established": false
     },
     {

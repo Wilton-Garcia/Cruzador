@@ -1,0 +1,92 @@
+{
+  "formatVersion": 1,
+  "plan_path": "/Users/wiltongarcia/Developer/Cruzador/.local/internet-plan.json",
+  "plan_sha256": "3dc802baa88b8d6f8fe2c00e7fe5c01e6d5cde6140184f9487dbc6d857a96373",
+  "plan": {
+    "cancellation": [
+      {
+        "arguments": [
+          "-k"
+        ],
+        "environment": {
+          "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB",
+          "WINESERVER": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+        },
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+      },
+      {
+        "arguments": [
+          "-w"
+        ],
+        "environment": {
+          "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB",
+          "WINESERVER": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+        },
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+      }
+    ],
+    "finalization": [],
+    "formatVersion": 1,
+    "primary": {
+      "arguments": [
+        "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB/drive_c/windows/system32/control.exe",
+        "inetcpl.cpl"
+      ],
+      "environment": {
+        "CRUZADOR_GLOBAL": "GLOBAL_OK",
+        "CRUZADOR_VALUE": "GLOBAL_VALUE",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB",
+        "WINESERVER": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+      },
+      "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wine",
+      "workingDirectory": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB/drive_c"
+    },
+    "root": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541",
+    "tool": "internet-options"
+  },
+  "tool_exit": null,
+  "process_running_before_cleanup": true,
+  "inspection_record": {
+    "status": "execution-inspection-only",
+    "window_contents_verified": false,
+    "reason": "The Wine CPL process is not inspectable through native CUA; no unsupported repeated inspection was attempted."
+  },
+  "deadline_reached": false,
+  "cleanup": [
+    {
+      "command": {
+        "arguments": [
+          "-k"
+        ],
+        "environment": {
+          "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB",
+          "WINESERVER": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+        },
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+      },
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "command": {
+        "arguments": [
+          "-w"
+        ],
+        "environment": {
+          "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB",
+          "WINESERVER": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+        },
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21/bin/wineserver"
+      },
+      "exit": 0,
+      "output": ""
+    }
+  ],
+  "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/internet-native.log",
+  "log_sha256": "7580339876d4d4e8a19b75b6904145acf1a21f583bbead9df651c26c7701f9a1",
+  "limitations": [
+    "Native UI observation is recorded by the operator; this supervisor does not infer window contents from exit status.",
+    "No physical game controller functionality or arbitrary applications are certified.",
+    "Cleanup concerns only the selected prefix; arbitrary detached helpers were not enumerated."
+  ]
+}
