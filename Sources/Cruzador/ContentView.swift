@@ -29,6 +29,7 @@ struct ContentView: View {
                 }.listStyle(.sidebar)
                 Button { model.showCreate = true } label: { Label("Nova bottle", systemImage: "plus").frame(maxWidth: .infinity) }
                     .controlSize(.large).disabled(model.busy || !model.loaded)
+                Button { model.importBottle() } label: { Label("Importar bottle…", systemImage: "square.and.arrow.down") }.disabled(model.busy || !model.loaded)
                 SettingsLink { Label("Configurar motor", systemImage: "gearshape") }.buttonStyle(.plain).foregroundStyle(.secondary)
             }.padding(18).navigationSplitViewColumnWidth(min: 235, ideal: 260, max: 320)
         } detail: {
@@ -83,6 +84,13 @@ struct ContentView: View {
                         }.font(.subheadline).foregroundStyle(.secondary)
                     }
                     Spacer()
+                    Menu {
+                        Button("Renomear…") { model.nameBottle(bottle, duplicate: false) }
+                        Button("Duplicar…") { model.nameBottle(bottle, duplicate: true) }
+                        Button("Exportar…") { model.exportBottle(bottle) }
+                        Divider()
+                        Button("Remover da biblioteca…", role: .destructive) { model.removeBottle(bottle) }
+                    } label: { Label("Gerenciar", systemImage: "ellipsis.circle") }.disabled(model.busy)
                     Image(systemName: "shippingbox.fill").font(.system(size: 54)).foregroundStyle(.teal.gradient).padding(10)
                 }
                 HStack(spacing: 12) {

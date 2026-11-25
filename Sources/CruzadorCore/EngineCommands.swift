@@ -14,7 +14,7 @@ public struct EnginePlan: Sendable {
     public let finalization: [Command]
     public init(primary: Command, finalization: [Command] = []) { self.primary = primary; self.finalization = finalization }
 }
-public enum BottleAction: Sendable { case initialize, repair, run(String, [String]), install(String), tool(String) }
+public enum BottleAction: Sendable { case initialize, repair, waitForIdle, run(String, [String]), install(String), tool(String) }
 public enum EngineCommands {
     public static func make(_ action: BottleAction, bottle: Bottle, store: LibraryStore) throws -> EnginePlan {
         guard bottle.engine.path.hasPrefix("/") else { throw CruzadorError.invalid("Selecione um caminho absoluto para o motor.") }
@@ -41,6 +41,8 @@ public enum EngineCommands {
                     executable = base.appendingPathComponent("bin/cxbottle")
                     arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--create", "--template", "win10_64", "--description", bottle.name]
                 }
+            case .waitForIdle:
+                throw CruzadorError.invalid("A manutenção usa o motor Wine independente. O adaptador CrossOver é reservado para comparação e execução legada.")
             case .repair:
                 executable = base.appendingPathComponent("bin/wine")
                 arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait", "--", "wineboot", "--update"]
@@ -57,11 +59,15 @@ public enum EngineCommands {
                 executable = engineURL
             }
             switch action {
-            case .initialize, .repair:
-                arguments = ["wineboot", modeFlag(action)]
+            case .initialize, .repair, .waitForIdle:
                 let server = environment["WINESERVER"].map { URL(fileURLWithPath: $0) } ?? engineURL.deletingLastPathComponent().appendingPathComponent("wineserver")
                 guard FileManager.default.isExecutableFile(atPath: server.path) else { throw CruzadorError.invalid("wineserver não está disponível ao lado do motor selecionado: \(server.path)") }
-                finalization = [Command(executable: server, arguments: ["-w"], environment: environment)]
+                if case .waitForIdle = action {
+                    executable = server; arguments = ["-w"]
+                } else {
+                    arguments = ["wineboot", modeFlag(action)]
+                    finalization = [Command(executable: server, arguments: ["-w"], environment: environment)]
+                }
             default: arguments = try windowsArguments(action)
             }
         }
@@ -85,7 +91,7 @@ public enum EngineCommands {
         case .tool(let name):
             guard ["winecfg", "regedit", "uninstaller", "cmd"].contains(name) else { throw CruzadorError.invalid("Ferramenta desconhecida.") }
             return [name]
-        case .initialize, .repair: return []
+        case .initialize, .repair, .waitForIdle: return []
         }
     }
     private static func validateProgram(_ path: String) throws {

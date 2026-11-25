@@ -138,17 +138,23 @@
       "reverse_knowledge": "native-decompilation",
       "prototype_status": "partial",
       "source_files": [
-        "Sources/Cruzador/AppModel.swift",
+        "Sources/CruzadorCore/BottleLifecycle.swift",
+        "Sources/CruzadorCore/LibraryStore.swift",
         "Sources/CruzadorCore/EngineCommands.swift"
       ],
       "tests": [
         {
-          "file": "Tests/CruzadorCoreTests/NativeSmokeTests.swift",
-          "name": "testInstalledCrossOverCreatesBottleAndRunsWindowsCommand",
-          "scope": "Criação real via CrossOver instalado"
+          "file": "Tests/CruzadorCoreTests/BottleLifecycleTests.swift",
+          "name": "testCreatePrepareRepairAndFailedRetryKeepIdentityAndFiles",
+          "scope": "Fixture de falha e retomada preservando identidade e arquivos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Cenário opt-in Wine real; criação/reparo e cmd.exe de 32/64 bits."
         }
       ],
-      "remaining_gap": "Criação encaminhada ao CrossOver/Wine externo; não há motor distribuído próprio.",
+      "remaining_gap": "Inicialização e atualização Wine próprias; todos os templates, versões Windows e cenários de reparo do original ainda não comprovados.",
       "independent_equivalence_established": false
     },
     {
@@ -179,10 +185,25 @@
         "ui:bottle-menu:1"
       ],
       "reverse_knowledge": "native-decompilation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleMaintenance.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testRenameDuplicateExportImportAndRecoverableRemoval",
+          "scope": "Fixture de transferência própria: identidade, arquivos, links, atalhos e recuperação; não comprova equivalência de formatos CrossOver."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testServerFailurePreventsCopyAndRemoval",
+          "scope": "Falha do servidor bloqueia mutação."
+        }
+      ],
+      "remaining_gap": "Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado.",
       "independent_equivalence_established": false
     },
     {
@@ -192,10 +213,25 @@
         "ui:bottle-menu:2"
       ],
       "reverse_knowledge": "native-and-python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleMaintenance.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testRenameDuplicateExportImportAndRecoverableRemoval",
+          "scope": "Fixture de transferência própria: identidade, arquivos, links, atalhos e recuperação; não comprova equivalência de formatos CrossOver."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testServerFailurePreventsCopyAndRemoval",
+          "scope": "Falha do servidor bloqueia mutação."
+        }
+      ],
+      "remaining_gap": "Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado.",
       "independent_equivalence_established": false
     },
     {
@@ -206,10 +242,25 @@
         "ui:bottle-menu:3"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Sem remoção de bottles no Cruzador; preservar estado ativo e recuperação.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleMaintenance.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testRenameDuplicateExportImportAndRecoverableRemoval",
+          "scope": "Fixture de transferência própria: identidade, arquivos, links, atalhos e recuperação; não comprova equivalência de formatos CrossOver."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testServerFailurePreventsCopyAndRemoval",
+          "scope": "Falha do servidor bloqueia mutação."
+        }
+      ],
+      "remaining_gap": "Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado.",
       "independent_equivalence_established": false
     },
     {
@@ -219,10 +270,25 @@
         "ui:bottle-menu:5"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleMaintenance.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testRenameDuplicateExportImportAndRecoverableRemoval",
+          "scope": "Fixture de transferência própria: identidade, arquivos, links, atalhos e recuperação; não comprova equivalência de formatos CrossOver."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testServerFailurePreventsCopyAndRemoval",
+          "scope": "Falha do servidor bloqueia mutação."
+        }
+      ],
+      "remaining_gap": "Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado.",
       "independent_equivalence_established": false
     },
     {
@@ -232,10 +298,25 @@
         "ui:bottle-menu:6"
       ],
       "reverse_knowledge": "native-and-python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleMaintenance.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testRenameDuplicateExportImportAndRecoverableRemoval",
+          "scope": "Fixture de transferência própria: identidade, arquivos, links, atalhos e recuperação; não comprova equivalência de formatos CrossOver."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testServerFailurePreventsCopyAndRemoval",
+          "scope": "Falha do servidor bloqueia mutação."
+        }
+      ],
+      "remaining_gap": "Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado.",
       "independent_equivalence_established": false
     },
     {
@@ -436,10 +517,25 @@
         "ui:configure-menu:2"
       ],
       "reverse_knowledge": "archive-and-ui-declaration",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleLifecycle.swift",
+        "Sources/CruzadorCore/LibraryStore.swift",
+        "Sources/CruzadorCore/EngineCommands.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleLifecycleTests.swift",
+          "name": "testCreatePrepareRepairAndFailedRetryKeepIdentityAndFiles",
+          "scope": "Fixture de falha e retomada preservando identidade e arquivos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Cenário opt-in Wine real; criação/reparo e cmd.exe de 32/64 bits."
+        }
+      ],
+      "remaining_gap": "Inicialização e atualização Wine próprias; todos os templates, versões Windows e cenários de reparo do original ainda não comprovados.",
       "independent_equivalence_established": false
     },
     {
@@ -2548,14 +2644,19 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "f93f2abcefacdec12111427496a6fe9b2c8a2f8fbe4f01ec1d7fa4c3f1b127df",
-    "Sources/Cruzador/ContentView.swift": "73961ddbf269c7854d7e72024e38338b915a03520bc23acdbbde70c326714a5d",
+    "Sources/Cruzador/AppModel.swift": "a0a32fb6e8ca7bd896a5a15179f1f2629df32b7413b3e2375e25650e9c61c15a",
+    "Sources/Cruzador/ContentView.swift": "c414eb4ff022a49a9b3e94b76762963104eaf744f834ad45cf2fdf4545089898",
     "Sources/Cruzador/CruzadorApp.swift": "8491e480c40115839f1eb76eb79fda94bcc01df79eb9f50daa7152f1fccc4943",
-    "Sources/CruzadorCore/EngineCommands.swift": "ad48a01bb6bfa61e26f2beb729c70dd6916993cafce028d179786c3fadd2db32",
+    "Sources/CruzadorCore/BottleLifecycle.swift": "aa71477d0172bc01d80769c7d9e602babf2979bcd76854f8d7f776af40f5bafe",
+    "Sources/CruzadorCore/BottleMaintenance.swift": "c2dd75771711169491348c3e8ef103720ceb19a31ad09260603453781844e7f6",
+    "Sources/CruzadorCore/EngineCommands.swift": "d2c16be4b16e90cc4db95a55b53fba939625cee1afaf19dbe70a6122b59fabf1",
     "Sources/CruzadorCore/LibraryStore.swift": "64f0afaeb9a19753a1e779050e2a8f9767781c1afcb0bc661f479ff86d59dbb2",
     "Sources/CruzadorCore/WineRuntime.swift": "26f30b33750afea74f7312f79710ac04b5cb9f327201210f09608fc0d6d2f3f0",
+    "Tests/CruzadorCoreTests/BottleLifecycleTests.swift": "5435298b8b533ee151817535977381c5ccb08db4455d86840e43fbbfdb0e097d",
+    "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "fdaa2e355cb24d7643b5b7302ba96302337c9171c9b0d4c4337b3446c6889eae",
     "Tests/CruzadorCoreTests/CoreTests.swift": "a9bbe5447dbd4c96559f6e87791094acf4d0a9744eefbdd280a2796669e95d2c",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "088e11f4065ae970b063a12d29fdeb4f915d6422dff9c091c1df0a86236f1b46",
+    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "11b761cbfe83423d2f8e6e5a23cb95817a7326affbb74b7366a0a99b8a89590e",
     "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "1c85661de661d1262553d1f7edbcf52d2820c10f0504718add903d9039afa376"
   },
   "counts": {
@@ -2564,8 +2665,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 12,
-      "missing": 28
+      "partial": 18,
+      "missing": 22
     }
   },
   "limitations": [

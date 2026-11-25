@@ -1,6 +1,6 @@
 # Cobertura de reconstrução
 
-Matriz de evidência, implementação e validação do protótipo atual. `partial` significa implementação parcial no código, normalmente dependente de motor externo. `missing` indica ausência de implementação mapeada. Nenhum grupo tem equivalência independente estabelecida.
+Matriz de evidência, implementação e validação do protótipo atual. `partial` significa implementação parcial no código, sem equivalência integral estabelecida. `missing` indica ausência de implementação mapeada. Nenhum grupo tem equivalência independente estabelecida.
 
 Há 40 grupos revisados e 330 itens de catálogo. 107 itens têm vínculo com um grupo; os outros 223 permanecem explicitamente não avaliados. Controles repetidos e ações de framework não são funcionalidades independentes.
 
@@ -13,13 +13,13 @@ Há 40 grupos revisados e 330 itens de catálogo. 107 itens têm vínculo com um
 | Progresso e cancelamento da instalação | runtime-observed-cancellation | missing | Sem teste específico referenciado | Cancelamento foi observado no original; o Cruzador ainda não cancela subprocessos. |
 | Origem local e download de instaladores | ui-observation | partial | Sem teste específico referenciado | Seleção local existe no protótipo; downloads geridos e verificação não reconstruídos. |
 | Receitas e dependências | python-metadata | missing | Sem teste específico referenciado | Metadados InstallTask examinados; instruções e semântica de resolução pendentes. |
-| Criação de bottles | native-decompilation | partial | Criação real via CrossOver instalado | Criação encaminhada ao CrossOver/Wine externo; não há motor distribuído próprio. |
+| Criação de bottles | native-decompilation | partial | Fixture de falha e retomada preservando identidade e arquivos.; Cenário opt-in Wine real; criação/reparo e cmd.exe de 32/64 bits. | Inicialização e atualização Wine próprias; todos os templates, versões Windows e cenários de reparo do original ainda não comprovados. |
 | Templates e versões Windows | native-and-python-metadata | partial | Sem teste específico referenciado | Protótipo CrossOver fixa win10_64; seleção de outros templates e arquiteturas ausente. |
-| Duplicação de bottles | native-decompilation | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |
-| Renomeação de bottles | native-and-python-metadata | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |
-| Remoção de bottles | python-metadata | missing | Sem teste específico referenciado | Sem remoção de bottles no Cruzador; preservar estado ativo e recuperação. |
-| Exportação de bottles | python-metadata | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |
-| Importação de bottles | native-and-python-metadata | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |
+| Duplicação de bottles | native-decompilation | partial | Fixture de transferência própria: identidade, arquivos, links, atalhos e recuperação; não comprova equivalência de formatos CrossOver.; Falha do servidor bloqueia mutação. | Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado. |
+| Renomeação de bottles | native-and-python-metadata | partial | Fixture de transferência própria: identidade, arquivos, links, atalhos e recuperação; não comprova equivalência de formatos CrossOver.; Falha do servidor bloqueia mutação. | Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado. |
+| Remoção de bottles | python-metadata | partial | Fixture de transferência própria: identidade, arquivos, links, atalhos e recuperação; não comprova equivalência de formatos CrossOver.; Falha do servidor bloqueia mutação. | Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado. |
+| Exportação de bottles | python-metadata | partial | Fixture de transferência própria: identidade, arquivos, links, atalhos e recuperação; não comprova equivalência de formatos CrossOver.; Falha do servidor bloqueia mutação. | Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado. |
+| Importação de bottles | native-and-python-metadata | partial | Fixture de transferência própria: identidade, arquivos, links, atalhos e recuperação; não comprova equivalência de formatos CrossOver.; Falha do servidor bloqueia mutação. | Formato próprio de pasta .cruzadorbottle; formatos de arquivo CrossOver e equivalência integral não estabelecidos. Importação exige nova preparação com o motor selecionado. |
 | Publicação e bottles gerenciadas | python-metadata | missing | Sem teste específico referenciado | Controles vistos; atualização estava desabilitada. Sem implementação própria. |
 | Bottle padrão | python-metadata | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |
 | Local de armazenamento e integração de launchers | ui-observation | partial | Armazenamento próprio e backup de metadados | Armazenamento próprio fixo; mudança de local, migração e exportação de launchers não implementadas. |
@@ -30,7 +30,7 @@ Há 40 grupos revisados e 330 itens de catálogo. 107 itens têm vínculo com um
 | Shell da bottle | native-decompilation | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |
 | Encerramento e saída forçada | python-metadata | missing | Sem teste específico referenciado | Sem supervisão/cancelamento completo no produto; smoke test apenas aguarda wineserver próprio. |
 | Reinicialização simulada | python-metadata | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |
-| Reparo de bottles e menus | archive-and-ui-declaration | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |
+| Reparo de bottles e menus | archive-and-ui-declaration | partial | Fixture de falha e retomada preservando identidade e arquivos.; Cenário opt-in Wine real; criação/reparo e cmd.exe de 32/64 bits. | Inicialização e atualização Wine próprias; todos os templates, versões Windows e cenários de reparo do original ainda não comprovados. |
 | Backends gráficos | native-and-python-metadata | missing | Sem teste específico referenciado | Seletores e chaves identificados; renderizadores e disponibilidade não reconstruídos. |
 | DLSS | python-metadata | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |
 | MSync e reinício necessário | native-and-python-metadata | missing | Sem teste específico referenciado | Confirmação e metadados conhecidos; implementação e ciclo de reinício não reconstruídos. |
@@ -47,7 +47,7 @@ Há 40 grupos revisados e 330 itens de catálogo. 107 itens têm vínculo com um
 | Sobre e serviços macOS | ui-observation | missing | Sem teste específico referenciado | Itens padrão de macOS não estabelecem paridade de produto. |
 | Ativação da edição original | ui-observation | missing | Sem teste específico referenciado | Observado apenas como controle; nenhuma ativação ou alteração de licença foi executada. Modelo de distribuição próprio ainda não definido. |
 
-Os testes referenciados são os já existentes. A execução nativa registrada cobriu criação e `cmd.exe` via CrossOver instalado, não independência, instalação arbitrária ou todos os controles do Wine. A captura de interface do original comprova presença e estados observados, não sucesso de todas as operações.
+Os testes referenciados são os já existentes. Há cenários registrados com o CrossOver original e com o pacote Wine independente, incluindo Intel e Apple Silicon; veja os relatórios de runtime. Esses cenários não comprovam instalação arbitrária ou todos os controles do Wine. A captura de interface do original comprova presença e estados observados, não sucesso de todas as operações.
 
 [Avaliações revisadas](../evidence/capability-assessments.json) · [Matriz estruturada](../evidence/coverage-matrix.json).
 

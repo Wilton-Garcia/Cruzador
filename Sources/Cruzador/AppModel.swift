@@ -129,4 +129,62 @@ final class AppModel: ObservableObject {
             next.bottles[index].apps.removeAll { $0.id == app.id }; try persist(next)
         } catch { self.error = error.localizedDescription }
     }
+    private func maintenance(_ title: String, operation: @escaping @Sendable (BottleMaintenance) async throws -> UUID?) {
+        guard loaded, !busy else { return }
+        busy = true; status = title
+        let service = BottleMaintenance(store: store, runner: runner)
+        Task {
+            defer { busy = false }
+            do {
+                let selectedID = try await operation(service)
+                library = try store.load()
+                selection = selectedID ?? library.bottles.first?.id
+                status = "Operação concluída"
+            } catch {
+                status = "Operação não concluída"
+                self.error = error.localizedDescription
+            }
+        }
+    }
+    func nameBottle(_ bottle: Bottle, duplicate: Bool) {
+        guard !busy else { return }
+        let alert = NSAlert(); alert.messageText = duplicate ? "Duplicar bottle" : "Renomear bottle"
+        let field = NSTextField(string: duplicate ? bottle.name + " — cópia" : bottle.name)
+        field.frame = NSRect(x: 0, y: 0, width: 320, height: 24); alert.accessoryView = field
+        alert.addButton(withTitle: duplicate ? "Duplicar" : "Renomear"); alert.addButton(withTitle: "Cancelar")
+        guard alert.runModal() == .alertFirstButtonReturn else { return }
+        let name = field.stringValue
+        maintenance(duplicate ? "Copiando bottle…" : "Renomeando bottle…") { service in
+            if duplicate { return try await service.duplicate(id: bottle.id, name: name).id }
+            try service.rename(id: bottle.id, name: name); return bottle.id
+        }
+    }
+    func exportBottle(_ bottle: Bottle) {
+        guard !busy else { return }
+        let panel = NSSavePanel(); panel.nameFieldStringValue = bottle.name + ".cruzadorbottle"
+        panel.message = "Escolha um novo pacote. Feche os programas Windows antes de exportar."
+        guard panel.runModal() == .OK, let destination = panel.url else { return }
+        maintenance("Exportando bottle…") { service in
+            try await service.export(id: bottle.id, destination: destination); return bottle.id
+        }
+    }
+    func importBottle() {
+        guard !busy else { return }
+        if let enginePreferenceError { error = enginePreferenceError; return }
+        let panel = NSOpenPanel(); panel.canChooseFiles = false; panel.canChooseDirectories = true
+        panel.treatsFilePackagesAsDirectories = true
+        panel.message = "Selecione a pasta .cruzadorbottle que contém bottle.json e Prefix. Ela será copiada e usará o motor selecionado nas configurações."
+        guard panel.runModal() == .OK, let source = panel.url else { return }
+        let engine = Engine(kind: engineKind, path: enginePath)
+        maintenance("Importando bottle…") { service in try service.importBottle(from: source, engine: engine).id }
+    }
+    func removeBottle(_ bottle: Bottle) {
+        guard !busy else { return }
+        let alert = NSAlert(); alert.messageText = "Remover \(bottle.name) da biblioteca?"
+        alert.informativeText = "Feche os programas Windows. Os arquivos serão movidos para a pasta Removed da biblioteca e poderão ser importados novamente."
+        alert.addButton(withTitle: "Remover e preservar cópia"); alert.addButton(withTitle: "Cancelar")
+        guard alert.runModal() == .alertFirstButtonReturn else { return }
+        maintenance("Removendo bottle…") { service in _ = try await service.remove(id: bottle.id); return nil }
+    }
+
 }

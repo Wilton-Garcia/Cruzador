@@ -35,13 +35,13 @@ def build():
             'limitations':assessment['limitations']+['References and hashes establish provenance, not semantic correctness.','No behavioral-equivalence percentage is computed from control counts.']}
 
 def markdown(matrix):
-    counts=matrix['counts']; lines=['# Cobertura de reconstrução','','Matriz de evidência, implementação e validação do protótipo atual. `partial` significa implementação parcial no código, normalmente dependente de motor externo. `missing` indica ausência de implementação mapeada. Nenhum grupo tem equivalência independente estabelecida.','',
+    counts=matrix['counts']; lines=['# Cobertura de reconstrução','','Matriz de evidência, implementação e validação do protótipo atual. `partial` significa implementação parcial no código, sem equivalência integral estabelecida. `missing` indica ausência de implementação mapeada. Nenhum grupo tem equivalência independente estabelecida.','',
         f"Há {counts['capabilities']} grupos revisados e {counts['catalog_items']} itens de catálogo. {counts['mapped_items']} itens têm vínculo com um grupo; os outros {counts['unassessed_items']} permanecem explicitamente não avaliados. Controles repetidos e ações de framework não são funcionalidades independentes.",'',
         '| Capacidade | Conhecimento do original | Protótipo | Validação referenciada | Diferença restante |','| --- | --- | --- | --- | --- |']
     for c in matrix['capabilities']:
         validation='; '.join(t['scope'] for t in c['tests']) or 'Sem teste específico referenciado'
         lines.append('| '+' | '.join([c['title'],c['reverse_knowledge'],c['prototype_status'],validation,c['remaining_gap']]).replace('\n',' ')+' |')
-    lines += ['', 'Os testes referenciados são os já existentes. A execução nativa registrada cobriu criação e `cmd.exe` via CrossOver instalado, não independência, instalação arbitrária ou todos os controles do Wine. A captura de interface do original comprova presença e estados observados, não sucesso de todas as operações.','',
+    lines += ['', 'Os testes referenciados são os já existentes. Há cenários registrados com o CrossOver original e com o pacote Wine independente, incluindo Intel e Apple Silicon; veja os relatórios de runtime. Esses cenários não comprovam instalação arbitrária ou todos os controles do Wine. A captura de interface do original comprova presença e estados observados, não sucesso de todas as operações.','',
               '[Avaliações revisadas](../evidence/capability-assessments.json) · [Matriz estruturada](../evidence/coverage-matrix.json).','',
               'Verifique a projeção com `python3 scripts/build-coverage-matrix.py --check`. Alterações nos arquivos referenciados mudam os hashes; a avaliação semântica deve ser revista quando o comportamento mudar.']
     return '\n'.join(lines)+'\n'
