@@ -84,6 +84,8 @@ struct ContentView: View {
     }
     @ViewBuilder private func presentedView(_ route: AppPresentation) -> some View {
         switch route {
+        case .compatibility:
+            if let bottle = model.selected { CompatibilityView(model: model, bottle: bottle) } else { unavailablePresentation(route) }
         case .create: CreateBottleView(model: model)
         case .register: RegisterAppView(model: model, app: model.editingApp)
         case .diagnostics: DiagnosticsView(model: model)
@@ -122,6 +124,7 @@ struct ContentView: View {
                     }
                     Spacer()
                     Menu {
+                        Button("Compatibilidade…") { model.presentation = .compatibility }
                         Button("Opções da bottle…") { model.presentation = .bottleSettings }
                         Button(model.library.preferences.defaultBottleID == bottle.id ? "Bottle padrão" : "Usar como padrão") { model.makeDefault(bottle) }.disabled(model.library.preferences.defaultBottleID == bottle.id)
                         Button("Renomear…") { model.nameBottle(bottle, duplicate: false) }

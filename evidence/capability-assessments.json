@@ -88,10 +88,24 @@
         "ui:online-preferences:1"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Sem matriz de compatibilidade publicada e sem envio de avaliações.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/Compatibility.swift",
+        "Sources/Cruzador/CompatibilityView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CompatibilityTests.swift",
+          "name": "testManualReportIdentifiesExecutableAndExportsAndArchivesWithoutDeletingHistory",
+          "scope": "Registra avaliação manual com hash, exporta matriz e arquiva sem apagar histórico."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/CompatibilityTests.swift",
+          "name": "testMalformedReportsAreNotPresentedAsNoRatings",
+          "scope": "Dados inválidos são preservados e reportados como erro."
+        }
+      ],
+      "remaining_gap": "Matriz própria local e exportação JSON; catálogo/avaliações online do original e equivalência integral não estabelecidos.",
       "independent_equivalence_established": false
     },
     {

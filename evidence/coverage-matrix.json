@@ -87,10 +87,24 @@
         "ui:online-preferences:1"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Sem matriz de compatibilidade publicada e sem envio de avaliações.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/Compatibility.swift",
+        "Sources/Cruzador/CompatibilityView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/CompatibilityTests.swift",
+          "name": "testManualReportIdentifiesExecutableAndExportsAndArchivesWithoutDeletingHistory",
+          "scope": "Registra avaliação manual com hash, exporta matriz e arquiva sem apagar histórico."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/CompatibilityTests.swift",
+          "name": "testMalformedReportsAreNotPresentedAsNoRatings",
+          "scope": "Dados inválidos são preservados e reportados como erro."
+        }
+      ],
+      "remaining_gap": "Matriz própria local e exportação JSON; catálogo/avaliações online do original e equivalência integral não estabelecidos.",
       "independent_equivalence_established": false
     },
     {
@@ -2918,8 +2932,9 @@
   ],
   "source_sha256": {
     "Sources/Cruzador/AppModel.swift": "9ac01b63b299476dc304673b5ea74163094c5c1e58d52e0e2a7a08d769a689d8",
-    "Sources/Cruzador/AppPresentation.swift": "118e7545fc824f5884d16cb9ab33a53225a3b2ca8231f0ecedf379b5f2809f9c",
-    "Sources/Cruzador/ContentView.swift": "ba2b68183542dbe15d85709bf7937d64a3fa0f2eba9ac12514888c0f467e2e87",
+    "Sources/Cruzador/AppPresentation.swift": "e0daedada9c10260ebb6b4a8d8f6c625066d652e4330d59e7a020409ddc4dca7",
+    "Sources/Cruzador/CompatibilityView.swift": "b423f5014ac05cd2a3d3237cf430db248de34c6de30d5989a8cfa5541732aac4",
+    "Sources/Cruzador/ContentView.swift": "d7c10923aeedf8b62336923a36c13009b1d5bee9eb36ee60f3a6d5b625311ac3",
     "Sources/Cruzador/CruzadorApp.swift": "431ede55976cca26a32067c1d7a2dfa8c480919639c25b7beab3895988730c80",
     "Sources/Cruzador/DiagnosticsView.swift": "d297e744b5b841a06322193fd8acd1f4fedbef742e7378db52b14d4089590378",
     "Sources/Cruzador/DocumentHistory.swift": "2e5fc0229ff9ae0f81bd655f17d21d0e35122b1314c09e91e271988757079ee3",
@@ -2929,6 +2944,7 @@
     "Sources/CruzadorCore/BottleOperationRecovery.swift": "d9640346576c820c0bc5c9a4b09330a5ee730190f7d47aaae921c758ba85d681",
     "Sources/CruzadorCore/BottleSettings.swift": "157f59d090d189d0d04cbbc0110fca90ad339ef4478072489079969bc634cd6d",
     "Sources/CruzadorCore/CommandRunner.swift": "c62b19e9cd8396db312126833bb0c94dcbfbb9aac47a0a6a70843c3735eaf376",
+    "Sources/CruzadorCore/Compatibility.swift": "e81de06e4b10adeae15defd6294226ef46f74af5094388f5f0ac2c9f93e4c3ab",
     "Sources/CruzadorCore/Diagnostics.swift": "e944c39b8ba277791cb36df6135c483eef49d744b0fa587956613920e187a3ba",
     "Sources/CruzadorCore/EngineCommands.swift": "40db75e9c066b569684ac17274c710e04c44655fa04818d35854cf9bd851cb01",
     "Sources/CruzadorCore/ExternalOpening.swift": "d5e911d9485e8bc6f16813dbfe2e7c2ea9cf7f73f4e374b42981dfddc4a8e701",
@@ -2946,6 +2962,7 @@
     "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "ba2a5519816b81ebbb6c920530053a1b45a13181de5d5fc2a3934875c2335821",
     "Tests/CruzadorCoreTests/BottleRecoveryTests.swift": "32e22604e5f9b03e4bb43da6931191f6254eb5257699af1597498ac305fded24",
     "Tests/CruzadorCoreTests/CommandRunnerTests.swift": "20473c4a7489ce15107d0744fc7d868edc396fc50573f497f78a78521bb0d889",
+    "Tests/CruzadorCoreTests/CompatibilityTests.swift": "5241c8b2b283d6e8e5701ecd9dac8963ec200b88b670d54c785b5c1204f15c41",
     "Tests/CruzadorCoreTests/CoreTests.swift": "3b6378c2a79b38d3c2260c59acce4fad78146187a9e3c90078f4ed07f1e82e8a",
     "Tests/CruzadorCoreTests/DiagnosticsTests.swift": "02708d44f6190b219298c770dd43c3bf65226d1942a14cc64c10efd5485f825b",
     "Tests/CruzadorCoreTests/DiscoveryTests.swift": "c1eefbaf48c39a90f79ff945d2d8546771cb4d955f6d58eadb6ee8ac261306e4",
@@ -2963,7 +2980,7 @@
     "Tests/CruzadorPresentationTests/PresentationTests.swift": "42da09f80743b7a97326d6dffd4772d0f63a06a4d04e9ef5c0dc789ad69ae775",
     "config/recipes.json": "d61a4fe567b4196894446bebf77bdc05aa6d74c7dd911d654380cc8a928876ee",
     "config/wine-msync-runtime-lock.json": "cbaae271f4a0fbaea717e13bf49c41a6840e839829e9c20a627ace5f1444c992",
-    "scripts/build-app.sh": "1bdce58b0d2fa19e5917750a0526926fe07ad4a8a6ff76d9f0576973df84398f",
+    "scripts/build-app.sh": "0218bddcf246866dbcdd77fd0eba9fc9945c157e7874327fbb8855a43c4e4efb",
     "scripts/package-release.py": "f26a6b2decea157580a13ad7da592914c402166bb7344fe6bab65efdd51efabb",
     "tools/build-d3d9-probe.py": "2dba657bc29498e1a1eb5cde39b867e09208d8984b12e6bbaf3e01647a49429f"
   },
@@ -2973,8 +2990,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 28,
-      "missing": 12
+      "partial": 29,
+      "missing": 11
     }
   },
   "limitations": [
