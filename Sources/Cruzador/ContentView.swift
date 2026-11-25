@@ -156,7 +156,7 @@ struct ContentView: View {
                     Button { model.beginRegister() } label: { Label("Adicionar atalho", systemImage: "plus") }.disabled(!model.canStart || !model.store.isReady(bottle))
                 }
                 if !bottle.apps.isEmpty && model.filteredApps(in: bottle).isEmpty {
-                    ContentUnavailableView.search(text: model.search)
+                    ContentUnavailableView("Nenhum aplicativo encontrado", systemImage: "magnifyingglass", description: Text("Revise a busca por “\(model.search)” ou mostre todos os aplicativos."))
                     Button("Mostrar todos os aplicativos") { model.search = "" }
                 } else if bottle.apps.isEmpty {
                     VStack(spacing: 12) {

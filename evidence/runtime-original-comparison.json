@@ -1,0 +1,430 @@
+{
+  "formatVersion": 1,
+  "workspace": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478",
+  "prefix": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+  "original_version": "26.3",
+  "original_executable": "/Applications/CrossOver.app/Contents/MacOS/CrossOver",
+  "original_sha256": "1d245f2f9f52bd56a120616fede8b1eb9cca9fa228319de04a2cbeabd8de7174",
+  "independent_report_path": "/Users/wiltongarcia/Developer/Cruzador/.local/packaged-runtime-smoke.json",
+  "independent_report_sha256": "2633ec30d6da1e171a3d3d0cd357720f56ec21f05781e36707b1ae555dbb3810",
+  "msi_path": "/Users/wiltongarcia/Developer/Cruzador/.local/downloads/7z2606-x64.msi",
+  "msi_sha256": "6dc822569e777d9a3ecd5ffcbc22b55600af87e6c5d9810a64e8566cf5a4af9f",
+  "runs": [
+    {
+      "id": "initialize",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/cxbottle",
+      "executable_sha256": "e0509d0ecad44ac59a610b337f884bd93304d3eb2e1efee3a96c7db4eeba4005",
+      "arguments": [
+        "--bottle",
+        "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "--scope",
+        "private",
+        "--create",
+        "--template",
+        "win10_64"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles",
+        "CX_BOTTLE": "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+        "CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478",
+      "exit_code": 0,
+      "timed_out": false,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/initialize.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "id": "system32",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c/drive_c/windows/system32/cmd.exe",
+        "/c",
+        "echo",
+        "CRUZADOR_WIN64_OK",
+        "%CRUZADOR_LAUNCH_VALUE%"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles",
+        "CX_BOTTLE": "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+        "CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c/drive_c",
+      "exit_code": 0,
+      "timed_out": false,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/system32.log",
+      "log_sha256": "c806eced6c7a2fd95f0d456d59562e1e79b7159e2b1c64262f8e4a0eb413d819",
+      "output_tail": "CRUZADOR_WIN64_OK OWN_ENV_OK\n",
+      "marker_observed": true,
+      "explicit_environment_observed": true
+    },
+    {
+      "id": "syswow64",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c/drive_c/windows/syswow64/cmd.exe",
+        "/c",
+        "echo",
+        "CRUZADOR_WIN32_OK",
+        "%CRUZADOR_LAUNCH_VALUE%"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles",
+        "CX_BOTTLE": "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+        "CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c/drive_c",
+      "exit_code": 0,
+      "timed_out": false,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/syswow64.log",
+      "log_sha256": "6d53d52c449ae9f42a41f0402e7489c9a953fd770147c37a78478e0434dda2d1",
+      "output_tail": "CRUZADOR_WIN32_OK OWN_ENV_OK\n",
+      "marker_observed": true,
+      "explicit_environment_observed": true
+    },
+    {
+      "id": "windows-version",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "cmd.exe",
+        "/c",
+        "ver"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles",
+        "CX_BOTTLE": "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+        "CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478",
+      "exit_code": 0,
+      "timed_out": false,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/windows-version.log",
+      "log_sha256": "07496cbba7bef678e6732b1552fda0cc41494da42c30c49400c7a502499a9b3e",
+      "output_tail": "\nMicrosoft Windows 10.0.19045\n"
+    },
+    {
+      "id": "nonzero-exit",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "cmd.exe",
+        "/c",
+        "exit",
+        "7"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles",
+        "CX_BOTTLE": "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+        "CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478",
+      "exit_code": 7,
+      "timed_out": false,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/nonzero-exit.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "id": "missing-program",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "C:\\cruzador-no-such-program.exe"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles",
+        "CX_BOTTLE": "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+        "CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478",
+      "exit_code": 1,
+      "timed_out": false,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/missing-program.log",
+      "log_sha256": "1dd70c85dfc230b4e58485c92e1208a1cc4420d1563967ae5ffc6da99b63698c",
+      "output_tail": "winewrapper.exe:error: cannot execute L\"C:\\\\cruzador-no-such-program.exe\"\n",
+      "failure_observed": true
+    },
+    {
+      "id": "positive-msi",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "msiexec",
+        "/i",
+        "/Users/wiltongarcia/Developer/Cruzador/.local/downloads/7z2606-x64.msi",
+        "/norestart",
+        "/L*V",
+        "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/7zip.msi.log",
+        "/qn"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles",
+        "CX_BOTTLE": "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+        "CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/downloads",
+      "exit_code": 0,
+      "timed_out": false,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/positive-msi.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "id": "installed-7zip",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c/drive_c/Program Files/7-Zip/7z.exe"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles",
+        "CX_BOTTLE": "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+        "CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478",
+      "exit_code": 0,
+      "timed_out": false,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/installed-7zip.log",
+      "log_sha256": "738e5e85d946cc0c510a7a79e9987d4dcf5f36a6a60c41610131a6916cfba34b",
+      "output_tail": "\n7-Zip 26.06 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-11-06\n\nUsage: 7z <command> [<switches>...] <archive_name> [<file_names>...] [@listfile]\n\n<Commands>\n  a : Add files to archive\n  b : Benchmark\n  d : Delete files from archive\n  e : Extract files from archive (without using directory names)\n  h : Calculate hash values for files\n  i : Show information about supported formats\n  l : List contents of archive\n  rn : Rename files in archive\n  t : Test integrity of archive\n  u : Update files to archive\n  x : eXtract files with full paths\n\n<Switches>\n  -- : Stop switches and @listfile parsing\n  -ai[r[-|0]][m[-|2]][w[-]]{@listfile|!wildcard} : Include archives\n  -ax[r[-|0]][m[-|2]][w[-]]{@listfile|!wildcard} : eXclude archives\n  -ao{a|s|t|u} : set Overwrite mode\n  -an : disable archive_name field\n  -bb[0-3] : set output log level\n  -bd : disable progress indicator\n  -bs{o|e|p}{0|1|2} : set output stream for output/error/progress line\n  -bt : show execution time statistics\n  -i[r[-|0]][m[-|2]][w[-]]{@listfile|!wildcard} : Include filenames\n  -m{Parameters} : set compression Method\n    -mmt[N] : set number of CPU threads\n    -mx[N] : set compression level: -mx1 (fastest) ... -mx9 (ultra)\n  -o{Directory} : set Output directory\n  -p{Password} : set Password\n  -r[-|0] : Recurse subdirectories for name search\n  -sa{a|e|s} : set Archive name mode\n  -scc{UTF-8|WIN|DOS} : set charset for console input/output\n  -scs{UTF-8|UTF-16LE|UTF-16BE|WIN|DOS|{id}} : set charset for list files\n  -scrc[CRC32|CRC64|SHA256|SHA1|XXH64|*] : set hash function for x, e, h commands\n  -sdel : delete files after compression\n  -seml[.] : send archive by email\n  -sfx[{name}] : Create SFX archive\n  -si[{name}] : read data from stdin\n  -slp : set Large Pages mode\n  -slt : show technical information for l (List) command\n  -snh : store hard links as links\n  -snl : store symbolic links as links\n  -sni : store NT security information\n  -sns[-] : store NTFS alternate streams\n  -so : write data to stdout\n  -spd : disable wildcard matching for file names\n  -spe : eliminate duplication of root folder for extract command\n  -spf[2] : use fully qualified file paths\n  -ssc[-] : set sensitive case mode\n  -sse : stop archive creating, if it can't open some input file\n  -ssp : do not change Last Access Time of source files while archiving\n  -ssw : compress shared files\n  -stl : set archive timestamp from the most recently modified file\n  -stm{HexMask} : set CPU thread affinity mask (hexadecimal number)\n  -stx{Type} : exclude archive type\n  -t{Type} : Set type of archive\n  -u[-][p#][q#][r#][x#][y#][z#][!newArchiveName] : Update options\n  -v{Size}[b|k|m|g] : Create volumes\n  -w[{path}] : assign Work directory. Empty path means a temporary directory\n  -x[r[-|0]][m[-|2]][w[-]]{@listfile|!wildcard} : eXclude filenames\n  -y : assume Yes on all queries\n",
+      "7zip_marker_observed": true
+    },
+    {
+      "id": "invalid-msi",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "msiexec",
+        "/i",
+        "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/invalid-package.msi",
+        "/norestart",
+        "/L*V",
+        "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/invalid.msi.log",
+        "/qn"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles",
+        "CX_BOTTLE": "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+        "CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478",
+      "exit_code": 91,
+      "timed_out": false,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/invalid-msi.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": "",
+      "failure_observed": true
+    },
+    {
+      "id": "after-errors",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "cmd.exe",
+        "/c",
+        "echo",
+        "CRUZADOR_RECOVERED_OK"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles",
+        "CX_BOTTLE": "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+        "CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478",
+      "exit_code": 0,
+      "timed_out": false,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/after-errors.log",
+      "log_sha256": "d1376ffd265ef20c41bf5629642ac209073cf972226e17061b0ae8d7c342c660",
+      "output_tail": "CRUZADOR_RECOVERED_OK\n",
+      "marker_observed": true
+    },
+    {
+      "id": "server-wait",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait-all"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles",
+        "CX_BOTTLE": "7e07a84d-cca9-425a-98f4-23563a78955c",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c",
+        "CRUZADOR_LAUNCH_VALUE": "OWN_ENV_OK"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478",
+      "exit_code": 0,
+      "timed_out": false,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Logs/server-wait.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    }
+  ],
+  "completed": true,
+  "limitations": [
+    "Independent results are retained observations from a separate execution, not simultaneous live state.",
+    "Comparison covers selected engine-level behavior, not full UI, game compatibility, performance or product equivalence.",
+    "Only explicit environment overrides are retained; ambient environment is not recorded.",
+    "Text tails are UTF-8 projections with replacement; raw logs and byte digests are retained.",
+    "No process-family census was performed; waiting for the selected server does not prove every detached helper exited."
+  ],
+  "server_wait_confirmed": true,
+  "comparison": [
+    {
+      "scenario": "system32",
+      "original_exit": 0,
+      "independent_exit": 0,
+      "original_marker_and_environment": true,
+      "independent_marker_and_environment": true,
+      "assessment": "matching selected observations"
+    },
+    {
+      "scenario": "syswow64",
+      "original_exit": 0,
+      "independent_exit": 0,
+      "original_marker_and_environment": true,
+      "independent_marker_and_environment": true,
+      "assessment": "matching selected observations"
+    },
+    {
+      "scenario": "nonzero-exit",
+      "original_exit": 7,
+      "independent_exit": 7,
+      "assessment": "matching selected observations"
+    },
+    {
+      "scenario": "positive-msi",
+      "original_exit": 0,
+      "independent_exit": 0,
+      "assessment": "matching selected observations"
+    },
+    {
+      "scenario": "invalid-msi",
+      "original_exit": 91,
+      "independent_exit": 91,
+      "comparison": "Both are nonzero; Unix status does not identify the complete Windows MSI code.",
+      "assessment": "same observed failure class"
+    },
+    {
+      "scenario": "server-wait",
+      "original_exit": 0,
+      "independent_exit": 0,
+      "assessment": "matching selected observations"
+    }
+  ],
+  "deliberate_differences": [
+    "Own UUID-backed library and launcher/transfer formats; original metadata formats are not claimed compatible.",
+    "Own launch requests validate a selected local file before execution; an absent Windows program is not silently represented as a valid local executable.",
+    "Changing synchronization requires a successful non-cancelled server wait; the recovered original callback alone is not considered shutdown success."
+  ],
+  "visual_observation": {
+    "application": "Cruzador",
+    "observed": [
+      "Main library window rendered and accessibility tree available.",
+      "Search with no matches showed zero application results; clearing restored the existing card.",
+      "Bottle settings exposed graphics, synchronization and environment fields in a scrollable form; closed without saving.",
+      "New bottle dialog selected the bundled Wine runtime; cancelled without preparing a prefix."
+    ],
+    "not_verified": [
+      "VoiceOver interaction",
+      "arbitrary installers and games",
+      "all original UI controls"
+    ],
+    "tool_recovery": "Inspection succeeded after resetting the computer-use session and opening the updated build; the precise cause of earlier cgWindowNotFound was not established."
+  },
+  "original_command_images": [
+    {
+      "folder": "system32",
+      "path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c/drive_c/windows/system32/cmd.exe",
+      "sha256": "f47962490150b541e39ba04640f0d58147efd64b651039ffbcc46a3497198811",
+      "file_description": "PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows"
+    },
+    {
+      "folder": "syswow64",
+      "path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-comparison-d373a8ad-20c1-4ec4-bcb9-f17f9f242478/Bottles/7e07a84d-cca9-425a-98f4-23563a78955c/drive_c/windows/syswow64/cmd.exe",
+      "sha256": "42d14e1eefb292a1cc683d9c8007224cd834ce1def33b6261709aa05bdd607de",
+      "file_description": "PE32 executable (console) Intel 80386 (stripped to external PDB), for MS Windows"
+    }
+  ]
+}

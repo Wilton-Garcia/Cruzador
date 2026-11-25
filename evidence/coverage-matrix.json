@@ -2905,7 +2905,7 @@
   "source_sha256": {
     "Sources/Cruzador/AppModel.swift": "9ac01b63b299476dc304673b5ea74163094c5c1e58d52e0e2a7a08d769a689d8",
     "Sources/Cruzador/AppPresentation.swift": "118e7545fc824f5884d16cb9ab33a53225a3b2ca8231f0ecedf379b5f2809f9c",
-    "Sources/Cruzador/ContentView.swift": "ec8c5b99db48952e807e71b4175541df9ccfb6efb7d88ffa5825e28a991bdc50",
+    "Sources/Cruzador/ContentView.swift": "ba2b68183542dbe15d85709bf7937d64a3fa0f2eba9ac12514888c0f467e2e87",
     "Sources/Cruzador/CruzadorApp.swift": "431ede55976cca26a32067c1d7a2dfa8c480919639c25b7beab3895988730c80",
     "Sources/Cruzador/DiagnosticsView.swift": "d297e744b5b841a06322193fd8acd1f4fedbef742e7378db52b14d4089590378",
     "Sources/Cruzador/DocumentHistory.swift": "2e5fc0229ff9ae0f81bd655f17d21d0e35122b1314c09e91e271988757079ee3",

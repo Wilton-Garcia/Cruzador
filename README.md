@@ -71,4 +71,4 @@ Use **⌘F** para buscar por nome da bottle, aplicativo ou nome do executável; 
 
 O histórico resumido oferece **Ver histórico completo…**, com todas as instalações registradas, opções, origem, resultado e fases do supervisor. Códigos ou términos ausentes aparecem como não registrados. Logs só são abertos quando solicitados. As opções extensas da bottle usam rolagem com os botões de ação fixos.
 
-A inspeção visual desta etapa não pôde ser concluída pela ferramenta de controle de interface. Compilação e testes das consultas não comprovam layout, navegação por VoiceOver ou equivalência de interface com o CrossOver.
+A [conferência visual selecionada](docs/runtime-comparison.md) verificou a biblioteca e diálogos básicos. Navegação completa por VoiceOver e equivalência integral com o CrossOver continuam não estabelecidas.
