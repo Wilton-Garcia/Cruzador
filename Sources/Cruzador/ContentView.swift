@@ -142,6 +142,15 @@ struct ContentView: View {
                     } label: { Label("Gerenciar", systemImage: "ellipsis.circle") }.disabled(!model.canStart)
                     Image(systemName: "shippingbox.fill").font(.system(size: 54)).foregroundStyle(.teal.gradient).padding(10)
                 }
+                if model.preparingBottleID == bottle.id {
+                    GroupBox {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text(model.status).font(.headline)
+                            ProgressView().progressViewStyle(.linear).frame(maxWidth: .infinity).accessibilityLabel("Preparação da bottle em andamento")
+                            Text("Configurando o ambiente Windows. Esta etapa pode levar alguns minutos.").font(.caption).foregroundStyle(.secondary)
+                        }.padding(10).frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                }
                 HStack(spacing: 12) {
                     Button { model.openRecipes() } label: { Label("Receitas…", systemImage: "list.bullet.clipboard") }
                     Button { model.chooseProgram(installer: true) } label: { Label("Instalar programa", systemImage: "plus.circle.fill") }.buttonStyle(.borderedProminent)

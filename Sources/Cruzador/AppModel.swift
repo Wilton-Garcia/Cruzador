@@ -9,6 +9,7 @@ final class AppModel: ObservableObject {
     @Published var selection: UUID?
     @Published var busy = false
     @Published var cancelling = false
+    @Published private(set) var preparingBottleID: UUID?
     @Published var cleanupOperationID: UUID?
     private var activeOperationID: UUID?
     @Published var status = "Sua biblioteca Windows no Mac"
@@ -98,9 +99,10 @@ final class AppModel: ObservableObject {
             let log = store.logsRoot.appendingPathComponent("\(Date().timeIntervalSince1970)-\(UUID().uuidString).log")
             let operationID = UUID()
             activeOperationID = operationID; cancelling = false
+            switch action { case .initialize, .repair: preparingBottleID = bottle.id; default: preparingBottleID = nil }
             busy = true; status = title; lastLog = log
             Task {
-                defer { busy = false; activeOperationID = nil; cancelling = false }
+                defer { busy = false; activeOperationID = nil; cancelling = false; preparingBottleID = nil }
                 do {
                     let result: RunResult
                     switch action {
@@ -267,7 +269,7 @@ final class AppModel: ObservableObject {
         busy = true; activeOperationID = operationID; cancelling = false
         status = "Salvando opções; mudanças de sincronização aguardam o servidor…"
         Task {
-            defer { busy = false; activeOperationID = nil; cancelling = false }
+            defer { busy = false; activeOperationID = nil; cancelling = false; preparingBottleID = nil }
             do {
                 try await BottleSettingsStore(store: store).save(settings, bottleID: bottleID, runner: runner, operationID: operationID)
                 library = try store.load(); dismissPresentation(.bottleSettings)
@@ -365,7 +367,7 @@ final class AppModel: ObservableObject {
         let service = BottleMaintenance(store: store, runner: runner)
         activeOperationID = service.operationID
         Task {
-            defer { busy = false; activeOperationID = nil; cancelling = false }
+            defer { busy = false; activeOperationID = nil; cancelling = false; preparingBottleID = nil }
             do {
                 let selectedID = try await operation(service)
                 library = try store.load()
@@ -396,7 +398,7 @@ final class AppModel: ObservableObject {
         let operationID = UUID(); activeOperationID = operationID; busy = true; cancelling = false
         status = "Repetindo encerramento…"
         Task {
-            defer { busy = false; activeOperationID = nil; cancelling = false }
+            defer { busy = false; activeOperationID = nil; cancelling = false; preparingBottleID = nil }
             do {
                 let result = try await runner.retryCleanup(failedOperationID: failedID, operationID: operationID)
                 lastLog = result.log; cleanupOperationID = nil

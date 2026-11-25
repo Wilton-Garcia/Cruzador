@@ -2951,10 +2951,10 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "13227cadd50f28faffc37b4144b64d65753789432967d361649abd4b7a71495d",
+    "Sources/Cruzador/AppModel.swift": "be8a8621bc5f577da8811fa98ee67023dfe8cd9a955ad752258f0e1b7ab9b728",
     "Sources/Cruzador/AppPresentation.swift": "e0daedada9c10260ebb6b4a8d8f6c625066d652e4330d59e7a020409ddc4dca7",
     "Sources/Cruzador/CompatibilityView.swift": "b423f5014ac05cd2a3d3237cf430db248de34c6de30d5989a8cfa5541732aac4",
-    "Sources/Cruzador/ContentView.swift": "74f88e6c224bc113a1a7466dd7de1684b8d4953400caee61fbec1e2986a9b1ed",
+    "Sources/Cruzador/ContentView.swift": "c7485f3aa124f6a3688dbb12df90db73d2e34ea56cd358f4cfe3e9b1f7882db1",
     "Sources/Cruzador/CruzadorApp.swift": "431ede55976cca26a32067c1d7a2dfa8c480919639c25b7beab3895988730c80",
     "Sources/Cruzador/DiagnosticsView.swift": "d297e744b5b841a06322193fd8acd1f4fedbef742e7378db52b14d4089590378",
     "Sources/Cruzador/DocumentHistory.swift": "2e5fc0229ff9ae0f81bd655f17d21d0e35122b1314c09e91e271988757079ee3",
