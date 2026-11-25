@@ -323,7 +323,8 @@
       "source_files": [
         "Sources/Cruzador/AppModel.swift",
         "Sources/CruzadorCore/EngineCommands.swift",
-        "Sources/Cruzador/ContentView.swift"
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/CruzadorCore/WineRuntime.swift"
       ],
       "tests": [
         {
@@ -335,6 +336,11 @@
           "file": "Tests/CruzadorCoreTests/CoreTests.swift",
           "name": "testCrossOverRoutesOnlyToOwnedUUIDAndKeepsArguments",
           "scope": "Isolamento de prefixo e argumentos"
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/WineRuntimeTests.swift",
+          "name": "testPackagedEngineLaunchesWithItsOwnServerAndPrefix",
+          "scope": "Execução de fixture em pacote próprio; não é teste de compatibilidade Wine"
         }
       ],
       "remaining_gap": "Executa EXE/MSI com argumentos por linha; não reproduz o parser livre e todos os modos de launcher.",
@@ -2543,12 +2549,14 @@
   ],
   "source_sha256": {
     "Sources/Cruzador/AppModel.swift": "ad18d435820c4209524ba4abc19b639a87020a376f68bcde8385132a4a89beac",
-    "Sources/Cruzador/ContentView.swift": "24710fec88cc5023dd31c7562a3353e3461c5922e9d1432046d3fd92c99059b0",
+    "Sources/Cruzador/ContentView.swift": "4a45f8506d55683ebdf58593f44a2be650594806b830d4b3446a6e9b609909e6",
     "Sources/Cruzador/CruzadorApp.swift": "8491e480c40115839f1eb76eb79fda94bcc01df79eb9f50daa7152f1fccc4943",
-    "Sources/CruzadorCore/EngineCommands.swift": "adc6c093342112b146a2851fadbf34d635ef7aed35c862ed6c5c6e2172911dc2",
+    "Sources/CruzadorCore/EngineCommands.swift": "5640384b977bc91307e95aba1d6976b7fbe3bd24c59a5b3b1e221ea076fcb5cb",
     "Sources/CruzadorCore/LibraryStore.swift": "5a6e1f95c9fd0489cd9198e91b9a17ca9621fa2d9135570628fb620b0f81be3c",
+    "Sources/CruzadorCore/WineRuntime.swift": "26f30b33750afea74f7312f79710ac04b5cb9f327201210f09608fc0d6d2f3f0",
     "Tests/CruzadorCoreTests/CoreTests.swift": "2514ed816e6fe47fc45f8261a5c475ef4313a2e01be530958d85751512f84bb9",
-    "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "3ae735d842c65d11522799f0862f67c85fac5fc0bf752bd74c919371f9042063"
+    "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "3ae735d842c65d11522799f0862f67c85fac5fc0bf752bd74c919371f9042063",
+    "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "ca1fe37f1132e10fba422de061d93345ebc1a49457f863d96dde11279e6065b9"
   },
   "counts": {
     "capabilities": 40,

@@ -39,8 +39,14 @@ public enum EngineCommands {
                 executable = base.appendingPathComponent("bin/wine")
                 arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait", "--"] + (try windowsArguments(action))
             }
-        case .wine:
-            executable = engineURL
+        case .wine, .packagedWine:
+            if bottle.engine.kind == .packagedWine {
+                let runtime = try WineRuntime(root: engineURL)
+                executable = runtime.wine
+                environment["WINESERVER"] = runtime.server.path
+            } else {
+                executable = engineURL
+            }
             switch action {
             case .initialize: arguments = ["wineboot", "--init"]
             default: arguments = try windowsArguments(action)

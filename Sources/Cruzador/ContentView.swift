@@ -79,7 +79,7 @@ struct ContentView: View {
                         HStack(spacing: 10) {
                             Label(stateLabel(bottle), systemImage: bottle.state == .ready && model.store.isInitialized(bottle) ? "checkmark.circle.fill" : "exclamationmark.circle")
                             Text("·")
-                            Text(bottle.engine.kind == .crossOver ? "CrossOver · Windows 10 64-bit" : "Wine externo")
+                            Text(bottle.engine.kind.displayName)
                         }.font(.subheadline).foregroundStyle(.secondary)
                     }
                     Spacer()
@@ -161,7 +161,7 @@ struct CreateBottleView: View {
             Text("Um ambiente separado para seus programas e jogos Windows.").foregroundStyle(.secondary)
             TextField("Nome, por exemplo: Meus jogos", text: $name).textFieldStyle(.roundedBorder).onSubmit { model.create(name: name) }
             VStack(alignment: .leading, spacing: 6) {
-                Text(model.engineKind == .crossOver ? "CrossOver · Windows 10 64-bit" : "Wine externo").fontWeight(.medium)
+                Text(model.engineKind.displayName).fontWeight(.medium)
                 Text(model.enginePath).font(.caption).foregroundStyle(.secondary).textSelection(.enabled)
                 Text("O motor será executado para preparar os arquivos da bottle.").font(.caption).foregroundStyle(.secondary)
             }
@@ -201,13 +201,17 @@ struct EngineSettings: View {
             Picker("Motor", selection: $model.engineKind) {
                 Text("CrossOver instalado").tag(EngineKind.crossOver)
                 Text("Wine externo").tag(EngineKind.wine)
+                Text("Pacote Wine do Cruzador").tag(EngineKind.packagedWine)
             }
-            TextField(model.engineKind == .crossOver ? "Caminho do CrossOver.app" : "Caminho do executável wine", text: $model.enginePath)
+            TextField(model.engineKind == .crossOver ? "Caminho do CrossOver.app" : model.engineKind == .packagedWine ? "Pasta do pacote com runtime.json" : "Caminho do executável wine", text: $model.enginePath)
             Button("Escolher…") {
-                let panel = NSOpenPanel(); panel.canChooseDirectories = model.engineKind == .crossOver; panel.canChooseFiles = true; panel.treatsFilePackagesAsDirectories = false
+                let panel = NSOpenPanel(); panel.canChooseDirectories = model.engineKind != .wine; panel.canChooseFiles = true; panel.treatsFilePackagesAsDirectories = false
                 if panel.runModal() == .OK, let url = panel.url { model.enginePath = url.path; model.saveEngine() }
             }
             Text("O Cruzador não instala o motor e não usa as bottles existentes do CrossOver.").font(.caption).foregroundStyle(.secondary)
+            if model.engineKind == .packagedWine {
+                Button("Usar pacote incluído no aplicativo") { model.enginePath = WineRuntime.bundledRoot.path; model.saveEngine() }
+            }
             Button("Salvar configuração") { model.saveEngine() }.buttonStyle(.borderedProminent)
         }.disabled(model.busy)
     }

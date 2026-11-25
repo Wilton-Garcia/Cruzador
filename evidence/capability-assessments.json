@@ -324,7 +324,8 @@
       "source_files": [
         "Sources/Cruzador/AppModel.swift",
         "Sources/CruzadorCore/EngineCommands.swift",
-        "Sources/Cruzador/ContentView.swift"
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/CruzadorCore/WineRuntime.swift"
       ],
       "tests": [
         {
@@ -336,6 +337,11 @@
           "file": "Tests/CruzadorCoreTests/CoreTests.swift",
           "name": "testCrossOverRoutesOnlyToOwnedUUIDAndKeepsArguments",
           "scope": "Isolamento de prefixo e argumentos"
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/WineRuntimeTests.swift",
+          "name": "testPackagedEngineLaunchesWithItsOwnServerAndPrefix",
+          "scope": "Execução de fixture em pacote próprio; não é teste de compatibilidade Wine"
         }
       ],
       "remaining_gap": "Executa EXE/MSI com argumentos por linha; não reproduz o parser livre e todos os modos de launcher.",

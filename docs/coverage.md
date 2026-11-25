@@ -24,7 +24,7 @@ Há 40 grupos revisados e 330 itens de catálogo. 107 itens têm vínculo com um
 | Bottle padrão | python-metadata | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |
 | Local de armazenamento e integração de launchers | ui-observation | partial | Armazenamento próprio e backup de metadados | Armazenamento próprio fixo; mudança de local, migração e exportação de launchers não implementadas. |
 | Abrir unidade C: | ui-observation | partial | Sem teste específico referenciado | Abre a pasta do prefixo inteiro; abertura direta de drive_c e integração completa pendentes. |
-| Execução de comandos e atalhos | native-decompilation | partial | cmd.exe no motor CrossOver real; Isolamento de prefixo e argumentos | Executa EXE/MSI com argumentos por linha; não reproduz o parser livre e todos os modos de launcher. |
+| Execução de comandos e atalhos | native-decompilation | partial | cmd.exe no motor CrossOver real; Isolamento de prefixo e argumentos; Execução de fixture em pacote próprio; não é teste de compatibilidade Wine | Executa EXE/MSI com argumentos por linha; não reproduz o parser livre e todos os modos de launcher. |
 | Ambiente e presets de execução | native-decompilation | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |
 | Logs, canais e erros de execução | native-decompilation | partial | Saída em arquivo e status não zero | Logs simples existem; seleção de canais, ambiente e relatório detalhado faltam. |
 | Shell da bottle | native-decompilation | missing | Sem teste específico referenciado | Comportamento ainda não reconstruído. |

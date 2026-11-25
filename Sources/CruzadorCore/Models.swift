@@ -1,6 +1,15 @@
 import Foundation
 
-public enum EngineKind: String, Codable, CaseIterable, Sendable { case crossOver, wine }
+public enum EngineKind: String, Codable, CaseIterable, Sendable {
+    case crossOver, wine, packagedWine
+    public var displayName: String {
+        switch self {
+        case .crossOver: "CrossOver"
+        case .wine: "Wine externo"
+        case .packagedWine: "Wine do Cruzador"
+        }
+    }
+}
 public struct Engine: Codable, Equatable, Sendable {
     public var kind: EngineKind
     public var path: String

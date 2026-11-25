@@ -6,7 +6,7 @@ A [engenharia reversa do binário](docs/binary-reverse-engineering.md) preserva 
 
 ## Usar
 
-Requisitos: macOS 14 ou posterior, Xcode/Swift 6 para compilar e uma instalação existente do CrossOver ou Wine para executar programas Windows.
+Requisitos: macOS 14 ou posterior, Xcode/Swift 6 para compilar e uma instalação existente do CrossOver, Wine externo ou um pacote Wine preparado para o Cruzador para executar programas Windows.
 
 ```sh
 swift test --jobs 4
@@ -14,7 +14,7 @@ swift test --jobs 4
 open build/Cruzador.app
 ```
 
-No Cruzador, abra **Configurar motor** e selecione o CrossOver.app ou um executável Wine. Crie uma bottle, use **Instalar programa** para abrir um EXE/MSI e **Adicionar atalho** para cadastrar o executável instalado. Cada linha no campo de argumentos é um argumento separado, incluindo espaços; não use aspas de shell.
+No Cruzador, abra **Configurar motor** e selecione o CrossOver.app, um executável Wine ou uma pasta com [pacote Wine do Cruzador](docs/wine-runtime.md). Crie uma bottle, use **Instalar programa** para abrir um EXE/MSI e **Adicionar atalho** para cadastrar o executável instalado. Cada linha no campo de argumentos é um argumento separado, incluindo espaços; não use aspas de shell.
 
 O aplicativo gerado recebe assinatura ad hoc para uso local; não é um pacote notarizado para distribuição. Não precisa de dependências Swift de terceiros.
 
