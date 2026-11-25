@@ -45,9 +45,11 @@ parser.add_argument('--runtime', type=Path, help='Select a prepared Wine package
 parser.add_argument('--installer-msi', type=Path, help='Optional pinned 7-Zip MSI for positive installation validation')
 parser.add_argument('--recipes', type=Path, help='Optional own recipe catalog for end-to-end 7-Zip recipe validation')
 parser.add_argument('--timeout', type=float, default=120, help='Overall test deadline in seconds (default: 120); timeout retains logs and cleans the isolated Wine server')
+parser.add_argument('--apps', type=Path, help='Prepared additional Windows validation apps directory')
 parser.add_argument('--msync', action='store_true', help='Test the optional MSync runtime and switching back to server synchronization')
 parser.add_argument('--output-root', type=Path, help='Retain reports and fresh test roots here (default: project .local)')
 args = parser.parse_args()
+if args.apps and (not args.runtime or args.msync): parser.error('--apps requires standalone runtime smoke mode')
 if args.msync and not args.runtime: parser.error('--msync requires --runtime')
 if not math.isfinite(args.timeout) or args.timeout <= 0: parser.error('--timeout must be positive')
 project = Path(__file__).resolve().parent.parent
@@ -72,6 +74,7 @@ else:
     selection = 'NativeSmokeTests.testInstalledCrossOverCreatesBottleAndRunsWindowsCommand'
 if args.installer_msi:
     environment['CRUZADOR_TEST_MSI'] = str(args.installer_msi.resolve())
+if args.apps: environment['CRUZADOR_TEST_APPS'] = str(args.apps.resolve())
 if args.recipes:
     environment['CRUZADOR_TEST_RECIPES'] = str(args.recipes.resolve())
 log = root.parent / (root.name + '.test.log')
@@ -106,7 +109,7 @@ if args.runtime and not args.msync and result == 0:
     try:
         report_path = root / 'runtime-smoke.json'
         report = json.loads(report_path.read_text())
-        validate_runtime_report(report, require_imported_7zip=bool(args.recipes), expected_runtime=runtime_path, expected_root=root)
+        validate_runtime_report(report, require_additional_apps=bool(args.apps), require_imported_7zip=bool(args.recipes), expected_runtime=runtime_path, expected_root=root)
         output = summary
         output.write_text(json.dumps(report, indent=2) + '\n')
         print('Packaged runtime report:', output)
@@ -148,6 +151,7 @@ supervision = {'format_version': 2, 'timed_out': timed_out, 'timeout_seconds': a
                'runtime': str(runtime_path) if args.runtime else None,
                'requested_installer_msi': str(args.installer_msi) if args.installer_msi else None,
                'requested_recipes': str(args.recipes) if args.recipes else None,
+               'requested_apps': str(args.apps) if args.apps else None,
                'limitations': ['CPU time and peak process-family memory were not measured.', 'Cleanup control commands concern only the selected retained prefixes; arbitrary detached helpers were not enumerated.']}
 (root.parent / (root.name + '.supervision.json')).write_text(json.dumps(supervision, indent=2) + '\n')
 print(json.dumps(supervision))

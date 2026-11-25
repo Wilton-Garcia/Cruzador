@@ -8,7 +8,7 @@ def _check_path(report, field, expected):
     if expected is not None and Path(actual).resolve() != expected: raise ValueError(f'Runtime report belongs to another {field}')
 
 
-def validate_runtime_report(report, *, require_imported_7zip=False, expected_runtime=None, expected_root=None):
+def validate_runtime_report(report, *, require_imported_7zip=False, require_additional_apps=False, expected_runtime=None, expected_root=None):
     def require(condition, field):
         if not condition:
             raise ValueError(f'Incomplete runtime workflow report: {field}. Rebuild the tests before running --skip-build.')
@@ -47,6 +47,14 @@ def validate_runtime_report(report, *, require_imported_7zip=False, expected_run
     except (ValueError, TypeError, KeyError, AttributeError) as error:
         raise ValueError('Runtime workflow identities are missing or invalid') from error
     require(len(set(ids)) == 3, 'distinct bottle identities')
+    if require_additional_apps:
+        apps = report.get('additional_apps')
+        require(isinstance(apps, list) and len(apps) == 4 and all(isinstance(item, dict) for item in apps), 'additional_apps')
+        require({(item.get('id'), item.get('case')) for item in apps} == {('plink-w32', 'version'), ('plink-w64', 'version'), ('sqlite-tools-x64', 'write'), ('sqlite-tools-x64', 'read')}, 'additional application cases')
+        for item in apps:
+            require(type(item.get('exit')) is int and item['exit'] == 0 and item.get('cancelled') is False and item.get('marker_observed') is True, 'additional application outcome')
+            require(item.get('pe_machine') == ('0x14c' if item['id'] == 'plink-w32' else '0x8664'), 'additional application architecture')
+            if item['case'] == 'read': require(item.get('integrity_ok') is True, 'SQLite integrity')
     if require_imported_7zip:
         require(type(workflows.get('imported_7zip_exit')) is int and workflows['imported_7zip_exit'] == 0, 'imported_7zip_exit')
 

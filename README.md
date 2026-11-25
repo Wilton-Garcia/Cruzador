@@ -72,3 +72,5 @@ Use **⌘F** para buscar por nome da bottle, aplicativo ou nome do executável; 
 O histórico resumido oferece **Ver histórico completo…**, com todas as instalações registradas, opções, origem, resultado e fases do supervisor. Códigos ou términos ausentes aparecem como não registrados. Logs só são abertos quando solicitados. As opções extensas da bottle usam rolagem com os botões de ação fixos.
 
 A [conferência visual selecionada](docs/runtime-comparison.md) verificou a biblioteca e diálogos básicos. Navegação completa por VoiceOver e equivalência integral com o CrossOver continuam não estabelecidas.
+
+A [validação de aplicativos Windows](docs/application-validation.md) cobre casos selecionados de Plink e SQLite além do 7-Zip, com entradas fixadas e logs verificáveis.

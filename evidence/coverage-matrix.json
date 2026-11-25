@@ -2942,7 +2942,7 @@
     "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "ddb419f623d0aafb68ad3058410d30f78806bae10ebd8705b58f854724105713",
     "Tests/CruzadorCoreTests/LibrarySearchTests.swift": "56da908ac1eac1e3263c8c3901da410e06f9c886fb35f9d03abd60c3d538d34f",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "de4672c5c1b4da9e00e40a610d81e2239c903c5b369487cc1cfdf5428bc85a74",
-    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "9c82920289e542e9a57984685df184a142f46d8e04b116817f50269be3bf97fa",
+    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "94c5ba063d2a9fb7a1765796d584f54e4d59e49a5d8d7b03387ec428d725d107",
     "Tests/CruzadorCoreTests/RecipeTests.swift": "e67bf964843365aeb40fc73925535319982e77eedd63e326ff6838eadfbaab3c",
     "Tests/CruzadorCoreTests/SynchronizationTests.swift": "fda0c85efe968243418b74851e9aa372473b28d5e8c0a4cba138bcd5565e0461",
     "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "a99fee46e3c57d711d3d7499a3d92a958ede07540dca417084b334a65fb8df2a",

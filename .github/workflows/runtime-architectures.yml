@@ -33,8 +33,9 @@ jobs:
         run: |
           python3 scripts/prepare-wine-runtime.py
           python3 scripts/prepare-validation-assets.py --asset sevenzip-msi
+          python3 scripts/prepare-validation-assets.py --additional-apps
       - name: Execute 32-bit and 64-bit Windows programs
-        run: python3 scripts/native-smoke.py --runtime .local/Runtime-11.21 --installer-msi .local/downloads/7z2606-x64.msi --recipes config/recipes.json --timeout 300
+        run: python3 scripts/native-smoke.py --runtime .local/Runtime-11.21 --installer-msi .local/downloads/7z2606-x64.msi --recipes config/recipes.json --apps .local/additional-apps --timeout 300
       - name: Build and verify universal application
         env:
           CRUZADOR_UNIVERSAL: '1'

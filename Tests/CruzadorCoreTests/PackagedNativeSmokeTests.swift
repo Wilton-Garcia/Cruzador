@@ -116,11 +116,16 @@ final class PackagedNativeSmokeTests: XCTestCase {
         }
         try JSONEncoder().encode(discovery).write(to: store.root.appendingPathComponent("discovery.json"), options: .atomic)
         let libraryWorkflows = try await NativeLibraryWorkflowScenario(store: store, runner: runner).run(bottleID: bottle.id)
+        var additionalApps: [[String: Any]]?
+        if let assets = ProcessInfo.processInfo.environment["CRUZADOR_TEST_APPS"] {
+            additionalApps = try await AdditionalWindowsAppsScenario(store: store, runner: runner).run(bottle: try store.load().bottles[0], assets: URL(fileURLWithPath: assets), lockURL: URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("config/additional-validation-apps.json"))
+        }
         try trace.phase("completed")
         var report: [String: Any] = ["formatVersion": 2, "root": store.root.path, "library_workflows": libraryWorkflows, "discovered_software_records": discovery.registeredSoftware.count, "discovered_executables": discovery.executables.count, "runtime": runtime.root.path, "version": runtime.manifest.version, "test_process_architecture": hostArchitecture,
                                     "operating_system": ProcessInfo.processInfo.operatingSystemVersionString, "initialization_exit": created.exitCode, "repair_exit": repaired.exitCode,
                                     "windows_commands": observations, "nonzero_exit": failure.exitCode, "server_wait_exit": stopped.exitCode, "cancelled": cancelled.cancelled, "cancellation_cleanup_codes": cancelled.phases.filter { $0.phase == "cancellation" }.compactMap(\.exitCode), "after_cancellation_exit": afterCancel.exitCode, "invalid_msi_status": installation.status.rawValue, "invalid_msi_macOS_exit": invalidMSIExit,
                                     "limitations": ["No CrossOver executable is selected by these commands.", "No general application or graphics compatibility established."]]
+        if let additionalApps { report["additional_apps"] = additionalApps }
         if let positiveMSIExit { report["positive_7zip_msi_exit"] = positiveMSIExit }
         if let recipeInstallationCount { report["recipe_installation_count"] = recipeInstallationCount; report["recipe_verified_shortcuts"] = 2 }
         try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys]).write(to: store.root.appendingPathComponent("runtime-smoke.json"), options: .atomic)

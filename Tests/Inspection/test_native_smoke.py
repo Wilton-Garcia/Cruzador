@@ -41,6 +41,15 @@ class RuntimeReportTests(unittest.TestCase):
         reports.validate_runtime_report(invalid)
         with self.assertRaises(ValueError): reports.validate_runtime_report(invalid, require_imported_7zip=True)
 
+    def test_additional_apps_require_real_cases_and_sqlite_integrity(self):
+        report = complete_report()
+        with self.assertRaises(ValueError): reports.validate_runtime_report(report, require_additional_apps=True)
+        report['additional_apps'] = [{'id': app, 'case': case, 'exit': 0, 'cancelled': False, 'marker_observed': True, 'pe_machine': '0x14c' if app == 'plink-w32' else '0x8664', 'integrity_ok': case == 'read'} for app, case in [('plink-w32', 'version'), ('plink-w64', 'version'), ('sqlite-tools-x64', 'write'), ('sqlite-tools-x64', 'read')]]
+        reports.validate_runtime_report(report, require_additional_apps=True)
+        for mutate in [lambda data: data['additional_apps'].pop(), lambda data: data['additional_apps'][-1].update(integrity_ok=False), lambda data: data['additional_apps'][0].update(pe_machine='0x8664'), lambda data: data['additional_apps'][1].update(exit=False)]:
+            invalid = copy.deepcopy(report); mutate(invalid)
+            with self.assertRaises(ValueError): reports.validate_runtime_report(invalid, require_additional_apps=True)
+
     def test_msync_requires_startup_cancellation_and_recovery(self):
         valid = {'formatVersion': 2, 'root': '/fixture/smoke', 'runtime': '/fixture/runtime', 'initialization_exit': 0, 'server_wait_exit': 0,
                  'observations': [{'mode': mode, 'exit': 0, 'cancelled': False, 'marker': marker, 'log': ('msync: up and running.\n' if mode == 'msync' else '') + marker} for mode, marker in [('msync', 'CRUZADOR_SYNC_1_GLOBAL_OK'), ('server', 'CRUZADOR_SYNC_0_GLOBAL_OK')]],
