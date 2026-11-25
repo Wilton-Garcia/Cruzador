@@ -93,22 +93,22 @@ final class AppModel: ObservableObject {
             }
             let command: EnginePlan?
             switch action {
-            case .initialize, .repair, .install: command = nil
+            case .initialize, .repair, .reboot, .install: command = nil
             default: command = try EngineCommands.make(action, bottle: bottle, store: store)
             }
             let log = store.logsRoot.appendingPathComponent("\(Date().timeIntervalSince1970)-\(UUID().uuidString).log")
             let operationID = UUID()
             activeOperationID = operationID; cancelling = false
-            switch action { case .initialize, .repair: preparingBottleID = bottle.id; default: preparingBottleID = nil }
+            switch action { case .initialize, .repair, .reboot: preparingBottleID = bottle.id; default: preparingBottleID = nil }
             busy = true; status = title; lastLog = log
             Task {
                 defer { busy = false; activeOperationID = nil; cancelling = false; preparingBottleID = nil }
                 do {
                     let result: RunResult
                     switch action {
-                    case .initialize, .repair:
+                    case .initialize, .repair, .reboot:
                         result = try await BottleLifecycle(store: store).prepare(id: bottle.id, mode: {
-                            if case .repair = action { return .repair }; return .initialize
+                            if case .repair = action { return .repair }; if case .reboot = action { return .reboot }; return .initialize
                         }(), runner: runner, log: log, operationID: operationID)
                         library = try store.load()
                     case .install(let request):
@@ -430,6 +430,14 @@ final class AppModel: ObservableObject {
         let panel = NSOpenPanel(); panel.canChooseDirectories = true; panel.canChooseFiles = false
         panel.treatsFilePackagesAsDirectories = false; panel.message = "Escolha uma publicação .cruzadorbottle com publication.json."
         return panel.runModal() == .OK ? panel.url : nil
+    }
+    func rebootBottle(_ bottle: Bottle) {
+        guard canStart, store.isReady(bottle) else { return }
+        let alert = NSAlert(); alert.messageText = "Reiniciar a bottle \(bottle.name)?"
+        alert.informativeText = "Salve e feche os programas desta bottle. O Cruzador aguardará seu encerramento e executará a reinicialização simulada do Wine."
+        alert.addButton(withTitle: "Reiniciar bottle"); alert.addButton(withTitle: "Cancelar")
+        guard alert.runModal() == .alertFirstButtonReturn else { return }
+        perform(.reboot, bottle: bottle, title: "Reiniciando \(bottle.name)…")
     }
     func openBottleShell(_ bottle: Bottle) {
         guard canStart else { return }

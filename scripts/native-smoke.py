@@ -109,7 +109,7 @@ if args.runtime and not args.msync and result == 0:
     try:
         report_path = root / 'runtime-smoke.json'
         report = json.loads(report_path.read_text())
-        validate_runtime_report(report, require_additional_apps=bool(args.apps), require_imported_7zip=bool(args.recipes), expected_runtime=runtime_path, expected_root=root)
+        validate_runtime_report(report, require_reboot=True, require_additional_apps=bool(args.apps), require_imported_7zip=bool(args.recipes), expected_runtime=runtime_path, expected_root=root)
         output = summary
         output.write_text(json.dumps(report, indent=2) + '\n')
         print('Packaged runtime report:', output)

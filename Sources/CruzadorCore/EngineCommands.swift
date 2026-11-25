@@ -11,14 +11,15 @@ public struct Command: Sendable {
 }
 public struct EnginePlan: Sendable {
     public let primary: Command
+    public let prerequisites: [Command]
     public let finalization: [Command]
     public let cancellation: [Command]
     public let cancellationWarning: String?
-    public init(primary: Command, finalization: [Command] = [], cancellation: [Command] = [], cancellationWarning: String? = nil) {
-        self.primary = primary; self.finalization = finalization; self.cancellation = cancellation; self.cancellationWarning = cancellationWarning
+    public init(primary: Command, prerequisites: [Command] = [], finalization: [Command] = [], cancellation: [Command] = [], cancellationWarning: String? = nil) {
+        self.primary = primary; self.prerequisites = prerequisites; self.finalization = finalization; self.cancellation = cancellation; self.cancellationWarning = cancellationWarning
     }
 }
-public enum BottleAction: Sendable { case initialize, repair, waitForIdle, run(LaunchRequest), install(InstallationRequest), tool(String) }
+public enum BottleAction: Sendable { case initialize, repair, reboot, waitForIdle, run(LaunchRequest), install(InstallationRequest), tool(String) }
 public enum EngineCommands {
     public static func make(_ action: BottleAction, bottle: Bottle, store: LibraryStore) throws -> EnginePlan {
         guard bottle.engine.path.hasPrefix("/") else { throw CruzadorError.invalid("Selecione um caminho absoluto para o motor.") }
@@ -46,6 +47,8 @@ public enum EngineCommands {
                     executable = base.appendingPathComponent("bin/cxbottle")
                     arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--create", "--template", "win10_64", "--description", bottle.name]
                 }
+            case .reboot:
+                throw CruzadorError.invalid("A reinicialização usa o Wine independente do Cruzador.")
             case .waitForIdle:
                 throw CruzadorError.invalid("A manutenção usa o motor Wine independente. O adaptador CrossOver é reservado para comparação e execução legada.")
             case .repair:
@@ -69,12 +72,13 @@ public enum EngineCommands {
                 cancellation = [Command(executable: server, arguments: ["-k"], environment: environment), Command(executable: server, arguments: ["-w"], environment: environment)]
             }
             switch action {
-            case .initialize, .repair, .waitForIdle:
+            case .initialize, .repair, .reboot, .waitForIdle:
                 guard FileManager.default.isExecutableFile(atPath: server.path) else { throw CruzadorError.invalid("wineserver não está disponível ao lado do motor selecionado: \(server.path)") }
                 if case .waitForIdle = action {
                     executable = server; arguments = ["-w"]
                 } else {
-                    arguments = ["wineboot", modeFlag(action)]
+                    if case .reboot = action { arguments = ["wineboot", "--restart"] }
+                    else { arguments = ["wineboot", modeFlag(action)] }
                     finalization = [Command(executable: server, arguments: ["-w"], environment: environment)]
                 }
             default: arguments = try windowsArguments(action, store: store)
@@ -98,6 +102,11 @@ public enum EngineCommands {
             environment.merge(selected) { _, value in value }
             workingDirectory = (options?.workingDirectory ?? settings.executionOptions.workingDirectory).map { URL(fileURLWithPath: $0) }
         }
+        if case .reboot = action {
+            guard let server = environment["WINESERVER"] else { throw CruzadorError.invalid("Servidor Wine ausente para reinicialização.") }
+            let restart = Command(executable: executable, arguments: arguments, environment: environment, workingDirectory: workingDirectory)
+            return EnginePlan(primary: restart, prerequisites: [Command(executable: URL(fileURLWithPath: server), arguments: ["-w"], environment: environment)], finalization: finalization, cancellation: cancellation)
+        }
         return EnginePlan(primary: Command(executable: executable, arguments: arguments, environment: environment, workingDirectory: workingDirectory), finalization: finalization, cancellation: cancellation,
                           cancellationWarning: cancellation.isEmpty ? "O motor não forneceu um encerramento verificável do servidor da bottle. Seus processos podem continuar ativos; consulte o log antes de retomar." : nil)
     }
@@ -115,7 +124,7 @@ public enum EngineCommands {
         case .tool(let name):
             guard ["winecfg", "regedit", "uninstaller", "cmd"].contains(name) else { throw CruzadorError.invalid("Ferramenta desconhecida.") }
             return [name]
-        case .initialize, .repair, .waitForIdle: return []
+        case .initialize, .repair, .reboot, .waitForIdle: return []
         }
     }
 

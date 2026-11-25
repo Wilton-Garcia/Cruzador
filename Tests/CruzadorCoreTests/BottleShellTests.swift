@@ -13,12 +13,13 @@ extension BottleMaintenanceTests {
         process.executableURL = URL(fileURLWithPath: "/bin/zsh"); process.arguments = [script.path]
         process.standardInput = input; process.standardOutput = output; process.standardError = output
         process.environment = ["HOME": store.root.path, "USER": "fixture", "LOGNAME": "fixture", "TERM": "dumb", "TMPDIR": store.root.path, "WINEPREFIX": "/wrong", "CX_BOTTLE": "foreign", "CRUZADOR_AMBIENT": "do-not-retain"]
+        let finished = expectation(description: "Shell termination callback")
+        process.terminationHandler = { _ in finished.fulfill() }
         try process.run()
         try input.fileHandleForWriting.write(contentsOf: Data("printf '%s\\n' \"$WINEPREFIX\" \"$CRUZADOR_WINE\" \"$CRUZADOR_LITERAL\" \"${CX_BOTTLE-unset}\" \"${CRUZADOR_AMBIENT-unset}\" \"$PWD\"\nexit\n".utf8))
         try input.fileHandleForWriting.close()
-        for _ in 0..<500 { if !process.isRunning { break }; try await Task.sleep(for: .milliseconds(10)) }
-        if process.isRunning { process.terminate(); process.waitUntilExit(); XCTFail("Shell did not finish") }
-        process.waitUntilExit()
+        await fulfillment(of: [finished], timeout: 5)
+        guard !process.isRunning else { process.terminate(); return }
         let text = String(decoding: try output.fileHandleForReading.readToEnd() ?? Data(), as: UTF8.self)
         XCTAssertEqual(process.terminationStatus, 0)
         XCTAssertTrue(text.contains(store.prefix(for: original).path))

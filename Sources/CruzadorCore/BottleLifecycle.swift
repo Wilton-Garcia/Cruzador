@@ -4,7 +4,7 @@ public enum PrefixHealth: Equatable, Sendable {
     case absent, incomplete, initialized
     case unknown(String)
 }
-public enum PreparationMode: Sendable { case initialize, repair }
+public enum PreparationMode: Sendable { case initialize, repair, reboot }
 
 /// Owns preparation transitions and their persistence. Readiness requires both
 /// successful engine finalization and a structurally initialized prefix.
@@ -40,10 +40,12 @@ public struct BottleLifecycle: Sendable {
         let bottle = library.bottles[index]
         let health = store.health(of: bottle)
         if case .unknown(let reason) = health { throw CruzadorError.invalid("Não foi possível verificar os arquivos antes de preparar: \(reason)") }
-        if mode == .repair, health != .initialized {
-            throw CruzadorError.invalid("Reparar exige uma bottle inicializada. Use Preparar novamente para arquivos incompletos.")
+        if mode != .initialize, health != .initialized {
+            throw CruzadorError.invalid("A operação exige uma bottle inicializada. Use Preparar novamente para arquivos incompletos.")
         }
-        let plan = try EngineCommands.make(mode == .repair ? .repair : .initialize, bottle: bottle, store: store)
+        let action: BottleAction
+        switch mode { case .initialize: action = .initialize; case .repair: action = .repair; case .reboot: action = .reboot }
+        let plan = try EngineCommands.make(action, bottle: bottle, store: store)
         library.bottles[index].state = .preparing
         library.bottles[index].lastError = nil
         library.bottles[index].lastLogPath = log.path

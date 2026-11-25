@@ -722,10 +722,31 @@
         "ui:bottle-detail:14"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/CruzadorCore/CommandRunner.swift",
+        "Sources/CruzadorCore/BottleLifecycle.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleRebootTests.swift",
+          "name": "testRebootUsesSelectedPrefixAndFinalizationControlsReadiness",
+          "scope": "Espera falha não inicia reinício; estado pronto exige conclusão."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleRebootTests.swift",
+          "name": "testCancellationDuringRebootPrerequisiteNeverStartsRestart",
+          "scope": "Cancelamento durante pré-condição executa limpeza sem iniciar wineboot."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Wine real executa HKLM RunOnce após reinício e continua com comandos e aplicativos."
+        }
+      ],
+      "remaining_gap": "Reinício próprio aguardando encerramento, wineboot --restart e RunOnce real; todos os tipos de programas e equivalência integral não estabelecidos.",
       "independent_equivalence_established": false
     },
     {
@@ -2951,24 +2972,24 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "be8a8621bc5f577da8811fa98ee67023dfe8cd9a955ad752258f0e1b7ab9b728",
+    "Sources/Cruzador/AppModel.swift": "df119404ba1af7af6cde1315c13984bf37ae92f29b8b1f836ba3247ff521b6c3",
     "Sources/Cruzador/AppPresentation.swift": "e0daedada9c10260ebb6b4a8d8f6c625066d652e4330d59e7a020409ddc4dca7",
     "Sources/Cruzador/CompatibilityView.swift": "b423f5014ac05cd2a3d3237cf430db248de34c6de30d5989a8cfa5541732aac4",
-    "Sources/Cruzador/ContentView.swift": "c7485f3aa124f6a3688dbb12df90db73d2e34ea56cd358f4cfe3e9b1f7882db1",
+    "Sources/Cruzador/ContentView.swift": "4c32b54eb665b03b2a4d1655f77e6a0d7201a9e36e71cc411212664f9313da86",
     "Sources/Cruzador/CruzadorApp.swift": "431ede55976cca26a32067c1d7a2dfa8c480919639c25b7beab3895988730c80",
     "Sources/Cruzador/DiagnosticsView.swift": "d297e744b5b841a06322193fd8acd1f4fedbef742e7378db52b14d4089590378",
     "Sources/Cruzador/DocumentHistory.swift": "2e5fc0229ff9ae0f81bd655f17d21d0e35122b1314c09e91e271988757079ee3",
     "Sources/CruzadorCore/AppDiscovery.swift": "bd7e56c17df92e3fed7ea7e945e72d9a684237210abfdc77b44ec3e25fe110b5",
-    "Sources/CruzadorCore/BottleLifecycle.swift": "0611f7b49f7ab6969be864c70cf426de12c960c8c62c64055f27d03e53f90541",
+    "Sources/CruzadorCore/BottleLifecycle.swift": "068afaab8f5fba4322a3daaea269c7f4b313bc403a0939bb51916ba84daa4c91",
     "Sources/CruzadorCore/BottleMaintenance.swift": "e339d91afad94e6a14a44daebcb50bd8a491fba61475dc4f57b164517cc2443f",
     "Sources/CruzadorCore/BottleOperationRecovery.swift": "d9640346576c820c0bc5c9a4b09330a5ee730190f7d47aaae921c758ba85d681",
     "Sources/CruzadorCore/BottlePublication.swift": "19bd122dae7007687b2854ac5579455329c20cbe2442a500fc32a5bb8b463cb6",
     "Sources/CruzadorCore/BottleSettings.swift": "157f59d090d189d0d04cbbc0110fca90ad339ef4478072489079969bc634cd6d",
     "Sources/CruzadorCore/BottleShell.swift": "60be367ac62827b6c3ed5cf098bf74a556851d101406edf980dbc8ccef3f0aae",
-    "Sources/CruzadorCore/CommandRunner.swift": "c62b19e9cd8396db312126833bb0c94dcbfbb9aac47a0a6a70843c3735eaf376",
+    "Sources/CruzadorCore/CommandRunner.swift": "f054ec7d68e2e68261d66ddd8336aac246886561307c56c4c1f7556547bc9fc2",
     "Sources/CruzadorCore/Compatibility.swift": "e81de06e4b10adeae15defd6294226ef46f74af5094388f5f0ac2c9f93e4c3ab",
     "Sources/CruzadorCore/Diagnostics.swift": "e944c39b8ba277791cb36df6135c483eef49d744b0fa587956613920e187a3ba",
-    "Sources/CruzadorCore/EngineCommands.swift": "40db75e9c066b569684ac17274c710e04c44655fa04818d35854cf9bd851cb01",
+    "Sources/CruzadorCore/EngineCommands.swift": "9bbe6762c00d60fcb90bb072938be39c3101d20ccd75244bf9b590e058a58a35",
     "Sources/CruzadorCore/ExternalOpening.swift": "d5e911d9485e8bc6f16813dbfe2e7c2ea9cf7f73f4e374b42981dfddc4a8e701",
     "Sources/CruzadorCore/Installers.swift": "407e100255475311c3244ab0db652b7eae8260522b7a87798e96304da5d4f146",
     "Sources/CruzadorCore/LaunchRequest.swift": "242f32cadb35c954d475a6a21fe06edba47a1404ffb8f436202551d3e769fa7f",
@@ -2983,8 +3004,9 @@
     "Tests/CruzadorCoreTests/BottleLifecycleTests.swift": "5435298b8b533ee151817535977381c5ccb08db4455d86840e43fbbfdb0e097d",
     "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "ba2a5519816b81ebbb6c920530053a1b45a13181de5d5fc2a3934875c2335821",
     "Tests/CruzadorCoreTests/BottlePublicationTests.swift": "f9a541ca49086fa5ea2010c3288c37486a8c5bd870415a8b58210bc640266430",
+    "Tests/CruzadorCoreTests/BottleRebootTests.swift": "b0cf74258af961756d043e6fc91cb6caeab79d4edf841bfbaa9cfee71cd8ebda",
     "Tests/CruzadorCoreTests/BottleRecoveryTests.swift": "32e22604e5f9b03e4bb43da6931191f6254eb5257699af1597498ac305fded24",
-    "Tests/CruzadorCoreTests/BottleShellTests.swift": "fdf6d9f1e2234a2ead6459f7ac6c24509fa43ad4ec43c41e8a944bbd466d9c04",
+    "Tests/CruzadorCoreTests/BottleShellTests.swift": "003138d311e7b925f28e2bba71c290ef4fee2e8b15a496d0051abe1583f9c45e",
     "Tests/CruzadorCoreTests/CommandRunnerTests.swift": "20473c4a7489ce15107d0744fc7d868edc396fc50573f497f78a78521bb0d889",
     "Tests/CruzadorCoreTests/CompatibilityTests.swift": "5241c8b2b283d6e8e5701ecd9dac8963ec200b88b670d54c785b5c1204f15c41",
     "Tests/CruzadorCoreTests/CoreTests.swift": "3b6378c2a79b38d3c2260c59acce4fad78146187a9e3c90078f4ed07f1e82e8a",
@@ -2997,7 +3019,7 @@
     "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "ddb419f623d0aafb68ad3058410d30f78806bae10ebd8705b58f854724105713",
     "Tests/CruzadorCoreTests/LibrarySearchTests.swift": "56da908ac1eac1e3263c8c3901da410e06f9c886fb35f9d03abd60c3d538d34f",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "de4672c5c1b4da9e00e40a610d81e2239c903c5b369487cc1cfdf5428bc85a74",
-    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "94c5ba063d2a9fb7a1765796d584f54e4d59e49a5d8d7b03387ec428d725d107",
+    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "a98ddd00335c3e7e9c291f8620bd013062df3a19b294be269afca9194ee10b9f",
     "Tests/CruzadorCoreTests/RecipeTests.swift": "e67bf964843365aeb40fc73925535319982e77eedd63e326ff6838eadfbaab3c",
     "Tests/CruzadorCoreTests/SynchronizationTests.swift": "0210a8d86df94154d127fddee19e5f2cce3572b817e91ccbd3825027486d7cb5",
     "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "a99fee46e3c57d711d3d7499a3d92a958ede07540dca417084b334a65fb8df2a",
@@ -3014,8 +3036,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 31,
-      "missing": 9
+      "partial": 32,
+      "missing": 8
     }
   },
   "limitations": [

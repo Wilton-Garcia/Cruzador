@@ -97,10 +97,20 @@ public actor CommandRunner {
         active = Operation(id: operationID, plan: plan, log: log)
         defer { active = nil }
         return try await withTaskCancellationHandler {
-            var phases = [await perform(plan.primary, phase: "primary", operationID: operationID, log: log, cleanup: false)]
-            for command in plan.finalization {
+            var phases: [CommandPhaseResult] = []
+            for command in plan.prerequisites {
                 if active?.cancelled == true { break }
-                phases.append(await perform(command, phase: "finalization", operationID: operationID, log: log, cleanup: false))
+                let phase = await perform(command, phase: "prerequisite", operationID: operationID, log: log, cleanup: false)
+                phases.append(phase)
+                if phase.launchError != nil || phase.exitCode != 0 { break }
+            }
+            let admitted = phases.count == plan.prerequisites.count && phases.allSatisfy { $0.launchError == nil && $0.exitCode == 0 }
+            if admitted && active?.cancelled != true {
+                phases.append(await perform(plan.primary, phase: "primary", operationID: operationID, log: log, cleanup: false))
+                for command in plan.finalization {
+                    if active?.cancelled == true { break }
+                    phases.append(await perform(command, phase: "finalization", operationID: operationID, log: log, cleanup: false))
+                }
             }
             let cancellationPhases = await active?.cleanup?.value ?? []
             phases.append(contentsOf: cancellationPhases)
@@ -112,7 +122,7 @@ public actor CommandRunner {
             }
             if cancelled, let warning = plan.cancellationWarning { failures.append(warning) }
             if cancelled && !failures.isEmpty { pendingCleanup[operationID] = PendingCleanup(plan: plan, log: log) }
-            guard let primaryExit = phases[0].exitCode else {
+            guard let primaryExit = phases.first(where: { $0.phase == "primary" })?.exitCode else {
                 if cancelled { throw CommandRunnerError.cancelled(log: log.path, cleanupFailures: failures, phases: phases) }
                 throw CommandRunnerError.failed(log: log.path, phases: phases)
             }

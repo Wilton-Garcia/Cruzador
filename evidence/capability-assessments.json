@@ -723,10 +723,31 @@
         "ui:bottle-detail:14"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/CruzadorCore/CommandRunner.swift",
+        "Sources/CruzadorCore/BottleLifecycle.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleRebootTests.swift",
+          "name": "testRebootUsesSelectedPrefixAndFinalizationControlsReadiness",
+          "scope": "Espera falha não inicia reinício; estado pronto exige conclusão."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleRebootTests.swift",
+          "name": "testCancellationDuringRebootPrerequisiteNeverStartsRestart",
+          "scope": "Cancelamento durante pré-condição executa limpeza sem iniciar wineboot."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Wine real executa HKLM RunOnce após reinício e continua com comandos e aplicativos."
+        }
+      ],
+      "remaining_gap": "Reinício próprio aguardando encerramento, wineboot --restart e RunOnce real; todos os tipos de programas e equivalência integral não estabelecidos.",
       "independent_equivalence_established": false
     },
     {
