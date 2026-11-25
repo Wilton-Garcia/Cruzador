@@ -114,7 +114,8 @@ public struct ArtifactReceipt: Codable, Sendable {
 public actor ArtifactCache {
     public let root: URL
     private var downloading = false
-    public init(root: URL) { self.root = root }
+    public let downloadPolicy: InstallerDownloadPolicy
+    public init(root: URL, downloadPolicy: InstallerDownloadPolicy = .allowNetwork) { self.root = root; self.downloadPolicy = downloadPolicy }
     public static func sha256(of path: URL) throws -> String {
         let file = try FileHandle(forReadingFrom: path); defer { try? file.close() }
         var hash = SHA256()
@@ -127,6 +128,7 @@ public actor ArtifactCache {
         guard !downloading else { throw CruzadorError.invalid("Já há um download de receita em andamento.") }
         let destination = cachedPath(for: artifact)
         if FileManager.default.fileExists(atPath: destination.path) { try verify(destination, artifact: artifact); return destination }
+        guard downloadPolicy == .allowNetwork else { throw CruzadorError.invalid("Instalador ausente do cache selecionado: \(destination.path). Permita downloads nas preferências de instalação ou escolha um cache que já contenha o arquivo verificado.") }
         downloading = true; defer { downloading = false }
         let limiter = ExpectedDownloadSize(expected: artifact.size)
         let download: URL, response: URLResponse

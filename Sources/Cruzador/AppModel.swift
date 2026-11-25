@@ -28,6 +28,9 @@ final class AppModel: ObservableObject {
     @Published var engineKind: EngineKind = .packagedWine
     @Published var enginePath = WineRuntime.bundledRoot.path
     private var enginePreferenceError: String?
+    @Published private(set) var installerPreferences = InstallerPreferences()
+    @Published private(set) var installerPreferenceProblem: String?
+    @Published var cacheStatus = "Cache ainda não inspecionado"
     @Published var loaded = false
     let store: LibraryStore
     private let preferences: UserDefaults
@@ -51,6 +54,8 @@ final class AppModel: ObservableObject {
             try InstallationService(store: store).recoverInterrupted()
         }
         catch { self.error = error.localizedDescription }
+        do { installerPreferences = try InstallerPreferencesStore(library: store).load() }
+        catch { installerPreferenceProblem = error.localizedDescription; self.error = "Preferências de instalação inválidas: " + error.localizedDescription }
         reload()
         if let enginePreferenceError { error = enginePreferenceError }
     }
@@ -257,11 +262,59 @@ final class AppModel: ObservableObject {
     func installSelected(mode: InstallerMode, arguments: String, workingDirectory: String, environmentJSON: String) {
         guard let inspection = selectedInstaller, let bottle = selected, canStart, presentation == .installer else { return }
         do {
+            try requireInstallerPreferences()
             let options = try LaunchOptions.parse(workingDirectory: workingDirectory, environmentJSON: environmentJSON)
             let request = try InstallationRequest(inspection: inspection, mode: mode, arguments: arguments.isEmpty ? [] : arguments.components(separatedBy: "\n"), options: options)
             dismissPresentation(.installer)
             perform(.install(request), bottle: bottle, title: "Instalando \(URL(fileURLWithPath: inspection.path).lastPathComponent)…")
         } catch { self.error = error.localizedDescription }
+    }
+    private func requireInstallerPreferences() throws {
+        if let installerPreferenceProblem { throw CruzadorError.invalid("Corrija e salve as preferências de instalação antes de instalar: " + installerPreferenceProblem) }
+    }
+    func saveInstallerPreferences(_ preferences: InstallerPreferences) {
+        guard canStart else { return }
+        do {
+            try InstallerPreferencesStore(library: store).save(preferences)
+            installerPreferences = try InstallerPreferencesStore(library: store).load(); installerPreferenceProblem = nil
+            cacheStatus = "Preferências salvas; inspecione o cache selecionado"; status = "Preferências de instalação salvas"
+        } catch { self.error = error.localizedDescription }
+    }
+    func inspectInstallerCache(clear: Bool = false) {
+        guard canStart else { return }
+        let root: URL
+        do { try requireInstallerPreferences(); root = try installerPreferences.cacheRoot(library: store) }
+        catch { self.error = error.localizedDescription; return }
+        busy = true; status = "Inspecionando instaladores armazenados…"
+        Task {
+            defer { busy = false }
+            do {
+                let inventory = try await Task.detached { try InstallerCacheInventory.scan(root: root) }.value
+                cacheStatus = "\(inventory.availableCount) instaladores presentes, \(inventory.missingCount) recibos sem arquivo, \(inventory.unavailableCount) entradas indisponíveis, \(inventory.knownBytes.formatted()) bytes; \(inventory.unrecognized.count) itens não reconhecidos preservados."
+                guard clear else { status = "Cache inspecionado"; return }
+                guard !inventory.ownedPaths.isEmpty else { status = "Nenhum arquivo reconhecido para mover"; return }
+                let alert = NSAlert(); alert.messageText = "Mover o cache reconhecido para a Lixeira?"
+                alert.informativeText = "Somente instaladores e recibos reconhecidos serão movidos. Outros arquivos serão mantidos. O modo somente-cache precisará desses arquivos novamente para reinstalar."
+                alert.addButton(withTitle: "Mover para a Lixeira"); alert.addButton(withTitle: "Cancelar")
+                guard alert.runModal() == .alertFirstButtonReturn else { status = "Limpeza cancelada"; return }
+                let reportFile = store.logsRoot.appendingPathComponent("cache-cleanup-\(UUID()).json")
+                try FileManager.default.createDirectory(at: store.logsRoot, withIntermediateDirectories: true)
+                try Data("{\"status\":\"started\"}\n".utf8).write(to: reportFile, options: .withoutOverwriting)
+                lastLog = reportFile
+                let result = try await Task.detached { try InstallerCacheCleaner.clear(root: root) }.value
+                let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+                do { try encoder.encode(result).write(to: reportFile, options: .atomic) }
+                catch {
+                    status = "\(result.moves.count) arquivos movidos; falha ao registrar resultado"
+                    self.error = status + ": " + error.localizedDescription + "\n" + result.moves.map { $0.source.path + " → " + ($0.destination?.path ?? "destino não informado pelo macOS") }.joined(separator: "\n")
+                    return
+                }
+                status = "\(result.moves.count) arquivos movidos para a Lixeira"
+                cacheStatus = status + "; \(result.unrecognized.count) itens não reconhecidos preservados."
+                if !result.errors.isEmpty { self.error = "A limpeza foi parcial: " + result.errors.joined(separator: "\n") }
+
+            } catch { self.error = error.localizedDescription; status = "Cache não pôde ser inspecionado" }
+        }
     }
     func saveBottleSettings(_ settings: BottleSettings, bottleID: UUID) {
         guard canStart, presentation == .bottleSettings else { return }
@@ -308,8 +361,11 @@ final class AppModel: ObservableObject {
     }
     func installRecipe(id: String, catalog: RecipeCatalog) {
         guard let bottle = selected, store.isReady(bottle), canStart, presentation == .recipes else { return }
+        let cacheRoot: URL
+        do { try requireInstallerPreferences(); cacheRoot = try installerPreferences.cacheRoot(library: store) }
+        catch { self.error = error.localizedDescription; return }
         let operationID = UUID()
-        let service = RecipeInstallationService(store: store, runner: runner, cache: ArtifactCache(root: store.root.appendingPathComponent("Downloads")), operationID: operationID)
+        let service = RecipeInstallationService(store: store, runner: runner, cache: ArtifactCache(root: cacheRoot, downloadPolicy: installerPreferences.downloadPolicy), operationID: operationID)
         dismissPresentation(.recipes); busy = true; cancelling = false; activeOperationID = operationID
         status = "Preparando receita…"
         recipeTask = Task {

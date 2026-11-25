@@ -1,0 +1,27 @@
+{
+  "formatVersion": 1,
+  "report_path": "/Users/wiltongarcia/Developer/Cruzador/.local/cache-trash-native.json",
+  "report_sha256": "0ddec0b4694ebce4e60064ff2c7e258400f6422eb6bf7ee1fb5e5650cc8e3913",
+  "report": {
+    "errors": [],
+    "moves": [
+      {
+        "destination": "file:///Users/wiltongarcia/.Trash/Cruzador-cache-validation-FF9FEB2A-3A9F-42FC-BE2C-19E8A0F79C20.exe",
+        "source": "file:///Users/wiltongarcia/Developer/Cruzador/.local/cache-trash-validation-20261125/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff/Cruzador-cache-validation-FF9FEB2A-3A9F-42FC-BE2C-19E8A0F79C20.exe"
+      },
+      {
+        "destination": "file:///Users/wiltongarcia/.Trash/Cruzador-cache-validation-FF9FEB2A-3A9F-42FC-BE2C-19E8A0F79C20.exe.receipt.json",
+        "source": "file:///Users/wiltongarcia/Developer/Cruzador/.local/cache-trash-validation-20261125/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff/Cruzador-cache-validation-FF9FEB2A-3A9F-42FC-BE2C-19E8A0F79C20.exe.receipt.json"
+      }
+    ],
+    "unrecognized": [
+      "file:///Users/wiltongarcia/Developer/Cruzador/.local/cache-trash-validation-20261125/preserved-control.txt"
+    ]
+  },
+  "scope": "Two explicitly created disposable cache files were moved through the macOS FileManager trash API; the unrelated control file remained.",
+  "limitations": [
+    "This is a local system-trash API observation, not validation of every external volume or permission policy.",
+    "The later unavailable-payload representation is covered separately by source regressions.",
+    "No existing user cache or existing Trash item was removed or permanently deleted."
+  ]
+}

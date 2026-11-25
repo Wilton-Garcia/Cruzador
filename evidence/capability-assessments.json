@@ -1074,10 +1074,41 @@
         "ui:installer-preferences:6"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/InstallerPreferences.swift",
+        "Sources/CruzadorCore/Recipes.swift",
+        "Sources/Cruzador/InstallerPreferencesView.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/InstallerPreferencesTests.swift",
+          "name": "testPreferencesDefaultBackupInvalidRecoveryAndIdempotence",
+          "scope": "Padrões, seleção persistida, backups e recuperação de dados desconhecidos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/InstallerPreferencesTests.swift",
+          "name": "testCachedOnlyNeverDownloadsAndStillRejectsChangedPayload",
+          "scope": "Cache frio offline falha localmente; cache alterado é preservado e rejeitado."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/InstallerPreferencesTests.swift",
+          "name": "testMixedCacheCleanupRetainsFailedReceiptsWhileMovingOtherEntries",
+          "scope": "Limpeza parcial mantém recibos dos payloads que não puderam ser movidos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/InstallerPreferencesTests.swift",
+          "name": "testUnavailablePayloadIsNotMissingAndItsReceiptCannotBeDiscarded",
+          "scope": "Tipo inesperado não vira ausência; recibo e dados são mantidos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/InstallerPreferencesTests.swift",
+          "name": "testSystemTrashForExplicitDisposableCacheRoot",
+          "scope": "Lixeira real move somente dados novos descartáveis, preservando arquivo não reconhecido."
+        }
+      ],
+      "remaining_gap": "Preferências próprias, cache selecionável/offline e limpeza recuperável integrados; todos os volumes externos e equivalência integral com preferências do original não estabelecidos.",
       "independent_equivalence_established": false
     },
     {

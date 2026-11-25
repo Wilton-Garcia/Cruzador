@@ -325,6 +325,7 @@ struct RegisterAppView: View {
 struct EngineSettings: View {
     @ObservedObject var model: AppModel
     var body: some View {
+        TabView {
         Form {
             Text("Motor de compatibilidade").font(.title2.bold())
             Text("O Wine incluído prepara seus ambientes Windows. Cada bottle mantém o motor escolhido no momento da criação.").foregroundStyle(.secondary)
@@ -343,7 +344,9 @@ struct EngineSettings: View {
                 Button("Usar pacote incluído no aplicativo") { model.enginePath = WineRuntime.bundledRoot.path; model.saveEngine() }
             }
             Button("Salvar configuração") { model.saveEngine() }.buttonStyle(.borderedProminent)
-        }.disabled(model.busy)
+        }.disabled(model.busy).tabItem { Text("Motor") }
+        InstallerPreferencesView(model: model).tabItem { Text("Instalação e cache") }
+        }.frame(minHeight: 450)
     }
 }
 
@@ -356,6 +359,7 @@ struct InstallProgramView: View {
     @State private var environmentJSON = "{}"
     init(model: AppModel, installer: WindowsFileInspection) {
         self.model = model; self.installer = installer
+        _mode = State(initialValue: installer.kind == .msi ? model.installerPreferences.defaultMSIMode : .interactive)
         _workingDirectory = State(initialValue: URL(fileURLWithPath: installer.path).deletingLastPathComponent().path)
     }
     var body: some View {
@@ -363,6 +367,7 @@ struct InstallProgramView: View {
             Label("Instalar programa", systemImage: "shippingbox").font(.title2.bold())
             Text(URL(fileURLWithPath: installer.path).lastPathComponent).font(.headline)
             Text("Destino: \(model.selected?.name ?? "Nenhuma bottle")").foregroundStyle(.secondary)
+            if model.installerPreferenceProblem != nil { Text("Corrija e salve as preferências em Configurações → Instalação e cache antes de instalar.").foregroundStyle(.red) }
             Text("\(installer.kind.rawValue.uppercased()) · \(installer.size.formatted()) bytes").font(.caption).foregroundStyle(.secondary)
             if installer.kind == .msi {
                 Picker("Interface", selection: $mode) { ForEach(InstallerMode.allCases, id: \.self) { Text($0.displayName).tag($0) } }
@@ -379,7 +384,7 @@ struct InstallProgramView: View {
             HStack {
                 Button("Cancelar") { model.dismissPresentation(.installer) }.keyboardShortcut(.cancelAction)
                 Spacer()
-                Button("Iniciar instalação") { model.installSelected(mode: mode, arguments: arguments, workingDirectory: workingDirectory, environmentJSON: environmentJSON) }.buttonStyle(.borderedProminent).disabled(!model.canStart)
+                Button("Iniciar instalação") { model.installSelected(mode: mode, arguments: arguments, workingDirectory: workingDirectory, environmentJSON: environmentJSON) }.buttonStyle(.borderedProminent).disabled(!model.canStart || model.installerPreferenceProblem != nil)
             }
         }.padding(28).frame(width: 560)
     }
@@ -393,6 +398,7 @@ struct RecipesView: View {
         VStack(alignment: .leading, spacing: 18) {
             Label("Instalar por receita", systemImage: "list.bullet.clipboard").font(.title2.bold())
             Text("Destino: \(model.selected?.name ?? "Nenhuma bottle")").foregroundStyle(.secondary)
+            if model.installerPreferenceProblem != nil { Text("Corrija e salve as preferências em Configurações → Instalação e cache antes de instalar.").foregroundStyle(.red) }
             List(catalog.recipes, selection: $selectedID) { recipe in
                 VStack(alignment: .leading, spacing: 6) {
                     HStack { Text(recipe.name).font(.headline); Spacer(); Text(recipe.version).foregroundStyle(.secondary) }
@@ -402,12 +408,12 @@ struct RecipesView: View {
             if let recipe = catalog.recipes.first(where: { $0.id == selectedID }) {
                 Link("Site do fornecedor", destination: recipe.homepage)
                 Text(recipe.dependencies.isEmpty ? "Sem dependências adicionais declaradas." : "Dependências: " + recipe.dependencies.joined(separator: ", ")).font(.caption).foregroundStyle(.secondary)
-                Text("A receita baixa o instalador fixado, verifica seu conteúdo e executa as opções declaradas. Argumentos: \(recipe.arguments.joined(separator: " "))").font(.caption).foregroundStyle(.secondary)
+                Text("A receita obtém o instalador fixado conforme a política de cache, verifica seu conteúdo e executa as opções declaradas. Argumentos: \(recipe.arguments.joined(separator: " "))").font(.caption).foregroundStyle(.secondary)
             }
             HStack {
                 Button("Cancelar") { model.dismissPresentation(.recipes) }.keyboardShortcut(.cancelAction)
                 Spacer()
-                Button("Instalar receita") { if let selectedID { model.installRecipe(id: selectedID, catalog: catalog) } }.buttonStyle(.borderedProminent).disabled(selectedID == nil || !model.canStart)
+                Button("Instalar receita") { if let selectedID { model.installRecipe(id: selectedID, catalog: catalog) } }.buttonStyle(.borderedProminent).disabled(selectedID == nil || !model.canStart || model.installerPreferenceProblem != nil)
             }
         }.padding(28).frame(width: 580)
     }

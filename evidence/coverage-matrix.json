@@ -1073,10 +1073,41 @@
         "ui:installer-preferences:6"
       ],
       "reverse_knowledge": "ui-observation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/InstallerPreferences.swift",
+        "Sources/CruzadorCore/Recipes.swift",
+        "Sources/Cruzador/InstallerPreferencesView.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/InstallerPreferencesTests.swift",
+          "name": "testPreferencesDefaultBackupInvalidRecoveryAndIdempotence",
+          "scope": "Padrões, seleção persistida, backups e recuperação de dados desconhecidos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/InstallerPreferencesTests.swift",
+          "name": "testCachedOnlyNeverDownloadsAndStillRejectsChangedPayload",
+          "scope": "Cache frio offline falha localmente; cache alterado é preservado e rejeitado."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/InstallerPreferencesTests.swift",
+          "name": "testMixedCacheCleanupRetainsFailedReceiptsWhileMovingOtherEntries",
+          "scope": "Limpeza parcial mantém recibos dos payloads que não puderam ser movidos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/InstallerPreferencesTests.swift",
+          "name": "testUnavailablePayloadIsNotMissingAndItsReceiptCannotBeDiscarded",
+          "scope": "Tipo inesperado não vira ausência; recibo e dados são mantidos."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/InstallerPreferencesTests.swift",
+          "name": "testSystemTrashForExplicitDisposableCacheRoot",
+          "scope": "Lixeira real move somente dados novos descartáveis, preservando arquivo não reconhecido."
+        }
+      ],
+      "remaining_gap": "Preferências próprias, cache selecionável/offline e limpeza recuperável integrados; todos os volumes externos e equivalência integral com preferências do original não estabelecidos.",
       "independent_equivalence_established": false
     },
     {
@@ -3021,13 +3052,14 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "5d54afab8d4a44c45b886db52bd4979f55f7049581a5a5d36f8db663e7afc1f6",
+    "Sources/Cruzador/AppModel.swift": "292f71b4d5de4643c43180e707841caa72c29f9b449b3b9f934dbfa6c25e897b",
     "Sources/Cruzador/AppPresentation.swift": "e9c95fda11f36df3b16481a03a643d9c029fbe7fb846f9aa1cf757493dff8075",
     "Sources/Cruzador/CompatibilityView.swift": "b423f5014ac05cd2a3d3237cf430db248de34c6de30d5989a8cfa5541732aac4",
-    "Sources/Cruzador/ContentView.swift": "cdd275e98e1f72ee517061e6740cbd4a92e58627ab0eb2a63331a45957d4dbb4",
+    "Sources/Cruzador/ContentView.swift": "2fe536c4592973161e73f04acf3abafa37a48b239807b38807025344013a4c61",
     "Sources/Cruzador/CruzadorApp.swift": "431ede55976cca26a32067c1d7a2dfa8c480919639c25b7beab3895988730c80",
     "Sources/Cruzador/DiagnosticsView.swift": "d297e744b5b841a06322193fd8acd1f4fedbef742e7378db52b14d4089590378",
     "Sources/Cruzador/DocumentHistory.swift": "2e5fc0229ff9ae0f81bd655f17d21d0e35122b1314c09e91e271988757079ee3",
+    "Sources/Cruzador/InstallerPreferencesView.swift": "22e437ac8131f55e975fae3197af1cb884c8b85a96e7dc6cf93668e15f00dab9",
     "Sources/Cruzador/RetinaView.swift": "53c2c24bfc72bf210d7718ce40ce614a8dce56eba64f20e3226468ede212dbee",
     "Sources/CruzadorCore/AppDiscovery.swift": "bd7e56c17df92e3fed7ea7e945e72d9a684237210abfdc77b44ec3e25fe110b5",
     "Sources/CruzadorCore/BottleLifecycle.swift": "068afaab8f5fba4322a3daaea269c7f4b313bc403a0939bb51916ba84daa4c91",
@@ -3042,12 +3074,13 @@
     "Sources/CruzadorCore/Diagnostics.swift": "e944c39b8ba277791cb36df6135c483eef49d744b0fa587956613920e187a3ba",
     "Sources/CruzadorCore/EngineCommands.swift": "3bbbc5155b066e9fb85ee2d15e3bc8e4b707da17702207e91a8de797f83cd551",
     "Sources/CruzadorCore/ExternalOpening.swift": "d5e911d9485e8bc6f16813dbfe2e7c2ea9cf7f73f4e374b42981dfddc4a8e701",
+    "Sources/CruzadorCore/InstallerPreferences.swift": "f8db82da449b617b02aa9c8db86b88e38b982aa8f98c1f157260364508710242",
     "Sources/CruzadorCore/Installers.swift": "407e100255475311c3244ab0db652b7eae8260522b7a87798e96304da5d4f146",
     "Sources/CruzadorCore/LaunchRequest.swift": "242f32cadb35c954d475a6a21fe06edba47a1404ffb8f436202551d3e769fa7f",
     "Sources/CruzadorCore/LibrarySearch.swift": "171b784e1377ba20a92bcb68f7f82ea7ac66fb887111d154157e891df2aefd11",
     "Sources/CruzadorCore/LibraryStore.swift": "a247aa6b239318b7d3b8c02c4860d35ab1dd217d26f81adda41a765c5700ce0c",
     "Sources/CruzadorCore/Models.swift": "c652532426a5e7d460072be8a0d0e47140a4bc8a897e55bb00ad7a44d9c18195",
-    "Sources/CruzadorCore/Recipes.swift": "d4c1f2e27eb3f24b523e11c6f351a71fccaab6b8f973ef75f1ea813f5fa32d81",
+    "Sources/CruzadorCore/Recipes.swift": "1b9d7f4d73aa701706b9802a24d93f8548a81c8a1823f3a5249aeac987ddfc78",
     "Sources/CruzadorCore/RetinaConfiguration.swift": "fb2e37db6fd3d16346483f921b096b0340ac611fe45e918d0a077bd698e6f774",
     "Sources/CruzadorCore/Synchronization.swift": "b27246f4ff54c8813bd41bf84bde7ea43220191f3860513db25079d3d7bfd90a",
     "Sources/CruzadorCore/WindowsFile.swift": "54772c12b750ab3b8e9d93b82b6a9cf15c8ce7c770c9467d82caa54e15299bfe",
@@ -3067,6 +3100,7 @@
     "Tests/CruzadorCoreTests/DiscoveryTests.swift": "c1eefbaf48c39a90f79ff945d2d8546771cb4d955f6d58eadb6ee8ac261306e4",
     "Tests/CruzadorCoreTests/ExternalOpeningTests.swift": "40539413b640e1f9bbfefb3f1023086884247e6379b5420ee2b96ca63a6ec916",
     "Tests/CruzadorCoreTests/GraphicsTests.swift": "1698b3606476552bbf0bb5b2871e7fa9edabb7e8bd46e7f04925e68d99e054c9",
+    "Tests/CruzadorCoreTests/InstallerPreferencesTests.swift": "667deea594384c8525548ac390aac7a5787b02584675d9abc670c52698f0829c",
     "Tests/CruzadorCoreTests/InstallerTests.swift": "a8cd8908e6b767528b5907de1b3699ac138e6d80e1011b0b141ab615768b939d",
     "Tests/CruzadorCoreTests/LaunchTests.swift": "7f7adafe8378029fd5b1184003e896ad3d5f7fe55f408e97527dade3e36fe210",
     "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "ddb419f623d0aafb68ad3058410d30f78806bae10ebd8705b58f854724105713",
@@ -3090,8 +3124,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 36,
-      "missing": 4
+      "partial": 37,
+      "missing": 3
     }
   },
   "limitations": [
