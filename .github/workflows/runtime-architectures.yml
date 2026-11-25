@@ -21,6 +21,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Observe application directories before execution
+        run: python3 scripts/verify-standalone-environment.py --output validation/standalone-before.json
       - name: Toolchain and native tests
         run: |
           uname -m
@@ -28,6 +30,7 @@ jobs:
           swift test --jobs 3
           python3 Tests/Inspection/test_runtime_packaging.py
           python3 Tests/Inspection/test_native_smoke.py
+          python3 Tests/Inspection/test_standalone_environment.py
           python3 Tests/Inspection/test_validation_collection.py
       - name: Prepare pinned standalone Wine
         run: |
@@ -44,6 +47,9 @@ jobs:
           python3 scripts/verify-architectures.py --output validation/architecture-build.json
           codesign --verify --strict build/Cruzador.app
           python3 scripts/prepare-wine-runtime.py --destination build/Cruzador.app/Contents/Resources/Runtime --verify
+      - name: Observe application directories after execution
+        if: always()
+        run: python3 scripts/verify-standalone-environment.py --output validation/standalone-after.json
       - name: Preserve validation result
         if: always()
         run: |
