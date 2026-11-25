@@ -665,10 +665,20 @@
         "ui:bottle-menu:20"
       ],
       "reverse_knowledge": "native-decompilation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleShell.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleShellTests.swift",
+          "name": "testShellPreservesLiteralOptionsAndSelectsOnlyItsBottleAndWine",
+          "scope": "Shell zsh real com quoting literal, prefixo/motor selecionados e exclusão de ambiente herdado indevido."
+        }
+      ],
+      "remaining_gap": "Shell próprio no Terminal com ambiente escolhido; sessão externa não supervisionada pelo runner e equivalência integral com shell do original não estabelecida.",
       "independent_equivalence_established": false
     },
     {

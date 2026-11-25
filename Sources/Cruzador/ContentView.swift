@@ -219,6 +219,7 @@ struct ContentView: View {
                 HStack(spacing: 12) {
                     Button("Reparar bottle") { model.perform(.repair, bottle: bottle, title: "Reparando \(bottle.name)…") }
                     tool("Configurações Wine", "slider.horizontal.3", "winecfg", bottle)
+                    Button("Shell no Terminal") { model.openBottleShell(bottle) }.help("Abre um shell independente com o motor e o ambiente desta bottle. Feche seus programas antes da manutenção.")
                     tool("Registro", "list.bullet.rectangle", "regedit", bottle)
                     tool("Desinstalar programas", "minus.circle", "uninstaller", bottle)
                 }.disabled(!model.canStart || !model.store.isReady(bottle))

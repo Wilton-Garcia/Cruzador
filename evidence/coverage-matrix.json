@@ -664,10 +664,20 @@
         "ui:bottle-menu:20"
       ],
       "reverse_knowledge": "native-decompilation",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottleShell.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottleShellTests.swift",
+          "name": "testShellPreservesLiteralOptionsAndSelectsOnlyItsBottleAndWine",
+          "scope": "Shell zsh real com quoting literal, prefixo/motor selecionados e exclusão de ambiente herdado indevido."
+        }
+      ],
+      "remaining_gap": "Shell próprio no Terminal com ambiente escolhido; sessão externa não supervisionada pelo runner e equivalência integral com shell do original não estabelecida.",
       "independent_equivalence_established": false
     },
     {
@@ -2941,10 +2951,10 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "8cb320623a89b25006c345eff85b0171e36e39bab535de7151c986ce49836b1c",
+    "Sources/Cruzador/AppModel.swift": "13227cadd50f28faffc37b4144b64d65753789432967d361649abd4b7a71495d",
     "Sources/Cruzador/AppPresentation.swift": "e0daedada9c10260ebb6b4a8d8f6c625066d652e4330d59e7a020409ddc4dca7",
     "Sources/Cruzador/CompatibilityView.swift": "b423f5014ac05cd2a3d3237cf430db248de34c6de30d5989a8cfa5541732aac4",
-    "Sources/Cruzador/ContentView.swift": "ca6f1542a7697e3d5414bf6c51acede33fce1f3834dfb30d631455f24f0be12c",
+    "Sources/Cruzador/ContentView.swift": "f4102568dc104cb1762724a2eb866bbadc0f67e50cc5b175b3438040ec3cf523",
     "Sources/Cruzador/CruzadorApp.swift": "431ede55976cca26a32067c1d7a2dfa8c480919639c25b7beab3895988730c80",
     "Sources/Cruzador/DiagnosticsView.swift": "d297e744b5b841a06322193fd8acd1f4fedbef742e7378db52b14d4089590378",
     "Sources/Cruzador/DocumentHistory.swift": "2e5fc0229ff9ae0f81bd655f17d21d0e35122b1314c09e91e271988757079ee3",
@@ -2954,6 +2964,7 @@
     "Sources/CruzadorCore/BottleOperationRecovery.swift": "d9640346576c820c0bc5c9a4b09330a5ee730190f7d47aaae921c758ba85d681",
     "Sources/CruzadorCore/BottlePublication.swift": "19bd122dae7007687b2854ac5579455329c20cbe2442a500fc32a5bb8b463cb6",
     "Sources/CruzadorCore/BottleSettings.swift": "157f59d090d189d0d04cbbc0110fca90ad339ef4478072489079969bc634cd6d",
+    "Sources/CruzadorCore/BottleShell.swift": "60be367ac62827b6c3ed5cf098bf74a556851d101406edf980dbc8ccef3f0aae",
     "Sources/CruzadorCore/CommandRunner.swift": "c62b19e9cd8396db312126833bb0c94dcbfbb9aac47a0a6a70843c3735eaf376",
     "Sources/CruzadorCore/Compatibility.swift": "e81de06e4b10adeae15defd6294226ef46f74af5094388f5f0ac2c9f93e4c3ab",
     "Sources/CruzadorCore/Diagnostics.swift": "e944c39b8ba277791cb36df6135c483eef49d744b0fa587956613920e187a3ba",
@@ -2973,6 +2984,7 @@
     "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "ba2a5519816b81ebbb6c920530053a1b45a13181de5d5fc2a3934875c2335821",
     "Tests/CruzadorCoreTests/BottlePublicationTests.swift": "f9a541ca49086fa5ea2010c3288c37486a8c5bd870415a8b58210bc640266430",
     "Tests/CruzadorCoreTests/BottleRecoveryTests.swift": "32e22604e5f9b03e4bb43da6931191f6254eb5257699af1597498ac305fded24",
+    "Tests/CruzadorCoreTests/BottleShellTests.swift": "fdf6d9f1e2234a2ead6459f7ac6c24509fa43ad4ec43c41e8a944bbd466d9c04",
     "Tests/CruzadorCoreTests/CommandRunnerTests.swift": "20473c4a7489ce15107d0744fc7d868edc396fc50573f497f78a78521bb0d889",
     "Tests/CruzadorCoreTests/CompatibilityTests.swift": "5241c8b2b283d6e8e5701ecd9dac8963ec200b88b670d54c785b5c1204f15c41",
     "Tests/CruzadorCoreTests/CoreTests.swift": "3b6378c2a79b38d3c2260c59acce4fad78146187a9e3c90078f4ed07f1e82e8a",
@@ -3002,8 +3014,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 30,
-      "missing": 10
+      "partial": 31,
+      "missing": 9
     }
   },
   "limitations": [

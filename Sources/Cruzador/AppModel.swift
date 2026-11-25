@@ -429,6 +429,20 @@ final class AppModel: ObservableObject {
         panel.treatsFilePackagesAsDirectories = false; panel.message = "Escolha uma publicação .cruzadorbottle com publication.json."
         return panel.runModal() == .OK ? panel.url : nil
     }
+    func openBottleShell(_ bottle: Bottle) {
+        guard canStart else { return }
+        do {
+            let current = try store.load()
+            guard let selected = current.bottles.first(where: { $0.id == bottle.id }) else { throw CruzadorError.invalid("Bottle não encontrada.") }
+            let script = try BottleShell.prepare(bottle: selected, store: store)
+            NSWorkspace.shared.open([script], withApplicationAt: URL(fileURLWithPath: "/System/Applications/Utilities/Terminal.app"), configuration: NSWorkspace.OpenConfiguration()) { _, failure in
+                Task { @MainActor in
+                    if let failure { self.error = "Não foi possível abrir o Terminal: \(failure.localizedDescription). O script foi preservado em \(script.path)." }
+                    else if self.canStart { self.status = "Shell aberto no Terminal. Feche os programas Windows antes de reparar ou exportar a bottle." }
+                }
+            }
+        } catch { self.error = error.localizedDescription }
+    }
     func publishBottle(_ bottle: Bottle, newRevision: Bool = false) {
         guard canStart else { return }
         let previous: URL?
