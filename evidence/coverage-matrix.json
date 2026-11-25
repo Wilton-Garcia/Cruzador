@@ -2551,12 +2551,12 @@
     "Sources/Cruzador/AppModel.swift": "ad18d435820c4209524ba4abc19b639a87020a376f68bcde8385132a4a89beac",
     "Sources/Cruzador/ContentView.swift": "4a45f8506d55683ebdf58593f44a2be650594806b830d4b3446a6e9b609909e6",
     "Sources/Cruzador/CruzadorApp.swift": "8491e480c40115839f1eb76eb79fda94bcc01df79eb9f50daa7152f1fccc4943",
-    "Sources/CruzadorCore/EngineCommands.swift": "5640384b977bc91307e95aba1d6976b7fbe3bd24c59a5b3b1e221ea076fcb5cb",
+    "Sources/CruzadorCore/EngineCommands.swift": "b1128cc99907080fd6ed1c9025287ea05499263139298d3340e5c0cc932b5e40",
     "Sources/CruzadorCore/LibraryStore.swift": "5a6e1f95c9fd0489cd9198e91b9a17ca9621fa2d9135570628fb620b0f81be3c",
     "Sources/CruzadorCore/WineRuntime.swift": "26f30b33750afea74f7312f79710ac04b5cb9f327201210f09608fc0d6d2f3f0",
-    "Tests/CruzadorCoreTests/CoreTests.swift": "2514ed816e6fe47fc45f8261a5c475ef4313a2e01be530958d85751512f84bb9",
-    "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "3ae735d842c65d11522799f0862f67c85fac5fc0bf752bd74c919371f9042063",
-    "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "ca1fe37f1132e10fba422de061d93345ebc1a49457f863d96dde11279e6065b9"
+    "Tests/CruzadorCoreTests/CoreTests.swift": "0188ccbaaf991174789a9a90b87ea12d0ceaa6412211d9fbe7ab1352de56458d",
+    "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "5116580fe231d2337f92ac482ee8446186d1de0784146abd08e41efce86da151",
+    "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "421c720a5351f588ffcf0a5c02eb08467dfe6ae66b10b559f2d3448e006e21b0"
   },
   "counts": {
     "capabilities": 40,

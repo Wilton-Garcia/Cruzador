@@ -1,8 +1,13 @@
 #!/bin/sh
 set -eu
 cd "$(dirname "$0")/.."
-swift build -c release --jobs 4
-binary_dir=$(swift build -c release --show-bin-path)
+case "${CRUZADOR_UNIVERSAL:-0}" in
+    0) set -- ;;
+    1) set -- --arch arm64 --arch x86_64 ;;
+    *) printf 'CRUZADOR_UNIVERSAL deve ser 0 ou 1.\n' >&2; exit 2 ;;
+esac
+swift build -c release --jobs 4 "$@"
+binary_dir=$(swift build -c release "$@" --show-bin-path)
 app="build/Cruzador.app"
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
 cp "$binary_dir/Cruzador" "$app/Contents/MacOS/Cruzador"

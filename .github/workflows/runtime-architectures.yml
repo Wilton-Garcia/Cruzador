@@ -1,0 +1,52 @@
+name: Runtime architectures
+on:
+  push:
+    branches: [main, codex/runtime-validation]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: runtime-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  runtime:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-15, macos-15-intel]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Toolchain and native tests
+        run: |
+          uname -m
+          swift --version
+          swift test --jobs 3
+          python3 Tests/Inspection/test_runtime_packaging.py
+      - name: Prepare pinned standalone Wine
+        run: python3 scripts/prepare-wine-runtime.py
+      - name: Execute 32-bit and 64-bit Windows programs
+        run: python3 scripts/native-smoke.py --runtime .local/Runtime-11.21
+      - name: Build and verify universal application
+        env:
+          CRUZADOR_UNIVERSAL: '1'
+        run: |
+          scripts/build-app.sh
+          python3 scripts/verify-architectures.py
+          codesign --verify --strict build/Cruzador.app
+          python3 scripts/prepare-wine-runtime.py --destination build/Cruzador.app/Contents/Resources/Runtime --verify
+      - name: Preserve validation result
+        if: always()
+        run: |
+          mkdir -p validation
+          if [ -f .local/packaged-runtime-smoke.json ]; then cp .local/packaged-runtime-smoke.json validation/; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: runtime-${{ matrix.runner }}
+          path: validation/
+          if-no-files-found: warn

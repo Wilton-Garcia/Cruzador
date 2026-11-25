@@ -28,7 +28,7 @@ final class NativeSmokeTests: XCTestCase {
         XCTAssertTrue(try String(contentsOf: runResult.log, encoding: .utf8).contains("CRUZADOR_SMOKE_OK"))
         // Wait for the server of this explicitly isolated prefix to exit.
         let base = URL(fileURLWithPath: bottle.engine.path).appendingPathComponent("Contents/SharedSupport/CrossOver/bin/wine")
-        let stop = Command(executable: base, arguments: ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait-all"], environment: create.environment)
+        let stop = Command(executable: base, arguments: ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait-all"], environment: create.primary.environment)
         let stopped = try await runner.run(stop, log: store.logsRoot.appendingPathComponent("shutdown.log"))
         XCTAssertEqual(stopped.exitCode, 0)
     }

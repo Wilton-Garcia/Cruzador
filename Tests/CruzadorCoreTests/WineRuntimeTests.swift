@@ -27,7 +27,7 @@ final class WineRuntimeTests: XCTestCase {
         XCTAssertTrue(text.contains(root.appendingPathComponent("bin/wineserver").path))
         XCTAssertTrue(text.contains(store.prefix(for: bottle).path))
         XCTAssertTrue(text.contains("wineboot"))
-        XCTAssertNil(command.environment["CX_BOTTLE"])
+        XCTAssertNil(command.primary.environment["CX_BOTTLE"])
     }
     func testManifestCannotSelectAnExternalExecutable() throws {
         let root = try fixture(winePath: "../external/wine")
@@ -45,4 +45,26 @@ final class WineRuntimeTests: XCTestCase {
         try FileManager.default.removeItem(at: root.appendingPathComponent("runtime.json"))
         XCTAssertThrowsError(try WineRuntime(root: root))
     }
+    func testInitializationFinalizesRegistryBeforeReadinessCheck() async throws {
+        let root = try fixture()
+        let primary = #"""
+        #!/bin/sh
+        mkdir -p "$WINEPREFIX/drive_c"
+        printf pending > "$WINEPREFIX/pending"
+        """#
+        let finalizer = #"""
+        #!/bin/sh
+        test -f "$WINEPREFIX/pending" || exit 3
+        printf registry > "$WINEPREFIX/system.reg"
+        """#
+        try (primary + "\n").write(to: root.appendingPathComponent("bin/wine"), atomically: true, encoding: .utf8)
+        try (finalizer + "\n").write(to: root.appendingPathComponent("bin/wineserver"), atomically: true, encoding: .utf8)
+        for name in ["wine", "wineserver"] { try FileManager.default.setAttributes([.posixPermissions: 0o755], ofItemAtPath: root.appendingPathComponent("bin/\(name)").path) }
+        let store = LibraryStore(root: root.appendingPathComponent("data"))
+        let bottle = Bottle(name: "A", engine: Engine(kind: .packagedWine, path: root.path))
+        let result = try await CommandRunner().run(EngineCommands.make(.initialize, bottle: bottle, store: store), log: root.appendingPathComponent("init.log"))
+        XCTAssertEqual(result.exitCode, 0)
+        XCTAssertTrue(store.isInitialized(bottle))
+    }
+
 }
