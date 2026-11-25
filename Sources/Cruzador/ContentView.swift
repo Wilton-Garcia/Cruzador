@@ -69,12 +69,14 @@ struct ContentView: View {
                     if model.busy && model.canCancelOperation { Button(model.cancelling ? "Encerrando…" : "Cancelar operação") { model.cancelCurrentOperation() }.disabled(model.cancelling).help("No Wine, cancelar encerra os programas Windows desta bottle e aguarda o servidor.") }
                     if !model.incomingRequests.isEmpty { Button("Arquivos recebidos (\(model.incomingRequests.count))") { model.showIncoming = true } }
                     if model.cleanupOperationID != nil { Button("Repetir encerramento") { model.retryCleanup() }.disabled(model.busy) }
+                    Button("Diagnóstico…") { model.showDiagnostics = true }.disabled(model.busy)
                     if let log = model.lastLog { Button("Ver log") { NSWorkspace.shared.open(log) }.buttonStyle(.link) }
                 }.padding(14).background(.bar)
             }
         }
         .onChange(of: model.searchFocusRequest) { searchFocused = true }
         .tint(.teal)
+        .sheet(isPresented: $model.showDiagnostics) { DiagnosticsView(model: model) }
         .sheet(isPresented: $model.showHistory) { if let bottle = model.selected { InstallationHistoryView(model: model, bottle: bottle) } }
         .sheet(isPresented: $model.showIncoming) { if let incoming = model.incomingRequests.first { ExternalOpeningView(model: model, incoming: incoming) } }
         .sheet(isPresented: $model.showCreate) { CreateBottleView(model: model) }
@@ -123,8 +125,8 @@ struct ContentView: View {
                     GroupBox {
                         HStack {
                             VStack(alignment: .leading, spacing: 5) {
-                                Text("A preparação ainda não foi concluída").fontWeight(.semibold)
-                                Text(bottle.lastError ?? "Os arquivos parciais foram preservados. Consulte o log antes de tentar novamente.").font(.callout).foregroundStyle(.secondary)
+                                Text("A prontidão não está confirmada").fontWeight(.semibold)
+                                Text(readinessExplanation(bottle)).font(.callout).foregroundStyle(.secondary)
                             }
                             Spacer()
                             Button("Preparar novamente") { model.perform(.initialize, bottle: bottle, title: "Preparando \(bottle.name)…") }.disabled(!model.canStart)
@@ -203,9 +205,19 @@ struct ContentView: View {
     private func tool(_ title: String, _ symbol: String, _ command: String, _ bottle: Bottle) -> some View {
         Button { model.perform(.tool(command), bottle: bottle, title: "Abrindo \(title)…") } label: { Label(title, systemImage: symbol) }
     }
+    private func readinessExplanation(_ bottle: Bottle) -> String {
+        if case .unknown(let reason) = model.store.health(of: bottle) { return reason }
+        return bottle.lastError ?? "Os arquivos parciais foram preservados. Consulte o log antes de tentar novamente."
+    }
     private func stateLabel(_ bottle: Bottle) -> String {
         switch bottle.state {
-        case .ready: model.store.isInitialized(bottle) ? "Pronta para usar" : "Arquivos ausentes"
+        case .ready:
+            switch model.store.health(of: bottle) {
+            case .initialized: "Pronta para usar"
+            case .absent: "Arquivos ausentes"
+            case .incomplete: "Arquivos incompletos"
+            case .unknown: "Arquivos sem verificação"
+            }
         case .preparing: "Em preparação"
         case .failed: "Preparação incompleta"
         case .interrupted: "Preparação interrompida"

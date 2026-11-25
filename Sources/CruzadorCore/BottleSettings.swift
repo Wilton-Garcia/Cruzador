@@ -81,8 +81,13 @@ public struct BottleSettingsStore: Sendable {
         if bottle.requestedSettings == settings { return }
         let previous = try SynchronizationConfiguration.environment(settings: bottle.requestedSettings, engine: bottle.engine)
         if previous != next, store.health(of: bottle) != .absent {
-            let result = try await runner.run(EngineCommands.make(.waitForIdle, bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("settings-\(operationID).log"), operationID: operationID)
-            try result.requireSuccess()
+            do {
+                let result = try await runner.run(EngineCommands.make(.waitForIdle, bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("settings-\(operationID).log"), operationID: operationID)
+                try result.requireSuccess()
+            } catch {
+                try BottleOperationRecovery(store: store).record(error, bottleID: bottleID)
+                throw error
+            }
         }
         var current = try store.load()
         guard let index = current.bottles.firstIndex(where: { $0.id == bottleID }), current.bottles[index].requestedSettings == bottle.requestedSettings else { throw CruzadorError.invalid("A configuração mudou durante a espera. Confira e tente novamente.") }

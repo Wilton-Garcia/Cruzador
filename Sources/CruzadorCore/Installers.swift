@@ -82,12 +82,24 @@ public struct InstallationService: Sendable {
             case CommandRunnerError.failed(_, let observed): phases = observed; status = .launchFailed
             default: phases = nil; status = .launchFailed
             }
-            try finish(id: request.id, bottleID: bottle.id, status: status, code: nil, error: error.localizedDescription, phases: phases)
+            do { try finish(id: request.id, bottleID: bottle.id, status: status, code: nil, error: error.localizedDescription, phases: phases) }
+            catch let persistenceFailure { throw BottleOperationRecovery.preservingShutdownFailure(error, persistenceFailure: persistenceFailure) }
+            try BottleOperationRecovery(store: store).record(error, bottleID: bottle.id)
             throw error
         }
         let status: InstallationStatus = result.cancelled ? .cancelled : result.exitCode == 0 ? .completed : .unconfirmed
-        try finish(id: request.id, bottleID: bottle.id, status: status, code: result.exitCode, error: result.cleanupFailures.isEmpty ? nil : result.cleanupFailures.joined(separator: "; "), phases: result.phases)
-        try result.requireSuccess()
+        let operationFailure: Error?
+        do { try result.requireSuccess(); operationFailure = nil }
+        catch { operationFailure = error }
+        do { try finish(id: request.id, bottleID: bottle.id, status: status, code: result.exitCode, error: result.cleanupFailures.isEmpty ? nil : result.cleanupFailures.joined(separator: "; "), phases: result.phases) }
+        catch {
+            if let operationFailure { throw BottleOperationRecovery.preservingShutdownFailure(operationFailure, persistenceFailure: error) }
+            throw error
+        }
+        if let operationFailure {
+            try BottleOperationRecovery(store: store).record(operationFailure, bottleID: bottle.id)
+            throw operationFailure
+        }
         return result
     }
     public func recoverInterrupted() throws {

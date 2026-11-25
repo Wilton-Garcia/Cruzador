@@ -28,7 +28,7 @@ O aplicativo gerado recebe assinatura ad hoc para uso local; não é um pacote n
 - Configurações Wine, editor de registro e desinstalador.
 - [Integração com Finder, recentes e atalhos externos](docs/macos-integration.md), com revisão dos pedidos recebidos.
 - Opções globais de execução por bottle e sincronização MSync no [pacote opcional compatível](docs/wine-runtime.md#sincronização-e-opções-da-bottle).
-- Logs por operação, histórico detalhado de instaladores, erros de saída e preservação de preparação incompleta.
+- Logs por operação, histórico detalhado de instaladores e [diagnóstico local exportável](docs/diagnostics.md), com preservação de falhas e arquivos inválidos.
 - Metadados JSON com backup antes de sobrescrever uma biblioteca válida.
 - Catálogo próprio com dependências ordenadas, downloads verificados e atalhos de receita.
 - Reparo, retomada e manutenção de bottles com duplicação, transferência em formato próprio e remoção recuperável.

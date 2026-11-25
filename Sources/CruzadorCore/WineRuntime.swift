@@ -18,11 +18,18 @@ public struct WineRuntimeManifest: Codable, Equatable, Sendable {
     public let licenseFiles: [String]
     public let minimumMacOSVersion: RuntimeMacOSVersion?
     public let features: [String]?
-    public init(formatVersion: Int = 1, identifier: String = "org.winehq.wine", version: String, sourceURL: String, sourceRevision: String, architectures: [String], wineExecutable: String = "bin/wine", serverExecutable: String = "bin/wineserver", licenseFiles: [String], minimumMacOSVersion: RuntimeMacOSVersion? = nil, features: [String]? = nil) {
+    public let providerRelease: String?
+    public let archiveSHA256: String?
+    public let inventorySHA256: String?
+    public let builderRevision: String?
+    public let distributionStatus: String?
+    public init(formatVersion: Int = 1, identifier: String = "org.winehq.wine", version: String, sourceURL: String, sourceRevision: String, architectures: [String], wineExecutable: String = "bin/wine", serverExecutable: String = "bin/wineserver", licenseFiles: [String], minimumMacOSVersion: RuntimeMacOSVersion? = nil, features: [String]? = nil, providerRelease: String? = nil, archiveSHA256: String? = nil, inventorySHA256: String? = nil, builderRevision: String? = nil, distributionStatus: String? = nil) {
         self.formatVersion = formatVersion; self.identifier = identifier; self.version = version
         self.sourceURL = sourceURL; self.sourceRevision = sourceRevision; self.architectures = architectures
         self.wineExecutable = wineExecutable; self.serverExecutable = serverExecutable; self.licenseFiles = licenseFiles
         self.minimumMacOSVersion = minimumMacOSVersion; self.features = features
+        self.providerRelease = providerRelease; self.archiveSHA256 = archiveSHA256; self.inventorySHA256 = inventorySHA256
+        self.builderRevision = builderRevision; self.distributionStatus = distributionStatus
     }
 }
 public enum WineRuntimeError: LocalizedError {

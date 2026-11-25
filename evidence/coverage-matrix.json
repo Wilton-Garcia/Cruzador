@@ -598,16 +598,39 @@
       "prototype_status": "partial",
       "source_files": [
         "Sources/Cruzador/AppModel.swift",
-        "Sources/CruzadorCore/EngineCommands.swift"
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/CruzadorCore/Diagnostics.swift",
+        "Sources/CruzadorCore/BottleOperationRecovery.swift",
+        "Sources/Cruzador/DiagnosticsView.swift"
       ],
       "tests": [
         {
           "file": "Tests/CruzadorCoreTests/CoreTests.swift",
           "name": "testRunnerKeepsExitAndDoesNotInterpretShellArguments",
           "scope": "Saída em arquivo e status não zero"
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/DiagnosticsTests.swift",
+          "name": "testRetainedRuntimeDiagnosticExport",
+          "scope": "Exportação de prefixo real retido; biblioteca original preservada e logs copiados com hashes."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/DiagnosticsTests.swift",
+          "name": "testMalformedLibraryExportKeepsExactSourceAndUnknownFacts",
+          "scope": "Fonte inválida preservada, sem inferir biblioteca vazia."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleRecoveryTests.swift",
+          "name": "testExecutionWorkflowsKeepUnconfirmedShutdownOnReopening",
+          "scope": "Preparo, instalação e manutenção preservam encerramento não confirmado ao reabrir."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleRecoveryTests.swift",
+          "name": "testPreparationAndInstallerMetadataFailuresKeepCleanupFacts",
+          "scope": "Falha de gravação não apaga os fatos da falha de limpeza."
         }
       ],
-      "remaining_gap": "Logs simples existem; seleção de canais, ambiente e relatório detalhado faltam.",
+      "remaining_gap": "Logs próprios e diagnóstico local com exportação opt-in; seleção avançada de canais Wine, rastreamento do original e equivalência integral não estabelecidos.",
       "independent_equivalence_established": false
     },
     {
@@ -2873,30 +2896,35 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "a1e97f1f7e259c75e6eed066798b08ead9968ec67ed4117e1bc01ae163502caa",
-    "Sources/Cruzador/ContentView.swift": "9509d4ec7ab896f5b2bdc43abc887f85a2dd097495aaceb85e12594329ea9789",
-    "Sources/Cruzador/CruzadorApp.swift": "a8b17f00b4df22434d1afa4ca5a30f89994bcee6ef9edc65f55aa1f0be8329fb",
+    "Sources/Cruzador/AppModel.swift": "3ebf8d4b27d289bc81358d2d15d6951033b6e88ef8aad9a4e2bf17056c3f8643",
+    "Sources/Cruzador/ContentView.swift": "de258e8df92abfb976ed74c8ab32d0c565a20d9b5b1eb044939ea497e9a4a201",
+    "Sources/Cruzador/CruzadorApp.swift": "0e4c6cfb2a1894fbe98a2f0d5efd13df8b6feca0a8119e64a3f6f8afe060cad3",
+    "Sources/Cruzador/DiagnosticsView.swift": "50748ff81822654d054b0888d844b891feb224fe363fd2b16c7bc7b74644fa25",
     "Sources/CruzadorCore/AppDiscovery.swift": "bd7e56c17df92e3fed7ea7e945e72d9a684237210abfdc77b44ec3e25fe110b5",
-    "Sources/CruzadorCore/BottleLifecycle.swift": "6535f188d6c34bac80fee8b582aa790a79b0df9327c7001066f763442355e13d",
-    "Sources/CruzadorCore/BottleMaintenance.swift": "bdcf4673ab8d4577edad97cefc7f3f1f4e751f8d2b39b4d5fecacc56e578b29e",
-    "Sources/CruzadorCore/BottleSettings.swift": "e944ed642353268798014e1a85ef9b32d472f70af6d57418eb5b0f2d6b0ed34d",
+    "Sources/CruzadorCore/BottleLifecycle.swift": "0611f7b49f7ab6969be864c70cf426de12c960c8c62c64055f27d03e53f90541",
+    "Sources/CruzadorCore/BottleMaintenance.swift": "e339d91afad94e6a14a44daebcb50bd8a491fba61475dc4f57b164517cc2443f",
+    "Sources/CruzadorCore/BottleOperationRecovery.swift": "d9640346576c820c0bc5c9a4b09330a5ee730190f7d47aaae921c758ba85d681",
+    "Sources/CruzadorCore/BottleSettings.swift": "89a086a7a5f4d0345db0eba1ba5b5d0fb7ff9a9cf2d16886ac9124ec501e7d6c",
     "Sources/CruzadorCore/CommandRunner.swift": "c62b19e9cd8396db312126833bb0c94dcbfbb9aac47a0a6a70843c3735eaf376",
+    "Sources/CruzadorCore/Diagnostics.swift": "e944c39b8ba277791cb36df6135c483eef49d744b0fa587956613920e187a3ba",
     "Sources/CruzadorCore/EngineCommands.swift": "40db75e9c066b569684ac17274c710e04c44655fa04818d35854cf9bd851cb01",
     "Sources/CruzadorCore/ExternalOpening.swift": "d5e911d9485e8bc6f16813dbfe2e7c2ea9cf7f73f4e374b42981dfddc4a8e701",
-    "Sources/CruzadorCore/Installers.swift": "1cefe10fa581794025bed25174854ef1ab3363a1483a6061dbcc476db82e8df7",
+    "Sources/CruzadorCore/Installers.swift": "407e100255475311c3244ab0db652b7eae8260522b7a87798e96304da5d4f146",
     "Sources/CruzadorCore/LaunchRequest.swift": "242f32cadb35c954d475a6a21fe06edba47a1404ffb8f436202551d3e769fa7f",
     "Sources/CruzadorCore/LibrarySearch.swift": "171b784e1377ba20a92bcb68f7f82ea7ac66fb887111d154157e891df2aefd11",
-    "Sources/CruzadorCore/LibraryStore.swift": "e19b3c07bcac9f96ab49c40f64ca7e03a1143daf8fe396ca032fb6dd84221597",
+    "Sources/CruzadorCore/LibraryStore.swift": "a247aa6b239318b7d3b8c02c4860d35ab1dd217d26f81adda41a765c5700ce0c",
     "Sources/CruzadorCore/Models.swift": "c652532426a5e7d460072be8a0d0e47140a4bc8a897e55bb00ad7a44d9c18195",
-    "Sources/CruzadorCore/Recipes.swift": "80c78a3b25eb86636fddb394d792c33e93be09d7fe7d0d968a37605474efa57b",
+    "Sources/CruzadorCore/Recipes.swift": "d4c1f2e27eb3f24b523e11c6f351a71fccaab6b8f973ef75f1ea813f5fa32d81",
     "Sources/CruzadorCore/Synchronization.swift": "a626c0ec9687a5c2d40a44f568e6dd14a179b18d04863f259f043afde32ff2e0",
     "Sources/CruzadorCore/WindowsFile.swift": "54772c12b750ab3b8e9d93b82b6a9cf15c8ce7c770c9467d82caa54e15299bfe",
     "Sources/CruzadorCore/WineRegistry.swift": "38eca8ce1a9efac336823d28b3f7a96398b131c463ed4e29f1e383e78b351551",
-    "Sources/CruzadorCore/WineRuntime.swift": "f71319665641aecfb1a00273d08648b20253bef2d7be14d42e879b05268c54e0",
+    "Sources/CruzadorCore/WineRuntime.swift": "adcbc69968a9f5d989b68eac8661d7dd5b752f7526483fb52f18037850919e6c",
     "Tests/CruzadorCoreTests/BottleLifecycleTests.swift": "5435298b8b533ee151817535977381c5ccb08db4455d86840e43fbbfdb0e097d",
     "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "ba2a5519816b81ebbb6c920530053a1b45a13181de5d5fc2a3934875c2335821",
+    "Tests/CruzadorCoreTests/BottleRecoveryTests.swift": "32e22604e5f9b03e4bb43da6931191f6254eb5257699af1597498ac305fded24",
     "Tests/CruzadorCoreTests/CommandRunnerTests.swift": "20473c4a7489ce15107d0744fc7d868edc396fc50573f497f78a78521bb0d889",
     "Tests/CruzadorCoreTests/CoreTests.swift": "3b6378c2a79b38d3c2260c59acce4fad78146187a9e3c90078f4ed07f1e82e8a",
+    "Tests/CruzadorCoreTests/DiagnosticsTests.swift": "02708d44f6190b219298c770dd43c3bf65226d1942a14cc64c10efd5485f825b",
     "Tests/CruzadorCoreTests/DiscoveryTests.swift": "c1eefbaf48c39a90f79ff945d2d8546771cb4d955f6d58eadb6ee8ac261306e4",
     "Tests/CruzadorCoreTests/ExternalOpeningTests.swift": "40539413b640e1f9bbfefb3f1023086884247e6379b5420ee2b96ca63a6ec916",
     "Tests/CruzadorCoreTests/GraphicsTests.swift": "de9fe7d1177f0798149d606694e4be49bbe8a9a084b4c19c77a26e6f61b04867",
@@ -2907,8 +2935,8 @@
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "0f7b7703620b0e9aa3aa78f1fd549365a89f7d5530d422ed853b9c3c962d61d3",
     "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "6e9fea8739572685433288976cb22950620c48d3921b95b58fac88d4c1baf2f6",
     "Tests/CruzadorCoreTests/RecipeTests.swift": "e67bf964843365aeb40fc73925535319982e77eedd63e326ff6838eadfbaab3c",
-    "Tests/CruzadorCoreTests/SynchronizationTests.swift": "0ab0e01437c99e8c0fe104b2d9d6adc952f3eb6b9490c1d97cef9dff78064cb4",
-    "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "993713671d71006a834e46dbf3a82961eb24cd2b1da01528d58633d2557b54e8",
+    "Tests/CruzadorCoreTests/SynchronizationTests.swift": "c9fe0ecd391468133746004c6fd59864ad2f8d01d08bab1521956feca59bb2cd",
+    "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "a99fee46e3c57d711d3d7499a3d92a958ede07540dca417084b334a65fb8df2a",
     "config/recipes.json": "d61a4fe567b4196894446bebf77bdc05aa6d74c7dd911d654380cc8a928876ee",
     "config/wine-msync-runtime-lock.json": "cbaae271f4a0fbaea717e13bf49c41a6840e839829e9c20a627ace5f1444c992",
     "scripts/build-app.sh": "c6e19ad20ff6cb84341eb0f9de2737227221212e7f6fa0697a4f8e27ca6bcec3",

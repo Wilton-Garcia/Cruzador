@@ -62,7 +62,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         guard model.busy else { return .terminateNow }
         let alert = NSAlert(); alert.messageText = "Há uma operação em andamento"
-        alert.informativeText = "Cancele a operação pelo aplicativo ou feche o programa Windows e aguarde o encerramento antes de sair do Cruzador."
+        alert.informativeText = model.canCancelOperation ? "Cancele a operação pelo aplicativo ou feche o programa Windows e aguarde o encerramento antes de sair do Cruzador." : "Aguarde a conclusão da etapa atual antes de sair do Cruzador."
         alert.runModal(); return .terminateCancel
     }
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { false }

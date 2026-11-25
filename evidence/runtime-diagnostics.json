@@ -1,0 +1,66 @@
+{
+  "kind": "observed-export-from-retained-Wine-prefix",
+  "report_path": "/Users/wiltongarcia/Developer/Cruzador/.local/diagnostics-079144C7-9C9F-44C4-9EB3-46DD54A56B1B/report.json",
+  "report_sha256": "4cf75d39041d1e6f29493778bead84f7fc65643d01a4004b92031a5909927922",
+  "source_library_path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/library.json",
+  "source_library_sha256": "44ef65eb6148311e3f7d23d969a600da7fc2579dadb63e59e20c71efcf9328ae",
+  "original_library_bytes_preserved": true,
+  "library_status": "valid",
+  "requested_bottle_id": "357277C2-6F50-4101-88B1-DFE3343E22C8",
+  "bottles": [
+    {
+      "appCount": 2,
+      "engine": {
+        "kind": "packagedWine",
+        "path": "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime"
+      },
+      "id": "357277C2-6F50-4101-88B1-DFE3343E22C8",
+      "installationCount": 3,
+      "lastLogPath": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/Logs/repair.log",
+      "name": "Motor próprio",
+      "prefix": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-dd19fd14-b3f2-4e46-b6cc-08d7c045d19e/Bottles/357277C2-6F50-4101-88B1-DFE3343E22C8",
+      "prefixStatus": "initialized",
+      "runtimeManifest": {
+        "architectures": [
+          "x86_64"
+        ],
+        "archiveSHA256": "9909b486657e10ab66c7279371ae1f990345b596b3b1b3a0cf21f28af24fa0ce",
+        "distributionStatus": "development-package; complete third-party attribution review remains unverified",
+        "formatVersion": 1,
+        "identifier": "org.winehq.wine",
+        "inventorySHA256": "42f1148eb6f80f7b77d0f341e3b49bfcddbf0dc6803202ae2e4191757792e665",
+        "licenseFiles": [
+          "licenses/Wine/LICENSE",
+          "licenses/Wine/COPYING.LIB"
+        ],
+        "providerRelease": "https://github.com/Gcenx/macOS_Wine_builds/releases/tag/11.21",
+        "serverExecutable": "bin/wineserver",
+        "sourceRevision": "wine-11.21",
+        "sourceURL": "https://github.com/wine-mirror/wine/tree/wine-11.21",
+        "version": "11.21",
+        "wineExecutable": "bin/wine"
+      },
+      "runtimeStatus": "manifest-validated",
+      "state": "ready"
+    }
+  ],
+  "copied_log_hashes_verified": true,
+  "log_counts": {
+    "copied": 15
+  },
+  "tests": {
+    "default_swift_test_count": 65,
+    "default_opt_in_skips": 6,
+    "failures": 0,
+    "real_retained_prefix_diagnostic_export": "passed"
+  },
+  "limitations": [
+    "Read-only metadata observation; no Windows code, process census or GPU test was executed.",
+    "Manifest validation does not verify the full runtime inventory or binary behavior.",
+    "Prefix readiness is structural and is separate from recorded preparation or shutdown completion.",
+    "Log copies may span different instants; a copied-file digest describes the exported bytes.",
+    "The ambient environment was not collected; optional source metadata and logs may contain caller-selected values and program output.",
+    "No native GUI inspection or acceptance of the export dialog was verified.",
+    "Failure and recovery workflows were verified with supervised fixture processes; this export itself launched no Windows program."
+  ]
+}

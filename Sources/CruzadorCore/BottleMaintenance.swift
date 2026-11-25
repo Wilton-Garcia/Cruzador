@@ -101,8 +101,10 @@ public struct BottleMaintenance: Sendable {
         return copy
     }
     private func idle(_ bottle: Bottle) async throws {
-        let result = try await runner.run(EngineCommands.make(.waitForIdle, bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("maintenance-\(UUID().uuidString).log"), operationID: operationID)
-        try result.requireSuccess()
+        do {
+            let result = try await runner.run(EngineCommands.make(.waitForIdle, bottle: bottle, store: store), log: store.logsRoot.appendingPathComponent("maintenance-\(UUID().uuidString).log"), operationID: operationID)
+            try result.requireSuccess()
+        } catch { try BottleOperationRecovery(store: store).record(error, bottleID: bottle.id); throw error }
     }
     private func index(_ id: UUID, in library: Library) throws -> Int {
         guard let found = library.bottles.firstIndex(where: { $0.id == id }) else { throw CruzadorError.invalid("Bottle não encontrada.") }

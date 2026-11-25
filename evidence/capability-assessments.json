@@ -599,16 +599,39 @@
       "prototype_status": "partial",
       "source_files": [
         "Sources/Cruzador/AppModel.swift",
-        "Sources/CruzadorCore/EngineCommands.swift"
+        "Sources/CruzadorCore/EngineCommands.swift",
+        "Sources/CruzadorCore/Diagnostics.swift",
+        "Sources/CruzadorCore/BottleOperationRecovery.swift",
+        "Sources/Cruzador/DiagnosticsView.swift"
       ],
       "tests": [
         {
           "file": "Tests/CruzadorCoreTests/CoreTests.swift",
           "name": "testRunnerKeepsExitAndDoesNotInterpretShellArguments",
           "scope": "Saída em arquivo e status não zero"
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/DiagnosticsTests.swift",
+          "name": "testRetainedRuntimeDiagnosticExport",
+          "scope": "Exportação de prefixo real retido; biblioteca original preservada e logs copiados com hashes."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/DiagnosticsTests.swift",
+          "name": "testMalformedLibraryExportKeepsExactSourceAndUnknownFacts",
+          "scope": "Fonte inválida preservada, sem inferir biblioteca vazia."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleRecoveryTests.swift",
+          "name": "testExecutionWorkflowsKeepUnconfirmedShutdownOnReopening",
+          "scope": "Preparo, instalação e manutenção preservam encerramento não confirmado ao reabrir."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleRecoveryTests.swift",
+          "name": "testPreparationAndInstallerMetadataFailuresKeepCleanupFacts",
+          "scope": "Falha de gravação não apaga os fatos da falha de limpeza."
         }
       ],
-      "remaining_gap": "Logs simples existem; seleção de canais, ambiente e relatório detalhado faltam.",
+      "remaining_gap": "Logs próprios e diagnóstico local com exportação opt-in; seleção avançada de canais Wine, rastreamento do original e equivalência integral não estabelecidos.",
       "independent_equivalence_established": false
     },
     {

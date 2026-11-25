@@ -2,6 +2,7 @@ import Foundation
 
 public enum PrefixHealth: Equatable, Sendable {
     case absent, incomplete, initialized
+    case unknown(String)
 }
 public enum PreparationMode: Sendable { case initialize, repair }
 
@@ -37,7 +38,9 @@ public struct BottleLifecycle: Sendable {
         var library = try store.load()
         guard let index = library.bottles.firstIndex(where: { $0.id == id }) else { throw CruzadorError.invalid("Bottle não encontrada na biblioteca.") }
         let bottle = library.bottles[index]
-        if mode == .repair, store.health(of: bottle) != .initialized {
+        let health = store.health(of: bottle)
+        if case .unknown(let reason) = health { throw CruzadorError.invalid("Não foi possível verificar os arquivos antes de preparar: \(reason)") }
+        if mode == .repair, health != .initialized {
             throw CruzadorError.invalid("Reparar exige uma bottle inicializada. Use Preparar novamente para arquivos incompletos.")
         }
         let plan = try EngineCommands.make(mode == .repair ? .repair : .initialize, bottle: bottle, store: store)
@@ -48,14 +51,26 @@ public struct BottleLifecycle: Sendable {
         let result: RunResult
         do { result = try await runner.run(plan, log: log, operationID: operationID) }
         catch {
-            try finish(id: id, ready: false, reason: error.localizedDescription)
+            do { try finish(id: id, ready: false, reason: error.localizedDescription) }
+            catch let persistenceFailure { throw BottleOperationRecovery.preservingShutdownFailure(error, persistenceFailure: persistenceFailure) }
             throw error
         }
-        let ready = !result.cancelled && result.exitCode == 0 && store.health(of: bottle) == .initialized
-        let reason = result.cancelled ? CommandRunnerError.cancelled(log: log.path, cleanupFailures: result.cleanupFailures, phases: result.phases).localizedDescription : ready ? nil : "Preparação incompleta (código \(result.exitCode)). Consulte o log; os arquivos foram preservados."
-        try finish(id: id, ready: ready, reason: reason)
-        if result.cancelled { throw CommandRunnerError.cancelled(log: log.path, cleanupFailures: result.cleanupFailures, phases: result.phases) }
-        if let reason { throw CruzadorError.invalid(reason) }
+        let finalHealth = store.health(of: bottle)
+        let ready = !result.cancelled && result.exitCode == 0 && finalHealth == .initialized
+        var operationFailure: Error?
+        do { try result.requireSuccess() }
+        catch { operationFailure = error }
+        if operationFailure == nil, !ready {
+            if case .unknown(let failure) = finalHealth { operationFailure = CruzadorError.invalid("Preparação sem prontidão confirmada: \(failure)") }
+            else { operationFailure = CruzadorError.invalid("Preparação incompleta. Consulte o log; os arquivos foram preservados.") }
+        }
+        let reason = operationFailure?.localizedDescription
+        do { try finish(id: id, ready: ready, reason: reason) }
+        catch {
+            if let operationFailure { throw BottleOperationRecovery.preservingShutdownFailure(operationFailure, persistenceFailure: error) }
+            throw error
+        }
+        if let operationFailure { throw operationFailure }
         return result
     }
 

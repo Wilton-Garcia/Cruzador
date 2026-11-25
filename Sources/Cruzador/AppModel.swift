@@ -28,6 +28,7 @@ final class AppModel: ObservableObject {
     @Published var incomingRequests: [ExternalOpenRequest] = []
     @Published var recentDocuments: [URL] = NSDocumentController.shared.recentDocumentURLs
     @Published var showIncoming = false
+    @Published var showDiagnostics = false
     @Published var showHistory = false
     @Published var searchFocusRequest = UUID()
     @Published var search = ""
@@ -124,22 +125,42 @@ final class AppModel: ObservableObject {
                     status = "Operação concluída"
                 } catch {
                     status = "Operação não concluída"
-                    if let failure = error as? CommandRunnerError, failure.requiresBottleDiagnosis {
-                        cleanupOperationID = operationID
-                        do {
-                            var next = try store.load()
-                            if let index = next.bottles.firstIndex(where: { $0.id == bottle.id }) {
-                                next.bottles[index].state = .interrupted; next.bottles[index].lastError = failure.localizedDescription
-                            }
-                            try persist(next)
-                        } catch { self.error = "Falha ao preservar o estado: \(error.localizedDescription)"; return }
-                    }
+                    let message = preserveShutdownFailure(error, bottleID: bottle.id, operationID: operationID)
                     do { library = try store.load() }
-                    catch { self.error = "Não foi possível reler a biblioteca: \(error.localizedDescription)"; return }
-                    self.error = error.localizedDescription
+                    catch { self.error = "\(message)\nNão foi possível reler a biblioteca: \(error.localizedDescription)"; return }
+                    self.error = message
                 }
             }
         } catch { self.error = error.localizedDescription }
+    }
+    private func preserveShutdownFailure(_ error: Error, bottleID: UUID, operationID: UUID) -> String {
+        guard let failure = BottleOperationRecovery.shutdownFailure(in: error) else { return error.localizedDescription }
+        cleanupOperationID = operationID
+        do {
+            try BottleOperationRecovery(store: store).record(error, bottleID: bottleID)
+            library = try store.load()
+            return error.localizedDescription
+        } catch {
+            if let recovery = error as? BottleRecoveryError { return recovery.localizedDescription }
+            return BottleOperationRecovery.preservingShutdownFailure(failure, persistenceFailure: error).localizedDescription
+        }
+    }
+    func exportDiagnostics(includeSourceLibrary: Bool, includeLogs: Bool, selectedBottleOnly: Bool) {
+        guard !busy else { return }
+        let panel = NSSavePanel(); panel.nameFieldStringValue = "Cruzador-suporte.cruzadordiagnostics"
+        panel.message = "Salva um pacote local. Nenhum dado será enviado."
+        guard panel.runModal() == .OK, let destination = panel.url else { return }
+        let bottleID = selectedBottleOnly ? selection : nil
+        let service = DiagnosticsService(store: store)
+        busy = true; status = "Preparando diagnóstico local…"
+        Task {
+            defer { busy = false }
+            do {
+                let result = try await Task.detached(priority: .userInitiated) { try service.export(to: destination, bottleID: bottleID, includeSourceLibrary: includeSourceLibrary, includeLogs: includeLogs) }.value
+                showDiagnostics = false; status = "Diagnóstico exportado; revise os arquivos antes de compartilhar"
+                NSWorkspace.shared.activateFileViewerSelecting([result])
+            } catch { self.error = error.localizedDescription; status = "Diagnóstico não concluído" }
+        }
     }
     func receiveExternal(_ urls: [URL]) {
         for url in urls {
@@ -249,8 +270,7 @@ final class AppModel: ObservableObject {
                 library = try store.load(); showBottleSettings = false
                 status = "Configuração salva para os próximos processos Windows"
             } catch {
-                if let failure = error as? CommandRunnerError, failure.requiresBottleDiagnosis { cleanupOperationID = operationID }
-                self.error = error.localizedDescription
+                self.error = preserveShutdownFailure(error, bottleID: bottleID, operationID: operationID)
                 status = "Configuração não salva; confira o diagnóstico"
             }
         }
@@ -297,12 +317,12 @@ final class AppModel: ObservableObject {
                 lastLog = library.bottles.first(where: { $0.id == bottle.id })?.installations?.last.map { URL(fileURLWithPath: $0.logPath) }
                 status = "Receita concluída; atalhos verificados"
             } catch {
-                if let failure = error as? CommandRunnerError, failure.requiresBottleDiagnosis { cleanupOperationID = operationID }
+                let message = preserveShutdownFailure(error, bottleID: bottle.id, operationID: operationID)
                 do {
                     library = try store.load()
                     lastLog = library.bottles.first(where: { $0.id == bottle.id })?.installations?.last.map { URL(fileURLWithPath: $0.logPath) }
-                } catch { self.error = error.localizedDescription; return }
-                self.error = error.localizedDescription; status = "Receita não concluída"
+                } catch { self.error = "\(message)\n\(error.localizedDescription)"; return }
+                self.error = message; status = "Receita não concluída"
             }
         }
     }
@@ -336,7 +356,7 @@ final class AppModel: ObservableObject {
             next.bottles[index].apps.removeAll { $0.id == app.id }; try persist(next)
         } catch { self.error = error.localizedDescription }
     }
-    private func maintenance(_ title: String, operation: @escaping @Sendable (BottleMaintenance) async throws -> UUID?) {
+    private func maintenance(_ title: String, bottleID: UUID? = nil, operation: @escaping @Sendable (BottleMaintenance) async throws -> UUID?) {
         guard loaded, canStart else { return }
         busy = true; status = title; cancelling = false
         let service = BottleMaintenance(store: store, runner: runner)
@@ -350,8 +370,8 @@ final class AppModel: ObservableObject {
                 status = "Operação concluída"
             } catch {
                 status = "Operação não concluída"
-                if let failure = error as? CommandRunnerError, failure.requiresBottleDiagnosis { cleanupOperationID = service.operationID }
-                self.error = error.localizedDescription
+                if let bottleID { self.error = preserveShutdownFailure(error, bottleID: bottleID, operationID: service.operationID) }
+                else { self.error = error.localizedDescription }
             }
         }
     }
@@ -396,7 +416,7 @@ final class AppModel: ObservableObject {
         alert.addButton(withTitle: duplicate ? "Duplicar" : "Renomear"); alert.addButton(withTitle: "Cancelar")
         guard alert.runModal() == .alertFirstButtonReturn else { return }
         let name = field.stringValue
-        maintenance(duplicate ? "Copiando bottle…" : "Renomeando bottle…") { service in
+        maintenance(duplicate ? "Copiando bottle…" : "Renomeando bottle…", bottleID: bottle.id) { service in
             if duplicate { return try await service.duplicate(id: bottle.id, name: name).id }
             try service.rename(id: bottle.id, name: name); return bottle.id
         }
@@ -406,7 +426,7 @@ final class AppModel: ObservableObject {
         let panel = NSSavePanel(); panel.nameFieldStringValue = bottle.name + ".cruzadorbottle"
         panel.message = "Escolha um novo pacote. Feche os programas Windows antes de exportar."
         guard panel.runModal() == .OK, let destination = panel.url else { return }
-        maintenance("Exportando bottle…") { service in
+        maintenance("Exportando bottle…", bottleID: bottle.id) { service in
             try await service.export(id: bottle.id, destination: destination); return bottle.id
         }
     }
@@ -426,7 +446,7 @@ final class AppModel: ObservableObject {
         alert.informativeText = "Feche os programas Windows. Os arquivos serão movidos para a pasta Removed da biblioteca e poderão ser importados novamente."
         alert.addButton(withTitle: "Remover e preservar cópia"); alert.addButton(withTitle: "Cancelar")
         guard alert.runModal() == .alertFirstButtonReturn else { return }
-        maintenance("Removendo bottle…") { service in _ = try await service.remove(id: bottle.id); return nil }
+        maintenance("Removendo bottle…", bottleID: bottle.id) { service in _ = try await service.remove(id: bottle.id); return nil }
     }
 
 }

@@ -1,8 +1,8 @@
 import XCTest
 @testable import CruzadorCore
 
-final class SynchronizationTests: XCTestCase {
-    func package() throws -> URL {
+extension XCTestCase {
+    func makeSynchronizationPackage() throws -> URL {
         let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         try FileManager.default.createDirectory(at: root.appendingPathComponent("bin"), withIntermediateDirectories: true)
         for name in ["wine", "wineserver"] {
@@ -16,8 +16,11 @@ final class SynchronizationTests: XCTestCase {
         try JSONEncoder().encode(manifest).write(to: root.appendingPathComponent("runtime.json"))
         return root
     }
+}
+
+final class SynchronizationTests: XCTestCase {
     func testGlobalOptionsMergeOnceAndSyncOverrideMustAgree() throws {
-        let root = try package(), store = LibraryStore(root: root.appendingPathComponent("data"))
+        let root = try makeSynchronizationPackage(), store = LibraryStore(root: root.appendingPathComponent("data"))
         var bottle = Bottle(name: "Settings", engine: Engine(kind: .packagedWine, path: root.path))
         bottle.configuration = BottleSettings(synchronization: .msync, executionOptions: LaunchOptions(workingDirectory: root.path, environment: ["GLOBAL": "literal $HOME", "VALUE": "global"]))
         let app = root.appendingPathComponent("app.exe"); try Data().write(to: app)
@@ -40,13 +43,13 @@ final class SynchronizationTests: XCTestCase {
         XCTAssertFalse(SynchronizationConfiguration.supportsMSync(engine: engine))
         XCTAssertThrowsError(try SynchronizationConfiguration.environment(settings: BottleSettings(synchronization: .msync), engine: engine))
         XCTAssertThrowsError(try SynchronizationConfiguration.environment(settings: BottleSettings(executionOptions: LaunchOptions(environment: ["WINEMSYNC": "1"])), engine: engine))
-        let root = try package(), supported = Engine(kind: .packagedWine, path: root.path)
+        let root = try makeSynchronizationPackage(), supported = Engine(kind: .packagedWine, path: root.path)
         XCTAssertEqual(try SynchronizationConfiguration.environment(settings: BottleSettings(), engine: supported), ["WINEMSYNC": "0"])
         XCTAssertThrowsError(try SynchronizationConfiguration.environment(settings: BottleSettings(synchronization: .msync, executionOptions: LaunchOptions(environment: ["WINEMSYNC": "0"])), engine: supported))
         XCTAssertThrowsError(try SynchronizationConfiguration.environment(settings: BottleSettings(executionOptions: LaunchOptions(environment: ["WINEMSYNC": " 1"])), engine: supported))
     }
     func testSettingsCommitOnlyAfterSuccessfulWaitAndAreIdempotent() async throws {
-        let root = try package(), store = LibraryStore(root: root.appendingPathComponent("data"))
+        let root = try makeSynchronizationPackage(), store = LibraryStore(root: root.appendingPathComponent("data"))
         let bottle = Bottle(name: "Wait", engine: Engine(kind: .packagedWine, path: root.path))
         var library = Library(); library.bottles = [bottle]; try store.save(library)
         try FileManager.default.createDirectory(at: store.prefix(for: bottle), withIntermediateDirectories: true)
@@ -67,7 +70,7 @@ final class SynchronizationTests: XCTestCase {
         XCTAssertEqual(try Data(contentsOf: store.manifest), before)
     }
     func testCancelledSettingsWaitNeverCommitsNewMode() async throws {
-        let root = try package(), store = LibraryStore(root: root.appendingPathComponent("data"))
+        let root = try makeSynchronizationPackage(), store = LibraryStore(root: root.appendingPathComponent("data"))
         let bottle = Bottle(name: "Cancel", engine: Engine(kind: .packagedWine, path: root.path))
         var library = Library(); library.bottles = [bottle]; try store.save(library)
         try FileManager.default.createDirectory(at: store.prefix(for: bottle), withIntermediateDirectories: true)

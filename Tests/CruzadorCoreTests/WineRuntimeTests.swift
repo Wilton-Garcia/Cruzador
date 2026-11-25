@@ -29,8 +29,13 @@ final class WineRuntimeTests: XCTestCase {
         try JSONSerialization.data(withJSONObject: object).write(to: file)
         XCTAssertThrowsError(try WineRuntime(root: root))
         object["minimumMacOSVersion"] = ["major": 14, "minor": 0, "patch": 0]
+        object["archiveSHA256"] = "caller-declared-fixture-digest"
+        object["providerRelease"] = "https://example.invalid/release"
         try JSONSerialization.data(withJSONObject: object).write(to: file)
-        XCTAssertEqual(try WineRuntime(root: root).manifest.features, ["msync"])
+        let parsed = try WineRuntime(root: root).manifest
+        XCTAssertEqual(parsed.features, ["msync"])
+        XCTAssertEqual(parsed.archiveSHA256, "caller-declared-fixture-digest")
+        XCTAssertEqual(parsed.providerRelease, "https://example.invalid/release")
     }
     func testPackagedEngineLaunchesWithItsOwnServerAndPrefix() async throws {
         let root = try fixture(); let store = LibraryStore(root: root.appendingPathComponent("data"))

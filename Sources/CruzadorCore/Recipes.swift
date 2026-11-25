@@ -179,8 +179,7 @@ public struct RecipeInstallationService: Sendable {
             guard let bottle = library.bottles.first(where: { $0.id == bottleID }) else { throw CruzadorError.invalid("Bottle não encontrada.") }
             let request = try InstallationRequest(path: source.path, mode: recipe.mode, arguments: recipe.arguments, recipeID: recipe.id, sourceURL: asset.url, sourceSHA256: asset.sha256)
             await progress("Instalando \(recipe.name) \(recipe.version)…")
-            let result = try await InstallationService(store: store).run(request, bottle: bottle, runner: runner, log: store.logsRoot.appendingPathComponent("recipe-\(request.id).log"), operationID: operationID)
-            try result.requireSuccess()
+            _ = try await InstallationService(store: store).run(request, bottle: bottle, runner: runner, log: store.logsRoot.appendingPathComponent("recipe-\(request.id).log"), operationID: operationID)
             try Task.checkCancellation()
             var next = try store.load()
             guard let index = next.bottles.firstIndex(where: { $0.id == bottleID }) else { throw CruzadorError.invalid("Bottle não encontrada depois de instalar a receita.") }
