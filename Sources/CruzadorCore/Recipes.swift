@@ -4,7 +4,7 @@ import CryptoKit
 public struct InstallerArtifact: Codable, Sendable {
     public let id: String
     public let filename: String
-    public let kind: InstallerKind
+    public let kind: WindowsFileKind
     public let url: URL
     public let sha256: String
     public let size: Int64
@@ -16,7 +16,7 @@ public struct InstallerArtifact: Codable, Sendable {
         id = try values.decode(String.self, forKey: .id); filename = try values.decode(String.self, forKey: .filename)
         url = try values.decode(URL.self, forKey: .url); sha256 = try values.decode(String.self, forKey: .sha256)
         size = try values.decode(Int64.self, forKey: .size); upstream = try values.decode(URL.self, forKey: .upstream); release = try values.decode(URL.self, forKey: .release)
-        guard let kind = InstallerKind(rawValue: URL(fileURLWithPath: filename).pathExtension.lowercased()) else { throw CruzadorError.invalid("Formato de artefato inválido: \(id)") }
+        guard let kind = WindowsFileKind(rawValue: URL(fileURLWithPath: filename).pathExtension.lowercased()) else { throw CruzadorError.invalid("Formato de artefato inválido: \(id)") }
         self.kind = kind
         guard !id.isEmpty, filename == URL(fileURLWithPath: filename).lastPathComponent, !filename.isEmpty,
               [url, upstream, release].allSatisfy({ $0.scheme?.lowercased() == "https" && $0.host != nil }), size > 0,

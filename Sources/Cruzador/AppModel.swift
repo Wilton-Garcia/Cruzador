@@ -18,10 +18,12 @@ final class AppModel: ObservableObject {
     @Published var showRegister = false
     @Published var editingApp: WindowsApp?
     @Published var showInstall = false
-    @Published var selectedInstaller: InstallerInspection?
+    @Published var selectedInstaller: WindowsFileInspection?
     @Published var showRecipes = false
     @Published var recipeCatalog: RecipeCatalog?
     private var recipeTask: Task<Void, Never>?
+    @Published var showDiscovery = false
+    @Published var discoveryReport: AppDiscoveryReport?
     @Published var search = ""
     @Published var engineKind: EngineKind = .packagedWine
     @Published var enginePath = WineRuntime.bundledRoot.path
@@ -29,6 +31,7 @@ final class AppModel: ObservableObject {
     @Published var loaded = false
     let store = LibraryStore(root: LibraryStore.defaultRoot)
     private let runner = CommandRunner()
+    var canCancelOperation: Bool { activeOperationID != nil }
     var canStart: Bool { !busy && cleanupOperationID == nil }
     var selected: Bottle? { library.bottles.first { $0.id == selection } }
     var filteredBottles: [Bottle] { library.bottles.filter { search.isEmpty || $0.name.localizedCaseInsensitiveContains(search) } }
@@ -137,7 +140,7 @@ final class AppModel: ObservableObject {
         panel.message = installer ? "Escolha o instalador Windows" : "Escolha o executável Windows"
         guard panel.runModal() == .OK, let url = panel.url else { return }
         if installer {
-            do { selectedInstaller = try InstallerInspection.inspect(path: url.path); showInstall = true }
+            do { selectedInstaller = try WindowsFileInspection.inspect(path: url.path); showInstall = true }
             catch { self.error = error.localizedDescription }
         } else { perform(.run(LaunchRequest(path: url.path)), bottle: bottle, title: "Executando programa…") }
     }
@@ -148,6 +151,26 @@ final class AppModel: ObservableObject {
             let request = try InstallationRequest(inspection: inspection, mode: mode, arguments: arguments.isEmpty ? [] : arguments.components(separatedBy: "\n"), options: options)
             showInstall = false
             perform(.install(request), bottle: bottle, title: "Instalando \(URL(fileURLWithPath: inspection.path).lastPathComponent)…")
+        } catch { self.error = error.localizedDescription }
+    }
+    func discoverApps() {
+        guard let bottle = selected, canStart else { return }
+        busy = true; status = "Buscando aplicativos na bottle…"
+        let discovery = AppDiscovery(store: store)
+        Task {
+            defer { busy = false }
+            do {
+                discoveryReport = try await Task.detached(priority: .userInitiated) { try discovery.scan(bottle) }.value
+                showDiscovery = true; status = "Busca concluída; confira a cobertura e os candidatos"
+            } catch { self.error = error.localizedDescription; status = "Busca não concluída" }
+        }
+    }
+    func addDiscovered(_ ids: Set<String>, report: AppDiscoveryReport) {
+        guard canStart else { return }
+        do {
+            try AppDiscovery(store: store).add(ids: ids, from: report)
+            library = try store.load(); selection = report.bottleID
+            showDiscovery = false; status = "Atalhos adicionados"
         } catch { self.error = error.localizedDescription }
     }
     func openRecipes() {

@@ -14,16 +14,29 @@
       "prototype_status": "partial",
       "source_files": [
         "Sources/Cruzador/ContentView.swift",
-        "Sources/Cruzador/AppModel.swift"
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/CruzadorCore/AppDiscovery.swift",
+        "Sources/CruzadorCore/WineRegistry.swift",
+        "Sources/CruzadorCore/WindowsFile.swift"
       ],
       "tests": [
         {
           "file": "Tests/CruzadorCoreTests/NativeSmokeTests.swift",
           "name": "testInstalledCrossOverCreatesBottleAndRunsWindowsCommand",
           "scope": "Motor real; execução de cmd.exe, sem descoberta automática de apps"
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/DiscoveryTests.swift",
+          "name": "testRealRetainedWinePrefixDiscovery",
+          "scope": "Prefixo real retido: registro 7-Zip e executáveis instalados."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/DiscoveryTests.swift",
+          "name": "testFileDiscoverySkipsLinksAndAddsOnlySelectedUnchangedCandidates",
+          "scope": "Seleção explícita, links não seguidos, origem alterada e atalhos sem duplicação."
         }
       ],
-      "remaining_gap": "Biblioteca própria existe; descoberta automática e equivalência com launchers do original não implementadas.",
+      "remaining_gap": "Descoberta própria de registros de software e arquivos PE nas pastas de programas; arquivos .lnk, launchers e instalação por usuário ainda não enumerados.",
       "independent_equivalence_established": false
     },
     {
@@ -58,7 +71,7 @@
           "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
         }
       ],
-      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado verificado em Intel e Apple Silicon no commit a462112.",
       "independent_equivalence_established": false
     },
     {
@@ -94,7 +107,8 @@
         "Sources/CruzadorCore/Installers.swift",
         "Sources/CruzadorCore/EngineCommands.swift",
         "Sources/Cruzador/AppModel.swift",
-        "Sources/Cruzador/ContentView.swift"
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/CruzadorCore/WindowsFile.swift"
       ],
       "tests": [
         {
@@ -181,7 +195,7 @@
           "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
         }
       ],
-      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado verificado em Intel e Apple Silicon no commit a462112.",
       "independent_equivalence_established": false
     },
     {
@@ -215,7 +229,7 @@
           "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
         }
       ],
-      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado verificado em Intel e Apple Silicon no commit a462112.",
       "independent_equivalence_established": false
     },
     {

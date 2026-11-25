@@ -1,49 +1,12 @@
 import Foundation
 
-public enum InstallerKind: String, Codable, Sendable { case exe, msi }
 public enum InstallerMode: String, Codable, CaseIterable, Sendable {
     case interactive, passive, quiet
     public var displayName: String { switch self { case .interactive: "Interativo"; case .passive: "Progresso sem perguntas (MSI)"; case .quiet: "Sem interface (MSI)" } }
 }
-public struct InstallerInspection: Codable, Sendable, Equatable {
-    public let path: String
-    public let kind: InstallerKind
-    public let peMachine: UInt16?
-    public let size: UInt64
-    public let modificationDate: Date
-    public static func inspect(path: String) throws -> InstallerInspection {
-        try LaunchRequest(path: path).validate()
-        let url = URL(fileURLWithPath: path)
-        let attributes = try FileManager.default.attributesOfItem(atPath: url.path)
-        guard let size = attributes[.size] as? NSNumber, let modified = attributes[.modificationDate] as? Date else { throw CruzadorError.invalid("Não foi possível obter os metadados do instalador.") }
-        let handle = try FileHandle(forReadingFrom: url); defer { try? handle.close() }
-        let header = try handle.read(upToCount: 64) ?? Data()
-        guard let kind = InstallerKind(rawValue: url.pathExtension.lowercased()) else { throw CruzadorError.invalid("Formato de instalador não suportado.") }
-        var machine: UInt16?
-        switch kind {
-        case .msi:
-            guard header.starts(with: [0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1]) else { throw CruzadorError.invalid("O arquivo .msi não tem a assinatura de armazenamento composto esperada.") }
-        case .exe:
-            guard header.count >= 64, header.starts(with: [0x4d, 0x5a]) else { throw CruzadorError.invalid("O arquivo .exe não tem um cabeçalho Windows válido.") }
-            let offset = (0..<4).reduce(UInt64(0)) { $0 | (UInt64(header[0x3c + $1]) << ($1 * 8)) }
-            guard size.uint64Value >= 6, offset <= size.uint64Value - 6 else { throw CruzadorError.invalid("Cabeçalho PE fora dos limites do arquivo.") }
-            try handle.seek(toOffset: offset)
-            let pe = try handle.read(upToCount: 6) ?? Data()
-            guard pe.count == 6, pe.starts(with: [0x50, 0x45, 0, 0]) else { throw CruzadorError.invalid("Assinatura PE não encontrada no instalador.") }
-            machine = UInt16(pe[4]) | UInt16(pe[5]) << 8
-        }
-        return InstallerInspection(path: path, kind: kind, peMachine: machine, size: size.uint64Value, modificationDate: modified)
-    }
-    public func validateCurrentMetadata() throws {
-        let attributes = try FileManager.default.attributesOfItem(atPath: path)
-        guard (attributes[.size] as? NSNumber)?.uint64Value == size, attributes[.modificationDate] as? Date == modificationDate else {
-            throw CruzadorError.invalid("O instalador mudou depois de ser selecionado. Escolha o arquivo novamente.")
-        }
-    }
-}
 public struct InstallationRequest: Sendable {
     public let id: UUID
-    public let inspection: InstallerInspection
+    public let inspection: WindowsFileInspection
     public let mode: InstallerMode
     public let arguments: [String]
     public let options: LaunchOptions
@@ -51,9 +14,9 @@ public struct InstallationRequest: Sendable {
     public let sourceURL: URL?
     public let sourceSHA256: String?
     public init(path: String, mode: InstallerMode = .interactive, arguments: [String] = [], options: LaunchOptions? = nil, recipeID: String? = nil, sourceURL: URL? = nil, sourceSHA256: String? = nil) throws {
-        try self.init(inspection: InstallerInspection.inspect(path: path), mode: mode, arguments: arguments, options: options, recipeID: recipeID, sourceURL: sourceURL, sourceSHA256: sourceSHA256)
+        try self.init(inspection: WindowsFileInspection.inspect(path: path), mode: mode, arguments: arguments, options: options, recipeID: recipeID, sourceURL: sourceURL, sourceSHA256: sourceSHA256)
     }
-    public init(inspection: InstallerInspection, mode: InstallerMode = .interactive, arguments: [String] = [], options: LaunchOptions? = nil, recipeID: String? = nil, sourceURL: URL? = nil, sourceSHA256: String? = nil) throws {
+    public init(inspection: WindowsFileInspection, mode: InstallerMode = .interactive, arguments: [String] = [], options: LaunchOptions? = nil, recipeID: String? = nil, sourceURL: URL? = nil, sourceSHA256: String? = nil) throws {
         id = UUID(); self.inspection = inspection; self.mode = mode; self.arguments = arguments
         self.recipeID = recipeID; self.sourceURL = sourceURL; self.sourceSHA256 = sourceSHA256
         self.options = options ?? LaunchOptions(workingDirectory: URL(fileURLWithPath: inspection.path).deletingLastPathComponent().path)
@@ -79,9 +42,9 @@ public enum InstallationStatus: String, Codable, Sendable {
 }
 public struct InstallationRecord: Identifiable, Codable, Sendable, Equatable {
     public let id: UUID
-    public let inspection: InstallerInspection
+    public let inspection: WindowsFileInspection
     public var sourcePath: String { inspection.path }
-    public var kind: InstallerKind { inspection.kind }
+    public var kind: WindowsFileKind { inspection.kind }
     public let options: LaunchOptions
     public let recipeID: String?
     public let sourceURL: URL?

@@ -13,14 +13,14 @@ final class InstallerTests: XCTestCase {
         var bytes = Data(repeating: 0, count: 70); bytes[0] = 0x4d; bytes[1] = 0x5a; bytes[0x3c] = 64
         bytes.replaceSubrange(64..<70, with: [0x50, 0x45, 0, 0, 0x64, 0x86])
         try bytes.write(to: exe)
-        let inspection = try InstallerInspection.inspect(path: exe.path)
+        let inspection = try WindowsFileInspection.inspect(path: exe.path)
         XCTAssertEqual(inspection.peMachine, 0x8664)
         XCTAssertThrowsError(try InstallationRequest(inspection: inspection, mode: .quiet))
         bytes[0x3c] = 255; try bytes.write(to: exe)
-        XCTAssertThrowsError(try InstallerInspection.inspect(path: exe.path))
+        XCTAssertThrowsError(try WindowsFileInspection.inspect(path: exe.path))
         XCTAssertThrowsError(try inspection.validateCurrentMetadata())
         try Data("not executable".utf8).write(to: exe)
-        XCTAssertThrowsError(try InstallerInspection.inspect(path: exe.path))
+        XCTAssertThrowsError(try WindowsFileInspection.inspect(path: exe.path))
     }
     func testMSIArgumentsAndFailedResultAreRecordedWithoutClaimingInstallation() async throws {
         let root = try root(), store = LibraryStore(root: root.appendingPathComponent("library"))

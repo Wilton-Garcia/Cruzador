@@ -1,0 +1,140 @@
+{
+  "source_commit": "a462112",
+  "workflow_url": "https://github.com/Wilton-Garcia/Cruzador/actions/runs/45525859509",
+  "jobs": [
+    {
+      "name": "runtime (macos-15-intel)",
+      "conclusion": "success",
+      "url": "https://github.com/Wilton-Garcia/Cruzador/actions/runs/45525859509/job/138908873700"
+    },
+    {
+      "name": "runtime (macos-15)",
+      "conclusion": "success",
+      "url": "https://github.com/Wilton-Garcia/Cruzador/actions/runs/45525859509/job/138908873992"
+    }
+  ],
+  "reports": [
+    {
+      "artifact_sha256": "9cd3bd1f9593390d8e1a4b4ee7422736bc3787225f144023d7f0d10a18377266",
+      "report": {
+        "after_cancellation_exit": 0,
+        "cancellation_cleanup_codes": [
+          0,
+          0
+        ],
+        "cancelled": true,
+        "initialization_exit": 0,
+        "invalid_msi_macOS_exit": 91,
+        "invalid_msi_status": "unconfirmed",
+        "limitations": [
+          "No CrossOver executable is selected by these commands.",
+          "No general application or graphics compatibility established."
+        ],
+        "nonzero_exit": 7,
+        "operating_system": "Version 15.7.9 (Build 24G830)",
+        "positive_7zip_msi_exit": 0,
+        "recipe_installation_count": 1,
+        "recipe_verified_shortcuts": 2,
+        "repair_exit": 0,
+        "runtime": "/Users/runner/work/Cruzador/Cruzador/.local/Runtime-11.21",
+        "server_wait_exit": 0,
+        "test_process_architecture": "x86_64",
+        "version": "11.21",
+        "windows_commands": [
+          {
+            "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-334de81b-cf1b-4e6f-a6c8-c9f5f7fe39e9/Bottles/32FB2E94-0FD6-4E71-87D7-CF09979EE5BE/drive_c/windows/system32/cmd.exe",
+            "exit_code": 0,
+            "explicit_environment_observed": true,
+            "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-334de81b-cf1b-4e6f-a6c8-c9f5f7fe39e9/Logs/system32.log",
+            "marker": "CRUZADOR_WIN64_OK",
+            "marker_observed": true,
+            "pe_machine": "0x8664"
+          },
+          {
+            "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-334de81b-cf1b-4e6f-a6c8-c9f5f7fe39e9/Bottles/32FB2E94-0FD6-4E71-87D7-CF09979EE5BE/drive_c/windows/syswow64/cmd.exe",
+            "exit_code": 0,
+            "explicit_environment_observed": true,
+            "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-334de81b-cf1b-4e6f-a6c8-c9f5f7fe39e9/Logs/syswow64.log",
+            "marker": "CRUZADOR_WIN32_OK",
+            "marker_observed": true,
+            "pe_machine": "0x14c"
+          }
+        ]
+      },
+      "supervision": [
+        {
+          "timeout_seconds": 300.0,
+          "elapsed_seconds": 148.64814123600001,
+          "result": 0,
+          "timeout_cleanup": [],
+          "limitations": [
+            "CPU time and peak process-family memory were not measured."
+          ]
+        }
+      ]
+    },
+    {
+      "artifact_sha256": "e0154ef2ca63ec5e44b45729851368c236c15983c33f096db4b9e5ff263c543d",
+      "report": {
+        "after_cancellation_exit": 0,
+        "cancellation_cleanup_codes": [
+          0,
+          0
+        ],
+        "cancelled": true,
+        "initialization_exit": 0,
+        "invalid_msi_macOS_exit": 91,
+        "invalid_msi_status": "unconfirmed",
+        "limitations": [
+          "No CrossOver executable is selected by these commands.",
+          "No general application or graphics compatibility established."
+        ],
+        "nonzero_exit": 7,
+        "operating_system": "Version 15.8.2 (Build 24H232)",
+        "positive_7zip_msi_exit": 0,
+        "recipe_installation_count": 1,
+        "recipe_verified_shortcuts": 2,
+        "repair_exit": 0,
+        "runtime": "/Users/runner/work/Cruzador/Cruzador/.local/Runtime-11.21",
+        "server_wait_exit": 0,
+        "test_process_architecture": "arm64",
+        "version": "11.21",
+        "windows_commands": [
+          {
+            "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-21b25fee-c475-4401-80b3-d7e158b9a428/Bottles/5D9A2E00-06AB-4129-BD37-21391E5C99DE/drive_c/windows/system32/cmd.exe",
+            "exit_code": 0,
+            "explicit_environment_observed": true,
+            "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-21b25fee-c475-4401-80b3-d7e158b9a428/Logs/system32.log",
+            "marker": "CRUZADOR_WIN64_OK",
+            "marker_observed": true,
+            "pe_machine": "0x8664"
+          },
+          {
+            "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-21b25fee-c475-4401-80b3-d7e158b9a428/Bottles/5D9A2E00-06AB-4129-BD37-21391E5C99DE/drive_c/windows/syswow64/cmd.exe",
+            "exit_code": 0,
+            "explicit_environment_observed": true,
+            "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-21b25fee-c475-4401-80b3-d7e158b9a428/Logs/syswow64.log",
+            "marker": "CRUZADOR_WIN32_OK",
+            "marker_observed": true,
+            "pe_machine": "0x14c"
+          }
+        ]
+      },
+      "supervision": [
+        {
+          "timeout_seconds": 300.0,
+          "elapsed_seconds": 92.32189483299999,
+          "result": 0,
+          "timeout_cleanup": [],
+          "limitations": [
+            "CPU time and peak process-family memory were not measured."
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Observed scenarios do not establish general application or graphics compatibility.",
+    "CPU and peak process-family memory not measured."
+  ]
+}

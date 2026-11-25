@@ -110,8 +110,15 @@ final class PackagedNativeSmokeTests: XCTestCase {
         #else
         let hostArchitecture = "unknown"
         #endif
+        try phase("discovery")
+        let discovery = try AppDiscovery(store: store).scan(try store.load().bottles[0])
+        if positiveMSIExit != nil || recipeInstallationCount != nil {
+            XCTAssertTrue(discovery.registeredSoftware.contains { $0.name?.contains("7-Zip") == true })
+            XCTAssertTrue(discovery.executables.contains { $0.inspection.path.hasSuffix("/7z.exe") })
+        }
+        try JSONEncoder().encode(discovery).write(to: store.root.appendingPathComponent("discovery.json"), options: .atomic)
         try phase("completed")
-        var report: [String: Any] = ["runtime": runtime.root.path, "version": runtime.manifest.version, "test_process_architecture": hostArchitecture,
+        var report: [String: Any] = ["discovered_software_records": discovery.registeredSoftware.count, "discovered_executables": discovery.executables.count, "runtime": runtime.root.path, "version": runtime.manifest.version, "test_process_architecture": hostArchitecture,
                                     "operating_system": ProcessInfo.processInfo.operatingSystemVersionString, "initialization_exit": created.exitCode, "repair_exit": repaired.exitCode,
                                     "windows_commands": observations, "nonzero_exit": failure.exitCode, "server_wait_exit": stopped.exitCode, "cancelled": cancelled.cancelled, "cancellation_cleanup_codes": cancelled.phases.filter { $0.phase == "cancellation" }.compactMap(\.exitCode), "after_cancellation_exit": afterCancel.exitCode, "invalid_msi_status": installation.status.rawValue, "invalid_msi_macOS_exit": invalidMSIExit,
                                     "limitations": ["No CrossOver executable is selected by these commands.", "No general application or graphics compatibility established."]]

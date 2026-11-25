@@ -58,7 +58,7 @@ struct ContentView: View {
                     else { Image(systemName: "circle.fill").font(.system(size: 7)).foregroundStyle(.teal) }
                     Text(model.status).font(.caption).foregroundStyle(.secondary)
                     Spacer()
-                    if model.busy { Button(model.cancelling ? "Encerrando…" : "Cancelar operação") { model.cancelCurrentOperation() }.disabled(model.cancelling).help("No Wine, cancelar encerra os programas Windows desta bottle e aguarda o servidor.") }
+                    if model.busy && model.canCancelOperation { Button(model.cancelling ? "Encerrando…" : "Cancelar operação") { model.cancelCurrentOperation() }.disabled(model.cancelling).help("No Wine, cancelar encerra os programas Windows desta bottle e aguarda o servidor.") }
                     if model.cleanupOperationID != nil { Button("Repetir encerramento") { model.retryCleanup() }.disabled(model.busy) }
                     if let log = model.lastLog { Button("Ver log") { NSWorkspace.shared.open(log) }.buttonStyle(.link) }
                 }.padding(14).background(.bar)
@@ -66,6 +66,7 @@ struct ContentView: View {
         }
         .tint(.teal)
         .sheet(isPresented: $model.showCreate) { CreateBottleView(model: model) }
+        .sheet(isPresented: $model.showDiscovery) { if let report = model.discoveryReport { DiscoveredAppsView(model: model, report: report) } }
         .sheet(isPresented: $model.showRecipes) { if let catalog = model.recipeCatalog { RecipesView(model: model, catalog: catalog) } }
         .sheet(isPresented: $model.showInstall) { if let installer = model.selectedInstaller { InstallProgramView(model: model, installer: installer) } }
         .sheet(isPresented: $model.showRegister) { RegisterAppView(model: model, app: model.editingApp) }
@@ -118,13 +119,14 @@ struct ContentView: View {
                 }
                 HStack {
                     Text("Aplicativos").font(.title2.weight(.semibold)); Spacer()
+                    Button("Buscar instalados…") { model.discoverApps() }.disabled(!model.canStart)
                     Button { model.beginRegister() } label: { Label("Adicionar atalho", systemImage: "plus") }.disabled(!model.canStart || bottle.state != .ready)
                 }
                 if bottle.apps.isEmpty {
                     VStack(spacing: 12) {
                         Image(systemName: "app.dashed").font(.system(size: 36)).foregroundStyle(.secondary)
                         Text("Sua bottle está esperando o primeiro app").font(.headline)
-                        Text("Instale um programa e adicione um atalho para o executável.\nOs atalhos são cadastrados por você nesta versão.").multilineTextAlignment(.center).foregroundStyle(.secondary)
+                        Text("Instale um programa e adicione um atalho para o executável.\nUse Buscar instalados ou adicione um atalho manualmente.").multilineTextAlignment(.center).foregroundStyle(.secondary)
                     }.frame(maxWidth: .infinity).padding(.vertical, 42).background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 16))
                 } else {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 210), spacing: 16)], spacing: 16) {
@@ -270,12 +272,12 @@ struct EngineSettings: View {
 
 struct InstallProgramView: View {
     @ObservedObject var model: AppModel
-    let installer: InstallerInspection
+    let installer: WindowsFileInspection
     @State private var mode = InstallerMode.interactive
     @State private var arguments = ""
     @State private var workingDirectory: String
     @State private var environmentJSON = "{}"
-    init(model: AppModel, installer: InstallerInspection) {
+    init(model: AppModel, installer: WindowsFileInspection) {
         self.model = model; self.installer = installer
         _workingDirectory = State(initialValue: URL(fileURLWithPath: installer.path).deletingLastPathComponent().path)
     }
@@ -331,5 +333,43 @@ struct RecipesView: View {
                 Button("Instalar receita") { if let selectedID { model.installRecipe(id: selectedID, catalog: catalog) } }.buttonStyle(.borderedProminent).disabled(selectedID == nil || !model.canStart)
             }
         }.padding(28).frame(width: 580)
+    }
+}
+
+struct DiscoveredAppsView: View {
+    @ObservedObject var model: AppModel
+    let report: AppDiscoveryReport
+    @State private var selectedIDs: Set<String> = []
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Label("Aplicativos encontrados", systemImage: "magnifyingglass").font(.title2.bold())
+            Text("\(report.registeredSoftware.count) registros de software · \(report.executables.count) candidatos executáveis").foregroundStyle(.secondary)
+            Text("Escolha os executáveis para criar atalhos. A busca não executa os arquivos nem comprova sua compatibilidade.").font(.callout).foregroundStyle(.secondary)
+            List(report.executables, selection: $selectedIDs) { candidate in
+                VStack(alignment: .leading, spacing: 5) {
+                    HStack {
+                        Text(candidate.name).font(.headline)
+                        Spacer()
+                        if model.library.bottles.first(where: { $0.id == report.bottleID })?.apps.contains(where: { $0.path == candidate.inspection.path }) == true { Text("Atalho existente").font(.caption).foregroundStyle(.secondary) }
+                    }
+                    Text(candidate.id).font(.caption).foregroundStyle(.secondary).lineLimit(2)
+                    let related = report.registeredSoftware.filter { candidate.registeredSoftwareIDs.contains($0.id) }.compactMap(\.name)
+                    if !related.isEmpty { Text(related.joined(separator: "; ")).font(.caption).foregroundStyle(.secondary) }
+                }.padding(.vertical, 5).tag(candidate.id)
+            }.frame(height: 260)
+            DisclosureGroup("Cobertura e avisos (\(report.warnings.count))") {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 6) {
+                        ForEach(report.limitations, id: \.self) { Text($0) }
+                        ForEach(Array(report.warnings.enumerated()), id: \.offset) { _, warning in Text(warning).foregroundStyle(.orange) }
+                    }.font(.caption).frame(maxWidth: .infinity, alignment: .leading)
+                }.frame(maxHeight: 150)
+            }
+            HStack {
+                Button("Fechar") { model.showDiscovery = false }.keyboardShortcut(.cancelAction)
+                Spacer()
+                Button("Adicionar selecionados") { model.addDiscovered(selectedIDs, report: report) }.buttonStyle(.borderedProminent).disabled(selectedIDs.isEmpty || !model.canStart)
+            }
+        }.padding(28).frame(width: 720)
     }
 }

@@ -6,7 +6,7 @@ Para MSI, o usuário pode escolher interface interativa, progresso sem perguntas
 
 ## Inspeção e limites
 
-`InstallerInspection` verifica o arquivo regular e seu tipo: assinatura MZ, deslocamento PE dentro do arquivo e assinatura PE para EXE; assinatura de armazenamento composto para MSI. A assinatura CFB é descrita na [especificação da Microsoft](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-cfb/05060311-bfce-4b12-874d-71fd4ce63aea). Isso não valida as tabelas do banco MSI, a estrutura completa do PE, uma assinatura digital ou a segurança do programa.
+`WindowsFileInspection` verifica o arquivo regular e seu tipo: assinatura MZ, deslocamento PE dentro do arquivo e assinatura PE para EXE; assinatura de armazenamento composto para MSI. A assinatura CFB é descrita na [especificação da Microsoft](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-cfb/05060311-bfce-4b12-874d-71fd4ce63aea). Isso não valida as tabelas do banco MSI, a estrutura completa do PE, uma assinatura digital ou a segurança do programa.
 
 Tamanho e data de modificação são registrados e conferidos antes de executar. Esses metadados não são um digest do arquivo nem uma garantia de que o conteúdo não possa mudar depois da conferência. O usuário deve selecionar um arquivo estável. O instalador recebe o caminho escolhido, preservando os arquivos auxiliares e a origem local.
 

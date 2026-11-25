@@ -13,16 +13,29 @@
       "prototype_status": "partial",
       "source_files": [
         "Sources/Cruzador/ContentView.swift",
-        "Sources/Cruzador/AppModel.swift"
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/CruzadorCore/AppDiscovery.swift",
+        "Sources/CruzadorCore/WineRegistry.swift",
+        "Sources/CruzadorCore/WindowsFile.swift"
       ],
       "tests": [
         {
           "file": "Tests/CruzadorCoreTests/NativeSmokeTests.swift",
           "name": "testInstalledCrossOverCreatesBottleAndRunsWindowsCommand",
           "scope": "Motor real; execução de cmd.exe, sem descoberta automática de apps"
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/DiscoveryTests.swift",
+          "name": "testRealRetainedWinePrefixDiscovery",
+          "scope": "Prefixo real retido: registro 7-Zip e executáveis instalados."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/DiscoveryTests.swift",
+          "name": "testFileDiscoverySkipsLinksAndAddsOnlySelectedUnchangedCandidates",
+          "scope": "Seleção explícita, links não seguidos, origem alterada e atalhos sem duplicação."
         }
       ],
-      "remaining_gap": "Biblioteca própria existe; descoberta automática e equivalência com launchers do original não implementadas.",
+      "remaining_gap": "Descoberta própria de registros de software e arquivos PE nas pastas de programas; arquivos .lnk, launchers e instalação por usuário ainda não enumerados.",
       "independent_equivalence_established": false
     },
     {
@@ -57,7 +70,7 @@
           "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
         }
       ],
-      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado verificado em Intel e Apple Silicon no commit a462112.",
       "independent_equivalence_established": false
     },
     {
@@ -93,7 +106,8 @@
         "Sources/CruzadorCore/Installers.swift",
         "Sources/CruzadorCore/EngineCommands.swift",
         "Sources/Cruzador/AppModel.swift",
-        "Sources/Cruzador/ContentView.swift"
+        "Sources/Cruzador/ContentView.swift",
+        "Sources/CruzadorCore/WindowsFile.swift"
       ],
       "tests": [
         {
@@ -180,7 +194,7 @@
           "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
         }
       ],
-      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado verificado em Intel e Apple Silicon no commit a462112.",
       "independent_equivalence_established": false
     },
     {
@@ -214,7 +228,7 @@
           "scope": "Opt-in: download e instalação real da receita 7-Zip, com SHA-256 e atalhos verificados."
         }
       ],
-      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado no Intel atingiu prazo anterior; validação instrumentada pendente.",
+      "remaining_gap": "Catálogo próprio inicial de 7-Zip; catálogo CrossTie, avaliações e dependências gerais de jogos não reproduzidos. Cenário ampliado verificado em Intel e Apple Silicon no commit a462112.",
       "independent_equivalence_established": false
     },
     {
@@ -2787,28 +2801,32 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "638192ec628b27331c72d4a29b39f7b516641ccdc673653d176464c8adc08d94",
-    "Sources/Cruzador/ContentView.swift": "bd4df8ba908970a72e1eed03d2e2d63e65d096e26fadb7c029904995343059c1",
+    "Sources/Cruzador/AppModel.swift": "39b2084d7693345ed0b4527c1b2ecee1391e4dff9a3a98e5db582a4460892c38",
+    "Sources/Cruzador/ContentView.swift": "721e35345646f916a83178824da58ebd3b0415c59d8e25579d5f389d781053ef",
     "Sources/Cruzador/CruzadorApp.swift": "b99938955afd29ca18bce312d7ee79b9fb165b0ba69c82ccc79fdd6901dcf897",
+    "Sources/CruzadorCore/AppDiscovery.swift": "bd7e56c17df92e3fed7ea7e945e72d9a684237210abfdc77b44ec3e25fe110b5",
     "Sources/CruzadorCore/BottleLifecycle.swift": "6535f188d6c34bac80fee8b582aa790a79b0df9327c7001066f763442355e13d",
     "Sources/CruzadorCore/BottleMaintenance.swift": "b48d97be2a8a3c855691e7db2b40344478060cf343936b29f587da1e0c6a19b7",
     "Sources/CruzadorCore/CommandRunner.swift": "c62b19e9cd8396db312126833bb0c94dcbfbb9aac47a0a6a70843c3735eaf376",
     "Sources/CruzadorCore/EngineCommands.swift": "fb6c58e1335704a19864ba7d27bf5c7fd19ce778434bd6a587b5271a62bfff9b",
-    "Sources/CruzadorCore/Installers.swift": "995f2dc911177cb2f01180fb5f45310f18a64e66ab79fd8fea2eb7cf8a02677f",
+    "Sources/CruzadorCore/Installers.swift": "1cefe10fa581794025bed25174854ef1ab3363a1483a6061dbcc476db82e8df7",
     "Sources/CruzadorCore/LaunchRequest.swift": "242f32cadb35c954d475a6a21fe06edba47a1404ffb8f436202551d3e769fa7f",
     "Sources/CruzadorCore/LibraryStore.swift": "a43908d04b3b7b3fb33151478318caeeb3103c8e56596cf6a4002c6c10ae6014",
     "Sources/CruzadorCore/Models.swift": "ff3f2a3f7ae3102267d2528bc0adab21b9ef9037c08b02f477265d9c5cb1f6a1",
-    "Sources/CruzadorCore/Recipes.swift": "8ac6e02a287347bef6723ada57fb74a2fbb21f6b75931b41a606f944baf31e80",
+    "Sources/CruzadorCore/Recipes.swift": "80c78a3b25eb86636fddb394d792c33e93be09d7fe7d0d968a37605474efa57b",
+    "Sources/CruzadorCore/WindowsFile.swift": "528181028a5b51b6512ee1e497e8d29b0ec1cc62e17f245b62a1917478e99156",
+    "Sources/CruzadorCore/WineRegistry.swift": "38eca8ce1a9efac336823d28b3f7a96398b131c463ed4e29f1e383e78b351551",
     "Sources/CruzadorCore/WineRuntime.swift": "26f30b33750afea74f7312f79710ac04b5cb9f327201210f09608fc0d6d2f3f0",
     "Tests/CruzadorCoreTests/BottleLifecycleTests.swift": "5435298b8b533ee151817535977381c5ccb08db4455d86840e43fbbfdb0e097d",
     "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "2894370226dcc035b17a47fb51c6ee4f7fbd23fd67e4ca61d6ebadb7ad12bc73",
     "Tests/CruzadorCoreTests/CommandRunnerTests.swift": "20473c4a7489ce15107d0744fc7d868edc396fc50573f497f78a78521bb0d889",
     "Tests/CruzadorCoreTests/CoreTests.swift": "3b6378c2a79b38d3c2260c59acce4fad78146187a9e3c90078f4ed07f1e82e8a",
-    "Tests/CruzadorCoreTests/InstallerTests.swift": "af88d2ee27678c6b0a7d7ccfb6994d5d174e09424c62ecfe876df5bb24629a90",
+    "Tests/CruzadorCoreTests/DiscoveryTests.swift": "c1eefbaf48c39a90f79ff945d2d8546771cb4d955f6d58eadb6ee8ac261306e4",
+    "Tests/CruzadorCoreTests/InstallerTests.swift": "a8cd8908e6b767528b5907de1b3699ac138e6d80e1011b0b141ab615768b939d",
     "Tests/CruzadorCoreTests/LaunchTests.swift": "7f7adafe8378029fd5b1184003e896ad3d5f7fe55f408e97527dade3e36fe210",
     "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "55338d79e841468b8db0ef065b9f13854a2dbf66ae420bcdb6c863c1aa41bced",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "0f7b7703620b0e9aa3aa78f1fd549365a89f7d5530d422ed853b9c3c962d61d3",
-    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "ff7e345d3d8d53f295164b61e001a0a880d5579cdf6e2240d25a5421e5d7e194",
+    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "6e9fea8739572685433288976cb22950620c48d3921b95b58fac88d4c1baf2f6",
     "Tests/CruzadorCoreTests/RecipeTests.swift": "e67bf964843365aeb40fc73925535319982e77eedd63e326ff6838eadfbaab3c",
     "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "1c85661de661d1262553d1f7edbcf52d2820c10f0504718add903d9039afa376",
     "config/recipes.json": "d61a4fe567b4196894446bebf77bdc05aa6d74c7dd911d654380cc8a928876ee"

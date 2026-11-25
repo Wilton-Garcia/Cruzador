@@ -15,7 +15,7 @@ CRUZADOR_UNIVERSAL=1 ./scripts/build-app.sh
 open build/Cruzador.app
 ```
 
-O [pacote Wine do Cruzador](docs/wine-runtime.md) incluído é o motor padrão. **Configurar motor** permite escolher outro pacote ou um motor externo para comparação. Crie uma bottle, use **Instalar programa** para abrir um EXE/MSI e **Adicionar atalho** para cadastrar o executável instalado. Cada linha no campo de argumentos é um argumento separado, incluindo espaços; não use aspas de shell. Atalhos podem ser editados e ter pasta de trabalho e variáveis de ambiente em JSON próprias. Os campos que identificam o motor e o prefixo são controlados pela bottle.
+O [pacote Wine do Cruzador](docs/wine-runtime.md) incluído é o motor padrão. **Configurar motor** permite escolher outro pacote ou um motor externo para comparação. Crie uma bottle, use **Instalar programa** para abrir um EXE/MSI e **Buscar instalados** ou **Adicionar atalho** para cadastrar o executável instalado. Cada linha no campo de argumentos é um argumento separado, incluindo espaços; não use aspas de shell. Atalhos podem ser editados e ter pasta de trabalho e variáveis de ambiente em JSON próprias. Os campos que identificam o motor e o prefixo são controlados pela bottle.
 
 O aplicativo gerado recebe assinatura ad hoc para uso local; não é um pacote notarizado para distribuição. Não precisa de dependências Swift de terceiros.
 
@@ -31,7 +31,7 @@ O aplicativo gerado recebe assinatura ad hoc para uso local; não é um pacote n
 - Catálogo próprio com dependências ordenadas, downloads verificados e atalhos de receita.
 - Reparo, retomada e manutenção de bottles com duplicação, transferência em formato próprio e remoção recuperável.
 
-Os dados ficam em `~/Library/Application Support/Cruzador`. As bottles existentes do CrossOver não são importadas nem usadas como armazenamento. Durante uma operação, feche o programa Windows ou use Cancelar operação e aguarde a limpeza antes de sair. No Wine, o cancelamento pode encerrar outros programas da mesma bottle. Os atalhos são cadastrados manualmente. O botão de remover atalho não desinstala nem apaga o executável.
+Os dados ficam em `~/Library/Application Support/Cruzador`. As bottles existentes do CrossOver não são importadas nem usadas como armazenamento. Durante uma operação, feche o programa Windows ou use Cancelar operação e aguarde a limpeza antes de sair. No Wine, o cancelamento pode encerrar outros programas da mesma bottle. A busca oferece candidatos nas pastas de programas; atalhos também podem ser cadastrados manualmente. O botão de remover atalho não desinstala nem apaga o executável.
 
 ## Testes
 
