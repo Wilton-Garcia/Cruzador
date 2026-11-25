@@ -27,10 +27,13 @@ final class AppModel: ObservableObject {
             let engine = try EnginePreferences.load(from: .standard)
             engineKind = engine.kind; enginePath = engine.path
         } catch { enginePreferenceError = error.localizedDescription }
+        do { try BottleLifecycle(store: store).recoverInterruptedPreparations() }
+        catch { self.error = error.localizedDescription }
         reload()
         if let enginePreferenceError { error = enginePreferenceError }
     }
     func reload() {
+        guard !busy else { return }
         do {
             library = try store.load(); loaded = true
             if selection == nil { selection = library.bottles.first?.id }
@@ -50,11 +53,10 @@ final class AppModel: ObservableObject {
     func create(name: String) {
         let name = name.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !name.isEmpty, loaded, !busy else { return }
-        let bottle = Bottle(name: name, engine: Engine(kind: engineKind, path: enginePath))
         do {
             if let enginePreferenceError { throw CruzadorError.invalid(enginePreferenceError) }
-            _ = try EngineCommands.make(.initialize, bottle: bottle, store: store)
-            var next = library; next.bottles.append(bottle); try persist(next)
+            let bottle = try BottleLifecycle(store: store).create(name: name, engine: Engine(kind: engineKind, path: enginePath))
+            library = try store.load()
             selection = bottle.id; showCreate = false
             perform(.initialize, bottle: bottle, title: "Preparando \(name)…")
         } catch { self.error = error.localizedDescription }
@@ -63,35 +65,37 @@ final class AppModel: ObservableObject {
         guard loaded, !busy else { return }
         do {
             switch action {
-            case .initialize: break
+            case .initialize, .repair: break
             default:
                 guard bottle.state == .ready, store.isInitialized(bottle) else { throw CruzadorError.invalid("A bottle ainda não está pronta. Use Preparar novamente ou consulte o log.") }
             }
-            let command = try EngineCommands.make(action, bottle: bottle, store: store)
+            let command: EnginePlan?
+            switch action {
+            case .initialize, .repair: command = nil
+            default: command = try EngineCommands.make(action, bottle: bottle, store: store)
+            }
             let log = store.logsRoot.appendingPathComponent("\(Date().timeIntervalSince1970)-\(UUID().uuidString).log")
             busy = true; status = title; lastLog = log
             Task {
                 defer { busy = false }
                 do {
-                    let result = try await runner.run(command, log: log)
-                    if case .initialize = action {
-                        var next = library
-                        if let index = next.bottles.firstIndex(where: { $0.id == bottle.id }) {
-                            next.bottles[index].state = result.exitCode == 0 && store.isInitialized(bottle) ? .ready : .failed
-                        }
-                        try persist(next)
+                    let result: RunResult
+                    switch action {
+                    case .initialize, .repair:
+                        result = try await BottleLifecycle(store: store).prepare(id: bottle.id, mode: {
+                            if case .repair = action { return .repair }; return .initialize
+                        }(), runner: runner, log: log)
+                        library = try store.load()
+                    default:
+                        guard let command else { throw CruzadorError.invalid("Plano de execução ausente.") }
+                        result = try await runner.run(command, log: log)
                     }
                     guard result.exitCode == 0 else { throw CruzadorError.invalid("O motor terminou com código \(result.exitCode). Consulte o log para os detalhes.") }
-                    if case .initialize = action, !store.isInitialized(bottle) { throw CruzadorError.invalid("O motor não gerou uma bottle válida. Consulte o log.") }
                     status = "Operação concluída"
                 } catch {
                     status = "Operação não concluída"
-                    // Preserve the record and partial prefix for diagnosis/retry.
-                    if case .initialize = action {
-                        var next = library
-                        if let index = next.bottles.firstIndex(where: { $0.id == bottle.id }) { next.bottles[index].state = .failed }
-                        do { try persist(next) } catch { self.error = "Falha ao salvar o estado: \(error.localizedDescription)"; return }
-                    }
+                    do { library = try store.load() }
+                    catch { self.error = "Não foi possível reler a biblioteca: \(error.localizedDescription)"; return }
                     self.error = error.localizedDescription
                 }
             }

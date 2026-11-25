@@ -95,7 +95,7 @@ struct ContentView: View {
                         HStack {
                             VStack(alignment: .leading, spacing: 5) {
                                 Text("A preparação ainda não foi concluída").fontWeight(.semibold)
-                                Text("Os arquivos parciais foram preservados. Consulte o log antes de tentar novamente.").font(.callout).foregroundStyle(.secondary)
+                                Text(bottle.lastError ?? "Os arquivos parciais foram preservados. Consulte o log antes de tentar novamente.").font(.callout).foregroundStyle(.secondary)
                             }
                             Spacer()
                             Button("Preparar novamente") { model.perform(.initialize, bottle: bottle, title: "Preparando \(bottle.name)…") }.disabled(model.busy)
@@ -132,6 +132,7 @@ struct ContentView: View {
                 Divider()
                 Text("Ferramentas da bottle").font(.headline)
                 HStack(spacing: 12) {
+                    Button("Reparar bottle") { model.perform(.repair, bottle: bottle, title: "Reparando \(bottle.name)…") }
                     tool("Configurações Wine", "slider.horizontal.3", "winecfg", bottle)
                     tool("Registro", "list.bullet.rectangle", "regedit", bottle)
                     tool("Desinstalar programas", "minus.circle", "uninstaller", bottle)
@@ -148,6 +149,7 @@ struct ContentView: View {
         case .ready: model.store.isInitialized(bottle) ? "Pronta para usar" : "Arquivos ausentes"
         case .preparing: "Em preparação"
         case .failed: "Preparação incompleta"
+        case .interrupted: "Preparação interrompida"
         }
     }
 }

@@ -1,0 +1,32 @@
+{
+  "initialization_exit": 0,
+  "limitations": [
+    "No CrossOver executable is selected by these commands.",
+    "No general application or graphics compatibility established."
+  ],
+  "nonzero_exit": 7,
+  "operating_system": "Vers\u00e3o 27.2.1 (Compila\u00e7\u00e3o 26B131)",
+  "repair_exit": 0,
+  "runtime": "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime",
+  "server_wait_exit": 0,
+  "test_process_architecture": "arm64",
+  "version": "11.21",
+  "windows_commands": [
+    {
+      "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-a8f224f4-0349-48b0-8a91-b5235726c7f3/Bottles/18E29F8A-71A1-40EF-9D34-E59FF7D37CE0/drive_c/windows/system32/cmd.exe",
+      "exit_code": 0,
+      "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-a8f224f4-0349-48b0-8a91-b5235726c7f3/Logs/system32.log",
+      "marker": "CRUZADOR_WIN64_OK",
+      "marker_observed": true,
+      "pe_machine": "0x8664"
+    },
+    {
+      "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-a8f224f4-0349-48b0-8a91-b5235726c7f3/Bottles/18E29F8A-71A1-40EF-9D34-E59FF7D37CE0/drive_c/windows/syswow64/cmd.exe",
+      "exit_code": 0,
+      "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-a8f224f4-0349-48b0-8a91-b5235726c7f3/Logs/syswow64.log",
+      "marker": "CRUZADOR_WIN32_OK",
+      "marker_observed": true,
+      "pe_machine": "0x14c"
+    }
+  ]
+}

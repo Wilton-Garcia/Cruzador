@@ -32,10 +32,16 @@ public struct LibraryStore: Sendable {
         }
         try data.write(to: manifest, options: .atomic)
     }
-    public func isInitialized(_ bottle: Bottle) -> Bool {
+    public func health(of bottle: Bottle) -> PrefixHealth {
         let prefix = prefix(for: bottle)
+        guard FileManager.default.fileExists(atPath: prefix.path) else { return .absent }
         var directory: ObjCBool = false
-        return FileManager.default.fileExists(atPath: prefix.appendingPathComponent("system.reg").path)
+        var registryDirectory: ObjCBool = false
+        let registry = prefix.appendingPathComponent("system.reg")
+        let valid = FileManager.default.fileExists(atPath: registry.path, isDirectory: &registryDirectory) && !registryDirectory.boolValue
+            && FileManager.default.isReadableFile(atPath: registry.path)
             && FileManager.default.fileExists(atPath: prefix.appendingPathComponent("drive_c").path, isDirectory: &directory) && directory.boolValue
+        return valid ? .initialized : .incomplete
     }
+    public func isInitialized(_ bottle: Bottle) -> Bool { health(of: bottle) == .initialized }
 }

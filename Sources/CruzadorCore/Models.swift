@@ -15,7 +15,7 @@ public struct Engine: Codable, Equatable, Sendable {
     public var path: String
     public init(kind: EngineKind, path: String) { self.kind = kind; self.path = path }
 }
-public enum BottleState: String, Codable, Sendable { case preparing, ready, failed }
+public enum BottleState: String, Codable, Sendable { case preparing, ready, failed, interrupted }
 public struct WindowsApp: Identifiable, Codable, Equatable, Sendable {
     public var id: UUID
     public var name: String
@@ -31,6 +31,8 @@ public struct Bottle: Identifiable, Codable, Equatable, Sendable {
     public let engine: Engine
     public let createdAt: Date
     public var state: BottleState
+    public var lastError: String?
+    public var lastLogPath: String?
     public var apps: [WindowsApp]
     public init(name: String, engine: Engine) {
         id = UUID(); self.name = name; self.engine = engine; createdAt = Date(); state = .preparing; apps = []

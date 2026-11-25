@@ -2548,11 +2548,11 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "77041dce5111d72f86e8045134ece2e742f9947c07dd3f7213bbb79ffeff9f0b",
-    "Sources/Cruzador/ContentView.swift": "aa7b48db8b97da77290f3fc7defe8a9411f98a80f638663e313beee6eaac36dc",
+    "Sources/Cruzador/AppModel.swift": "f93f2abcefacdec12111427496a6fe9b2c8a2f8fbe4f01ec1d7fa4c3f1b127df",
+    "Sources/Cruzador/ContentView.swift": "73961ddbf269c7854d7e72024e38338b915a03520bc23acdbbde70c326714a5d",
     "Sources/Cruzador/CruzadorApp.swift": "8491e480c40115839f1eb76eb79fda94bcc01df79eb9f50daa7152f1fccc4943",
-    "Sources/CruzadorCore/EngineCommands.swift": "b1128cc99907080fd6ed1c9025287ea05499263139298d3340e5c0cc932b5e40",
-    "Sources/CruzadorCore/LibraryStore.swift": "5a6e1f95c9fd0489cd9198e91b9a17ca9621fa2d9135570628fb620b0f81be3c",
+    "Sources/CruzadorCore/EngineCommands.swift": "ad48a01bb6bfa61e26f2beb729c70dd6916993cafce028d179786c3fadd2db32",
+    "Sources/CruzadorCore/LibraryStore.swift": "64f0afaeb9a19753a1e779050e2a8f9767781c1afcb0bc661f479ff86d59dbb2",
     "Sources/CruzadorCore/WineRuntime.swift": "26f30b33750afea74f7312f79710ac04b5cb9f327201210f09608fc0d6d2f3f0",
     "Tests/CruzadorCoreTests/CoreTests.swift": "a9bbe5447dbd4c96559f6e87791094acf4d0a9744eefbdd280a2796669e95d2c",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "088e11f4065ae970b063a12d29fdeb4f915d6422dff9c091c1df0a86236f1b46",

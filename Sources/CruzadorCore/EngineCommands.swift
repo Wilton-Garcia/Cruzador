@@ -14,7 +14,7 @@ public struct EnginePlan: Sendable {
     public let finalization: [Command]
     public init(primary: Command, finalization: [Command] = []) { self.primary = primary; self.finalization = finalization }
 }
-public enum BottleAction: Sendable { case initialize, run(String, [String]), install(String), tool(String) }
+public enum BottleAction: Sendable { case initialize, repair, run(String, [String]), install(String), tool(String) }
 public enum EngineCommands {
     public static func make(_ action: BottleAction, bottle: Bottle, store: LibraryStore) throws -> EnginePlan {
         guard bottle.engine.path.hasPrefix("/") else { throw CruzadorError.invalid("Selecione um caminho absoluto para o motor.") }
@@ -41,6 +41,9 @@ public enum EngineCommands {
                     executable = base.appendingPathComponent("bin/cxbottle")
                     arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--create", "--template", "win10_64", "--description", bottle.name]
                 }
+            case .repair:
+                executable = base.appendingPathComponent("bin/wine")
+                arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait", "--", "wineboot", "--update"]
             default:
                 executable = base.appendingPathComponent("bin/wine")
                 arguments = ["--bottle", bottle.id.uuidString, "--scope", "private", "--no-gui", "--wait", "--"] + (try windowsArguments(action))
@@ -54,8 +57,8 @@ public enum EngineCommands {
                 executable = engineURL
             }
             switch action {
-            case .initialize:
-                arguments = ["wineboot", "--init"]
+            case .initialize, .repair:
+                arguments = ["wineboot", modeFlag(action)]
                 let server = environment["WINESERVER"].map { URL(fileURLWithPath: $0) } ?? engineURL.deletingLastPathComponent().appendingPathComponent("wineserver")
                 guard FileManager.default.isExecutableFile(atPath: server.path) else { throw CruzadorError.invalid("wineserver não está disponível ao lado do motor selecionado: \(server.path)") }
                 finalization = [Command(executable: server, arguments: ["-w"], environment: environment)]
@@ -66,6 +69,10 @@ public enum EngineCommands {
             throw CruzadorError.invalid("Motor indisponível em \(executable.path). Escolha uma instalação existente nas configurações.")
         }
         return EnginePlan(primary: Command(executable: executable, arguments: arguments, environment: environment), finalization: finalization)
+    }
+    private static func modeFlag(_ action: BottleAction) -> String {
+        if case .repair = action { return "--update" }
+        return "--init"
     }
     private static func windowsArguments(_ action: BottleAction) throws -> [String] {
         switch action {
@@ -78,7 +85,7 @@ public enum EngineCommands {
         case .tool(let name):
             guard ["winecfg", "regedit", "uninstaller", "cmd"].contains(name) else { throw CruzadorError.invalid("Ferramenta desconhecida.") }
             return [name]
-        case .initialize: return []
+        case .initialize, .repair: return []
         }
     }
     private static func validateProgram(_ path: String) throws {

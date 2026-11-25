@@ -10,14 +10,14 @@ final class PackagedNativeSmokeTests: XCTestCase {
         guard rootPath.hasPrefix("/"), !FileManager.default.fileExists(atPath: rootPath) else { throw CruzadorError.invalid("O teste exige uma pasta nova e absoluta.") }
         let runtime = try WineRuntime(root: URL(fileURLWithPath: runtimePath))
         let store = LibraryStore(root: URL(fileURLWithPath: rootPath)); try store.prepare()
-        var bottle = Bottle(name: "Motor próprio", engine: Engine(kind: .packagedWine, path: runtime.root.path))
-        var library = Library(); library.bottles = [bottle]; try store.save(library)
+        let lifecycle = BottleLifecycle(store: store)
+        let bottle = try lifecycle.create(name: "Motor próprio", engine: Engine(kind: .packagedWine, path: runtime.root.path))
         let runner = CommandRunner()
-        let initialize = try EngineCommands.make(.initialize, bottle: bottle, store: store)
-        let created = try await runner.run(initialize, log: store.logsRoot.appendingPathComponent("initialize.log"))
+        let created = try await lifecycle.prepare(id: bottle.id, mode: .initialize, runner: runner, log: store.logsRoot.appendingPathComponent("initialize.log"))
         XCTAssertEqual(created.exitCode, 0)
-        guard created.exitCode == 0, store.isInitialized(bottle) else { XCTFail("Prefixo inválido; consulte \(rootPath)"); return }
-        bottle.state = .ready; library.bottles = [bottle]; try store.save(library)
+        XCTAssertEqual(try store.load().bottles[0].state, .ready)
+        let repaired = try await lifecycle.prepare(id: bottle.id, mode: .repair, runner: runner, log: store.logsRoot.appendingPathComponent("repair.log"))
+        XCTAssertEqual(repaired.exitCode, 0)
         var observations: [[String: Any]] = []
         for (folder, marker) in [("system32", "CRUZADOR_WIN64_OK"), ("syswow64", "CRUZADOR_WIN32_OK")] {
             let executable = store.prefix(for: bottle).appendingPathComponent("drive_c/windows/\(folder)/cmd.exe")
@@ -40,7 +40,7 @@ final class PackagedNativeSmokeTests: XCTestCase {
         let hostArchitecture = "unknown"
         #endif
         let report: [String: Any] = ["runtime": runtime.root.path, "version": runtime.manifest.version, "test_process_architecture": hostArchitecture,
-                                    "operating_system": ProcessInfo.processInfo.operatingSystemVersionString, "initialization_exit": created.exitCode,
+                                    "operating_system": ProcessInfo.processInfo.operatingSystemVersionString, "initialization_exit": created.exitCode, "repair_exit": repaired.exitCode,
                                     "windows_commands": observations, "nonzero_exit": failure.exitCode, "server_wait_exit": stopped.exitCode,
                                     "limitations": ["No CrossOver executable is selected by these commands.", "No general application or graphics compatibility established."]]
         try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys]).write(to: store.root.appendingPathComponent("runtime-smoke.json"), options: .atomic)
