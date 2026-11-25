@@ -8,7 +8,7 @@ def _check_path(report, field, expected):
     if expected is not None and Path(actual).resolve() != expected: raise ValueError(f'Runtime report belongs to another {field}')
 
 
-def validate_runtime_report(report, *, require_imported_7zip=False, require_additional_apps=False, require_reboot=False, expected_runtime=None, expected_root=None):
+def validate_runtime_report(report, *, require_imported_7zip=False, require_additional_apps=False, require_reboot=False, require_retina=False, expected_runtime=None, expected_root=None):
     def require(condition, field):
         if not condition:
             raise ValueError(f'Incomplete runtime workflow report: {field}. Rebuild the tests before running --skip-build.')
@@ -47,6 +47,8 @@ def validate_runtime_report(report, *, require_imported_7zip=False, require_addi
     except (ValueError, TypeError, KeyError, AttributeError) as error:
         raise ValueError('Runtime workflow identities are missing or invalid') from error
     require(len(set(ids)) == 3, 'distinct bottle identities')
+    if require_retina:
+        require(report.get('retina_modes_observed') == ['enabled', 'disabled', 'automatic'], 'Retina registry modes')
     if require_reboot:
         require(type(report.get('reboot_exit')) is int and report['reboot_exit'] == 0 and report.get('reboot_run_once_observed') is True, 'reboot RunOnce observation')
     if require_additional_apps:

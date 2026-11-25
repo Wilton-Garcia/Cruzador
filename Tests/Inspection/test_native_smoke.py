@@ -41,6 +41,14 @@ class RuntimeReportTests(unittest.TestCase):
         reports.validate_runtime_report(invalid)
         with self.assertRaises(ValueError): reports.validate_runtime_report(invalid, require_imported_7zip=True)
 
+    def test_requested_retina_requires_all_saved_registry_modes(self):
+        report = complete_report()
+        with self.assertRaises(ValueError): reports.validate_runtime_report(report, require_retina=True)
+        report['retina_modes_observed'] = ['enabled', 'disabled', 'automatic']
+        reports.validate_runtime_report(report, require_retina=True)
+        report['retina_modes_observed'] = ['enabled', 'automatic']
+        with self.assertRaises(ValueError): reports.validate_runtime_report(report, require_retina=True)
+
     def test_requested_reboot_requires_run_once_observation(self):
         report = complete_report()
         with self.assertRaises(ValueError): reports.validate_runtime_report(report, require_reboot=True)
@@ -121,7 +129,7 @@ class NativeSupervisorTests(unittest.TestCase):
                 self.assertEqual(Path(prefix).name, prefix_id); self.assertEqual(actual_argument, argument)
 
     def test_complete_report_control_publishes_current_summary(self):
-        root, output, server_log, result, supervision, prefix_id = self.run_supervisor(dict(complete_report(), reboot_exit=0, reboot_run_once_observed=True))
+        root, output, server_log, result, supervision, prefix_id = self.run_supervisor(dict(complete_report(), reboot_exit=0, reboot_run_once_observed=True, retina_modes_observed=["enabled", "disabled", "automatic"]))
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertEqual(supervision['result'], 0); self.assertFalse(supervision['timed_out'])
         self.assertIsNone(supervision['report_error']); self.assertFalse(server_log.exists())

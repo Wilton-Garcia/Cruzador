@@ -431,6 +431,14 @@ final class AppModel: ObservableObject {
         panel.treatsFilePackagesAsDirectories = false; panel.message = "Escolha uma publicação .cruzadorbottle com publication.json."
         return panel.runModal() == .OK ? panel.url : nil
     }
+    func applyRetina(_ mode: RetinaMode, bottle: Bottle) {
+        guard canStart, presentation == .retina else { return }
+        let log = store.logsRoot.appendingPathComponent("retina-\(UUID()).log"); lastLog = log
+        maintenance("Aplicando alta resolução; aguardando programas fecharem…", bottleID: bottle.id) { service in
+            _ = try await RetinaConfiguration(store: service.store).apply(mode, bottleID: bottle.id, runner: service.runner, log: log, operationID: service.operationID)
+            return bottle.id
+        }
+    }
     func rebootBottle(_ bottle: Bottle) {
         guard canStart, store.isReady(bottle) else { return }
         let alert = NSAlert(); alert.messageText = "Reiniciar a bottle \(bottle.name)?"

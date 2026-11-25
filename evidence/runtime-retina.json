@@ -1,0 +1,190 @@
+{
+  "formatVersion": 1,
+  "report_path": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/runtime-smoke.json",
+  "report_sha256": "7f8af8c15daea535de4eeadaf4a0017438fa39ebfc04543622003acbf1c34fb7",
+  "report": {
+    "additional_apps": [
+      {
+        "arguments": [
+          "-V"
+        ],
+        "cancelled": false,
+        "case": "version",
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/additional-apps/plink-w32.exe",
+        "exit": 0,
+        "id": "plink-w32",
+        "integrity_ok": false,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Logs/plink-w32-version.log",
+        "log_sha256": "cbaf3adf9a1e302cfe31a2d17261c257fff7ec2d18a7a8e6cfe806efe62cf55d",
+        "marker_observed": true,
+        "pe_machine": "0x14c",
+        "sha256": "c7be84cc42565ad4de7e77e99f0a61f3a8dec17c77d5ff1afad79d005af54c93"
+      },
+      {
+        "arguments": [
+          "-V"
+        ],
+        "cancelled": false,
+        "case": "version",
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/additional-apps/plink-w64.exe",
+        "exit": 0,
+        "id": "plink-w64",
+        "integrity_ok": false,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Logs/plink-w64-version.log",
+        "log_sha256": "5c31a0b0099b3f8a7b5d6fbf3f4f37589d4bb138ffc83db99e765f624bda3197",
+        "marker_observed": true,
+        "pe_machine": "0x8664",
+        "sha256": "969f36879d5716aa1a9811f43a6a6510e8f08372dbeb9695b810b9c776f39c75"
+      },
+      {
+        "arguments": [
+          "C:\\cruzador-compatibility.db",
+          "CREATE TABLE sample(value TEXT); INSERT INTO sample VALUES('CRUZADOR_SQLITE_OK'); SELECT value FROM sample;"
+        ],
+        "cancelled": false,
+        "case": "write",
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/additional-apps/sqlite3.exe",
+        "exit": 0,
+        "id": "sqlite-tools-x64",
+        "integrity_ok": false,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Logs/sqlite-tools-x64-write.log",
+        "log_sha256": "2decf1d17803eee19f273f423c114c633eba97d6f8bc486e7062d9ea5336344d",
+        "marker_observed": true,
+        "pe_machine": "0x8664",
+        "sha256": "3627c4ce2632949ee6d795c92e0a33f68fb30235f0a55a7719f0636414d8e1d3"
+      },
+      {
+        "arguments": [
+          "C:\\cruzador-compatibility.db",
+          "PRAGMA integrity_check; SELECT value FROM sample;"
+        ],
+        "cancelled": false,
+        "case": "read",
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/additional-apps/sqlite3.exe",
+        "exit": 0,
+        "id": "sqlite-tools-x64",
+        "integrity_ok": true,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Logs/sqlite-tools-x64-read.log",
+        "log_sha256": "bfcf06ec0cf6beb1b37ca07bf6776941d1b2eb2efbcfd6e35a21c9dc0ddb56a3",
+        "marker_observed": true,
+        "pe_machine": "0x8664",
+        "sha256": "3627c4ce2632949ee6d795c92e0a33f68fb30235f0a55a7719f0636414d8e1d3"
+      }
+    ],
+    "after_cancellation_exit": 0,
+    "cancellation_cleanup_codes": [
+      0,
+      0
+    ],
+    "cancelled": true,
+    "discovered_executables": 10,
+    "discovered_software_records": 3,
+    "formatVersion": 2,
+    "initialization_exit": 0,
+    "invalid_msi_macOS_exit": 91,
+    "invalid_msi_status": "unconfirmed",
+    "library_workflows": {
+      "copied_probe": {
+        "exit": 0,
+        "global_and_local_options_observed": true,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Logs/copy-probe.log",
+        "working_directory_observed": true
+      },
+      "diagnostics": "/Users/wiltongarcia/Developer/Cruzador/.local/workflow-diagnostics-FAD86F3B-8A2A-4D89-8618-F9B11E2A8C6C",
+      "diagnostics_log_hashes_verified": true,
+      "diagnostics_source_preserved": true,
+      "duplicate_id": "902ED8F6-CBED-4F79-B4D0-9199D1A86615",
+      "export_package": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/real-transfer.cruzadorbottle",
+      "final_server_wait_exit": 0,
+      "import_preparation_exit": 0,
+      "imported_7zip_exit": 0,
+      "imported_id": "A5A0C2D5-1CC3-4A23-B7FC-7F3F2A0E08B9",
+      "imported_probe": {
+        "exit": 0,
+        "global_and_local_options_observed": true,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Logs/import-probe.log",
+        "working_directory_observed": true
+      },
+      "original_id": "D9491164-601D-42EF-88C5-C23E8C0978DB",
+      "original_probe": {
+        "exit": 0,
+        "global_and_local_options_observed": true,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Logs/original-probe.log",
+        "working_directory_observed": true
+      },
+      "original_reference_resolved_after_transfers": true,
+      "removed_copy_recovery": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Removed/FC1D215C-6E55-4126-B2AC-E2FE1AFCA31C.cruzadorbottle",
+      "removed_reference_rejected": true
+    },
+    "limitations": [
+      "No CrossOver executable is selected by these commands.",
+      "No general application or graphics compatibility established."
+    ],
+    "nonzero_exit": 7,
+    "operating_system": "Versão 27.2.1 (Compilação 26B131)",
+    "positive_7zip_msi_exit": 0,
+    "reboot_exit": 0,
+    "reboot_run_once_observed": true,
+    "recipe_installation_count": 1,
+    "recipe_verified_shortcuts": 2,
+    "repair_exit": 0,
+    "retina_modes_observed": [
+      "enabled",
+      "disabled",
+      "automatic"
+    ],
+    "root": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541",
+    "runtime": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21",
+    "server_wait_exit": 0,
+    "test_process_architecture": "arm64",
+    "version": "11.21",
+    "windows_commands": [
+      {
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB/drive_c/windows/system32/cmd.exe",
+        "exit_code": 0,
+        "explicit_environment_observed": true,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Logs/system32.log",
+        "marker": "CRUZADOR_WIN64_OK",
+        "marker_observed": true,
+        "pe_machine": "0x8664"
+      },
+      {
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Bottles/D9491164-601D-42EF-88C5-C23E8C0978DB/drive_c/windows/syswow64/cmd.exe",
+        "exit_code": 0,
+        "explicit_environment_observed": true,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541/Logs/syswow64.log",
+        "marker": "CRUZADOR_WIN32_OK",
+        "marker_observed": true,
+        "pe_machine": "0x14c"
+      }
+    ]
+  },
+  "supervision": {
+    "format_version": 2,
+    "timed_out": false,
+    "timeout_seconds": 300.0,
+    "elapsed_seconds": 101.956576458,
+    "result": 0,
+    "test_exit": 0,
+    "cleanup_status": "not-requested",
+    "cleanup": [],
+    "report_error": null,
+    "previous_summary": "/Users/wiltongarcia/Developer/Cruzador/.local/packaged-runtime-smoke.previous-smoke-d3a7eedc-ce4c-451c-a984-0dae67b3a541.json",
+    "requested_output_root": null,
+    "output_root": "/Users/wiltongarcia/Developer/Cruzador/.local",
+    "requested_runtime": ".local/Runtime-11.21",
+    "runtime": "/Users/wiltongarcia/Developer/Cruzador/.local/Runtime-11.21",
+    "requested_installer_msi": ".local/downloads/7z2606-x64.msi",
+    "requested_recipes": "config/recipes.json",
+    "requested_apps": ".local/additional-apps",
+    "limitations": [
+      "CPU time and peak process-family memory were not measured.",
+      "Cleanup control commands concern only the selected retained prefixes; arbitrary detached helpers were not enumerated."
+    ]
+  },
+  "limitations": [
+    "Configuration persistence observed on local arm64 with stock Wine 11.21 only.",
+    "No pixel-density measurement or arbitrary application compatibility claim.",
+    "Other runtime packages and physical monitor combinations were not validated."
+  ]
+}

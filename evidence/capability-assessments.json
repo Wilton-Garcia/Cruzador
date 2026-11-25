@@ -884,10 +884,29 @@
         "ui:bottle-menu:10"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/RetinaConfiguration.swift",
+        "Sources/Cruzador/RetinaView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/RetinaTests.swift",
+          "name": "testRegistryOwnsRetinaAndUnsupportedOrAmbiguousValuesRemainUnknown",
+          "scope": "Registro é fonte única; padrões, strings, tipos e ambiguidades preservados."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/RetinaTests.swift",
+          "name": "testWaitFailurePreservesRegistryAndIdempotentDefaultDoesNotWriteBackup",
+          "scope": "Espera falha não escreve; padrão idempotente não cria backup."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Wine real persiste Retina ativada, desativada e padrão."
+        }
+      ],
+      "remaining_gap": "Configuração Retina própria validada no Wine 11.21; qualidade de pixels, demais motores e equivalência integral não estabelecidas.",
       "independent_equivalence_established": false
     },
     {

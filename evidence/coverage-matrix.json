@@ -883,10 +883,29 @@
         "ui:bottle-menu:10"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/RetinaConfiguration.swift",
+        "Sources/Cruzador/RetinaView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/RetinaTests.swift",
+          "name": "testRegistryOwnsRetinaAndUnsupportedOrAmbiguousValuesRemainUnknown",
+          "scope": "Registro é fonte única; padrões, strings, tipos e ambiguidades preservados."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/RetinaTests.swift",
+          "name": "testWaitFailurePreservesRegistryAndIdempotentDefaultDoesNotWriteBackup",
+          "scope": "Espera falha não escreve; padrão idempotente não cria backup."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift",
+          "name": "testRealPackagedWineRuns32And64BitPrograms",
+          "scope": "Wine real persiste Retina ativada, desativada e padrão."
+        }
+      ],
+      "remaining_gap": "Configuração Retina própria validada no Wine 11.21; qualidade de pixels, demais motores e equivalência integral não estabelecidas.",
       "independent_equivalence_established": false
     },
     {
@@ -2972,13 +2991,14 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "df119404ba1af7af6cde1315c13984bf37ae92f29b8b1f836ba3247ff521b6c3",
-    "Sources/Cruzador/AppPresentation.swift": "e0daedada9c10260ebb6b4a8d8f6c625066d652e4330d59e7a020409ddc4dca7",
+    "Sources/Cruzador/AppModel.swift": "5d54afab8d4a44c45b886db52bd4979f55f7049581a5a5d36f8db663e7afc1f6",
+    "Sources/Cruzador/AppPresentation.swift": "e9c95fda11f36df3b16481a03a643d9c029fbe7fb846f9aa1cf757493dff8075",
     "Sources/Cruzador/CompatibilityView.swift": "b423f5014ac05cd2a3d3237cf430db248de34c6de30d5989a8cfa5541732aac4",
-    "Sources/Cruzador/ContentView.swift": "4c32b54eb665b03b2a4d1655f77e6a0d7201a9e36e71cc411212664f9313da86",
+    "Sources/Cruzador/ContentView.swift": "6e55498a76f251a7c8836b0cdc3ec43ebfd3faef3e1c327eb191d3ef607401d3",
     "Sources/Cruzador/CruzadorApp.swift": "431ede55976cca26a32067c1d7a2dfa8c480919639c25b7beab3895988730c80",
     "Sources/Cruzador/DiagnosticsView.swift": "d297e744b5b841a06322193fd8acd1f4fedbef742e7378db52b14d4089590378",
     "Sources/Cruzador/DocumentHistory.swift": "2e5fc0229ff9ae0f81bd655f17d21d0e35122b1314c09e91e271988757079ee3",
+    "Sources/Cruzador/RetinaView.swift": "53c2c24bfc72bf210d7718ce40ce614a8dce56eba64f20e3226468ede212dbee",
     "Sources/CruzadorCore/AppDiscovery.swift": "bd7e56c17df92e3fed7ea7e945e72d9a684237210abfdc77b44ec3e25fe110b5",
     "Sources/CruzadorCore/BottleLifecycle.swift": "068afaab8f5fba4322a3daaea269c7f4b313bc403a0939bb51916ba84daa4c91",
     "Sources/CruzadorCore/BottleMaintenance.swift": "e339d91afad94e6a14a44daebcb50bd8a491fba61475dc4f57b164517cc2443f",
@@ -2997,6 +3017,7 @@
     "Sources/CruzadorCore/LibraryStore.swift": "a247aa6b239318b7d3b8c02c4860d35ab1dd217d26f81adda41a765c5700ce0c",
     "Sources/CruzadorCore/Models.swift": "c652532426a5e7d460072be8a0d0e47140a4bc8a897e55bb00ad7a44d9c18195",
     "Sources/CruzadorCore/Recipes.swift": "d4c1f2e27eb3f24b523e11c6f351a71fccaab6b8f973ef75f1ea813f5fa32d81",
+    "Sources/CruzadorCore/RetinaConfiguration.swift": "fb2e37db6fd3d16346483f921b096b0340ac611fe45e918d0a077bd698e6f774",
     "Sources/CruzadorCore/Synchronization.swift": "b27246f4ff54c8813bd41bf84bde7ea43220191f3860513db25079d3d7bfd90a",
     "Sources/CruzadorCore/WindowsFile.swift": "54772c12b750ab3b8e9d93b82b6a9cf15c8ce7c770c9467d82caa54e15299bfe",
     "Sources/CruzadorCore/WineRegistry.swift": "38eca8ce1a9efac336823d28b3f7a96398b131c463ed4e29f1e383e78b351551",
@@ -3019,8 +3040,9 @@
     "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "ddb419f623d0aafb68ad3058410d30f78806bae10ebd8705b58f854724105713",
     "Tests/CruzadorCoreTests/LibrarySearchTests.swift": "56da908ac1eac1e3263c8c3901da410e06f9c886fb35f9d03abd60c3d538d34f",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "de4672c5c1b4da9e00e40a610d81e2239c903c5b369487cc1cfdf5428bc85a74",
-    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "a98ddd00335c3e7e9c291f8620bd013062df3a19b294be269afca9194ee10b9f",
+    "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "00bb8871aca3882a143b87eee26e5838271f225a85176059d80a7b9dccb9b615",
     "Tests/CruzadorCoreTests/RecipeTests.swift": "e67bf964843365aeb40fc73925535319982e77eedd63e326ff6838eadfbaab3c",
+    "Tests/CruzadorCoreTests/RetinaTests.swift": "9798b76e3c1079493edef490040aa1abb1840eb8c3bc0e0999867b0dc82952ab",
     "Tests/CruzadorCoreTests/SynchronizationTests.swift": "0210a8d86df94154d127fddee19e5f2cce3572b817e91ccbd3825027486d7cb5",
     "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "a99fee46e3c57d711d3d7499a3d92a958ede07540dca417084b334a65fb8df2a",
     "Tests/CruzadorPresentationTests/PresentationTests.swift": "42da09f80743b7a97326d6dffd4772d0f63a06a4d04e9ef5c0dc789ad69ae775",
@@ -3036,8 +3058,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 32,
-      "missing": 8
+      "partial": 33,
+      "missing": 7
     }
   },
   "limitations": [

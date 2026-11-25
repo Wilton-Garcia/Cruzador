@@ -88,6 +88,8 @@ struct ContentView: View {
     }
     @ViewBuilder private func presentedView(_ route: AppPresentation) -> some View {
         switch route {
+        case .retina:
+            if let bottle = model.selected { RetinaView(model: model, bottle: bottle) } else { unavailablePresentation(route) }
         case .compatibility:
             if let bottle = model.selected { CompatibilityView(model: model, bottle: bottle) } else { unavailablePresentation(route) }
         case .create: CreateBottleView(model: model)
@@ -229,6 +231,7 @@ struct ContentView: View {
                 Divider()
                 Text("Ferramentas da bottle").font(.headline)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 180), spacing: 12)], alignment: .leading, spacing: 12) {
+                    Button("Alta resolução…") { model.presentation = .retina }
                     Button("Reiniciar bottle…") { model.rebootBottle(bottle) }
                     Button("Reparar bottle") { model.perform(.repair, bottle: bottle, title: "Reparando \(bottle.name)…") }
                     tool("Configurações Wine", "slider.horizontal.3", "winecfg", bottle)

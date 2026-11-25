@@ -30,6 +30,12 @@ final class PackagedNativeSmokeTests: XCTestCase {
         try rebooted.requireSuccess()
         let rebootMarker = try String(contentsOf: store.prefix(for: bottle).appendingPathComponent("drive_c/cruzador-reboot.txt"), encoding: .utf8).contains("CRUZADOR_REBOOT_OK")
         XCTAssertTrue(rebootMarker)
+        try trace.phase("retina")
+        var retinaModes: [String] = []
+        for mode in [RetinaMode.enabled, .disabled, .automatic] {
+            let result = try await RetinaConfiguration(store: store).apply(mode, bottleID: bottle.id, runner: runner, log: store.logsRoot.appendingPathComponent("retina-\(mode.rawValue).log"))
+            XCTAssertEqual(result.mode, mode); retinaModes.append(try XCTUnwrap(result.mode).rawValue)
+        }
         var observations: [[String: Any]] = []
         for (folder, marker) in [("system32", "CRUZADOR_WIN64_OK"), ("syswow64", "CRUZADOR_WIN32_OK")] {
             try trace.phase(folder)
@@ -130,7 +136,7 @@ final class PackagedNativeSmokeTests: XCTestCase {
         }
         try trace.phase("completed")
         var report: [String: Any] = ["formatVersion": 2, "root": store.root.path, "library_workflows": libraryWorkflows, "discovered_software_records": discovery.registeredSoftware.count, "discovered_executables": discovery.executables.count, "runtime": runtime.root.path, "version": runtime.manifest.version, "test_process_architecture": hostArchitecture,
-                                    "operating_system": ProcessInfo.processInfo.operatingSystemVersionString, "initialization_exit": created.exitCode, "repair_exit": repaired.exitCode, "reboot_exit": rebooted.exitCode, "reboot_run_once_observed": rebootMarker,
+                                    "operating_system": ProcessInfo.processInfo.operatingSystemVersionString, "initialization_exit": created.exitCode, "repair_exit": repaired.exitCode, "reboot_exit": rebooted.exitCode, "reboot_run_once_observed": rebootMarker, "retina_modes_observed": retinaModes,
                                     "windows_commands": observations, "nonzero_exit": failure.exitCode, "server_wait_exit": stopped.exitCode, "cancelled": cancelled.cancelled, "cancellation_cleanup_codes": cancelled.phases.filter { $0.phase == "cancellation" }.compactMap(\.exitCode), "after_cancellation_exit": afterCancel.exitCode, "invalid_msi_status": installation.status.rawValue, "invalid_msi_macOS_exit": invalidMSIExit,
                                     "limitations": ["No CrossOver executable is selected by these commands.", "No general application or graphics compatibility established."]]
         if let additionalApps { report["additional_apps"] = additionalApps }
