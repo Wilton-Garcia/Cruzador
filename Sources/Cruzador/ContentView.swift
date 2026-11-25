@@ -38,6 +38,7 @@ struct ContentView: View {
                 Button { model.presentation = .create } label: { Label("Nova bottle", systemImage: "plus").frame(maxWidth: .infinity) }
                     .controlSize(.large).disabled(!model.canStart || !model.loaded)
                 Button { model.importBottle() } label: { Label("Importar bottle…", systemImage: "square.and.arrow.down") }.disabled(!model.canStart || !model.loaded)
+                Button("Receber publicação…") { model.receivePublication() }.disabled(!model.canStart || !model.loaded)
                 SettingsLink { Label("Configurar motor", systemImage: "gearshape") }.buttonStyle(.plain).foregroundStyle(.secondary)
             }.padding(18).navigationSplitViewColumnWidth(min: 235, ideal: 260, max: 320)
         } detail: {
@@ -129,6 +130,9 @@ struct ContentView: View {
                         Button(model.library.preferences.defaultBottleID == bottle.id ? "Bottle padrão" : "Usar como padrão") { model.makeDefault(bottle) }.disabled(model.library.preferences.defaultBottleID == bottle.id)
                         Button("Renomear…") { model.nameBottle(bottle, duplicate: false) }
                         Button("Duplicar…") { model.nameBottle(bottle, duplicate: true) }
+                        Button("Publicar cópia versionada…") { model.publishBottle(bottle) }
+                        Button("Publicar nova revisão…") { model.publishBottle(bottle, newRevision: true) }
+                        Button("Atualizar de publicação…") { model.receivePublication(updating: bottle) }
                         Button("Exportar…") { model.exportBottle(bottle) }
                         Divider()
                         Button("Remover da biblioteca…", role: .destructive) { model.removeBottle(bottle) }

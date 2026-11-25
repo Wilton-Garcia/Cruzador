@@ -424,6 +424,32 @@ final class AppModel: ObservableObject {
             try service.rename(id: bottle.id, name: name); return bottle.id
         }
     }
+    private func choosePublication() -> URL? {
+        let panel = NSOpenPanel(); panel.canChooseDirectories = true; panel.canChooseFiles = false
+        panel.treatsFilePackagesAsDirectories = false; panel.message = "Escolha uma publicação .cruzadorbottle com publication.json."
+        return panel.runModal() == .OK ? panel.url : nil
+    }
+    func publishBottle(_ bottle: Bottle, newRevision: Bool = false) {
+        guard canStart else { return }
+        let previous: URL?
+        if newRevision { guard let chosen = choosePublication() else { return }; previous = chosen } else { previous = nil }
+        let panel = NSSavePanel(); panel.nameFieldStringValue = bottle.name + ".cruzadorbottle"
+        panel.message = "Publica uma cópia completa, incluindo arquivos e dados pessoais da bottle. Escolha uma pasta nova; o compartilhamento é manual."
+        guard panel.runModal() == .OK, let target = panel.url else { return }
+        maintenance("Publicando cópia versionada…", bottleID: bottle.id) { service in
+            _ = try await BottlePublicationService(maintenance: service).publish(bottleID: bottle.id, previous: previous, destination: target)
+            return bottle.id
+        }
+    }
+    func receivePublication(updating bottle: Bottle? = nil) {
+        guard canStart else { return }
+        if let enginePreferenceError { error = enginePreferenceError; return }
+        guard let package = choosePublication() else { return }
+        let engine = bottle?.engine ?? Engine(kind: engineKind, path: enginePath)
+        maintenance("Recebendo publicação; a versão anterior será mantida…") { service in
+            try BottlePublicationService(maintenance: service).receive(package, engine: engine, updating: bottle?.id).id
+        }
+    }
     func exportBottle(_ bottle: Bottle) {
         guard !busy else { return }
         let panel = NSSavePanel(); panel.nameFieldStringValue = bottle.name + ".cruzadorbottle"

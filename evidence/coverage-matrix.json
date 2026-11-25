@@ -454,10 +454,20 @@
         "ui:bottle-menu:8"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Controles vistos; atualização estava desabilitada. Sem implementação própria.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottlePublication.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottlePublicationTests.swift",
+          "name": "testPublishedRevisionsAreVerifiedAndManagedUpdatesPreserveOldBottle",
+          "scope": "Publicação íntegra, revisão crescente, arquivo alterado rejeitado e atualização mantendo bottle anterior."
+        }
+      ],
+      "remaining_gap": "Publicações próprias por arquivo, inventário íntegro e atualização lado a lado; serviço central e formatos de publicação do original não implementados.",
       "independent_equivalence_established": false
     },
     {
@@ -2931,10 +2941,10 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "9ac01b63b299476dc304673b5ea74163094c5c1e58d52e0e2a7a08d769a689d8",
+    "Sources/Cruzador/AppModel.swift": "8cb320623a89b25006c345eff85b0171e36e39bab535de7151c986ce49836b1c",
     "Sources/Cruzador/AppPresentation.swift": "e0daedada9c10260ebb6b4a8d8f6c625066d652e4330d59e7a020409ddc4dca7",
     "Sources/Cruzador/CompatibilityView.swift": "b423f5014ac05cd2a3d3237cf430db248de34c6de30d5989a8cfa5541732aac4",
-    "Sources/Cruzador/ContentView.swift": "d7c10923aeedf8b62336923a36c13009b1d5bee9eb36ee60f3a6d5b625311ac3",
+    "Sources/Cruzador/ContentView.swift": "ca6f1542a7697e3d5414bf6c51acede33fce1f3834dfb30d631455f24f0be12c",
     "Sources/Cruzador/CruzadorApp.swift": "431ede55976cca26a32067c1d7a2dfa8c480919639c25b7beab3895988730c80",
     "Sources/Cruzador/DiagnosticsView.swift": "d297e744b5b841a06322193fd8acd1f4fedbef742e7378db52b14d4089590378",
     "Sources/Cruzador/DocumentHistory.swift": "2e5fc0229ff9ae0f81bd655f17d21d0e35122b1314c09e91e271988757079ee3",
@@ -2942,6 +2952,7 @@
     "Sources/CruzadorCore/BottleLifecycle.swift": "0611f7b49f7ab6969be864c70cf426de12c960c8c62c64055f27d03e53f90541",
     "Sources/CruzadorCore/BottleMaintenance.swift": "e339d91afad94e6a14a44daebcb50bd8a491fba61475dc4f57b164517cc2443f",
     "Sources/CruzadorCore/BottleOperationRecovery.swift": "d9640346576c820c0bc5c9a4b09330a5ee730190f7d47aaae921c758ba85d681",
+    "Sources/CruzadorCore/BottlePublication.swift": "19bd122dae7007687b2854ac5579455329c20cbe2442a500fc32a5bb8b463cb6",
     "Sources/CruzadorCore/BottleSettings.swift": "157f59d090d189d0d04cbbc0110fca90ad339ef4478072489079969bc634cd6d",
     "Sources/CruzadorCore/CommandRunner.swift": "c62b19e9cd8396db312126833bb0c94dcbfbb9aac47a0a6a70843c3735eaf376",
     "Sources/CruzadorCore/Compatibility.swift": "e81de06e4b10adeae15defd6294226ef46f74af5094388f5f0ac2c9f93e4c3ab",
@@ -2960,6 +2971,7 @@
     "Sources/CruzadorCore/WineRuntime.swift": "adcbc69968a9f5d989b68eac8661d7dd5b752f7526483fb52f18037850919e6c",
     "Tests/CruzadorCoreTests/BottleLifecycleTests.swift": "5435298b8b533ee151817535977381c5ccb08db4455d86840e43fbbfdb0e097d",
     "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "ba2a5519816b81ebbb6c920530053a1b45a13181de5d5fc2a3934875c2335821",
+    "Tests/CruzadorCoreTests/BottlePublicationTests.swift": "f9a541ca49086fa5ea2010c3288c37486a8c5bd870415a8b58210bc640266430",
     "Tests/CruzadorCoreTests/BottleRecoveryTests.swift": "32e22604e5f9b03e4bb43da6931191f6254eb5257699af1597498ac305fded24",
     "Tests/CruzadorCoreTests/CommandRunnerTests.swift": "20473c4a7489ce15107d0744fc7d868edc396fc50573f497f78a78521bb0d889",
     "Tests/CruzadorCoreTests/CompatibilityTests.swift": "5241c8b2b283d6e8e5701ecd9dac8963ec200b88b670d54c785b5c1204f15c41",
@@ -2990,8 +3002,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 29,
-      "missing": 11
+      "partial": 30,
+      "missing": 10
     }
   },
   "limitations": [

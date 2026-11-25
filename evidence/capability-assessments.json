@@ -455,10 +455,20 @@
         "ui:bottle-menu:8"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Controles vistos; atualização estava desabilitada. Sem implementação própria.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/BottlePublication.swift",
+        "Sources/Cruzador/AppModel.swift",
+        "Sources/Cruzador/ContentView.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/BottlePublicationTests.swift",
+          "name": "testPublishedRevisionsAreVerifiedAndManagedUpdatesPreserveOldBottle",
+          "scope": "Publicação íntegra, revisão crescente, arquivo alterado rejeitado e atualização mantendo bottle anterior."
+        }
+      ],
+      "remaining_gap": "Publicações próprias por arquivo, inventário íntegro e atualização lado a lado; serviço central e formatos de publicação do original não implementados.",
       "independent_equivalence_established": false
     },
     {
