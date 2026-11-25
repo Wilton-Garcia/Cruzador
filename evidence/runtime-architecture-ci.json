@@ -1,0 +1,199 @@
+{
+  "source_commit": "02b59bb",
+  "workflow_url": "https://github.com/Wilton-Garcia/Cruzador/actions/runs/45517772785",
+  "runtime_archive_sha256": "9909b486657e10ab66c7279371ae1f990345b596b3b1b3a0cf21f28af24fa0ce",
+  "jobs": [
+    {
+      "name": "runtime (macos-15)",
+      "url": "https://github.com/Wilton-Garcia/Cruzador/actions/runs/45517772785/job/138881559270",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Toolchain and native tests",
+          "conclusion": "success"
+        },
+        {
+          "name": "Prepare pinned standalone Wine",
+          "conclusion": "success"
+        },
+        {
+          "name": "Execute 32-bit and 64-bit Windows programs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and verify universal application",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve validation result",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "runtime (macos-15-intel)",
+      "url": "https://github.com/Wilton-Garcia/Cruzador/actions/runs/45517772785/job/138881560030",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Toolchain and native tests",
+          "conclusion": "success"
+        },
+        {
+          "name": "Prepare pinned standalone Wine",
+          "conclusion": "success"
+        },
+        {
+          "name": "Execute 32-bit and 64-bit Windows programs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and verify universal application",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve validation result",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "apple_silicon_report": {
+    "initialization_exit": 0,
+    "limitations": [
+      "No CrossOver executable is selected by these commands.",
+      "No general application or graphics compatibility established."
+    ],
+    "nonzero_exit": 7,
+    "operating_system": "Version 15.8.2 (Build 24H232)",
+    "runtime": "/Users/runner/work/Cruzador/Cruzador/.local/Runtime-11.21",
+    "server_wait_exit": 0,
+    "test_process_architecture": "arm64",
+    "version": "11.21",
+    "windows_commands": [
+      {
+        "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-4ca0b7f4-8e31-4620-9309-560921e3fdf3/Bottles/2A9EA3E5-9444-4FB3-B171-26710CC19D66/drive_c/windows/system32/cmd.exe",
+        "exit_code": 0,
+        "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-4ca0b7f4-8e31-4620-9309-560921e3fdf3/Logs/system32.log",
+        "marker": "CRUZADOR_WIN64_OK",
+        "marker_observed": true,
+        "pe_machine": "0x8664"
+      },
+      {
+        "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-4ca0b7f4-8e31-4620-9309-560921e3fdf3/Bottles/2A9EA3E5-9444-4FB3-B171-26710CC19D66/drive_c/windows/syswow64/cmd.exe",
+        "exit_code": 0,
+        "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-4ca0b7f4-8e31-4620-9309-560921e3fdf3/Logs/syswow64.log",
+        "marker": "CRUZADOR_WIN32_OK",
+        "marker_observed": true,
+        "pe_machine": "0x14c"
+      }
+    ]
+  },
+  "local_report": {
+    "initialization_exit": 0,
+    "limitations": [
+      "No CrossOver executable is selected by these commands.",
+      "No general application or graphics compatibility established."
+    ],
+    "nonzero_exit": 7,
+    "operating_system": "Vers\u00e3o 27.2.1 (Compila\u00e7\u00e3o 26B131)",
+    "runtime": "/Users/wiltongarcia/Developer/Cruzador/build/Cruzador.app/Contents/Resources/Runtime",
+    "server_wait_exit": 0,
+    "test_process_architecture": "arm64",
+    "version": "11.21",
+    "windows_commands": [
+      {
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-7034678d-1dc6-461b-8e98-32b7e1e169f6/Bottles/E375ED04-4A8C-49A2-B798-986422F5658E/drive_c/windows/system32/cmd.exe",
+        "exit_code": 0,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-7034678d-1dc6-461b-8e98-32b7e1e169f6/Logs/system32.log",
+        "marker": "CRUZADOR_WIN64_OK",
+        "marker_observed": true,
+        "pe_machine": "0x8664"
+      },
+      {
+        "executable": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-7034678d-1dc6-461b-8e98-32b7e1e169f6/Bottles/E375ED04-4A8C-49A2-B798-986422F5658E/drive_c/windows/syswow64/cmd.exe",
+        "exit_code": 0,
+        "log": "/Users/wiltongarcia/Developer/Cruzador/.local/smoke-7034678d-1dc6-461b-8e98-32b7e1e169f6/Logs/syswow64.log",
+        "marker": "CRUZADOR_WIN32_OK",
+        "marker_observed": true,
+        "pe_machine": "0x14c"
+      }
+    ]
+  },
+  "limitations": [
+    "This scenario covers initialization and Windows command programs, not general application or graphics compatibility.",
+    "Wine native images are x86_64; Apple Silicon execution uses Rosetta.",
+    "Ad hoc signing is not public notarized distribution."
+  ],
+  "intel_report": {
+    "initialization_exit": 0,
+    "limitations": [
+      "No CrossOver executable is selected by these commands.",
+      "No general application or graphics compatibility established."
+    ],
+    "nonzero_exit": 7,
+    "operating_system": "Version 15.7.9 (Build 24G830)",
+    "runtime": "/Users/runner/work/Cruzador/Cruzador/.local/Runtime-11.21",
+    "server_wait_exit": 0,
+    "test_process_architecture": "x86_64",
+    "version": "11.21",
+    "windows_commands": [
+      {
+        "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-b0000fba-1340-4661-9910-c09a54d31f84/Bottles/DA930966-F7F5-4D7C-98B5-343F36F53F0A/drive_c/windows/system32/cmd.exe",
+        "exit_code": 0,
+        "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-b0000fba-1340-4661-9910-c09a54d31f84/Logs/system32.log",
+        "marker": "CRUZADOR_WIN64_OK",
+        "marker_observed": true,
+        "pe_machine": "0x8664"
+      },
+      {
+        "executable": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-b0000fba-1340-4661-9910-c09a54d31f84/Bottles/DA930966-F7F5-4D7C-98B5-343F36F53F0A/drive_c/windows/syswow64/cmd.exe",
+        "exit_code": 0,
+        "log": "/Users/runner/work/Cruzador/Cruzador/.local/smoke-b0000fba-1340-4661-9910-c09a54d31f84/Logs/syswow64.log",
+        "marker": "CRUZADOR_WIN32_OK",
+        "marker_observed": true,
+        "pe_machine": "0x14c"
+      }
+    ]
+  }
+}

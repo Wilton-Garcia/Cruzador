@@ -29,3 +29,13 @@ O pacote tem inventário por arquivo e link, com hashes dos arquivos regulares. 
 O pacote real foi incluído no Cruzador.app local; a verificação do inventário passou após a cópia e a assinatura ad hoc do aplicativo foi conferida. O executável incluído retornou `wine-11.21` com status 0. O [registro de preparação](../evidence/runtime-package.json) preserva a identidade e os limites dessa validação.
 
 É um pacote de desenvolvimento: os textos de licença Wine selecionados estão incluídos, mas a revisão integral das atribuições e correspondência de fontes de todas as dependências do pacote do mantenedor ainda não foi concluída. Nenhuma declaração de conformidade integral para redistribuição pública é feita. A inspeção de arquiteturas e os cenários Windows do motor próprio são validações separadas do preparo do pacote.
+
+## Execução e arquiteturas
+
+`swift test --jobs 4` executa os testes locais; o cenário Wine real é opt-in. Após compilar os testes, execute `python3 scripts/native-smoke.py --runtime .local/Runtime-11.21`. O supervisor cria uma pasta nova, limita a duração do teste e preserva os logs. O cenário cria um prefixo, executa os `cmd.exe` de 64 e 32 bits, verifica seus cabeçalhos PE, observa um marcador de saída, verifica a propagação do código 7 e aguarda o servidor. O relatório fica em `.local/packaged-runtime-smoke.json`.
+
+A inicialização inclui `wineserver -w` como fase de finalização. O término de `wineboot` sozinho não garante que o registro tenha sido gravado; a prontidão só é avaliada após essa fase. Uma falha na finalização permanece falha da operação.
+
+`CRUZADOR_UNIVERSAL=1 scripts/build-app.sh` compila o aplicativo para arm64 e x86_64. `python3 scripts/verify-architectures.py` verifica as imagens com `lipo` e registra também a versão mínima indicada por `vtool`. O aplicativo é universal; o pacote Wine fixado contém executáveis x86_64, que exigem Rosetta em Apple Silicon. A verificação de slices não comprova execução em ambas as máquinas. O workflow `Runtime architectures` separa os cenários reais em runners Apple Silicon e Intel, preservando seus relatórios; qualquer resultado deve ser associado ao commit e à execução correspondentes.
+
+A [execução registrada](../evidence/runtime-architecture-ci.json) passou em ambos os runners, incluindo programas Windows de 32/64 bits e build universal. O registro identifica o commit exercitado e preserva os relatórios de cada arquitetura.

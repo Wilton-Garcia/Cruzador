@@ -2556,7 +2556,7 @@
     "Sources/CruzadorCore/WineRuntime.swift": "26f30b33750afea74f7312f79710ac04b5cb9f327201210f09608fc0d6d2f3f0",
     "Tests/CruzadorCoreTests/CoreTests.swift": "0188ccbaaf991174789a9a90b87ea12d0ceaa6412211d9fbe7ab1352de56458d",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "5116580fe231d2337f92ac482ee8446186d1de0784146abd08e41efce86da151",
-    "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "421c720a5351f588ffcf0a5c02eb08467dfe6ae66b10b559f2d3448e006e21b0"
+    "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "1c85661de661d1262553d1f7edbcf52d2820c10f0504718add903d9039afa376"
   },
   "counts": {
     "capabilities": 40,

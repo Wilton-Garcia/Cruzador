@@ -67,4 +67,18 @@ final class WineRuntimeTests: XCTestCase {
         XCTAssertTrue(store.isInitialized(bottle))
     }
 
+    func testFinalizationFailureIsNotSuccessfulInitialization() async throws {
+        let root = try fixture()
+        let log = root.appendingPathComponent("phases.log")
+        let primary = Command(executable: URL(fileURLWithPath: "/bin/sh"), arguments: ["-c", "printf primary; exit 0"], environment: [:])
+        let finalizer = Command(executable: URL(fileURLWithPath: "/bin/sh"), arguments: ["-c", "printf finalizer; exit 9"], environment: [:])
+        let result = try await CommandRunner().run(EnginePlan(primary: primary, finalization: [finalizer]), log: log)
+        XCTAssertEqual(result.exitCode, 9)
+        XCTAssertEqual(try String(contentsOf: log, encoding: .utf8), "primaryfinalizer")
+        let failedPrimary = Command(executable: URL(fileURLWithPath: "/bin/sh"), arguments: ["-c", "printf failed; exit 7"], environment: [:])
+        let failed = try await CommandRunner().run(EnginePlan(primary: failedPrimary, finalization: [finalizer]), log: log)
+        XCTAssertEqual(failed.exitCode, 7)
+        XCTAssertEqual(try String(contentsOf: log, encoding: .utf8), "failedfinalizer")
+    }
+
 }
