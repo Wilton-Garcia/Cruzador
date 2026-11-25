@@ -21,3 +21,11 @@ Duplicar gera outro UUID e ajusta atalhos e links absolutos que apontavam para o
 Remover move o registro e o prefixo para `Removed/<UUID>.cruzadorbottle`; não os apaga definitivamente. Um pacote com prefixo inicializado pode ser importado novamente. Preparações incompletas ou registros sem prefixo permanecem disponíveis para diagnóstico nessa pasta, mas não satisfazem a validação de importação. Transferências que falham preservam arquivos parciais no caminho informado pelo erro. Não se deve apagá-los antes de conferir a origem e o manifesto da biblioteca.
 
 Esses fluxos são próprios do Wine independente. O adaptador CrossOver permanece para investigação e execução legada; a manutenção não declara suporte a seus formatos ou à transferência de suas bottles gerenciadas.
+
+## Persistência e atualização do formato
+
+A biblioteca usa o formato 2. A leitura de um manifesto 1 permanece suportada; ao migrar ou salvar, o Cruzador preserva seus bytes originais em `library-v1.json.bak` antes de gravar o formato atual. Esse backup de migração não é substituído nas próximas gravações. O `library.json.bak` continua sendo o backup da alteração anterior. Repetir a migração não regrava um manifesto já atualizado.
+
+Versões futuras, JSON malformado, IDs duplicados e referências a uma bottle padrão inexistente impedem a gravação. O aplicativo mantém os arquivos para diagnóstico. **Gerenciar → Usar como padrão** salva a bottle preferida para a próxima abertura; removê-la limpa essa preferência.
+
+A seleção de motor em preferências usa um único valor versionado. Os antigos campos separados continuam legíveis e são preservados em backup quando o usuário salva a seleção atual. Um valor novo inválido não usa os campos antigos como fallback. Essas migrações não movem prefixos nem substituem o motor registrado em bottles existentes.

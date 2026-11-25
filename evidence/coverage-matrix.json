@@ -340,10 +340,25 @@
         "ui:bottle-menu:9"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/Models.swift",
+        "Sources/CruzadorCore/LibraryStore.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/LibraryMigrationTests.swift",
+          "name": "testDefaultBottleSurvivesRoundTrip",
+          "scope": "Preferência persistida com referência válida."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testRenameDuplicateExportImportAndRecoverableRemoval",
+          "scope": "Remoção limpa a referência à bottle padrão."
+        }
+      ],
+      "remaining_gap": "Preferência própria para a seleção inicial; integração com launchers e semântica completa do original ainda não estabelecidas.",
       "independent_equivalence_established": false
     },
     {
@@ -2644,17 +2659,19 @@
     }
   ],
   "source_sha256": {
-    "Sources/Cruzador/AppModel.swift": "a0a32fb6e8ca7bd896a5a15179f1f2629df32b7413b3e2375e25650e9c61c15a",
-    "Sources/Cruzador/ContentView.swift": "c414eb4ff022a49a9b3e94b76762963104eaf744f834ad45cf2fdf4545089898",
+    "Sources/Cruzador/AppModel.swift": "6827d0cb9432a7b9cf429dea4108be5a955ec865d14792873bde8a05b2c905a8",
+    "Sources/Cruzador/ContentView.swift": "a8d5b15c34609841dc057d50bae6e876120346dc80945e52c8cfe749fecee453",
     "Sources/Cruzador/CruzadorApp.swift": "8491e480c40115839f1eb76eb79fda94bcc01df79eb9f50daa7152f1fccc4943",
     "Sources/CruzadorCore/BottleLifecycle.swift": "aa71477d0172bc01d80769c7d9e602babf2979bcd76854f8d7f776af40f5bafe",
-    "Sources/CruzadorCore/BottleMaintenance.swift": "c2dd75771711169491348c3e8ef103720ceb19a31ad09260603453781844e7f6",
+    "Sources/CruzadorCore/BottleMaintenance.swift": "55d7325d231570a9161a39c8f01eecb872884b736bf105fc66401ef7b727bd07",
     "Sources/CruzadorCore/EngineCommands.swift": "d2c16be4b16e90cc4db95a55b53fba939625cee1afaf19dbe70a6122b59fabf1",
-    "Sources/CruzadorCore/LibraryStore.swift": "64f0afaeb9a19753a1e779050e2a8f9767781c1afcb0bc661f479ff86d59dbb2",
+    "Sources/CruzadorCore/LibraryStore.swift": "796da2fbcbf0bd27cbf064b5336170218b37814945e3d815997ef817728bf540",
+    "Sources/CruzadorCore/Models.swift": "d73e941d3603eda05b5e77007fc75e0e76f5789c84c5b8ff6cfe356c0bda89c9",
     "Sources/CruzadorCore/WineRuntime.swift": "26f30b33750afea74f7312f79710ac04b5cb9f327201210f09608fc0d6d2f3f0",
     "Tests/CruzadorCoreTests/BottleLifecycleTests.swift": "5435298b8b533ee151817535977381c5ccb08db4455d86840e43fbbfdb0e097d",
-    "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "fdaa2e355cb24d7643b5b7302ba96302337c9171c9b0d4c4337b3446c6889eae",
+    "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift": "9a1862dc9feac3d6c0b8c4deb033e61c3f218bd86b7ea986af51b1b78fca1716",
     "Tests/CruzadorCoreTests/CoreTests.swift": "a9bbe5447dbd4c96559f6e87791094acf4d0a9744eefbdd280a2796669e95d2c",
+    "Tests/CruzadorCoreTests/LibraryMigrationTests.swift": "55338d79e841468b8db0ef065b9f13854a2dbf66ae420bcdb6c863c1aa41bced",
     "Tests/CruzadorCoreTests/NativeSmokeTests.swift": "088e11f4065ae970b063a12d29fdeb4f915d6422dff9c091c1df0a86236f1b46",
     "Tests/CruzadorCoreTests/PackagedNativeSmokeTests.swift": "11b761cbfe83423d2f8e6e5a23cb95817a7326affbb74b7366a0a99b8a89590e",
     "Tests/CruzadorCoreTests/WineRuntimeTests.swift": "1c85661de661d1262553d1f7edbcf52d2820c10f0504718add903d9039afa376"
@@ -2665,8 +2682,8 @@
     "mapped_items": 107,
     "unassessed_items": 223,
     "prototype_status": {
-      "partial": 18,
-      "missing": 22
+      "partial": 19,
+      "missing": 21
     }
   },
   "limitations": [

@@ -38,10 +38,23 @@ public struct Bottle: Identifiable, Codable, Equatable, Sendable {
         id = UUID(); self.name = name; self.engine = engine; createdAt = Date(); state = .preparing; apps = []
     }
 }
+public struct LibraryPreferences: Codable, Sendable {
+    public var defaultBottleID: UUID?
+    public init(defaultBottleID: UUID? = nil) { self.defaultBottleID = defaultBottleID }
+}
 public struct Library: Codable, Sendable {
-    public var version = 1
+    public static let currentVersion = 2
+    public var version = currentVersion
+    public var preferences = LibraryPreferences()
     public var bottles: [Bottle] = []
     public init() {}
+    private enum CodingKeys: String, CodingKey { case version, preferences, bottles }
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        version = try container.decode(Int.self, forKey: .version)
+        bottles = try container.decode([Bottle].self, forKey: .bottles)
+        preferences = try container.decodeIfPresent(LibraryPreferences.self, forKey: .preferences) ?? LibraryPreferences()
+    }
 }
 public enum CruzadorError: LocalizedError {
     case invalid(String)

@@ -27,7 +27,10 @@ final class AppModel: ObservableObject {
             let engine = try EnginePreferences.load(from: .standard)
             engineKind = engine.kind; enginePath = engine.path
         } catch { enginePreferenceError = error.localizedDescription }
-        do { try BottleLifecycle(store: store).recoverInterruptedPreparations() }
+        do {
+            try store.migrateIfNeeded()
+            try BottleLifecycle(store: store).recoverInterruptedPreparations()
+        }
         catch { self.error = error.localizedDescription }
         reload()
         if let enginePreferenceError { error = enginePreferenceError }
@@ -36,7 +39,7 @@ final class AppModel: ObservableObject {
         guard !busy else { return }
         do {
             library = try store.load(); loaded = true
-            if selection == nil { selection = library.bottles.first?.id }
+            if selection == nil { selection = library.preferences.defaultBottleID ?? library.bottles.first?.id }
         } catch { loaded = false; self.error = "Não foi possível abrir a biblioteca: \(error.localizedDescription)" }
     }
     func saveEngine() {
@@ -145,6 +148,13 @@ final class AppModel: ObservableObject {
                 self.error = error.localizedDescription
             }
         }
+    }
+    func makeDefault(_ bottle: Bottle) {
+        guard !busy else { return }
+        do {
+            var next = library; next.preferences.defaultBottleID = bottle.id
+            try persist(next); status = "Bottle padrão: \(bottle.name)"
+        } catch { self.error = error.localizedDescription }
     }
     func nameBottle(_ bottle: Bottle, duplicate: Bool) {
         guard !busy else { return }

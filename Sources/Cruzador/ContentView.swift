@@ -85,6 +85,7 @@ struct ContentView: View {
                     }
                     Spacer()
                     Menu {
+                        Button(model.library.preferences.defaultBottleID == bottle.id ? "Bottle padrão" : "Usar como padrão") { model.makeDefault(bottle) }.disabled(model.library.preferences.defaultBottleID == bottle.id)
                         Button("Renomear…") { model.nameBottle(bottle, duplicate: false) }
                         Button("Duplicar…") { model.nameBottle(bottle, duplicate: true) }
                         Button("Exportar…") { model.exportBottle(bottle) }

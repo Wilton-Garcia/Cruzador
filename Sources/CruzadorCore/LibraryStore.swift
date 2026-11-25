@@ -17,18 +17,39 @@ public struct LibraryStore: Sendable {
     public func load() throws -> Library {
         if !FileManager.default.fileExists(atPath: manifest.path) { return Library() }
         let library = try JSONDecoder().decode(Library.self, from: Data(contentsOf: manifest))
-        guard library.version == 1 else { throw CruzadorError.invalid("Versão da biblioteca não suportada. Preserve library.json antes de atualizar.") }
-        guard Set(library.bottles.map(\.id)).count == library.bottles.count else { throw CruzadorError.invalid("Biblioteca com identificadores de bottle duplicados.") }
+        try validate(library)
         return library
     }
+    public func migrateIfNeeded() throws {
+        let library = try load()
+        if library.version < Library.currentVersion { try save(library) }
+    }
+    private func validate(_ library: Library) throws {
+        guard [1, Library.currentVersion].contains(library.version) else { throw CruzadorError.invalid("Versão da biblioteca não suportada. Preserve library.json antes de atualizar.") }
+        guard Set(library.bottles.map(\.id)).count == library.bottles.count else { throw CruzadorError.invalid("Biblioteca com identificadores de bottle duplicados.") }
+        if let selected = library.preferences.defaultBottleID, !library.bottles.contains(where: { $0.id == selected }) { throw CruzadorError.invalid("A bottle padrão não existe na biblioteca.") }
+        for bottle in library.bottles {
+            guard !bottle.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, bottle.engine.path.hasPrefix("/"), Set(bottle.apps.map(\.id)).count == bottle.apps.count else {
+                throw CruzadorError.invalid("Metadados inválidos na bottle \(bottle.id). Preserve o manifesto para diagnóstico.")
+            }
+        }
+    }
     public func save(_ library: Library) throws {
+        try validate(library)
+        var normalized = library; normalized.version = Library.currentVersion
         try prepare()
         let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-        let data = try encoder.encode(library)
+        let data = try encoder.encode(normalized)
         if FileManager.default.fileExists(atPath: manifest.path) {
             // Validate the current file before replacing it; preserve malformed evidence.
-            _ = try load()
-            try Data(contentsOf: manifest).write(to: root.appendingPathComponent("library.json.bak"), options: .atomic)
+            let previous = try load()
+            let original = try Data(contentsOf: manifest)
+            if original == data { return }
+            if previous.version < Library.currentVersion {
+                let backup = root.appendingPathComponent("library-v\(previous.version).json.bak")
+                if !FileManager.default.fileExists(atPath: backup.path) { try original.write(to: backup, options: .withoutOverwriting) }
+            }
+            try original.write(to: root.appendingPathComponent("library.json.bak"), options: .atomic)
         }
         try data.write(to: manifest, options: .atomic)
     }

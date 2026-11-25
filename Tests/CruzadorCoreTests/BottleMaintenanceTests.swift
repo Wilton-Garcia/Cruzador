@@ -42,7 +42,11 @@ final class BottleMaintenanceTests: XCTestCase {
         let imported = try maintenance.importBottle(from: package, engine: bottle.engine)
         XCTAssertEqual(imported.state, .interrupted)
         XCTAssertEqual(maintenance.store.health(of: imported), .initialized)
+        var preferred = try maintenance.store.load()
+        preferred.preferences.defaultBottleID = copy.id
+        try maintenance.store.save(preferred)
         let recovery = try await maintenance.remove(id: copy.id)
+        XCTAssertNil(try maintenance.store.load().preferences.defaultBottleID)
         XCTAssertFalse(try maintenance.store.load().bottles.contains { $0.id == copy.id })
         XCTAssertFalse(FileManager.default.fileExists(atPath: prefix.path))
         XCTAssertEqual(try Data(contentsOf: recovery.appendingPathComponent("Prefix/drive_c/test.exe")), Data("user data".utf8))

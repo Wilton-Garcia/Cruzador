@@ -341,10 +341,25 @@
         "ui:bottle-menu:9"
       ],
       "reverse_knowledge": "python-metadata",
-      "prototype_status": "missing",
-      "source_files": [],
-      "tests": [],
-      "remaining_gap": "Comportamento ainda não reconstruído.",
+      "prototype_status": "partial",
+      "source_files": [
+        "Sources/CruzadorCore/Models.swift",
+        "Sources/CruzadorCore/LibraryStore.swift",
+        "Sources/Cruzador/AppModel.swift"
+      ],
+      "tests": [
+        {
+          "file": "Tests/CruzadorCoreTests/LibraryMigrationTests.swift",
+          "name": "testDefaultBottleSurvivesRoundTrip",
+          "scope": "Preferência persistida com referência válida."
+        },
+        {
+          "file": "Tests/CruzadorCoreTests/BottleMaintenanceTests.swift",
+          "name": "testRenameDuplicateExportImportAndRecoverableRemoval",
+          "scope": "Remoção limpa a referência à bottle padrão."
+        }
+      ],
+      "remaining_gap": "Preferência própria para a seleção inicial; integração com launchers e semântica completa do original ainda não estabelecidas.",
       "independent_equivalence_established": false
     },
     {

@@ -17,7 +17,8 @@ final class EnginePreferencesTests: XCTestCase {
     func testExistingExplicitSelectionIsPreserved() throws {
         let defaults = try preferences()
         let selected = Engine(kind: .crossOver, path: "/Custom Location/CrossOver.app")
-        try EnginePreferences.save(selected, to: defaults)
+        defaults.set(selected.kind.rawValue, forKey: "engineKind")
+        defaults.set(selected.path, forKey: "enginePath")
         XCTAssertEqual(try EnginePreferences.load(from: defaults), selected)
         defaults.set("future-engine", forKey: "engineKind")
         XCTAssertThrowsError(try EnginePreferences.load(from: defaults))
@@ -35,4 +36,23 @@ final class EnginePreferencesTests: XCTestCase {
         defaults.set(["unexpected"], forKey: "engineKind")
         XCTAssertThrowsError(try EnginePreferences.load(from: defaults))
     }
+    func testVersionedSelectionPreservesLegacyBackupAndDoesNotFallBack() throws {
+        let defaults = try preferences()
+        defaults.set("crossOver", forKey: "engineKind")
+        defaults.set("/Selected/CrossOver.app", forKey: "enginePath")
+        let selected = Engine(kind: .packagedWine, path: "/Own/Runtime")
+        try EnginePreferences.save(selected, to: defaults)
+        XCTAssertEqual(try EnginePreferences.load(from: defaults), selected)
+        let backup = try XCTUnwrap(defaults.data(forKey: "engineSelectionLegacyBackup"))
+        let original = try PropertyListSerialization.propertyList(from: backup, format: nil) as? [String: String]
+        XCTAssertEqual(original?["enginePath"], "/Selected/CrossOver.app")
+        try EnginePreferences.save(selected, to: defaults)
+        XCTAssertNil(defaults.object(forKey: "engineSelectionBackup"))
+        defaults.set(Data("{broken".utf8), forKey: "engineSelection")
+        XCTAssertThrowsError(try EnginePreferences.load(from: defaults))
+        try EnginePreferences.save(selected, to: defaults)
+        XCTAssertNotNil(defaults.object(forKey: "engineSelectionBackup"))
+        XCTAssertEqual(defaults.data(forKey: "engineSelectionLegacyBackup"), backup)
+    }
+
 }

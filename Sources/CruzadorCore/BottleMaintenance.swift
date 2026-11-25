@@ -58,6 +58,7 @@ public struct BottleMaintenance: Sendable {
         let hasPrefix = FileManager.default.fileExists(atPath: source.path)
         if hasPrefix { try FileManager.default.moveItem(at: source, to: retained) }
         library.bottles.remove(at: selected)
+        if library.preferences.defaultBottleID == id { library.preferences.defaultBottleID = nil }
         do { try store.save(library) }
         catch {
             if hasPrefix {
