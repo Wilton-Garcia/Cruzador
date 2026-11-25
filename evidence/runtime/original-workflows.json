@@ -1,0 +1,238 @@
+{
+  "method": "supervised direct subprocesses; no PTY, process-family sampling or terminal frames",
+  "workspace": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6",
+  "prefix": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles/12058352-9dc7-4f07-9461-7d3646877dae",
+  "runs": [
+    {
+      "id": "create",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/cxbottle",
+      "executable_sha256": "e0509d0ecad44ac59a610b337f884bd93304d3eb2e1efee3a96c7db4eeba4005",
+      "arguments": [
+        "--bottle",
+        "12058352-9dc7-4f07-9461-7d3646877dae",
+        "--scope",
+        "private",
+        "--create",
+        "--template",
+        "win10_64"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles",
+        "CX_BOTTLE": "12058352-9dc7-4f07-9461-7d3646877dae",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles/12058352-9dc7-4f07-9461-7d3646877dae"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6",
+      "exit_code": 0,
+      "timed_out": false,
+      "expected": "success",
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/create.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": ""
+    },
+    {
+      "id": "duplicate-create-rejected",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/cxbottle",
+      "executable_sha256": "e0509d0ecad44ac59a610b337f884bd93304d3eb2e1efee3a96c7db4eeba4005",
+      "arguments": [
+        "--bottle",
+        "12058352-9dc7-4f07-9461-7d3646877dae",
+        "--scope",
+        "private",
+        "--create",
+        "--template",
+        "win10_64"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles",
+        "CX_BOTTLE": "12058352-9dc7-4f07-9461-7d3646877dae",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles/12058352-9dc7-4f07-9461-7d3646877dae"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6",
+      "exit_code": 1,
+      "timed_out": false,
+      "expected": "failure",
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/duplicate-create-rejected.log",
+      "log_sha256": "763707c392ace5230309911b782e4fa39f07a4be650751008b7c95a345c00ed4",
+      "output": "cxbottle:error: the '12058352-9dc7-4f07-9461-7d3646877dae' bottle already exists\n"
+    },
+    {
+      "id": "status-after-create-conflict",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/cxbottle",
+      "executable_sha256": "e0509d0ecad44ac59a610b337f884bd93304d3eb2e1efee3a96c7db4eeba4005",
+      "arguments": [
+        "--bottle",
+        "12058352-9dc7-4f07-9461-7d3646877dae",
+        "--scope",
+        "private",
+        "--status"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles",
+        "CX_BOTTLE": "12058352-9dc7-4f07-9461-7d3646877dae",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles/12058352-9dc7-4f07-9461-7d3646877dae"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6",
+      "exit_code": 0,
+      "timed_out": false,
+      "expected": "success",
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/status-after-create-conflict.log",
+      "log_sha256": "0febfd970f8a861127301805d2863fcf5c027621c2ae04a1f5e10e90930f5213",
+      "output": "Mode=private\nStatus=uptodate\n"
+    },
+    {
+      "id": "windows-command",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "12058352-9dc7-4f07-9461-7d3646877dae",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "cmd.exe",
+        "/c",
+        "echo",
+        "CRUZADOR_ORIGINAL_OK"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles",
+        "CX_BOTTLE": "12058352-9dc7-4f07-9461-7d3646877dae",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles/12058352-9dc7-4f07-9461-7d3646877dae"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6",
+      "exit_code": 0,
+      "timed_out": false,
+      "expected": "success",
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/windows-command.log",
+      "log_sha256": "d3c055ace2db3e28f8e01b9606d43c3df5755fa44e84bdbcf1ddd6e7cab84ab6",
+      "output": "CRUZADOR_ORIGINAL_OK\n"
+    },
+    {
+      "id": "windows-nonzero-exit",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "12058352-9dc7-4f07-9461-7d3646877dae",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "cmd.exe",
+        "/c",
+        "exit",
+        "7"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles",
+        "CX_BOTTLE": "12058352-9dc7-4f07-9461-7d3646877dae",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles/12058352-9dc7-4f07-9461-7d3646877dae"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6",
+      "exit_code": 7,
+      "timed_out": false,
+      "expected": 7,
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/windows-nonzero-exit.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": ""
+    },
+    {
+      "id": "missing-program",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "12058352-9dc7-4f07-9461-7d3646877dae",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "C:\\cruzador-no-such-program.exe"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles",
+        "CX_BOTTLE": "12058352-9dc7-4f07-9461-7d3646877dae",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles/12058352-9dc7-4f07-9461-7d3646877dae"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6",
+      "exit_code": 1,
+      "timed_out": false,
+      "expected": "failure",
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/missing-program.log",
+      "log_sha256": "1dd70c85dfc230b4e58485c92e1208a1cc4420d1563967ae5ffc6da99b63698c",
+      "output": "winewrapper.exe:error: cannot execute L\"C:\\\\cruzador-no-such-program.exe\"\n"
+    },
+    {
+      "id": "command-after-errors",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "12058352-9dc7-4f07-9461-7d3646877dae",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait",
+        "--",
+        "cmd.exe",
+        "/c",
+        "echo",
+        "CRUZADOR_RECOVERED_OK"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles",
+        "CX_BOTTLE": "12058352-9dc7-4f07-9461-7d3646877dae",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles/12058352-9dc7-4f07-9461-7d3646877dae"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6",
+      "exit_code": 0,
+      "timed_out": false,
+      "expected": "success",
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/command-after-errors.log",
+      "log_sha256": "d1376ffd265ef20c41bf5629642ac209073cf972226e17061b0ae8d7c342c660",
+      "output": "CRUZADOR_RECOVERED_OK\n"
+    },
+    {
+      "id": "wait-owned-server",
+      "executable": "/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+      "executable_sha256": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+      "arguments": [
+        "--bottle",
+        "12058352-9dc7-4f07-9461-7d3646877dae",
+        "--scope",
+        "private",
+        "--no-gui",
+        "--wait-all"
+      ],
+      "selected_environment": {
+        "CX_BOTTLE_PATH": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles",
+        "CX_BOTTLE": "12058352-9dc7-4f07-9461-7d3646877dae",
+        "WINEPREFIX": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles/12058352-9dc7-4f07-9461-7d3646877dae"
+      },
+      "working_directory": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6",
+      "exit_code": 0,
+      "timed_out": false,
+      "expected": "success",
+      "log_path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/wait-owned-server.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": ""
+    }
+  ],
+  "completed": true,
+  "server_wait": "completed",
+  "bottle_metadata": {
+    "path": "/Users/wiltongarcia/Developer/Cruzador/.local/original-scenarios/7796fbc4-0a2e-404a-81de-a89f655ac4f6/Bottles/12058352-9dc7-4f07-9461-7d3646877dae/cxbottle.conf",
+    "sha256": "e24c4c3a0906fc681c726363dfb05d15ed878f986e8d17c96d08c0f2c7472464"
+  },
+  "limitations": [
+    "No process-family census or terminal rendering was collected.",
+    "Waiting for the prefix server does not prove that every detached host helper exited.",
+    "The retained prefix is test data and was not deleted.",
+    "Graphical installer cancellation is referenced separately in ui-observations.json.",
+    "No general Windows compatibility or independent runtime was established."
+  ]
+}
